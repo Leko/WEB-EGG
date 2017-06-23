@@ -126,17 +126,26 @@
     }
   }
   blockquote {
-    border-left-color: $base-mellow;
+    position: relative;
+    // border-left: 5px solid $base-mellow;
     position: relative;
     margin: 0;
-    padding: 0.3em 2em 0;
+    padding: 5px 0 5px 20px;
     font-size: $font-size-normal;
 
     &::before {
-      display: inline-block;
       position: absolute;
-      left: 1em;
-      content: open-quote;
+      top: 0;
+      left: 0;
+      display: inline;
+      color: $base-mellow;
+      content: "\00201c";
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0;
     }
   }
   img {
