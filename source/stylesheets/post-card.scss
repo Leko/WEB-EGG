@@ -25,9 +25,28 @@
 }
 
 .post-card {
-  margin-bottom: 30px;
+  margin-top: 30px;
+
+  .card__footer {
+    padding: 0;
+  }
 
   &--first {
+    margin-top: 0;
+  }
 
+  &__readmore {
+    $padding: 20px;
+
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: $padding;
+
+    i {
+      position: absolute;
+      display: inline-block;
+      right: $padding;
+    }
   }
 }
