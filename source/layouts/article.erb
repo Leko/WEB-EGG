@@ -1,0 +1,34 @@
+<% wrap_layout :layout do %>
+  <article class="post post-card post-card--first">
+    <div class="card">
+      <header class="card__header">
+        <div class="post__header__wrapper">
+          <div class="post__eyecatch" style="background-image: url(&quot;null&quot;);"></div>
+            <header class="post__header">
+              <time class="post__published">
+                <%= current_resource.date.strftime config[:date_format] %>
+              </time>
+              <h1 class="post__title">
+                <%= current_resource.title %>
+              </h1>
+              <ul class="post__tags">
+                <% current_resource.tags.each do |tag| %>
+                  <li>
+                    <%= link_to tag, tag_path(tag), :class => 'post__tags__tag' %>
+                  </li>
+                <% end %>
+              </ul>
+            </header>
+          </div>
+      </header>
+      <section class="card__body">
+        <div class="post__content markdown">
+          <%= yield %>
+        </div>
+      </section>
+      <footer class="card__footer">
+        
+      </footer>
+    </div>
+  </article>
+<% end %>

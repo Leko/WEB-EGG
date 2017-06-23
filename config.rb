@@ -2,6 +2,14 @@
 # Page options, layouts, aliases and proxies
 ###
 
+config[:meta] = {
+  :locale => 'ja',
+  :sitename => '[WIP] WEB EGG',
+  :siteurl => 'https://blog.leko.jp',
+  :catchcopy => 'Work in progress...',
+}
+config[:date_format] = '%Y-%m-%d'
+
 # Per-page layout changes:
 #
 # With no layout
@@ -28,7 +36,7 @@ activate :blog do |blog|
   # Matcher for blog source files
   blog.sources = "post/{year}-{month}-{day}-{title}.html"
   blog.taglink = "tag/{tag}.html"
-  blog.layout = "layout/article"
+  blog.layout = "layouts/article"
   blog.summary_generator = Proc.new do |article, rendered|
     rendered.split('<!--more-->').first
   end
