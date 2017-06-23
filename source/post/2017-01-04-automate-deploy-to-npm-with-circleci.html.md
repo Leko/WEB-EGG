@@ -13,7 +13,7 @@ tags:
 ---
 こんにちは。
   
-[RubygemsへのデプロイをCircleCIで自動化してみた | WEB EGG](http://leko.jp/archives/871)に引き続きnpmのデプロイも自動化してみました。
+[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)に引き続きnpmのデプロイも自動化してみました。
   
 gemのときとは微妙に差異があるので、改めて備忘録として残しておきます。
 
@@ -48,11 +48,11 @@ npm publish
 ----------------------------------------
 
 
-[RubygemsへのデプロイをCircleCIで自動化してみた | WEB EGG](http://leko.jp/archives/871)のときはgemが自動でやってくれのたですが、
+[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)のときはgemが自動でやってくれのたですが、
   
 npmではタグを切ったりCHANGELOG書いたりを自前で行う必要があります。
 
-> [Git tagとGitHub ReleasesとCHANGELOG.mdの自動化について | Web Scratch](http://efcl.info/2014/07/20/git-tag-to-release-github/)
+> [Git tagとGitHub ReleasesとCHANGELOG.mdの自動化について \| Web Scratch](http://efcl.info/2014/07/20/git-tag-to-release-github/)
 
 こちらの記事を参考にしようと思ったのですが、やり過ぎ感が漂っており要件には合わなかったので、
   
@@ -70,7 +70,7 @@ npmではタグを切ったりCHANGELOG書いたりを自前で行う必要が�
 
 CircleCIと連携したままのだと、read onlyなデプロイキーが使用されています。 なのでリポジトリからpullはできるのですが、タグの追加やpushができない。
 
-この手順については[RubygemsへのデプロイをCircleCIで自動化してみた | WEB EGG](http://leko.jp/archives/871)に書いてあるので、そちらをご参照ください。
+この手順については[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)に書いてあるので、そちらをご参照ください。
 
 試す
 ----------------------------------------

@@ -34,7 +34,7 @@ PocketとかEvernoteに送信せずに、ブックマークして放置
 
 AlfredのWorkflowの作り方については、先日書いた記事をご参照下さい。
 
-> [Alfred2のWorflowsを自作して作業を効率化する | WEB EGG](/archives/414)
+> [Alfred2のWorflowsを自作して作業を効率化する \| WEB EGG](/archives/414)
 
 Workflowはこんな感じになっています。
   

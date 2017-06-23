@@ -149,7 +149,7 @@ Seleniumはデフォルトでは日本語などのマルチバイト文字をサ
   
 詳しくはUbuntuのドキュメントと公開したリポジトリのDockerfileを御覧ください。
 
-> &mdash; [Ubuntuの日本語環境 | Ubuntu Japanese Team](https://www.ubuntulinux.jp/japanese)
+> &mdash; [Ubuntuの日本語環境 \| Ubuntu Japanese Team](https://www.ubuntulinux.jp/japanese)
 
 ちなみに、[中国語のタグ](https://github.com/SeleniumHQ/docker-selenium/pull/339)のPRに対して、
 

@@ -56,7 +56,7 @@ Nodejs依存ではなく、**JavaScriptCore**というMacのデフォルトjsエ
 ----------------------------------------
 
 
-> [Mac OS X + SublimeLinterでJavascriptの日本語エラーを回避する方法 | kwLog](http://blog.makotokw.com/2012/11/06/mac-os-x-sublimelinter%E3%81%A7javascript%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%92%E5%9B%9E%E9%81%BF%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)
+> [Mac OS X + SublimeLinterでJavascriptの日本語エラーを回避する方法 \| kwLog](http://blog.makotokw.com/2012/11/06/mac-os-x-sublimelinter%E3%81%A7javascript%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%92%E5%9B%9E%E9%81%BF%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)
 
 「SublimeLinter 日本語」でググるとまずこの記事が出てくるのですが、
   

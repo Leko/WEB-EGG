@@ -71,7 +71,7 @@ URLはこちらです。 なお、 **PC版Chromeでしか動作確認してま�
 
 この技はMMDのダンスBGMでも使用させてもらっています。 よろしければこの記事も合わせて御覧ください。
 
-> — [MMDのモデルにブラウザで踊って頂いた | WEB EGG](http://leko.jp/archives/897)
+> — [MMDのモデルにブラウザで踊って頂いた \| WEB EGG](http://leko.jp/archives/897)
 
 で、本編に戻しますが、 内部でReact使ってるので、`react-youtube`というライブラリがいい感じに馴染んでくれました。
 

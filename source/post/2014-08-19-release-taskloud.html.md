@@ -68,7 +68,7 @@ URL:
   
 普段の内容はシュール・ギャグ系の多い番組に、突如真面目なネタを挟まさせていただきました。笑
 
-### [Taskloudのアプリ情報 | iPhone/iPadアプリ -Appliv](http://app-liv.jp/824685993/)
+### [Taskloudのアプリ情報 \| iPhone/iPadアプリ -Appliv](http://app-liv.jp/824685993/)
 
 URL: http://app-liv.jp/824685993/
 

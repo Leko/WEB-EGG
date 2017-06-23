@@ -52,7 +52,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 
 **埋め込みタイムライン**とは、 名前が変わっていますが今まで通り、自分のツイートなどを埋め込んで webページに設置できるウィジェットのことです。
 
-> [埋め込みタイムライン | Twitter Developers](https://dev.twitter.com/ja/docs/embedded-timelines){.broken_link}
+> [埋め込みタイムライン \| Twitter Developers](https://dev.twitter.com/ja/docs/embedded-timelines){.broken_link}
 1箇所だけ注意すれば、設定も設置もカスタマイズも簡単です。 さくっとやってしまいましょう。
 
 埋め込みタイムラインを作成

@@ -225,7 +225,7 @@ Herokuにデプロイする（準備）
 
 [Godep](https://github.com/tools/godep)というツールを用いてライブラリの管理を行います。 くわしくは[Herokuのマニュアル](https://devcenter.heroku.com/articles/go-dependencies-via-godep)を御覧ください。
 
-> [Getting Started with Go on Heroku | Heroku Dev Center](https://devcenter.heroku.com/articles/getting-started-with-go#introduction)
+> [Getting Started with Go on Heroku \| Heroku Dev Center](https://devcenter.heroku.com/articles/getting-started-with-go#introduction)
 
 ここでの疑問は、できあがった`Godeps/_workspace`というディレクトリはコミットする必要があるのか？ignoreして大丈夫なのか？です。
   

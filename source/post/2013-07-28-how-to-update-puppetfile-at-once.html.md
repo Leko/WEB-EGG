@@ -121,7 +121,7 @@ GithubのAPIを使えばタグも取れんじゃない？**
 
 > GET /repos/:owner/:repo/tags
   
-> [Repos | GitHub API](http://developer.github.com/v3/repos/#list-tags)
+> [Repos \| GitHub API](http://developer.github.com/v3/repos/#list-tags)
 
 とアクセスすればいいようです。
 

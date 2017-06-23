@@ -130,7 +130,7 @@ Mountain Lionのインストールメディアを作りたいので**Mountain Li
 
 こっから先を逐一説明していると長くなるので、詳しくはこちらを御覧ください。
 
-> [OS X Mountain Lion（マウンテンライオン）をクリーンインストールする方法 | 和洋風KAI](http://wayohoo.com/mac/tips/how-to-clean-install-os-x-mountain-lion.html)
+> [OS X Mountain Lion（マウンテンライオン）をクリーンインストールする方法 \| 和洋風KAI](http://wayohoo.com/mac/tips/how-to-clean-install-os-x-mountain-lion.html)
 
 上記の記事が完了してMacが使えるようになったらクリーンインストール完了です。
 

@@ -13,7 +13,7 @@ tags:
 ---
 こんにちは。先日、
 
-> [プラグインを使わずにMarkdownでWordpressのブログを更新する（実践編） | WEB EGG](http://leko.jp/archives/467)
+> [プラグインを使わずにMarkdownでWordpressのブログを更新する（実践編） \| WEB EGG](http://leko.jp/archives/467)
 
 という記事を書いたのですが、**Markdownでの記事作成がより捗る**ように
   
@@ -49,7 +49,7 @@ Alfredに、リンクしたいページのURLを貼り付けるだけです。
 
 コピーされたものを貼り付けるとこんな感じになります。
 
-`[プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） | WEB EGG](http://leko.jp/archives/367)`
+`[プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](http://leko.jp/archives/367)`
 
 記事を書くにあたって参考にしたページがあった時に、
   
@@ -79,9 +79,9 @@ titleタグにマッチする箇所を抜き出すだけです。
 ----------------------------------------
 
 
-> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） | WEB EGG](http://leko.jp/archives/367)
+> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](http://leko.jp/archives/367)
 > 
-> [プラグインを使わずにMarkdownでWordPressのブログを更新する（実践編） | WEB EGG](http://leko.jp/archives/467)
+> [プラグインを使わずにMarkdownでWordPressのブログを更新する（実践編） \| WEB EGG](http://leko.jp/archives/467)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

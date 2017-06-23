@@ -13,7 +13,7 @@ categories:
 
 失敗を恐れない強気な姿勢を卒業までに養いたい。
 
-[シンプルだけど意味のあるロゴデザイン30 | CREAMU](http://blog.creamu.com/mt/2010/02/30_8.html).
+[シンプルだけど意味のあるロゴデザイン30 \| CREAMU](http://blog.creamu.com/mt/2010/02/30_8.html).
 
 すごく面白い。考えに考え抜かれた上での「ほんとうに必要なもの」しか載せていないと思う。
 
@@ -23,19 +23,19 @@ categories:
 
 他にもロゴづくりに有難い情報が載っていたのでリンク。
 
-[デザイナーのためのロゴデザインのチュートリアル&素材45+ | CREAMU](http://blog.creamu.com/mt/2010/05/45_4.html).
+[デザイナーのためのロゴデザインのチュートリアル&素材45+ \| CREAMU](http://blog.creamu.com/mt/2010/05/45_4.html).
 
 &nbsp;
 
 &nbsp;
 
-[ロゴデザインのケーススタディー集 | CREAMU](http://blog.creamu.com/mt/2010/03/post_217.html).
+[ロゴデザインのケーススタディー集 \| CREAMU](http://blog.creamu.com/mt/2010/03/post_217.html).
 
 &nbsp;
 
 &nbsp;
 
-[ロゴをデザインするときの8つのルール | CREAMU](http://blog.creamu.com/mt/2010/09/8_2.html).
+[ロゴをデザインするときの8つのルール \| CREAMU](http://blog.creamu.com/mt/2010/09/8_2.html).
 
 &nbsp;
 

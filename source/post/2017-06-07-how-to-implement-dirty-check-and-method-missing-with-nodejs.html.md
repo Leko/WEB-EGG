@@ -12,7 +12,7 @@ tags:
   - Proxy
   - Ruby
 ---
-過去に[phpのマジックメソッドを使ってRailsのfind\_all\_by_*メソッドを実装してみる | WEB EGG](http://leko.jp/archives/726)という記事を書いたのですが、Node.jsでも[Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy)の登場により、似たようなことができるのでは？と思ったので試してみました。
+過去に[phpのマジックメソッドを使ってRailsのfind\_all\_by_*メソッドを実装してみる \| WEB EGG](http://leko.jp/archives/726)という記事を書いたのですが、Node.jsでも[Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy)の登場により、似たようなことができるのでは？と思ったので試してみました。
 
 今回の題材は、同じくRailsのActiveRecordから、[ActiveModel::Dirty](http://api.rubyonrails.org/classes/ActiveModel/Dirty.html)モジュールです。
 
