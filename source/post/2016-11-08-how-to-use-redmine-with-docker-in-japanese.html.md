@@ -38,7 +38,6 @@ RedmineのDBをMySQLへの切り替える
 
 ```
 redmine "Mysql2::Error: Incorrect string value"
-
 ```
 
 
@@ -61,7 +60,6 @@ redmine "Mysql2::Error: Incorrect string value"
 [mysqld]
 character-set-server=utf8mb4
 collation-server=utf8mb4_general_ci
-
 ```
 
 
@@ -89,7 +87,6 @@ utf8mb4は4バイト対応のUTF8だそうです。絵文字とか特殊文字�
     image: mysql:5.6
     volumes:
       - ./docker/db/multibyte.cnf:/etc/mysql/conf.d/multibyte.cnf
-
 ```
 
 

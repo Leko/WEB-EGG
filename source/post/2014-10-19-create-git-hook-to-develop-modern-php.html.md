@@ -140,7 +140,6 @@ hooksディレクトリの中に`pre-commit.sample`というファイルがあ�
 ```bash
 ls .git/hooks
 cp .git/hooks/pre-commit.sample .git/hooks/pre-commit
-
 ```
 
 
@@ -171,7 +170,6 @@ allownonascii=$(git config --bool hooks.allownonascii)
 exec 1>&2
 
 # --- 長いので割愛 ---
-
 ```
 
 
@@ -260,7 +258,6 @@ exit $IS_ERROR
         "fabpot/php-cs-fixer": "@stable",
         "phpunit/phpunit": "4.*"
     }
-
 ```
 
 
@@ -290,7 +287,6 @@ vim .git/hooks/pre-commit # 先ほどのhookを貼り付け
 touch README.md
 git add .
 git commit -m "initial commit"
-
 ```
 
 

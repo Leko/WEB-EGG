@@ -116,7 +116,6 @@ XMLはざっくり、こんな感じになりました
     />
   &lt;/project>
 &lt;/coverage>
-
 ```
 
 
@@ -131,7 +130,6 @@ jsで書くと、
 ```javascript
 const el = document.querySelector('class[name="クラス名"][namespace="名前空間"]>metrics')
 console.log(el.coveredstatements / el.statements)
-
 ```
 
 
@@ -154,7 +152,6 @@ namespaceを入れないと衝突する恐れがあります。
 ```javascript
 const el = document.querySelector('file[name="ファイルパス"]>metrics')
 console.log(el.coveredstatements / el.statements)
-
 ```
 
 
@@ -182,7 +179,6 @@ const dirMetrics = metricses.reduce((acc, metrics) => ({
 }), { coveredstatements: 0, statements: 0 })
 
 console.log(dirMetrics.coveredstatements / dirMetrics.statements)
-
 ```
 
 
@@ -244,7 +240,6 @@ lines.forEach(line => {
 
 const methodMetrics = metrics[集計したいクラス][集計したいメソッド]
 console.log(methodMetrics.coveredStatements / methodMetrics.statements)
-
 ```
 
 

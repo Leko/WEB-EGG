@@ -153,7 +153,6 @@ Titanium-cliを使うには、**npm**というパッケージ管理システム�
 ```
 $ cd ~
 $ brew update && brew install node
-
 ```
 
 
@@ -169,7 +168,6 @@ $ node -v
 v0.8.17
 $ npm -v
 1.2.0
-
 ```
 
 
@@ -186,7 +184,6 @@ Nodejsをインストールしてnpmが使えるようになったので、
 
 ```
 $ sudo npm install -g titanium
-
 ```
 
 
@@ -198,7 +195,6 @@ titaniumのインストールしたら、一応バージョンを確認します
 ```
 $ titanium -v
 3.0.24
-
 ```
 
 
@@ -215,7 +211,6 @@ Titanium-cliのインストールが完了したので、 次に環境設定を�
 
 ```
 $ titanium setup
-
 ```
 
 
@@ -264,7 +259,6 @@ $ titanium setup
 
 ```
 $ titanium create
-
 ```
 
 
@@ -300,7 +294,6 @@ $ titanium create
 [INFO]  Copying "android" platform resources
 [INFO]  Copying "iphone" platform resources
 [INFO]  Project 'myapp' created successfully in 76ms
-
 ```
 
 
@@ -322,7 +315,6 @@ $ titanium create
         - 省略    
 - manifest
 - tiapp.xml
-
 ```
 
 
@@ -343,7 +335,6 @@ iOSのシミュレータ、Androidのエミュレータで起動してみます�
 
 ```
 $ titanium build -p ios
-
 ```
 
 
@@ -382,7 +373,6 @@ Please report bugs to http://jira.appcelerator.org/
 [INFO]  Invoking xcodebuild
 [INFO]  Finished building the application in 24s 938ms
 ...
-
 ```
 
 
@@ -395,7 +385,6 @@ Please report bugs to http://jira.appcelerator.org/
 
 ```
 $ titanium build -p android
-
 ```
 
 

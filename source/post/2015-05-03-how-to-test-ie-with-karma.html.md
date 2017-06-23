@@ -99,7 +99,6 @@ git commit -m "initial commit"
 npm i -g karma-cli # インストール済みなら不要
 npm i -D karma
 karma init
-
 ```
 
 
@@ -126,7 +125,6 @@ Karmaでそのようなブラウザを起動する場合、`FIREFOX_BIN`とい�
 ```bash
 npm i -D dotenv
 echo "FIREFOX_BIN=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/firefox-bin" > .env
-
 ```
 
 
@@ -134,7 +132,6 @@ echo "FIREFOX_BIN=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Content
 
 ```javascript
 require('dotenv').load();
-
 ```
 
 
@@ -160,7 +157,6 @@ Karmaの設定を変更してローカルのChromeで結果を確認
 
 ```bash
 npm i -D karma-browserify brfs
-
 ```
 
 
@@ -179,7 +175,6 @@ Karmaの設定ファイルは[こちら](https://github.com/Leko/karma-ievm-seed
 
 ```bash
 karma start
-
 ```
 
 
@@ -218,7 +213,6 @@ IEのVMを入れる
 ```bash
 curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | env IEVMS_VERSIONS="8 9" bash
 find ~/.ievms -type f ! -name "*.vmdk" -exec rm {} \;
-
 ```
 
 
@@ -248,7 +242,6 @@ Karmaの設定を変更し、VM内のIEでテストコードを実行できる�
 
 ```bash
 npm i -D karma-ievms
-
 ```
 
 
@@ -282,7 +275,6 @@ es5-shimは、ざっくり言うとIE8などes5のメソッドに対応してい
 
 ```bash
 npm i -D karma-es5-shim
-
 ```
 
 

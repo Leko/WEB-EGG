@@ -78,7 +78,6 @@ class Base &lt; ActiveResource::Base
     URI.encode_www_form(hash)
   end
 end
-
 ```
 
 
@@ -92,7 +91,6 @@ URL末尾から.json等のフォーマットを消したい
 class Base &lt; ActiveResource::Base
   self.include_format_in_path = false
 end
-
 ```
 
 
@@ -119,7 +117,6 @@ has_many的なものは
 
 ```ruby
 has_many :members, class_name: 'chatwork/member'
-
 ```
 
 
@@ -153,7 +150,6 @@ belongs_to的なものは、残念ながらChatworkでは意図したとおり�
 def messages(params = {})
     Message.all(params: subroute_params(params))
   end
-
 ```
 
 
@@ -175,7 +171,6 @@ def messages(params = {})
 
 # /users/1/comments.json
 { id: 100, user_id: 1, content: 'xxx' }
-
 ```
 
 
@@ -206,7 +201,6 @@ module Chatwork
     include Chatwork::NestOfRoom
   end
 end
-
 ```
 
 
@@ -223,7 +217,6 @@ ActiveResourceには[カスタムメソッド](http://api.rubyonrails.org/v3.2.6
 ```ruby
 # {ActiveResource::Baseを継承したクラス}.{HTTPメソッド(小文字)}(:パス, オプション)
 Chatwork::My.get(:tasks, status: 'open')
-
 ```
 
 
@@ -249,7 +242,6 @@ ActiveResource::Base.newはHashを受け取るので、受け取ったレスポ�
 def self.tasks(params = {})
       get(:tasks, params).map { |t| Chatwork::Task.new(t, true) }
     end
-
 ```
 
 
@@ -271,7 +263,6 @@ Chatworkでいえば、`/rooms`のレスポンス内の主キーは`room_id`と�
 
 ```ruby
 self.primary_key = 'room_id'
-
 ```
 
 

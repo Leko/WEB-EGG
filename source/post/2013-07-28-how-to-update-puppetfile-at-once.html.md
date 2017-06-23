@@ -79,7 +79,6 @@ github "dropbox",     "1.0.0"
 github "mysql",       "1.0.0"
 github "iterm2",      "1.0.0"
 github "chrome",      "1.0.0"
-
 ```
 
 
@@ -153,7 +152,6 @@ github "alfred",         "1.1.1"
 github "wunderlist",     "1.0.0"
 …
 # ---/auto update---
-
 ```
 
 

@@ -50,7 +50,6 @@ rakeタスクにデプロイコマンドがくっついているので、それ�
 ```
 bundle exec rake build
 bundle exec rake release
-
 ```
 
 
@@ -96,7 +95,6 @@ deployment:
       - git config user.email $RUBYGEMS_EMAIL
       - bundle exec rake build
       - bundle exec rake release
-
 ```
 
 

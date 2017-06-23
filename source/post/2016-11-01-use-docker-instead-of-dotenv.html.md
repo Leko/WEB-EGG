@@ -30,7 +30,6 @@ Dockerを利用するようになり、環境変数の注入が簡単になっ�
 
 ```
 docker run {SOME_CONTAINER} -e SOME_VAR1=SOME_VALUE1 -e SOME_VAR2=SOME_VALUE2
-
 ```
 
 
@@ -43,7 +42,6 @@ Dockerに.envファイルを読み込ませる
 
 ```
 docker run {SOME_CONTAINER} --env-file .env
-
 ```
 
 
@@ -74,7 +72,6 @@ services:
       - redis
   redis:
     image: 'redis:latest'
-
 ```
 
 
@@ -101,7 +98,6 @@ services:
       - redis
   redis:
     image: 'redis:latest'
-
 ```
 
 

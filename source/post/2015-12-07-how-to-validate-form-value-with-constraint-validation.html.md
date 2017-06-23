@@ -82,7 +82,6 @@ checkValidityとValidityState
 
 ```markup
 <input id="form-text" type="text" required />
-
 ```
 
 
@@ -93,7 +92,6 @@ console.log(document.getElementById('form-text').checkValidity());    // false
 
 console.log(document.getElementById('form-text').validity);   // ValidityState {}
 console.log(document.getElementById('form-text').validity.valueMissing);  // true
-
 ```
 
 
@@ -120,7 +118,6 @@ willValidateというプロパティもあります。
 候補の場合にtrueが、候補でない時にはfalseが、そもそもinput系のタグじゃない場合にはプロパティ自体が存在しません。
 
 ```markup
-
 ```
 
 
@@ -142,7 +139,6 @@ document.getElementById('form-text1').value = 'hogehoge';
 console.log(document.getElementById('form-text1').willValidate);  // false
 
 console.log(document.forms[0].willValidate);    // undefined
-
 ```
 
 

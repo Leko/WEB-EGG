@@ -61,7 +61,6 @@ git commit -m 'initial commit'
 hub create
 git push origin master
 hub browse
-
 ```
 
 
@@ -105,7 +104,6 @@ bundle install --path=vendor/bundle
 git add Gemfile*
 git commit -m 'Add rspec gem'
 git push origin feat/circle-ci
-
 ```
 
 
@@ -233,7 +231,6 @@ Githubにプルリクエストを作ってマージし、Code climateにカバ�
 +          gem install circleci-bundle-update-pr
 +          circleci-bundle-update-pr CircleCI circleci@example.com
 +        fi
-
 ```
 
 

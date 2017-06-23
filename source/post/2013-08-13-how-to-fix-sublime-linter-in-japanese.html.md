@@ -95,7 +95,6 @@ Nodejsが使われているなら日本語エラー出ないし。
 "sublimelinter_executable_map": {
     "javascript": "/opt/boxen/nodenv/shims/node"
 }
-
 ```
 
 

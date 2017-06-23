@@ -154,7 +154,6 @@ $ git clone git@github.com:Leko/godemo.git
 $ cd godemo
 $ bower install
 $ vagrant up --provision
-
 ```
 
 
@@ -169,7 +168,6 @@ $ vagrant@precise64:~$ cd go/src/godemo
 $ vagrant@precise64:~/go/src/godemo$ go get
 $ vagrant@precise64:~/go/src/godemo$ go get github.com/codegangsta/gin
 $ vagrant@precise64:~/go/src/godemo$ gin -p 8080
-
 ```
 
 
@@ -213,7 +211,6 @@ godemo/
 │   └── user_form.tpl
 ├── Procfile          # Heroku用
 └── main.go           # メインファイル
-
 ```
 
 
@@ -267,7 +264,6 @@ $ heroku addons:create rediscloud:30
 $ heroku addons:create heroku-postgresql:hobby-dev
 $ git push heroku master
 $ heroku open
-
 ```
 
 
@@ -278,7 +274,6 @@ $ heroku open
 
 ```
 $ heroku open
-
 ```
 
 

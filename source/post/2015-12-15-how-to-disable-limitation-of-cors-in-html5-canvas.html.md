@@ -95,7 +95,6 @@ xhr.onreadystatechange = function() {
   var buff = xhr.response;
   var blob = new Blob([buff], { type: ... });
 }
-
 ```
 
 

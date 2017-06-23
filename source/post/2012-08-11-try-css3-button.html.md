@@ -75,7 +75,6 @@ dsq_thread_id:
 -ms-border-radius: 2px;	/* IE系（たぶん未実装） */
 -webkit-border-radius: 2px;	/* Chrome,Safariなど */
 border-radius: 2px;	/* Operaやプレフィックス不要ブラウザに */
-
 ```
 
 
@@ -91,7 +90,6 @@ webkitとmozilla系では書き方が違うようなので注意。
 background: -o-linear-gradient(top, #0dbfc1, #09b7b1);
 background: -moz-linear-gradient(top, #0dbfc1, #09b7b1);
 background: -webkit-gradient(linear, left top, left bottom, from(#0dbfc1), to(#09b7b1));
-
 ```
 
 
@@ -103,7 +101,6 @@ background: -webkit-gradient(linear, left top, left bottom, from(#0dbfc1), to(#0
 text-shadow: 0px -1px 0px #000;
 border: 1px solid #08b1ab;
 box-shadow: 0px 1px 0px #fff inset;
-
 ```
 
 

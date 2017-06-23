@@ -68,7 +68,6 @@ shell, commandモジュールはシェルなので便利ですが、代わりに
     register: go_version
     ignore_errors: yes
     changed_when: "go_version.stdout.find('go{{ goversion }}')"
-
 ```
 
 
@@ -81,7 +80,6 @@ godep save実行後に`Godeps/Godeps.json`のdiffを見てもし差分が出て�
     shell: cd {{ apppath }} && go get && godep save && git diff Godeps/Godeps.json
     register: godep_diff
     changed_when: "godep_diff.stdout != ''"
-
 ```
 
 

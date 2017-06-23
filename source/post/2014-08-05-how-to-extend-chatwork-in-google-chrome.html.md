@@ -80,7 +80,6 @@ echo "bower_components" >> .gitignore
 git init
 git add .
 git commit -m "initial commit"
-
 ```
 
 
@@ -110,7 +109,6 @@ manifest.jsonは以下の内容にします。
         }
     ]
 }
-
 ```
 
 
@@ -118,7 +116,6 @@ manifest.jsonは以下の内容にします。
 
 ```javascript
 alert('チャットワークです');
-
 ```
 
 
@@ -212,7 +209,6 @@ $(document).on('keydown', function(e) {
 cheet('U U D D L R L R b a', function() {
     alert('コナミコマンド発動!');
 });
-
 ```
 
 
@@ -271,7 +267,6 @@ AAなど等幅にしてほしいテキストを送る場合に便利です。
 
     global.util = util;
 }(this));
-
 ```
 
 
@@ -309,7 +304,6 @@ var util = {
 
     // ...
 };
-
 ```
 
 
@@ -335,7 +329,6 @@ var util = {
 
     // ...
 };
-
 ```
 
 
@@ -377,7 +370,6 @@ $(function() {
     util.$chatText = $("#_chatText");
     util.$sendBtn = $("#_sendButton");
 });
-
 ```
 
 
@@ -391,7 +383,6 @@ $(function() {
 $(function() {
     util.send('hogehoge');
 });
-
 ```
 
 
@@ -425,7 +416,6 @@ AAを投稿する
 　　　　　　　　　　　　　　ぴちゅーん
 　　　　　　　　　_ _
 　　　　　　　　（_ _ ）――――――――
-
 ```
 
 
@@ -479,7 +469,6 @@ main.jsの内容は以下の通りになります。
         });
     });
 }(this));
-
 ```
 
 

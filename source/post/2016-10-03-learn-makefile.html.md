@@ -48,7 +48,6 @@ Makefileを作ってみる
 build: main.go
     go get -u github.com/kataras/iris/iris
     go build -v -o app main.go
-
 ```
 
 
@@ -59,7 +58,6 @@ build: main.go
 
 任意のタスク名2: 
     対象ファイルがなくてもいいらしい？
-
 ```
 
 

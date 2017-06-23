@@ -40,7 +40,6 @@ if (array_key_exists(variable_get('user_admin_role'), $account->roles)) {
 } else {
     // 管理者じゃない
 }
-
 ```
 
 
@@ -94,7 +93,6 @@ roleテーブルの初期値を探してコードを追ってみると
   $rid_authenticated = db_insert('role')
     ->fields(array('name' => 'authenticated user', 'weight' => 1))
     ->execute();
-
 ```
 
 
@@ -162,7 +160,6 @@ user_rolesの戻り値はDBからSELECTしてきた`[ロールID => ロール名
   user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
   // Set this as the administrator role.
   variable_set('user_admin_role', $admin_role->rid);
-
 ```
 
 
@@ -179,7 +176,6 @@ variable_setは内部的にDBを使用しているので、永続化される値
 
 ```
 variable_get('user_admin_role')
-
 ```
 
 

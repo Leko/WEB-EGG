@@ -19,7 +19,6 @@ tags:
 
 ```
 XXX_URL=pg://xxx:yyy@zzz/hoge
-
 ```
 
 
@@ -95,7 +94,6 @@ private
       end
     end
   end
-
 ```
 
 
@@ -106,7 +104,6 @@ private
 ```yaml
 development: # ※ここは実行時の環境による
   url: &lt;%%= ENV['DATABASE_URL'] %>
-
 ```
 
 
@@ -125,7 +122,6 @@ development: # ※ここは実行時の環境による
 #   production:
 #     url: &lt;%%= ENV['DATABASE_URL'] %>
 #
-
 ```
 
 
@@ -153,7 +149,6 @@ DATABASE_URL=postgresql://localhost/app_development bundle exec rails s
 
 # 接続できた（config/database.ymlは間違ってない）
 bundle exec rails s
-
 ```
 
 

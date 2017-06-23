@@ -83,7 +83,6 @@ class Node
 
     connect: (node) ->
         @connections.push node
-
 ```
 
 
@@ -115,7 +114,6 @@ class Node
 
     connect: (node) ->
         @connections.push node
-
 ```
 
 
@@ -178,7 +176,6 @@ class ForceDirectedGraph
             # xy座標の決定
             targetNode.x += targetNode.vx
             targetNode.y += targetNode.vy
-
 ```
 
 
@@ -273,7 +270,6 @@ class Canvas
         for node in graph.nodes
             @circle(node.x, node.y, node.r, node.background)
             @text(node.value, node.x, node.y)
-
 ```
 
 
@@ -347,7 +343,6 @@ do ($ = jQuery) ->
         canvas.clear().fill('white')
         canvas.draw()
     , 50
-
 ```
 
 

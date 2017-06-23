@@ -24,7 +24,6 @@ $a = true or true;
 $a = true or false;
 $a = false or true;
 $a = false or false;
-
 ```
 
 
@@ -52,7 +51,6 @@ $a = false or false;
 </p>
 
 
-
 ```
 
 $a = false and false => false
@@ -62,7 +60,6 @@ $a = true or true    => true
 $a = true or false   => true
 $a = false or true   => false
 $a = false or false  => false
-
 ```
 
 
@@ -111,7 +108,6 @@ $a = false or false  => false
 
 ($a = true) and false;  // 後ろのfalseは評価されるだけで$aに影響しない
 ($a = false) or true;   // 後ろのtrueは評価されるだけで$aに影響しない
-
 ```
 
 
@@ -155,7 +151,6 @@ false and p("false andn");
 
 true or p("true orn");
 false or p("false orn");
-
 ```
 
 
@@ -168,12 +163,10 @@ false or p("false orn");
 
 
 
-
 ```
 
 true and
 false or
-
 ```
 
 
@@ -246,7 +239,6 @@ function hoge($fn = null) {
 
     return $fn;
 }
-
 ```
 
 
@@ -266,7 +258,6 @@ function foo($fn = null) {
 
     return $fn;
 }
-
 ```
 
 
@@ -278,13 +269,11 @@ function foo($fn = null) {
 
 
 
-
 ```
 
 var_dump(hoge());   // class Closure#1 (0) {}
 
 var_dump(foo());    // class Closure#1 (0) {}
-
 ```
 
 
@@ -310,7 +299,6 @@ function foo($fn = false) {
 
     return $fn;
 }
-
 ```
 
 
@@ -344,7 +332,6 @@ function foo($fn = false) {
 
 
 ```markup
-
 
 
 ```

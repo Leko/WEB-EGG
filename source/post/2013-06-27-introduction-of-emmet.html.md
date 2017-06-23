@@ -133,7 +133,6 @@ CSSやjQueryを使ったことが有る方なら、すぐ馴染めると思い�
 
 ```
 link
-
 ```
 
 
@@ -144,7 +143,6 @@ headタグ内に必ず入れると思います。
 
 ```
 &lt;link rel="stylesheet" href=""&gt;
-
 ```
 
 
@@ -157,7 +155,6 @@ headタグ内に必ず入れると思います。
 
 ```
 nav&gt;ul#menu&gt;li*5&gt;a[href=#]
-
 ```
 
 
@@ -176,7 +173,6 @@ nav&gt;ul#menu&gt;li*5&gt;a[href=#]
         &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/nav&gt;
-
 ```
 
 
@@ -195,7 +191,6 @@ liに`*5`とついていますが、タグ名の後ろに`*数字`を入れる�
 
 ```
 .thumb{サンプル$}*6
-
 ```
 
 
@@ -213,7 +208,6 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 &lt;div class="thumb"&gt;サンプル4&lt;/div&gt;
 &lt;div class="thumb"&gt;サンプル5&lt;/div&gt;
 &lt;div class="thumb"&gt;サンプル6&lt;/div&gt;
-
 ```
 
 
@@ -234,7 +228,6 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 
 ```
 !
-
 ```
 
 
@@ -254,7 +247,6 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 
 &lt;/body&gt;
 &lt;/html&gt;
-
 ```
 
 
@@ -271,7 +263,6 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 
 ```
 html:4t
-
 ```
 
 
@@ -293,7 +284,6 @@ IEが居る限り4.01と戦わざるを得ません。**何とか覚えましょ
 
 &lt;/body&gt;
 &lt;/html&gt;
-
 ```
 
 
@@ -326,7 +316,6 @@ EmmetのCSSの基本形は、こんな感じです。
 
 ```
 tac
-
 ```
 
 
@@ -335,7 +324,6 @@ tac
 
 ```
 text-align: center;
-
 ```
 
 
@@ -356,7 +344,6 @@ pf =&gt; position: fixed;
 w100 =&gt; width: 100px;
 fsz12 =&gt; font-size: 12px;
 fsz12pt =&gt; font-size: 12pt;
-
 ```
 
 
@@ -383,7 +370,6 @@ backgroundなどを一括指定する場合に使うことが多いかと思い�
 bg+ =&gt; background: #fff url() 0 0 no-repeat;
 f+ =&gt; font: 1em Arial,sans-serif;
 bd+ =&gt; border: 1px solid #000;
-
 ```
 
 
@@ -414,7 +400,6 @@ box-sizing: border-box;
 -webkit-box-sizing: content-box;
 -moz-box-sizing: content-box;
 box-sizing: content-box;
-
 ```
 
 
@@ -427,7 +412,6 @@ box-sizing: content-box;
 -webkit-box-shadow: inset hoff voff blur color;
 -moz-box-shadow: inset hoff voff blur color;
 box-shadow: inset hoff voff blur color;
-
 ```
 
 
@@ -442,7 +426,6 @@ box-shadow: inset hoff voff blur color;
 -ms-transition: prop time;
 -o-transition: prop time;
 transition: prop time;
-
 ```
 
 
@@ -461,7 +444,6 @@ border-radius: ;
 -webkit-border-radius: 10px;
 -moz-border-radius: 10px;
 border-radius: 10px;
-
 ```
 
 

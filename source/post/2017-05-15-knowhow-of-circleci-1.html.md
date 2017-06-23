@@ -49,7 +49,6 @@ machine:
   pre:
     - curl -sSL https://s3.amazonaws.com/circle-downloads/install-circleci-docker.sh | bash -s -- 1.10.0
     - sudo pip install docker-compose==1.8.0
-
 ```
 
 
@@ -78,7 +77,6 @@ runしたコンテナをrmする時にエラーになります。
 ```
 Error removing intermediate container XXXXXXXXX:
 Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btrfs snapshot: operation not permitted
-
 ```
 
 
@@ -101,7 +99,6 @@ Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btr
 
 ```
 open /proc/self/oom_score_adj: no such file or directory
-
 ```
 
 

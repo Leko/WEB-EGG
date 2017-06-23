@@ -17,7 +17,6 @@ composerで提供されているコマンドの中身を見ていたら
 
 ```
 #! /usr/bin/env php
-
 ```
 
 
@@ -26,7 +25,6 @@ composerで提供されているコマンドの中身を見ていたら
 
 ```
 $ ./shebang-php
-
 ```
 
 
@@ -65,7 +63,6 @@ $ ./shebang-php
 <?php
 
 echo "Hello, world!\n";
-
 ```
 
 
@@ -82,7 +79,6 @@ echo "Hello, world!\n";
 #!/usr/bin/env ruby
 
 puts "Hello, world!\n"
-
 ```
 
 
@@ -100,7 +96,6 @@ puts "Hello, world!\n"
 
 // Harmonyのオプションを有効にすることも出来る模様
 console.log('Hello, world!')
-
 ```
 
 
@@ -119,11 +114,9 @@ console.log('Hello, world!')
 
 
 
-
 ```
 
 //usr/bin/env go run $0 $@ ; exit
-
 ```
 
 

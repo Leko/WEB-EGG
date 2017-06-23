@@ -30,7 +30,6 @@ Google Cloud StorageはブラウザからGUIで操作する方法と、[Google C
 
 ```bash
 brew cask install google-cloud-sdk
-
 ```
 
 
@@ -38,7 +37,6 @@ brew cask install google-cloud-sdk
 
 ```bash
 gsutil
-
 ```
 
 
@@ -83,7 +81,6 @@ gs://web.timer.builderscon.io/all.css:
     ACL:            ACCESS DENIED. Note: you need OWNER permission
                 on the object to read its ACL.
 TOTAL: 1 objects, 2225 bytes (2.17 KiB)
-
 ```
 
 
@@ -120,7 +117,6 @@ $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 &lt; Server: UploadServer
 
 ...
-
 ```
 
 
@@ -141,7 +137,6 @@ Edit metadataからキャッシュの情報を書き換えられます。
 ```bash
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 &lt; Cache-Control: public, max-age=30
-
 ```
 
 
@@ -155,7 +150,6 @@ gsutilコマンドの場合は`setmeta`サブコマンドを使用します。
 gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.builderscon.io/all.css
 Setting metadata on gs://web.timer.builderscon.io/all.css...
 BadRequestException: 400 Invalid argument.
-
 ```
 
 
@@ -175,7 +169,6 @@ Saved Application Default Credentials.
 You are now logged in as [XXX.XXX@gmail.com].
 Your current project is [None].  You can change this setting by running:
   $ gcloud config set project PROJECT_ID
-
 ```
 
 
@@ -184,7 +177,6 @@ Your current project is [None].  You can change this setting by running:
 ```bash
 $ gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.builderscon.io/all.css
 Setting metadata on gs://web.timer.builderscon.io/all.css...
-
 ```
 
 
@@ -193,7 +185,6 @@ Setting metadata on gs://web.timer.builderscon.io/all.css...
 ```bash
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 &lt; Cache-Control: public, max-age=100
-
 ```
 
 

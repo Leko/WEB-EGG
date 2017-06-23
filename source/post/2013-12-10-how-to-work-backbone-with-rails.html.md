@@ -73,7 +73,6 @@ class TasksController &lt; ApplicationController
   
   # ...
 end
-
 ```
 
 
@@ -113,7 +112,6 @@ class TasksController &lt; ApplicationController
   
   # ...
 end
-
 ```
 
 
@@ -147,7 +145,6 @@ var Task = Backbone.Model.extend({
         return res;
     }
 });
-
 ```
 
 

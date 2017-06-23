@@ -119,7 +119,6 @@ git push -u origin master
 cd ../wordpress
 git submodule add [theme_repo_url] wp-content/themes/YOUR_THEME
 git commit -am "テーマをサブモジュール化"
-
 ```
 
 
@@ -150,13 +149,11 @@ $ cd wp
 $ git init --bare
 $ cp hooks/post-update-sample hooks/post-update
 $ vim hooks/post-recieve
-
 ```
 
 
 ```
 (cd /path/to/docroot/repo && git --git-dir=. pull)
-
 ```
 
 
@@ -167,7 +164,6 @@ apache側の設定とかは適宜やっといてください。
 ```
 $ cd ~
 $ git clone /path/to/bare/repo wp
-
 ```
 
 
@@ -176,7 +172,6 @@ $ git clone /path/to/bare/repo wp
 ```
 $ git remote add ssh://hoge@foo.jp/~/path/to/bare/repo
 $ git push origin master
-
 ```
 
 

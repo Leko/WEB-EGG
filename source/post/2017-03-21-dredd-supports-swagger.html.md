@@ -41,7 +41,6 @@ READMEのとおりです。
 
 ```
 npm install -g dredd
-
 ```
 
 
@@ -77,7 +76,6 @@ paths:
                 type: string
             required:
               - message
-
 ```
 
 
@@ -99,7 +97,6 @@ app.get('/', function(req, res) {
 })
 
 app.listen(3000);
-
 ```
 
 
@@ -118,7 +115,6 @@ info: Beginning Dredd testing...
 pass: GET / duration: 56ms
 complete: 1 passing, 0 failing, 0 errors, 0 skipped, 1 total
 complete: Tests took 64ms
-
 ```
 
 
@@ -155,7 +151,6 @@ No example value for required parameter in API description document: petId ( > /
 warn: Compilation warning in file 'swagger.yml': Ambiguous URI parameter in template: /beta/pets/{petId}
 No example value for required parameter in API description document: petId ( > /beta/pets/{petId} > OPTIONS)
 error: Error when processing API description.
-
 ```
 
 

@@ -81,7 +81,6 @@ const client = new Nextengine({
 })
 client.query(ReceiveOrder).count()
   .then(count => console.log(count))
-
 ```
 
 
@@ -111,7 +110,6 @@ client.query(Goods)
   .offset(350)
   .get()
   .then(results => console.log(results))
-
 ```
 
 
@@ -144,7 +142,6 @@ stringify(input)
   .then(csv => deflate(csv))
   .then(gz => client.uploadAndWaitFor({ data_type: 'gz', data: gz }))
   .then(() => console.log('Imported!'))
-
 ```
 
 
@@ -180,7 +177,6 @@ client.query(Goods)
   .offset(350)
   .get()
   .then(results => console.log(results))
-
 ```
 
 
@@ -202,7 +198,6 @@ class MyNextengine extends Nextengine {
     return new MyConnection(accessToken, refreshToken)
   }
 }
-
 ```
 
 

@@ -27,7 +27,6 @@ person.name_was       # => nil
 person.name_change    # => [nil, "Bob"]
 person.name = 'Bill'
 person.name_change    # => [nil, "Bill"]
-
 ```
 
 
@@ -62,7 +61,6 @@ class Profile {
     this.name = name
   }
 }
-
 ```
 
 
@@ -86,7 +84,6 @@ const Profile = DirtyCheckable(class {
     this.name = name
   }
 })
-
 ```
 
 
@@ -98,7 +95,6 @@ function DirtyCheckable (cls) {
     // ...
   }
 }
-
 ```
 
 
@@ -164,7 +160,6 @@ export default function DirtyCheckable (cls) {
     }
   }
 }
-
 ```
 
 
@@ -190,7 +185,6 @@ set (instance, prop, value) {
     instance.dirties[prop].set(value)
     instance[prop] = value
   }
-
 ```
 
 
@@ -222,7 +216,6 @@ export default function DirtyCheckable (cls) {
     }
   }
 }
-
 ```
 
 
@@ -247,7 +240,6 @@ hoge.name = 'Tom'
 console.log('hoge.name:', hoge.name)
 console.log('changes:', hoge.changes())
 console.log('changed:', hoge.changed())
-
 ```
 
 
@@ -262,7 +254,6 @@ changed: false
 hoge.name: Tom
 changes: { name: [ 'John', 'Tom' ] }
 changed: true
-
 ```
 
 
@@ -313,7 +304,6 @@ const observer = {
 
   // ...
 }
-
 ```
 
 
@@ -340,7 +330,6 @@ console.log('hoge.name:', hoge.name)
 console.log('nameWas:', hoge.nameWas())
 console.log('nameChanged:', hoge.nameChanged())
 console.log('nameChange:', hoge.nameChange())
-
 ```
 
 
@@ -355,7 +344,6 @@ hoge.name: Tom
 nameWas: John
 nameChanged: true
 nameChange: [ 'John', 'Tom' ]
-
 ```
 
 

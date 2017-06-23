@@ -49,7 +49,6 @@ SDカードをフォーマット
 
 ```
 diskutil eraseDisk FAT32 RPI /dev/disk2
-
 ```
 
 
@@ -64,7 +63,6 @@ RasbianをSDカードに書き込み
 
 ```
 sudo dd bs=1m if=$HOME/Downloads/2017-04-10-raspbian-jessie.img of=/dev/rdisk2
-
 ```
 
 
@@ -110,7 +108,6 @@ Wi-Fiを設定する
 ```
 sudo sh -c 'wpa_passphrase {SSID} {PASSPHRASE} >> /etc/wpa_supplicant/wpa_supplicant.conf'
 sudo reboot -h now
-
 ```
 
 
@@ -123,7 +120,6 @@ sudo reboot -h now
 
 ```
 curl https://google.co.jp
-
 ```
 
 

@@ -119,7 +119,6 @@ USER_NAME.github.com/
     - _config.yml
     - _layouts/
         - default.html
-
 ```
 
 
@@ -204,7 +203,6 @@ layout: default
 
 
 ほげほげ
-
 ```
 
 </div>

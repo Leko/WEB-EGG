@@ -53,7 +53,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=app
-
 ```
 
 
@@ -92,7 +91,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=app
-
 ```
 
 

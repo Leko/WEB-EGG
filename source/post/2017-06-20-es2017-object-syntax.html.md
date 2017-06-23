@@ -44,7 +44,6 @@ function getProfile () {
 
     return obj
 }
-
 ```
 
 
@@ -64,7 +63,6 @@ function getProfile () {
 const name = 'Leko'
 const age = 25
 return { name, age }
-
 ```
 
 
@@ -87,7 +85,6 @@ return {
     //     return this.name
     // }
 }
-
 ```
 
 
@@ -115,7 +112,6 @@ return {
     //     this.name = name
     // },
 }
-
 ```
 
 
@@ -141,7 +137,6 @@ const ret = {}
 ret[keyName] = 'Leko'
 ret['hoge_' + 1] = 123
 return ret
-
 ```
 
 
@@ -172,7 +167,6 @@ const { name, age } = obj
 // 以下と等価
 const name = obj.name
 const age = obj.age
-
 ```
 
 
@@ -189,7 +183,6 @@ const cheapClone = ({ name, age }) => {
 const obj = { name: 'Leko', age: 25 }
 const obj2 = cheapClone(obj)
 console.log(obj === obj2) // false
-
 ```
 
 

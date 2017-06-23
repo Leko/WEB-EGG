@@ -54,7 +54,6 @@ class Sample {
 }
 
 Sample::hogehoge(1,2,3,4,5);
-
 ```
 
 
@@ -156,7 +155,6 @@ abstract class Model {
 class Test extends Model {
     protected static $table_name = 'test';
 }
-
 ```
 
 
@@ -217,7 +215,6 @@ class Model {
 
         return $sql;
     }
-
 ```
 
 
@@ -257,7 +254,6 @@ Test::find_all(array('id' => 1));
 
 // "SELECT * FROM test WHERE name=Leko AND age => 22"
 Test::find_all(array('name' => 'Leko', 'age' => 22));
-
 ```
 
 
@@ -299,7 +295,6 @@ public static function __callStatic($method_name, $args) {
         return self::find_all($where);
     }
 }
-
 ```
 
 
@@ -361,7 +356,6 @@ Test::find_all_by_name_and_age('Leko', 22);
 
 // "SELECT * FROM test WHERE name=Leko and created_at=2014-07-20 04:00:00"
 Test::find_all_by_name_and_created_at('Leko', date('Y-m-d h:i:s'));
-
 ```
 
 
@@ -441,7 +435,6 @@ abstract class Model_Base extends Model_Crud
         }
     }
 }
-
 ```
 
 

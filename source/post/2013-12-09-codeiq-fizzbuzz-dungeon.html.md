@@ -38,7 +38,6 @@ LV1
 
 ```javascript
 i % 15 ? i % 5 ? i % 3 ? 0 : 1 : 2 : 3
-
 ```
 
 
@@ -63,7 +62,6 @@ ifや三項演算での分岐が使えなくなってしまいました。
 
 ```javascript
 !(i % 5) * 2 + !(i % 3)
-
 ```
 
 
@@ -97,7 +95,6 @@ LV3
 
 ```javascript
 (Boolean(i%5)-1)*-2+(Boolean(i%3)-1)*-1
-
 ```
 
 
@@ -123,7 +120,6 @@ LV4
 
 ```javascript
 (Boolean(i-parseInt(i/5)*5)-1)*-2+(Boolean(i-parseInt(i/3)*3)-1)*-1
-
 ```
 
 

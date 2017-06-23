@@ -100,7 +100,6 @@ $ echo '遙か彼方に小形飛行機が見える。' | bundle exec ruby jp-val
 $ echo '遙か彼方に小形飛行機が見える。' | bundle exec ruby jp-validate.rb fix --diff
 -遙か彼方に小形飛行機が見える。
 +遥か彼方に小型飛行機が見える。
-
 ```
 
 
@@ -140,7 +139,6 @@ line:67, column:14: '小形飛行機' to '小型飛行機'(誤変換)
 line:68, column:2: '遙か' to '遥か'(表外漢字あり)
 line:68, column:7: '小形飛行機' to '小型飛行機'(誤変換)
 line:69, column:2: '遥か' to '遥か'(表外漢字あり)
-
 ```
 
 

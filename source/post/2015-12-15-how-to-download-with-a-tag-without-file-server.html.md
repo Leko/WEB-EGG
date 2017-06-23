@@ -56,7 +56,6 @@ function download(uri, filename) {
 }
 
 download('data://text/html,Hello world!!', 'dummy.html');
-
 ```
 
 

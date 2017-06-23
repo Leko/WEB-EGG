@@ -36,7 +36,6 @@ npmでは、
     "some_package": "my/private-repo#0.8.0"
   }
 }
-
 ```
 
 
@@ -55,7 +54,6 @@ clone用の鍵を生成してGithubに登録
 
 ```
 ssh-keygen -t rsa -C Githubのメールアドレス
-
 ```
 
 
@@ -70,7 +68,6 @@ ssh-keygen -t rsa -C Githubのメールアドレス
 $ ssh -o StrictHostKeyChecking=no -i 生成した鍵のパス -T git@github.com
 Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
 Hi blockenio/domain! You've successfully authenticated, but GitHub does not provide shell access.
-
 ```
 
 
@@ -105,7 +102,6 @@ ADD ./certs/readonly /root/.ssh/id_rsa
 RUN ssh -o StrictHostKeyChecking=no -T git@github.com || true
 RUN npm set progress=false \
     && npm -q install
-
 ```
 
 

@@ -87,7 +87,6 @@ GithubのリポジトリのURL（上記画像を参考）のように、フォ�
 
 ```markup
 <input type="url" class="form-control focus-then-select" readonly value="ssh://hoge.git" />
-
 ```
 
 
@@ -98,7 +97,6 @@ jQuery.fn.focusThenSelect = function () {
     });
 };
 $('input.focus-then-select').focusThenSelect();
-
 ```
 
 

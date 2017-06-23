@@ -277,7 +277,6 @@ nodeでいう[path](https://nodejs.org/api/path.html)モジュールのような
     │   ├── Controller
     │   └── Middleware
     └── Model
-
 ```
 
 

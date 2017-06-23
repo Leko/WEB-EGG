@@ -119,7 +119,6 @@ remote_path: ftpのルートにするディレクトリパス
 file_permissions: 作成するファイルのパーミッション
 dir_permissions: 作成するディレクトリのパーミッション
 ssh_key_file: ローカルにある公開鍵までのパス
-
 ```
 
 
@@ -256,7 +255,6 @@ Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、
         "selector": "text, source, meta, string, punctuation, constant"
     }
 ],
-
 ```
 
 
@@ -358,7 +356,6 @@ Sublime textで書いているコードを、[Aizu Online Judge](http://judge.u-
     "user_name": "aojのユーザID",
     "password": "aojのパスワード"
 }
-
 ```
 
 

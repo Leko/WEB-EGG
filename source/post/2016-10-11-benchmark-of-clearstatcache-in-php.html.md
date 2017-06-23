@@ -46,7 +46,6 @@ file_exists($file); // true, 当然の結果
 unlink($file);
 
 file_exists($file); // true, ！？
-
 ```
 
 
@@ -143,13 +142,11 @@ file_exists($file); // true, ！？
 
 
 
-
 ```
 
 $ php -i | grep realpath_cache_
 realpath_cache_size => 16K => 16K
 realpath_cache_ttl => 120 => 120
-
 ```
 
 
