@@ -1,0 +1,33 @@
+@import "./post";
+@import "./card";
+
+.post {
+  $padding-vertical: 20px;
+  $padding-horizontal: 20px;
+
+  &__header {
+    padding: $padding-vertical $padding-horizontal;
+    background-color: rgba($base-dark, .6);
+  }
+  &__content {
+    &--summary {
+      font-size: $font-size-normal;
+    }
+  }
+}
+
+.card {
+  &__header {
+    padding: 0;
+    color: $base-light;
+    background: $base-dark;
+  }
+}
+
+.post-card {
+  margin-bottom: 30px;
+
+  &--first {
+
+  }
+}

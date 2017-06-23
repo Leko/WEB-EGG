@@ -1,0 +1,27 @@
+html, body {
+  color: $base-dark;
+  background-color: $base-light;
+}
+
+a {
+  color: $base-primary;
+  text-decoration: none;
+  box-shadow: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.title {
+  font-family: Montserrat, sans-serif;
+
+  &__link {
+    transition: color .1s;
+    color: $base-ex-dark;
+
+    &:hover {
+      color: $base-accent;
+    }
+  }
+}
