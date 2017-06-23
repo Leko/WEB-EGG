@@ -11,30 +11,41 @@
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body>
-    <h1 class="title">
-      <a href="/" class="title__link">
-        <%= config[:meta][:sitename] %>
-      </a>
-    </h1>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-xl-10">
+          <h1 class="title">
+            <a href="/" class="title__link">
+              <%= config[:meta][:sitename] %>
+            </a>
+          </h1>
 
-    <div role="main">
-      <%= yield %>
+          <div role="main">
+            <div class="row">
+              <div class="col-sm-9">
+                <%= yield %>
+              </div>
+              <div class="col-sm-3">
+                <aside>
+                  <h2>Recent Articles</h2>
+                  <ol>
+                    <% blog.articles[0...10].each do |article| %>
+                      <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+                    <% end %>
+                  </ol>
+
+                  <h2>Tags</h2>
+                  <ol>
+                    <% blog.tags.each do |tag, articles| %>
+                      <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
+                    <% end %>
+                  </ol>
+                </aside>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <aside>
-      <h2>Recent Articles</h2>
-      <ol>
-        <% blog.articles[0...10].each do |article| %>
-          <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-        <% end %>
-      </ol>
-
-      <h2>Tags</h2>
-      <ol>
-        <% blog.tags.each do |tag, articles| %>
-          <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
-        <% end %>
-      </ol>
-    </aside>
   </body>
 </html>
