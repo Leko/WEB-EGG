@@ -31,6 +31,19 @@
   strong {
     background: linear-gradient(transparent 60%, $base-accent 60%);
   }
+  table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      border: 1px solid $devider-color;
+    }
+  }
   pre {
     max-width: 100%;
     overflow: scroll;
