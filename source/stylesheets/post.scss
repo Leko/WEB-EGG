@@ -3,11 +3,13 @@
 
   @mixin textlist () {
     margin-bottom: 0;
+    padding: 0;
 
     & li {
       display: inline-block;
       margin-bottom: 0;
       list-style-type: none;
+      line-height: 1.6em;
 
       &:not(:last-child) {
         margin-right: 5px;
@@ -64,8 +66,15 @@
       padding: 4px 8px;
       color: $base-ex-light;
       font-size: $font-size-ex-small;
+      background-color: transparent;
       border: 1px solid $base-ex-light;
       border-radius: 100px;
+
+      &:hover {
+        text-decoration: none;
+        color: $base-dark;
+        background-color: $base-ex-light;
+      }
     }
   }
   &__content {
