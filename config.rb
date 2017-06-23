@@ -27,6 +27,21 @@ page '/*.txt', layout: false
 ###
 # Helpers
 ###
+activate :syntax, :line_numbers => false
+
+set :markdown_engine, :redcarpet
+set :markdown, {
+  autolink:            true,
+  space_after_headers: true,
+  superscript:         true,
+  strikethrough:       true,
+  tables:              true,
+  fenced_code_blocks:  true,
+  footnotes:           true,
+  with_toc_data:       true,
+  smartypants:         false, # https://www.movabletype.jp/documentation/mt6/compose/text-format.html
+  no_intra_emphasis:   true,  # http://blog.willnet.in/entry/20110828/1314552937
+}
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths

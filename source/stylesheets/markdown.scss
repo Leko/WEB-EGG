@@ -35,18 +35,19 @@
     max-width: 100%;
     overflow: scroll;
   }
-  pre[class*="language-"] {
+  pre.highlight {
     margin-bottom: $margin-item;
+    padding: 10px;
 
-    .token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string {
-      background: transparent;
+    code {
+      display: inherit;
+      padding: 0;
+      background-color: transparent;
+      font-family: 'Source Code Pro', monospace;
+      font-weight: normal;
     }
   }
-  code:not([class*="language-"]) {
+  code {
     display: inline-block;
     padding: 1px 4px;
     border-radius: 2px;

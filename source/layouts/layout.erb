@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <title><%= "#{current_article.title} | " unless current_article.nil? %><%= config[:meta][:sitename] %></title>
     <link href="//fonts.googleapis.com/css?family=Montserrat:700|Source+Code+Pro:600" rel="stylesheet" type="text/css"/>
-    <%= stylesheet_link_tag 'all' %>
+    <%= stylesheet_link_tag 'all', 'highlighting' %>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
   </head>
   <body>
