@@ -1,0 +1,32 @@
+.sidebar {
+  h2 {
+    margin: 0;
+  }
+
+  .card {
+    margin-bottom: 30px;
+  }
+
+  .summary__title {
+    $margin: 20px;
+
+    margin-top: $margin;
+    & + .post__tags {
+      margin-top: $margin;
+    }
+  }
+
+  .post__tags {
+    margin-top: 0;
+
+    .post__tags__tag {
+      color: $base-dark;
+      border-color: $base-dark;
+
+      &:hover {
+        color: $base-light;
+        background-color: $base-dark;
+      }
+    }
+  }
+}

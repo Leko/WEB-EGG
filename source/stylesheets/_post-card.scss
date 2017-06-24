@@ -21,16 +21,10 @@
   }
 }
 
-.card {
-  &__header {
-    padding: 0;
-  }
-}
-
 .post-card {
   margin-top: 30px;
 
-  .card__footer {
+  .card__header, .card__footer {
     padding: 0;
   }
 

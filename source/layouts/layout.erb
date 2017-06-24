@@ -25,22 +25,48 @@
               <div class="col-sm-9">
                 <%= yield %>
               </div>
-              <div class="col-sm-3">
-                <aside>
-                  <h2>Recent Articles</h2>
-                  <ol>
-                    <% blog.articles[0...10].each do |article| %>
-                      <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-                    <% end %>
-                  </ol>
-
-                  <h2>Tags</h2>
-                  <ol>
-                    <% blog.tags.each do |tag, articles| %>
-                      <li><%= link_to "#{tag} (#{articles.size})", tag_path(tag) %></li>
-                    <% end %>
-                  </ol>
-                </aside>
+              <div class="col-sm-3 sidebar">
+                <div class="card">
+                  <header class="card__header">
+                    <h2>Recent Articles</h2>
+                  </header>
+                  <section class="card__body">
+                    <aside>
+                      <ol>
+                        <% blog.articles[0...10].each do |article| %>
+                          <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
+                        <% end %>
+                      </ol>
+                    </aside>
+                  </section>
+                </div>
+                <div class="card">
+                  <header class="card__header">
+                    <h2>Tags</h2>
+                  </header>
+                  <section class="card__body">
+                    <aside>
+                      <% tags = blog.tags.sort_by{|tag, articles| articles.size}.reverse %>
+                      <ul class="post__tags">
+                        <% tags.first(20).each do |tag, articles| %>
+                          <li>
+                            <%= link_to "#{tag} (#{articles.size})", tag_path(tag), :class => 'post__tags__tag' %>
+                          </li>
+                        <% end %>
+                      </ul>
+                      <details>
+                        <summary class="summary__title">Show all tags</summary>
+                        <ul class="post__tags">
+                          <% tags.slice(20..-1).each do |tag, articles| %>
+                            <li>
+                              <%= link_to "#{tag} (#{articles.size})", tag_path(tag), :class => 'post__tags__tag' %>
+                            </li>
+                          <% end %>
+                        </ul>
+                      </details>
+                    </aside>
+                  </section>
+                </div>
               </div>
             </div>
           </div>
