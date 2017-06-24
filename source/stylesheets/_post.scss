@@ -1,22 +1,6 @@
 .post {
   $margin-element-inner: 10px;
 
-  @mixin textlist () {
-    margin-bottom: 0;
-    padding: 0;
-
-    & li {
-      display: inline-block;
-      margin-bottom: 0;
-      list-style-type: none;
-      line-height: 1.6em;
-
-      &:not(:last-child) {
-        margin-right: 5px;
-      }
-    }
-  }
-
   &__header__wrapper {
     position: relative;
     overflow: hidden;

@@ -8,6 +8,11 @@
   &__header {
     padding: $padding-vertical $padding-horizontal;
     background-color: rgba($base-dark, .6);
+
+    &__wrapper {
+      color: $base-light;
+      background: $base-dark;
+    }
   }
   &__content {
     &--summary {
@@ -19,8 +24,6 @@
 .card {
   &__header {
     padding: 0;
-    color: $base-light;
-    background: $base-dark;
   }
 }
 
