@@ -27,6 +27,7 @@
         </div>
       </section>
       <footer class="card__footer">
+        <%= partial 'partials/share', locals: { post: current_resource } %>
         <%= partial 'partials/related_post', locals: { post: current_resource } %>
         <div id="disqus_thread"></div>
         <script>
