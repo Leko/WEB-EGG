@@ -11,7 +11,7 @@
 
 <div
   class="fb-like"
-  data-href="<%= URI.escape(config[:meta][:siteurl] + post.url) %>"
+  data-href="<%= escape_html(config[:meta][:siteurl] + post.url) %>"
   data-layout="button_count"
   data-action="like"
   data-size="small"
