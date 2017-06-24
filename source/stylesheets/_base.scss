@@ -15,9 +15,8 @@ a {
 }
 
 .title {
-  font-family: Montserrat, sans-serif;
-
   &__link {
+    font-family: Montserrat, sans-serif;
     transition: color .1s;
     color: $base-ex-dark;
 

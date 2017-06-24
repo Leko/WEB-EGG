@@ -1,7 +1,19 @@
-<header class="navbar">
-  <h1 class="title">
-    <a href="/" class="title__link">
-      <%= config[:meta][:sitename] %>
-    </a>
-  </h1>
-</header>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-xl-10">
+      <nav class="navbar navbar-toggleable-md navbar-light">
+        <a href="/" class="navbar-brand title__link">
+          <h1>
+            <%= config[:meta][:sitename] %>
+          </h1>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="form-inline ml-auto">
+            <input class="form-control" type="text" id="navbar-search" placeholder="Search">
+          </form>
+        </div>
+      </nav>
+    </div>
+  </div>
+</div>

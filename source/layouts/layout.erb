@@ -11,17 +11,17 @@
     <%= partial 'partials/google_font' %>
     <%= partial 'partials/disqus' %>
     <%= partial 'partials/fontawesome' %>
+    <%= partial 'partials/algolia' %>
 
     <%= stylesheet_link_tag 'all', 'highlighting' %>
     <%= yield_content :stylesheets %>
   </head>
   <body>
     <%= yield_content :body_opened %>
+    <%= partial 'partials/navbar' %>
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10">
-          <%= partial 'partials/navbar' %>
-
           <div role="main">
             <div class="row">
               <div class="col-sm-9">

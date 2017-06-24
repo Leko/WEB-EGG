@@ -1,6 +1,14 @@
 @import "./variables";
 @import "bootstrap-grid";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/custom";
 @import "bootstrap/utilities/flex";
+@import "bootstrap/utilities/spacing";
+@import "bootstrap/buttons";
+@import "bootstrap/forms";
+@import "bootstrap/nav";
+@import "bootstrap/navbar";
 @import "./base";
 @import "./pagination";
 @import "./card";
