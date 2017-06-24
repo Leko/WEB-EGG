@@ -15,6 +15,10 @@
 
   &__footer {
     padding: $padding-vertical $padding-horizontal;
+
+    &--nopad {
+      padding: 0;
+    }
   }
 
   &__header + &__body,

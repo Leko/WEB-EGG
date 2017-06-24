@@ -26,11 +26,11 @@
           <%= yield %>
         </div>
       </section>
-      <footer class="card__footer card__footer">
+      <footer class="card__footer">
+        <%= partial 'partials/related_post', locals: { post: current_resource } %>
         <div id="disqus_thread"></div>
         <script>
           var disqus_config = function () {
-            console.log(this.page, new Error)
             this.page.url = '<%= current_resource.url %>'
             this.page.identifier = '<%= current_resource.data.dsq_thread_id.try(:first) || current_resource.path %>'
           };

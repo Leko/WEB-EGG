@@ -1,0 +1,11 @@
+  <aside class="related-post">
+    <h3>こちらも併せてぜひ</h3>
+    <ul class="related-post__list">
+      <% post.similar_articles.take(config[:similar_posts]).each do |related_post| %>
+        <li class="related-post__list__item">
+          <%= link_to related_post.title, related_post.url %>
+          <time><%= related_post.date.strftime config[:date_format] %></time>
+        </li>
+      <% end %>
+    </ul>
+  </aside>

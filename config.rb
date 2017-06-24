@@ -9,6 +9,7 @@ config[:meta] = {
   :catchcopy => 'Work in progress...',
 }
 config[:date_format] = '%Y-%m-%d'
+config[:similar_posts] = 5
 
 # Per-page layout changes:
 #
@@ -27,8 +28,6 @@ page '/*.txt', layout: false
 ###
 # Helpers
 ###
-activate :syntax, :line_numbers => false
-
 set :markdown_engine, :redcarpet
 set :markdown, {
   autolink:            true,
@@ -68,6 +67,9 @@ activate :blog do |blog|
   blog.per_page = 15
   blog.page_link = "page/{num}"
 end
+
+activate :syntax, :line_numbers => false
+activate :similar
 
 page "/feed.xml", layout: false
 # Reload the browser automatically whenever files change
