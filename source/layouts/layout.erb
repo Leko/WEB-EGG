@@ -6,19 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <title><%= "#{current_article.title} | " unless current_article.nil? %><%= config[:meta][:sitename] %></title>
-    <link href="//fonts.googleapis.com/css?family=Montserrat:700|Source+Code+Pro:600" rel="stylesheet" type="text/css"/>
-    <%= stylesheet_link_tag 'all', 'highlighting' %>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+
+    <%= partial 'partials/google_font' %>
+    <%= partial 'partials/disqus' %>
+    <%= partial 'partials/fontawesome' %>
+
+    <%= stylesheet_link_tag 'all', 'highlighting' %>
+    <%= yield_content :stylesheets %>
   </head>
   <body>
     <div class="container-fluid">
       <div class="row justify-content-center">
         <div class="col-xl-10">
-          <h1 class="title">
-            <a href="/" class="title__link">
-              <%= config[:meta][:sitename] %>
-            </a>
-          </h1>
+          <%= partial 'partials/navbar' %>
 
           <div role="main">
             <div class="row">
@@ -73,7 +74,7 @@
         </div>
       </div>
     </div>
-    <script src="https://use.fontawesome.com/98d15c6cc0.js" async></script>
-    <script id="dsq-count-scr" src="//wpwebegg.disqus.com/count.js" async></script>
+    <%= partial 'partials/footer' %>
+    <%= yield_content :scripts %>
   </body>
 </html>
