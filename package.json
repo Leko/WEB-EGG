@@ -1,0 +1,25 @@
+{
+  "name": "webegg",
+  "version": "1.0.0",
+  "description": "[WIP]",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Leko/WEB-EGG.git"
+  },
+  "keywords": [
+    "blog",
+    "leko",
+    "WEB",
+    "EGG"
+  ],
+  "author": "Leko <leko.noor@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Leko/WEB-EGG/issues"
+  },
+  "homepage": "https://github.com/Leko/WEB-EGG#readme"
+}
