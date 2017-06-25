@@ -11,7 +11,6 @@
     <%= partial 'partials/google_font' %>
     <%= partial 'partials/disqus' %>
     <%= partial 'partials/fontawesome' %>
-    <%= partial 'partials/algolia' %>
 
     <%= stylesheet_link_tag 'all', 'highlighting' %>
     <%= yield_content :stylesheets %>
@@ -77,5 +76,6 @@
     </div>
     <%= partial 'partials/footer' %>
     <%= yield_content :scripts %>
+    <%= javascript_include_tag 'main', async: 'async' %>
   </body>
 </html>

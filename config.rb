@@ -71,6 +71,15 @@ end
 activate :syntax, :line_numbers => false
 activate :similar
 
+activate :external_pipeline, {
+  name: :webpack,
+  command: build? ?
+    "npm run build" :
+    "npm run develop",
+  source: ".tmp/dist",
+  latency: 1
+}
+
 page "/feed.xml", layout: false
 # Reload the browser automatically whenever files change
 # configure :development do
