@@ -45,6 +45,7 @@ GEM
     hamster (3.0.0)
       concurrent-ruby (~> 1.0)
     hashie (3.5.5)
+    htmlcompressor (0.2.0)
     httpclient (2.8.3)
     i18n (0.7.0)
     json (2.1.0)
@@ -98,6 +99,9 @@ GEM
     middleman-dotenv (2.0.0)
       dotenv (>= 2.0)
       middleman-core (>= 4.0)
+    middleman-minify-html (3.4.1)
+      htmlcompressor (~> 0.2.0)
+      middleman-core (>= 3.2)
     middleman-syntax (3.0.0)
       middleman-core (>= 3.2)
       rouge (~> 2.0)
@@ -139,6 +143,7 @@ DEPENDENCIES
   middleman-blog
   middleman-blog-similar
   middleman-dotenv (~> 2.0)
+  middleman-minify-html
   middleman-syntax
   redcarpet (~> 3.3, >= 3.3.3)
   tzinfo-data
