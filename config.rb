@@ -7,7 +7,6 @@ after_configuration do
     def link( tag )
       safe_tag = safe_parameterize(tag)
       safe_tag = URI.encode(tag) if safe_tag == ''
-      p "#{tag} -> #{safe_tag} (#{apply_uri_template @tag_link_template, tag: safe_tag})"
       apply_uri_template @tag_link_template, tag: safe_tag
     end
   end
