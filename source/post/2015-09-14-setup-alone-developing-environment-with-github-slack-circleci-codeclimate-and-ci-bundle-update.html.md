@@ -160,11 +160,11 @@ settingsの中にある「Integrations」タブを開き、「GitHub Pull Reques
 
 **と思ったのですが** 、オープンソースのリポジトリは常にポーリングしているのでPR連携は提供してませんよ、とのこと。
 
-> Note: If you added your repository by clicking Add Open Source Repo, Code Climate will always check for new commits based a poll or when you manually trigger a refresh. We don&#8217;t yet support service hooks for these types of repositories.
+> Note: If you added your repository by clicking Add Open Source Repo, Code Climate will always check for new commits based a poll or when you manually trigger a refresh. We don't yet support service hooks for these types of repositories.
     
 > &mdash; [GitHub Pull Request Integration](http://docs.codeclimate.com/article/213-github-pull-request-integration)
     
-> &mdash; [How do I install Code Climate&#8217;s Github service hook?](http://docs.codeclimate.com/article/222-how-do-i-install-code-climates-github-service-hook)
+> &mdash; [How do I install Code Climate's Github service hook?](http://docs.codeclimate.com/article/222-how-do-i-install-code-climates-github-service-hook)
 
 ついでにCode climateもSlackと連携させます。
 
@@ -246,7 +246,7 @@ Githubにプルリクエストを作ってマージし、Code climateにカバ�
 
 tachikomaについては別途Nodeのプロジェクトで試している最中なので、また記事を書きます。
 
-<del>そういえば、npmのci updateはDavidではなく<a href="https://docs.npmjs.com/cli/shrinkwrap">shrinkwrap</a>使わないんですかね&#8230;、bowerにも<a href="https://github.com/bower/bower/issues/505">shrinkwrapの機能が検討されている</a>ようなので、そちらも対応されたら対応するのかなー、なんて思っています。</del>
+<del>そういえば、npmのci updateはDavidではなく<a href="https://docs.npmjs.com/cli/shrinkwrap">shrinkwrap</a>使わないんですかね…、bowerにも<a href="https://github.com/bower/bower/issues/505">shrinkwrapの機能が検討されている</a>ようなので、そちらも対応されたら対応するのかなー、なんて思っています。</del>
 
 まとめ
 ----------------------------------------

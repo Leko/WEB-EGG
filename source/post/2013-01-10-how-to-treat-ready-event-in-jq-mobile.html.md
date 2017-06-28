@@ -44,7 +44,7 @@ pageinitのサンプル
 pageinitを使ったコードはこのようになります。 なお、jQueryのバージョンは1.8.2となっています。 
 
 ```javascript
- $(document).on(&#8216;pageinit&#8217;, &#8216;#selector&#8217;, function() { //ここに処理を記述 }); 
+ $(document).on('pageinit', '#selector', function() { //ここに処理を記述 }); 
 ```
 
  
@@ -55,7 +55,7 @@ pageinitを使ったコードはこのようになります。 なお、jQuery�
 
 ## pageinitとpageshowイベント<figure> 
 
-<q>ページ表示時に発火するpageshowイベントやページのイニシャライズで1回だけ発生するpageinitイベントなど、ページ関連のイベントをうまく使ってください。 </q> <figcaption> <cite><a href="http://d.hatena.ne.jp/pikotea/20120405/1333631161" target="_blank">そろそろjQuery Mobileでajaxを無効にしてるやつに一言いっておくか &#8211; へっぽこプログラマーの日記</a></cite> </figcaption> </figure> 
+<q>ページ表示時に発火するpageshowイベントやページのイニシャライズで1回だけ発生するpageinitイベントなど、ページ関連のイベントをうまく使ってください。 </q> <figcaption> <cite><a href="http://d.hatena.ne.jp/pikotea/20120405/1333631161" target="_blank">そろそろjQuery Mobileでajaxを無効にしてるやつに一言いっておくか – へっぽこプログラマーの日記</a></cite> </figcaption> </figure> 
 
 こちらの記事にあるように、 pageinitイベントはページが最初に表示された時（＝１回目）しか発生しません。 ページが表示されるたびに実行したいスクリプトは、pageshowイベントを捕まえれば良いようです。 **イベント名で気づけよ・・・！** 集中を切らしていました。早速修正します</section> <section id="sample-both"> 
 
@@ -65,7 +65,7 @@ pageinitとpageshowを使い分ける
 pageinitとpageshowを使い分けたサンプルが以下となります。 
 
 ```javascript
- $(document).on(&#8216;pageshow&#8217;, &#8216;#selector&#8217;, function() { //ページが表示されるたびに実行する }); $(document).on(&#8216;pageinit&#8217;, &#8216;#selector&#8217;, function() { //ページが初めて読み込まれたとき１回だけ実行する }); 
+ $(document).on('pageshow', '#selector', function() { //ページが表示されるたびに実行する }); $(document).on('pageinit', '#selector', function() { //ページが初めて読み込まれたとき１回だけ実行する }); 
 ```
 
  

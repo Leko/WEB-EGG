@@ -31,8 +31,8 @@ validityプロパティの中には`patternMismatch`, `tooLong`などそれっ�
 情報源として主に以下のページを参考にしました。
 
   * [Constraint Validation: Native Client Side Validation for Web Forms](http://www.html5rocks.com/en/tutorials/forms/constraintvalidation/)
-  * [ValidityState &#8211; Web APIs \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
-  * [4.10.21 Constraints &#8212; HTML5](http://dev.w3.org/html5/spec-preview/constraints.html)
+  * [ValidityState – Web APIs \| MDN](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState)
+  * [4.10.21 Constraints — HTML5](http://dev.w3.org/html5/spec-preview/constraints.html)
 
 デモ
 ----------------------------------------

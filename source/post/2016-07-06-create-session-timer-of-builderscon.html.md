@@ -14,7 +14,7 @@ categories:
 
 ちなみに、Builderscon公式ブログでも紹介してくださっています。やったぜ。
 
-> <span class="removed_link" title="http://blog.builderscon.io/builderscon/2016/06/27/session-timer.html">Releasing Our Session Timers &#8211; builderscon::blog</span>
+> <span class="removed_link" title="http://blog.builderscon.io/builderscon/2016/06/27/session-timer.html">Releasing Our Session Timers – builderscon::blog</span>
 
 タイマーの実物は[こちら](http://web.timer.builderscon.io/)から試せます。
 

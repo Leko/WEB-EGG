@@ -34,7 +34,7 @@ ActiveResourceは基本的にRuby on Railsで作られたアプリケーショ�
 
 gem化してGithubに上げてあります。
 
-> [GitHub &#8211; Leko/activeresource-chatwork: ActiveResource classes for Chatwork API](https://github.com/Leko/activeresource-chatwork)
+> [GitHub – Leko/activeresource-chatwork: ActiveResource classes for Chatwork API](https://github.com/Leko/activeresource-chatwork)
 
 gemの作り方については、[こちら](http://masarakki.github.io/blog/2014/02/15/how-to-create-gem/)の記事がとても参考になりました。
 
@@ -60,7 +60,7 @@ class FormToJsonParser
   end
 end
 
-class Base < ActiveResource::Base
+class Base &lt; ActiveResource::Base
   self.format = FormToJsonParser.new
 
   # ...
@@ -84,7 +84,7 @@ URL末尾から.json等のフォーマットを消したい
 [ActiveResource::Base#format_extension](https://github.com/rails/activeresource/blob/master/lib/active_resource/base.rb)を読んでいたら発見。
 
 ```ruby
-class Base < ActiveResource::Base
+class Base &lt; ActiveResource::Base
   self.include_format_in_path = false
 end
 ```
@@ -185,7 +185,7 @@ module Chatwork
 end
 
 module Chatwork
-  class Member < Base
+  class Member &lt; Base
     include Chatwork::NestOfRoom
   end
 end

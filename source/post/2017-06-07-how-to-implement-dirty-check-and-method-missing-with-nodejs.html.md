@@ -70,7 +70,7 @@ decoratorの挙動
 
 decoratorはReactで[High Order Components](https://facebook.github.io/react/docs/higher-order-components.html)なんて言われて流行ってますが、要は昔からある関数型言語のアプローチのひとつ、高階関数です。
 
-> &mdash; [【エンジニア初心者向け】高階関数入門(Javascript) &#8211; Qiita](http://qiita.com/To_BB/items/c9ce3391495f2ea9eb31)
+> &mdash; [【エンジニア初心者向け】高階関数入門(Javascript) – Qiita](http://qiita.com/To_BB/items/c9ce3391495f2ea9eb31)
 
 一応、先程のコードをjsのコードにするとこんな感じになります
 

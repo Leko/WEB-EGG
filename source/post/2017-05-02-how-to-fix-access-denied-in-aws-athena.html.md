@@ -29,7 +29,7 @@ tags:
 
 > Your query has the following error: FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTask. com.amazon.ws.emr.hadoop.fs.shaded.com.amazonaws.services.s3.model.AmazonS3Exception: Access Denied (Service: Amazon S3; Status Code: 403; Error Code: AccessDenied; Request ID: XXXXXXXXXXXX), S3 Extended Request ID: XXXXXXX/XXXXXX
 > 
-> This query ran against the &#8216;default&#8217; database, unless qualified by the query. Please post the error message on our forum or contact customer support with query id.
+> This query ran against the 'default' database, unless qualified by the query. Please post the error message on our forum or contact customer support with query id.
 
 DDLのタスクにて`Access Denied`が起きているよ、とのこと
   
@@ -40,11 +40,11 @@ DDLのタスクにて`Access Denied`が起きているよ、とのこと
 
 AWSのページを見つけました
 
-> The S3 location should match the format s3://bucket/path; don&#8217;t include the endpoint. For example, s3://us-east-1.amazonaws.com/bucket/path would result in an &#8220;Access Denied&#8221; error.
+> The S3 location should match the format s3://bucket/path; don't include the endpoint. For example, s3://us-east-1.amazonaws.com/bucket/path would result in an “Access Denied” error.
 > 
 > &mdash; [Resolve "Access Denied" Errors When Running Amazon Athena Queries](https://aws.amazon.com/premiumsupport/knowledge-center/access-denied-athena/)
 
-えぇ&#8230;
+えぇ…
   
 ここで、実際の画面を見てみましょう
 

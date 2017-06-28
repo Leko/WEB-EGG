@@ -47,7 +47,7 @@ if (array_key_exists(variable_get('user_admin_role'), $account->roles)) {
 結論に至るまでに調べた事項は
 
   * ロール一覧テーブルににAdmin相当か否かという情報がない 
-      * なので&#8221;特定のロールをAdminだとみなす&#8221;という概念になる
+      * なので”特定のロールをAdminだとみなす”という概念になる
   * AdminのロールIDに相当する定数が存在しない
   * AdminのロールIDは3固定らしい（？）
   * [user\_has\_role](https://api.drupal.org/api/drupal/modules!user!user.module/function/user_has_role/7.x)関数はロールIDが必要なのでなのでロールIDを隠蔽してくれない
@@ -176,7 +176,7 @@ variable_get('user_admin_role')
 
 野良の情報を調べていて思ったのは、やっぱPHPだわ。という感想でした。
   
-PHPの野良情報はかなりの確実で外れだったり、不確実だったり、バッドノウハウをドヤ顔で語ってたりする（ブーメラン）という感触があり、Drupalも例に漏れず&#8221;PHPの情報&#8221;にあふれているなぁ、と感じました。
+PHPの野良情報はかなりの確実で外れだったり、不確実だったり、バッドノウハウをドヤ顔で語ってたりする（ブーメラン）という感触があり、Drupalも例に漏れず”PHPの情報”にあふれているなぁ、と感じました。
 
 特にDrupalはWordpressと同様にライトな人でもシステム作れちゃうYO的なやつなので、
   

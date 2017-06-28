@@ -1,6 +1,6 @@
 ---
 path: /post/aoj-1135-ohgas-fortune/
-title: '[AOJ] 1135 Ohgas&#8217; Fortune'
+title: "[AOJ] 1135 Ohgas' Fortune"
 date: 2013-05-13T02:03:47+00:00
 twitter_id:
   - "333629151972057088"
@@ -10,7 +10,7 @@ tags:
   - AOJ
   - JavaScript
 ---
-AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
+AOJの1135、Ohgas' Fortuneをjsで解きました。
   
 こちらも入力の処理に手間取り、クリアタイムは24分です。
 
@@ -69,7 +69,7 @@ AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
     }
     
 
-})(require(&#8220;fs&#8221;).readFileSync(&#8220;/dev/stdin&#8221;, &#8220;utf8&#8221;)); 
+})(require(“fs”).readFileSync(“/dev/stdin”, “utf8”)); 
 ```
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

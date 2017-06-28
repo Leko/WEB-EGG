@@ -248,7 +248,7 @@ APIを用いたほうが可読性が高く柔軟なコードになると思い�
 参考リンク
 ----------------------------------------
 
-> [JavaScript でのローカル ファイルの読み込み &#8211; HTML5 Rocks](http://www.html5rocks.com/ja/tutorials/file/dndfiles/#toc-selecting-files-dnd)
+> [JavaScript でのローカル ファイルの読み込み – HTML5 Rocks](http://www.html5rocks.com/ja/tutorials/file/dndfiles/#toc-selecting-files-dnd)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -19,29 +19,13 @@ categories:
 
 ここまで洗練されたロゴを作れるようになりたいなぁ。まずは観察とブランディングから。
 
-&nbsp;
-
 他にもロゴづくりに有難い情報が載っていたのでリンク。
 
 [デザイナーのためのロゴデザインのチュートリアル&素材45+ \| CREAMU](http://blog.creamu.com/mt/2010/05/45_4.html).
 
-&nbsp;
-
-&nbsp;
-
 [ロゴデザインのケーススタディー集 \| CREAMU](http://blog.creamu.com/mt/2010/03/post_217.html).
 
-&nbsp;
-
-&nbsp;
-
 [ロゴをデザインするときの8つのルール \| CREAMU](http://blog.creamu.com/mt/2010/09/8_2.html).
-
-&nbsp;
-
-&nbsp;
-
-&nbsp;
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -70,7 +70,7 @@ JavaScriptはプロトタイプベースのオブジェクト指向言語であ�
   
 あくまで**それらに似た振る舞いを再現**できる、というだけです。
 
-「Javascriptパターン」による&#8221;聖杯パターン&#8221;
+「Javascriptパターン」による”聖杯パターン”
 ----------------------------------------
 
 JavaScriptパターンから引用すると、
@@ -81,7 +81,7 @@ JavaScriptパターンから引用すると、
   
 
 ```javascript
- // 継承を行う関数 var inherit = (function() { var F = function() {}; return function(C, P) { F.prototype = P.prototype; C.prototype = new F(); C.uber = P.prototype; C.prototype.constructor = C; } })(); // Personクラス(のようなオブジェクト(以下省略)) function Parent() {} Parent.prototype.say = function() { return this.name; }; // Childクラス function Child(name) { this.name = name; // 親のコンストラクタを拝借する Parent.apply(this); } // 継承 inherit(Child, Parent); // インスタンスを作成 var kid = new Child(&#8216;Bob&#8217;); console.log(kid.say()); // &#8216;Bob&#8217; 
+ // 継承を行う関数 var inherit = (function() { var F = function() {}; return function(C, P) { F.prototype = P.prototype; C.prototype = new F(); C.uber = P.prototype; C.prototype.constructor = C; } })(); // Personクラス(のようなオブジェクト(以下省略)) function Parent() {} Parent.prototype.say = function() { return this.name; }; // Childクラス function Child(name) { this.name = name; // 親のコンストラクタを拝借する Parent.apply(this); } // 継承 inherit(Child, Parent); // インスタンスを作成 var kid = new Child('Bob'); console.log(kid.say()); // 'Bob' 
 ```
 
 </div>
@@ -124,7 +124,7 @@ jsのプロトタイプチェインについて詳しくは触れません。
   
 プロトタイプ連鎖については、以下の記事が参考になるかと思います。
 
-  * [JavaScriptのプロトタイプチェインをちゃんと理解する &#8211; builder](http://builder.japan.zdnet.com/script/sp_javascript-kickstart-2007/20369792/)
+  * [JavaScriptのプロトタイプチェインをちゃんと理解する – builder](http://builder.japan.zdnet.com/script/sp_javascript-kickstart-2007/20369792/)
 
 Coffeescriptでのclassと継承
 ----------------------------------------
@@ -147,7 +147,7 @@ CoffeeScriptでクラスと継承を用いた例が、以下となります。
   
 
 ```coffeescript
- class Parent constructor: (@name) -> move: (meters) -> console.log @name + &#8221; moved #{meters}m.&#8221; class Child extends Parent move: -> console.log &#8220;slithering&#8230;&#8221; super 5 child = new Child() child.move() 
+ class Parent constructor: (@name) -> move: (meters) -> console.log @name + ” moved #{meters}m.” class Child extends Parent move: -> console.log “slithering…” super 5 child = new Child() child.move() 
 ```
 
 </div>
@@ -173,7 +173,7 @@ TypeScriptでのクラスの定義と継承の例は以下となります。
   
 
 ```javascript
- class Parent { name: string; constructor(name: string) { this.name = name; } move(meters: number): void { console.log(this.name + &#8221; moved &#8221; + meters + &#8220;m.&#8221;); } } class Child extends Parent { move(): void { console.log(&#8220;slithering&#8230;&#8221;); super.move(5); } } var child: Child = new Child(); child.move(); 
+ class Parent { name: string; constructor(name: string) { this.name = name; } move(meters: number): void { console.log(this.name + ” moved ” + meters + “m.”); } } class Child extends Parent { move(): void { console.log(“slithering…”); super.move(5); } } var child: Child = new Child(); child.move(); 
 ```
 
 </div>
@@ -273,7 +273,7 @@ CoffeeScriptもTypeScriptもほぼ同様の表現になっています。
   
 
 ```javascript
- var Parent = (function () { function Parent(name) { this.name = name; } Parent.prototype.move = function (meters) { console.log(this.name + &#8221; moved &#8221; + meters + &#8220;m.&#8221;); }; return Parent; })(); var Child = (function (_super) { __extends(Child, _super); function Child() { _super.apply(this, arguments); } Child.prototype.move = function () { console.log(&#8220;slithering&#8230;&#8221;); _super.prototype.move.call(this, 5); }; return Child; })(Parent); 
+ var Parent = (function () { function Parent(name) { this.name = name; } Parent.prototype.move = function (meters) { console.log(this.name + ” moved ” + meters + “m.”); }; return Parent; })(); var Child = (function (_super) { __extends(Child, _super); function Child() { _super.apply(this, arguments); } Child.prototype.move = function () { console.log(“slithering…”); _super.prototype.move.call(this, 5); }; return Child; })(Parent); 
 ```
 
 </div>
@@ -327,7 +327,7 @@ CoffeeScript、TypeScript共にほぼ同じなので、 上記のような書き
 
 JavaScriptにはprototypeを用いた柔軟な継承の表現が他にもあります。
   
-今回の例はあくまで**jsで&#8221;クラス&#8221;っぽいことがやりたい人**向けの内容であることをご留意下さい。
+今回の例はあくまで**jsで”クラス”っぽいことがやりたい人**向けの内容であることをご留意下さい。
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

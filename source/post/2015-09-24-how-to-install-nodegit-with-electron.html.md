@@ -25,7 +25,7 @@ Electronでnodegitを使おうとして、どの参考記事も助けになら�
 ----------------------------------------
 
   * [electron/docs/tutorial/using-native-node-modules.md](https://github.com/atom/electron/blob/master/docs/tutorial/using-native-node-modules.md)
-  * [Doesn&#8217;t work with Electron](https://github.com/nodegit/nodegit/issues/574)
+  * [Doesn't work with Electron](https://github.com/nodegit/nodegit/issues/574)
   * [ElectronにNodeGitをインストールしようとしてハマった](http://b.amberfrog.net/post/119528788216/electron%E3%81%ABnodegit%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E3%81%97%E3%81%A6%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F)
 
 これらの情報は古くなっているのか、そのままの方法でやっても全くうまくいく気配がありませんでした。

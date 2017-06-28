@@ -14,7 +14,7 @@ tags:
 ---
 こんにちは。
 
-今回は、[力学モデル (グラフ描画アルゴリズム) &#8211; Wikipedia](http://ja.wikipedia.org/wiki/%E5%8A%9B%E5%AD%A6%E3%83%A2%E3%83%87%E3%83%AB_(%E3%82%B0%E3%83%A9%E3%83%95%E6%8F%8F%E7%94%BB%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0))というグラフを描画するための面白いアルゴリズムを見つけたので、
+今回は、[力学モデル (グラフ描画アルゴリズム) – Wikipedia](http://ja.wikipedia.org/wiki/%E5%8A%9B%E5%AD%A6%E3%83%A2%E3%83%87%E3%83%AB_(%E3%82%B0%E3%83%A9%E3%83%95%E6%8F%8F%E7%94%BB%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0))というグラフを描画するための面白いアルゴリズムを見つけたので、
   
 こいつをjavascript(CoffeeScript)とcanvasで実装してみました。
 
@@ -34,7 +34,7 @@ tags:
   
 頂点と辺の集合で構成されている方のグラフです。
 
-> [グラフ理論 &#8211; Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E7%90%86%E8%AB%96)
+> [グラフ理論 – Wikipedia](http://ja.wikipedia.org/wiki/%E3%82%B0%E3%83%A9%E3%83%95%E7%90%86%E8%AB%96)
 
 **グラフ**とは、↑のグラフのことで、
   
@@ -122,8 +122,8 @@ class Node
 # 力指向アルゴリズム
 class ForceDirectedGraph
     # バネ定数: 大きいとノードの間隔が詰まる、クーロン数：大きいとノードの間隔が広がる
-    @BOUNCE = 0.1         # バネ定数(BOUNCE < 0.1[推奨])
-    @ATTENUATION = 0.8    # 減衰定数(ATTENUATION < 1[必須])
+    @BOUNCE = 0.1         # バネ定数(BOUNCE &lt; 0.1[推奨])
+    @ATTENUATION = 0.8    # 減衰定数(ATTENUATION &lt; 1[必須])
     @COULOMB = 600        # クーロン数
 
     constructor: (@nodes) ->

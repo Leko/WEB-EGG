@@ -66,7 +66,7 @@ machine:
 Dockerの制限
 ----------------------------------------
 
-### run &#8211;rmオプションは使わない
+### run –rmオプションは使わない
 
 runしたコンテナをrmする時にエラーになります。
 
@@ -77,7 +77,7 @@ Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btr
 
 のようなエラーです。
   
-色々試してみたものの、結局のところ **&#8211;rmオプションはつけない** ことで回避できます。
+色々試してみたものの、結局のところ **–rmオプションはつけない** ことで回避できます。
   
 要らないコンテナを消せないのはなんとも気持ち悪いですが、動かないんじゃ仕方ない
 
@@ -95,9 +95,9 @@ Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btr
 open /proc/self/oom_score_adj: no such file or directory
 ```
 
-> &mdash; [Exit Code 255 on all Docker exec commands &#8211; Build Environment &#8211; CircleCI Community Discussion](https://discuss.circleci.com/t/exit-code-255-on-all-docker-exec-commands/2506)
+> &mdash; [Exit Code 255 on all Docker exec commands – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/exit-code-255-on-all-docker-exec-commands/2506)
     
-> &mdash; [Docker 1.10.0 is available (Beta) &#8211; Build Environment &#8211; CircleCI Community Discussion](https://discuss.circleci.com/t/docker-1-10-0-is-available-beta/2100/15)
+> &mdash; [Docker 1.10.0 is available (Beta) – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/docker-1-10-0-is-available-beta/2100/15)
 
 というエラーが発生しました。
 
@@ -111,7 +111,7 @@ open /proc/self/oom_score_adj: no such file or directory
   
 まだ再現性は不明で、突如訪れます。
 
-> &mdash; [Docker Error removing intermediate container &#8211; Build Environment &#8211; CircleCI Community Discussion](https://discuss.circleci.com/t/docker-error-removing-intermediate-container/70)
+> &mdash; [Docker Error removing intermediate container – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/docker-error-removing-intermediate-container/70)
 
 リポジトリでDockerfileを管理しており、ビルドが正しく動くかどうかCIしたい、なんてケースでドハマリすることがあります。
   
@@ -139,7 +139,7 @@ Dockerのラッパーであるdocker-composeも当然同様の制約がつきま
 
 など基本的なことに加え、以下にハマりました。
 
-### up &#8211;force-recreateは使わない
+### up –force-recreateは使わない
 
 ビルドの過程でイメージから新鮮なコンテナを再生成したい、というケースでハマりました。
   

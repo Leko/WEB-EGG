@@ -40,13 +40,13 @@ redmine "Mysql2::Error: Incorrect string value"
 
 というエラーが。
 
-## &#8220;Mysql2::Error: Incorrect string value&#8221;を解消する
+## “Mysql2::Error: Incorrect string value”を解消する
 
 エラーメッセージを見る限り、まぁ文字コード系だろうなぁ。という感触。
   
 調べてみるとやっぱり同様の問題が。
 
-> [rails &#8211; Mysql2::Error: Incorrect string value &#8211; そういうことだったんですね](http://babiy3104.hateblo.jp/entry/2014/02/13/000219)
+> [rails – Mysql2::Error: Incorrect string value – そういうことだったんですね](http://babiy3104.hateblo.jp/entry/2014/02/13/000219)
 
 ということでMySQLコンテナにエンコーディング周りの設定を追加します。
   
@@ -88,7 +88,7 @@ utf8mb4は4バイト対応のUTF8だそうです。絵文字とか特殊文字�
   
 ということでコンテナを破棄してもう一度マイグレーションからやり直したらこんなエラーが。
 
-## &#8220;Mysql2::Error: Specified key was too long&#8221;を解消する
+## “Mysql2::Error: Specified key was too long”を解消する
 
 結局、恒久的な対応策が見つかりませんでした。
 

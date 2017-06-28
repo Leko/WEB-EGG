@@ -146,7 +146,7 @@ DefinitelyTyped
 Firebase
 ----------------------------------------
 
-> Firebase &#8211; Build Realtime Apps
+> Firebase – Build Realtime Apps
     
 > <https://www.firebase.com/>
 
@@ -165,7 +165,7 @@ WebSocketを使うと通信操作がどのような感じになるのか、サ�
 backfire
 ----------------------------------------
 
-> BackFire: Firebase bindings for Backbone.js &#8211; Firebase
+> BackFire: Firebase bindings for Backbone.js – Firebase
     
 > <https://www.firebase.com/blog/2013-01-29-backfire-firebase-bindings-for-backbonejs.html>
 

@@ -380,7 +380,7 @@ Androidのエミュレータが起動してアプリが表示されればOKで�
 
 ### 参考サイト
 
-  * [Titanium Mobile入門 (全28回) &#8211; プログラミングならドットインストール](http://dotinstall.com/lessons/basic_titanium)
+  * [Titanium Mobile入門 (全28回) – プログラミングならドットインストール](http://dotinstall.com/lessons/basic_titanium)
   * [先取り “新” Titanium CLI \| old.imthinker.net](http://old.imthinker.net/2012/10/anticipate-new-titanium-cli/)
   * [Titanium CLIのセットアップ・ビルドなど導入編 ::ハブろぐ](http://havelog.ayumusato.com/develop/others/e549-titanium_cli_install.html)
 

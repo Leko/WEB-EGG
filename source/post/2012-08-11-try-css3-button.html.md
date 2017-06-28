@@ -1,6 +1,6 @@
 ---
 path: /post/try-css3-button/
-title: 'CSS3のボタンを今更ながら今更ながらやってみた &#8211; 1'
+title: 'CSS3のボタンを今更ながら今更ながらやってみた – 1'
 date: 2012-08-11T22:47:05+00:00
 dsq_thread_id:
   - "3142622419"
@@ -8,8 +8,6 @@ dsq_thread_id:
 諸事情でスマフォ用のwebページを作る機会があり、
 
 スマフォではIEという魔物がいないのでCSS3がフルに使えると。
-
-&nbsp;
 
 ということでいい機会だしボタンをCSS3で作ってみました。
 
@@ -23,13 +21,11 @@ dsq_thread_id:
 
 これらをCSS3に書き起こしましょう。
 
-&nbsp;
-
 １，青いボタン
   
 最初に、完成品がこちら。
   
-&nbsp;
+
   
 ベーシックなグラデーションのボタンです。
   
@@ -42,7 +38,7 @@ dsq_thread_id:
 まずHTMLはこんな感じ。
 
 ```
-<a href="#" class="btn-a">BUTTON</a>
+&lt;a href="#" class="btn-a"&gt;BUTTON&lt;/a&gt;
 ```
 
 まんまですね。次に、まず基本的な装飾。
@@ -101,7 +97,7 @@ box-shadow: 0px 1px 0px #fff inset;
 
 では改めてサンプルを見てみましょう。こんな感じ。
   
-&nbsp;
+
   
 さて、これで置くだけならだいぶ完成目標に近づきましたが、
   
@@ -109,15 +105,13 @@ box-shadow: 0px 1px 0px #fff inset;
   
 クリックしたときのアクションまでしていしちゃいましょう！
   
-&nbsp;
+
   
 まずはマウスを載せた時の装飾。ボタンをへこんだ感じに見せます。
   
 これは、平常時のグラデーションと色を逆にするだけです。簡単。
   
 もし違和感があったら微調整してみて下さい。
-
-&nbsp;
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

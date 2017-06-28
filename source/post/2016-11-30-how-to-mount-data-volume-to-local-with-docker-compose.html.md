@@ -17,7 +17,7 @@ tags:
   
 docker composeめちゃくちゃ便利ですよね。
   
-Chef, Vagrant, Puppet, Ansible, Fabric&#8230;とプロビジョニングツールとか仮想化ツールを色々触ってきましたが、
+Chef, Vagrant, Puppet, Ansible, Fabric…とプロビジョニングツールとか仮想化ツールを色々触ってきましたが、
   
 それらよりずば抜けて扱いやすいと思っているツールです。
 
@@ -68,9 +68,9 @@ docker-machineでvolumesを利用すると、
 
   * ローカルのパーミッション・オーナー・グループが無視される 
       * uid=1000のユーザがオーナーになる。上記Yamlの場合はftpユーザがオーナーになってました。
-  * mysqlの実行ユーザでは権限が足りず、Permission deniedや&#8230;not writable的なエラーが起きる
+  * mysqlの実行ユーザでは権限が足りず、Permission deniedや…not writable的なエラーが起きる
   * マウントした時に発生するので、Dockerfile内でごにょっておく等の事前準備は不可能
-  * MySQLの実行ユーザを無理やりuid=1000にすることでも解消できそうですが、MySQLと関係のないユーザでMySQLを操作するのはキモい&#8230;
+  * MySQLの実行ユーザを無理やりuid=1000にすることでも解消できそうですが、MySQLと関係のないユーザでMySQLを操作するのはキモい…
 
 という感じです。
   

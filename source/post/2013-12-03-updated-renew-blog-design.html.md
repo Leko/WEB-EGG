@@ -50,7 +50,7 @@ tags:
   
 上記を見事に叶えてくれるプラグインがありました。
 
-[WordPress &#8250; Markdown on Save Improved &laquo; WordPress Plugins](http://wordpress.org/plugins/markdown-on-save-improved/)
+[WordPress › Markdown on Save Improved &laquo; WordPress Plugins](http://wordpress.org/plugins/markdown-on-save-improved/)
 
 上記を満たしていて、なおかつこのプラグイン何が有難いかというと、
   

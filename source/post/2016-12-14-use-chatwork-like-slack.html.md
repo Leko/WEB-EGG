@@ -35,7 +35,7 @@ tags:
 
 ソースはGithubに公開してあります。
 
-> [GitHub &#8211; Leko/chatwork-skin-slack: Chrome extension to apply Slack skin to Chatwork](https://github.com/Leko/chatwork-skin-slack)
+> [GitHub – Leko/chatwork-skin-slack: Chrome extension to apply Slack skin to Chatwork](https://github.com/Leko/chatwork-skin-slack)
 
 **※Chatworkのマークアップと密結合しているため突然動かなくなることが有ります。予めご了承ください。**
 

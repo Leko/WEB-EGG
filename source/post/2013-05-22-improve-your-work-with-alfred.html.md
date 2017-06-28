@@ -57,9 +57,9 @@ Alfredには**Workflows**という機能があります。
 
 今回は、日付を入力すると、
   
-速水もこみちがMOCO&#8217;sキッチンで使ったオリーブオイルの量を検索出来るAPI
+速水もこみちがMOCO'sキッチンで使ったオリーブオイルの量を検索出来るAPI
   
-[MOCO&#8217;SキッチンオリーブオイルAPI]()を利用したWorkflowsを作ります。
+[MOCO'SキッチンオリーブオイルAPI]()を利用したWorkflowsを作ります。
 
 <!--more-->
 
@@ -71,7 +71,7 @@ Alfredには**Workflows**という機能があります。
   
 **インストール+利用は無料**です。
 
-<a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&#038;uo=4" rel="nofollow" target="_blank"><img align="left" hspace="6" src="http://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png" width="75" style="margin-right: 6px;" /><b>Alfred</b> <img alt="App" src="http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_macappstore-sm.gif" style="vertical-align: text-bottom;" /><br /> </a>カテゴリ: 仕事効率化
+<a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&uo=4" rel="nofollow" target="_blank"><img align="left" hspace="6" src="http://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png" width="75" style="margin-right: 6px;" /><b>Alfred</b> <img alt="App" src="http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_macappstore-sm.gif" style="vertical-align: text-bottom;" /><br /> </a>カテゴリ: 仕事効率化
   
 価格: 無料<br clear="all" />
 
@@ -150,7 +150,7 @@ Examplesに、同様の機能を持った**Amazon Suggest**というものもあ
   
 
 ```php
- require_once(&#8216;workflows.php&#8217;); $wf = new Workflows(); $orig = &#8220;{query}&#8221;; $xml = $wf->request( &#8220;http://google.com/complete/search?output=toolbar&q=&#8221;.urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.&#8217;.&#8217;.time(), &#8220;$data&#8221;, &#8220;$data&#8221;, &#8216;Search Google for &#8216;.$data, &#8216;icon.png&#8217; ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( &#8216;googlesuggest&#8217;, $orig, &#8216;No Suggestions&#8217;, &#8216;No search suggestions found. Search Google for &#8216;.$orig, &#8216;icon.png&#8217; ); endif; echo $wf->toxml(); 
+ require_once('workflows.php'); $wf = new Workflows(); $orig = “{query}”; $xml = $wf->request( “http://google.com/complete/search?output=toolbar&q=”.urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), “$data”, “$data”, 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( 'googlesuggest', $orig, 'No Suggestions', 'No search suggestions found. Search Google for '.$orig, 'icon.png' ); endif; echo $wf->toxml(); 
 ```
 
 </div>
@@ -193,7 +193,7 @@ PHPで書く際の注意点は、
   
 
 ```php
- require_once(&#8216;workflows.php&#8217;); $wf = new Workflows(); 
+ require_once('workflows.php'); $wf = new Workflows(); 
 ```
 
 </div>
@@ -216,7 +216,7 @@ Workflowsクラスは、workflowsを作る上でのユーティリティです�
   
 
 ```php
- $orig = &#8220;{query}&#8221;; 
+ $orig = “{query}”; 
 ```
 
 </div>
@@ -247,7 +247,7 @@ urlを渡すだけでレスポンスを取得することができます。
   
 
 ```php
- foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.&#8217;.&#8217;.time(), &#8220;$data&#8221;, &#8220;$data&#8221;, &#8216;Search Google for &#8216;.$data, &#8216;icon.png&#8217; ); $int++; endforeach; 
+ foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), “$data”, “$data”, 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; 
 ```
 
 </div>
@@ -266,7 +266,7 @@ Workflows.phpの中身を見てみました。
   
 
 ```php
- /** * Description: * Helper function that just makes it easier to pass values into a function * and create an array result to be passed back to Alfred * * @param $uid &#8211; the uid of the result, should be unique * @param $arg &#8211; the argument that will be passed on * @param $title &#8211; The title of the result item * @param $sub &#8211; The subtitle text for the result item * @param $icon &#8211; the icon to use for the result item * @param $valid &#8211; sets whether the result item can be actioned * @param $auto &#8211; the autocomplete value for the result item * @return array &#8211; array item to be passed back to Alfred */ public function result( $uid, $arg, $title, $sub, $icon, $valid=&#8217;yes&#8217;, $auto=null, $type=null ) { // &#8230; } 
+ /** * Description: * Helper function that just makes it easier to pass values into a function * and create an array result to be passed back to Alfred * * @param $uid – the uid of the result, should be unique * @param $arg – the argument that will be passed on * @param $title – The title of the result item * @param $sub – The subtitle text for the result item * @param $icon – the icon to use for the result item * @param $valid – sets whether the result item can be actioned * @param $auto – the autocomplete value for the result item * @return array – array item to be passed back to Alfred */ public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto=null, $type=null ) { // … } 
 ```
 
 </div>
@@ -316,7 +316,7 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 
 冒頭でも話しましたが、
   
-今回は、[MOCO&#8217;sキッチンオリーブAPI]()を利用したサンプルを作ります。
+今回は、[MOCO'sキッチンオリーブAPI]()を利用したサンプルを作ります。
 
 今回使用するキーワードは、`mocos`として、
 
@@ -336,7 +336,7 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 今回利用するAPIについて学ぶ
 ----------------------------------------
 
-MOCO&#8217;sキッチンオリーブAPIのURLは、
+MOCO'sキッチンオリーブAPIのURLは、
   
 `GET:` です。
 
@@ -354,7 +354,7 @@ MOCO&#8217;sキッチンオリーブAPIのURLは、
   
 
 ```javascript
- { &#8220;2013-05-21&#8221;: { &#8220;menu&#8221;: &#8220;もこみち流　ペンネのミネストローネ&#8221;, &#8220;url&#8221;: &#8220;http://www.ntv.co.jp/zip/mokomichi/397800.html&#8221;, &#8220;olive&#8221;: &#8220;大２&#8221;, &#8220;thumb&#8221;: &#8220;http://pastak.cosmio.net/mocoDB/oliveAPI/img/thumb_800.jpg&#8221; } } 
+ { “2013-05-21”: { “menu”: “もこみち流　ペンネのミネストローネ”, “url”: “http://www.ntv.co.jp/zip/mokomichi/397800.html”, “olive”: “大２”, “thumb”: “http://pastak.cosmio.net/mocoDB/oliveAPI/img/thumb_800.jpg” } } 
 ```
 
 </div>
@@ -370,7 +370,7 @@ MOCO&#8217;sキッチンオリーブAPIのURLは、
   
 
 ```php
-<?php require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), &#8221;, $json->error, &#8221;, &#8216;icon.png&#8217;); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.&#8221;: &#8220;.$info->olive.&#8221;オリーブ&#8221;; $wf->result(time(), $info->url, $title, $info->menu, &#8216;icon.png&#8217;); } } echo $wf->toXML(); 
+<?php require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ”, $json->error, ”, 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.”: “.$info->olive.”オリーブ”; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
 ```
 
 </div>
@@ -402,15 +402,15 @@ web APIと連携したAlfred Workflowsの作り方は、
   
 このような感じになっています。
 
-シンプルなMOCO&#8217;sキッチンAPIだから簡単だったわけではなく、
+シンプルなMOCO'sキッチンAPIだから簡単だったわけではなく、
   
 他のAPIを利用しても同様の方法でかなり簡単に書けます。
 
 これを機に、是非皆さんもworkflow製作者になってみては如何でしょうか。
 
-  * [Alfred App &#8211; Productivity App for Mac OS X](http://www.alfredapp.com/)
+  * [Alfred App – Productivity App for Mac OS X](http://www.alfredapp.com/)
 
-  * [Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow &#8211; Macの手書き説明書](http://veadardiary.blog29.fc2.com/blog-entry-4425.html)
+  * [Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow – Macの手書き説明書](http://veadardiary.blog29.fc2.com/blog-entry-4425.html)
 
   * [Alfred 2のWorkflowをまとめたサイト『Alfred 2 Workflow List』が宝の山](http://veadardiary.blog29.fc2.com/blog-entry-4435.html)
 

@@ -40,8 +40,8 @@ APIを利用するためにYahooのアプリケーションIDが必要です。
 
 アプリケーションを登録したら、`.env`に`YAHOO_APP_ID`という名前でキーを登録しておきます。
 
-  * [テキスト解析:校正支援 &#8211; Yahoo!デベロッパーネットワーク](http://developer.yahoo.co.jp/webapi/jlp/kousei/v1/kousei.html)
-  * [テキスト解析:ルビ振り &#8211; Yahoo!デベロッパーネットワーク](http://developer.yahoo.co.jp/webapi/jlp/furigana/v1/furigana.html)
+  * [テキスト解析:校正支援 – Yahoo!デベロッパーネットワーク](http://developer.yahoo.co.jp/webapi/jlp/kousei/v1/kousei.html)
+  * [テキスト解析:ルビ振り – Yahoo!デベロッパーネットワーク](http://developer.yahoo.co.jp/webapi/jlp/furigana/v1/furigana.html)
 
 の２APIに対して共通のキーとして使用できます。
 
@@ -103,7 +103,7 @@ $ echo '遙か彼方に小形飛行機が見える。' | bundle exec ruby jp-val
   
 APIを公開して頂いているYahooと依存ライブラリの作者さまに感謝感激雨あられです。
 
-本格的に解析するなら形態素解析、係り受け解析やら助詞落ち補完（現状だと指摘はするものの補完はしていない）に伴う機械学習 etcetc&#8230;と色々と知識が必要ですが、ごく簡素な校正くらいならこんなもんかな、と思います。
+本格的に解析するなら形態素解析、係り受け解析やら助詞落ち補完（現状だと指摘はするものの補完はしていない）に伴う機械学習 etcetc…と色々と知識が必要ですが、ごく簡素な校正くらいならこんなもんかな、と思います。
 
 ちなみにこの記事を書いて校正ツールに食わせてみた結果以下のようになりました。
 

@@ -85,12 +85,12 @@ wordpressで表示されている項目は、
  
 
 ```php
- // This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add\_theme\_support( &#8216;post-thumbnails&#8217; ); 
+ // This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add\_theme\_support( 'post-thumbnails' ); 
 ```
 
  
 
-add\_theme\_support( &#8216;post-thumbnails&#8217; );
+add\_theme\_support( 'post-thumbnails' );
           
 が指定されていると、アイキャッチ画像が有効になるようです。
           
@@ -121,13 +121,13 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
  
 
 <div class="entry-content">
-  <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;&#8217;, &#8216;twentyeleven&#8217; ) ); ?> 
+  <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;', 'twentyeleven' ) ); ?> 
   
-  <?php wp_link_pages( array( 'before' => &#8216;
+  <?php wp_link_pages( array( 'before' => '
   
   <div class="page-link">
-    <span>&#8216; . __( &#8216;Pages:&#8217;, &#8216;twentyeleven&#8217; ) . &#8216;</span>&#8216;, &#8216;after&#8217; => &#8216;
-  </div>&#8216; ) ); ?>
+    <span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '
+  </div>' ) ); ?>
 </div>
 
 <!-- .entry-content --> 
@@ -147,13 +147,13 @@ the\_post\_thumbnail() を記述します。
 <div class="entry-content">
   <?php the_post_thumbnail(); //これを追加 ?>
   
-  <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;&#8217;, &#8216;twentyeleven&#8217; ) ); ?> 
+  <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;', 'twentyeleven' ) ); ?> 
   
-  <?php wp_link_pages( array( 'before' => &#8216;
+  <?php wp_link_pages( array( 'before' => '
   
   <div class="page-link">
-    <span>&#8216; . __( &#8216;Pages:&#8217;, &#8216;twentyeleven&#8217; ) . &#8216;</span>&#8216;, &#8216;after&#8217; => &#8216;
-  </div>&#8216; ) ); ?>
+    <span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '
+  </div>' ) ); ?>
 </div>
 
 <!-- .entry-content --> 

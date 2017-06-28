@@ -123,7 +123,7 @@ alert('チャットワークです');
 
 <img src="http://leko.jp/images/2014/07/step01.png" alt="Step01" title="step01.png" border="0" width="600" height="245" />
 
-「パッケージ化されていない拡張機能を読み込む&#8230;」ボタンをクリックします。
+「パッケージ化されていない拡張機能を読み込む…」ボタンをクリックします。
   
 選択するファイルは、先ほど作成したchrome-ext-gradiusフォルダです。
 
@@ -476,7 +476,7 @@ OKです。
 参考
 ----------------------------------------
 
-> &mdash; [Google Chrome拡張機能入門 (全20回) &#8211; プログラミングならドットインストール](http://dotinstall.com/lessons/basic_chrome_v2)
+> &mdash; [Google Chrome拡張機能入門 (全20回) – プログラミングならドットインストール](http://dotinstall.com/lessons/basic_chrome_v2)
 
 <!---->
 

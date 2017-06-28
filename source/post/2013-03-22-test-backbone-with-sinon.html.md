@@ -47,7 +47,7 @@ _<span class="removed_link" title="http://visionmedia.github.com/mocha/">mocha</
 
 sinonjsとは、テストダブルのライブラリのことです。
 
-> テストダブル (Test Double) とは、ソフトウェアテストにおいて、テスト対象が依存しているコンポーネントを置き換える代用品のこと。ダブルは代役、影武者を意味する。 &#8211; テストタブル &#8211; wikipedia
+> テストダブル (Test Double) とは、ソフトウェアテストにおいて、テスト対象が依存しているコンポーネントを置き換える代用品のこと。ダブルは代役、影武者を意味する。 – テストタブル – wikipedia
   
 > [フロントエンドJavaScriptにおける設計とテスト](http://hokaccha.github.com/slides/javascript_design_and_test/#page93)
 
@@ -69,7 +69,7 @@ sinonjsとは、テストダブルのライブラリのことです。
   
 
 ```javascript
- it(&#8216;sinon.spyのテスト&#8217;, function() { var hoge, spy; hoge = { foo: function() { return true; } }; spy = sinon.spy(hoge, &#8216;foo&#8217;); hoge.foo(); return expect(spy.calledOnce).to.be.ok(); }); 
+ it('sinon.spyのテスト', function() { var hoge, spy; hoge = { foo: function() { return true; } }; spy = sinon.spy(hoge, 'foo'); hoge.foo(); return expect(spy.calledOnce).to.be.ok(); }); 
 ```
 
 </div>
@@ -93,7 +93,7 @@ spy = sinon.spy( object, 'proterty' );
   
 
 ```coffeescript
- describe &#8216;Backbone * sinon.spy&#8217;, -> Model = Backbone.Model.extend defaults: name: &#8216;hoge&#8217; View = Backbone.View.extend initialize: -> _.bindAll @, &#8216;render&#8217; @model.on &#8216;change:name&#8217;, @render render: -> @$el.html @model.get(&#8216;name&#8217;) before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, &#8216;render&#8217; ) after -> @spy.restore() it &#8216;Modelモデルが変更された時View.renderが呼ばれる&#8217;, -> @view.model.set(&#8216;name&#8217;, &#8216;leko&#8217;) expect(@spy.calledOnce).to.be.ok() 
+ describe 'Backbone * sinon.spy', -> Model = Backbone.Model.extend defaults: name: 'hoge' View = Backbone.View.extend initialize: -> _.bindAll @, 'render' @model.on 'change:name', @render render: -> @$el.html @model.get('name') before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, 'render' ) after -> @spy.restore() it 'Modelモデルが変更された時View.renderが呼ばれる', -> @view.model.set('name', 'leko') expect(@spy.calledOnce).to.be.ok() 
 ```
 
 </div>
@@ -129,7 +129,7 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
   
 似た悩みを抱えた質問と解答が寄せられていました。
 
-> [javascript &#8211; Backbone.js view tests using Sinon Spies in a browser &#8211; Stack Overflow](http://stackoverflow.com/questions/9623986/backbone-js-view-tests-using-sinon-spies-in-a-browser)
+> [javascript – Backbone.js view tests using Sinon Spies in a browser – Stack Overflow](http://stackoverflow.com/questions/9623986/backbone-js-view-tests-using-sinon-spies-in-a-browser)
 
 結論を先に書くと、先ほどのコード、惜しい感じでした。
 
@@ -139,7 +139,7 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
   
 
 ```coffeescript
- # 間違い before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, &#8216;render&#8217; ) # 合ってる before -> @spy = sinon.spy( View.prototype, &#8216;render&#8217; ) @view = new View( model: new Model() ) 
+ # 間違い before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, 'render' ) # 合ってる before -> @spy = sinon.spy( View.prototype, 'render' ) @view = new View( model: new Model() ) 
 ```
 
 </div>

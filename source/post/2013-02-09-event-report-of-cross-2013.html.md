@@ -29,7 +29,7 @@ tags:
 コウサ展とは
 ----------------------------------------
 
-公式サイト→<a href="http://www.ne.senshu-u.ac.jp/~kousa2013/" target="_blank">コウサ展2013 &#8211; Crossing Exhibition</a>
+公式サイト→<a href="http://www.ne.senshu-u.ac.jp/~kousa2013/" target="_blank">コウサ展2013 – Crossing Exhibition</a>
   
 コウサ展とは、専修大学ネットワーク情報学部が開催する
   

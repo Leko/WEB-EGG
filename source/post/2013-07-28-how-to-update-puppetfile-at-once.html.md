@@ -53,8 +53,8 @@ boxenとは、Github社が提供しているMacのセットアップツールで
 先に下記リンクを読んでboxenについて軽く抑えておくといいと思います。
 
   * [Boxen使わなくても許されるのは2012年までだよね](http://qiita.com/yuku_t/items/c6f20de0e4f4c352046c)
-  * [boxenを導入した話 &#8211; diary](http://trapezoid.hatenablog.com/entry/2013/04/21/005524)
-  * [github boxen使ってみてハマったところ &#8211; おみブロZ](http://akiomik.hatenablog.jp/entry/2013/05/12/013923)
+  * [boxenを導入した話 – diary](http://trapezoid.hatenablog.com/entry/2013/04/21/005524)
+  * [github boxen使ってみてハマったところ – おみブロZ](http://akiomik.hatenablog.jp/entry/2013/05/12/013923)
 
 Puppetfileとは
 ----------------------------------------

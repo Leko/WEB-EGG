@@ -47,7 +47,7 @@ tags:
     
     癖になるエディターアプリ。 起動するとフルスクリーンになり、癒される音と背景に、何者にも邪魔されること無く文章を書くことができます。 更に、キーボードを叩くたびにタイプライターのようなパチパチ音があり、一度入力すると病みつきになります。 <aside> 
     
-      * <a href="http://d.hatena.ne.jp/iumem/20110331/1301501697" target="_blank">OmmWriterとかいうテキストエディタを全力で紹介する。 &#8211; Nemui！ (id:iumem)</a>
+      * <a href="http://d.hatena.ne.jp/iumem/20110331/1301501697" target="_blank">OmmWriterとかいうテキストエディタを全力で紹介する。 – Nemui！ (id:iumem)</a>
       * <a href="http://ozpa-h4.com/2011/02/26/ommwrite/" target="_blank">Macで集中して文章を書くなら「OmmWriter」を使うべき | OZPAの表4</a></aside> 
 
 Todo管理
@@ -61,7 +61,7 @@ Todo管理
     
     色々なTodo管理アプリを使ってみた中で、 手軽さと綺麗さ、使いやすさのバランスが一番しっくり来たTodo管理アプリ。 iPhoneや他のOS、デバイスにも対応しているのも吉。 UIがとても綺麗で使っててクセになります。 <aside> 
     
-      * <a href="http://matome.naver.jp/odai/2132454671916471701" target="_blank">2011年ベストiPhoneアプリに輝いたWunderlistって何？【使い方まとめ】 &#8211; NAVER まとめ</a>
+      * <a href="http://matome.naver.jp/odai/2132454671916471701" target="_blank">2011年ベストiPhoneアプリに輝いたWunderlistって何？【使い方まとめ】 – NAVER まとめ</a>
       * <a href="http://www.lifehacker.jp/2012/12/121222wunderlist_2.html" target="_blank">To-Doリストに欲しい機能満載！ ほぼ全てのプラットフォームで使える『Wunderlist』 : ライフハッカー［日本版］</a></aside> 
 
 情報収集
@@ -99,7 +99,7 @@ Todo管理
     
     めちゃくちゃ捗るターミナルアプリです。 ⌘Commandキーを２回打つだけでターミナルを呼び出せます。 そして画面の端からにゅっと出てきて、もう１度同じキーを打つとにゅっと隠れます。 この感覚がくせになるのと、ブログ記事を見ながらコマンドを叩くときにすごく捗ります！ <aside> 
     
-      * <a href="http://d.hatena.ne.jp/shepherdMaster/20110929/1317308430" target="_blank">格好良いターミナル「TotalTerminal」 &#8211; 世界中の羊をかき集めて</a>
+      * <a href="http://d.hatena.ne.jp/shepherdMaster/20110929/1317308430" target="_blank">格好良いターミナル「TotalTerminal」 – 世界中の羊をかき集めて</a>
       * <a href="http://succi.jp/blog/?p=593" target="_blank" class="broken_link">コマンドラインからターミナル.appの列数を変更してTotalTerminalをもっと便利に使う | prime factor</a></aside> 
   * ### BetterTouchTool
     
@@ -149,7 +149,7 @@ Todo管理
     
     JPEG画像を（ほぼ）無劣化で1/5くらいにサイズダウンできるwebサービスが、アプリになりました！ 今までこれで変換をかけて「荒いなぁ」と思ったことはありません。 使う側は容量の節約に、見る側は表示速度の劇的改善になりWIN-WINです。 ちなみに無料版だと、20枚/日までしか変換できません。 <aside> 
     
-      * <a href="http://www.jpegmini.com/main/home" target="_blank">JPEGmini &#8211; Your Photos on a Diet!</a>
+      * <a href="http://www.jpegmini.com/main/home" target="_blank">JPEGmini – Your Photos on a Diet!</a>
       * <a href="http://www.danshihack.com/2012/06/09/junp/macapp-jpegmini.html" target="_blank">1.2MB→394KBってすごいぞ！画像データを軽くする「JPEG mini」がMacアプリに！ | 男子ハック</a></aside> 
 
 データベース
@@ -164,7 +164,7 @@ Todo管理
     ORACLE MySQL公式のGUIツールです。 ER図の作成は設計時だけでなく、実在する外部DBとも連携できて 型やリレーションの変更が可能で、phpMyAdmin要らずなスグレモノです。 ER図だけでなく他にもまだまだ機能があるので、 練習がてら今度エントリを書いてみようと思います。 <aside> 
     
       * <a href="http://blog.toor.jp/2010/05/24/mysql_workbench_great_software/" target="_blank">MySQL Workbench が便利です</a>
-      * ※「MySQL Workbench」を日本語化するには？ &#8211; 適当なWeb屋の気ままなブログ</aside> 
+      * ※「MySQL Workbench」を日本語化するには？ – 適当なWeb屋の気ままなブログ</aside> 
 
 その他
 ----------------------------------------

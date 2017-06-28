@@ -30,7 +30,7 @@ tags:
   
 
 ```markup
- <div id=&#8221;bigCookie&#8221;&#8230; 
+ <div id=”bigCookie”… 
 ```
 
 </div>
@@ -159,7 +159,7 @@ CSSのセレクタを使って要素を取得できる組み込みメソッド�
   
 
 ```javascript
- !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs(&#8220;#upgrades .upgrade&#8221;), products = qs(&#8220;#products .product&#8221;), cookie = qs(&#8220;#bigCookie&#8221;), golden = qs(&#8220;#goldenCookie&#8221;); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
+ !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs(“#upgrades .upgrade”), products = qs(“#products .product”), cookie = qs(“#bigCookie”), golden = qs(“#goldenCookie”); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
 ```
 
 </div>
@@ -224,7 +224,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
   
 
 ```javascript
- each(products, function(el) { if(hasClass(el, &#8216;enabled&#8217;)) { el.onclick(); } }); each(upgrades, function(el) { if(hasClass(el, &#8216;enabled&#8217;)) { el.onclick(); } }); 
+ each(products, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); each(upgrades, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); 
 ```
 
 </div>
@@ -267,7 +267,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
   
 
 ```javascript
- var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, &#8216;enabled&#8217;) && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift(); 
+ var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, 'enabled') && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift(); 
 ```
 
 </div>
@@ -306,7 +306,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 
 </div>
 
-これで、ダイアログは出ず、強制的に&#8221;はい&#8221;が選択されたことになります。
+これで、ダイアログは出ず、強制的に”はい”が選択されたことになります。
   
 jsの処理を止めるのはこいつだけなので、ここさえ超えてしまえばあとは放って置くだけです。
 

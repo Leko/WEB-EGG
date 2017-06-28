@@ -53,31 +53,31 @@ tags:
 XMLはざっくり、こんな感じになりました
 
 ```markup
-<coverage>
-  <project>
-    <file name="ファイルパス">
-      <class
+&lt;coverage>
+  &lt;project>
+    &lt;file name="ファイルパス">
+      &lt;class
         name="クラス名"
         namespace="名前空間"
       >
         <!-- クラス単位でのメトリクス -->
-        <metrics
+        &lt;metrics
           methods="クラス内のメソッド数"
           coveredmethods="カバレッジ100%のメソッド数"
           statements="クラス内の有効行数"
           coveredstatements="クラス内の行カバーしている有効行数"
         />
-      </class>
+      &lt;/class>
       
 
 <!-- ファイル内に定義されているクラスの分だけ上記繰り返し -->
-      <line
+      &lt;line
         num="左記メソッドの定義開始行"
         type="method"
         name="メソッド名"
         count="テストでこの行を通過した回数"
       />
-      <line
+      &lt;line
         num="行番号"
         type="stmt"
         count="テストでこの行を通過した回数"
@@ -88,7 +88,7 @@ XMLはざっくり、こんな感じになりました
       
 
 <!-- ファイル単位でのメトリクス -->
-      <metrics
+      &lt;metrics
         loc="ファイル内の有効行数"
         ncloc="カバーされていない有効行数"
         classes="ファイル内のクラス数"
@@ -97,11 +97,11 @@ XMLはざっくり、こんな感じになりました
         statements="ファイル内の定義行を除いた有効行数"
         coveredstatements="行カバーされているファイル内の定義行を除いた有効行数"
       />
-    </file>
+    &lt;/file>
     
 
 <!-- 対象カバレッジのメトリクス総まとめ -->
-    <metrics
+    &lt;metrics
       files="カバレッジ集計対象のファイル数"
       loc="カバレッジ集計対象の有効行数"
       ncloc="カバレッジ集計対象のうちカバーされていない行数"
@@ -111,8 +111,8 @@ XMLはざっくり、こんな感じになりました
       statements="カバレッジ集計対象の有効行数（定義行を除く）"
       coveredstatements="カバレッジ集計対象のカバーされている有効行数（定義行を除く）"
     />
-  </project>
-</coverage>
+  &lt;/project>
+&lt;/coverage>
 ```
 
 `有効行数`は、空白行やコメントアウトなどを除いた、PHPのコードとして評価される行数を指しています。

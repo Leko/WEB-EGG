@@ -13,7 +13,7 @@ tags:
   - Github
   - Mac
 ---
-> [すごーい！ きみはプログラミング言語を実装できるフレンズなんだね &#8211; Qiita](http://qiita.com/vain0/items/6d3b75f667d3ec7f1d2a)
+> [すごーい！ きみはプログラミング言語を実装できるフレンズなんだね – Qiita](http://qiita.com/vain0/items/6d3b75f667d3ec7f1d2a)
 
 こちらの記事と勢いに感銘を受け、フレンズ言語を動かそうとしてみたのですが、
   

@@ -27,7 +27,7 @@ tags:
 
 作ったgemのリポジトリを御覧ください。circle.ymlにかかれています
 
-> [GitHub &#8211; Leko/activeresource-chatwork: ActiveResource classes for Chatwork API](https://github.com/Leko/activeresource-chatwork)
+> [GitHub – Leko/activeresource-chatwork: ActiveResource classes for Chatwork API](https://github.com/Leko/activeresource-chatwork)
 
 gemのデプロイ手順
 ----------------------------------------

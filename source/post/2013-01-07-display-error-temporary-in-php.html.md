@@ -20,7 +20,7 @@ tags:
 
 ## ini_set<figure> 
 
-<q>string ini_set ( string $varname , string $newvalue ) 指定した設定オプションの値を設定します。 設定オプションは、スクリプトの実行中は新しい値を保持し、 スクリプト終了時に元の値へ戻されます。</q> <figcaption><cite><a href="http://php.net/manual/ja/function.ini-set.php" target="_blank">PHP: ini_set &#8211; Manual</a></cite></figcaption> </figure> 
+<q>string ini_set ( string $varname , string $newvalue ) 指定した設定オプションの値を設定します。 設定オプションは、スクリプトの実行中は新しい値を保持し、 スクリプト終了時に元の値へ戻されます。</q> <figcaption><cite><a href="http://php.net/manual/ja/function.ini-set.php" target="_blank">PHP: ini_set – Manual</a></cite></figcaption> </figure> 
 
 と公式リファレンスにあるので、これで変更してみましょう。 </section> <section id="test"> 
 

@@ -24,7 +24,7 @@ gemのときとは微妙に差異があるので、改めて備忘録として�
 
 こちらのリポジトリです。circle.ymlにデプロイ周りのことが書かれています。
 
-> [GitHub &#8211; Leko/roulette-cli: Simple roulette game](https://github.com/Leko/roulette-cli){.broken_link}
+> [GitHub – Leko/roulette-cli: Simple roulette game](https://github.com/Leko/roulette-cli){.broken_link}
 
 基本的なnpmのデプロイ手順
 ----------------------------------------
@@ -36,7 +36,7 @@ npm publish
 
 で現在のプロジェクトをnpmへデプロイできます。
 
-> [Using npm login on CircleCI &#8211; CircleCI](https://circleci.com/docs/npm-login/)
+> [Using npm login on CircleCI – CircleCI](https://circleci.com/docs/npm-login/)
 
 このドキュメントを参考に、loginで与える認可情報は環境変数で保持すればOKでした。
 

@@ -52,7 +52,7 @@ clone用の鍵を生成してGithubに登録
 ssh-keygen -t rsa -C Githubのメールアドレス
 ```
 
-> &mdash; [お前らのSSH Keysの作り方は間違っている &#8211; Qiita](http://qiita.com/suthio/items/2760e4cff0e185fe2db9)
+> &mdash; [お前らのSSH Keysの作り方は間違っている – Qiita](http://qiita.com/suthio/items/2760e4cff0e185fe2db9)
 
 でSSH鍵を生成します。
   
@@ -106,13 +106,13 @@ RUN npm set progress=false \
 
 <li id="fn-931:1">
   <p>
-    <a href="https://docs.npmjs.com/files/package.json#github-urls">GitHub URLs &#8212; package.json | npm Documentation</a>&#160;<a href="#fnref-931:1" rev="footnote">&#8617;</a>
+    <a href="https://docs.npmjs.com/files/package.json#github-urls">GitHub URLs — package.json | npm Documentation</a> <a href="#fnref-931:1" rev="footnote">↩</a>
   </p>
 </li>
 
 <li id="fn-931:2">
   <p>
-    <a href="https://www.npmjs.com/pricing">Pricing &#8212; npm</a>&#160;<a href="#fnref-931:2" rev="footnote">&#8617;</a>
+    <a href="https://www.npmjs.com/pricing">Pricing — npm</a> <a href="#fnref-931:2" rev="footnote">↩</a>
   </p></fn></footnotes> 
   
   <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

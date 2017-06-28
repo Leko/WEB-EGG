@@ -37,7 +37,7 @@ TwitterのAPIのバージョン移行に伴って、 古いAPIを利用してい
 
 Twitter公式ウィジェットとは、こんな感じのやつです。 **画像** どこかしらのwebページで見たことあるかと思います。
 
-> [Twitter API 1.1リリース　開発者の対応リミットは2013年3月5日に &#8211; ITmedia ニュース](http://www.itmedia.co.jp/news/articles/1209/06/news038.html)
+> [Twitter API 1.1リリース　開発者の対応リミットは2013年3月5日に – ITmedia ニュース](http://www.itmedia.co.jp/news/articles/1209/06/news038.html)
 とのことらしいのですが、 2013/03/16現在、私の知る限りでは普通に使えてしまっています。
 
 とはいえ、それに甘んじていてはいけません。 どうせいつか変えなければならないなら、**今対応してしまいましょう。**
@@ -90,7 +90,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
   
 
 ```markup
- <a class=&#8221;twitter-timeline&#8221; href=&#8221;https://twitter.com/L_e_k_o&#8221; data-widget-id=&#8221;310714279731019777&#8243;>@L_e_k_o からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&#8221;//platform.twitter.com/widgets.js&#8221;;fjs.parentNode.insertBefore(js,fjs);}}(document,&#8221;script&#8221;,&#8221;twitter-wjs&#8221;);</script> 
+ <a class=”twitter-timeline” href=”https://twitter.com/L_e_k_o” data-widget-id=”310714279731019777″>@L_e_k_o からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=”//platform.twitter.com/widgets.js”;fjs.parentNode.insertBefore(js,fjs);}}(document,”script”,”twitter-wjs”);</script> 
 ```
 
 </div>
@@ -110,7 +110,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 
 ### テーマ（data-theme）
 
-ウィジェットの背景色を設定する **&#8220;light&#8221;**か**&#8220;dark&#8221;**を指定することができる。
+ウィジェットの背景色を設定する **“light”**か**“dark”**を指定することができる。
 
 ### 言語（lang）
 
@@ -155,7 +155,7 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
   
 
 ```markup
- <a class=&#8221;twitter-timeline&#8221; href=&#8221;https://twitter.com/L_e_k_o&#8221; data-widget-id=&#8221;310714279731019777&#8243; width=&#8221;220&#8243; data-theme=&#8221;light&#8221; data-related=&#8221;L_e_k_o&#8221;>L_e_k_oさんのツイート（返信を除く）</a> 
+ <a class=”twitter-timeline” href=”https://twitter.com/L_e_k_o” data-widget-id=”310714279731019777″ width=”220″ data-theme=”light” data-related=”L_e_k_o”>L_e_k_oさんのツイート（返信を除く）</a> 
 ```
 
 </div>
@@ -170,7 +170,7 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
   
 
 ```markup
- <a class=&#8221;twitter-timeline&#8221; href=&#8221;https://twitter.com/L_e_k_o&#8221; data-widget-id=&#8221;310714279731019777&#8243; data-theme=&#8221;dark&#8221; lang=&#8221;en&#8221; data-link-color=&#8221;#000000&#8243;>L_e_k_oさんのツイート（返信を除く）</a> 
+ <a class=”twitter-timeline” href=”https://twitter.com/L_e_k_o” data-widget-id=”310714279731019777″ data-theme=”dark” lang=”en” data-link-color=”#000000″>L_e_k_oさんのツイート（返信を除く）</a> 
 ```
 
 </div>

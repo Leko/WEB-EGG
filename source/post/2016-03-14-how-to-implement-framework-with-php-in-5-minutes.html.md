@@ -175,7 +175,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
 
 ### DB操作のモデル
 
-Laravelの[Illuminate&#92;Eloquent](https://github.com/illuminate/database)を採用しました
+Laravelの[Illuminate\Eloquent](https://github.com/illuminate/database)を採用しました
   
 最もAPIが直感的だと思います。また、Laravelで使用されていることも有り、大規模な構成になっても耐えられそうなため採用しました
 

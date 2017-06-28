@@ -125,14 +125,14 @@ Pocketからアクセストークンを取得する
 Fetchを押してみると、以下の様なレスポンスが帰ってくると思います。
 
 ```
-HTTP/1.1 200 OK &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;REQUEST&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; Content-Type = application/x-www-form-urlencoded Accept-Encoding = gzip Content-Length = 77 User-Agent = Fetcher 1.4 (Macintosh; Mac OS X 10.8.4; ja_US) &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;RESPONSE&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; Server = Apache/2.2.23 (Amazon) Status = 200 OK Content-Type = application/x-www-form-urlencoded X-Powered-By = PHP/5.3.20 X-Source = Pocket P3P = policyref=&#8221;/w3c/p3p.xml&#8221;, CP=&#8221;ALL CURa ADMa DEVa OUR IND UNI COM NAV INT STA PRE&#8221; Date = Tue, 06 Aug 2013 11:23:38 GMT Content-Length = 35 Cache-Control = private Connection = keep-alive code=XXXXXXXXXXXXXXXXXXX
+HTTP/1.1 200 OK ———————————REQUEST————————————– Content-Type = application/x-www-form-urlencoded Accept-Encoding = gzip Content-Length = 77 User-Agent = Fetcher 1.4 (Macintosh; Mac OS X 10.8.4; ja_US) ———————————RESPONSE———————————— Server = Apache/2.2.23 (Amazon) Status = 200 OK Content-Type = application/x-www-form-urlencoded X-Powered-By = PHP/5.3.20 X-Source = Pocket P3P = policyref=”/w3c/p3p.xml”, CP=”ALL CURa ADMa DEVa OUR IND UNI COM NAV INT STA PRE” Date = Tue, 06 Aug 2013 11:23:38 GMT Content-Length = 35 Cache-Control = private Connection = keep-alive code=XXXXXXXXXXXXXXXXXXX
 ```
 
 一番下の行の、code=XXXXXXXXXXXXの部分を使います。
   
-XXXXXXXX&#8230;としていますが、実際には英語と数字とハイフン混じりの文字列になっていると思います。
+XXXXXXXX…としていますが、実際には英語と数字とハイフン混じりの文字列になっていると思います。
   
-**このXXXXXXX&#8230;の部分が、リクエストトークンです**。
+**このXXXXXXX…の部分が、リクエストトークンです**。
 
 ### 2. Pocketの認証画面へ移動
 
@@ -206,7 +206,7 @@ APIの公式ドキュメントはこちら。
   
 
 ```javascript
-(function(global, undefined) { &#8220;use strict&#8221;; var https = require(&#8220;https&#8221;), endpoint = &#8220;https://getpocket.com/v3/get&#8221;, param = &#8220;&#8221;; param += &#8220;consumer_key=YOUR_CONSUMER_KEY&#8221;; param += &#8220;&access_token=YOUR_ACCESS_TOKEN&#8221;; param += &#8220;&sort=newest&#8221;; param += &#8220;&count=1&#8221;; https.get(endpoint + &#8220;?&#8221; + serialize(param), function(res) { var response = &#8220;&#8221;; // データを受信したら res.on(&#8220;data&#8221;, function(buff) { response += buff.toString(); }); // データの受信が完了したら res.on(&#8220;end&#8221;, function() { var json = JSON.parse(response), p; for (p in json.list) { var item = json.list[p], title = item.resolved_title, url = item.resolved_url; console.log(title + &#8220;n&#8221; + url + &#8220;n&#8221;); } }); }); }(this)); 
+(function(global, undefined) { “use strict”; var https = require(“https”), endpoint = “https://getpocket.com/v3/get”, param = “”; param += “consumer_key=YOUR_CONSUMER_KEY”; param += “&access_token=YOUR_ACCESS_TOKEN”; param += “&sort=newest”; param += “&count=1”; https.get(endpoint + “?” + serialize(param), function(res) { var response = “”; // データを受信したら res.on(“data”, function(buff) { response += buff.toString(); }); // データの受信が完了したら res.on(“end”, function() { var json = JSON.parse(response), p; for (p in json.list) { var item = json.list[p], title = item.resolved_title, url = item.resolved_url; console.log(title + “n” + url + “n”); } }); }); }(this)); 
 ```
 
 </div>
@@ -240,7 +240,7 @@ APIクライアントの実装
   
 
 ```javascript
-var Pocket = require(&#8220;./nodejs-pocket.js&#8221;), pocket = new Pocket({ consumer_key: &#8220;あなたのconsumer_key&#8221;, access_token: &#8220;あなたのaccess_token&#8221; }); // Pocketから取得 var opt = { sort: &#8220;newest&#8221;, count: 10 }; pocket.get(opt, function(json) { // 記事の配列 }); // Pocketされている記事の情報変更 var opt = { actions: [ { &#8220;action&#8221;: &#8220;favorite&#8221;, &#8220;item_id&#8221;: 99999999 } ] }; pocket.modify(opt, function(json) { // 送信したアクションを行った結果 }); // Pocketに記事を追加 var opt = { url: &#8220;http://leko.jp&#8221;, title: &#8220;うぇぶえっぐ&#8221;, tags: &#8220;web,egg&#8221; }; pocket.add(opt, function(json) { // 記事をPocketに追加した結果 }); 
+var Pocket = require(“./nodejs-pocket.js”), pocket = new Pocket({ consumer_key: “あなたのconsumer_key”, access_token: “あなたのaccess_token” }); // Pocketから取得 var opt = { sort: “newest”, count: 10 }; pocket.get(opt, function(json) { // 記事の配列 }); // Pocketされている記事の情報変更 var opt = { actions: [ { “action”: “favorite”, “item_id”: 99999999 } ] }; pocket.modify(opt, function(json) { // 送信したアクションを行った結果 }); // Pocketに記事を追加 var opt = { url: “http://leko.jp”, title: “うぇぶえっぐ”, tags: “web,egg” }; pocket.add(opt, function(json) { // 記事をPocketに追加した結果 }); 
 ```
 
 </div>

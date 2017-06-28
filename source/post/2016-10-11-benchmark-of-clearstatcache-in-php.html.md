@@ -15,7 +15,7 @@ PHPには[clearstatcache](http://php.net/manual/ja/function.clearstatcache.php)�
 
 > PHPはパフォーマンス向上のために それらの関数の戻り値をキャッシュします。しかし、ケースによっては、 キャッシュされた情報を消去したい場合もあるでしょう。 例えば、一つのスクリプト上で同じファイルが何度もチェックされ、 そのファイルが変更されたり削除されたりする可能性がある場合、 ステータスキャッシュを消去しなければならないと感じるでしょう。 このようなケースでは、clearstatcache()を使用することで ファイルの情報に関してPHPが持っているキャッシュをクリアすることができます。
     
-> &mdash; [PHP: clearstatcache &#8211; Manual](http://php.net/manual/ja/function.clearstatcache.php)
+> &mdash; [PHP: clearstatcache – Manual](http://php.net/manual/ja/function.clearstatcache.php)
 
 この機能はドキュメント見る限り割と古くから導入されてるそうですが、PHP5.1でバグってました。
   

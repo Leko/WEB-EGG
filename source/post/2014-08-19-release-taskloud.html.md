@@ -85,7 +85,7 @@ URL: http://app-liv.jp/824685993/
 
 Taskloudは現在iPhone向けのアプリとなっております。 こちらからダウンロードして、お楽しみください。
 
-<a href="https://itunes.apple.com/jp/app/taskloud/id824685993?mt=8&#038;uo=4" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
+<a href="https://itunes.apple.com/jp/app/taskloud/id824685993?mt=8&uo=4" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
 
 備忘録記事のまとめ
 ----------------------------------------

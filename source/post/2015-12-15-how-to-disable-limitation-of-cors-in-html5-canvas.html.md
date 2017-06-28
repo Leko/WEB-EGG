@@ -109,7 +109,7 @@ drawImage
 
 Imageオブジェクトに自分のサーバから返されたバイナリ(画像)がセットされたので、あとは普通にcanvasで扱うだけです。
 
-> [drawImage() メソッド &#8211; Canvasリファレンス &#8211; HTML5.JP](http://www.html5.jp/canvas/ref/method/drawImage.html)
+> [drawImage() メソッド – Canvasリファレンス – HTML5.JP](http://www.html5.jp/canvas/ref/method/drawImage.html)
 
 CORS制限を回避したので、canvas内で加工した画像を書き出すことができるようになっています。
 

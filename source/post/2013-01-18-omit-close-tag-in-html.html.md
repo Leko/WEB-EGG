@@ -68,7 +68,7 @@ jQueryMobileを初めて使ってみたので、色々と記事のネタが溜�
 です。 そして、実験に用意したHTMLはこちらです。  
 
 ```markup
- <!DOCTYPE html> <title>タグ省略時の速度計測</title> <script> var st = new Date().getTime(); </script> <ul> <li>1 <li>4 (50万行繰り返し) </ul> <p>1 <p>2 (50万行繰り返し) <script> alert(new Date().getTime() &#8211; st); </script> 
+ <!DOCTYPE html> <title>タグ省略時の速度計測</title> <script> var st = new Date().getTime(); </script> <ul> <li>1 <li>4 (50万行繰り返し) </ul> <p>1 <p>2 (50万行繰り返し) <script> alert(new Date().getTime() – st); </script> 
 ```
 
  というHTMLを用意しました。 html,head,bodyとli,pの閉じタグが省略されています。 どう計測したら良いのか分からなかったため、この形式にしてみました。 上下のscriptタグが実行されるまでの差を計測します。 これで読み込みから表示完了までの時間が取れるのではないかと！ 見た目は、長いけどかなりすっきりしています。 およそ100万行。シンタックスハイライトの入ってるエディタだと確実に固まります。 上記が閉じタグを省略した版のHTMLで、 閉じタグを省略しない版では、上記のpタグとliタグを閉じています。 </section> <section id="step1"> 

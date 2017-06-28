@@ -145,7 +145,7 @@ JSLint
   
 JSLintについてはこちら。
 
-> [JavaScriptで書いたプログラムの構文チェックツール「JSLint」 &#8211; 強火で進め](http://d.hatena.ne.jp/nakamura001/20110524/1306203463)
+> [JavaScriptで書いたプログラムの構文チェックツール「JSLint」 – 強火で進め](http://d.hatena.ne.jp/nakamura001/20110524/1306203463)
 
 デフォルトの設定だと他にも、
   
@@ -181,7 +181,7 @@ README(英語)を見てみると、
   
 
 ```javascript
- (function(glocal, $) { var hoge = &#8220;aaa&#8221;; alert(hoge); }(this, jQuery)); 
+ (function(glocal, $) { var hoge = “aaa”; alert(hoge); }(this, jQuery)); 
 ```
 
 </div>
@@ -194,7 +194,7 @@ F7キーを押してみると、コンソールが表示され[Finished.]と出�
   
 
 ```javascript
- (function(a,b){var c=&#8221;aaa&#8221;;alert(c);}(this,jQuery)); 
+ (function(a,b){var c=”aaa”;alert(c);}(this,jQuery)); 
 ```
 
 </div>
@@ -226,7 +226,7 @@ Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、
 
 提供されているファイルが一覧できるweb版はこちらから。
 
-> [cdnjs &#8211; the missing cdn](http://cdnjs.com/)
+> [cdnjs – the missing cdn](http://cdnjs.com/)
 
 ## JavaScript and jQuery API Completions
 
@@ -242,7 +242,7 @@ Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、
 "auto_complete_triggers":
 [
     {
-        "characters": "<>"'-_qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
+        "characters": "&lt;&gt;"'-_qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
         "selector": "text, source, meta, string, punctuation, constant"
     }
 ],

@@ -22,7 +22,7 @@ XXX_URL=pg://xxx:yyy@zzz/hoge
 
 のような文字列を環境変数で指定して使うというパターンが有ると思うのですが、
   
-**config/database.ymlに一切触らず** に、この文字列でDB接続したい&#8230;
+**config/database.ymlに一切触らず** に、この文字列でDB接続したい…
 
 と思ったのでRailsのソースやドキュメントを読み漁ってみました。
 
@@ -96,7 +96,7 @@ private
 
 ```yaml
 development: # ※ここは実行時の環境による
-  url: <%%= ENV['DATABASE_URL'] %>
+  url: &lt;%%= ENV['DATABASE_URL'] %>
 ```
 
 に相当する処理を内部でやってくれる模様。
@@ -112,7 +112,7 @@ development: # ※ここは実行時の環境による
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%%= ENV['DATABASE_URL'] %>
+#     url: &lt;%%= ENV['DATABASE_URL'] %>
 #
 ```
 

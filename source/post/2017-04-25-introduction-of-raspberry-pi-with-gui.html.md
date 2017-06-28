@@ -23,7 +23,7 @@ CLIオンリーな環境からGUIの環境を整えようとしたらドハマ�
 
 > パスを間違えるとデータが消えるなどの大ダメージとなる可能性があるので気をつけて下さい。
 > 
-> &mdash; [Raspberry PiにRaspbianをインストールする for Mac OSX &#8211; Qiita](http://qiita.com/ttyokoyama/items/7afe6404fd8d3e910d09)
+> &mdash; [Raspberry PiにRaspbianをインストールする for Mac OSX – Qiita](http://qiita.com/ttyokoyama/items/7afe6404fd8d3e910d09)
 
 RasbianをDL
 ----------------------------------------
@@ -47,7 +47,7 @@ SDカードをフォーマット
 diskutil eraseDisk FAT32 RPI /dev/disk2
 ```
 
-> &mdash; [Raspberry Pi 2にRASPBIAN JESSIEをインストールする for Mac OSX &#8211; Qiita](http://qiita.com/moutend/items/7ede458aec97056dfd5e#sd%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88)
+> &mdash; [Raspberry Pi 2にRASPBIAN JESSIEをインストールする for Mac OSX – Qiita](http://qiita.com/moutend/items/7ede458aec97056dfd5e#sd%E3%82%AB%E3%83%BC%E3%83%89%E3%81%AE%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%83%E3%83%88)
 
 RasbianをSDカードに書き込み
 ----------------------------------------
@@ -58,9 +58,9 @@ RasbianをSDカードに書き込み
 sudo dd bs=1m if=$HOME/Downloads/2017-04-10-raspbian-jessie.img of=/dev/rdisk2
 ```
 
-> &#8220;/dev/rdisk2&#8243;と指定すると、&#8221;/dev/disk2&#8243;とするよりも早く書き込みができるらしいです。
+> “/dev/rdisk2″と指定すると、”/dev/disk2″とするよりも早く書き込みができるらしいです。
 > 
-> &mdash; [Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用) &#8211; Qiita](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
+> &mdash; [Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用) – Qiita](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
 
 え、なにそれ知らないと思って調べたらちょうど同じことに疑問を持たれた方が居ました。
 
@@ -98,7 +98,7 @@ sudo sh -c 'wpa_passphrase {SSID} {PASSPHRASE} >> /etc/wpa_supplicant/wpa_suppli
 sudo reboot -h now
 ```
 
-> &mdash; [Raspberry Pi 3を買ってMacを使ってWiFi接続とSSHの接続するまで &#8211; Qiita](http://qiita.com/toshihirock/items/8e7f0887b565defe7989)
+> &mdash; [Raspberry Pi 3を買ってMacを使ってWiFi接続とSSHの接続するまで – Qiita](http://qiita.com/toshihirock/items/8e7f0887b565defe7989)
 
 再起動が終わり、Wi-fiのアイコンが繋がってそうな表示になったらOKです。
   

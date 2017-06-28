@@ -13,9 +13,7 @@ dsq_thread_id:
 
 と言えるのではないでしょうか。
 
-&nbsp;
-
-[プログラミングが捗る！プログラミング用フォントまとめ &#8211; NAVER まとめ](http://matome.naver.jp/odai/2133291994190166801)
+[プログラミングが捗る！プログラミング用フォントまとめ – NAVER まとめ](http://matome.naver.jp/odai/2133291994190166801)
 
 こちらから、「Migu 1M」を選ばさせていただきました。
 
@@ -25,15 +23,11 @@ dsq_thread_id:
 
 <a href="http://mix-mplus-ipa.sourceforge.jp/" target="_blank">M+とIPAの合成フォント</a>
 
-&nbsp;
-
 Migu 1Mを適応したスクショが以下です。
 
 Migu-1M-Regular 11pt × Fraize
 
 うん、良い感じですね。このフォントお気に入りです。
-
-&nbsp;
 
 皆様のイチオシフォントがございましたら、
 

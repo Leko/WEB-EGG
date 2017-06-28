@@ -126,7 +126,7 @@ Herokuには[Log Drains](https://devcenter.heroku.com/articles/log-drains)とい
   
 ログサーバを自前でホスティングすればFluentd+Elasticsearch+KibanaだったりBigQueryだったりと何でもやれますが、Herokuにしたきっかけが自分でサーバを持ちたくないことなので、本末転倒になってしまうため選外としました。
 
-> [Heroku アプリのログを fluentd で ElasticSearch に突っ込んで Kibana で監視する方法 &#8211; hakobera's blog](http://hakobera.hatenablog.com/entry/2014/02/03/122029)
+> [Heroku アプリのログを fluentd で ElasticSearch に突っ込んで Kibana で監視する方法 – hakobera's blog](http://hakobera.hatenablog.com/entry/2014/02/03/122029)
 
 ## 断念: TreasureData + fluentd
 
@@ -140,7 +140,7 @@ Herokuには[Log Drains](https://devcenter.heroku.com/articles/log-drains)とい
 
 > こちらの記事も参考になりました。
     
-> [TreasureData &#8211; 世界最速でFluentdを立ち上げる on Heroku &#8211; Qiita](http://qiita.com/kiyoto/items/24e15ac38804ca48b06d)
+> [TreasureData – 世界最速でFluentdを立ち上げる on Heroku – Qiita](http://qiita.com/kiyoto/items/24e15ac38804ca48b06d)
 
 ## 断念: [Bonsai.io](https://bonsai.io) + Elasticsearch + Kibana
 
@@ -186,7 +186,7 @@ Herokuでよく出るログはあらかじめフィルタとして登録して�
   
 導入にあたり下記の２記事が参考になりました。ありがとうございます。
 
-> &mdash; [herokuのログ管理はPapertrailがいい感じ &#8211; Oh! My! Enter! ～バッチを起動しようと勢いよくキーを叩いたら、それはシフトキーだった～](http://d.hatena.ne.jp/itmammoth/20130729/1375112798)
+> &mdash; [herokuのログ管理はPapertrailがいい感じ – Oh! My! Enter! ～バッチを起動しようと勢いよくキーを叩いたら、それはシフトキーだった～](http://d.hatena.ne.jp/itmammoth/20130729/1375112798)
     
 > &mdash; [herokuにpapertrailを導入して、アラートをhubot経由でslackへ通知する](http://qiita.com/yukofeb/items/f7c0b4f9bdc11a9daf40)
 

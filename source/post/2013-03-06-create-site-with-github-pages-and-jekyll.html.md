@@ -152,7 +152,7 @@ default.htmlを編集する
   
 
 ```markup
- <!DOCTYPE html> <meta charset=&#8221;UTF-8&#8243;> <title>Lekohub</title> <!&#8211; cssとかjsもここで読み込み &#8211;> <link rel=&#8221;stylesheet&#8221; href=&#8221;css/common.css&#8221;> <script src=&#8221;js/top.js&#8221;></script> <div class=&#8221;container&#8221;> {{ content }} </div> 
+ <!DOCTYPE html> <meta charset=”UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel=”stylesheet” href=”css/common.css”> <script src=”js/top.js”></script> <div class=”container”> {{ content }} </div> 
 ```
 
 </div>
@@ -194,7 +194,7 @@ layout: default
 
 と入力して、保存。
 
-ここで重要なのが、**layout: default**と上下の**&#8212;**です。  
+ここで重要なのが、**layout: default**と上下の**—**です。  
 `layout: default`と書くことで、先ほど書いたdefault.htmlが  
 テンプレートとして読み込まれます。
 

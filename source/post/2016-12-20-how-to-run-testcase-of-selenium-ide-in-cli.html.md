@@ -41,9 +41,9 @@ IDEからステップ実行もできるので、１手順ずつ動作確認し�
 
 Selenium IDEの詳しい使い方については色んな方が記事書いてくださっていますので割愛します。
 
-> &mdash; [5分でわかるSelenium IDEの使い方 &#8211; Qiita](http://qiita.com/naoqoo2/items/90d382cd9370d3526509)
+> &mdash; [5分でわかるSelenium IDEの使い方 – Qiita](http://qiita.com/naoqoo2/items/90d382cd9370d3526509)
     
-> &mdash; [これだけはおさえておきたい！Selenium IDEのコマンド &#8211; Qiita](http://qiita.com/oh_rusty_nail/items/c59d4345d5372213128f)
+> &mdash; [これだけはおさえておきたい！Selenium IDEのコマンド – Qiita](http://qiita.com/oh_rusty_nail/items/c59d4345d5372213128f)
     
 > &mdash; [Selenium IDEでWebページのテストを自動化しよう！｜社員ブログ｜株式会社Qript](http://www.qript.co.jp/blog/technique/1691/)
 
@@ -104,7 +104,7 @@ cron等で定期実行したり、CIを回したりするには、GUIのないLi
   
 ということで、その動作環境も作ってみました。
 
-> [GitHub &#8211; Leko/example-selenese-runner-with-hub: Example of scenario testing used by selenese-runner with Selenium Hub](https://github.com/Leko/example-selenese-runner-with-hub)
+> [GitHub – Leko/example-selenese-runner-with-hub: Example of scenario testing used by selenese-runner with Selenium Hub](https://github.com/Leko/example-selenese-runner-with-hub)
 
 動作させると、
 
@@ -132,7 +132,7 @@ Selenium hub使ったことなかったので理解するまでが難しかっ�
   
 Selenium hub自体については公式リポジトリとこちらの記事が参考になりました。
 
-> &mdash; [GitHub &#8211; SeleniumHQ/docker-selenium: Docker images for Selenium Standalone Server](https://github.com/SeleniumHQ/docker-selenium)
+> &mdash; [GitHub – SeleniumHQ/docker-selenium: Docker images for Selenium Standalone Server](https://github.com/SeleniumHQ/docker-selenium)
     
 > &mdash;  [&raquo; Selenium Gridで複数の実機ブラウザで自動テスト TECHSCORE BLOG](http://www.techscore.com/blog/2015/05/10/selenium-grid/)
 

@@ -242,7 +242,7 @@ class Model_Book extends \Orm\Model
     
 > <https://gist.github.com/Leko/6c98685bdb048b949392#file-wakati-php>
 > 
-> Creating &#8211; Observers &#8211; Orm Package &#8211; FuelPHP ドキュメント <http://fuelphp.jp/docs/1.7/packages/orm/observers/creating.html>
+> Creating – Observers – Orm Package – FuelPHP ドキュメント <http://fuelphp.jp/docs/1.7/packages/orm/observers/creating.html>
 
 分かち書きした結果を保存する
 ----------------------------------------
@@ -312,13 +312,13 @@ $book->similarBooks();  // => 青空文庫のレコードがマッチする
 
 <li id="fn-754:1">
   <p>
-    <a href="http://dev.mysql.com/doc/refman/5.6/en/fulltext-restrictions.html">12.9.5 Full-Text Restrictions</a>&#160;<a href="#fnref-754:1" rev="footnote">&#8617;</a>
+    <a href="http://dev.mysql.com/doc/refman/5.6/en/fulltext-restrictions.html">12.9.5 Full-Text Restrictions</a> <a href="#fnref-754:1" rev="footnote">↩</a>
   </p>
 </li>
 
 <li id="fn-754:2">
   <p>
-    <a href="http://y-ken.hatenablog.com/entry/mysql-casual-talks-vol4-innodb-fts">MySQL-5.6.4からの新機能「InnoDB FullText Search」を用いた全文検索エンジンのベンチマークLTをしました。#mysqlcasual</a>&#160;<a href="#fnref-754:2" rev="footnote">&#8617;</a>
+    <a href="http://y-ken.hatenablog.com/entry/mysql-casual-talks-vol4-innodb-fts">MySQL-5.6.4からの新機能「InnoDB FullText Search」を用いた全文検索エンジンのベンチマークLTをしました。#mysqlcasual</a> <a href="#fnref-754:2" rev="footnote">↩</a>
   </p></fn></footnotes> 
   
   <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

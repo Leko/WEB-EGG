@@ -61,7 +61,7 @@ scaffoldしたままのRailsのコントローラでは、**拡張子を指定�
 scaffoldされたコードは、こんな感じになっていると思います。
 
 ```ruby
-class TasksController < ApplicationController
+class TasksController &lt; ApplicationController
   def index
     @tasks = Task.all
 
@@ -97,7 +97,7 @@ anyを指定すると、any以前に書いてあるフォーマット(`.html`, `
 先ほどのコードにanyでjsonを返すコードを追加するとこうなります。
 
 ```ruby
-class TasksController < ApplicationController
+class TasksController &lt; ApplicationController
   def index
     @tasks = Task.all
 

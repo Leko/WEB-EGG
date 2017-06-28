@@ -127,7 +127,7 @@ Bootstrap3用に最適化されたCSSも公式で対応していたりします�
   * Star: <a class="github-button broken_link" href="/ajaxzip3/ajaxzip3.github.io/stargazers" api="/repos/ajaxzip3/ajaxzip3.github.io#stargazers_count" label="Star ajaxzip3/ajaxzip3.github.io on GitHub">Star</a>
   * デモ: <https://ajaxzip3.github.io/sample-page/>
 
-[BASE](https://thebase.in)というネットショップを作成できるサービスの、購入者情報入力画面では[AjaxZip 2.0 &#8211; Ajax郵便番号→住所自動入力フォーム（CGI不要版）](http://www.kawa.net/works/ajax/ajaxzip2/ajaxzip2.html)というライブラリが使用されていました。
+[BASE](https://thebase.in)というネットショップを作成できるサービスの、購入者情報入力画面では[AjaxZip 2.0 – Ajax郵便番号→住所自動入力フォーム（CGI不要版）](http://www.kawa.net/works/ajax/ajaxzip2/ajaxzip2.html)というライブラリが使用されていました。
 
 > &mdash; [いつのまにかajaxzipが進化して、メンテ不要の住所入力支援ツールになっててビビった件。](http://blog.motoo.net/2010/10/15/102802)
 

@@ -25,7 +25,7 @@ FizzBuzzとは
 
 FizzBuzzとは、プログラマーの小手調べだったり、お遊びだったりします。
 
-> <q>1から100までの数をプリントするプログラムを書け。<br /> ただし3の倍数のときは数の代わりに「Fizz」と、5の倍数のときは「Buzz」とプリントし、3と5両方の倍数の場合には「FizzBuzz」とプリントすること。 <a href="http://d.hatena.ne.jp/keyword/Fizz%2DBuzz%CC%E4%C2%EA">Fizz-Buzz問題とは &#8211; はてなキーワード</a></q>
+> <q>1から100までの数をプリントするプログラムを書け。<br /> ただし3の倍数のときは数の代わりに「Fizz」と、5の倍数のときは「Buzz」とプリントし、3と5両方の倍数の場合には「FizzBuzz」とプリントすること。 <a href="http://d.hatena.ne.jp/keyword/Fizz%2DBuzz%CC%E4%C2%EA">Fizz-Buzz問題とは – はてなキーワード</a></q>
 CSSのFizzBuzz
 ----------------------------------------
 
@@ -113,7 +113,7 @@ mixinも、より効率よく、シンプルに書けそうです。
 関連リンク
 ----------------------------------------
 
-[Sass control directives: @if, @for, @each and @while &#8211; Intermediate](http://thesassway.com/intermediate/if-for-each-while#while)
+[Sass control directives: @if, @for, @each and @while – Intermediate](http://thesassway.com/intermediate/if-for-each-while#while)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -43,7 +43,7 @@ __callStaticの仕様を読む
 > 
 > 引数 $name は、 コールしようとしたメソッドの名前です。 引数 $arguments は配列で、メソッド $name に渡そうとしたパラメータが格納されます。
     
-> &mdash; [PHP: オーバーロード &#8211; Manual](http://php.net/manual/ja/language.oop5.overloading.php#object.callstatic)
+> &mdash; [PHP: オーバーロード – Manual](http://php.net/manual/ja/language.oop5.overloading.php#object.callstatic)
 
 サンプルコードを呼んでみると、`__callStatic`はPHP5.3以上で動作可能な機能のようです。
 
@@ -254,7 +254,7 @@ public static function __callStatic($method_name, $args) {
   
   
   <li>
-    <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 => 値</code>の連想配列へ変換し、  
+    <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 =&gt; 値</code>の連想配列へ変換し、  
   </li>
   
   

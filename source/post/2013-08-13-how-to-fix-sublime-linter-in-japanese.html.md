@@ -69,15 +69,15 @@ Nodejsが使われているなら日本語エラー出ないし。
 治った対応策
 ----------------------------------------
 
-> [解决Mac下SublimeLinter的Unsafe Characters警告 &#8211; 专注web前端开发](http://www.fantxi.com/blog/archives/mac-fix-js-lint/)
+> [解决Mac下SublimeLinter的Unsafe Characters警告 – 专注web前端开发](http://www.fantxi.com/blog/archives/mac-fix-js-lint/)
 
 中国語は全く読めないのですが、タイトルに釣られて読んでみたら当たりでした。
 
 > `設定>SublimeLinter>設定 - ユーザ`に以下を追加します。
 > 
-> &#8220;sublimelinter\_executable\_map&#8221;: {
+> “sublimelinter\_executable\_map”: {
   
-> &#8220;javascript&#8221;: &#8220;/Users/leon/.nvm/v0.10.8/bin/node&#8221; // which node
+> “javascript”: “/Users/leon/.nvm/v0.10.8/bin/node” // which node
   
 > },
 
