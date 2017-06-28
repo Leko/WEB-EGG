@@ -10,7 +10,11 @@ before_install:
 install:
 - bundle install
 - npm install
+- npm install netlify-cli -g
 
 script:
 - bundle exec middleman build
 - npm run lint
+
+deploy:
+- netlify deploy
