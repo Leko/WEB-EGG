@@ -9,7 +9,9 @@
     "lint": "lint:flow",
     "lint:flow": "flow",
     "build": "webpack --config ./webpack.config.dev.js --bail -p",
-    "develop": "webpack --config ./webpack.config.dev.js --watch -d --progress --colors"
+    "develop": "webpack --config ./webpack.config.dev.js --watch -d --progress --colors",
+    "deploy:review": "netlify deploy -e deploy-preview",
+    "deploy:prod": "netlify deploy -e production"
   },
   "repository": {
     "type": "git",
@@ -51,6 +53,7 @@
     "dotenv": "^4.0.0",
     "flow-bin": "^0.48.0",
     "flow-typed": "^2.1.2",
+    "netlify-cli": "^1.2.2",
     "webpack": "^3.0.0"
   }
 }

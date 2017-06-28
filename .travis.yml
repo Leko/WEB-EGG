@@ -10,7 +10,6 @@ before_install:
 install:
 - bundle install
 - npm install
-- npm install netlify-cli -g
 
 script:
 - bundle exec middleman build
@@ -18,10 +17,10 @@ script:
 
 deploy:
   - provider: script
-    script: netlify deploy -e production
+    script: npm run deploy:review
     on:
       branch: master
   - provider: script
-    script: netlify deploy -e deploy-preview
+    script: npm run deploy:prod
     on:
       condition: $TRAVIS_BRANCH != 'master'
