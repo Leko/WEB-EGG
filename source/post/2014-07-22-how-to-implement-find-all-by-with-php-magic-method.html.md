@@ -312,7 +312,7 @@ public static function __callStatic($method_name, $args) {
   
   
   <li>
-    <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 =&gt; 値</code>の連想配列へ変換し、  
+    <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 => 値</code>の連想配列へ変換し、  
   </li>
   
   

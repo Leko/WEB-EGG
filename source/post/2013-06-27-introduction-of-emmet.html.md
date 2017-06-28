@@ -142,7 +142,7 @@ headタグ内に必ず入れると思います。
 
 
 ```
-&lt;link rel="stylesheet" href=""&gt;
+<link rel="stylesheet" href="">
 ```
 
 
@@ -154,7 +154,7 @@ headタグ内に必ず入れると思います。
 
 
 ```
-nav&gt;ul#menu&gt;li*5&gt;a[href=#]
+nav>ul#menu>li*5>a[href=#]
 ```
 
 
@@ -164,15 +164,15 @@ nav&gt;ul#menu&gt;li*5&gt;a[href=#]
 
 
 ```
-&lt;nav&gt;
-    &lt;ul id="menu"&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
+<nav>
+    <ul id="menu">
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</nav>
 ```
 
 
@@ -202,12 +202,12 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 
 
 ```
-&lt;div class="thumb"&gt;サンプル1&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル2&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル3&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル4&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル5&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル6&lt;/div&gt;
+<div class="thumb">サンプル1</div>
+<div class="thumb">サンプル2</div>
+<div class="thumb">サンプル3</div>
+<div class="thumb">サンプル4</div>
+<div class="thumb">サンプル5</div>
+<div class="thumb">サンプル6</div>
 ```
 
 
@@ -237,16 +237,16 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 
 
 ```
-&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
 
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 ```
 
 
@@ -274,16 +274,16 @@ IEが居る限り4.01と戦わざるを得ません。**何とか覚えましょ
 
 
 ```
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta http-equiv="Content-Type" content="text/html;charset=UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
 
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 ```
 
 
@@ -335,15 +335,15 @@ text-align: center;
 
 
 ```
-db =&gt; display: block;
-m:a =&gt; margin: auto;
-tdn =&gt; text-decoration: none;
-posl =&gt; position: relative;
-poa =&gt; position: absolute;
-pf =&gt; position: fixed;
-w100 =&gt; width: 100px;
-fsz12 =&gt; font-size: 12px;
-fsz12pt =&gt; font-size: 12pt;
+db => display: block;
+m:a => margin: auto;
+tdn => text-decoration: none;
+posl => position: relative;
+poa => position: absolute;
+pf => position: fixed;
+w100 => width: 100px;
+fsz12 => font-size: 12px;
+fsz12pt => font-size: 12pt;
 ```
 
 
@@ -367,9 +367,9 @@ backgroundなどを一括指定する場合に使うことが多いかと思い�
 
 
 ```
-bg+ =&gt; background: #fff url() 0 0 no-repeat;
-f+ =&gt; font: 1em Arial,sans-serif;
-bd+ =&gt; border: 1px solid #000;
+bg+ => background: #fff url() 0 0 no-repeat;
+f+ => font: 1em Arial,sans-serif;
+bd+ => border: 1px solid #000;
 ```
 
 

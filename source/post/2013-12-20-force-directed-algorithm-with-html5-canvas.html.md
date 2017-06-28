@@ -129,8 +129,8 @@ class Node
 # 力指向アルゴリズム
 class ForceDirectedGraph
     # バネ定数: 大きいとノードの間隔が詰まる、クーロン数：大きいとノードの間隔が広がる
-    @BOUNCE = 0.1         # バネ定数(BOUNCE &lt; 0.1[推奨])
-    @ATTENUATION = 0.8    # 減衰定数(ATTENUATION &lt; 1[必須])
+    @BOUNCE = 0.1         # バネ定数(BOUNCE < 0.1[推奨])
+    @ATTENUATION = 0.8    # 減衰定数(ATTENUATION < 1[必須])
     @COULOMB = 600        # クーロン数
 
     constructor: (@nodes) ->

@@ -42,7 +42,7 @@ dsq_thread_id:
 まずHTMLはこんな感じ。
 
 ```
-&lt;a href="#" class="btn-a"&gt;BUTTON&lt;/a&gt;
+<a href="#" class="btn-a">BUTTON</a>
 ```
 
 

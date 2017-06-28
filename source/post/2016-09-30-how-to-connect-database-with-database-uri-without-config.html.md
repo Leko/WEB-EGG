@@ -103,7 +103,7 @@ private
 
 ```yaml
 development: # ※ここは実行時の環境による
-  url: &lt;%%= ENV['DATABASE_URL'] %>
+  url: <%%= ENV['DATABASE_URL'] %>
 ```
 
 
@@ -120,7 +120,7 @@ development: # ※ここは実行時の環境による
 # You can use this database configuration with:
 #
 #   production:
-#     url: &lt;%%= ENV['DATABASE_URL'] %>
+#     url: <%%= ENV['DATABASE_URL'] %>
 #
 ```
 

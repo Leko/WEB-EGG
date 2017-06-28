@@ -62,7 +62,7 @@ class FormToJsonParser
   end
 end
 
-class Base &lt; ActiveResource::Base
+class Base < ActiveResource::Base
   self.format = FormToJsonParser.new
 
   # ...
@@ -88,7 +88,7 @@ URL末尾から.json等のフォーマットを消したい
 [ActiveResource::Base#format_extension](https://github.com/rails/activeresource/blob/master/lib/active_resource/base.rb)を読んでいたら発見。
 
 ```ruby
-class Base &lt; ActiveResource::Base
+class Base < ActiveResource::Base
   self.include_format_in_path = false
 end
 ```
@@ -197,7 +197,7 @@ module Chatwork
 end
 
 module Chatwork
-  class Member &lt; Base
+  class Member < Base
     include Chatwork::NestOfRoom
   end
 end

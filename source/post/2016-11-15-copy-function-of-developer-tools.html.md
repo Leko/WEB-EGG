@@ -53,9 +53,9 @@ jsでごにょった値をコピーして使う、と言ってしまえばそれ
 ```javascript
 copy(document.cookie
   .split(';')
-  .map(exp =&gt; exp.trim())
-  .filter(exp =&gt; exp.startsWith('_ga=')))
-  .map(exp =&gt; `document.cookie = '${exp}';`)
+  .map(exp => exp.trim())
+  .filter(exp => exp.startsWith('_ga=')))
+  .map(exp => `document.cookie = '${exp}';`)
   .join(';')
 ```
 

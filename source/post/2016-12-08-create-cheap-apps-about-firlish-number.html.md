@@ -96,7 +96,7 @@ player.playVideo()
 stopper (playerVars, e) {
 if (e.data !== 1) return
 
-setTimeout(() =&gt; {
+setTimeout(() => {
 e.target.pauseVideo()
 }, (playerVars.end - playerVars.start) * 1000)
 }
@@ -132,8 +132,8 @@ render () {
 const playerVars = this.getPlayerOptions()
 
 return (
-&lt;youtube ref="player" videoid="{'G9zyLfez5sM'}" opts="{{" playervars:="" _.omit(playervars,="" 'start',="" 'end')="" }}="" onready="{this.handleReady.bind(this," playervars)}="" onstatechange="{this.stopper.bind(this," onerror="{(e)" ==""> console.error(e)}
-/&gt;
+<youtube ref="player" videoid="{'G9zyLfez5sM'}" opts="{{" playervars:="" _.omit(playervars,="" 'start',="" 'end')="" }}="" onready="{this.handleReady.bind(this," playervars)}="" onstatechange="{this.stopper.bind(this," onerror="{(e)" ==""> console.error(e)}
+/>
 )
 }
 }

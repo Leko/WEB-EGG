@@ -251,7 +251,7 @@ Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、
 "auto_complete_triggers":
 [
     {
-        "characters": "&lt;&gt;"'-_qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
+        "characters": "<>"'-_qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJMIKOLP",
         "selector": "text, source, meta, string, punctuation, constant"
     }
 ],
