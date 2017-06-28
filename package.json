@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "flow-typed install",
     "test": "{TODO}",
-    "lint": "lint:flow",
+    "lint": "npm run lint:flow",
     "lint:flow": "flow",
     "build": "webpack --config ./webpack.config.dev.js --bail -p",
     "develop": "webpack --config ./webpack.config.dev.js --watch -d --progress --colors",
