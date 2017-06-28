@@ -12,6 +12,10 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'middleman', '~> 4.1'
 gem 'middleman-blog'
 gem 'middleman-syntax'
+gem 'middleman-dotenv', '~> 2.0'
+
+# site search
+gem 'algoliasearch'
 
 gem 'middleman-blog-similar' # https://ja.ngs.io/2014/05/11/middleman-blog-similar/
 gem 'natto'                  # Use :mecab tagger

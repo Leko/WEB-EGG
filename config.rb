@@ -1,6 +1,9 @@
 ###
 # Page options, layouts, aliases and proxies
 ###
+activate :dotenv
+
+Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
 
 config[:meta] = {
   :locale => 'ja',
@@ -87,11 +90,24 @@ page "/feed.xml", layout: false
 # end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def all_articles
+    blog.articles.map{|post|
+      {
+        objectID: Digest::MD5.hexdigest(post.slug),
+        title: post.title,
+        date: post.date,
+        body: strip_tags(post.body),
+        summary: strip_tags(post.summary),
+        tags: post.tags,
+        published: post.published?,
+        locale: post.locale,
+        slug: post.slug,
+        path: post.data.path,
+      }
+    }
+  end
+end
 
 # Build-specific configuration
 configure :build do
@@ -100,4 +116,11 @@ configure :build do
 
   # Minify Javascript on build
   # activate :minify_javascript
+
+  after_build do
+    index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
+    batch = JSON.parse(File.read('./build/posts.json'))
+    index.save_objects!(batch)
+    File.delete('./build/posts.json')
+  end
 end
