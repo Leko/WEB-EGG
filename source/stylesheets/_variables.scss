@@ -17,6 +17,10 @@ $font-size-ex-small: 10px;
 
 // Bootstrap
 $grid-gutter-width-base: 10px;
+$enable-rounded: false;
+$input-bg: transparent;
+$input-border-color: transparent;
+$input-group-addon-bg: transparent;
 
 // Mixins
 @mixin textlist () {
