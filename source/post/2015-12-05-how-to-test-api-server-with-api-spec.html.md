@@ -32,7 +32,11 @@ Web APIのドキュメントといえば、[Swagger](http://swagger.io/)や[JSON
 
 ついでにAPI Blueprint形式のドキュメントをホスティングしてくれる[Apiary](https://apiary.io/)とGithubを連携し、masterにマージされたら公開されているAPIドキュメントも最新になるというのもやってみます。
 
+
+
 <!--more-->
+
+
 
 まえおき
 ----------------------------------------

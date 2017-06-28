@@ -19,7 +19,11 @@ dsq_thread_id:
 
 こちらから、「Migu 1M」を選ばさせていただきました。
 
-<!--more-->ダウンロードはこちらから。
+
+
+<!--more-->
+
+ダウンロードはこちらから。
 
 <a href="http://mix-mplus-ipa.sourceforge.jp/" target="_blank">M+とIPAの合成フォント</a>
 

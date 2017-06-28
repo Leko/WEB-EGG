@@ -32,7 +32,11 @@ categories:
           
 せっかく設定できる項目があるので、表示させてみます。
           
-<!--more--> と、その前に、 </section> <section id="what\_is\_eyecatch"> 
+
+
+<!--more-->
+
+ と、その前に、 </section> <section id="what\_is\_eyecatch"> 
 
 アイキャッチ画像とは何か
 ----------------------------------------

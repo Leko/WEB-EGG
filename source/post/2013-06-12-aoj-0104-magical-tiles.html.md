@@ -22,7 +22,11 @@ AOJの0104、Magical Tilesをc++で解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0104&lang=jp)
 
+
+
 <!--more-->
+
+
 
 コード
 ----------------------------------------

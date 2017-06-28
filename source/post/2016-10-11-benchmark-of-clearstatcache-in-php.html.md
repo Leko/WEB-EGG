@@ -21,7 +21,11 @@ PHPには[clearstatcache](http://php.net/manual/ja/function.clearstatcache.php)�
   
 それは後述するとして、 **このバグを引き換えに得られる性能** はどんなもんなのさ？を計測してみました。
 
+
+
 <!--more-->
+
+
 
 はじめに
 ----------------------------------------

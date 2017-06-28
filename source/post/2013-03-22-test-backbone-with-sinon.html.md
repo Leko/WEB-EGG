@@ -37,7 +37,11 @@ _<span class="removed_link" title="http://visionmedia.github.com/mocha/">mocha</
   
 そのテストを書いている時に、sinonjsのspyで詰まったのでメモ。
 
+
+
 <!--more-->
+
+
 
 ## sinonjs spyの使い道・使い方
 

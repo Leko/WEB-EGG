@@ -36,7 +36,11 @@ CircleCI + Docker構成でCIしたい方はだいぶマゾいとすら思いま�
 
 ということでハマったことと、CircleCIでDockerを扱うための基本戦術を残します。
 
+
+
 <!--more-->
+
+
 
 ## Tips: ビルドにDocker1.10.0, docker-compose 1.8.0を使用する
 

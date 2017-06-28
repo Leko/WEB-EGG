@@ -16,7 +16,11 @@ AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1135&lang=jp)
 
+
+
 <!--more-->
+
+
 
 これは、特に悩むことも無く。 率直に解きました。
 

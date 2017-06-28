@@ -36,7 +36,11 @@ $a = false or false;
 
 
 
+
+
 <!--more-->
+
+
 
 
 
@@ -125,7 +129,11 @@ $a = false or false  => false
 </p>
 
 
+
+
 <!--more-->
+
+
 
 <h2>
   面白い書き方

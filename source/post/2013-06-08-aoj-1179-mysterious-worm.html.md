@@ -24,7 +24,11 @@ AOJの0179、Mysterious Wormをc++で解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0179&lang=jp)
 
+
+
 <!--more-->
+
+
 
 コード
 ----------------------------------------

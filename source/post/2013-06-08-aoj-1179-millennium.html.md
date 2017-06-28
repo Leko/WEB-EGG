@@ -24,7 +24,11 @@ AOJの1179、Millenniumをc++で解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1179&lang=jp)
 
+
+
 <!--more-->
+
+
 
 コード
 ----------------------------------------

@@ -14,7 +14,11 @@ tags:
   - JavaScript
   - jQuery
 ---
-<section id="intro">こんにちは。昼夜逆転が一周してやっと普通の生活に戻って来ました。れこです最近、CoffeeScriptというJavaScriptのライブラリにハマっています。半年前くらいに流行った、賛否両論なjsライブラリです。非常にシンプルにjsを書くことができて、Ruby on Railsでも公式採用されています。そのCoffeeScriptでjQueryのプラグインを１つ書いてみてCoffeeScriptで開発していくことについて感じたことをメモします。CoffeeScriptやjQueryプラグインの基礎については特に触れません。ご了承下さい。</p> </section> <!--more--><section id="learn"> ## CoffeeScriptとは CoffeeScriptについてざっと調べて試したことを発表した時の資料を載せます。 
+<section id="intro">こんにちは。昼夜逆転が一周してやっと普通の生活に戻って来ました。れこです最近、CoffeeScriptというJavaScriptのライブラリにハマっています。半年前くらいに流行った、賛否両論なjsライブラリです。非常にシンプルにjsを書くことができて、Ruby on Railsでも公式採用されています。そのCoffeeScriptでjQueryのプラグインを１つ書いてみてCoffeeScriptで開発していくことについて感じたことをメモします。CoffeeScriptやjQueryプラグインの基礎については特に触れません。ご了承下さい。</p> </section> 
+
+<!--more-->
+
+<section id="learn"> ## CoffeeScriptとは CoffeeScriptについてざっと調べて試したことを発表した時の資料を載せます。 
 
 <div style="margin-bottom:5px">
   <div style="margin-bottom:5px">

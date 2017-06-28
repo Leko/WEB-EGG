@@ -16,7 +16,11 @@ AOJの1137、Numeral SystemをJavaScriptで解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1137&lang=jp)
 
+
+
 <!--more-->
+
+
 
 文字列操作系の問題ですね。
 

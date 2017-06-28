@@ -24,7 +24,11 @@ jQueryMobileを初めて使ってみたので、色々と記事のネタが溜�
 
 それはさておき、本題です。 HTMLの閉じタグは省略できるという噂を聞いたので、調べてみました。</section> 
 
-<!--more--><section id="research"> 
+
+
+<!--more-->
+
+<section id="research"> 
 
 ## HTMLにはタグや閉じタグを省略できるタグがある<figure> <blockqupte> 
 

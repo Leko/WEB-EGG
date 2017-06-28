@@ -25,7 +25,11 @@ tags:
 
 という風に書けばいいのかと思ったら、見事にハマったので対応策をメモします。</section> 
 
-<!--more--><section id="practice"> 
+
+
+<!--more-->
+
+<section id="practice"> 
 
 jQueryMobileのページ初期化について
 ----------------------------------------

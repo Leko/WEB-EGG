@@ -22,7 +22,11 @@ tags:
   
 そちらのレポートを書こうと思います。</section> 
 
-<!--more--><section id="what\_is\_kousa"> 
+
+
+<!--more-->
+
+<section id="what\_is\_kousa"> 
 
 コウサ展とは
 ----------------------------------------

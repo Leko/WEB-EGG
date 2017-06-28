@@ -16,7 +16,11 @@ tags:
 
 </section> 
 
-<!--more--><section id="sample"> 
+
+
+<!--more-->
+
+<section id="sample"> 
 
 エラーが起こるケース
 ----------------------------------------

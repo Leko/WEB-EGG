@@ -33,7 +33,11 @@ AndroidもiOSでも動くアプリを作れないかなぁ。**
   
 JavaScriptで記述して、AndroidやiOS向けにビルドが出来るツールです。
 
+
+
 <!--more-->
+
+
 
 GUIの開発環境「Titanium Studio」でも良いのですが、
   

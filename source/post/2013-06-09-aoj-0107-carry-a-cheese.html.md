@@ -20,7 +20,11 @@ AOJの0107、Carry a Cheeseをc++で解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0107&lang=jp)
 
+
+
 <!--more-->
+
+
 
 コード
 ----------------------------------------
