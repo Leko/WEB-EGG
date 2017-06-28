@@ -1,25 +1,56 @@
 ---
 pageable: true
-per_page: 12
+per_page: 8
 ---
-<h1>Articles tagged '<%= tagname %>'</h1>
-
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
-
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
+<% if paginate %>
+  <% content_for :breadcrumb do %>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item">Tag</li>
+      <li class="breadcrumb-item"><a href="<%= tag_path(tagname) %>"><%= tagname %></a></li>
+      <li class="breadcrumb-item active">Page <%= page_number %> of <%= num_pages %></li>
+    </ol>
   <% end %>
 <% end %>
 
-<ul>
-  <% page_articles.each_with_index do |article, i| %>
-    <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-  <% end %>
-</ul>
+<% page_articles.each_with_index do |article, i| %>
+  <%= partial 'partials/article_summary', locals: { article: article, index: i } %>
+<% end %>
 
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
+<% if paginate && num_pages > 1 %>
+  <ul class="pagination">
+    <% if page_number > 2 %>
+      <li>
+        <a href="/" class="pagination__link">
+          <i class="fa fa-angle-double-left"></i>
+        </a>
+      </li>
+    <% end %>
+    <% if prev_page %>
+      <li>
+        <a href="<%= prev_page.url %>" class="pagination__link">
+          <i class="fa fa-angle-left"></i>
+        </a>
+      </li>
+    <% end %>
+    <li>
+      <span class="pagination__stat">
+        <%= page_number %> / <%= num_pages %>
+      </span>
+    </li>
+    <% if next_page %>
+      <li>
+        <a href="<%= next_page.url %>" class="pagination__link">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </li>
+    <% end %>
+    <% if page_number + 2 <= num_pages %>
+      <li>
+        <a href="/page/<%= num_pages %>/" class="pagination__link">
+          <i class="fa fa-angle-double-right"></i>
+        </a>
+      </li>
+    <% end %>
+  </ul>
 <% end %>

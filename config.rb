@@ -52,6 +52,7 @@ set :markdown, {
   no_intra_emphasis:   true,  # http://blog.willnet.in/entry/20110828/1314552937
 }
 
+activate :directory_indexes
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
   # blog.prefix = "blog"
@@ -74,7 +75,7 @@ activate :blog do |blog|
 
   # Enable pagination
   blog.paginate = true
-  blog.per_page = 15
+  blog.per_page = 8
   blog.page_link = "page/{num}"
 end
 
@@ -91,10 +92,6 @@ activate :external_pipeline, {
 }
 
 page "/feed.xml", layout: false
-# Reload the browser automatically whenever files change
-# configure :development do
-#   activate :livereload
-# end
 
 # Methods defined in the helpers block are available in templates
 helpers do
@@ -116,13 +113,14 @@ helpers do
   end
 end
 
+configure :development do
+  # activate :livereload
+end
+
 # Build-specific configuration
 configure :build do
-  # Minify CSS on build
-  # activate :minify_css
-
-  # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_html
 
   after_build do
     index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
