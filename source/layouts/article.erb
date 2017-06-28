@@ -23,12 +23,33 @@
       </header>
       <section class="card__body">
         <div class="post__content markdown">
-          <%= yield %>
+          <%= current_resource.summary %>
+
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-7627436148097691"
+               data-ad-slot="5524834567"
+               data-ad-format="auto"></ins>
+          <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+
+          <%= current_resource.body.remove(current_resource.summary) %>
         </div>
       </section>
       <footer class="card__footer">
         <%= partial 'partials/share', locals: { post: current_resource } %>
         <%= partial 'partials/related_post', locals: { post: current_resource } %>
+
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7627436148097691"
+             data-ad-slot="3077393762"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
         <div id="disqus_thread"></div>
         <script>
           var disqus_config = function () {
