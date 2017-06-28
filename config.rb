@@ -1,9 +1,18 @@
 ###
 # Page options, layouts, aliases and proxies
 ###
-activate :dotenv
 
-Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
+after_configuration do
+  module TagPagesExtension
+    def link( tag )
+      safe_tag = safe_parameterize(tag)
+      safe_tag = URI.encode(tag) if safe_tag == ''
+      p "#{tag} -> #{safe_tag} (#{apply_uri_template @tag_link_template, tag: safe_tag})"
+      apply_uri_template @tag_link_template, tag: safe_tag
+    end
+  end
+  Middleman::Blog::TagPages.prepend(TagPagesExtension)
+end
 
 config[:meta] = {
   locale: 'ja',
@@ -27,6 +36,7 @@ config[:similar_posts] = 5
 page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
+page "/feed.xml", layout: false
 
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
@@ -36,7 +46,7 @@ page '/*.txt', layout: false
 #  which_fake_page: "Rendering a fake page with a local variable" }
 
 ###
-# Helpers
+# Renderers
 ###
 set :markdown_engine, :redcarpet
 set :markdown, {
@@ -52,6 +62,10 @@ set :markdown, {
   no_intra_emphasis:   true,  # http://blog.willnet.in/entry/20110828/1314552937
 }
 
+###
+# Extensions
+###
+activate :dotenv
 activate :directory_indexes
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
@@ -91,9 +105,9 @@ activate :external_pipeline, {
   latency: 1
 }
 
-page "/feed.xml", layout: false
-
-# Methods defined in the helpers block are available in templates
+###
+# Helpers
+###
 helpers do
   def all_articles
     blog.articles.map{|post|
@@ -113,16 +127,19 @@ helpers do
   end
 end
 
+###
+# Environment specific configuration
+###
 configure :development do
   # activate :livereload
 end
 
-# Build-specific configuration
 configure :build do
   activate :minify_css
   activate :minify_html
 
   after_build do
+    Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
     index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
     batch = JSON.parse(File.read('./build/posts.json'))
     index.save_objects!(batch)
