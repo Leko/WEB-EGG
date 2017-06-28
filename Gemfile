@@ -18,7 +18,6 @@ gem 'middleman-dotenv', '~> 2.0'
 gem 'algoliasearch'
 
 gem 'middleman-blog-similar' # https://ja.ngs.io/2014/05/11/middleman-blog-similar/
-gem 'natto'                  # Use :mecab tagger
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
 gem 'bootstrap', '~> 4.0.0.alpha6'
