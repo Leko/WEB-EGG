@@ -17,4 +17,11 @@ script:
 - npm run lint
 
 deploy:
-- netlify deploy
+  - provider: script
+    script: netlify deploy -e production
+    on:
+      branch: master
+  - provider: script
+    script: netlify deploy -e deploy-preview
+    on:
+      condition: $TRAVIS_BRANCH != 'master'
