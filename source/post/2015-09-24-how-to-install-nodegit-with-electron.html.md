@@ -19,15 +19,10 @@ Electronでnodegitを使おうとして、どの参考記事も助けになら�
   
 今回はこの原因だっただけでまた将来的には別の原因でどハマりする可能性があります。
 
-
-
 <!--more-->
-
-
 
 結論：助けにならなかった情報
 ----------------------------------------
-
 
   * [electron/docs/tutorial/using-native-node-modules.md](https://github.com/atom/electron/blob/master/docs/tutorial/using-native-node-modules.md)
   * [Doesn&#8217;t work with Electron](https://github.com/nodegit/nodegit/issues/574)
@@ -39,7 +34,6 @@ Electronでnodegitを使おうとして、どの参考記事も助けになら�
 
 結論：助けになった情報
 ----------------------------------------
-
 
   * [Nodegit build fails with Electron 0.31.x / 0.32.x](https://github.com/nodegit/nodegit/issues/686)
 
@@ -53,7 +47,6 @@ Electronで後方互換のないバージョンアップが行われたようで
 
 原因まとめ
 ----------------------------------------
-
 
   1. [Electronの0.31.0でiojs2からiojs3へバージョンアップされた](https://github.com/atom/electron/releases/tag/v0.31.0) 
       * 「Most native modules are broken because of io.js upgrade, module writers need to use NAN v2 to rewrite the modules」
@@ -75,20 +68,16 @@ Electronで後方互換のないバージョンアップが行われたようで
 起承転結
 ----------------------------------------
 
-
 Issueにまとめてあります。 <span class="removed_link" title="https://github.com/Leko/revy/issues/16">このような感じ</span> になっていました。
 
 バージョン
 ----------------------------------------
 
-
 手元の環境はこのような感じです。
-
 
 ```
 $ node -vv0.12.7$ npm -v2.11.3$ $(npm bin)/electron -vv0.32.3
 ```
-
 
 nodejsのバージョンは`4.1.1`でも試してみましたが、問題なくビルドできました。
   

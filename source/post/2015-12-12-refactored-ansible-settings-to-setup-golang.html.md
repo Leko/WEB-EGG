@@ -20,21 +20,15 @@ tags:
 
 やってる事はごく当たり前なんですが、冪等性を担保し、changedが出ないことによって何回でもいつでも実行できる環境にしたので、その過程をメモします。
 
-
-
 <!--more-->
-
-
 
 まえおき
 ----------------------------------------
-
 
 [リファクタリング前](https://github.com/Leko/godemo/blob/91d4c1b439e9546ff14f6aeae44edee2bc28d262/provisioning/playbook.yml)と [リファクタリング後](https://github.com/Leko/godemo/blob/e0d9ca401755e0c4b02ac4a07f4f9bf8632fbaa4/provisioning/playbook.yml)はそれぞれリンクをご参照下さい
 
 Goのバージョンを最新に
 ----------------------------------------
-
 
 Goのバージョンが1.4で古かったので1.5に上げました。
   
@@ -74,7 +68,6 @@ shell, commandモジュールはシェルなので便利ですが、代わりに
     changed_when: "go_version.stdout.find('go{{ goversion }}')"
 ```
 
-
 例えば[godep save](https://github.com/Leko/godemo/commit/cde5d3d48f24967d83402b23699b04fb09fd87be)では、終了コードも標準出力の内容も違わないため無理かと思いましたが、ゴリ推しました。
   
 godep save実行後に`Godeps/Godeps.json`のdiffを見てもし差分が出ていればchangedという判定にしました。
@@ -86,10 +79,8 @@ godep save実行後に`Godeps/Godeps.json`のdiffを見てもし差分が出て�
     changed_when: "godep_diff.stdout != ''"
 ```
 
-
 結果
 ----------------------------------------
-
 
 実行結果のgifアニメを撮ってみました。
 

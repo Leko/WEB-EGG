@@ -19,15 +19,10 @@ HTML5からaタグにdownloadという属性が指定可能になったようで
   
 aタグの`download`属性がまさにやりたいことドンピシャだったので備忘録を残します。
 
-
-
 <!--more-->
-
-
 
 デモ
 ----------------------------------------
-
 
 [MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#Using_the_download_attribute_to_save_a_canvas_as_a_PNG)にまさにドンピシャな[デモ](http://jsfiddle.net/codepo8/V6ufG/2/)があったので、自作デモは割愛します。
   
@@ -38,7 +33,6 @@ canvasで生成した画像を新窓ではなくファイルダウンロード�
 よいこと
 ----------------------------------------
 
-
   * わざわざバイナリをechoするだけのサーバを立てなくて良い
   * 上記の構築や管理・メンテの手間がなくなる
   * jsだけで完結するのでコードのまとまりが良くなる
@@ -47,7 +41,6 @@ canvasで生成した画像を新窓ではなくファイルダウンロード�
 
 jsからaタグを生成し、ファイル名を指定してダウンロード
 ----------------------------------------
-
 
 ```javascript
 function download(uri, filename) {
@@ -62,14 +55,12 @@ function download(uri, filename) {
 download('data://text/html,Hello world!!', 'dummy.html');
 ```
 
-
 のように、location.hrefなどと大差ないくらいの手軽さでサッと書けるのが魅力だと思います。
   
 これでフロントエンドだけで完結するアプリケーションがより作りやすくなりました。
 
 ブラウザ互換
 ----------------------------------------
-
 
 [Can I use](http://caniuse.com/#search=download)によると、IEとSafari(Mac、iOS）は最新版でも動きません。
   

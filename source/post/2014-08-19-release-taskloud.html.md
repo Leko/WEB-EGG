@@ -25,7 +25,6 @@ Taskloudの紹介をしたいと思います。
 Taskloudとは？
 ----------------------------------------
 
-
 ### タスク管理をもっと楽しく
 
 をテーマに掲げた、シンプルで視覚的にタスク管理が楽しめるTODO管理アプリとなっております。
@@ -61,7 +60,6 @@ Taskloudで楽しいタスク管理始めてみませんか？
 メディア
 ----------------------------------------
 
-
 メディア、と呼ぶのはおこがましいですが、露出したメディアを把握している限り掲載します。
 
 > ※ App Storeの内容を丸コピしたアプリ紹介系のサイトは除いています。
@@ -85,14 +83,12 @@ URL: http://app-liv.jp/824685993/
 インストール
 ----------------------------------------
 
-
 Taskloudは現在iPhone向けのアプリとなっております。 こちらからダウンロードして、お楽しみください。
 
 <a href="https://itunes.apple.com/jp/app/taskloud/id824685993?mt=8&#038;uo=4" target="itunes_store" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.png) no-repeat;width:135px;height:40px;@media only screen{background-image:url(https://linkmaker.itunes.apple.com/htmlResources/assets/ja_jp//images/web/linkmaker/badge_appstore-lrg.svg);}"></a>
 
 備忘録記事のまとめ
 ----------------------------------------
-
 
 Taskloudを制作・アップデートする過程で色々得たものがあったのでそれぞれ記事にまとめます。
   

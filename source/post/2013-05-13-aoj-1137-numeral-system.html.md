@@ -16,11 +16,7 @@ AOJの1137、Numeral SystemをJavaScriptで解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1137&lang=jp)
 
-
-
 <!--more-->
-
-
 
 文字列操作系の問題ですね。
 
@@ -34,7 +30,6 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
 
 コード
 ----------------------------------------
-
 
 \[js\] (function (input) { var decodeMCXI = function() { var cache = {}, table = { &#8220;m&#8221;: 1000, &#8220;c&#8221;: 100, &#8220;x&#8221;: 10, &#8220;i&#8221;: 1 }; return function(str) { // 文字列はこの順番で来ると仮定 var keywords = [&#8220;m&#8221;, &#8220;c&#8221;, &#8220;x&#8221;, &#8220;i&#8221;], sum = 0;
 
@@ -108,8 +103,6 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
 
 })(require(&#8220;fs&#8221;).readFileSync(&#8220;/dev/stdin&#8221;, &#8220;utf8&#8221;)); 
 ```
-
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

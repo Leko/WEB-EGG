@@ -27,15 +27,10 @@ tags:
   
 **MacでIEのテスト** を実行してみようと思います。
 
-
-
 <!--more-->
-
-
 
 今回のゴール
 ----------------------------------------
-
 
   * MacでIE8, IE9のテストができる
   * nodejsのコードでブラウザ上のテストができる
@@ -52,7 +47,6 @@ tags:
 使うもの
 ----------------------------------------
 
-
   * [Virtualbox](https://www.virtualbox.org/)
   * [Jasmine](http://jasmine.github.io/)
   * [Karma](http://karma-runner.github.io/)
@@ -66,7 +60,6 @@ JasmineはMochaと書き方がほとんど変わらないのでどちらか知�
 
 参考リンク
 ----------------------------------------
-
 
 > Browserify: それはrequire()を使うための魔法の杖
     
@@ -84,7 +77,6 @@ JasmineはMochaと書き方がほとんど変わらないのでどちらか知�
 
 リポジトリをつくる
 ----------------------------------------
-
 
 では早速進めていこうと思います。
   
@@ -105,7 +97,6 @@ npm i -D karma
 karma init
 ```
 
-
 `karma init`すると色々と聞かれると思います。
   
 テストの構成を聞かれるので、テストフレームワークは`Jasmine`。`requirejs`は使わない。対象ブラウザは`Chrome`あたりを選んでおけばよいと思います。
@@ -114,7 +105,6 @@ karma init
 
 （蛇足）dotenvを使用する
 ----------------------------------------
-
 
 私の環境は`Firefox`を[brew-cask](http://caskroom.io/)で入れてしまっているので、通常のパスとはズレています。
   
@@ -131,17 +121,14 @@ npm i -D dotenv
 echo "FIREFOX_BIN=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/firefox-bin" > .env
 ```
 
-
 あとはこの定義ファイルを読み込むために、`karma init`で作成された`karma.conf.js`の先頭にも以下の処理を追加しておきます。
 
 ```javascript
 require('dotenv').load();
 ```
 
-
 IE8で落ちるテストを記述する
 ----------------------------------------
-
 
 まだIEの準備はしていませんが、まずはIE8では落ちるテストを記述してみようと思います。
   
@@ -158,11 +145,9 @@ IE8で使用できないメソッドとして、`Array#reduce`を採用しまし
 Karmaの設定を変更してローカルのChromeで結果を確認
 ----------------------------------------
 
-
 ```bash
 npm i -D karma-browserify brfs
 ```
-
 
 Karmaの設定ファイルは[こちら](https://github.com/Leko/karma-ievm-seed/commit/bc2d9fd2d8f2c43ac14e9fc40c62e05d9edaaef9)のように変更して下さい。
 
@@ -181,7 +166,6 @@ Karmaの設定ファイルは[こちら](https://github.com/Leko/karma-ievm-seed
 karma start
 ```
 
-
 ![Karma result without IE](http://leko.jp/images/2015/05/5ac7135e55fda451dcc7ad8d69ae344d.png)
 
 設定ファイルの`browsers`に指定されたブラウザが立ち上がりテストが実行されたと思います。
@@ -194,7 +178,6 @@ Karmaでテストコードが動いたのも確認できたので、IEでもテ�
 
 IEのVMを入れる
 ----------------------------------------
-
 
 若干話が逸れてしまいましたが、続きです。
 
@@ -219,7 +202,6 @@ curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | env I
 find ~/.ievms -type f ! -name "*.vmdk" -exec rm {} \;
 ```
 
-
 けっこう時間がかかるので、回線の太い環境で気長にお待ちください。
 
 `IEVMS_VERSIONS`という環境変数にインストールしたいIEのバージョンを指定しています。
@@ -235,7 +217,6 @@ find ~/.ievms -type f ! -name "*.vmdk" -exec rm {} \;
 IE用にKarmaの設定を変更
 ----------------------------------------
 
-
 やっとIEを使う準備が整いました。
   
 Karmaの設定を変更し、VM内のIEでテストコードを実行できるようにします。
@@ -247,7 +228,6 @@ Karmaの設定を変更し、VM内のIEでテストコードを実行できる�
 ```bash
 npm i -D karma-ievms
 ```
-
 
 `browsers`にVirtualboxでの表示名をそのまま指定しています。
   
@@ -272,7 +252,6 @@ IE9で動くことを確認したので、本題のIE8も追加します。
 karma-es5-shimを入れてIE8のテストを通す
 ----------------------------------------
 
-
 **IE8は非対応、と言いづらいけどes5使えないのはつらみなので、shim入れれば動くよ** 程度にIE8対応をしたい方向けの対応です。
   
 es5-shimは、ざっくり言うとIE8などes5のメソッドに対応していないブラウザ向けのpolyfillです。
@@ -280,7 +259,6 @@ es5-shimは、ざっくり言うとIE8などes5のメソッドに対応してい
 ```bash
 npm i -D karma-es5-shim
 ```
-
 
 Karmaの設定ファイルも合わせて[こちら](https://github.com/Leko/karma-ievm-seed/commit/1b3ccd382332b7f7b5d0e3d1b4d46640a99a6cc1)のように編集しておきます。
 
@@ -290,7 +268,6 @@ Karmaの設定ファイルも合わせて[こちら](https://github.com/Leko/kar
 
 まとめ
 ----------------------------------------
-
 
 最近のjsの開発ツール周りの進化速度が早すぎて全然ついていけていない私ですが、
   

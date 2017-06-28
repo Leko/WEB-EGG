@@ -10,11 +10,7 @@ categories:
 ---
 元 YAPC::Asia 主催の牧さん [@lestrrat](https://twitter.com/lestrrat) によるカンファレンス [Builderscon](http://builderscon.io/) の[Web版セッションタイマー](http://web.timer.builderscon.io/)を作りました。
 
-
-
 <!--more-->
-
-
 
 ちなみに、Builderscon公式ブログでも紹介してくださっています。やったぜ。
 
@@ -29,8 +25,6 @@ categories:
 <img src="http://leko.jp/images/2016/07/099d91afa53de3892408d332de58ecbb.png" alt="スクリーンショット 2016-07-06 12.53.55" width="1185" height="778" class="alignnone size-full wp-image-857" />
 
 実際にiPadにはめ込んでみた時の図(公式ブログから拝借)
-
-
 
 使用したものは素[React](https://facebook.github.io/react/)。他にも[Riot](http://riotjs.com/)や[MagJS](https://github.com/magnumjs/mag.js/)など色々試したかったんですが、
   

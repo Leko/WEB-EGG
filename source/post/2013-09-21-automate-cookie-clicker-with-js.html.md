@@ -22,7 +22,6 @@ tags:
   
 **ただクッキーを焼くだけのブラウザゲー**でした。  
 
-
 **わけがわからん・・・。**
   
 おもむろに左側に表示されているクッキーを右クリックして「要素を検証」してみたところ、
@@ -33,7 +32,6 @@ tags:
 ```markup
  <div id=&#8221;bigCookie&#8221;&#8230; 
 ```
-
 
 </div>
 
@@ -49,15 +47,10 @@ tags:
 
 ※おばあさんです
 
-
-
 <!--more-->
-
-
 
 対応ブラウザ
 ----------------------------------------
-
 
 Chrome最新版、Safari最新版、Firefox最新版で動作確認しました。
   
@@ -69,7 +62,6 @@ Chrome最新版、Safari最新版、Firefox最新版で動作確認しました�
 
 自作のjsをページ内で実行するには
 ----------------------------------------
-
 
 普段javascriptを書いている方ならご存知かと思いますが、
   
@@ -99,7 +91,6 @@ Chromeの`メニュー > 開発/管理 > JavaScriptコンソール`をクリッ�
 
 制御に必要な要素を取得する
 ----------------------------------------
-
 
 まず、ゲームの進行に必要な要素をjsから制御できるよう抑えていきます。
 
@@ -158,7 +149,6 @@ CSSのセレクタを使って要素を取得できる組み込みメソッド�
 基本的な処理
 ----------------------------------------
 
-
 自動制御するからには、**１度実行したらあとは放置**で居たいものです。 そして、ゲームの設定をうっかり書き換えてしまうのも怖いので**グローバルは使いたくありません**。 更に、毎回クエリをかけるわけにもいかないので、DOMはキャッシュしておきたいです。
 
 ということで、`即時関数`と`setInterval`を使います。
@@ -171,7 +161,6 @@ CSSのセレクタを使って要素を取得できる組み込みメソッド�
 ```javascript
  !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs(&#8220;#upgrades .upgrade&#8221;), products = qs(&#8220;#products .product&#8221;), cookie = qs(&#8220;#bigCookie&#8221;), golden = qs(&#8220;#goldenCookie&#8221;); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
 ```
-
 
 </div>
 
@@ -192,7 +181,6 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
  var each = function(arr, fn) { for(var i = 0; i < arr.length; i++) { fn.call(arr[i], arr[i], i); } }, hasClass = function(el, className) { return el.classList.contains(className); }; 
 ```
 
-
 </div>
 
 こんな感じです。 これ以降の処理は、特に記述がない限りsetIntervalの中の関数に書いていきます。
@@ -211,7 +199,6 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 ```javascript
  cookie.onclick(); golden.onclick(); 
 ```
-
 
 </div>
 
@@ -240,14 +227,12 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
  each(products, function(el) { if(hasClass(el, &#8216;enabled&#8217;)) { el.onclick(); } }); each(upgrades, function(el) { if(hasClass(el, &#8216;enabled&#8217;)) { el.onclick(); } }); 
 ```
 
-
 </div>
 
 ここはお好みで。
 
 これでは詰まる
 ----------------------------------------
-
 
 しかし、これですんなり行くなら苦労しません。
 
@@ -274,7 +259,6 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
  // 全ビルディングを10個ずつ, 50個ずつ、と買い揃えていく var BUY_STEPS = [10, 50, 100, 128, Number.MAX_VALUE]; // 所持数を取得するメソッドを定義 var getOwnedCnt = function(el) { var cnt = el.childNodes[1].childNodes[2]; return cnt ? +cnt.textContent : 0; } 
 ```
 
-
 </div>
 
 次に、eachの部分を書き換えます。
@@ -285,7 +269,6 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 ```javascript
  var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, &#8216;enabled&#8217;) && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift(); 
 ```
-
 
 </div>
 
@@ -301,7 +284,6 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 
 特殊な処理
 ----------------------------------------
-
 
 これでしばらく運用していたのですが、自動制御の敵がまた現れました。
 
@@ -321,7 +303,6 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 ```javascript
  window.confirm = function(){ return true; }; 
 ```
-
 
 </div>
 
@@ -348,9 +329,7 @@ cookie.onclick()の行をコメントアウトして下さい。 ゴールデン
 最後に
 ----------------------------------------
 
-
   
-
 
 今回は重いきり無駄遣いをしていましたが、
 

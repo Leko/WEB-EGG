@@ -21,15 +21,10 @@ tags:
   
 2015/11/24現在での決定版を調べてまとめて備忘録にします。
 
-
-
 <!--more-->
-
-
 
 まえおき
 ----------------------------------------
-
 
 当記事で紹介するライブラリ、コードを[全部まとめたデモを作りました](https://jsfiddle.net/leko/znos4wf0/)。
   
@@ -53,11 +48,9 @@ tags:
 パスワードの表示/非表示を切り替える
 ----------------------------------------
 
-
   * リポジトリ: <https://github.com/cloudfour/hideShowPassword>
   * star: <a class="github-button broken_link" href="/cloudfour/hideShowPassword/stargazers" api="/repos/cloudfour/hideShowPassword#stargazers_count" label="Star cloudfour/hideShowPassword on GitHub">Star</a>
   * デモ: <http://cloudfour.github.io/hideShowPassword/>
-
 
 ![pwd-demo](https://i.stack.imgur.com/GQ5Yh.png) IE10から取り入れられた「パスワードを表示/非表示する」ボタンです。
   
@@ -78,7 +71,6 @@ tags:
 クリックしたら全選択
 ----------------------------------------
 
-
 <img src="http://leko.jp/images/2015/11/Screen-Shot-2015-11-24-at-1.33.10-AM.png" border="0" width="574" />
 
 GithubのリポジトリのURL（上記画像を参考）のように、フォーカスを当てたら全選択される要素の作り方です。
@@ -93,7 +85,6 @@ GithubのリポジトリのURL（上記画像を参考）のように、フォ�
 <input type="url" class="form-control focus-then-select" readonly value="ssh://hoge.git" />
 ```
 
-
 ```javascript
 jQuery.fn.focusThenSelect = function () {
     this.on('focus', function () {
@@ -103,10 +94,8 @@ jQuery.fn.focusThenSelect = function () {
 $('input.focus-then-select').focusThenSelect();
 ```
 
-
 タグっぽいものを入力する
 ----------------------------------------
-
 
   * リポジトリ: <https://github.com/brianreavis/selectize.js/>
   * Star: <a class="github-button broken_link" href="/brianreavis/selectize.js/stargazers" api="/repos/brianreavis/selectize.js#stargazers_count" label="Star brianreavis/selectize.js on GitHub">Star</a>
@@ -121,7 +110,6 @@ Bootstrap3用に最適化されたCSSも公式で対応していたりします�
 インクリメンタルサーチする
 ----------------------------------------
 
-
 <img src="http://leko.jp/images/2015/11/Screen-Shot-2015-11-24-at-3.13.51-AM.png" width="569" />
 
 タグっぽい入力でも紹介したSelectizeにかかれば、インクリメンタルサーチもお手のものです。
@@ -134,7 +122,6 @@ Bootstrap3用に最適化されたCSSも公式で対応していたりします�
 
 郵便番号から住所検索
 ----------------------------------------
-
 
   * リポジトリ: <https://github.com/ajaxzip3/ajaxzip3.github.io>
   * Star: <a class="github-button broken_link" href="/ajaxzip3/ajaxzip3.github.io/stargazers" api="/repos/ajaxzip3/ajaxzip3.github.io#stargazers_count" label="Star ajaxzip3/ajaxzip3.github.io on GitHub">Star</a>
@@ -156,7 +143,6 @@ Google codeが廃れ、Githubに移転し、郵便番号データを保持する
 
 まとめ
 ----------------------------------------
-
 
 以上です。他に思いつくものがありましたら調査して乗せます。
   

@@ -28,17 +28,12 @@ tags:
 備忘録として、ここに残しておきます。
       
 
-
 <!--more-->
-
-
-
 
       
 
 facebook-php-sdkを用意
 ----------------------------------------
-
 
 有難いことに、facebook公式がsdkを公開してくれています。
       
@@ -65,7 +60,6 @@ facebook-php-sdkを用意
 アプリケーションを作成
 ----------------------------------------
 
-
 facebookでログインをするには、ユーザ情報を得る元となるアプリケーションが必要になります。
       
 Twitterでも同様ですね。では早速作っていきます。
@@ -77,10 +71,8 @@ Twitterでも同様ですね。では早速作っていきます。
 まんまコピペで出来たので参考にさせて頂いたリンクをご紹介します。あとはぐぐれ。
       
 
-
   * PHP で「Login with Facebook」を実装する基本的な方法まとめ &#8211; 頭ん中  
     <a href="http://www.msng.info/archives/2012/10/facebook-login-with-php.php" target="_blank">http://www.msng.info/archives/2012/10/facebook-login-with-php.php</a>  アプリケーションの作成は手順はやや多いですが、
-
 
       
 上記のサイト様を見ればすぐに分かると思います。
@@ -90,10 +82,8 @@ Twitterでも同様ですね。では早速作っていきます。
 アプリケーションが作成できたら、次へ進みましょう。 
   
 
-
 処理の流れ
 ----------------------------------------
-
 
 facebook-php-sdkのソースを見れば、
       
@@ -150,15 +140,12 @@ facebook-php-sdkのソースを見れば、
 いざ実装。
 ----------------------------------------
 
-
 さて、お待ちかねの実装です。
       
 まずいじるファイルは「index.php」です。  
 index.phpを開いて下記の内容を記入。
       
 **※<?phpの?の手前にスペースが空いていますが、削除して下さい。** 
-
-
 
 ```php
 <?php //facebookSDKを読み込み require_once(&#8220;src/facebook.php&#8221;);
@@ -167,8 +154,6 @@ index.phpを開いて下記の内容を記入。
 
 $facebook = new Facebook($config); $user = $facebook->getUser(); 
 ```
-
-
 
 まずはこれだけ。
       
@@ -182,13 +167,9 @@ $userにはユーザIDが入っています。
       
 index.phpに下記を追加して下さい。 
 
-
-
 ```php
  //もしユーザがログインしていたら if ( $user ) { //ログアウトURLを生成 $logoutUrl = $facebook->getLogoutUrl(); //ユーザ情報を取得 $user_info = $facebook->getUser(); //ログアウト用のリンクを出力 echo &#8220;[ログアウト](".$logoutUrl.")&#8220;; //ユーザ情報を出力 print\_r($user\_info); } else { //ログインURLを生成 $loginUrl = $facebook->getLoginUrl(); echo &#8220;[facebookでログイン！](".$loginUrl.")&#8220;; } 
 ```
-
-
 
 実にシンプルですが、これで完了です。
       
@@ -212,7 +193,6 @@ index.phpに下記を追加して下さい。
       
 それについては、また別の記事として書きます。
   
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

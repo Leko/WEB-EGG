@@ -21,11 +21,8 @@ tags:
 
 <!--more-->
 
-
-
 リニューアルの目標
 ----------------------------------------
-
 
   1. ローカル側でMarkdown形式で記事を管理する
   2. ローカルにテスト環境を構築
@@ -36,7 +33,6 @@ tags:
 
 ローカル側でMarkdown形式で記事を管理する
 ----------------------------------------
-
 
 基本的に当ブログは技術系のことを書いているので、
   
@@ -69,7 +65,6 @@ tags:
 ローカルにテスト環境を構築
 ----------------------------------------
 
-
 お恥ずかしながら、
   
 今までWordpressをローカルに構築してテスト環境が構築できていませんでした。
@@ -98,7 +93,6 @@ tags:
 WordPressプロジェクトをgit管理する
 ----------------------------------------
 
-
 普通にWordpressをダウンロードしてきて、全体をプロジェクト管理しています。
   
 テーマファイルと、gitでホスティングされているプラグインをサブモジュール化します。
@@ -124,7 +118,6 @@ cd ../wordpress
 git submodule add [theme_repo_url] wp-content/themes/YOUR_THEME
 git commit -am "テーマをサブモジュール化"
 ```
-
 
 これで最低限の設定が完了です。
   
@@ -155,11 +148,9 @@ $ cp hooks/post-update-sample hooks/post-update
 $ vim hooks/post-recieve
 ```
 
-
 ```
 (cd /path/to/docroot/repo && git --git-dir=. pull)
 ```
-
 
 ドキュメントルートするディレクトリで↑のリポジトリをcloneする
   
@@ -170,14 +161,12 @@ $ cd ~
 $ git clone /path/to/bare/repo wp
 ```
 
-
 ローカル側でリモートを指定
 
 ```
 $ git remote add ssh://hoge@foo.jp/~/path/to/bare/repo
 $ git push origin master
 ```
-
 
 これでリモートに内容が反映されればOKです。
 

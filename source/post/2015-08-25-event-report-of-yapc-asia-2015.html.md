@@ -29,15 +29,10 @@ Perl色がもっと強いものかと思ってましたが、「申し訳程度�
   
 単に自分への備忘録とイベントレポートとして残します。
 
-
-
 <!--more-->
-
-
 
 メリークリスマス！
 ----------------------------------------
-
 
   * [メリークリスマス！ &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a636430c-0fbf-11e5-8a02-43ec7d574c3a)
   * [Perlの父 Larry Wall が描く『指輪物語』 そしてメリークリスマス！ #yapcasia #yapcasiaA &#8211; Togetterまとめ](http://togetter.com/li/863357)
@@ -156,7 +151,6 @@ OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語�
 
 HTTP/2時代のウェブサイト設計
 ----------------------------------------
-
 
 <div style="margin-bottom:5px">
   <strong> <a href="//www.slideshare.net/kazuho/http2-51888328" title="HTTP/2時代のウェブサイト設計" target="_blank">HTTP/2時代のウェブサイト設計</a> </strong> from <strong><a href="//www.slideshare.net/kazuho" target="_blank">Kazuho Oku</a></strong>
@@ -368,7 +362,6 @@ HTTP2クライアントとしてlibcurlが優れている
 ISUCONの勝ち方
 ----------------------------------------
 
-
 <div style="margin-bottom:5px">
   <strong> <a href="//www.slideshare.net/kazeburo/isucon-yapcasia-tokyo-2015" title="ISUCONの勝ち方 YAPC::Asia Tokyo 2015" target="_blank">ISUCONの勝ち方 YAPC::Asia Tokyo 2015</a> </strong> from <strong><a href="//www.slideshare.net/kazeburo" target="_blank">Masahiro Nagano</a></strong>
 </div>
@@ -512,7 +505,6 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 実践nginxモジュール開発〜CとLua〜
 ----------------------------------------
 
-
   * [Nginxを拡張しよう！ モジュールとLuaがあればなんでも出来る！？ #yapcasia #yapcasiaB](http://togetter.com/li/863872)
   * [実践nginxモジュール開発〜CとLua〜 &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a4318242-f5f2-11e4-afb7-49b37d574c3a)
 
@@ -589,7 +581,6 @@ Goはまだ入門したばかりでツール周りなど全く触れていなか
 
 その他雑多な感想
 ----------------------------------------
-
 
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">

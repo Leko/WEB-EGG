@@ -29,15 +29,10 @@ TwitterとかからPocketを操作できるものを作ろうと思い立った�
   
 どっかの誰かに認証して使ってもらうサービスで使う場合は、今回の記事の対象外となります。
 
-
-
 <!--more-->
-
-
 
 Pocketのアプリを登録
 ----------------------------------------
-
 
 まず、PocketのAPIを利用するには、Pocketにアプリケーションを登録しないといけません。
   
@@ -81,7 +76,6 @@ Pocketのアプリを登録
 
 Pocketからアクセストークンを取得する
 ----------------------------------------
-
 
 **APIを利用するには、今メモったCONSUMER KEYと、アクセストークンが必要です。**
   
@@ -130,13 +124,9 @@ Pocketからアクセストークンを取得する
   
 Fetchを押してみると、以下の様なレスポンスが帰ってくると思います。
 
-
-
 ```
 HTTP/1.1 200 OK &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;REQUEST&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211; Content-Type = application/x-www-form-urlencoded Accept-Encoding = gzip Content-Length = 77 User-Agent = Fetcher 1.4 (Macintosh; Mac OS X 10.8.4; ja_US) &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;RESPONSE&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212; Server = Apache/2.2.23 (Amazon) Status = 200 OK Content-Type = application/x-www-form-urlencoded X-Powered-By = PHP/5.3.20 X-Source = Pocket P3P = policyref=&#8221;/w3c/p3p.xml&#8221;, CP=&#8221;ALL CURa ADMa DEVa OUR IND UNI COM NAV INT STA PRE&#8221; Date = Tue, 06 Aug 2013 11:23:38 GMT Content-Length = 35 Cache-Control = private Connection = keep-alive code=XXXXXXXXXXXXXXXXXXX
 ```
-
-
 
 一番下の行の、code=XXXXXXXXXXXXの部分を使います。
   
@@ -200,7 +190,6 @@ HTTPメソッドは`POST`
 PocketAPIを試してみる
 ----------------------------------------
 
-
 APIの仕様についてはドキュメントを見ればわかるので、とりあえず使うだけ使ってみます。
 
 APIの公式ドキュメントはこちら。
@@ -220,7 +209,6 @@ APIの公式ドキュメントはこちら。
 (function(global, undefined) { &#8220;use strict&#8221;; var https = require(&#8220;https&#8221;), endpoint = &#8220;https://getpocket.com/v3/get&#8221;, param = &#8220;&#8221;; param += &#8220;consumer_key=YOUR_CONSUMER_KEY&#8221;; param += &#8220;&access_token=YOUR_ACCESS_TOKEN&#8221;; param += &#8220;&sort=newest&#8221;; param += &#8220;&count=1&#8221;; https.get(endpoint + &#8220;?&#8221; + serialize(param), function(res) { var response = &#8220;&#8221;; // データを受信したら res.on(&#8220;data&#8221;, function(buff) { response += buff.toString(); }); // データの受信が完了したら res.on(&#8220;end&#8221;, function() { var json = JSON.parse(response), p; for (p in json.list) { var item = json.list[p], title = item.resolved_title, url = item.resolved_url; console.log(title + &#8220;n&#8221; + url + &#8220;n&#8221;); } }); }); }(this)); 
 ```
 
-
 </div>
 
 これを実行してみると、こんな表示がされると思います。
@@ -231,7 +219,6 @@ Nodejsでの通信は割と**お手軽ではない**のですが、上記のよ�
 
 APIクライアントの実装
 ----------------------------------------
-
 
 上の例でとりあえずの通信は出来るのですが、上のままだとかなり使いにくいと思います。
 
@@ -255,7 +242,6 @@ APIクライアントの実装
 ```javascript
 var Pocket = require(&#8220;./nodejs-pocket.js&#8221;), pocket = new Pocket({ consumer_key: &#8220;あなたのconsumer_key&#8221;, access_token: &#8220;あなたのaccess_token&#8221; }); // Pocketから取得 var opt = { sort: &#8220;newest&#8221;, count: 10 }; pocket.get(opt, function(json) { // 記事の配列 }); // Pocketされている記事の情報変更 var opt = { actions: [ { &#8220;action&#8221;: &#8220;favorite&#8221;, &#8220;item_id&#8221;: 99999999 } ] }; pocket.modify(opt, function(json) { // 送信したアクションを行った結果 }); // Pocketに記事を追加 var opt = { url: &#8220;http://leko.jp&#8221;, title: &#8220;うぇぶえっぐ&#8221;, tags: &#8220;web,egg&#8221; }; pocket.add(opt, function(json) { // 記事をPocketに追加した結果 }); 
 ```
-
 
 </div>
 

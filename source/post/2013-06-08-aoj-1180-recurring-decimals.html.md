@@ -18,15 +18,10 @@ AOJの1180、Recurring Decimalsをc++で解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1180&lang=jp)
 
-
-
 <!--more-->
-
-
 
 コード
 ----------------------------------------
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

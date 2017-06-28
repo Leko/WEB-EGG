@@ -23,15 +23,10 @@ Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報�
 
 ということでWebページをアプリ化する[Fluid]()というアプリを使用していくつかのWebサービスをアプリ化してみようと思います。
 
-
-
 <!--more-->
-
-
 
 目的
 ----------------------------------------
-
 
 今回アプリ化したいのは[Google Anayltics](https://www.google.com/analytics/)と[Trello](https://trello.com/)と[Github](https://github.com/)です。
 
@@ -46,14 +41,12 @@ Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報�
 Fluidを落とす
 ----------------------------------------
 
-
 Fluidは[こちら](http://fluidapp.com/)のページの[Free Download]からダウンロードできます。
   
 古めなテイストのページですがきちんと動きました。ツールは見かけによらないですね。
 
 基本的な使い方
 ----------------------------------------
-
 
 Fluidを起動すると以下の様な画面になると思います
 
@@ -76,7 +69,6 @@ Fluidを起動すると以下の様な画面になると思います
 
 アイコンを作る
 ----------------------------------------
-
 
 <img src="http://leko.jp/images/2015/12/2ccae8abad198c3d70a0c855fd6cc643.png" alt="Header icon 2x" title="header-icon@2x.png" border="0" width="270" />
 
@@ -102,7 +94,6 @@ Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパ
 
 完成！
 ----------------------------------------
-
 
 <img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-14-at-4.14.58-AM.png" alt="Screen Shot 2015 12 14 at 4 14 58 AM" title="Screen Shot 2015-12-14 at 4.14.58 AM.png" border="0" width="142" />
 

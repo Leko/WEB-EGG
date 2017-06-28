@@ -23,31 +23,22 @@ Dockerを利用するようになり、環境変数の注入が簡単になっ�
   
 一応備忘録として残しておこうと思います。
 
-
-
 <!--more-->
 
-
-
 ## docker runコマンド
-
 
 ```
 docker run {SOME_CONTAINER} -e SOME_VAR1=SOME_VALUE1 -e SOME_VAR2=SOME_VALUE2
 ```
-
 
 というように`e`オプションを与えれば環境変数を指定可能です。
 
 Dockerに.envファイルを読み込ませる
 ----------------------------------------
 
-
-
 ```
 docker run {SOME_CONTAINER} --env-file .env
 ```
-
 
 のように、環境変数が記述されたファイルを指定可能です。
   
@@ -78,7 +69,6 @@ services:
     image: 'redis:latest'
 ```
 
-
 というように、.envを読み込ますことが可能です。
   
 ただ、個人的に気持ち悪いと感じているのが、`docker-compose.yml`内の依存関係のはずなのに.envと別ファイルに依存関係が分離されてしまうことです。
@@ -104,7 +94,6 @@ services:
     image: 'redis:latest'
 ```
 
-
 `environment`と`env_file`は両立できるので、
 
   * git管理されるべき固定値は`docker-compose.yml`の中の`environment`セクションに記述
@@ -120,7 +109,6 @@ services:
 
 まとめ
 ----------------------------------------
-
 
 Dockerはいいぞ。
 

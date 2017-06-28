@@ -16,15 +16,10 @@ tags:
   
 表題の通り、Dockerの[Redmine](https://hub.docker.com/_/redmine/)と[MySQL](https://hub.docker.com/_/mysql/)のコンテナをDocker composeで組み合わせ、日本語が使用するまでのメモです。
 
-
-
 <!--more-->
-
-
 
 RedmineのDBをMySQLへの切り替える
 ----------------------------------------
-
 
 デフォルトはSQLiteになっているので、DBドライバをMySQLに切り替えます。 [公式コンテナ](https://hub.docker.com/_/redmine/)のドキュメントに書かれています。
 
@@ -39,11 +34,9 @@ RedmineのDBをMySQLへの切り替える
   
 でも管理画面でデフォルト設定をロードしようとすると
 
-
 ```
 redmine "Mysql2::Error: Incorrect string value"
 ```
-
 
 というエラーが。
 
@@ -59,13 +52,11 @@ redmine "Mysql2::Error: Incorrect string value"
   
 設定をまるごと上書きする必要はないと判断し、差分だけ書き足し`/etc/mysql/conf.d`にマウントする方式で対応します。
 
-
 ```
 [mysqld]
 character-set-server=utf8mb4
 collation-server=utf8mb4_general_ci
 ```
-
 
 MySQL5.5から`utf8mb4`に対応していたそうなので、せっかくなので指定してみる。
   
@@ -92,7 +83,6 @@ utf8mb4は4バイト対応のUTF8だそうです。絵文字とか特殊文字�
     volumes:
       - ./docker/db/multibyte.cnf:/etc/mysql/conf.d/multibyte.cnf
 ```
-
 
 再起動してみるとデフォルト設定をロードできました。
   

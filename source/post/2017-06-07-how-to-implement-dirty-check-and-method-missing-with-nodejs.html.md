@@ -29,7 +29,6 @@ person.name = 'Bill'
 person.name_change    # => [nil, "Bill"]
 ```
 
-
 こんな感じに変更を検知するためのマジックメソッド、ユーティリティが加わるモジュールだそうです。
 
 昔であれば[Backbone.jsのモデル](http://backbonejs.org/#Model-changed)が似たような仕組みを提供していました。
@@ -42,15 +41,10 @@ person.name_change    # => [nil, "Bill"]
 
 ちなみに使用しているNode.jsのバージョンはv6.1.0です。
 
-
-
 <!--more-->
-
-
 
 簡単な設計
 ----------------------------------------
-
 
 モジュールは高階関数として作成し、使用する際はdecoratorとして利用できるようにします。
   
@@ -67,14 +61,12 @@ class Profile {
 }
 ```
 
-
 コンストラクタの形式は問いません。thisに何かセットされていればそれを利用できるようにします。 こんな感じで利用できる`DirtyCheckable`関数を実装していきます
 
 完成済みのコードは[gist](https://gist.github.com/Leko/36dd864f87d0e2e61745f7869e2a8731)に上げてあります。
 
 decoratorの挙動
 ----------------------------------------
-
 
 decoratorはReactで[High Order Components](https://facebook.github.io/react/docs/higher-order-components.html)なんて言われて流行ってますが、要は昔からある関数型言語のアプローチのひとつ、高階関数です。
 
@@ -90,7 +82,6 @@ const Profile = DirtyCheckable(class {
 })
 ```
 
-
 DirtyCheckableの要件は、クラスを受け取りクラスを返す関数になります。 実装イメージとしては、以下のような感じになります。
 
 ```javascript
@@ -101,14 +92,12 @@ function DirtyCheckable (cls) {
 }
 ```
 
-
 継承の逆？と言えば伝わるんでしょうか。
   
 渡されたクラスを親クラスにとる無名クラスを作成して返す感じです。
 
 Proxyの挙動
 ----------------------------------------
-
 
 Proxy自体の説明は[MDN](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy)を見ればだいたいわかると思います。
 
@@ -126,7 +115,6 @@ setの中身を実装することで、dirty checkを実装できます。 同�
 
 クラスをProxyする
 ----------------------------------------
-
 
   * コンストラクタの形式を制限しないように可変長で受け取って可変長で渡す
   * Proxyのインスタンスを返す
@@ -166,7 +154,6 @@ export default function DirtyCheckable (cls) {
 }
 ```
 
-
 上記のコードをベースに実装を続けます。
 
 ## Node.jsでdirty check
@@ -190,7 +177,6 @@ set (instance, prop, value) {
     instance[prop] = value
   }
 ```
-
 
 これで変更検知の仕組みは完成したので、後はユーティリティを実装します。
 
@@ -222,7 +208,6 @@ export default function DirtyCheckable (cls) {
 }
 ```
 
-
 試してみます。
 
 ```javascript
@@ -246,9 +231,7 @@ console.log('changes:', hoge.changes())
 console.log('changed:', hoge.changed())
 ```
 
-
 実行結果は
-
 
 ```
 $ babel-node index.js
@@ -259,7 +242,6 @@ hoge.name: Tom
 changes: { name: [ 'John', 'Tom' ] }
 changed: true
 ```
-
 
 いい感じです。
   
@@ -310,7 +292,6 @@ const observer = {
 }
 ```
 
-
 完成です。ここまでのコードを纏めて実行してみると、
 
 ```javascript
@@ -336,8 +317,6 @@ console.log('nameChanged:', hoge.nameChanged())
 console.log('nameChange:', hoge.nameChange())
 ```
 
-
-
 ```
 $ babel-node index.js
 hoge.name: John
@@ -350,12 +329,10 @@ nameChanged: true
 nameChange: [ 'John', 'Tom' ]
 ```
 
-
 いい感じです。これでdirty checkとmethod missingの実装が完了しました。
 
 パフォーマンス測定
 ----------------------------------------
-
 
 最後に気になるパフォーマンスですが、[こんなコード](https://gist.github.com/Leko/36dd864f87d0e2e61745f7869e2a8731#file-benchmark-js)で比較してみます
 
@@ -374,7 +351,6 @@ newが激遅いです。
 
 まとめ
 ----------------------------------------
-
 
 かなり愚直な方法で実装しているので、もっと早い実装がたくさんあると思います。 使いみちが色々あって面白いので、ぜひProxy利用してみて下さい。 ただしよほど丁寧に書かないと黒魔術化は必至なので、用法用量をお守りのうえお楽しみ下さい。
 

@@ -28,15 +28,10 @@ Goはマスコットの謎生物が可愛いですね。Gopherというらしい
 
 Goの環境構築から、Ginという軽量フレームワークでRedisとPostgreSQLを使ったデモアプリを作って、Herokuにデプロイするところまでの備忘録です。 少しでもGoに入門する人の助けになれば幸いです。
 
-
-
 <!--more-->
-
-
 
 なぜGoなのか
 ----------------------------------------
-
 
 <del>なんとなく</del>と言ってしまえばそれまでなのですが、 **最近あまり新しいことに挑戦してないなー** と思ったのがきっかけです。
   
@@ -48,7 +43,6 @@ Goについて調べているうちに、並列・スケールしやすいとか
 
 参考資料
 ----------------------------------------
-
 
 この記事を書くに当たりこれらの情報を参考にさせていただきました。ありがとうございます。
 
@@ -88,7 +82,6 @@ Goについて調べているうちに、並列・スケールしやすいとか
 
 デモ、今回の構成
 ----------------------------------------
-
 
 まずGoでハマったのが、 **ファイル構成よくわからん。**
 
@@ -136,13 +129,11 @@ Macローカルに色々インストールするのは嫌なので、Vagrant+Ans
 環境を整える
 ----------------------------------------
 
-
 Vagrantfileとprovisioningフォルダが入っているので、さくっと環境構築を済ませます。
 
 <span class="removed_link" title="http://qiita.com/itayan/items/b41f8541892e693aeb0a">Vagrant+AnsibleでGo環境を構築し、せっかくなのでAWS SDK for Goを試してみる。</span>さまの記事をベースにしつつ、Vagrantの設定、構成・プロビジョニング周りを色々自分好みに改造してます。
   
 Ansibleのインストール等は上記の記事をご覧ください。
-
 
 ```
 $ vagrant -v
@@ -160,11 +151,9 @@ $ bower install
 $ vagrant up --provision
 ```
 
-
 Ansibleのプロビジョニングが走り、エラーが出なければおそらくOKです。
   
 VM内にログインしてGoのアプリを起動してみます。
-
 
 ```
 $ vagrant ssh
@@ -173,7 +162,6 @@ $ vagrant@precise64:~/go/src/godemo$ go get
 $ vagrant@precise64:~/go/src/godemo$ go get github.com/codegangsta/gin
 $ vagrant@precise64:~/go/src/godemo$ gin -p 8080
 ```
-
 
 <img src="http://leko.jp/images/2015/07/ping.png" alt="/ping" title="/ping.png" border="0" width="415" height="97" />
 
@@ -184,13 +172,11 @@ $ vagrant@precise64:~/go/src/godemo$ gin -p 8080
 プロジェクトを作成する
 ----------------------------------------
 
-
 ファイル構成はこのようにします。
 
 ローカル側は`~/work/godemo`(任意のパスでOKです)、VM側は`/home/vagrant/go/src/godemo`とします。
   
 VagrantのSynced folderで紐付けを行っています。
-
 
 ```
 godemo/
@@ -217,12 +203,10 @@ godemo/
 └── main.go           # メインファイル
 ```
 
-
 ※Goの構成やHerokuと直接関係のないファイルは除外しています。
 
 Herokuにデプロイする（準備）
 ----------------------------------------
-
 
 [Godep](https://github.com/tools/godep)というツールを用いてライブラリの管理を行います。 くわしくは[Herokuのマニュアル](https://devcenter.heroku.com/articles/go-dependencies-via-godep)を御覧ください。
 
@@ -256,11 +240,9 @@ redisurlはredis.Connを返し、NewRediStoreWithPoolはredis.Poolを受け取�
 Herokuにデプロイする
 ----------------------------------------
 
-
 ここまでくればおなじみのコマンドです。
   
 Goは独自のビルドパックを使用する必要があるので`heroku create`コマンドの後ろに`--buildpack`オプションを渡しています。
-
 
 ```
 $ heroku create --buildpack https://github.com/kr/heroku-buildpack-go.git
@@ -270,22 +252,17 @@ $ git push heroku master
 $ heroku open
 ```
 
-
 動作確認
 ----------------------------------------
-
-
 
 ```
 $ heroku open
 ```
 
-
 登録/ログイン/パスワードのハッシュ化/ログアウトあたりが確認できればOKかと思います。
 
 所感
 ----------------------------------------
-
 
 Goを触っていて思ったことの雑記です。
 
@@ -357,7 +334,6 @@ Goのルールになれるまでは面倒だなーと思ってましたが使っ
 
 まとめ
 ----------------------------------------
-
 
 ということで入門記事でした。
   

@@ -29,15 +29,10 @@ tags:
 
 と色々なツールを試してみたので、そのまとめを残したいと思います。
 
-
-
 <!--more-->
-
-
 
 完成図
 ----------------------------------------
-
 
 <img src="http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png" alt="完成図" width="100%" class="alignnone size-medium wp-image-778" srcset="http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png 1400w, http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-150x54.png 150w, http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-300x107.png 300w, http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-1024x366.png 1024w" sizes="(max-width: 1400px) 100vw, 1400px" />
 
@@ -49,7 +44,6 @@ Slackに通知を飛ばすのは書くまでもなく、矢印が煩雑になる
 
 リポジトリを作る
 ----------------------------------------
-
 
 大前提です。ちゃちゃっと作ってしまいます。
   
@@ -67,12 +61,10 @@ git push origin master
 hub browse
 ```
 
-
 ついでに連携する各サービスのアカウントも作成しておきます。
 
 Githubの通知をSlackに送る
 ----------------------------------------
-
 
 `https://{slackのチーム名}.slack.com/services/new`
   
@@ -109,7 +101,6 @@ git add Gemfile*
 git commit -m 'Add rspec gem'
 git push origin feat/circle-ci
 ```
-
 
 連携が完了していると、pullリクエストを作成した時に以下のようになると思います。
 
@@ -237,7 +228,6 @@ Githubにプルリクエストを作ってマージし、Code climateにカバ�
 +        fi
 ```
 
-
 これでビルドが通るようになりました。 もう１個ハマりました。
 
 > 環境変数 BUNDLE_UPDATE が指定されていたら、circleci-bundle-update-pr gem をインストールして、同コマンドを実行しています。この環境変数は後述するトリガーが設定してきます。
@@ -260,7 +250,6 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
 
 まとめ
 ----------------------------------------
-
 
 全部設定するとSlackがだいぶ賑わってきます。
 

@@ -16,15 +16,10 @@ Drupalを触っててふと気になったのが、 **指定したユーザが�
   
 調べてもベストプラクティスが見つからず、ソースコードを追ったらやっと正解を見つけたという話の備忘録です。
 
-
-
 <!--more-->
-
-
 
 はじめに
 ----------------------------------------
-
 
 Drupal7を対象にした記事です。
   
@@ -32,7 +27,6 @@ Drupal自体のことはじめ等の記事ではありません。Drupalの事�
 
 結論
 ----------------------------------------
-
 
 ```php
 <?php
@@ -45,7 +39,6 @@ if (array_key_exists(variable_get('user_admin_role'), $account->roles)) {
     // 管理者じゃない
 }
 ```
-
 
 という感じに`variable_get('user_admin_role')`を利用すればOKでした。
   
@@ -66,7 +59,6 @@ if (array_key_exists(variable_get('user_admin_role'), $account->roles)) {
 ロール一覧テーブルににAdmin相当か否かという情報がない
 ----------------------------------------
 
-
 [modules/user/user.install](https://github.com/drupal/drupal/blob/7.x/modules/user/user.install#L93)にテーブル定義が書いてありました。
 
 ロール一覧テーブルには`ロールのID, 名前, 表示順序`カラムしかないので、
@@ -77,7 +69,6 @@ if (array_key_exists(variable_get('user_admin_role'), $account->roles)) {
 
 AdminのロールIDに相当する定数が存在しない
 ----------------------------------------
-
 
 ならそのロールのIDに対応する定数があるのでは。と思ったのですが、ない。 **なぜかAdminのロールだけありません。**
 
@@ -99,14 +90,12 @@ roleテーブルの初期値を探してコードを追ってみると
     ->execute();
 ```
 
-
 という処理を[modules/user/user.install](https://github.com/drupal/drupal/blob/7.x/modules/user/user.install#L320)に見つけました。
   
 どうやらAdminロールは`Built-in roles`に該当しないようです。
 
 AdminのロールIDは3固定らしい（？）
 ----------------------------------------
-
 
 Drupalのロール一覧テーブルには管理者フラグ的なものもないし、Drupalが提供しているロールIDに相当する定数もないならどないせえっちゅうねん。という感じなんですが、どうやらAdminのロールIDは3で固定らしい（？）という情報が出てきました。
 
@@ -119,7 +108,6 @@ Drupalのロール一覧テーブルには管理者フラグ的なものもな�
 user\_has\_role関数はロールIDが必要なのでなのでロールIDを隠蔽してくれない
 ----------------------------------------
 
-
 [user\_has\_role](https://api.drupal.org/api/drupal/modules!user!user.module/function/user_has_role/7.x)関数というものがあるらしい。
   
 これじゃん！と思ったんですが、引数にロールIDが必要でした。
@@ -130,7 +118,6 @@ user\_has\_role関数はロールIDが必要なのでなのでロールIDを隠�
 
 ロール名は編集可能なのでuser\_role\_load\_by\_name関数を使うとどハマりする恐れがある
 ----------------------------------------
-
 
 > One liner would be:
     
@@ -149,11 +136,9 @@ user_rolesの戻り値はDBからSELECTしてきた`[ロールID => ロール名
 ソースを追ってたら初期化処理と正解を見つけた
 ----------------------------------------
 
-
 なかば諦めムードで`define('DRUPAL_ADMINISTRATOR_RID', 3);`とか書き始めていたのですが、
   
 どうしても納得行かなくてソースを眺めていたら正解を見つけました。
-
 
 ```
 // Create a default role for site administrators, with all available permissions assigned.
@@ -166,7 +151,6 @@ user_rolesの戻り値はDBからSELECTしてきた`[ロールID => ロール名
   variable_set('user_admin_role', $admin_role->rid);
 ```
 
-
 [profiles/standard/standard.install](https://github.com/drupal/drupal/blob/7.x/profiles/standard/standard.install#L406)に書かれていました。
   
 Built-in rolesとは別枠で、Drupalの初期化を行うときにAdminのロールは作成されるようです。
@@ -177,11 +161,9 @@ variable_setは内部的にDBを使用しているので、永続化される値
   
 `variable_set`されているなら`variable_get`で値を取得できるので、
 
-
 ```
 variable_get('user_admin_role')
 ```
-
 
 でAdmin相当のロールIDを入手することができました。
   
@@ -191,7 +173,6 @@ variable_get('user_admin_role')
 
 まとめ
 ----------------------------------------
-
 
 野良の情報を調べていて思ったのは、やっぱPHPだわ。という感想でした。
   

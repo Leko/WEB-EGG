@@ -12,15 +12,10 @@ categories:
   
 利用してみたところ、キャッシュ周りの設定を変更する方法がよく分からなかったので、備忘録を残します。
 
-
-
 <!--more-->
-
-
 
 まえおき
 ----------------------------------------
-
 
 Google Cloud StorageはブラウザからGUIで操作する方法と、[Google Cloud SDK](https://cloud.google.com/sdk/)という公式のCLIツールを利用する方法があるようです。 今回は両方の方法でまとめてみます。
 
@@ -36,19 +31,16 @@ Google Cloud StorageはブラウザからGUIで操作する方法と、[Google C
 brew cask install google-cloud-sdk
 ```
 
-
 インストールできたか動作確認。
 
 ```bash
 gsutil
 ```
 
-
 ヘルプが表示されていればOKだと思います。
 
 メタデータの確認
 ----------------------------------------
-
 
 キャッシュの情報はメタデータと呼ばれるオブジェクトに格納されています。
   
@@ -87,7 +79,6 @@ gs://web.timer.builderscon.io/all.css:
 TOTAL: 1 objects, 2225 bytes (2.17 KiB)
 ```
 
-
 ### httpでアクセスしてみる
 
 curlからファイルにアクセスし、レスポンスヘッダを見てみます。
@@ -123,12 +114,10 @@ $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 ...
 ```
 
-
 このように、メタデータ内のキャッシュの項目がレスポンスヘッダに含まれています。
 
 キャッシュの有効期限を変更してみる
 ----------------------------------------
-
 
 ### GUIから変更する
 
@@ -143,7 +132,6 @@ $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 < Cache-Control: public, max-age=30
 ```
 
-
 意図したとおりになりました。
 
 ### Google Cloud SDKから変更する
@@ -156,7 +144,6 @@ Setting metadata on gs://web.timer.builderscon.io/all.css...
 BadRequestException: 400 Invalid argument.
 ```
 
-
 **ん？**
   
 よくよく考えたらログインしてないですね。プロジェクトのメンバーでないとファイルの変更ができないので、gcloudコマンドでログインします。
@@ -167,14 +154,12 @@ Your browser has been opened to visit:
 
     https://accounts.google.com/o/oauth2/auth?XXXXXXXXXXXXXXXX
 
-
 Saved Application Default Credentials.
 
 You are now logged in as [XXX.XXX@gmail.com].
 Your current project is [None].  You can change this setting by running:
   $ gcloud config set project PROJECT_ID
 ```
-
 
 ログインが完了したら、もう一度メタデータを更新。
 
@@ -183,14 +168,12 @@ $ gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.buildersc
 Setting metadata on gs://web.timer.builderscon.io/all.css...
 ```
 
-
 今度はうまくいったようです。書き換えたらcurlでアクセス。
 
 ```bash
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 < Cache-Control: public, max-age=100
 ```
-
 
 意図したとおりになりました。
 

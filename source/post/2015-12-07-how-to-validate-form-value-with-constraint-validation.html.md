@@ -23,15 +23,10 @@ validityプロパティの中には`patternMismatch`, `tooLong`などそれっ�
   
 と思うほどに便利だったので詳しい機能の紹介と、より便利に扱う小ネタの紹介です。
 
-
-
 <!--more-->
-
-
 
 参考
 ----------------------------------------
-
 
 情報源として主に以下のページを参考にしました。
 
@@ -42,14 +37,12 @@ validityプロパティの中には`patternMismatch`, `tooLong`などそれっ�
 デモ
 ----------------------------------------
 
-
 今回の記事でご紹介する内容をまとめたデモを[こちら](https://jsfiddle.net/leko/nwkLcry5/)に上げました。
   
 記事の内容を読みつつデモの動きやコードをご参考ください。
 
 いいこと
 ----------------------------------------
-
 
 ### 標準仕様
 
@@ -81,13 +74,11 @@ IE10+なら対応しているので、新しいブラウザ向けのサービス
 checkValidityとValidityState
 ----------------------------------------
 
-
 では早速本題に入ります。まずは例から。
 
 ```markup
 <input id="form-text" type="text" required />
 ```
-
 
 といったHTMLを用意し、以下の様なjsを書いてみます。
 
@@ -97,7 +88,6 @@ console.log(document.getElementById('form-text').checkValidity());    // false
 console.log(document.getElementById('form-text').validity);   // ValidityState {}
 console.log(document.getElementById('form-text').validity.valueMissing);  // true
 ```
-
 
 `checkValidity`メソッドの戻り値はfalseで、`validity.valueMissing`プロパティの値は`true`にっていると思います。
   
@@ -112,7 +102,6 @@ validity以下のオブジェクトは、バリデーションに通過した場
 willValidateとnovalidate、disabled
 ----------------------------------------
 
-
 どんどんいきます。
 
 willValidateというプロパティもあります。
@@ -123,7 +112,6 @@ willValidateというプロパティもあります。
 
 ```markup
 ```
-
 
 ```javascript
 console.log(document.getElementById('form-text1').willValidate);  // false
@@ -145,7 +133,6 @@ console.log(document.getElementById('form-text1').willValidate);  // false
 console.log(document.forms[0].willValidate);    // undefined
 ```
 
-
 `disabled`や`readonly`になっている要素はfalseになるようです。
   
 jsや開発者ツールなどでHTMLを書き換え、readonlyやdisabledを外すと自動的にwillValidateの値が変わるようです。
@@ -159,10 +146,8 @@ disabledを保ったままvalue属性を書き換えた場合のwillValidateの�
 バリデーションエラーの例
 ----------------------------------------
 
-
 問題点
 ----------------------------------------
-
 
 参考に上げた記事内の[Current Implementation Issues and Limitations](http://www.html5rocks.com/en/tutorials/forms/constraintvalidation/#toc-current-implementation-issues)がとても参考になりました。
 
@@ -205,7 +190,6 @@ Chromeならinputタグに対応するlabelタグが`labels`プロパティで�
 小ネタ
 ----------------------------------------
 
-
 上記の問題を解消するものをざっくり作ってみました。
   
 具体的な実装は[前述のデモ](https://jsfiddle.net/leko/nwkLcry5/)にコードが有ります。
@@ -218,7 +202,6 @@ Chromeならinputタグに対応するlabelタグが`labels`プロパティで�
 
 まとめ
 ----------------------------------------
-
 
 HTML5についてはメディア系以外は追っかけているつもりだったのですが、全然知らないことがまだまだあるなーと痛感しました。ValidityState、めっちゃ便利です。
 

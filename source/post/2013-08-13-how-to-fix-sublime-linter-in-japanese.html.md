@@ -30,15 +30,10 @@ SublimeText2で**SublimeLinter**という構文チェックパッケージを使
   
 日本語ゼロは不便なので直してみたいと思います。
 
-
-
 <!--more-->
-
-
 
 なぜエラーが起こるのか
 ----------------------------------------
-
 
 [GithubのREADME](https://github.com/SublimeLinter/SublimeLinter)を読んだら書いてありました。
 
@@ -59,7 +54,6 @@ Nodejs依存ではなく、**JavaScriptCore**というMacのデフォルトjsエ
 治らなかった対応策
 ----------------------------------------
 
-
 > [Mac OS X + SublimeLinterでJavascriptの日本語エラーを回避する方法 \| kwLog](http://blog.makotokw.com/2012/11/06/mac-os-x-sublimelinter%E3%81%A7javascript%E3%81%AE%E6%97%A5%E6%9C%AC%E8%AA%9E%E3%82%A8%E3%83%A9%E3%83%BC%E3%82%92%E5%9B%9E%E9%81%BF%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/)
 
 「SublimeLinter 日本語」でググるとまずこの記事が出てくるのですが、
@@ -74,7 +68,6 @@ Nodejsが使われているなら日本語エラー出ないし。
 
 治った対応策
 ----------------------------------------
-
 
 > [解决Mac下SublimeLinter的Unsafe Characters警告 &#8211; 专注web前端开发](http://www.fantxi.com/blog/archives/mac-fix-js-lint/)
 
@@ -94,13 +87,11 @@ Nodejsが使われているなら日本語エラー出ないし。
   
 これをパッケージのユーザ設定に追加します。
 
-
 ```
 "sublimelinter_executable_map": {
     "javascript": "/opt/boxen/nodenv/shims/node"
 }
 ```
-
 
 保存してSublimeTextを再起動したら治りました！
 

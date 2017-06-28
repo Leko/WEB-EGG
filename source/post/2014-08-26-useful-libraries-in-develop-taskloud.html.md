@@ -25,15 +25,10 @@ tags:
   
 ご紹介がてら使用感をメモしておきます。
 
-
-
 <!--more-->
-
-
 
 FastClick
 ----------------------------------------
-
 
 > ftlabs/fastclick
     
@@ -50,7 +45,6 @@ FastClick
 Flipsnap
 ----------------------------------------
 
-
 > flipsnap.js
     
 > <http://pxgrid.github.io/js-flipsnap/>
@@ -63,7 +57,6 @@ Flipsnap
 
 Zepto
 ----------------------------------------
-
 
 > Zepto.js: the aerogel-weight jQuery-compatible JavaScript library
     
@@ -82,7 +75,6 @@ jQueryとの互換性を保ちつつ、余計な機能を省いて読み込み�
 underscore.js
 ----------------------------------------
 
-
 > Underscore.js
     
 > <http://underscorejs.org/>
@@ -97,7 +89,6 @@ Taskloudはタスク管理ツールということで、リスト操作を行う
 
 Backbone.js
 ----------------------------------------
-
 
 > Backbone.js
     
@@ -122,7 +113,6 @@ Backbone.js
 Marionette
 ----------------------------------------
 
-
 > Marionette.js
     
 > <http://marionettejs.com/>
@@ -140,7 +130,6 @@ Backboneにいくつかの制約と拡張を加えるライブラリです。
 DefinitelyTyped
 ----------------------------------------
 
-
 > 
 今回は一定レベルの安全性と保守性を保つために、素のjsではなく**TypeScript**を使用しました。
   
@@ -156,7 +145,6 @@ DefinitelyTyped
 
 Firebase
 ----------------------------------------
-
 
 > Firebase &#8211; Build Realtime Apps
     
@@ -177,7 +165,6 @@ WebSocketを使うと通信操作がどのような感じになるのか、サ�
 backfire
 ----------------------------------------
 
-
 > BackFire: Firebase bindings for Backbone.js &#8211; Firebase
     
 > <https://www.firebase.com/blog/2013-01-29-backfire-firebase-bindings-for-backbonejs.html>
@@ -196,7 +183,6 @@ Firebaseの仕様や振る舞いをさほど気にすることなく、多少コ
 
 まとめ
 ----------------------------------------
-
 
 と、Taskloudではこのようなライブラリを使用しています。
   

@@ -15,11 +15,7 @@ dsq_thread_id:
 
 まず完成目標はこちら（Photoshopで作成）
 
-
-
 <!--more-->
-
-
 
 色が微妙とかセンスがないとか言わないで！！
 
@@ -49,7 +45,6 @@ dsq_thread_id:
 <a href="#" class="btn-a">BUTTON</a>
 ```
 
-
 まんまですね。次に、まず基本的な装飾。
 
 ```
@@ -62,7 +57,6 @@ dsq_thread_id:
 	padding: 10px 30px;	/* ここはお好みで */
 }
 ```
-
 
 これ以降のCSSは全部.btn-aの中に記述しますが、はしょります。
   
@@ -81,7 +75,6 @@ dsq_thread_id:
 border-radius: 2px;	/* Operaやプレフィックス不要ブラウザに */
 ```
 
-
 ここまでのサンプルがこんな感じ。
 
 で、いざグラデーション。
@@ -96,7 +89,6 @@ background: -moz-linear-gradient(top, #0dbfc1, #09b7b1);
 background: -webkit-gradient(linear, left top, left bottom, from(#0dbfc1), to(#09b7b1));
 ```
 
-
 あとは、それっぽさを出すために輪郭線と、光を入れます。
   
 あと、テキストを浮き上がらせるために文字にはシャドウを入れます。これはお好みで。
@@ -106,7 +98,6 @@ text-shadow: 0px -1px 0px #000;
 border: 1px solid #08b1ab;
 box-shadow: 0px 1px 0px #fff inset;
 ```
-
 
 では改めてサンプルを見てみましょう。こんな感じ。
   

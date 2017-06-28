@@ -24,19 +24,13 @@ DPでも解けるそうですが、イマイチDPは書き方が分かりませ�
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1130&lang=jp)
 
-
-
 <!--more-->
-
-
 
 コード(幅優先)
 ----------------------------------------
 
-
 コード(深さ優先)
 ----------------------------------------
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

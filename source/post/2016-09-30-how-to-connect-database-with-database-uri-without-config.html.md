@@ -16,11 +16,9 @@ tags:
   
 作ったアプリをHerokuにデプロイするときに、各種アドオンで
 
-
 ```
 XXX_URL=pg://xxx:yyy@zzz/hoge
 ```
-
 
 のような文字列を環境変数で指定して使うというパターンが有ると思うのですが、
   
@@ -28,15 +26,10 @@ XXX_URL=pg://xxx:yyy@zzz/hoge
 
 と思ったのでRailsのソースやドキュメントを読み漁ってみました。
 
-
-
 <!--more-->
-
-
 
 結論
 ----------------------------------------
-
 
 先に結論を書くと、何もせずとも`DATABASE_URL`という名前の環境変数を定義すればOKでした。
   
@@ -46,7 +39,6 @@ config/database.ymlを書き換えたり消したりする必要はなく、環�
 
 ドキュメントを読んでみる
 ----------------------------------------
-
 
 まずは何事にも公式ドキュメント。
 
@@ -63,7 +55,6 @@ config/database.ymlを書き換えたり消したりする必要はなく、環�
 記事を探してみる
 ----------------------------------------
 
-
 試してみた系記事ないかなーと探してみたらこんな記事が。
 
 > [John Griffin: Rails 4.1: Database URLs](http://www.johng.co.uk/2014/04/29/rails-41-database-urls/)
@@ -72,7 +63,6 @@ config/database.ymlを書き換えたり消したりする必要はなく、環�
 
 Railsのソースを読んでみる
 ----------------------------------------
-
 
 まずはそれっぽいテストがないか確認。
   
@@ -100,7 +90,6 @@ private
   end
 ```
 
-
 該当ファイルは[rails/activerecord/lib/active\_record/connection\_handling.rb](https://github.com/rails/rails/blob/bb1ecdcc677bf6e68e0252505509c089619b5b90/activerecord/lib/active_record/connection_handling.rb#L76)。
   
 もしDATABASE_URLという環境変数があれば設定ファイルでいうところの
@@ -109,7 +98,6 @@ private
 development: # ※ここは実行時の環境による
   url: <%%= ENV['DATABASE_URL'] %>
 ```
-
 
 に相当する処理を内部でやってくれる模様。
   
@@ -128,12 +116,10 @@ development: # ※ここは実行時の環境による
 #
 ```
 
-
 と[設定ファイルを書き換えるようコメントが書かれていたり](https://github.com/rails/rails/blob/3df3d80ade705dd096ec481845ff0fc2d70427b0/railties/lib/rails/generators/rails/app/templates/config/databases/postgresql.yml)、いまいちどっちを信じればよいのかわからない。
 
 実験してみる
 ----------------------------------------
-
 
 英語とRuby力が足らず決定打が見つからなかったので試してみました。
   
@@ -146,7 +132,6 @@ development: # ※ここは実行時の環境による
   
 もしconfig/database.ymlが優先されるならSQLiteの接続になるので正しく接続できてしまう
 
-
 ```
 # 接続エラー（ポスグレで接続しようとしている）
 DATABASE_URL=postgresql://localhost/app_development bundle exec rails s
@@ -154,7 +139,6 @@ DATABASE_URL=postgresql://localhost/app_development bundle exec rails s
 # 接続できた（config/database.ymlは間違ってない）
 bundle exec rails s
 ```
-
 
 ということで試してみた結果、
   
@@ -164,7 +148,6 @@ bundle exec rails s
 
 まとめ
 ----------------------------------------
-
 
 この形式は環境変数１個で事足りるし、.env等に逃がせば接続情報をGit管理しなくて良くなるので、とても好きです。
   
@@ -182,7 +165,6 @@ RailsアプリはHerokuにデプロイされることが多いからなのか、
 
 おまけ：多言語の対応状況
 ----------------------------------------
-
 
 私がよく触る言語たちの対応状況を調べてみました。
 

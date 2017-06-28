@@ -33,11 +33,7 @@ AndroidもiOSでも動くアプリを作れないかなぁ。**
   
 JavaScriptで記述して、AndroidやiOS向けにビルドが出来るツールです。
 
-
-
 <!--more-->
-
-
 
 GUIの開発環境「Titanium Studio」でも良いのですが、
   
@@ -55,7 +51,6 @@ TitaniumではJavaScriptが使えるので、楽なCoffeeScriptで書こうと�
 
 事前に必要なもの
 ----------------------------------------
-
 
 iOSアプリの開発をするため、Macは必須です。
   
@@ -112,7 +107,6 @@ Titanium Studioを起動したら、
 2.iOS,AndroidのSDKを入手する
 ----------------------------------------
 
-
 iOSのSDKは、XCodeのからインストールして下さい。 インストールが完了すると、**iOSのSDKは**Titaniumが自動的に認識してくれます。
 
 AndroidのSDKは自分でパスを指定してあげないといけません。 先ほどの設定で指定した、**/Developers/android-sdk/**の中に、 AndroidのSDKを入れてあげます。
@@ -142,7 +136,6 @@ API7が無いとエミュレータの起動でエラーが出てたので、API7
 3.Node.jsをインストールする
 ----------------------------------------
 
-
 Titanium-cliを使うには、**npm**というパッケージ管理システムが必要です。
   
 そして、npmは**Nodejs**をインストールすると自動的に使えるようになります。
@@ -153,19 +146,16 @@ Titanium-cliを使うには、**npm**というパッケージ管理システム�
 
 ターミナルを立ち上げ、以下の内容を入力して下さい。
 
-
 ```
 $ cd ~
 $ brew update && brew install node
 ```
-
 
 brewのインストールについては、ググってください。
 
 > [[Mac] Mountain Lionへパッケージ管理「Homebrew」をインストールする手順のメモ | Tools 4 Hack](http://tools4hack.santalab.me/howto-mountainlion-install-homebrew.html)
 
 Nodejsのインストールが出来たら、動作確認のためバージョンを確認します。
-
 
 ```
 $ node -v
@@ -174,49 +164,40 @@ $ npm -v
 1.2.0
 ```
 
-
 バージョンが出てきたら、OKです。
 
 4.titanium-cliをインストールする
 ----------------------------------------
 
-
 Nodejsをインストールしてnpmが使えるようになったので、
   
 **titanium-cli**をグローバルインストールします。
-
 
 ```
 $ sudo npm install -g titanium
 ```
 
-
 インストールするときには、Titanium-cliではなく、**titanium**です。 パスワードを聞かれたらMacのパスワードを入力。
 
 titaniumのインストールしたら、一応バージョンを確認します。
-
 
 ```
 $ titanium -v
 3.0.24
 ```
 
-
 バージョンが表示されたらOKです。
 
 5.Titanium-cliの設定をする
 ----------------------------------------
 
-
 Titanium-cliのインストールが完了したので、 次に環境設定を行います。とても簡単です。
 
 ターミナルに、
 
-
 ```
 $ titanium setup
 ```
-
 
 と入力します。 いくつか設定項目があるので、支持通り入力します。
 
@@ -255,16 +236,13 @@ $ titanium setup
 6.プロジェクトを作成する
 ----------------------------------------
 
-
 設定が完了したので、早速プロジェクトを作成します。
 
 ターミナルに以下のように入力します
 
-
 ```
 $ titanium create
 ```
-
 
 またいくつか質問をされるので、埋めていきます。
 
@@ -292,7 +270,6 @@ $ titanium create
 
 上記を入力すると、
 
-
 ```
 [INFO]  Creating Titanium Mobile application project
 [INFO]  Copying "android" platform resources
@@ -300,11 +277,9 @@ $ titanium create
 [INFO]  Project 'myapp' created successfully in 76ms
 ```
 
-
 とメッセージが出てきます。 これでプロジェクトが作成できました。
 
 生成されるファイルはこんな感じになっていると思います。
-
 
 ```
 - LICENSE
@@ -321,10 +296,8 @@ $ titanium create
 - tiapp.xml
 ```
 
-
 7.ビルドしてエミュレーターを起動する
 ----------------------------------------
-
 
 次に、アプリをビルドして
   
@@ -336,14 +309,11 @@ iOSのシミュレータ、Androidのエミュレータで起動してみます�
   
 ターミナルに以下の内容を入力
 
-
 ```
 $ titanium build -p ios
 ```
 
-
 すると、以下のようにずらっとアプリの情報や進捗状況が表示されます。
-
 
 ```
 Titanium Command-Line Interface, CLI version 3.0.24, Titanium SDK version 3.0.2.GA
@@ -379,18 +349,15 @@ Please report bugs to http://jira.appcelerator.org/
 ...
 ```
 
-
 そのまましばらく待っていると、 iOSシミュレータが起動して、アプリが表示されると思います。
 
 <img src="/images/2013/04/preview_io.png" alt="Preview io" title="preview_io.png" border="0" width="312" height="600" />
 
 次に、Androidのアプリ形式にビルドします。 ターミナルの以下の内容を入力して下さい。
 
-
 ```
 $ titanium build -p android
 ```
-
 
 **Androidのエミュレータは重い**ので、１〜２分くらいのんびり待ってみて下さい。
 
@@ -402,7 +369,6 @@ Androidのエミュレータが起動してアプリが表示されればOKで�
 
 ビルドを自動化する
 ----------------------------------------
-
 
 先述の**ビルドしてエミュレータを起動する**までの内容で、
   

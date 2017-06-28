@@ -30,27 +30,19 @@ OpenAPI initiativeも未だ活動続いてますし、「乗るしか無い、�
   
 なんにせよApiaryにロックインすることなく、Swaggerで記述した仕様書がテストできるようになったというのは嬉しいことなので早速試してみました。
 
-
-
 <!--more-->
-
-
 
 Dreddをインストール
 ----------------------------------------
 
-
 READMEのとおりです。
-
 
 ```
 npm install -g dredd
 ```
 
-
 Swaggerのデモ仕様書を作成
 ----------------------------------------
-
 
 まずはミニマムで試してみたいので、ドキュメントにあるやつをそのままパクります。
 
@@ -82,14 +74,12 @@ paths:
               - message
 ```
 
-
 ちなみにOpenAPI v3([OpenAPI.nextブランチ](https://github.com/OAI/OpenAPI-Specification/tree/OpenAPI.next))には対応してないのか調べてみたのですが、してないようでした。
   
 まぁまだスキーマ定義もサンプル仕様も存在しないし仕方ないと思います。
 
 デモアプリ作成
 ----------------------------------------
-
 
 同じくドキュメントからパクります。
 
@@ -103,15 +93,12 @@ app.get('/', function(req, res) {
 app.listen(3000);
 ```
 
-
 ごく簡単なechoサーバです。
 
 いざDredd実行
 ----------------------------------------
 
-
 ドキュメント
-
 
 ```
 $ dredd swagger.yml localhost:3000
@@ -120,7 +107,6 @@ pass: GET / duration: 56ms
 complete: 1 passing, 0 failing, 0 errors, 0 skipped, 1 total
 complete: Tests took 64ms
 ```
-
 
 はい、いい感じです。さすがDredd。
 
@@ -145,7 +131,6 @@ API Gatewayはデフォルトで[SwaggerのPetstore](http://petstore.swagger.io/
 
 `{XXXXXXXXXXX}`, `{STAGE}`は自分で入力した内容になります。
 
-
 ```
 $ dredd swagger.yml https://{XXXXXXXXXXX}.execute-api.ap-northeast-1.amazonaws.com/{STAGE}
 error: Compilation error in file 'swagger.yml': Required URI parameter 'petId' has no example or default value. ( > /beta/pets/{petId} > GET)
@@ -156,7 +141,6 @@ warn: Compilation warning in file 'swagger.yml': Ambiguous URI parameter in temp
 No example value for required parameter in API description document: petId ( > /beta/pets/{petId} > OPTIONS)
 error: Error when processing API description.
 ```
-
 
 あら。エラーになってしまいました。
   

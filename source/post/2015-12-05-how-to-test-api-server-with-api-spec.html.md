@@ -32,15 +32,10 @@ Web APIのドキュメントといえば、[Swagger](http://swagger.io/)や[JSON
 
 ついでにAPI Blueprint形式のドキュメントをホスティングしてくれる[Apiary](https://apiary.io/)とGithubを連携し、masterにマージされたら公開されているAPIドキュメントも最新になるというのもやってみます。
 
-
-
 <!--more-->
-
-
 
 まえおき
 ----------------------------------------
-
 
 今回作成したデモは [Leko/godemo](https://github.com/Leko/godemo) にて公開しています。
   
@@ -69,14 +64,12 @@ Web APIのドキュメントといえば、[Swagger](http://swagger.io/)や[JSON
 APIサーバを実装する
 ----------------------------------------
 
-
 [Goに入門してRedis+PostgresなアプリをHerokuにデプロイするまで](http://leko.jp/archives/763) で作成した[Leko/godemo](https://github.com/Leko/godemo)リポジトリに書き足します
 
 今回はGoの話ではないですし、先ほどの仕様の通りに作っただけなのでさっくり済ませます。
 
 Apiaryに公開する
 ----------------------------------------
-
 
 [Apiary](https://apiary.io/)は、API Blueprintで書かれたAPIドキュメントをもとに
 
@@ -99,7 +92,6 @@ playgroundをいちいち作ったり、サンプルコードで複数言語に�
 APIドキュメントでAPIサーバをテストする
 ----------------------------------------
 
-
 早速テストしてみます。テストにはApiaryが提供するdreddというツールを使用します。
   
 導入の注意点として、**Dredd周りのツールがNode4や5に対応しておらず、dreddを入れるためにはnode0.10系が必要になります。** 古い&#8230;。
@@ -112,7 +104,6 @@ APIドキュメントでAPIサーバをテストする
 npm i -g dredd
 ```
 
-
 テストの環境のセットアップは、ApiaryのTestsタブに記述されています。
 
 <img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-06-at-12.03.57-AM.png" alt="Screen Shot 2015 12 06 at 12 03 57 AM" title="Screen Shot 2015-12-06 at 12.03.57 AM.png" border="0" width="598" height="290" />
@@ -123,7 +114,6 @@ Goのサーバを起動しておき、書かれているとおりにコマンド
 dredd init # 省略,対話CLIがあります
 dredd
 ```
-
 
 <img src="http://leko.jp/images/2015/11/Screen-Shot-2015-12-06-at-1.25.59-AM.png" alt="APIドキュメントでAPIサーバをテストする" width="909" height="174" class="alignnone size-full wp-image-820" />
 
@@ -144,7 +134,6 @@ dredd
 Githubと連携する
 ----------------------------------------
 
-
 反映漏れや食い違いを起こさないために、
   
 APIドキュメントをGitで管理して、GithubのmasterにpushされたらApiaryのドキュメントに自動反映されるようにします。
@@ -159,7 +148,6 @@ domainのところには、Apiaryのドメインを設定します。写真の�
 
 まとめ
 ----------------------------------------
-
 
 API Blueprintはまだ発展途上で、[Authorizationに対応して欲しい](https://github.com/apiaryio/api-blueprint/issues/11)とかissueが上がっています。
   

@@ -61,11 +61,7 @@ Alfredには**Workflows**という機能があります。
   
 [MOCO&#8217;SキッチンオリーブオイルAPI]()を利用したWorkflowsを作ります。
 
-
-
 <!--more-->
-
-
 
 ## Alfred Workflowsの前提知識
 
@@ -146,7 +142,6 @@ Examplesに、同様の機能を持った**Amazon Suggest**というものもあ
 サンプルのコードを読む
 ----------------------------------------
 
-
 まず、Google Suggestのコードを、全部貼っつけてみます。
   
 あまり行数はないです。PHPで書かれています。
@@ -157,7 +152,6 @@ Examplesに、同様の機能を持った**Amazon Suggest**というものもあ
 ```php
  require_once(&#8216;workflows.php&#8217;); $wf = new Workflows(); $orig = &#8220;{query}&#8221;; $xml = $wf->request( &#8220;http://google.com/complete/search?output=toolbar&q=&#8221;.urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.&#8217;.&#8217;.time(), &#8220;$data&#8221;, &#8220;$data&#8221;, &#8216;Search Google for &#8216;.$data, &#8216;icon.png&#8217; ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( &#8216;googlesuggest&#8217;, $orig, &#8216;No Suggestions&#8217;, &#8216;No search suggestions found. Search Google for &#8216;.$orig, &#8216;icon.png&#8217; ); endif; echo $wf->toxml(); 
 ```
-
 
 </div>
 
@@ -202,7 +196,6 @@ PHPで書く際の注意点は、
  require_once(&#8216;workflows.php&#8217;); $wf = new Workflows(); 
 ```
 
-
 </div>
 
 この部分、いかにもなクラスをrequireしています。
@@ -225,7 +218,6 @@ Workflowsクラスは、workflowsを作る上でのユーティリティです�
 ```php
  $orig = &#8220;{query}&#8221;; 
 ```
-
 
 </div>
 
@@ -258,7 +250,6 @@ urlを渡すだけでレスポンスを取得することができます。
  foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.&#8217;.&#8217;.time(), &#8220;$data&#8221;, &#8220;$data&#8221;, &#8216;Search Google for &#8216;.$data, &#8216;icon.png&#8217; ); $int++; endforeach; 
 ```
 
-
 </div>
 
 レスポンスを取得したら、
@@ -277,7 +268,6 @@ Workflows.phpの中身を見てみました。
 ```php
  /** * Description: * Helper function that just makes it easier to pass values into a function * and create an array result to be passed back to Alfred * * @param $uid &#8211; the uid of the result, should be unique * @param $arg &#8211; the argument that will be passed on * @param $title &#8211; The title of the result item * @param $sub &#8211; The subtitle text for the result item * @param $icon &#8211; the icon to use for the result item * @param $valid &#8211; sets whether the result item can be actioned * @param $auto &#8211; the autocomplete value for the result item * @return array &#8211; array item to be passed back to Alfred */ public function result( $uid, $arg, $title, $sub, $icon, $valid=&#8217;yes&#8217;, $auto=null, $type=null ) { // &#8230; } 
 ```
-
 
 </div>
 
@@ -324,7 +314,6 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 今回作るものの詳細
 ----------------------------------------
 
-
 冒頭でも話しましたが、
   
 今回は、[MOCO&#8217;sキッチンオリーブAPI]()を利用したサンプルを作ります。
@@ -347,7 +336,6 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 今回利用するAPIについて学ぶ
 ----------------------------------------
 
-
 MOCO&#8217;sキッチンオリーブAPIのURLは、
   
 `GET:` です。
@@ -369,14 +357,12 @@ MOCO&#8217;sキッチンオリーブAPIのURLは、
  { &#8220;2013-05-21&#8221;: { &#8220;menu&#8221;: &#8220;もこみち流　ペンネのミネストローネ&#8221;, &#8220;url&#8221;: &#8220;http://www.ntv.co.jp/zip/mokomichi/397800.html&#8221;, &#8220;olive&#8221;: &#8220;大２&#8221;, &#8220;thumb&#8221;: &#8220;http://pastak.cosmio.net/mocoDB/oliveAPI/img/thumb_800.jpg&#8221; } } 
 ```
 
-
 </div>
 
 レスポンスは、上記の形式で得られます。
 
 コードの説明
 ----------------------------------------
-
 
 先ほどのGoogle Suggestにならって作ったコードがこちらです。
 
@@ -386,7 +372,6 @@ MOCO&#8217;sキッチンオリーブAPIのURLは、
 ```php
 <?php require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), &#8221;, $json->error, &#8221;, &#8216;icon.png&#8217;); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.&#8221;: &#8220;.$info->olive.&#8221;オリーブ&#8221;; $wf->result(time(), $info->url, $title, $info->menu, &#8216;icon.png&#8217;); } } echo $wf->toXML(); 
 ```
-
 
 </div>
 
@@ -404,7 +389,6 @@ PHPでJSONのパースを行うには、`json_decode()`を利用します。
 
 workflowsの全体図とopen URLの設定内容がこちらです。
 
-
 <img src="/images/2013/05/20130521_step71.png" alt="Workflows全体図" title="20130521_step7.png" border="0" width="600" height="219" /> <img src="/images/2013/05/20130521_step8.png" alt="open URLの設定内容" title="20130521_step8.png" border="0" width="600" height="175" />
 
 繰り返しますが、**$wf->result()の第二匹数$argは、次の処理へ渡す値を指定しています**。
@@ -413,7 +397,6 @@ workflowsの全体図とopen URLの設定内容がこちらです。
 
 まとめ
 ----------------------------------------
-
 
 web APIと連携したAlfred Workflowsの作り方は、
   

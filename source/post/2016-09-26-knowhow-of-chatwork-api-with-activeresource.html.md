@@ -27,15 +27,10 @@ ActiveResourceは基本的にRuby on Railsで作られたアプリケーショ�
   
 ということで他のAPIにもActiveResourceを利用するために備忘録を残しておきます
 
-
-
 <!--more-->
-
-
 
 作ったもの
 ----------------------------------------
-
 
 gem化してGithubに上げてあります。
 
@@ -45,7 +40,6 @@ gemの作り方については、[こちら](http://masarakki.github.io/blog/201
 
 リクエスト/レスポンスの共通部分
 ----------------------------------------
-
 
 ChatworkのAPIは、リクエストは`x-www-form-urlencoded`に対しレスポンスは`application/json`という特殊な要件なので、
   
@@ -84,10 +78,8 @@ class Base < ActiveResource::Base
 end
 ```
 
-
 URL末尾から.json等のフォーマットを消したい
 ----------------------------------------
-
 
 [ActiveResource::Base#format_extension](https://github.com/rails/activeresource/blob/master/lib/active_resource/base.rb)を読んでいたら発見。
 
@@ -97,12 +89,10 @@ class Base < ActiveResource::Base
 end
 ```
 
-
 で対応できました。
 
 ネストしたリソースを扱いたい
 ----------------------------------------
-
 
 Chatworkは`/v1/rooms/:room_id/messages/:message_id`のように、ネストしたルーティングが必要になります。
   
@@ -123,7 +113,6 @@ has_many的なものは
 has_many :members, class_name: 'chatwork/member'
 ```
 
-
 で定義できます。
   
 `class_name`オプションを渡さないと、クラスが定義されている名前空間によらずトップレベルの名前空間が指定されてしまうので注意です。
@@ -138,7 +127,6 @@ belongs_to的なものは、残念ながらChatworkでは意図したとおり�
 
 クエリパラメータが必要なhas_manyを作りたい
 ----------------------------------------
-
 
 `has_many`はオプション引数を受け取ってくれないので、クエリパラメータが必要な場合、has_manyを利用することが出来ません。
   
@@ -156,7 +144,6 @@ def messages(params = {})
   end
 ```
 
-
 という感じに、リレーションっぽいメソッド名で`.all`や`.find`、`.first`等を使用してそれっぽく見せてます。
   
 ちなみに多用すると **N+1のHTTPリクエスト** という甚大なボトルネックが生まれます。
@@ -165,7 +152,6 @@ def messages(params = {})
 
 レスポンスに主キーがなくてもbelongs_toしたい
 ----------------------------------------
-
 
 おそらくActiveResourceは
 
@@ -176,7 +162,6 @@ def messages(params = {})
 # /users/1/comments.json
 { id: 100, user_id: 1, content: 'xxx' }
 ```
-
 
 のようなものを想定しているため、レスポンスの中に`user_id`に相当するフィールドがないとcommentsからuserを見ることが出来ません。
 
@@ -189,7 +174,6 @@ Chatworkでの例に置き換えると、
 ということでメソッドを自作します。
 
 [lib/chatwork/nest\_of\_room.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/nest_of_room.rb)に定義してます。
-
 
 ```
 module Chatwork
@@ -207,12 +191,10 @@ module Chatwork
 end
 ```
 
-
 という感じで、`prefix_options`を使ってRoom.findすれば、レスポンスにroom_idが無くてもなんとかできます。
 
 Railsのルーティングに反するURLに対応したい
 ----------------------------------------
-
 
 `/v1/my/tasks`のように、Railsのルーティングに対応してないURLもなんとかしたい。
   
@@ -223,7 +205,6 @@ ActiveResourceには[カスタムメソッド](http://api.rubyonrails.org/v3.2.6
 Chatwork::My.get(:tasks, status: 'open')
 ```
 
-
 という感じで、ただのHTTPクライアント的な使い方もできるようです。
   
 戻り値が配列だったら`Array`、戻り値がオブジェクトなら`Hash`のインスタンスが返るようです。
@@ -232,7 +213,6 @@ Chatwork::My.get(:tasks, status: 'open')
 
 カスタムメソッドでもActiveResource::Baseのインスタンスを返したい
 ----------------------------------------
-
 
 カスタムメソッドを使うとHashかArrayになってしまうので、なんとかしたい。
   
@@ -248,14 +228,12 @@ def self.tasks(params = {})
     end
 ```
 
-
 これを応用すれば、レスポンスを任意のクラスに変換することができそうです。
   
 件数の多いAPIだと.newのオーバーヘッドが地味にありそうなので、ご利用は計画的に。
 
 主キーに相当するフィールド名を上書きしたい
 ----------------------------------------
-
 
 デフォルトだとレスポンス内の`id`というフィールドを主キーと見なす、という作りになっています。
   
@@ -269,12 +247,10 @@ Chatworkでいえば、`/rooms`のレスポンス内の主キーは`room_id`と�
 self.primary_key = 'room_id'
 ```
 
-
 こうすれば、レスポンス内部にidというキーがなくてもマッピングしてくれました。
 
 まとめ
 ----------------------------------------
-
 
 やはりRailsでないアプリケーションにActiveResourceを対応させるのは少々無理が生じるようです。
   

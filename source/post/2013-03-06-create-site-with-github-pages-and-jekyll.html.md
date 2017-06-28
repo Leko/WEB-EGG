@@ -22,15 +22,10 @@ Githubがホスティングしてくれるサービス[Github Pages](http://page
 手軽に始められるし、Markdownが使えてテンプレートも使えるという代物だったので  
 使えるようにするまでの手順をまとめました。
 
-
-
 <!--more-->
-
-
 
 目標
 ----------------------------------------
-
 
 今回の記事の目標は、  
 「**Githubページを作成し、Markdownで更新する**」ことです。  
@@ -43,7 +38,6 @@ Markdownについては、過去に書いた記事
 必要なもの
 ----------------------------------------
 
-
   * Githubアカウント
   * gem
 
@@ -55,7 +49,6 @@ Githubへの登録は、あらかじめ済ませておいて下さい。
 手順
 ----------------------------------------
 
-
   * Githubページ用のリポジトリを作る
   * jekyllをインストール
   * _config.ymlを編集
@@ -66,7 +59,6 @@ Githubへの登録は、あらかじめ済ませておいて下さい。
 
 Githubページを作る
 ----------------------------------------
-
 
 Githubページは、リポジトリを作るだけで作成出来ます。
 
@@ -92,7 +84,6 @@ Repository nameを入力したら、適当な説明を入れて、pushします�
 jekyllをインストールする
 ----------------------------------------
 
-
 テンプレート＋Markdownを利用するためには、jekyllというライブラリを使います。
 
 ターミナルを開いて、
@@ -104,7 +95,6 @@ jekyllをインストールする
  $ cd ~ $ gem install jekyll 
 ```
 
-
 </div>
 
 を実行します。インストール完了です。
@@ -112,9 +102,7 @@ jekyllをインストールする
 必要なファイルを作成する
 ----------------------------------------
 
-
 次に、先ほど作ったUSER_NAME.github.comフォルダへ移動します。 特に何もしていなければ、リポジトリは空のはずですので、
-
 
 ```
 USER_NAME.github.com/
@@ -124,7 +112,6 @@ USER_NAME.github.com/
     - _layouts/
         - default.html
 ```
-
 
 上記の構成でファイルを追加します。
 
@@ -140,7 +127,6 @@ default.htmlが、テンプレートファイルです。
 config.ymlを編集する
 ----------------------------------------
 
-
 config.ymlは上でも言いましたが、jekyllで使うための設定ファイルです。  
 これを適当なエディタで開き、
 
@@ -151,7 +137,6 @@ config.ymlは上でも言いましたが、jekyllで使うための設定ファ�
  auto: true server: true markdown: kramdown 
 ```
 
-
 </div>
 
 と入力して保存します。  
@@ -159,7 +144,6 @@ config.ymlは上でも言いましたが、jekyllで使うための設定ファ�
 
 default.htmlを編集する
 ----------------------------------------
-
 
 次に、_layoutsの中の**default.html**を編集します。  
 これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
@@ -170,7 +154,6 @@ default.htmlを編集する
 ```markup
  <!DOCTYPE html> <meta charset=&#8221;UTF-8&#8243;> <title>Lekohub</title> <!&#8211; cssとかjsもここで読み込み &#8211;> <link rel=&#8221;stylesheet&#8221; href=&#8221;css/common.css&#8221;> <script src=&#8221;js/top.js&#8221;></script> <div class=&#8221;container&#8221;> {{ content }} </div> 
 ```
-
 
 </div>
 
@@ -188,7 +171,6 @@ default.htmlを編集する
 index.mdを編集する
 ----------------------------------------
 
-
 最後に、index.mdを編集します。 ここ部分は、default.htmlで`{{ content }}`と書いた部分にあたります。
 
 index.mdを適当なエディタで開き、Markdown形式で入力します。
@@ -205,7 +187,6 @@ layout: default
 とりあえず作ってみたGithubページ
 ----------------------------------------
 
-
 ほげほげ
 ```
 
@@ -220,7 +201,6 @@ layout: default
 プレビューしてみる
 ----------------------------------------
 
-
 では実際にプレビューしてみましょう。
 
 再びターミナルを開いて、
@@ -232,7 +212,6 @@ layout: default
  $ cd (USER_NAME.github.comリポジトリへのパス) $ jekyll 
 ```
 
-
 </div>
 
 と入力します。すると、
@@ -243,7 +222,6 @@ layout: default
 ```bash
  Configuration from /Users/***/leko.github.com/_config.yml Auto-regenerating enabled: /Users/***/leko.github.com -> /Users/***/leko.github.com/_site [2013-02-26 22:38:59] regeneration: 7 files changed [2013-02-26 22:39:00] INFO WEBrick 1.3.1 [2013-02-26 22:39:00] INFO ruby 1.9.2 (2012-04-20) [x86_64-darwin11.4.2] [2013-02-26 22:39:00] INFO WEBrick::HTTPServer#start: pid=70965 port=4000 
 ```
-
 
 </div>
 
@@ -257,7 +235,6 @@ MarkdownがきちんとHTMLに変換されているのがわかると思いま�
 
 Githubにプッシュする
 ----------------------------------------
-
 
 今の状態で、**http://USER_NAME.github.com**にアクセスしても、  
 まだ何も表示されないと思います。

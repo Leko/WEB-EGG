@@ -36,11 +36,7 @@ CircleCI + Docker構成でCIしたい方はだいぶマゾいとすら思いま�
 
 ということでハマったことと、CircleCIでDockerを扱うための基本戦術を残します。
 
-
-
 <!--more-->
-
-
 
 ## Tips: ビルドにDocker1.10.0, docker-compose 1.8.0を使用する
 
@@ -55,12 +51,10 @@ machine:
     - sudo pip install docker-compose==1.8.0
 ```
 
-
 を足してあげて下さい
 
 基本的な方針
 ----------------------------------------
-
 
   * コンテナの削除に関連するコマンドを実行しない（しても成功しない）
   * docker execしない
@@ -72,17 +66,14 @@ machine:
 Dockerの制限
 ----------------------------------------
 
-
 ### run &#8211;rmオプションは使わない
 
 runしたコンテナをrmする時にエラーになります。
-
 
 ```
 Error removing intermediate container XXXXXXXXX:
 Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btrfs snapshot: operation not permitted
 ```
-
 
 のようなエラーです。
   
@@ -100,11 +91,9 @@ Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btr
 
 1.10.0の場合、私の環境では
 
-
 ```
 open /proc/self/oom_score_adj: no such file or directory
 ```
-
 
 > &mdash; [Exit Code 255 on all Docker exec commands &#8211; Build Environment &#8211; CircleCI Community Discussion](https://discuss.circleci.com/t/exit-code-255-on-all-docker-exec-commands/2506)
     
@@ -143,7 +132,6 @@ circle.yml上で生成されたファイルを`$CIRCLE_ARTIFACTS`へmvしたりc
 docker-composeの制限
 ----------------------------------------
 
-
 Dockerのラッパーであるdocker-composeも当然同様の制約がつきまといます。
 
   * rmコマンドは使わない
@@ -167,7 +155,6 @@ docker-composeの場合、一度立ち上げたコンテナを削除すること
 
 さいごに
 ----------------------------------------
-
 
 rmはダメ、と言いましたができることもあります。
   

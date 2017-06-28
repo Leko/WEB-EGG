@@ -37,11 +37,7 @@ _<span class="removed_link" title="http://visionmedia.github.com/mocha/">mocha</
   
 そのテストを書いている時に、sinonjsのspyで詰まったのでメモ。
 
-
-
 <!--more-->
-
-
 
 ## sinonjs spyの使い道・使い方
 
@@ -76,22 +72,18 @@ sinonjsとは、テストダブルのライブラリのことです。
  it(&#8216;sinon.spyのテスト&#8217;, function() { var hoge, spy; hoge = { foo: function() { return true; } }; spy = sinon.spy(hoge, &#8216;foo&#8217;); hoge.foo(); return expect(spy.calledOnce).to.be.ok(); }); 
 ```
 
-
 </div>
 
 という感じに書けます。
-
 
 ```
 spy = sinon.spy( object, 'proterty' );
 ```
 
-
 というふうに書くと、object.propertyを監視出来ます。 この感じで、Backboneのon系のコールバックも見れるんじゃないかと思ったら、詰まりました。
 
 これで動くんじゃないの？→動かない
 ----------------------------------------
-
 
 動かなかったコードを簡略化したものがこちらです。
 
@@ -103,7 +95,6 @@ spy = sinon.spy( object, 'proterty' );
 ```coffeescript
  describe &#8216;Backbone * sinon.spy&#8217;, -> Model = Backbone.Model.extend defaults: name: &#8216;hoge&#8217; View = Backbone.View.extend initialize: -> _.bindAll @, &#8216;render&#8217; @model.on &#8216;change:name&#8217;, @render render: -> @$el.html @model.get(&#8216;name&#8217;) before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, &#8216;render&#8217; ) after -> @spy.restore() it &#8216;Modelモデルが変更された時View.renderが呼ばれる&#8217;, -> @view.model.set(&#8216;name&#8217;, &#8216;leko&#8217;) expect(@spy.calledOnce).to.be.ok() 
 ```
-
 
 </div>
 
@@ -119,11 +110,9 @@ Backboneを理解されてる方なら
 
 先ほどの例のように、
 
-
 ```
 spy = sinon.spy(view, 'render')
 ```
-
 
 と指定したので、
   
@@ -133,7 +122,6 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
 
 解決策
 ----------------------------------------
-
 
 なるべく英語は読みたくない（読めない）ので、 日本語の記事が無いか探してみたんですが、無さそうでした。
 
@@ -153,7 +141,6 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
 ```coffeescript
  # 間違い before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, &#8216;render&#8217; ) # 合ってる before -> @spy = sinon.spy( View.prototype, &#8216;render&#8217; ) @view = new View( model: new Model() ) 
 ```
-
 
 </div>
 

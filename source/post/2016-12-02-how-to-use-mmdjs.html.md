@@ -22,15 +22,10 @@ tags:
 
 とか思い、 **「ブラウザでもMMDしたい！！！」** と想いから[three.js](https://threejs.org/)と[MMD.js](https://threejs.org/examples/webgl_loader_mmd.html)を使ってみた話を。
 
-
-
 <!--more-->
-
-
 
 完成物
 ----------------------------------------
-
 
   * [ノノノ ☆Paradise☆(ドリームクラブ)](http://closet.leko.jp/2016/mmd/dreamclub/)
   * [シオカラーズ ハイカラシンカ(splatoon)](http://ika:fes@closet.leko.jp/2016/mmd/splatoon)
@@ -44,13 +39,11 @@ tags:
 使ったもの
 ----------------------------------------
 
-
   * [three.js](https://threejs.org/)
   * [MMD Loader](https://threejs.org/examples/?q=mmd)
 
 やったこと
 ----------------------------------------
-
 
   * 素材をニコ動とかニコニ・コモンズから見つけてくる
   * 展開してファイル名の文字化け治す
@@ -84,7 +77,6 @@ tags:
 
 まとめ
 ----------------------------------------
-
 
 横展開して色々観賞用にしようと思ったのですが、
   

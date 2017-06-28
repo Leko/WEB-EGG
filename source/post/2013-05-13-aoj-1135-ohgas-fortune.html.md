@@ -16,17 +16,12 @@ AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1135&lang=jp)
 
-
-
 <!--more-->
-
-
 
 これは、特に悩むことも無く。 率直に解きました。
 
 コード
 ----------------------------------------
-
 
 \[js\] (function (input) { /* 利子：運用資金残高に年利率をかけ、1円未満は切り捨て
 
@@ -76,8 +71,6 @@ AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
 
 })(require(&#8220;fs&#8221;).readFileSync(&#8220;/dev/stdin&#8221;, &#8220;utf8&#8221;)); 
 ```
-
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

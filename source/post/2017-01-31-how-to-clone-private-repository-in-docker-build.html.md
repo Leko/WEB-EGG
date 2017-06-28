@@ -22,15 +22,10 @@ tags:
   
 なお、記事のタイトルは非正確で、厳密にはプライベートリポジトリをnpm installする話です。
 
-
-
 <!--more-->
-
-
 
 やりたいこと
 ----------------------------------------
-
 
 npmでは、
 
@@ -41,7 +36,6 @@ npmでは、
   }
 }
 ```
-
 
 のように、`ユーザ名/リポジトリ名#タグ`形式でGithubのリポジトリを指定可能<sup id="fnref-931:1"><a href="#fn-931:1" rel="footnote">1</a></sup>です。
   
@@ -54,12 +48,9 @@ Githubのprivateリポジトリをcloneしてくるには、事前にSSH鍵の�
 clone用の鍵を生成してGithubに登録
 ----------------------------------------
 
-
-
 ```
 ssh-keygen -t rsa -C Githubのメールアドレス
 ```
-
 
 > &mdash; [お前らのSSH Keysの作り方は間違っている &#8211; Qiita](http://qiita.com/suthio/items/2760e4cff0e185fe2db9)
 
@@ -67,13 +58,11 @@ ssh-keygen -t rsa -C Githubのメールアドレス
   
 念のため動作確認。
 
-
 ```
 $ ssh -o StrictHostKeyChecking=no -i 生成した鍵のパス -T git@github.com
 Warning: Permanently added 'github.com,192.30.253.112' (RSA) to the list of known hosts.
 Hi blockenio/domain! You've successfully authenticated, but GitHub does not provide shell access.
 ```
-
 
 生成した鍵をコピーし、cloneしたいリポジトリの設定の「Deploy keys」に貼り付けます。
   
@@ -88,11 +77,9 @@ Hi blockenio/domain! You've successfully authenticated, but GitHub does not prov
 Dockerfileで使う
 ----------------------------------------
 
-
 カレントディレクトリ以下に鍵が手に入れば、あとはなんとでもなります。
   
 Dockerfileはこんな感じ。
-
 
 ```
 FROM node:6.9.4
@@ -108,14 +95,12 @@ RUN npm set progress=false \
     && npm -q install
 ```
 
-
 `certs`に鍵のファイルを入れてある場合の書き方です。
   
 ホスト側で作った鍵だと警告が出てしまったので事前に警告を無視してknown_hostsに書き加えてからnpm installしています
 
 まとめ
 ----------------------------------------
-
 
 ググっても出てこない情報は、自分が知っている情報の組み合わせで解消することがまれにある。 この方法が正しいのかどうか確証がもてませんが、実現はできたし考える限り大きなリスクはなさそうと判断します。
 

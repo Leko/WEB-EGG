@@ -23,11 +23,7 @@ AlfredにリンクさせたいページのURLを貼り付けるだけで、
   
 **Markdown Link Generator**を作りました。
 
-
-
 <!--more-->
-
-
 
 ## Markdown Link Generatorの使い方
 
@@ -64,7 +60,6 @@ Alfredに、リンクしたいページのURLを貼り付けるだけです。
 ソースコード
 ----------------------------------------
 
-
 今回もPHPで実装しています。
   
 とは言っても、入力されたURLのHTMLを取得してきて、
@@ -74,14 +69,12 @@ titleタグにマッチする箇所を抜き出すだけです。
 ダウンロード
 ----------------------------------------
 
-
 ダウンロードは<span class="removed_link" title="http://d.pr/f/7dQi">こちら</span>からどうぞ！ ダウンロードしたファイルをダブルクリックすればインポート出来ると思います。
 
 > <span class="removed_link" title="http://d.pr/f/7dQi">Droplr &bull; Markdown Link Generator.alfredworkflow</span>
 
 こちらも併せてどうぞ
 ----------------------------------------
-
 
 > [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](http://leko.jp/archives/367)
 > 
