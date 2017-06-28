@@ -29,4 +29,52 @@
       }
     }
   }
+
+  .avatar {
+    width: 100%;
+  }
+  .bio {
+    font-size: $font-size-normal;
+  }
+
+  .social-accounts {
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      $size: 22px;
+      list-style-type: none;
+      font-size: $font-size-normal;
+
+      a {
+        font-size: $size;
+      }
+
+      &--twitter {
+        .fa {
+          color: #00aced;
+        }
+      }
+      &--facebook {
+        .fa {
+          color: #3b5998;
+        }
+      }
+      &--github {
+        .fa {
+          color: #333;
+        }
+      }
+      &--qiita {
+        // http://qiita.com/hkusu/items/fda8d8178dd693f95f3c
+        a {
+          font-size: $size / 2;
+        }
+        .fa-stack {
+          vertical-align: bottom;
+          color: rgb(89, 187, 12);
+        }
+      }
+    }
+  }
 }

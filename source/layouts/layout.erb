@@ -29,15 +29,44 @@
               <div class="col-sm-3 sidebar">
                 <div class="card">
                   <header class="card__header">
-                    <h2>Recent Articles</h2>
+                    <h2>Author</h2>
                   </header>
                   <section class="card__body">
                     <aside>
-                      <ol>
-                        <% blog.articles[0...10].each do |article| %>
-                          <li><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></li>
-                        <% end %>
-                      </ol>
+                      <div class="row justify-content-center">
+                        <div class="col-sm-4">
+                          <img src="https://www.gravatar.com/avatar/<%= Digest::MD5.hexdigest(config[:meta][:email]) %>" class="avatar" />
+                        </div>
+                        <div class="col-sm-8">
+                          <strong><%= config[:meta][:author] %></strong>
+                          <p class="bio"><%= config[:meta][:bio] %></p>
+                          <ul class="social-accounts row justify-content-between">
+                            <li class="col social-accounts__item social-accounts__item--twitter">
+                              <a href="https://twitter.com/<%= config[:meta][:twitter] %>" target="_blank">
+                                <i class="fa fa-twitter"></i>
+                              </a>
+                            </li>
+                            <li class="col social-accounts__item social-accounts__item--facebook">
+                              <a href="https://facebook.com/<%= config[:meta][:facebook] %>" target="_blank">
+                                <i class="fa fa-facebook"></i>
+                              </a>
+                            </li>
+                            <li class="col social-accounts__item social-accounts__item--github">
+                              <a href="https://github.com/<%= config[:meta][:github] %>" target="_blank">
+                                <i class="fa fa-github"></i>
+                              </a>
+                            </li>
+                            <li class="col social-accounts__item social-accounts__item--qiita">
+                              <a href="http://qiita.com/<%= config[:meta][:qiita] %>" target="_blank">
+                                <span class="fa-stack">
+                                  <i class="fa fa-square fa-stack-2x"></i>
+                                  <i class="fa fa-search fa-stack-1x fa-inverse fa-2x"></i>
+                                </span>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </aside>
                   </section>
                 </div>

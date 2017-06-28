@@ -6,10 +6,17 @@ activate :dotenv
 Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
 
 config[:meta] = {
-  :locale => 'ja',
-  :sitename => '[WIP] WEB EGG',
-  :siteurl => 'https://blog.leko.jp',
-  :catchcopy => 'Work in progress...',
+  locale: 'ja',
+  sitename: '[WIP] WEB EGG',
+  siteurl: 'https://blog.leko.jp',
+  catchcopy: 'Work in progress...',
+  email: 'leko.noor@gmail.com',
+  author: 'れこ',
+  bio: 'サイト移転しました。いまどきブックマークあるのかわかりませんがURLの更新をお願いします',
+  twitter: 'L_e_k_o',
+  facebook: 'shingo.inoue.967',
+  github: 'Leko',
+  qiita: 'L_e_k_o',
 }
 config[:date_format] = '%Y-%m-%d'
 config[:similar_posts] = 5
