@@ -16,21 +16,27 @@ type Props = {
 type State = {
   keyword: string,
   cursor: number,
+  inFocus: boolean,
 }
 
 export default class SearchApp extends Component<void, Props, State> {
   state: State
   handleChange: Function
   handleKeyPress: Function
+  handleBlur: Function
+  handleFocus: Function
 
   constructor (props: Props) {
     super(props)
     this.state = {
       keyword: '',
       cursor: -1,
+      inFocus: false,
     }
     this.handleChange = debounce(this.handleChange.bind(this), 200)
     this.handleKeyPress = debounce(this.handleKeyPress.bind(this), 200)
+    this.handleBlur = debounce(this.handleBlur.bind(this), 200)
+    this.handleFocus = debounce(this.handleFocus.bind(this), 200)
   }
 
   componentDidMount () {
@@ -45,6 +51,14 @@ export default class SearchApp extends Component<void, Props, State> {
 
   handleKeyPress (e: KeyboardEvent) {
     // TODO
+  }
+
+  handleBlur () {
+    this.setState({ inFocus: false, cursor: -1 })
+  }
+
+  handleFocus () {
+    this.setState({ inFocus: true, cursor: -1 })
   }
 
   setCursor (index: number) {
@@ -64,10 +78,12 @@ export default class SearchApp extends Component<void, Props, State> {
             placeholder='Search'
             className='form-control'
             onChange={this.handleChange}
+            onBlur={this.handleBlur}
+            onFocus={this.handleFocus}
             onKeyPress={this.handleKeyPress}
           />
         </div>
-        {this.state.keyword
+        {this.state.inFocus && this.state.keyword
           ? (
             <div className='card'>
               <div className='card__header'>
