@@ -1,0 +1,35 @@
+<article class="post post-card <%= 'post-card--first' if index === 0 %>">
+  <div class="card">
+    <header class="card__header">
+      <div class="post__header__wrapper">
+        <div class="post__eyecatch" <%= "style=\"background-image: url(#{article.data.image})\"" if article.data.image.present? %>></div>
+        <header class="post__header">
+          <time class="post__published">
+            <%= article.date.strftime config[:date_format] %>
+          </time>
+          <h1 class="post__title">
+            <%= link_to article.title, article, :class => 'post__title__link' %>
+          </h1>
+          <ul class="post__tags">
+            <% article.tags.each do |tag| %>
+              <li>
+                <%= link_to tag, tag_path(tag), :class => 'post__tags__tag' %>
+              </li>
+            <% end %>
+          </ul>
+        </header>
+      </div>
+    </header>
+    <section class="card__body">
+      <div class="post__content markdown">
+        <%= article.summary %>
+      </div>
+    </section>
+    <footer class="card__footer card__footer--nopad">
+      <a href="<%= article.url %>" class="post-card__readmore">
+        Continue Reading...
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    </footer>
+  </div>
+</article>
