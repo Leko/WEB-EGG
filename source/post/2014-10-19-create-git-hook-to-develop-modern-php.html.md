@@ -184,8 +184,7 @@ exec 1>&2
 
 先ほどの長いので割愛以下に、このコードを貼り付けて下さい。
 
-```
-<code class="shell">
+```shell
 IS_ERROR=0
 # コミットされるファイルのうち、.phpで終わるもの
 for FILE in `git status -uno --short | grep -E '^[AUM].*.php$'| cut -c3-`; do
