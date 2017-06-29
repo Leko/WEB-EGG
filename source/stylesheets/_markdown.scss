@@ -35,6 +35,10 @@
     margin-bottom: $margin-item;
     line-height: 1.4rem;
   }
+  img {
+    max-width: 100%;
+    height:auto;
+  }
   strong {
     background: linear-gradient(transparent 60%, $base-accent 60%);
   }
