@@ -33,11 +33,11 @@ Alfredには**Workflows**という機能があります。
 
 このWorkflowsが非常に強力で、
 
-  * Evernoteのクリップしてある記事から検索をかけたり
-  * リマインダーにワンライナーでタスクを追加したり
-  * Amazonの商品検索のサジェスト機能を使ったり
-  * カラーコードを入力すると該当する色を表示してくれたり
-  * URLを入力すると、短縮URLが生成されてクリップボードにコピーできたり
+* Evernoteのクリップしてある記事から検索をかけたり
+* リマインダーにワンライナーでタスクを追加したり
+* Amazonの商品検索のサジェスト機能を使ったり
+* カラーコードを入力すると該当する色を表示してくれたり
+* URLを入力すると、短縮URLが生成されてクリップボードにコピーできたり
 
 と、他にも色々ありますが、 Alfredというアプリ上で、**一つのまとまった作業を一気に行うことができます**。
 
@@ -124,7 +124,22 @@ Examplesに、同様の機能を持った**Amazon Suggest**というものもあ
 あまり行数はないです。PHPで書かれています。
 
 ```php
-require_once('workflows.php'); $wf = new Workflows(); $orig = "{query}"; $xml = $wf->request( "http://google.com/complete/search?output=toolbar&q=".urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), "$data", "$data", 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( 'googlesuggest', $orig, 'No Suggestions', 'No search suggestions found. Search Google for '.$orig, 'icon.png' ); endif; echo $wf->toxml();
+require_once("workflows.php");
+$wf = new Workflows();
+$orig = '{query}';
+$xml = $wf->request( 'http://google.com/complete/search?output=toolbar&q='.urlencode( $orig ) );
+$xml = simplexml_load_string( utf8_encode($xml) );
+$int = 1;
+foreach( $xml as $sugg ):
+  $data = $sugg->suggestion->attributes()->data;
+  $wf->result( $int.".".time(), '$data', '$data', "Search Google for ".$data, "icon.png" );
+  $int++;
+endforeach;
+$results = $wf->results();
+if ( count( $results ) == 0 ):
+  $wf->result( "googlesuggest", $orig, "No Suggestions", "No search suggestions found. Search Google for ".$orig, "icon.png" );
+endif;
+echo $wf->toxml();
 ```
 
 これで分かる方なら、もう早速作り始められると思います。  
@@ -139,18 +154,16 @@ Google SuggestもAmazon Suggestも**PHP**で書かれています。
 
 他に対応している言語は、
 
-  * bash
-  * zsh
-  * Ruby
-  * Python
-  * Perl
+* bash
+* zsh
+* Ruby
+* Python
+* Perl
 
 があります。
 
 PHPで書く際の注意点は、  
-**ファイルの先頭、末尾に**`<?php
-
-`**と**`?>`**を入れない**こと、くらいです。
+**ファイルの先頭、末尾に`<\?php`と`?>`を入れない**こと、くらいです。
 
 **今回は、Google Suggestに倣って書くので、PHPで書きます**。  
 ご了承下さい。
@@ -160,7 +173,8 @@ PHPで書く際の注意点は、
 ### 1. workflows.phpとWorkflowsクラス
 
 ```php
-require_once('workflows.php'); $wf = new Workflows();
+require_once('workflows.php');
+$wf = new Workflows();
 ```
 
 この部分、いかにもなクラスをrequireしています。  
@@ -198,7 +212,11 @@ urlを渡すだけでレスポンスを取得することができます。
 ### 4. $wf->result()
 
 ```php
-foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), "$data", "$data", 'Search Google for '.$data, 'icon.png' ); $int++; endforeach;
+foreach( $xml as $sugg ):
+    $data = $sugg->suggestion->attributes()->data;
+    $wf->result( $int.'.'.time(), "$data", "$data", 'Search Google for '.$data, 'icon.png' );
+    $int++;
+endforeach;
 ```
 
 レスポンスを取得したら、  
@@ -210,7 +228,23 @@ result()に突っ込まれたデータが、Alfred上で表示されます。
 Workflows.phpの中身を見てみました。
 
 ```php
-/** * Description: * Helper function that just makes it easier to pass values into a function * and create an array result to be passed back to Alfred * * @param $uid – the uid of the result, should be unique * @param $arg – the argument that will be passed on * @param $title – The title of the result item * @param $sub – The subtitle text for the result item * @param $icon – the icon to use for the result item * @param $valid – sets whether the result item can be actioned * @param $auto – the autocomplete value for the result item * @return array – array item to be passed back to Alfred */ public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto=null, $type=null ) { // … }
+/**
+ * Description:
+ * Helper function that just makes it easier to pass values into a function
+ * and create an array result to be passed back to Alfred
+ *
+ * @param $uid – the uid of the result, should be unique
+ * @param $arg – the argument that will be passed on
+ * @param $title – The title of the result item
+ * @param $sub – The subtitle text for the result item
+ * @param $icon – the icon to use for the result item
+ * @param $valid – sets whether the result item can be actioned
+ * @param $auto – the autocomplete value for the result item
+ * @return array – array item to be passed back to Alfred
+ */
+public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto=null, $type=null ) {
+    // …
+}
 ```
 
 という引数になっています。  
@@ -257,10 +291,10 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 
 今回使用するキーワードは、`mocos`として、
 
-  * `mocos 日付(YYYY-MM-DD)[,日付…]`と入力する
-  * 該当する日付に使われたオリーブの数とレシピの名前を表示
-  * レシピを選択してEnterキーを押すとブラウザでレシピが見れる
-  * `YYYY/MM/DD`形式でも入力を受け付ける
+* `mocos 日付(YYYY-MM-DD)[,日付…]`と入力する
+* 該当する日付に使われたオリーブの数とレシピの名前を表示
+* レシピを選択してEnterキーを押すとブラウザでレシピが見れる
+* `YYYY/MM/DD`形式でも入力を受け付ける
 
 と言った機能を作ります。 完成図はこんな感じ。
 
@@ -327,13 +361,13 @@ web APIと連携したAlfred Workflowsの作り方は、
 
 これを機に、是非皆さんもworkflow製作者になってみては如何でしょうか。
 
-  * [Alfred App – Productivity App for Mac OS X](http://www.alfredapp.com/)
+* [Alfred App – Productivity App for Mac OS X](http://www.alfredapp.com/)
 
-  * [Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow – Macの手書き説明書](http://veadardiary.blog29.fc2.com/blog-entry-4425.html)
+* [Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow – Macの手書き説明書](http://veadardiary.blog29.fc2.com/blog-entry-4425.html)
 
-  * [Alfred 2のWorkflowをまとめたサイト『Alfred 2 Workflow List』が宝の山](http://veadardiary.blog29.fc2.com/blog-entry-4435.html)
+* [Alfred 2のWorkflowをまとめたサイト『Alfred 2 Workflow List』が宝の山](http://veadardiary.blog29.fc2.com/blog-entry-4435.html)
 
-  * [[Mac] バージョンアップした Alfred2で使える、おすすめ Workflows まとめ20個。 « Appdrill](http://appdrill.net/63089/alfred2-workflows.html)
+* [[Mac] バージョンアップした Alfred2で使える、おすすめ Workflows まとめ20個。 « Appdrill](http://appdrill.net/63089/alfred2-workflows.html)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>
