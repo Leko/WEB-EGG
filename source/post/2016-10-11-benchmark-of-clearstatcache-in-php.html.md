@@ -121,6 +121,8 @@ realpath_cache_ttl => 120 => 120
   で、肝心のベンチマーク結果は以下のとおりです。
 </p>
 
+![benchmark](https://docs.google.com/spreadsheets/d/1UU0mM1_OVmC-vajpICnqMV0ygtcyXKqmqZiHxAo6IyQ/pubchart?oid=362709528&format=image)
+
 <p>
   <strong>全般的にclearstatcacheしたほうが早い</strong> というわけのわからない結果になりました。<br />
   だったらこの機能いらないじゃん！なんだそれ！！
