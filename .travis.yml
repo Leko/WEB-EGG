@@ -1,0 +1,19 @@
+language: node_js
+node_js:
+  - 6.1.0
+
+before_install:
+- git config user.name 'WEB-EGG bot'
+- git config user.email webegg-bot@blog.leko.jp
+- rvm install 2.3.1
+
+install:
+- bundle install
+- npm install
+
+script:
+- bundle exec middleman build
+# - npm run lint
+
+# Netlify deploy `master` branch automatically. No need to configure
+# deploy:
