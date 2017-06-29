@@ -63,7 +63,6 @@ echo "Hello, world!\n";
 </h3>
 
 ```ruby
-
 #!/usr/bin/env ruby
 
 puts "Hello, world!\n"
@@ -74,7 +73,6 @@ puts "Hello, world!\n"
 </h3>
 
 ```javascript
-
 #!/usr/bin/env node --harmony_proxies
 
 // Harmonyのオプションを有効にすることも出来る模様
@@ -91,7 +89,6 @@ console.log('Hello, world!')
 </p>
 
 ```
-
 //usr/bin/env go run $0 $@ ; exit
 ```
 
