@@ -237,8 +237,10 @@ function foo($fn = false) {
   あれ、その書き方どこかで・・・
 </p>
 
-```html
-
+```javascript
+function hoge(fn) {
+    fn = fn || function() {};
+}
 ```
 
 <p>
