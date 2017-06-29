@@ -13,6 +13,7 @@ gem 'middleman', '~> 4.1'
 gem 'middleman-blog'
 gem 'middleman-syntax'
 gem 'middleman-dotenv', '~> 2.0'
+gem 'middleman-search_engine_sitemap'
 
 # site search
 gem 'algoliasearch'
