@@ -122,7 +122,6 @@ Sample::hogehoge(1,2,3,4,5);
 </p>
 
 ```php
-
 <?php
 
 abstract class Model {
@@ -158,7 +157,6 @@ class Test extends Model {
 </p>
 
 ```php
-
 class Model {
     const FIND_ALL_BY = 'find_all_by_';
 
@@ -201,7 +199,6 @@ class Model {
 </p>
 
 ```php
-
 // "SELECT * FROM test WHERE id=1"
 Test::find_all(array('id' => 1));
 
@@ -225,7 +222,6 @@ Test::find_all(array('name' => 'Leko', 'age' => 22));
 </p>
 
 ```php
-
 public static function __callStatic($method_name, $args) {
     // メソッド名がfind_all_by_で始まる場合のみ解析を行う
     if(strpos($method_name, self::FIND_ALL_BY) === 0) {
@@ -277,7 +273,6 @@ public static function __callStatic($method_name, $args) {
 </p>
 
 ```php
-
 // "SELECT * FROM test WHERE id=1"
 Test::find_all_by_id(1);
 
@@ -328,7 +323,6 @@ Test::find_all_by_name_and_created_at('Leko', date('Y-m-d h:i:s'));
 </p>
 
 ```php
-
 abstract class Model_Base extends Model_Crud
 {
     const FIND_ALL_BY = 'find_all_by_';
