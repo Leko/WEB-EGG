@@ -26,14 +26,9 @@ tags:
   
 おもむろに左側に表示されているクッキーを右クリックして「要素を検証」してみたところ、
 
-<div>
-  
-
 ```markup
  <div id=”bigCookie”… 
 ```
-
-</div>
 
 **あ、これはいけるわ。**
   
@@ -155,14 +150,9 @@ CSSのセレクタを使って要素を取得できる組み込みメソッド�
   
 リピートの間隔は、適当に設定して下さい。
 
-<div>
-  
-
 ```javascript
  !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs(“#upgrades .upgrade”), products = qs(“#products .product”), cookie = qs(“#bigCookie”), golden = qs(“#goldenCookie”); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
 ```
-
-</div>
 
 基本的な枠組みはこんな感じになると思います。
 
@@ -174,14 +164,9 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
   
 指定した要素が特定のクラスを持っているか調べる`hasClass`を定義しました
 
-<div>
-  
-
 ```javascript
  var each = function(arr, fn) { for(var i = 0; i < arr.length; i++) { fn.call(arr[i], arr[i], i); } }, hasClass = function(el, className) { return el.classList.contains(className); }; 
 ```
-
-</div>
 
 こんな感じです。 これ以降の処理は、特に記述がない限りsetIntervalの中の関数に書いていきます。
 
@@ -193,14 +178,9 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 
 ゴールデンクッキーも同様に、**出現してようとなかろうとひたすら連打**です。
 
-<div>
-  
-
 ```javascript
  cookie.onclick(); golden.onclick(); 
 ```
-
-</div>
 
 これだけです。設定したFPS分だけクッキーがクリックされます。 ゴールデンクッキーは出現した瞬間にクリックされるので全く見えません。笑
 
@@ -220,14 +200,9 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 
 同様に、eachの第１引数をupgradesにするだけで、アップグレードも同様に買えます。
 
-<div>
-  
-
 ```javascript
  each(products, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); each(upgrades, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); 
 ```
-
-</div>
 
 ここはお好みで。
 
@@ -252,25 +227,19 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 
 まず、購入する数を制御する配列をFPSの下あたりに定義しておきます。
 
-<div>
   
 
 ```javascript
  // 全ビルディングを10個ずつ, 50個ずつ、と買い揃えていく var BUY_STEPS = [10, 50, 100, 128, Number.MAX_VALUE]; // 所持数を取得するメソッドを定義 var getOwnedCnt = function(el) { var cnt = el.childNodes[1].childNodes[2]; return cnt ? +cnt.textContent : 0; } 
 ```
 
-</div>
-
 次に、eachの部分を書き換えます。
 
-<div>
   
 
 ```javascript
  var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, 'enabled') && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift(); 
 ```
-
-</div>
 
 アイテムを単に買い揃えていくことが最適な行動ではないのですが、
   
@@ -297,14 +266,9 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 
 ダイアログを操作するより、**関数の動作を変える方が楽なので、上書き**します。
 
-<div>
-  
-
 ```javascript
  window.confirm = function(){ return true; }; 
 ```
-
-</div>
 
 これで、ダイアログは出ず、強制的に”はい”が選択されたことになります。
   
