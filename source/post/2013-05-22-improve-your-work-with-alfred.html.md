@@ -174,7 +174,9 @@ Google SuggestもAmazon Suggestも**PHP**で書かれています。
 
 PHPで書く際の注意点は、
   
-**ファイルの先頭、末尾に**`<?php`**と**`?>`**を入れない**こと、くらいです。
+**ファイルの先頭、末尾に**`<?php
+
+`**と**`?>`**を入れない**こと、くらいです。
 
 **今回は、Google Suggestに倣って書くので、PHPで書きます**。
   
@@ -338,6 +340,7 @@ MOCO'sキッチンオリーブAPIのURLは、
 
 ```php
 <?php
+
  require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ", $json->error, ", 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.": ".$info->olive."オリーブ"; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
 ```
 

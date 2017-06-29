@@ -35,6 +35,7 @@ tags:
 
 ```php
 <?php
+
 // ~5.3での書き方
 $list = array(1, 2, 3);
 count($list);   // 3
@@ -70,6 +71,7 @@ $list = [array(1), array(2), array(3)];
 
 ```php
 <?php
+
 run(100000, array(
     'bracket-idx' => function() {
         $list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];

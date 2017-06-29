@@ -109,7 +109,9 @@ cd ../YOUR_THEME
 git init
 git commit -am "initial commit"
 echo    
-echo "<?phpn// extend parent themen" > wp-content/themes/YOUR_THEME/functions.php
+echo "<?php
+
+// extend parent themen" > wp-content/themes/YOUR_THEME/functions.php
 git commit -am "functions.phpを空に"
 hub create
 git push -u origin master

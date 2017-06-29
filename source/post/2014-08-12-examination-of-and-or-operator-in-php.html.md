@@ -16,6 +16,7 @@ tags:
 
 ```php
 <?php
+
 $a = false and false;
 $a = true and false;
 $a = true and true;

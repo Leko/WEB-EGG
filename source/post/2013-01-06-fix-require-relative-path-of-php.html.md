@@ -37,7 +37,9 @@ tags:
 C.phpをrequireしたB.phpを、A.phpがrequireするときに、B.phpで 
 
 ```php
- <?php require_once("C.php"); 
+<?php
+
+ require_once("C.php"); 
 ```
 
  
@@ -59,7 +61,9 @@ dirname(\_\_FILE\_\_)
 dirname(\_\_FILE\_\_)は、自分自身へのパスを返します。 B.phpで用いた場合には、"/Class"という文字列が返ります。 **パスの最後に/は付かないので、要注意。** これを使って、 
 
 ```php
- <?php require\_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む require\_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む 
+<?php
+
+ require\_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む require\_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む 
 ```
 
  

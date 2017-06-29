@@ -121,9 +121,13 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
  
 
 <div class="entry-content">
-  <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;', 'twentyeleven' ) ); ?> 
+<?php
+
+ the_content( __( 'Continue reading <span class="meta-nav">&rarr;', 'twentyeleven' ) ); ?> 
   
-  <?php wp_link_pages( array( 'before' => '
+<?php
+
+ wp_link_pages( array( 'before' => '
   
   <div class="page-link">
     <span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '
@@ -145,11 +149,17 @@ the\_post\_thumbnail() を記述します。
  
 
 <div class="entry-content">
-  <?php the_post_thumbnail(); //これを追加 ?>
+<?php
+
+ the_post_thumbnail(); //これを追加 ?>
   
-  <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;', 'twentyeleven' ) ); ?> 
+<?php
+
+ the_content( __( 'Continue reading <span class="meta-nav">&rarr;', 'twentyeleven' ) ); ?> 
   
-  <?php wp_link_pages( array( 'before' => '
+<?php
+
+ wp_link_pages( array( 'before' => '
   
   <div class="page-link">
     <span>' . __( 'Pages:', 'twentyeleven' ) . '</span>', 'after' => '
