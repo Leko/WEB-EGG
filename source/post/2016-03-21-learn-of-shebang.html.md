@@ -14,7 +14,7 @@ tags:
 composerで提供されているコマンドの中身を見ていたら
 
 ```
-#! /usr/bin/env php
+#!/usr/bin/env php
 ```
 
 と書かれており、そのあとの行にはPHPのコードが。
