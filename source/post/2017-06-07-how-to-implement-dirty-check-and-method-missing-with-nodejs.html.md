@@ -31,12 +31,10 @@ person.name_change    # => [nil, "Bill"]
 
 こんな感じに変更を検知するためのマジックメソッド、ユーティリティが加わるモジュールだそうです。
 
-昔であれば[Backbone.jsのモデル](http://backbonejs.org/#Model-changed)が似たような仕組みを提供していました。
-  
+昔であれば[Backbone.jsのモデル](http://backbonejs.org/#Model-changed)が似たような仕組みを提供していました。  
 ですが、あれば独自のセッタを提供しており、それを利用しているから変更が検知できるという仕組みです。 **いわば白魔術です**
 
-今回は、 **独自のセッタ** を提供せず、普通にオブジェクト操作しているだけで変更検知ができちゃう機能の実装を目指します。
-  
+今回は、 **独自のセッタ** を提供せず、普通にオブジェクト操作しているだけで変更検知ができちゃう機能の実装を目指します。  
 白魔術に対して言うなれば、黒魔術です。
 
 ちなみに使用しているNode.jsのバージョンはv6.1.0です。
@@ -46,10 +44,8 @@ person.name_change    # => [nil, "Bill"]
 簡単な設計
 ----------------------------------------
 
-モジュールは高階関数として作成し、使用する際はdecoratorとして利用できるようにします。
-  
-なので継承関係によらず、任意のクラスに対して適応可能です。
-  
+モジュールは高階関数として作成し、使用する際はdecoratorとして利用できるようにします。  
+なので継承関係によらず、任意のクラスに対して適応可能です。  
 ざっくりしたイメージとしてはPHPでいうところの`trait`、Rubyでいうところの`include`相当だと思ってもらえればいいと思います
 
 ```javascript
@@ -92,8 +88,7 @@ function DirtyCheckable (cls) {
 }
 ```
 
-継承の逆？と言えば伝わるんでしょうか。
-  
+継承の逆？と言えば伝わるんでしょうか。  
 渡されたクラスを親クラスにとる無名クラスを作成して返す感じです。
 
 Proxyの挙動
@@ -107,8 +102,7 @@ const obj = new Proxy({}, { set (instance, prop, value) { console.log(`${prop}=$
 obj.hoge = 1
 ```
 
-実行すると`hoge=1`と出力されたと思います。
-  
+実行すると`hoge=1`と出力されたと思います。  
 こんな感じで、ただのオブジェクト操作をフックすることが可能になります。
 
 setの中身を実装することで、dirty checkを実装できます。 同様にgetの中身を実装することで、method missingも実装できます。
@@ -158,14 +152,11 @@ export default function DirtyCheckable (cls) {
 
 ## Node.jsでdirty check
 
-早速実装します。`DirtyChecker`はただのユーティリティなので実装は[gist](https://gist.github.com/Leko/36dd864f87d0e2e61745f7869e2a8731#file-dirtycheckable-js-L39)を御覧ください。
-  
-先述のコードの`observer`のsetを実装します。
-  
+早速実装します。`DirtyChecker`はただのユーティリティなので実装は[gist](https://gist.github.com/Leko/36dd864f87d0e2e61745f7869e2a8731#file-dirtycheckable-js-L39)を御覧ください。  
+先述のコードの`observer`のsetを実装します。  
 `instance`は呼び出し元のインスタンスを指します。
 
-なので、`this.dirties` = `instance.dirties`です。
-  
+なので、`this.dirties` = `instance.dirties`です。  
 ということで、`DirtyChecker#set`をコールするだけです。
 
 `instance[prop] = value`を忘れるとインスタンスに値が反映されないのでご注意下さい。
@@ -243,8 +234,7 @@ changes: { name: [ 'John', 'Tom' ] }
 changed: true
 ```
 
-いい感じです。
-  
+いい感じです。  
 各プロパティごとの`*Was`, `*Changed`, `*Change`メソッドはmethod missingを利用して実装します。
 
 ## Node.jsでmethod missing
@@ -345,8 +335,7 @@ nameChange: [ 'John', 'Tom' ]
 | get        | 35 ms            | 1 ms    |
 | methodCall | 63 ms            | 3 ms    |
 
-newが激遅いです。
-  
+newが激遅いです。  
 他も優位な差が出ているものの、10万回で数十ms程度の差なら無視しても良いレベルではないでしょうか。
 
 まとめ

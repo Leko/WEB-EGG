@@ -23,14 +23,11 @@ composerで提供されているコマンドの中身を見ていたら
 $ ./shebang-php
 ```
 
-のように、phpコマンドを使わずに直接PHPのコードが実行出来るようになっていました
-  
+のように、phpコマンドを使わずに直接PHPのコードが実行出来るようになっていました  
 この仕組みは **シバン(shebang)** というらしいです
 
-シバン自体はBashのスクリプトで似たようなものを何度も見たことがあったのですが、おまじない的に捉えており意味を深く考えていませんでした
-  
-拡張子や実行コマンドに縛られず、何の言語で書いても良い実行可能なコードを作るのに適しているのでは？？
-  
+シバン自体はBashのスクリプトで似たようなものを何度も見たことがあったのですが、おまじない的に捉えており意味を深く考えていませんでした  
+拡張子や実行コマンドに縛られず、何の言語で書いても良い実行可能なコードを作るのに適しているのでは？？  
 と疑問が湧いたので、調べて理解したものを残しておきます
 
 <!--more-->
@@ -94,8 +91,7 @@ console.log('Hello, world!')
 <blockquote>
   <p>
     <a href="http://qiita.com/ando-masaki/items/323c6b08e07ec4538c3d">Go言語でshebang</a>
-  </p>
-  
+  </p>  
 </blockquote>
 
 <p>
@@ -111,6 +107,5 @@ console.log('Hello, world!')
   もしシバン知らない人がいらっしゃったら、シバン便利なので広めてあげて下さい
 </p>
 
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-  
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
 </div>

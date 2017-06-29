@@ -10,8 +10,7 @@ tags:
   - JavaScript
 ---
 <div id="attachment_151" style="width: 526px" class="wp-caption alignnone">
-  <img src="/images/2012/10/picture_large978-4-87311-391-3.jpeg" alt="JavaScript: The Good Parts" title="JavaScript: The Good Parts" width="516" height="660" class="size-full wp-image-151" />
-  
+  <img src="/images/2012/10/picture_large978-4-87311-391-3.jpeg" alt="JavaScript: The Good Parts" title="JavaScript: The Good Parts" width="516" height="660" class="size-full wp-image-151" />  
   <p class="wp-caption-text">
     </span> JavaScript: The Good Parts<br />「良いパーツ」によるベストプラクティス
   </p>

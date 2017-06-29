@@ -15,24 +15,20 @@ tags:
   - Ruby
   - Ruby on Rails
 ---
-久々の更新です。
-  
+久々の更新です。  
 ネタは溜まっているんですがなかなか書くモチベが沸かず。
 
 これから定期的に更新できるよう頑張ります。
 
 今日はPHPのマジックメソッドについて書きます。
 
-PHPのマジックメソッドの中に`__callStatic`というメソッドがあります。
-  
+PHPのマジックメソッドの中に`__callStatic`というメソッドがあります。  
 これは、クラスで定義されていないメソッドに対してstaticなコールをした際に呼び出されるフックです。
 
-この機能を使えば、Rubyでいうところの`method missing`のような挙動が可能になるのでは？
-  
+この機能を使えば、Rubyでいうところの`method missing`のような挙動が可能になるのでは？  
 と考え、実験にRuby on Railsで以前まで使われていた`find_all_by_*`を実装してみたいと思います。
 
-ライブラリ等に依存しないシンプルなデモと、
-  
+ライブラリ等に依存しないシンプルなデモと、  
 実用化するために、`FuelPHP`のモデルを用いた例も作成します。
 
 <!--more-->
@@ -86,8 +82,7 @@ Sample::hogehoge(1,2,3,4,5);
     カラム名を指定して、検索条件にあうすべてのレコードを取得する。<br />
       rails4からは、whereで代替することができる。<br />
       &mdash; <a href="http://railsdoc.com/references/find_all_by">find_all_by - リファレンス - Railsドキュメント</a>
-  </p>
-  
+  </p>  
 </blockquote>
 
 <p>
@@ -240,23 +235,19 @@ public static function __callStatic($method_name, $args) {
 <ol>
   <li>
     呼び出されたメソッド名が<code>find_all_by_*</code>(※<code>self::FIND_ALL_BY</code>)の書式なら、  
-  </li>
-  
+  </li>  
   
   <li>
     メソッド名を<code>_and_</code>で千切って配列化し、  
-  </li>
-  
+  </li>  
   
   <li>
     <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 =&gt; 値</code>の連想配列へ変換し、  
-  </li>
-  
+  </li>  
   
   <li>
     それをfind_allメソッドへパスする
-  </li>
-  
+  </li>  
 </ol>
 
 <p>
@@ -360,13 +351,11 @@ PHPだってRailsっぽいことしたい
 <ul>
   <li>
     PHPだと古臭いコードになる
-  </li>
-  
+  </li>  
   
   <li>
     PHPイケてない
-  </li>
-  
+  </li>  
 </ul>
 
 <p>
@@ -383,6 +372,5 @@ PHPだってRailsっぽいことしたい
   あまりトリッキーなことはやらないほうが身のためかもしれません。
 </p>
 
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-  
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
 </div>

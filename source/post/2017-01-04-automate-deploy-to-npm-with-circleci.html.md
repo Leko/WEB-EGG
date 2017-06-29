@@ -12,8 +12,7 @@ tags:
   - npm
 ---
 こんにちは。  
-[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)に引き続きnpmのデプロイも自動化してみました。
-  
+[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)に引き続きnpmのデプロイも自動化してみました。  
 gemのときとは微妙に差異があるので、改めて備忘録として残しておきます。
 
 <!--more-->
@@ -42,16 +41,13 @@ npm publish
 もう少しリッチなnpmのデプロイ方法
 ----------------------------------------
 
-[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)のときはgemが自動でやってくれのたですが、
-  
+[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)のときはgemが自動でやってくれのたですが、  
 npmではタグを切ったりCHANGELOG書いたりを自前で行う必要があります。
 
 > [Git tagとGitHub ReleasesとCHANGELOG.mdの自動化について \| Web Scratch](http://efcl.info/2014/07/20/git-tag-to-release-github/)
 
-こちらの記事を参考にしようと思ったのですが、やり過ぎ感が漂っており要件には合わなかったので、
-  
-ラップしている元の[standard-version](https://github.com/conventional-changelog/standard-version)というライブラリを使用してみました。
-  
+こちらの記事を参考にしようと思ったのですが、やり過ぎ感が漂っており要件には合わなかったので、  
+ラップしている元の[standard-version](https://github.com/conventional-changelog/standard-version)というライブラリを使用してみました。  
 このライブラリを使用すると、
 
   * CHANGELOGの自動生成
@@ -82,8 +78,7 @@ npmのパッケージは
 まとめ
 ----------------------------------------
 
-この記事の内容を試している時に「そういえば前に似たようなことやったな」と思い自分の過去の記事を調べることがありました。
-  
+この記事の内容を試している時に「そういえば前に似たようなことやったな」と思い自分の過去の記事を調べることがありました。  
 そのとおりにやっていけば基本的に上手く行ったので、記事を残すことは重要だなと改めて感じました。
 
 ベースとなる知識が予め備わっているとその派生系を覚えるのも楽ですしね。

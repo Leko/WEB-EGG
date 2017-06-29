@@ -81,8 +81,7 @@ import Youtube from 'react-youtube'
 export default class TextToSpeech extends Component {
   handleReady (playerVars, e) {
     this.player(playerVars, e.target)
-  }
-  
+  }  
   player (playerVars, player) {
     const start = playerVars.start || 0
 
@@ -123,11 +122,9 @@ export default class TextToSpeech extends Component {
       default:
         return Object.assign(base, { start: 17.3, end: 20.8 })
     }
-  }
-  
+  }  
   render () {
-    const playerVars = this.getPlayerOptions()
-  
+    const playerVars = this.getPlayerOptions()  
     return (
       <Youtube
         ref='player'

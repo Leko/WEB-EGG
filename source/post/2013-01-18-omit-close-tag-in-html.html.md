@@ -13,12 +13,9 @@ tags:
 <section id="intro"> 
 
 こんにちは。  
-Web Designing様主催の「<a href="http://book.mycom.co.jp/special/tapapp/" target="_blank">Tap App Awards 2013</a>」というコンテストに出すアプリの開発が終わりました。
-  
-jQueryMobileを初めて使ってみたので、色々と記事のネタが溜まっております。
-  
-アプリの方も一般公開用に微調整して、近々リリース予定です。
-  
+Web Designing様主催の「<a href="http://book.mycom.co.jp/special/tapapp/" target="_blank">Tap App Awards 2013</a>」というコンテストに出すアプリの開発が終わりました。  
+jQueryMobileを初めて使ってみたので、色々と記事のネタが溜まっております。  
+アプリの方も一般公開用に微調整して、近々リリース予定です。  
 
 それはさておき、本題です。 HTMLの閉じタグは省略できるという噂を聞いたので、調べてみました。</section> 
 

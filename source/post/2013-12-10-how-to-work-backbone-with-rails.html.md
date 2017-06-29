@@ -13,12 +13,10 @@ tags:
   - Ruby
   - Ruby on Rails
 ---
-Ruby on RailsはシンプルなAPIだけ構えておいて、
-  
+Ruby on RailsはシンプルなAPIだけ構えておいて、  
 Backbone.jsをAPIクライアントとして連携させる際に
 
-Railsでコントローラをscaffoldしただけでは上手く動かなかったため、
-  
+Railsでコントローラをscaffoldしただけでは上手く動かなかったため、  
 対処したことをメモしておきます。 
 
 <!--more-->
@@ -35,27 +33,22 @@ Railsでコントローラをscaffoldしただけでは上手く動かなかっ�
 | Ruby          | 1.9.3 |
 | Ruby on Rails | 3.2.8 |
 
-Backbone側をあまりゴリゴリといじらず、
-  
+Backbone側をあまりゴリゴリといじらず、  
 設定だけ書いておけばAjax出来る状態にしたいので、Rails側を調整していきます。
 
 APIにアクセスする際に拡張子を省略
 ----------------------------------------
 
-Backbone.Syncのデフォルトだと、
-  
-Ajaxの叩き先が`GET /[name]s`となったり`POST /[name]s`等になっており、
-  
+Backbone.Syncのデフォルトだと、  
+Ajaxの叩き先が`GET /[name]s`となったり`POST /[name]s`等になっており、  
 scaffoldしたままのRailsのコントローラでは、**拡張子を指定しないとレスポンスが返って来ません**。
 
 どちらかを修正すれば済むので、今回はRails側を修正します。
 
-まず、WebAPIが返すレスポンスのフォーマットは、
-  
+まず、WebAPIが返すレスポンスのフォーマットは、  
 `respond_doブロック`の中に入っている`format.*`という指定で決まります。
 
-`format.*`がアクセスする際の拡張子、
-  
+`format.*`がアクセスする際の拡張子、  
 `render *`がレスポンスとして返されるフォーマットです。
 
 scaffoldされたコードは、こんな感じになっていると思います。
@@ -69,8 +62,7 @@ class TasksController &lt; ApplicationController
       format.html # index.html.erb
       format.json { render json: @tasks }
     end
-  end
-  
+  end  
   # ...
 end
 ```
@@ -90,8 +82,7 @@ RailsのWebAPIのデフォルトフォーマットを指定する
 
 こちらの記事によると、respond_doの中に、`format.any`という指定ができるそうです。
 
-anyを指定すると、any以前に書いてあるフォーマット(`.html`, `.json`)にマッチしない全てのフォーマットに適用されます。
-  
+anyを指定すると、any以前に書いてあるフォーマット(`.html`, `.json`)にマッチしない全てのフォーマットに適用されます。  
 つまり、拡張子を省略した場合はこのanyで返されるフォーマットが適用されることになります。
 
 先ほどのコードにanyでjsonを返すコードを追加するとこうなります。
@@ -106,8 +97,7 @@ class TasksController &lt; ApplicationController
       format.json { render json: @tasks }
       format.any { render json: @tasks }
     end
-  end
-  
+  end  
   # ...
 end
 ```
@@ -119,12 +109,10 @@ end
 
 created\_atやupdated\_at、その他日付時間をDateオブジェクトとして受けとりたいときの対処法です。
 
-DATETIME型を表すJSON文字列は、
-  
+DATETIME型を表すJSON文字列は、  
 レスポンスとしてはStringで帰って来てしまうので、Backboneは文字列として解釈してしまいます。
 
-比較や計算をするためDateオブジェクトに変換したい場合には、
-  
+比較や計算をするためDateオブジェクトに変換したい場合には、  
 `Backbone.Model.prototype.parse`でパースしてあげます。
 
 ```javascript

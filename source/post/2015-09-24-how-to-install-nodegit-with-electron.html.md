@@ -15,8 +15,7 @@ tags:
   - Git
   - Nodejs
 ---
-Electronでnodegitを使おうとして、どの参考記事も助けにならなかったので記事を残します。
-  
+Electronでnodegitを使おうとして、どの参考記事も助けにならなかったので記事を残します。  
 今回はこの原因だっただけでまた将来的には別の原因でどハマりする可能性があります。
 
 <!--more-->
@@ -28,8 +27,7 @@ Electronでnodegitを使おうとして、どの参考記事も助けになら�
 * [Doesn't work with Electron](https://github.com/nodegit/nodegit/issues/574)
 * [ElectronにNodeGitをインストールしようとしてハマった](http://b.amberfrog.net/post/119528788216/electron%E3%81%ABnodegit%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%97%E3%82%88%E3%81%86%E3%81%A8%E3%81%97%E3%81%A6%E3%83%8F%E3%83%9E%E3%81%A3%E3%81%9F)
 
-これらの情報は古くなっているのか、そのままの方法でやっても全くうまくいく気配がありませんでした。
-  
+これらの情報は古くなっているのか、そのままの方法でやっても全くうまくいく気配がありませんでした。  
 手元のNodeが4なので0.12に戻してみたり、色々やってみたのですが結局ダメ。
 
 結論：助けになった情報
@@ -41,8 +39,7 @@ Electronでnodegitを使おうとして、どの参考記事も助けになら�
     
 > Most native modules are broken because of io.js upgrade, modules writers need to use NAN v2 to rewrite the modules.
 
-これが答えでした。
-  
+これが答えでした。  
 Electronで後方互換のないバージョンアップが行われたようです。
 
 原因まとめ
@@ -79,14 +76,11 @@ Issueにまとめてあります。 <span class="removed_link" title="https://gi
 $ node -vv0.12.7$ npm -v2.11.3$ $(npm bin)/electron -vv0.32.3
 ```
 
-nodejsのバージョンは`4.1.1`でも試してみましたが、問題なくビルドできました。
-  
+nodejsのバージョンは`4.1.1`でも試してみましたが、問題なくビルドできました。  
 なのでnodejsのバージョンは今回の件に関係ないようです。
 
-Electronの0.31.*以降を使っている場合、nodegitはリリースされているバージョンではダメで、
-  
-まだリリースされていないmasterのコミットを引っ張ってこないとダメなようです。
-  
+Electronの0.31.*以降を使っている場合、nodegitはリリースされているバージョンではダメで、  
+まだリリースされていないmasterのコミットを引っ張ってこないとダメなようです。  
 このコミットの入ったリリースが楽しみです。
 
 以上、備忘録でした。

@@ -62,13 +62,11 @@ $a = false or false  => false
 <ul>
   <li>
     <code>$a = true and false =&gt; true</code>
-  </li>
-  
+  </li>  
   
   <li>
     <code>$a = false or true  =&gt; false</code>
-  </li>
-  
+  </li>  
 </ul>
 
 <p>
@@ -133,18 +131,15 @@ false or
 <ul>
   <li>
     andの手前の式がtrueと評価される場合には後ろの式が実行され、
-  </li>
-  
+  </li>  
   
   <li>
     orの手前の式がfalseと評価される場合には後ろの式が実行され、
-  </li>
-  
+  </li>  
   
   <li>
     それ意外の場合は後ろの式が実行されない
-  </li>
-  
+  </li>  
 </ul>
 
 <p>
@@ -155,8 +150,7 @@ false or
   <p>
     ※ ちなみにechoをそのまま書くと構文エラーになります<br />
       PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO)
-  </p>
-  
+  </p>  
 </blockquote>
 
 実用例
@@ -247,6 +241,5 @@ function hoge(fn) {
   jsはちょっと違いましたね。
 </p>
 
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-  
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
 </div>

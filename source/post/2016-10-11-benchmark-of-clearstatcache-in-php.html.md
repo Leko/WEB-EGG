@@ -17,8 +17,7 @@ PHPには[clearstatcache](http://php.net/manual/ja/function.clearstatcache.php)�
     
 > &mdash; [PHP: clearstatcache – Manual](http://php.net/manual/ja/function.clearstatcache.php)
 
-この機能はドキュメント見る限り割と古くから導入されてるそうですが、PHP5.1でバグってました。
-  
+この機能はドキュメント見る限り割と古くから導入されてるそうですが、PHP5.1でバグってました。  
 それは後述するとして、 **このバグを引き換えに得られる性能** はどんなもんなのさ？を計測してみました。
 
 <!--more-->
@@ -26,10 +25,8 @@ PHPには[clearstatcache](http://php.net/manual/ja/function.clearstatcache.php)�
 はじめに
 ----------------------------------------
 
-`clearstatcache`によるバグは確認した限りではPHP5.1にて発生しました。
-  
-PHP5.5, 5.6においては修正されて予期したとおりの挙動になっていました。
-  
+`clearstatcache`によるバグは確認した限りではPHP5.1にて発生しました。  
+PHP5.5, 5.6においては修正されて予期したとおりの挙動になっていました。  
 5.2, 5.3, 5.4では確認をしていないため、その間のいつバグが治ったのかは未確認です。
 
 clearstatcache周りで起きるバグとは
@@ -61,8 +58,7 @@ file_exists($file); // true, ！？
   <p>
     PHP は存在しないファイルについての情報はキャッシュしないことにも 注意してください。もし存在しないファイルに対して file_exists() をコールする場合、ファイルを作成するまで この関数は FALSE を返します。もしファイルを作成した場合、 たとえファイルを削除したとしても TRUE を返します。 しかし、unlink() はキャッシュを自動的にクリアします。<br />
       &mdash; <a href="http://php.net/manual/ja/function.clearstatcache.php">PHP: clearstatcache - Manual</a>
-  </p>
-  
+  </p>  
 </blockquote>
 
 <p>
@@ -102,8 +98,7 @@ file_exists($file); // true, ！？
   <p>
     影響を受ける関数を以下に示します。 stat(), lstat(), file_exists(), is_writable(), is_readable(), is_executable(), is_file(), is_dir(), is_link(), filectime(), fileatime(), filemtime(), fileinode(), filegroup(), fileowner(), filesize(), filetype(), および fileperms().<br />
       &mdash; <a href="http://php.net/manual/ja/function.clearstatcache.php">PHP: clearstatcache - Manual</a>
-  </p>
-  
+  </p>  
 </blockquote>
 
 <p>
@@ -145,6 +140,5 @@ realpath_cache_ttl => 120 => 120
   久々に予想を覆す、ベンチマーク取ってよかったと感じる計測でした。
 </p>
 
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-  
+<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
 </div>

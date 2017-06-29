@@ -18,20 +18,17 @@ categories:
 
 タイマーの実物は[こちら](http://web.timer.builderscon.io/)から試せます。
 
-画像で紹介すると、こんな感じです。
-  
+画像で紹介すると、こんな感じです。  
 残り時間に応じて背景の色が代わり、数字を見なくてもだいたい分かるような作りになってます。
 
 <img src="/images/2016/07/099d91afa53de3892408d332de58ecbb.png" alt="スクリーンショット 2016-07-06 12.53.55" width="1185" height="778" class="alignnone size-full wp-image-857" />
 
 実際にiPadにはめ込んでみた時の図(公式ブログから拝借)
 
-使用したものは素[React](https://facebook.github.io/react/)。他にも[Riot](http://riotjs.com/)や[MagJS](https://github.com/magnumjs/mag.js/)など色々試したかったんですが、
-  
+使用したものは素[React](https://facebook.github.io/react/)。他にも[Riot](http://riotjs.com/)や[MagJS](https://github.com/magnumjs/mag.js/)など色々試したかったんですが、  
 イベントに使用するものということで、メンテできる人が多そうな長いものに巻かれておきました。
 
-まだイベント本番へ向けて微調整が色々残ってますが、こんなのやりました報告です。
-  
+まだイベント本番へ向けて微調整が色々残ってますが、こんなのやりました報告です。  
 ソースコードはGithubにあげているので、詳しい内容はそちらを御覧ください。
 
 > [builderscon/session-timer](https://github.com/builderscon/session-timer)

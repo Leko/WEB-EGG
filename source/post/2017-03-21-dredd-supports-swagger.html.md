@@ -18,16 +18,13 @@ tags:
 
 > [APIドキュメントでAPIサーバをテストする \| WEB EGG](/post/how-to-test-api-server-with-api-spec/)
 
-という記事を書いたときに紹介した[Dredd](https://github.com/apiaryio/dredd)ですが、
-  
+という記事を書いたときに紹介した[Dredd](https://github.com/apiaryio/dredd)ですが、  
 いつのまにか自社サービスのApiaryだけでなくSwagger(OpenAPI v2)にも対応していたそうです。
 
 ついでにロゴも洗練されてかっこよくなってます。
 
-自分で書いた過去記事の末尾でも軽く触れていますが、
-  
-OpenAPI initiativeも未だ活動続いてますし、「乗るしか無い、このビッグウェーブに」といったところなんでしょうか。
-  
+自分で書いた過去記事の末尾でも軽く触れていますが、  
+OpenAPI initiativeも未だ活動続いてますし、「乗るしか無い、このビッグウェーブに」といったところなんでしょうか。  
 なんにせよApiaryにロックインすることなく、Swaggerで記述した仕様書がテストできるようになったというのは嬉しいことなので早速試してみました。
 
 <!--more-->
@@ -74,8 +71,7 @@ paths:
               - message
 ```
 
-ちなみにOpenAPI v3([OpenAPI.nextブランチ](https://github.com/OAI/OpenAPI-Specification/tree/OpenAPI.next))には対応してないのか調べてみたのですが、してないようでした。
-  
+ちなみにOpenAPI v3([OpenAPI.nextブランチ](https://github.com/OAI/OpenAPI-Specification/tree/OpenAPI.next))には対応してないのか調べてみたのですが、してないようでした。  
 まぁまだスキーマ定義もサンプル仕様も存在しないし仕方ないと思います。
 
 デモアプリ作成
@@ -112,12 +108,9 @@ complete: Tests took 64ms
 
 ## AWS API GatewayのデモAPIを使ってみる
 
-もうちょい実用向けのサンプルも欲しいところです。
-  
-Swaggerといえば、[AWS API Gateway](https://aws.amazon.com/jp/api-gateway/)でしょう。
-  
-API Gatewayはデフォルトで[SwaggerのPetstore](http://petstore.swagger.io/)というサンプル仕様書を作成してくれます。
-  
+もうちょい実用向けのサンプルも欲しいところです。  
+Swaggerといえば、[AWS API Gateway](https://aws.amazon.com/jp/api-gateway/)でしょう。  
+API Gatewayはデフォルトで[SwaggerのPetstore](http://petstore.swagger.io/)というサンプル仕様書を作成してくれます。  
 ということで、これもテストしてみます。
 
   1. AWSのコンソールでAPI Gatewayを有効化
@@ -125,8 +118,7 @@ API Gatewayはデフォルトで[SwaggerのPetstore](http://petstore.swagger.io/
   3. 作ったAPIをデプロイ
   4. Swaggerの仕様書をエクスポート
 
-でAPIのエンドポイントとswaggerの仕様書を入手して、試してみます。
-  
+でAPIのエンドポイントとswaggerの仕様書を入手して、試してみます。  
 エクスポートした仕様書はYAML形式で`swagger.yml`というファイル名で保存しました。
 
 `{XXXXXXXXXXX}`, `{STAGE}`は自分で入力した内容になります。
@@ -142,14 +134,11 @@ No example value for required parameter in API description document: petId ( > /
 error: Error when processing API description.
 ```
 
-あら。エラーになってしまいました。
-  
+あら。エラーになってしまいました。  
 PetStoreの仕様書自体に問題があるようです。
 
-これを治すのは本筋じゃない感じがしたので、一旦ここまでで止めておきます。
-  
-API GatewayとLambdaをベースにしたサーバレスなAPIサーバとかも、簡単に受け入れテストできるようになるので、便利だと思います。
-  
+これを治すのは本筋じゃない感じがしたので、一旦ここまでで止めておきます。  
+API GatewayとLambdaをベースにしたサーバレスなAPIサーバとかも、簡単に受け入れテストできるようになるので、便利だと思います。  
 DreddがApiary(API Blueprint)ではなくSwaggerに対応したことは大きな意味を持つと思います。
 
 尻切れトンボですみません。

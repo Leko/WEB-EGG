@@ -8,8 +8,7 @@ categories:
   - やってみた
   - 問題を解決した
 ---
-この前公開した記事([Buildersconのセッションタイマーを作った](/post/create-session-timer-of-builderscon/))を実装する過程で、はじめて[Google Cloud Storage](https://cloud.google.com/storage/)を利用しました。
-  
+この前公開した記事([Buildersconのセッションタイマーを作った](/post/create-session-timer-of-builderscon/))を実装する過程で、はじめて[Google Cloud Storage](https://cloud.google.com/storage/)を利用しました。  
 利用してみたところ、キャッシュ周りの設定を変更する方法がよく分からなかったので、備忘録を残します。
 
 <!--more-->
@@ -19,8 +18,7 @@ categories:
 
 Google Cloud StorageはブラウザからGUIで操作する方法と、[Google Cloud SDK](https://cloud.google.com/sdk/)という公式のCLIツールを利用する方法があるようです。 今回は両方の方法でまとめてみます。
 
-※GCP自体はISUCONで使用したことがあるので、GCPことはじめ的なことは割愛します。
-  
+※GCP自体はISUCONで使用したことがあるので、GCPことはじめ的なことは割愛します。  
 また、GCSでバケット作成、ファイルアップロードなどのGCSことはじめも割愛します。
 
 ## Google Cloud SDKのインストール
@@ -42,8 +40,7 @@ gsutil
 メタデータの確認
 ----------------------------------------
 
-キャッシュの情報はメタデータと呼ばれるオブジェクトに格納されています。
-  
+キャッシュの情報はメタデータと呼ばれるオブジェクトに格納されています。  
 デフォルトでは`Cache-Control: public, max-age=3600`となっているようです。
 
 開発途中に1時間もキャッシュが効いてしまうのは辛いので、もうちょっと短くしたい。
@@ -144,8 +141,7 @@ Setting metadata on gs://web.timer.builderscon.io/all.css...
 BadRequestException: 400 Invalid argument.
 ```
 
-**ん？**
-  
+**ん？**  
 よくよく考えたらログインしてないですね。プロジェクトのメンバーでないとファイルの変更ができないので、gcloudコマンドでログインします。
 
 ```shell

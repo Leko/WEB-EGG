@@ -22,8 +22,7 @@ tags:
 
   * ### Coda 2
     
-    ¥6,500 | Panic, inc.
-  
+    ¥6,500 | Panic, inc.  
     <a href="https://itunes.apple.com/jp/app/coda-2/id499340368?mt=12" target="_blank">App Storeで見る</a> <img src="/images/2013/01/Coda2.png" alt="Coda2" title="Coda2.png" height="200" />
     
     言わずと知れた開発環境Coda2。 痒いところに手が届くコード補完、クオリティの高いシンタックスハイライト、綺麗なカラーリング、自然な操作でローカル->サーバへアップロード出来る、などなど 多少お高くても文句なしです！（私は半額セールだった時に買いましたが。） そして地味に楽しいのが、「サイト」機能にサムネイル機能が有ることです！ どのサイトかひと目でわかるし、見た目に現れることでモチベが上がります。 <aside>
@@ -32,8 +31,7 @@ tags:
       * <a href="http://www.webcreatorbox.com/tech/dreamweaver-to-coda/" target="_blank">DreamweaverからCodaに変えました | Webクリエイターボックス</a></aside> 
   * ### Sublime Text 2
     
-    試用¥0 or $59
-  
+    試用¥0 or $59  
     <a href="http://www.sublimetext.com/" target="_blank">ダウンロード</a>
     
     <img src="/images/2013/01/sublimetext.png" alt="Sublimetext" title="sublimetext.png" height="200" />
@@ -55,8 +53,7 @@ Todo管理
 
   * ### Wunderlist
     
-    無料 | 6 Wunderkinder GmbH
-  
+    無料 | 6 Wunderkinder GmbH  
     <a class="app_store" href="https://itunes.apple.com/jp/app/wunderlist/id410628904?mt=12" target="_blank">App Storeで見る</a> <img src="/images/2013/01/wunderlist.png" alt="Wunderlist" title="wunderlist.png" height="200" />
     
     色々なTodo管理アプリを使ってみた中で、 手軽さと綺麗さ、使いやすさのバランスが一番しっくり来たTodo管理アプリ。 iPhoneや他のOS、デバイスにも対応しているのも吉。 UIがとても綺麗で使っててクセになります。 <aside> 
@@ -69,8 +66,7 @@ Todo管理
 
   * ### Snackr
     
-    無料 | snackr.net
-  
+    無料 | snackr.net  
     <a href="http://snackr.net/" target="_blank">ダウンロード</a> <img src="/images/2013/01/snackr.png" alt="Snackr" title="snackr.png" height="200" />
     
     効率良く情報収集が出来る、というよりは楽しく情報収集ができるAdobe Airアプリです。 何より、おしゃれ。 画面の端に常駐して、登録されたRSSフィードをスクロールで流してくれます。 作業しながら横目に見れるので、 全フィード熟読はしないけど、さらっと目を通したいという時におすすめです。 GoogleReaderと連携できるのも吉。後輩に教えていただきました。 <aside> 
@@ -83,8 +79,7 @@ Todo管理
 
   * ### Alfred
     
-    無料 | Running with Crayons Ltd
-  
+    無料 | Running with Crayons Ltd  
     <a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12" target="_blank">App Storeで見る</a> <img src="/images/2013/01/alfred.png" alt="Alfred" title="alfred.png" height="200" />
     
     標準アプリSpotlightの強化版、といった感じです。 Spotlightよりも動作が軽くて高機能。愛用しています。 ロックやスリープもこれから一発！ 参考エントリを読まれると魅力が伝わるかも知れません。 <aside> 
@@ -93,8 +88,7 @@ Todo管理
       * <a href="http://kazoo1837.blog23.fc2.com/blog-entry-272.html" target="_blank">Macのランチャーアプリ「Alfred」の便利さに、今さらながら気がついた。</a></aside> 
   * ### TotalTerminal
     
-    無料 | binaryage
-  
+    無料 | binaryage  
     <a href="http://totalterminal.binaryage.com/" target="_blank">ダウンロード</a> <img src="/images/2013/01/totalterminal.png" alt="Totalterminal" title="totalterminal.png" height="200" />
     
     めちゃくちゃ捗るターミナルアプリです。 ⌘Commandキーを２回打つだけでターミナルを呼び出せます。 そして画面の端からにゅっと出てきて、もう１度同じキーを打つとにゅっと隠れます。 この感覚がくせになるのと、ブログ記事を見ながらコマンドを叩くときにすごく捗ります！ <aside> 
@@ -103,8 +97,7 @@ Todo管理
       * <a href="http://succi.jp/blog/?p=593" target="_blank" class="broken_link">コマンドラインからターミナル.appの列数を変更してTotalTerminalをもっと便利に使う | prime factor</a></aside> 
   * ### BetterTouchTool
     
-    無料 | © Andreas Hegenberg 2012
-  
+    無料 | © Andreas Hegenberg 2012  
     <a href="http://blog.boastr.net/" target="_blank">ダウンロード</a> <img src="/images/2013/01/btt.png" alt="BetterTouchTool" title="btt.png" height="200" />
     
     Macで不便に思っていた動作の多くをこれで実現できます！！ Windows7のように、ウィンドウを左右に分割したりデスクトップを表示したり… トラックパッドのジェスチャーもかなり設定できるので詳しくはこちらでどうぞ！！ <aside> 
@@ -113,8 +106,7 @@ Todo管理
       * <a href="http://bamka.info/2045/" target="_blank">ウインドウの一発リサイズは、BetterTouchToolなら無料。Macユーザーは入れるべき。</a></aside> 
   * ### Scroll Reverser
     
-    無料 | PILOTMOON
-  
+    無料 | PILOTMOON  
     <a href="http://pilotmoon.com/scrollreverser/" target="_blank">ダウンロード</a> <img src="/images/2013/01/scrollreverser.png" alt="Scrollreverser" title="scrollreverser.png" height="200" />
     
     トラックパッドとマウスを同時に使うことってありませんか？ いくらトラックパッドでのスクロールに慣れても、マウスのスクロールが逆になると、私は不自然です。 そんなときにこのアプリ。 マウスとトラックパッドでのスクロール方向を逆にしてくれます。 これで作業がだいぶ捗っております。 <aside> 
@@ -126,8 +118,7 @@ Todo管理
 
   * ### Toycamera Analogcolor
     
-    試用¥0 or ¥1050 | pentacom
-  
+    試用¥0 or ¥1050 | pentacom  
     <a href="http://www.pentacom.jp/pentacom/toycamera_analogcolor/index_ja.html" target="_blank">ダウンロード</a> <img src="/images/2013/01/toycamera.png" alt="Toycamera Analogcolor" title="toycamera.png" height="200" />
     
     トイカメラ風の画像加工アプリです。 細かい設定が出来るものさることながら、プリセットの設定が私好みなので いちいち自分で値を調整しなくても数クリックでかなり満足の出来になります。 <aside> 
@@ -135,16 +126,14 @@ Todo管理
       * <a href="http://thinkingscrap.cocolog-nifty.com/blog/2009/08/toycamera-analo.html" target="_blank">TOYCAMERA ANALOGCOLORかPoladroidか: thinking scrap</a></aside> 
   * ### Wallpapers HD Lite
     
-    無料 | StuckPixel, Inc.
-  
+    無料 | StuckPixel, Inc.  
     <a href="https://itunes.apple.com/jp/app/wallpapers-hd-lite/id441812880?mt=12" target="_blank">App Storeで見る</a> <img src="/images/2013/01/wallpaperhd.png" alt="WallpaperHD" title="wallpaperhd.png" height="200" />
     
     壁紙ダウンロードアプリです。 無料版なので5枚/日しか落とせないのですが、色んなニーズをカバーしていて キャラクターものや季節物も多く、なおかつクオリティが軒並み高い。 ハロウィン系の画像にはお世話になりました。笑 好みによりますが、無料なのでとりあえず一度入れてみては如何でしょうか。 
 
   * ### JPEDmini Lite
     
-    無料 | ICVT Ltd.
-  
+    無料 | ICVT Ltd.  
     <a class="app_store" href="https://itunes.apple.com/jp/app/jpegmini-lite/id525742250?mt=12" target="_blank">App Storeで見る</a> <img src="/images/2013/01/jpegmini.png" alt="Jpegmini" title="jpegmini.png" height="200" />
     
     JPEG画像を（ほぼ）無劣化で1/5くらいにサイズダウンできるwebサービスが、アプリになりました！ 今までこれで変換をかけて「荒いなぁ」と思ったことはありません。 使う側は容量の節約に、見る側は表示速度の劇的改善になりWIN-WINです。 ちなみに無料版だと、20枚/日までしか変換できません。 <aside> 
@@ -157,8 +146,7 @@ Todo管理
 
   * ### MySQLWorkbench
     
-    無料 | ORACLE
-  
+    無料 | ORACLE  
     <a href="http://www-jp.mysql.com/downloads/workbench/" target="_blank">ダウンロード</a> <img src="/images/2013/01/mysqlworkbench.png" alt="MysqlWorkBench" title="mysqlworkbench.png" height="200" />
     
     ORACLE MySQL公式のGUIツールです。 ER図の作成は設計時だけでなく、実在する外部DBとも連携できて 型やリレーションの変更が可能で、phpMyAdmin要らずなスグレモノです。 ER図だけでなく他にもまだまだ機能があるので、 練習がてら今度エントリを書いてみようと思います。 <aside> 
@@ -171,8 +159,7 @@ Todo管理
 
   * ### FreeMind
     
-    無料
-  
+    無料  
     <a href="http://freemind.sourceforge.net/wiki/index.php/Main_Page" target="_blank">ダウンロード</a> <img src="/images/2013/01/freemind.png" alt="Freemind" title="freemind.png" height="200" />
     
     マインドマップ作成ツールは多く有るのですが、 無料のものだとこれが一番しっくり来るかなと思います。 キーボードでだいたいの操作が出来てしまうので、 頭の中を広げて整理したい時にはガーッとこれに書きなぐっています。 <aside> 

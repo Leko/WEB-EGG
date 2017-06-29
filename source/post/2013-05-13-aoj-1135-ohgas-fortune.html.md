@@ -10,8 +10,7 @@ tags:
   - AOJ
   - JavaScript
 ---
-AOJの1135、Ohgas' Fortuneをjsで解きました。
-  
+AOJの1135、Ohgas' Fortuneをjsで解きました。  
 こちらも入力の処理に手間取り、クリアタイムは24分です。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1135&lang=jp)

@@ -16,38 +16,30 @@ tags:
 こんにちは。  
 最近、[Backbone.js](http://backbonejs.org/)というライブラリを使って、制作をしています。
 
-Backboneいいですね〜。
-  
-各UIパーツの結合度が下がるので、
-  
+Backboneいいですね〜。  
+各UIパーツの結合度が下がるので、  
 全体の見通しが良くなり、メンテもしやすくなります。
 
-今作っているものはそこまで規模が大きいものではないのですが、
-  
+今作っているものはそこまで規模が大きいものではないのですが、  
 大規模js開発入門ということで。
 
-それに加えて、先日[JavaScript道場](http://connpass.com/event/1664/)に行ってきてから、
-  
+それに加えて、先日[JavaScript道場](http://connpass.com/event/1664/)に行ってきてから、  
 jsの開発でもテストコードを書くようにしています。
 
-[師範に習った](http://hokaccha.github.com/slides/javascript_design_and_test/)とおり、
-  
-_<span class="removed_link" title="http://visionmedia.github.com/mocha/">mocha</span>_ + _[expectjs](https://github.com/LearnBoost/expect.js/blob/master/README.md)_ + _[sinonjs](http://sinonjs.org/)_を用いてユニットテストを書いているのですが、
-  
+[師範に習った](http://hokaccha.github.com/slides/javascript_design_and_test/)とおり、  
+_<span class="removed_link" title="http://visionmedia.github.com/mocha/">mocha</span>_ + _[expectjs](https://github.com/LearnBoost/expect.js/blob/master/README.md)_ + _[sinonjs](http://sinonjs.org/)_を用いてユニットテストを書いているのですが、  
 そのテストを書いている時に、sinonjsのspyで詰まったのでメモ。
 
 <!--more-->
 
 ## sinonjs spyの使い道・使い方
 
-そもそも、**sinonjs**とは何か。 
-  
+そもそも、**sinonjs**とは何か。   
 そしてその中の**spy**という機能は何なのかをざっと。
 
 sinonjsとは、テストダブルのライブラリのことです。
 
-> テストダブル (Test Double) とは、ソフトウェアテストにおいて、テスト対象が依存しているコンポーネントを置き換える代用品のこと。ダブルは代役、影武者を意味する。 – テストタブル – wikipedia
-  
+> テストダブル (Test Double) とは、ソフトウェアテストにおいて、テスト対象が依存しているコンポーネントを置き換える代用品のこと。ダブルは代役、影武者を意味する。 – テストタブル – wikipedia  
 > [フロントエンドJavaScriptにおける設計とテスト](http://hokaccha.github.com/slides/javascript_design_and_test/#page93)
 
 すごくざっくり言うと、**テスト用の便利なライブラリ**です。
@@ -91,10 +83,8 @@ describe 'Backbone * sinon.spy', -> Model = Backbone.Model.extend defaults: name
 
 <img src="/images/2013/03/mocha_ng.png" alt="Mocha ng" title="mocha_ng.png" border="0" width="600" height="227" />
 
-Backboneを理解されてる方なら
-  
-「初心者乙」
-  
+Backboneを理解されてる方なら  
+「初心者乙」  
 で終わってしまうのかもしれませんが、Backbone初心者だから仕方ない。
 
 先ほどの例のように、
@@ -103,10 +93,8 @@ Backboneを理解されてる方なら
 spy = sinon.spy(view, 'render')
 ```
 
-と指定したので、
-  
-view.renderが呼ばれたらspy.calledOnceはtrueになるはず。
-  
+と指定したので、  
+view.renderが呼ばれたらspy.calledOnceはtrueになるはず。  
 console.logなどを挟んで関数が呼ばれているか試したところ、呼ばれていました。 しかし、spy上では呼ばれたことになっていません。ここで詰まりました。
 
 解決策
@@ -114,8 +102,7 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
 
 なるべく英語は読みたくない（読めない）ので、 日本語の記事が無いか探してみたんですが、無さそうでした。
 
-英語記事を漁っていると、StackOverFlowに
-  
+英語記事を漁っていると、StackOverFlowに  
 似た悩みを抱えた質問と解答が寄せられていました。
 
 > [javascript – Backbone.js view tests using Sinon Spies in a browser – Stack Overflow](http://stackoverflow.com/questions/9623986/backbone-js-view-tests-using-sinon-spies-in-a-browser)
@@ -132,10 +119,8 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
 
 <img src="/images/2013/03/mocha_ok.png" alt="Mocha ok" title="mocha_ok.png" border="0" width="380" height="56" />
 
-このように、インスタンス化したオブジェクトにspyを忍び込ませるのではなく、
-  
-**コンストラクタ関数のprototypeにspyを設定して、
-  
+このように、インスタンス化したオブジェクトにspyを忍び込ませるのではなく、  
+**コンストラクタ関数のprototypeにspyを設定して、  
 その後にインスタンスを生成するとうまく動くようです。**
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

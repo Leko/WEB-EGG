@@ -15,36 +15,28 @@ tags:
   - JavaScript
   - Titanium studio
 ---
-こんにちは。れこです。
-  
-最近は、友人と[いちれこプロジェクト](https://www.facebook.com/IchiLeko)という活動をしていまして、
-  
+こんにちは。れこです。  
+最近は、友人と[いちれこプロジェクト](https://www.facebook.com/IchiLeko)という活動をしていまして、  
 まだ詳細は非公開ですが、iOSとAndroid両方に対応したアプリを作っています。
 
 双方のプラットフォーム用の言語や、独自仕様を覚えるのは面倒なので、
 
-**JavaやObjective-Cを書かなくても
-  
+**JavaやObjective-Cを書かなくても  
 AndroidもiOSでも動くアプリを作れないかなぁ。**
 
 と、探したらありました。
 
-夢を叶えてくれたのが「Titanium-cli」です。
-  
+夢を叶えてくれたのが「Titanium-cli」です。  
 JavaScriptで記述して、AndroidやiOS向けにビルドが出来るツールです。
 
 <!--more-->
 
-GUIの開発環境「Titanium Studio」でも良いのですが、
-  
-Eclipseライクな開発環境が苦手（嫌い）なのでCLIのほうを使って、
-  
+GUIの開発環境「Titanium Studio」でも良いのですが、  
+Eclipseライクな開発環境が苦手（嫌い）なのでCLIのほうを使って、  
 環境の準備からアプリのビルドまで行いたいと思います。
 
-更に、
-  
-TitaniumではJavaScriptが使えるので、楽なCoffeeScriptで書こうと思いつき、
-  
+更に、  
+TitaniumではJavaScriptが使えるので、楽なCoffeeScriptで書こうと思いつき、  
 そしたら**保存時にCoffeeScriptの自動コンパイル＋アプリの自動ビルドもしたいなぁ。**
 
 と思ったので、 **Grunt**という諸々自動化ツールについての手順をまとめてメモします。
@@ -52,10 +44,8 @@ TitaniumではJavaScriptが使えるので、楽なCoffeeScriptで書こうと�
 事前に必要なもの
 ----------------------------------------
 
-iOSアプリの開発をするため、Macは必須です。
-  
-他には、お好みのテキストエディタなどをご用意下さい。
-  
+iOSアプリの開発をするため、Macは必須です。  
+他には、お好みのテキストエディタなどをご用意下さい。  
 なお、今回の記事は、
 
   * **Mac Book Air 11インチ**
@@ -70,38 +60,31 @@ iOSアプリの開発をするため、Macは必須です。
 
 ## 1.Titanium Studioをインストールする
 
-まずは、Titanium-cliのGUI版「Titanium Studio」をインストールします。
-  
+まずは、Titanium-cliのGUI版「Titanium Studio」をインストールします。  
 こちらの方がAndroidSDKの設定が楽なので、設定をするために使います。
 
 まず、Titaniumシリーズを公開している[Appcelerator](http://www.appcelerator.com/)を開きます。
 
 <img src="/images/2013/04/appcelerator1.png" alt="Appcelerator" title="appcelerator.png" border="0" width="600" height="374" />
 
-次に、[Download Titanium for Free]をクリックして、会員登録をします。
-  
+次に、[Download Titanium for Free]をクリックして、会員登録をします。  
 この会員情報は後々使うので、忘れないようにしておいて下さい。
 
 会員登録が完了すると、以下のような画面に行くと思います。
 
 <img src="/images/2013/04/download_tstudio.png" alt="Download tstudio" title="download_tstudio.png" border="0" width="600" height="296" />
 
-このページの、[Download Titanium Studio]をクリックして、
-  
+このページの、[Download Titanium Studio]をクリックして、  
 「osx」を選択してTitanium Studioをダウンロードします。
 
-Titanium Studioを起動したら、
-  
-メニュー→Titanium Studio→環境設定を開きます。
-  
+Titanium Studioを起動したら、  
+メニュー→Titanium Studio→環境設定を開きます。  
 [Titanium]を選択して、Android SDKの保存場所を設定します。
 
 <img src="/images/2013/04/setting-android-sdk.png" alt="Setting android sdk" title="setting-android-sdk.png" border="0" width="600" height="109" />
 
-今回の記事では、
-  
-**/Developers/android-sdk/**
-  
+今回の記事では、  
+**/Developers/android-sdk/**  
 に設置することにします。
 
 2.iOS,AndroidのSDKを入手する
@@ -119,14 +102,11 @@ Titanium Studioのダッシュボードに行き、 **Configure Native SDKs**の
 
 とりあえず最新版と、Tools、**API8**、**API7**をインストールすればOKかと思います。
 
-API8はTitanium Studioには必須で、
-  
-API7が無いとエミュレータの起動でエラーが出てたので、API7もインストールします。
-  
+API8はTitanium Studioには必須で、  
+API7が無いとエミュレータの起動でエラーが出てたので、API7もインストールします。  
 その他は、対象にするOSによって適宜インストールしてください。
 
-これでSDKの設定は完了です。
-  
+これでSDKの設定は完了です。  
 ダッシュボードに戻って、Get startedを見て下さい。
 
 <img src="/images/2013/04/6771558919b40e75d25738805045577f.png" alt="スクリーンショット 2013 04 02 16 25 30" title="スクリーンショット 2013-04-02 16.25.30.png" border="0" width="355" height="147" />
@@ -136,12 +116,10 @@ API7が無いとエミュレータの起動でエラーが出てたので、API7
 3.Node.jsをインストールする
 ----------------------------------------
 
-Titanium-cliを使うには、**npm**というパッケージ管理システムが必要です。
-  
+Titanium-cliを使うには、**npm**というパッケージ管理システムが必要です。  
 そして、npmは**Nodejs**をインストールすると自動的に使えるようになります。
 
-なので、Nodejsをインストールします。
-  
+なので、Nodejsをインストールします。  
 **brew**コマンドでインストールするのが手っ取り早いかと思います。
 
 ターミナルを立ち上げ、以下の内容を入力して下さい。
@@ -169,8 +147,7 @@ $ npm -v
 4.titanium-cliをインストールする
 ----------------------------------------
 
-Nodejsをインストールしてnpmが使えるようになったので、
-  
+Nodejsをインストールしてnpmが使えるようになったので、  
 **titanium-cli**をグローバルインストールします。
 
 ```
@@ -215,20 +192,17 @@ $ titanium setup
 
   * **What Titanium SDK would you like to use by default? (3.0.2.GA)**
     
-      * Titanium SDKのバージョンを指定します。
-  
+      * Titanium SDKのバージョンを指定します。  
         `(3.0.2.GA)`と表示されていたら、そのままEnter
 
   * **Path to your workspace where your projects should be created**
     
-      * プロジェクトを作成するときのパスを指定する
-  
+      * プロジェクトを作成するときのパスを指定する  
         `./`と入力しておけばOKかと
 
   * **Path to the Android SDK**
     
-      * Android SDKのパスを指定する
-  
+      * Android SDKのパスを指定する  
         先ほどTitanium Studioで設定した通り、`/Developers/android-sdk/`と入力
 
 これらを記入して、`Configuration saved`と表示されれば、設定完了です。
@@ -248,24 +222,19 @@ $ titanium create
 
   * **Target platforms**
     
-      * 対象のプラットフォームをカンマ区切りで入力
-  
+      * 対象のプラットフォームをカンマ区切りで入力  
         今回はiosとandroid用のアプリを作りたいので、`android,ios`と入力
 
   * **App ID**
     
-      * アプリのIDを入力
-  
-        これは、自分のドメインを逆順に書き、最後に`.アプリ名`を書くのが通例のようです。
-  
-        私の場合、持っているドメインは`leko.jp`なので、
-  
+      * アプリのIDを入力  
+        これは、自分のドメインを逆順に書き、最後に`.アプリ名`を書くのが通例のようです。  
+        私の場合、持っているドメインは`leko.jp`なので、  
         アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります。
 
   * **Project name**
     
-      * アプリの名前を入力
-  
+      * アプリの名前を入力  
         App IDで`myapp`としたので、そのまま`myapp`と入力
 
 上記を入力すると、
@@ -299,14 +268,12 @@ $ titanium create
 7.ビルドしてエミュレーターを起動する
 ----------------------------------------
 
-次に、アプリをビルドして
-  
+次に、アプリをビルドして  
 iOSのシミュレータ、Androidのエミュレータで起動してみます。
 
 プロジェクトをcreateした時点で、実は簡単なアプリが記述されています。 なので、何かプログラムを書く必要なく動作確認ができます。
 
-まず、iOSのアプリ形式にビルドします。
-  
+まず、iOSのアプリ形式にビルドします。  
 ターミナルに以下の内容を入力
 
 ```
@@ -363,19 +330,16 @@ $ titanium build -p android
 
 <img src="/images/2013/04/preview_an.png" alt="Preview an" title="preview_an.png" border="0" width="400" />
 
-iOSのシミュレータと同じように、
-  
+iOSのシミュレータと同じように、  
 Androidのエミュレータが起動してアプリが表示されればOKです。
 
 ビルドを自動化する
 ----------------------------------------
 
-先述の**ビルドしてエミュレータを起動する**までの内容で、
-  
+先述の**ビルドしてエミュレータを起動する**までの内容で、  
 **手動での**アプリのビルドとエミュレータの起動は出来ます。
 
-しかし、CoffeeScirptを使ったり、
-  
+しかし、CoffeeScirptを使ったり、  
 ビルドを**自動化**したい方は、ぜひ後編(作成中)を御覧ください。
 
 ### 参考サイト

@@ -12,12 +12,10 @@ tags:
   - Mac
 ---
 こんにちは。  
-Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報を出してくれなくなってはや1ヶ月。
-  
+Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報を出してくれなくなってはや1ヶ月。  
 もうiPhoneでの閲覧はあきらめてPCでどうにかしようと思い立ったものの、 **ただでさえ増えがちなChromeのタブを増やしたくない** 。
 
-たくさんタブ開いちゃうとファビコンすら見えなくなって何のタブかわからなくなるんですよね。動作も重くなるので常に必要最小限のタブだけ開いておきたいんです。
-  
+たくさんタブ開いちゃうとファビコンすら見えなくなって何のタブかわからなくなるんですよね。動作も重くなるので常に必要最小限のタブだけ開いておきたいんです。  
 かといってApp storeを探してみてもいいAnalyticsのアプリが見つからない。
 
 ということでWebページをアプリ化する[Fluid]()というアプリを使用していくつかのWebサービスをアプリ化してみようと思います。
@@ -29,8 +27,7 @@ Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報�
 
 今回アプリ化したいのは[Google Anayltics](https://www.google.com/analytics/)と[Trello](https://trello.com/)と[Github](https://github.com/)です。
 
-早速やってきます。
-  
+早速やってきます。  
 なお動作確認は Mac OSX 10.10.5 Yosemite にて行っています。
 
 > 参考
@@ -40,8 +37,7 @@ Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報�
 Fluidを落とす
 ----------------------------------------
 
-Fluidは[こちら](http://fluidapp.com/)のページの[Free Download]からダウンロードできます。
-  
+Fluidは[こちら](http://fluidapp.com/)のページの[Free Download]からダウンロードできます。  
 古めなテイストのページですがきちんと動きました。ツールは見かけによらないですね。
 
 基本的な使い方
@@ -58,8 +54,7 @@ Fluidを起動すると以下の様な画面になると思います
 | Location: | アプリを保存する場所。特に理由がない限りデフォルトでよいはず                       |
 | Icon:     | アプリのアイコン。デフォルトではWebサイトのファビコンを使うと書かれているがうまくいかないことが多い。 |
 
-おっ、ファビコン使ってくれんだ便利じゃ〜んと思っていたのですが、だいたいうまく行きませんでした。なぜ。
-  
+おっ、ファビコン使ってくれんだ便利じゃ〜んと思っていたのですが、だいたいうまく行きませんでした。なぜ。  
 失敗するとこのようなアイコンになり、何開いてんだか全くわかりません。
 
 <img src="/images/2015/12/Screen-Shot-2015-12-14-at-3.58.36-AM.png" alt="Screen Shot 2015 12 14 at 3 58 36 AM" title="Screen Shot 2015-12-14 at 3.58.36 AM.png" border="0" width="598" />
@@ -71,22 +66,19 @@ Fluidを起動すると以下の様な画面になると思います
 
 <img src="/images/2015/12/2ccae8abad198c3d70a0c855fd6cc643.png" alt="Header icon 2x" title="header-icon@2x.png" border="0" width="270" />
 
-[Image2icon](http://www.img2icnsapp.com/)というアプリを使用しました。
-  
+[Image2icon](http://www.img2icnsapp.com/)というアプリを使用しました。  
 過去に[.icnsをPNGで書き出す](/post/convert-icns-to-png/)方法については書きましたが、逆はできないようだったのでアプリを利用します。
 
 App storeからダウンロードして起動します。
 
 <img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.02.26-AM.png" alt="Screen Shot 2015 12 14 at 4 02 26 AM" title="Screen Shot 2015-12-14 at 4.02.26 AM.png" border="0" width="412" />
 
-こんな画面になれば想定通りです。
-  
+こんな画面になれば想定通りです。  
 画像をドロップすると以下の様な画面になります。いろいろな形式・装飾でエクスポートできるので便利です。
 
 <img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.06.07-AM.png" alt="Screen Shot 2015 12 14 at 4 06 07 AM" title="Screen Shot 2015-12-14 at 4.06.07 AM.png" border="0" width="395" />
 
-Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパスをFluidの`Icon`のところに指定します。
-  
+Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパスをFluidの`Icon`のところに指定します。  
 以下の内容はこれらのアプリを使用してアプリを作っていきます。
 
 各サービスのロゴはブランドガイドラインのページや画像検索で手に入るので割愛します。好みの画像をググってください。
@@ -96,12 +88,10 @@ Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパ
 
 <img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.14.58-AM.png" alt="Screen Shot 2015 12 14 at 4 14 58 AM" title="Screen Shot 2015-12-14 at 4.14.58 AM.png" border="0" width="142" />
 
-いかがでしょうか。ブラウザのタブの1つではなく、単独のアプリとして起動しています。
-  
+いかがでしょうか。ブラウザのタブの1つではなく、単独のアプリとして起動しています。  
 jsもざっくり触った感じでは動いていました。中身見てませんが、おそらく単にWebViewのアプリを吐き出してるだけだと思われます。
 
-Chromeで常に開いてるアプリはアプリ化してしまったほうが楽な気がします。Gmailとかも。
-  
+Chromeで常に開いてるアプリはアプリ化してしまったほうが楽な気がします。Gmailとかも。  
 他にも`Command + Tab`の切り替えでアプリが切り替えられるので、捗りそうな予感がします。
 
 他にも色々とアプリ化したら便利そうなものがあるので、今後試してみます。

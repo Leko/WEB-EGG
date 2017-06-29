@@ -10,8 +10,7 @@ tags:
   - AOJ
   - JavaScript
 ---
-AOJの1137、Numeral SystemをJavaScriptで解きました。
-  
+AOJの1137、Numeral SystemをJavaScriptで解きました。  
 入力の処理に時間を取られ、35分強かかってしまいました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1137&lang=jp)
@@ -20,12 +19,10 @@ AOJの1137、Numeral SystemをJavaScriptで解きました。
 
 文字列操作系の問題ですね。
 
-replace＋evalというゴリ押しを真っ先に思いついたのですが、
-  
+replace＋evalというゴリ押しを真っ先に思いついたのですが、  
 前置詞の扱いが面倒 + ゴルフではないので真っ当に解くことに。
 
-どれだけ重複が来るか不明でしたが、
-  
+どれだけ重複が来るか不明でしたが、  
 メモ化の練習がてらキャッシュを使ってみました。
 
 コード

@@ -16,16 +16,13 @@ tags:
   - カンファレンス
 ---
 こんにちは。  
-会社の先輩に誘っていただき、 [YAPC 2015](http://yapcasia.org/2015/) に行ってきました。
-  
+会社の先輩に誘っていただき、 [YAPC 2015](http://yapcasia.org/2015/) に行ってきました。  
 Perlの祭典です。<del>Perl全く書かないけど。</del>人生初のカンファレンスです。
 
-Perl色がもっと強いものかと思ってましたが、「申し訳程度のPerl要素・・・」
-  
+Perl色がもっと強いものかと思ってましたが、「申し訳程度のPerl要素・・・」  
 と何度も思うくらいにはPerl要素が薄く、初心者にも入りやすかったです。
 
-**「ブログに書くまでがYAPCです」** と何度も念を押されたので、というわけではなく、
-  
+**「ブログに書くまでがYAPCです」** と何度も念を押されたので、というわけではなく、  
 単に自分への備忘録とイベントレポートとして残します。
 
 <!--more-->
@@ -45,23 +42,19 @@ Perl色がもっと強いものかと思ってましたが、「申し訳程度�
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     <a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a> 言語を構築するのは世界を構築するのと同じ
-  </p>&mdash; しょーちゃん (@show_m001) 
-  
+  </p>&mdash; しょーちゃん (@show_m001)   
   <a href="https://twitter.com/show_m001/status/634536792679694341">2015, 8月 21</a>
 </blockquote>
 
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     2015/12/25「Perl6を出すといったな、あれは嘘だ」 <a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a>
-  </p>&mdash; れこ (@L_e_k_o) 
-  
+  </p>&mdash; れこ (@L_e_k_o)   
   <a href="https://twitter.com/L_e_k_o/status/634540578013868032">2015, 8月 21</a>
 </blockquote>
 
-OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語に例えつつな感じでした。
-  
-どちらもタイトルしか知らないのでうまく喩え話が頭に入らず。。。
-  
+OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語に例えつつな感じでした。  
+どちらもタイトルしか知らないのでうまく喩え話が頭に入らず。。。  
 そして **「同時翻訳すごい！すごい！」** と感動して肝心の話を殆ど聞いてませんでした。
 
 * * *
@@ -142,8 +135,7 @@ OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語�
   <p lang="ja" dir="ltr">
     GPIO(Lチカ)⇒PWM(Lフワ)⇒Timer割込でいろいろ⇒I2C通信という流れで進んだ模様。
 <a href="https://twitter.com/hashtag/yapcasiaD?src=hash">#yapcasiaD</a>
-  </p>&mdash; takasago (@sago35tk) 
-  
+  </p>&mdash; takasago (@sago35tk)   
   <a href="https://twitter.com/sago35tk/status/634553318098907136">2015, 8月 21</a>
 </blockquote>
 
@@ -185,8 +177,7 @@ HTTP/2時代のウェブサイト設計
   * 転送データ量の低減 
       * コア化な粒度でレスポンスの順序を変更したい
 
-すべての通信データは **フレーム** に格納される
-  
+すべての通信データは **フレーム** に格納される  
 色々な種類がある
 
   * https://http2.github.io/http2-spec/
@@ -198,10 +189,8 @@ HTTP/2時代のウェブサイト設計
 
 ### 優先度制御
 
-ex.
-  
-CSS, jsを再優先でとっておいて、HTMLは低優先度で取ってくる
-  
+ex.  
+CSS, jsを再優先でとっておいて、HTMLは低優先度で取ってくる  
 HTMLが取得された時点でCSS, jsの読み取りは完了しているので、その時点でレンダリングを開始できる
 
 #### サーバ
@@ -261,14 +250,12 @@ HTMLが取得された時点でCSS, jsの読み取りは完了しているので
 
 HTTP2クライアントとしてlibcurlが優れている
 
-サーバ証明書買わなきゃいけないの…？
-  
+サーバ証明書買わなきゃいけないの…？  
 [LeysEncrypt](https://letsencrypt.org/) がリリースされれば無料で取れる
 
 * * *
 
-「HTTP/2でオワコンになる最適化」の話で
-  
+「HTTP/2でオワコンになる最適化」の話で  
 今のフロントエンドのビルドツール周り（アセットの結合）が圧縮技術＋オーバヘッド削減によって、むしろボトルネックになる可能性があるという話が印象的でした。
 
 * * *
@@ -308,8 +295,7 @@ HTTP2クライアントとしてlibcurlが優れている
       * エンジニアも営業も企画もデザイナーも同じ名前で呼ぶ
       * 用語集.md
 
-内容は広くいろいろな話題があって気付かされることが多かったです。
-  
+内容は広くいろいろな話題があって気付かされることが多かったです。  
 エリック・エヴァンスのドメイン駆動設計の本2冊ともポチりました。
 
 * * *
@@ -319,8 +305,7 @@ HTTP2クライアントとしてlibcurlが優れている
   * [Electron: Building desktop apps with web technologies – YAPC::Asia Tokyo 2015]()
   * [WEB技術を使ってデスクトップ開発！Electronとは!? #yapcasia #yapcasiaA](http://togetter.com/li/863466)
 
-中の人がわざわざいらしてお話してくれた。
-  
+中の人がわざわざいらしてお話してくれた。  
 でもビギナー向けな内容で、話す内容も質疑応答も知ってたという感じでした。ざっくりと。
 
 * * *
@@ -345,13 +330,11 @@ HTTP2クライアントとしてlibcurlが優れている
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     βリリース前に知人の会社が使ってくれて、フィードバックいっぱいくれた。これは仕事にできそうだなぁと思った。会社を作ったのは、真面目に続けてく意思表示みたいなもの <a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a> <a href="https://twitter.com/hashtag/yapcasiaA?src=hash">#yapcasiaA</a>
-  </p>&mdash; たま● (@tmd45) 
-  
+  </p>&mdash; たま● (@tmd45)   
   <a href="https://twitter.com/tmd45/status/634623202833010689">2015, 8月 21</a>
 </blockquote>
 
-他のセッションに比べて濃いわけではなかったけど、一番心に残ったセッションでした。
-  
+他のセッションに比べて濃いわけではなかったけど、一番心に残ったセッションでした。  
 (\( ⁰⊖⁰)/)
 
 * * *
@@ -368,14 +351,12 @@ ISUCONの勝ち方
 
 ### ISUCONとは
 
-ISUCONで得られた知見を公開されることで、業界の技術力に寄与
-  
+ISUCONで得られた知見を公開されることで、業界の技術力に寄与  
 ベンチマーク：動作の変更がないことをチェック、テストに落ちたら失格
 
 ### 私とISUCON
 
-2年連続優勝
-  
+2年連続優勝  
 事前に出題に挑戦し、ベンチマークの問題を洗い出す
 
 ### ISUCONから生まれた技術
@@ -384,8 +365,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 
 ### Webアプリケーションのパフォーマンス
 
-管理コスト・障害対応のコストも減らせる
-  
+管理コスト・障害対応のコストも減らせる  
 大規模なインフラでは嬉しい
 
 ### ISUCONの勝ち方
@@ -568,8 +548,7 @@ Perlは2行だけ。Perl知らんでも書ける
   * [資料](https://github.com/bradfitz/talk-yapc-asia-2015/blob/master/talk.md)
   * [鮮やかすぎるライブコーディング！よりAwesomeな #golang ! #yapcasia #yapcasiaA](http://togetter.com/li/863950)
 
-目からうろこというか、新しいことの連続でした。
-  
+目からうろこというか、新しいことの連続でした。  
 Goはまだ入門したばかりでツール周りなど全く触れていなかったので、足がかりとしてものすごくありがたいスピーチでした。
 
 コーディング早すぎる。ぼけーっとしながら眺めるばかりという感じでした。
@@ -582,8 +561,7 @@ Goはまだ入門したばかりでツール周りなど全く触れていなか
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     うおおおお、本がすげーと思ったら、ただのタペストリーだった。かんっぜんに騙されてもうた。　<a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a> <a href="http://t.co/1pi8KZ5WLX">pic.twitter.com/1pi8KZ5WLX</a>
-  </p>&mdash; tabunmuri (@tabunmuri255) 
-  
+  </p>&mdash; tabunmuri (@tabunmuri255)   
   <a href="https://twitter.com/tabunmuri255/status/634539982930227201">2015, 8月 21</a>
 </blockquote>
 

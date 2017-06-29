@@ -13,8 +13,7 @@ tags:
 こんにちは。  
 はじめてAWS Athenaを使用してみました
 
-試しにS3に置いてあるCSVをもとにテーブルを作ろうとしたら`Access Denied`のエラーが発生
-  
+試しにS3に置いてあるCSVをもとにテーブルを作ろうとしたら`Access Denied`のエラーが発生  
 権限は足りており、疎通確認もできているので、権限系の問題ではない。ではなぜ？
 
 調べてみたらしょーもないところでドハマリしていたので、備忘録を残しておきます
@@ -30,8 +29,7 @@ tags:
 > 
 > This query ran against the 'default' database, unless qualified by the query. Please post the error message on our forum or contact customer support with query id.
 
-DDLのタスクにて`Access Denied`が起きているよ、とのこと
-  
+DDLのタスクにて`Access Denied`が起きているよ、とのこと  
 このエラーを見た時に真っ先に権限を疑ったのですが、AthenaとS3にFullAccessを付けても治らず
 
 対応方法
@@ -43,20 +41,16 @@ AWSのページを見つけました
 > 
 > &mdash; [Resolve "Access Denied" Errors When Running Amazon Athena Queries](https://aws.amazon.com/premiumsupport/knowledge-center/access-denied-athena/)
 
-えぇ…
-  
+えぇ…  
 ここで、実際の画面を見てみましょう
 
 <img src="/images/2017/04/693663e8211dbcfade29c5af49de6d5e.png" alt="" width="1007" height="410" class="alignnone size-full wp-image-953" />
 
-お分かりいただけたであろうか。
-  
-プレースホルダがエンドポイントまで含めたURLを促しているのに対し、
-  
+お分かりいただけたであろうか。  
+プレースホルダがエンドポイントまで含めたURLを促しているのに対し、  
 **バケットパスを入力する要素の下に、ヘルプテキストが書かれている**
 
-ちゃんと読んでいればハマらないんでしょうが、プレースホルダ見るじゃん。それに従うじゃん。 **エラーになるじゃん**
-  
+ちゃんと読んでいればハマらないんでしょうが、プレースホルダ見るじゃん。それに従うじゃん。 **エラーになるじゃん**  
 ということで納得はいかないのですが、治りはしました
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

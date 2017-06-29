@@ -31,13 +31,11 @@ Migu-1M-Regular 11pt × Fraize
 
 皆様のイチオシフォントがございましたら、
 
-是非教えていただけると喜びます。
-  
+是非教えていただけると喜びます。  
 <!-- Quick Adsense WordPress Plugin: http://quicksense.net/ -->
 
 <div style="float:none;margin:30px 0 30px 0;text-align:center;">
-  <br /> <!-- article-footer -->
-  
+  <br /> <!-- article-footer -->  
   <br /> <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-7627436148097691"
