@@ -13,7 +13,7 @@ install:
 
 script:
 - bundle exec middleman build
-- npm run lint
+# - npm run lint
 
 deploy:
   - provider: script
