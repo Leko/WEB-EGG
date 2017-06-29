@@ -9,7 +9,7 @@ categories:
 tags:
   - builderscon
 ---
-こんにちは。[BuildersconでタイマーWeb版作った](http://leko.jp/archives/852)れこです。
+こんにちは。[BuildersconでタイマーWeb版作った](/post/create-session-timer-of-builderscon/)れこです。
   
 今回はBuildersconのBBQに参加してきました
 

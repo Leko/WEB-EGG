@@ -8,7 +8,7 @@ categories:
   - やってみた
   - 問題を解決した
 ---
-この前公開した記事([Buildersconのセッションタイマーを作った](http://leko.jp/archives/852))を実装する過程で、はじめて[Google Cloud Storage](https://cloud.google.com/storage/)を利用しました。
+この前公開した記事([Buildersconのセッションタイマーを作った](/post/create-session-timer-of-builderscon/))を実装する過程で、はじめて[Google Cloud Storage](https://cloud.google.com/storage/)を利用しました。
   
 利用してみたところ、キャッシュ周りの設定を変更する方法がよく分からなかったので、備忘録を残します。
 

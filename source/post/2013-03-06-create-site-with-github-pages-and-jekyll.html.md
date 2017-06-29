@@ -31,7 +31,7 @@ Githubがホスティングしてくれるサービス[Github Pages](http://page
 「**Githubページを作成し、Markdownで更新する**」ことです。  
 Markdownについては、過去に書いた記事
 
-> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編）](http://leko.jp/archives/367)
+> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編）](/post/write-post-with-markdown-without-plugin-beginner/)
 
 を御覧ください。では早速始めます。
 
@@ -149,7 +149,7 @@ default.htmlを編集する
 ちなみに、色々とタグが省略されていますが、これでW3Cが認める正常なHTMLです。  
 詳しくは、過去に書いた記事
 
-> [「HTMLのタグは一部省略可能」表示速度はどちらが早いのか調べてみた](http://leko.jp/archives/321)
+> [「HTMLのタグは一部省略可能」表示速度はどちらが早いのか調べてみた](/post/omit-close-tag-in-html/)
 
 を御覧ください。
 

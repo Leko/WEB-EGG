@@ -16,7 +16,7 @@ tags:
 ---
 以前に
 
-> [APIドキュメントでAPIサーバをテストする \| WEB EGG](http://leko.jp/archives/800)
+> [APIドキュメントでAPIサーバをテストする \| WEB EGG](/post/how-to-test-api-server-with-api-spec/)
 
 という記事を書いたときに紹介した[Dredd](https://github.com/apiaryio/dredd)ですが、
   

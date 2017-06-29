@@ -12,7 +12,7 @@ tags:
   - Ruby
   - Rubygems
 ---
-[ActiveResourceでChatworkのAPIを叩くgem](http://leko.jp/archives/870)を作ってみました。
+[ActiveResourceでChatworkのAPIを叩くgem](/post/knowhow-of-chatwork-api-with-activeresource/)を作ってみました。
   
 これが初めて作ったgemなのですが、手で運用すると色々忘れそうな感じがした。
 

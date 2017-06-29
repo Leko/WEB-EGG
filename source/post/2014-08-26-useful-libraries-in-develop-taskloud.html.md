@@ -19,7 +19,7 @@ tags:
 ---
 久々にフロントの話題です。
   
-4月に[Taskloudというアプリをリリース](http://leko.jp/archives/741)しました。
+4月に[Taskloudというアプリをリリース](/post/release-taskloud/)しました。
 
 その際に、色々と使ってみたかったライブラリを使って感触を得たので、
   

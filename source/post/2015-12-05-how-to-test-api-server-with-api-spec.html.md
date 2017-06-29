@@ -64,7 +64,7 @@ Web APIのドキュメントといえば、[Swagger](http://swagger.io/)や[JSON
 APIサーバを実装する
 ----------------------------------------
 
-[Goに入門してRedis+PostgresなアプリをHerokuにデプロイするまで](http://leko.jp/archives/763) で作成した[Leko/godemo](https://github.com/Leko/godemo)リポジトリに書き足します
+[Goに入門してRedis+PostgresなアプリをHerokuにデプロイするまで](/post/introduction-of-golang/) で作成した[Leko/godemo](https://github.com/Leko/godemo)リポジトリに書き足します
 
 今回はGoの話ではないですし、先ほどの仕様の通りに作っただけなのでさっくり済ませます。
 

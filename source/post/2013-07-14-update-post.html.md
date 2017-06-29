@@ -15,7 +15,7 @@ tags:
 ---
 今回は、半年ほど前に書いた記事、
 
-[プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](http://leko.jp/archives/367)
+[プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](/post/write-post-with-markdown-without-plugin-beginner/)
 
 の実践編です。
   
@@ -31,7 +31,7 @@ tags:
 Markdownが書きやすいエディタ
 ----------------------------------------
 
-Markdownとは、Markdownの書き方については、[基礎編](http://leko.jp/archives/367)を御覧ください。
+Markdownとは、Markdownの書き方については、[基礎編](/post/write-post-with-markdown-without-plugin-beginner/)を御覧ください。
   
 ざっくり書くと、**HTMLより見やすく書きやすいマークアップ記法**です。
 
@@ -211,7 +211,7 @@ HTMLで記事を更新していれば、ほとんどの場合バグや不具合�
 
 最期まで読んで下さいまして、ありがとうございました。
 
-> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](http://leko.jp/archives/367)
+> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](/post/write-post-with-markdown-without-plugin-beginner/)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

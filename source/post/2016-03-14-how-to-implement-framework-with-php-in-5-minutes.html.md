@@ -221,7 +221,7 @@ phpdiを採用しました。
 
 ということで作りました
 
-> [PHPのテンプレートエンジンについて調べて共通インタフェースを作った](http://leko.jp/archives/840)
+> [PHPのテンプレートエンジンについて調べて共通インタフェースを作った](/post/write-interface-of-modern-template-engine-in-php/)
 
 ### 設定ファイルを扱う仕組み
 

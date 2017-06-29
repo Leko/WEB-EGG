@@ -73,7 +73,7 @@ Fluidを起動すると以下の様な画面になると思います
 
 [Image2icon](http://www.img2icnsapp.com/)というアプリを使用しました。
   
-過去に[.icnsをPNGで書き出す](http://leko.jp/archives/268)方法については書きましたが、逆はできないようだったのでアプリを利用します。
+過去に[.icnsをPNGで書き出す](/post/convert-icns-to-png/)方法については書きましたが、逆はできないようだったのでアプリを利用します。
 
 App storeからダウンロードして起動します。
 

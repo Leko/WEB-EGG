@@ -12,7 +12,7 @@ tags:
   - npm
 ---
 こんにちは。  
-[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)に引き続きnpmのデプロイも自動化してみました。
+[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)に引き続きnpmのデプロイも自動化してみました。
   
 gemのときとは微妙に差異があるので、改めて備忘録として残しておきます。
 
@@ -42,7 +42,7 @@ npm publish
 もう少しリッチなnpmのデプロイ方法
 ----------------------------------------
 
-[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)のときはgemが自動でやってくれのたですが、
+[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)のときはgemが自動でやってくれのたですが、
   
 npmではタグを切ったりCHANGELOG書いたりを自前で行う必要があります。
 
@@ -64,7 +64,7 @@ npmではタグを切ったりCHANGELOG書いたりを自前で行う必要が�
 
 CircleCIと連携したままのだと、read onlyなデプロイキーが使用されています。 なのでリポジトリからpullはできるのですが、タグの追加やpushができない。
 
-この手順については[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)に書いてあるので、そちらをご参照ください。
+この手順については[RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](/post/automate-deploy-to-rubygems-with-circleci/)に書いてあるので、そちらをご参照ください。
 
 試す
 ----------------------------------------

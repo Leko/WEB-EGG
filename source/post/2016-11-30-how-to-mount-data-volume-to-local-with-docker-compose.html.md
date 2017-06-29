@@ -120,7 +120,7 @@ Docker for Macの方が主にマウント・ファイルIO周りの速度が向�
   
 こちらの記事も併せてご参照ください。
 
-> [RedmineのDockerコンテナとMySQLで日本語を使えるようにするまで \| WEB EGG](http://leko.jp/archives/884)
+> [RedmineのDockerコンテナとMySQLで日本語を使えるようにするまで \| WEB EGG](/post/how-to-use-redmine-with-docker-in-japanese/)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -64,19 +64,19 @@ Facebookにブログの記事を告知してみたり、閲覧してくれた方
 
 | 記事タイトル                                                                                     |  PV   | Twitter | Facebook | はてブ | Pocket |
 | ------------------------------------------------------------------------------------------ |:-----:|:-------:|:--------:|:---:| ------ |
-| [Sublime Text2の作業効率を加速させるパッケージ11個](http://leko.jp/archives/453)                            | 13197 |   20    |    15    | 59  | 74     |
-| [Emmetを始めるのに、とりあえずこれだけ覚えておけば大丈夫](http://leko.jp/archives/442)                              | 7792  |   18    |    9     | 50  | 48     |
-| [Macの容量が埋まってしまったのでboxenとクリーンインストールをしてみた](http://leko.jp/archives/482)                      | 1235  |    6    |    7     | 11  | 15     |
-| [Alfred2のWorflowsを自作して作業を効率化する](http://leko.jp/archives/414)                               |  914  |    5    |    5     |  7  | 18     |
-| [jQueryMobileでは$(function(){});ではなくpageinitとpageshowを使い分けるべき](http://leko.jp/archives/291) | 4479  |    6    |    1     | 10  | 11     |
-| [「HTMLのタグは一部省略可能」表示速度はどちらが早いのか調べてみた](http://leko.jp/archives/321)                          |  860  |    6    |    17    |  3  |        |
-| [boxenのPuppetfileを一発更新するスクリプトを書いた](http://leko.jp/archives/475)                            |  292  |    5    |    2     | 12  | 5      |
-| [プラグインを使わずにMarkdownでWordPressのブログを更新する（実践編）](http://leko.jp/archives/467)                  |  681  |    4    |          |  5  | 6      |
-| [CoffeescriptとTypescriptから学ぶjsでのクラス・継承パターン](http://leko.jp/archives/407)                   |  925  |    3    |    5     |  3  | 3      |
+| [Sublime Text2の作業効率を加速させるパッケージ11個](/post/11-apps-improve-your-development-in-sublimetext2/)                            | 13197 |   20    |    15    | 59  | 74     |
+| [Emmetを始めるのに、とりあえずこれだけ覚えておけば大丈夫](/post/introduction-of-emmet/)                              | 7792  |   18    |    9     | 50  | 48     |
+| [Macの容量が埋まってしまったのでboxenとクリーンインストールをしてみた](/post/try-clean-install-with-boxen/)                      | 1235  |    6    |    7     | 11  | 15     |
+| [Alfred2のWorflowsを自作して作業を効率化する](/post/improve-your-work-with-alfred/)                               |  914  |    5    |    5     |  7  | 18     |
+| [jQueryMobileでは$(function(){});ではなくpageinitとpageshowを使い分けるべき](/post/how-to-treat-ready-event-in-jq-mobile/) | 4479  |    6    |    1     | 10  | 11     |
+| [「HTMLのタグは一部省略可能」表示速度はどちらが早いのか調べてみた](/post/omit-close-tag-in-html/)                          |  860  |    6    |    17    |  3  |        |
+| [boxenのPuppetfileを一発更新するスクリプトを書いた](/post/how-to-update-puppetfile-at-once/)                            |  292  |    5    |    2     | 12  | 5      |
+| [プラグインを使わずにMarkdownでWordPressのブログを更新する（実践編）](/post/update-post/)                  |  681  |    4    |          |  5  | 6      |
+| [CoffeescriptとTypescriptから学ぶjsでのクラス・継承パターン](/post/learn-inherit-pattern-from-coffeescript-and-typescript/)                   |  925  |    3    |    5     |  3  | 3      |
 
 > ※2014/01/03現在
 
-[Sublime Text2の記事](http://leko.jp/archives/453)と、[Emmetの記事](http://leko.jp/archives/442)は受け売りな情報ではなく、
+[Sublime Text2の記事](/post/11-apps-improve-your-development-in-sublimetext2/)と、[Emmetの記事](/post/introduction-of-emmet/)は受け売りな情報ではなく、
   
 自分で調査してまとめたことだったので、嬉しいです。
 

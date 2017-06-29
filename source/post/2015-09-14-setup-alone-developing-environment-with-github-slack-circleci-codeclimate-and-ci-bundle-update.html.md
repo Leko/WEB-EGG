@@ -20,7 +20,7 @@ tags:
   - Ruby
   - Slack
 ---
-先日公開した[日本語解析API(+α)を使用して日本語の文書校正を効率化してみる](http://leko.jp/archives/772)にて、
+先日公開した[日本語解析API(+α)を使用して日本語の文書校正を効率化してみる](/post/how-to-improve-proofreading-of-sentence-in-japanese/)にて、
 
   * [Slack](https://slack.com/)
   * [CircleCI](https://circleci.com/)
