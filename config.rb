@@ -81,6 +81,9 @@ end
 activate :syntax, :line_numbers => false
 activate :similar
 
+set :url_root, config[:meta][:siteurl]
+activate :search_engine_sitemap
+
 activate :external_pipeline, {
   name: :webpack,
   command: build? ?
