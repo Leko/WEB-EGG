@@ -22,7 +22,7 @@ categories:
   
 残り時間に応じて背景の色が代わり、数字を見なくてもだいたい分かるような作りになってます。
 
-<img src="http://leko.jp/images/2016/07/099d91afa53de3892408d332de58ecbb.png" alt="スクリーンショット 2016-07-06 12.53.55" width="1185" height="778" class="alignnone size-full wp-image-857" />
+<img src="/images/2016/07/099d91afa53de3892408d332de58ecbb.png" alt="スクリーンショット 2016-07-06 12.53.55" width="1185" height="778" class="alignnone size-full wp-image-857" />
 
 実際にiPadにはめ込んでみた時の図(公式ブログから拝借)
 

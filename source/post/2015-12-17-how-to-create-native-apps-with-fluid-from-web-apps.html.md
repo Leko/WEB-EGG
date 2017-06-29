@@ -49,7 +49,7 @@ Fluidは[こちら](http://fluidapp.com/)のページの[Free Download]からダ
 
 Fluidを起動すると以下の様な画面になると思います
 
-<img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-14-at-3.55.25-AM.png" alt="Screen Shot 2015 12 14 at 3 55 25 AM" title="Screen Shot 2015-12-14 at 3.55.25 AM.png" border="0" width="528" />
+<img src="/images/2015/12/Screen-Shot-2015-12-14-at-3.55.25-AM.png" alt="Screen Shot 2015 12 14 at 3 55 25 AM" title="Screen Shot 2015-12-14 at 3.55.25 AM.png" border="0" width="528" />
 
 | 項目        | 意味                                                   |
 | --------- | ---------------------------------------------------- |
@@ -62,14 +62,14 @@ Fluidを起動すると以下の様な画面になると思います
   
 失敗するとこのようなアイコンになり、何開いてんだか全くわかりません。
 
-<img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-14-at-3.58.36-AM.png" alt="Screen Shot 2015 12 14 at 3 58 36 AM" title="Screen Shot 2015-12-14 at 3.58.36 AM.png" border="0" width="598" />
+<img src="/images/2015/12/Screen-Shot-2015-12-14-at-3.58.36-AM.png" alt="Screen Shot 2015 12 14 at 3 58 36 AM" title="Screen Shot 2015-12-14 at 3.58.36 AM.png" border="0" width="598" />
 
 アイコンがないとパット見でわからずモチベも上がらないので、アイコンは作ります。
 
 アイコンを作る
 ----------------------------------------
 
-<img src="http://leko.jp/images/2015/12/2ccae8abad198c3d70a0c855fd6cc643.png" alt="Header icon 2x" title="header-icon@2x.png" border="0" width="270" />
+<img src="/images/2015/12/2ccae8abad198c3d70a0c855fd6cc643.png" alt="Header icon 2x" title="header-icon@2x.png" border="0" width="270" />
 
 [Image2icon](http://www.img2icnsapp.com/)というアプリを使用しました。
   
@@ -77,13 +77,13 @@ Fluidを起動すると以下の様な画面になると思います
 
 App storeからダウンロードして起動します。
 
-<img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-14-at-4.02.26-AM.png" alt="Screen Shot 2015 12 14 at 4 02 26 AM" title="Screen Shot 2015-12-14 at 4.02.26 AM.png" border="0" width="412" />
+<img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.02.26-AM.png" alt="Screen Shot 2015 12 14 at 4 02 26 AM" title="Screen Shot 2015-12-14 at 4.02.26 AM.png" border="0" width="412" />
 
 こんな画面になれば想定通りです。
   
 画像をドロップすると以下の様な画面になります。いろいろな形式・装飾でエクスポートできるので便利です。
 
-<img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-14-at-4.06.07-AM.png" alt="Screen Shot 2015 12 14 at 4 06 07 AM" title="Screen Shot 2015-12-14 at 4.06.07 AM.png" border="0" width="395" />
+<img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.06.07-AM.png" alt="Screen Shot 2015 12 14 at 4 06 07 AM" title="Screen Shot 2015-12-14 at 4.06.07 AM.png" border="0" width="395" />
 
 Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパスをFluidの`Icon`のところに指定します。
   
@@ -94,7 +94,7 @@ Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパ
 完成！
 ----------------------------------------
 
-<img src="http://leko.jp/images/2015/12/Screen-Shot-2015-12-14-at-4.14.58-AM.png" alt="Screen Shot 2015 12 14 at 4 14 58 AM" title="Screen Shot 2015-12-14 at 4.14.58 AM.png" border="0" width="142" />
+<img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.14.58-AM.png" alt="Screen Shot 2015 12 14 at 4 14 58 AM" title="Screen Shot 2015-12-14 at 4.14.58 AM.png" border="0" width="142" />
 
 いかがでしょうか。ブラウザのタブの1つではなく、単独のアプリとして起動しています。
   

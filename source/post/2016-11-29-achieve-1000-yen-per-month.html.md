@@ -36,7 +36,7 @@ tags:
 このブログの数値
 ----------------------------------------
 
-<img src="http://leko.jp/images/2016/11/IMG_0631.png" alt="IMG_0631" width="400" class="alignnone size-full wp-image-907" />
+<img src="/images/2016/11/IMG_0631.png" alt="IMG_0631" width="400" class="alignnone size-full wp-image-907" />
 
 スクショの通りなんですが、めぼしい数値について噛み砕いていこうと覆います。
 
@@ -99,7 +99,7 @@ CPCは十分高い（？）ので、クリック単価を上げることでは�
 
 どこみても行ってることバラバラなので、１つ選んだ上記記事さまによると、PVが月1万行くだけではまだまだ初心者、みたいな話があります。
 
-<img src="http://leko.jp/images/2016/11/IMG_0604.png" alt="IMG_0604" width="300" class="alignnone size-full wp-image-892" />
+<img src="/images/2016/11/IMG_0604.png" alt="IMG_0604" width="300" class="alignnone size-full wp-image-892" />
 
 Analyticsを覗いてみると、休日のPVが絶望的ですが、平日であれば平均PVは300を超えてます。
   

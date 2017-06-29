@@ -52,11 +52,11 @@ gsutil
 
 ファイル一覧の各ファイルの右端にメニューが有ります。
 
-<img src="http://leko.jp/images/2016/07/9899cad30c9613f429309d9242dc9746.png" alt="スクリーンショット 2016-07-06 10.49.00" width="1007" height="226" class="alignnone size-full wp-image-854" />
+<img src="/images/2016/07/9899cad30c9613f429309d9242dc9746.png" alt="スクリーンショット 2016-07-06 10.49.00" width="1007" height="226" class="alignnone size-full wp-image-854" />
 
 **Edit metadata** を選択すると、メタデータの詳細が表示/編集されます。
 
-<img src="http://leko.jp/images/2016/07/7aae685d0e8c76f43a6bc656c884f942.png" alt="スクリーンショット 2016-07-06 10.49.18" width="499" height="447" class="alignnone size-full wp-image-855" />
+<img src="/images/2016/07/7aae685d0e8c76f43a6bc656c884f942.png" alt="スクリーンショット 2016-07-06 10.49.18" width="499" height="447" class="alignnone size-full wp-image-855" />
 
 ### Google Cloud SDKで見る
 
@@ -123,7 +123,7 @@ $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 
 Edit metadataからキャッシュの情報を書き換えられます。
 
-<img src="http://leko.jp/images/2016/07/2dfe421c7eaddb77926bbd551fc9b938.png" alt="スクリーンショット 2016-07-06 11.05.07" width="496" height="447" class="alignnone size-full wp-image-856" />
+<img src="/images/2016/07/2dfe421c7eaddb77926bbd551fc9b938.png" alt="スクリーンショット 2016-07-06 11.05.07" width="496" height="447" class="alignnone size-full wp-image-856" />
 
 書き換えたらcurlでアクセス。
 

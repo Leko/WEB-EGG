@@ -35,7 +35,7 @@ Taskloudでできることはとてもシンプルで、 **タスク管理を始
 
 ### タスク = 雲
 
-<img src="http://leko.jp/images/2014/08/Photo-2014-08-10-2-10-02.png" alt="Photo 2014 08 10 2 10 02" title="Photo 2014-08-10 2 10 02.png" width="250" />
+<img src="/images/2014/08/Photo-2014-08-10-2-10-02.png" alt="Photo 2014 08 10 2 10 02" title="Photo 2014-08-10 2 10 02.png" width="250" />
 
 1個1個の雲が、すべきこと（タスク）にあたります。
 
@@ -45,7 +45,7 @@ Taskloudでできることはとてもシンプルで、 **タスク管理を始
   
 そのようにタスクが溜まってくると、だんだん天気が悪くなっていき、あなたの心模様を表現してくれます。
 
-<img src="http://leko.jp/images/2014/08/screen568x568.jpeg" alt="Screen568x568" title="screen568x568.jpeg" width="250" />
+<img src="/images/2014/08/screen568x568.jpeg" alt="Screen568x568" title="screen568x568.jpeg" width="250" />
 
 ### タスクを消化すると天気が良くなる
 
@@ -53,7 +53,7 @@ Taskloudでできることはとてもシンプルで、 **タスク管理を始
 
 そして、すべてのタスクを消化すると空には虹がかかります。
 
-<img src="http://leko.jp/images/2014/08/Photo-2014-07-22-22-43-39.png" alt="Photo 2014 07 22 22 43 39" title="Photo 2014-07-22 22 43 39.png" width="250" />
+<img src="/images/2014/08/Photo-2014-07-22-22-43-39.png" alt="Photo 2014 07 22 22 43 39" title="Photo 2014-07-22 22 43 39.png" width="250" />
 
 Taskloudで楽しいタスク管理始めてみませんか？
 

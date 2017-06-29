@@ -94,7 +94,7 @@ selenese-runnerで実行する
 
 selenese-runner単体をホスト側実行するとブラウザが起動し、HTMLの内容が実行されます。
 
-<img src="http://leko.jp/images/2016/12/selenese-runner.gif" alt="selenese-runner" width="696" height="417" class="alignnone size-full wp-image-911" />
+<img src="/images/2016/12/selenese-runner.gif" alt="selenese-runner" width="696" height="417" class="alignnone size-full wp-image-911" />
 
 どうでしょう。いい感じです。
 
@@ -108,7 +108,7 @@ cron等で定期実行したり、CIを回したりするには、GUIのないLi
 
 動作させると、
 
-<img src="http://leko.jp/images/2016/12/compose-selenese-runner.gif" alt="compose-selenese-runner" width="621" height="394" class="alignnone size-full wp-image-912" />
+<img src="/images/2016/12/compose-selenese-runner.gif" alt="compose-selenese-runner" width="621" height="394" class="alignnone size-full wp-image-912" />
 
 こんな感じです。いかがでしょうか。
   

@@ -34,7 +34,7 @@ tags:
 完成図
 ----------------------------------------
 
-<img src="http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png" alt="完成図" width="100%" class="alignnone size-medium wp-image-778" srcset="http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png 1400w, http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-150x54.png 150w, http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-300x107.png 300w, http://leko.jp/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-1024x366.png 1024w" sizes="(max-width: 1400px) 100vw, 1400px" />
+<img src="/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png" alt="完成図" width="100%" class="alignnone size-medium wp-image-778" srcset="/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png 1400w, /images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-150x54.png 150w, /images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-300x107.png 300w, /images/2015/09/d8885565b3dd45e3fbc0abc752d159d8-1024x366.png 1024w" sizes="(max-width: 1400px) 100vw, 1400px" />
 
 雑ですがアイキャッチ画像に書き足してみました。
   
@@ -70,7 +70,7 @@ Githubの通知をSlackに送る
   
 を開くと、各種サービスとの連携ができます。
 
-<img src="http://leko.jp/images/2015/09/a375213d384a7b683e3b9f4704cbe945.png" alt="スクリーンショット 2015-09-06 22.38.37" width="100%" class="alignnone size-full wp-image-779" srcset="http://leko.jp/images/2015/09/a375213d384a7b683e3b9f4704cbe945.png 1009w, http://leko.jp/images/2015/09/a375213d384a7b683e3b9f4704cbe945-150x69.png 150w, http://leko.jp/images/2015/09/a375213d384a7b683e3b9f4704cbe945-300x137.png 300w" sizes="(max-width: 1009px) 100vw, 1009px" />
+<img src="/images/2015/09/a375213d384a7b683e3b9f4704cbe945.png" alt="スクリーンショット 2015-09-06 22.38.37" width="100%" class="alignnone size-full wp-image-779" srcset="/images/2015/09/a375213d384a7b683e3b9f4704cbe945.png 1009w, /images/2015/09/a375213d384a7b683e3b9f4704cbe945-150x69.png 150w, /images/2015/09/a375213d384a7b683e3b9f4704cbe945-300x137.png 300w" sizes="(max-width: 1009px) 100vw, 1009px" />
 
 Githubの設定を行います。
   
@@ -104,11 +104,11 @@ git push origin feat/circle-ci
 
 連携が完了していると、pullリクエストを作成した時に以下のようになると思います。
 
-<img src="http://leko.jp/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5.png" alt="スクリーンショット 2015-09-06 22.53.13"  class="alignnone size-full wp-image-780" srcset="http://leko.jp/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5.png 778w, http://leko.jp/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5-150x55.png 150w, http://leko.jp/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5-300x110.png 300w" sizes="(max-width: 778px) 100vw, 778px" />
+<img src="/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5.png" alt="スクリーンショット 2015-09-06 22.53.13"  class="alignnone size-full wp-image-780" srcset="/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5.png 778w, /images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5-150x55.png 150w, /images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5-300x110.png 300w" sizes="(max-width: 778px) 100vw, 778px" />
 
 少し待って
 
-<img src="http://leko.jp/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e.png" alt="スクリーンショット 2015-09-06 22.53.33"  class="alignnone size-full wp-image-781" srcset="http://leko.jp/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e.png 776w, http://leko.jp/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e-150x42.png 150w, http://leko.jp/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e-300x84.png 300w" sizes="(max-width: 776px) 100vw, 776px" />
+<img src="/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e.png" alt="スクリーンショット 2015-09-06 22.53.33"  class="alignnone size-full wp-image-781" srcset="/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e.png 776w, /images/2015/09/6ba1a268d2bfba7053226520cc58cb5e-150x42.png 150w, /images/2015/09/6ba1a268d2bfba7053226520cc58cb5e-300x84.png 300w" sizes="(max-width: 776px) 100vw, 776px" />
 
 となればビルドに成功した、ということになります。
 
@@ -118,7 +118,7 @@ git push origin feat/circle-ci
 
 ついでにSlackとの連携も済ませておきます。
 
-<img src="http://leko.jp/images/2015/09/ee193825a3bffe1ef11bdae8117b3555.png" alt="スクリーンショット 2015-09-06 23.39.50" class="alignnone size-full wp-image-784" srcset="http://leko.jp/images/2015/09/ee193825a3bffe1ef11bdae8117b3555.png 989w, http://leko.jp/images/2015/09/ee193825a3bffe1ef11bdae8117b3555-150x33.png 150w, http://leko.jp/images/2015/09/ee193825a3bffe1ef11bdae8117b3555-300x65.png 300w" sizes="(max-width: 989px) 100vw, 989px" />
+<img src="/images/2015/09/ee193825a3bffe1ef11bdae8117b3555.png" alt="スクリーンショット 2015-09-06 23.39.50" class="alignnone size-full wp-image-784" srcset="/images/2015/09/ee193825a3bffe1ef11bdae8117b3555.png 989w, /images/2015/09/ee193825a3bffe1ef11bdae8117b3555-150x33.png 150w, /images/2015/09/ee193825a3bffe1ef11bdae8117b3555-300x65.png 300w" sizes="(max-width: 989px) 100vw, 989px" />
 
 ## masterにマージされたらCode climateのチェックを走らせる
 
@@ -132,7 +132,7 @@ Code climateにログインし、対象のリポジトリを有効にしてお�
   
 初回起動までが結構長いので、先にやっておくと良いです。
 
-<img src="http://leko.jp/images/2015/09/8487259c49da7defc179d4e0202d5e0a.png" alt="スクリーンショット 2015-09-06 23.02.36" class="alignnone size-full wp-image-782" srcset="http://leko.jp/images/2015/09/8487259c49da7defc179d4e0202d5e0a.png 998w, http://leko.jp/images/2015/09/8487259c49da7defc179d4e0202d5e0a-150x60.png 150w, http://leko.jp/images/2015/09/8487259c49da7defc179d4e0202d5e0a-300x120.png 300w" sizes="(max-width: 998px) 100vw, 998px" />
+<img src="/images/2015/09/8487259c49da7defc179d4e0202d5e0a.png" alt="スクリーンショット 2015-09-06 23.02.36" class="alignnone size-full wp-image-782" srcset="/images/2015/09/8487259c49da7defc179d4e0202d5e0a.png 998w, /images/2015/09/8487259c49da7defc179d4e0202d5e0a-150x60.png 150w, /images/2015/09/8487259c49da7defc179d4e0202d5e0a-300x120.png 300w" sizes="(max-width: 998px) 100vw, 998px" />
 
 初回の分析が終わるとこのような画面になります。
   
@@ -152,7 +152,7 @@ Code climateにログインし、対象のリポジトリを有効にしてお�
 
 settingsの中にある「Integrations」タブを開き、「GitHub Pull Requests」を選択します。
 
-<img src="http://leko.jp/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33.png" alt="スクリーンショット 2015-09-06 23.20.38"  class="alignnone size-full wp-image-783" srcset="http://leko.jp/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33.png 996w, http://leko.jp/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33-150x52.png 150w, http://leko.jp/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33-300x103.png 300w" sizes="(max-width: 996px) 100vw, 996px" />
+<img src="/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33.png" alt="スクリーンショット 2015-09-06 23.20.38"  class="alignnone size-full wp-image-783" srcset="/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33.png 996w, /images/2015/09/ae0b48fb75da31a8be3a203df45c2f33-150x52.png 150w, /images/2015/09/ae0b48fb75da31a8be3a203df45c2f33-300x103.png 300w" sizes="(max-width: 996px) 100vw, 996px" />
 
 コピーしておいたアクセストークンを貼り付けて貼り付けて設定完了。
   
@@ -168,7 +168,7 @@ settingsの中にある「Integrations」タブを開き、「GitHub Pull Reques
 
 ついでにCode climateもSlackと連携させます。
 
-<img src="http://leko.jp/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a.png" alt="スクリーンショット 2015-09-06 23.40.54" class="alignnone size-full wp-image-785" srcset="http://leko.jp/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a.png 977w, http://leko.jp/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a-150x33.png 150w, http://leko.jp/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a-300x66.png 300w" sizes="(max-width: 977px) 100vw, 977px" />
+<img src="/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a.png" alt="スクリーンショット 2015-09-06 23.40.54" class="alignnone size-full wp-image-785" srcset="/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a.png 977w, /images/2015/09/fb65dada8776ca82d73bf6ff177bd56a-150x33.png 150w, /images/2015/09/fb65dada8776ca82d73bf6ff177bd56a-300x66.png 300w" sizes="(max-width: 977px) 100vw, 977px" />
 
 ## Circle CIで走らせらせたテストのカバレッジをCode climateに送る
 
@@ -179,7 +179,7 @@ settingsの中にある「Integrations」タブを開き、「GitHub Pull Reques
 
 は判定可能になりました。ついでなのでテストのカバレッジも出力してみたいと思います。
 
-<img src="http://leko.jp/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae.png" alt="スクリーンショット 2015-09-06 23.43.18" class="alignnone size-full wp-image-786" srcset="http://leko.jp/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae.png 1018w, http://leko.jp/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae-150x60.png 150w, http://leko.jp/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae-300x121.png 300w" sizes="(max-width: 1018px) 100vw, 1018px" />
+<img src="/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae.png" alt="スクリーンショット 2015-09-06 23.43.18" class="alignnone size-full wp-image-786" srcset="/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae.png 1018w, /images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae-150x60.png 150w, /images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae-300x121.png 300w" sizes="(max-width: 1018px) 100vw, 1018px" />
 
 Code climateのsettingsを開き、「Test Coverage」を選択します。
   
@@ -189,11 +189,11 @@ Code climateのsettingsを開き、「Test Coverage」を選択します。
   
 Circle CIのプロジェクト設定の、「Environment variables」に設定します。
 
-<img src="http://leko.jp/images/2015/09/aa56c553c600d6ad9d8ba37416434eef.png" alt="スクリーンショット 2015-09-06 23.45.38" class="alignnone size-full wp-image-787" srcset="http://leko.jp/images/2015/09/aa56c553c600d6ad9d8ba37416434eef.png 854w, http://leko.jp/images/2015/09/aa56c553c600d6ad9d8ba37416434eef-150x61.png 150w, http://leko.jp/images/2015/09/aa56c553c600d6ad9d8ba37416434eef-300x123.png 300w" sizes="(max-width: 854px) 100vw, 854px" />
+<img src="/images/2015/09/aa56c553c600d6ad9d8ba37416434eef.png" alt="スクリーンショット 2015-09-06 23.45.38" class="alignnone size-full wp-image-787" srcset="/images/2015/09/aa56c553c600d6ad9d8ba37416434eef.png 854w, /images/2015/09/aa56c553c600d6ad9d8ba37416434eef-150x61.png 150w, /images/2015/09/aa56c553c600d6ad9d8ba37416434eef-300x123.png 300w" sizes="(max-width: 854px) 100vw, 854px" />
 
 Githubにプルリクエストを作ってマージし、Code climateにカバレッジが出れば成功です。
 
-<img src="http://leko.jp/images/2015/09/457b301edc06959d1515de8c92e9ba06.png" alt="スクリーンショット 2015-09-06 23.48.32" class="alignnone size-full wp-image-788" srcset="http://leko.jp/images/2015/09/457b301edc06959d1515de8c92e9ba06.png 274w, http://leko.jp/images/2015/09/457b301edc06959d1515de8c92e9ba06-100x150.png 100w, http://leko.jp/images/2015/09/457b301edc06959d1515de8c92e9ba06-199x300.png 199w" sizes="(max-width: 274px) 100vw, 274px" />
+<img src="/images/2015/09/457b301edc06959d1515de8c92e9ba06.png" alt="スクリーンショット 2015-09-06 23.48.32" class="alignnone size-full wp-image-788" srcset="/images/2015/09/457b301edc06959d1515de8c92e9ba06.png 274w, /images/2015/09/457b301edc06959d1515de8c92e9ba06-100x150.png 100w, /images/2015/09/457b301edc06959d1515de8c92e9ba06-199x300.png 199w" sizes="(max-width: 274px) 100vw, 274px" />
 
 さりげなく２重の丸に変わっているのがおしゃれでよいですね。
 
@@ -253,7 +253,7 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
 
 全部設定するとSlackがだいぶ賑わってきます。
 
-<img src="http://leko.jp/images/2015/09/87fe328607615af11722bfe947725838.png" alt="スクリーンショット 2015-09-06 23.51.04" class="alignnone size-full wp-image-789" srcset="http://leko.jp/images/2015/09/87fe328607615af11722bfe947725838.png 683w, http://leko.jp/images/2015/09/87fe328607615af11722bfe947725838-150x127.png 150w, http://leko.jp/images/2015/09/87fe328607615af11722bfe947725838-300x255.png 300w" sizes="(max-width: 683px) 100vw, 683px" />
+<img src="/images/2015/09/87fe328607615af11722bfe947725838.png" alt="スクリーンショット 2015-09-06 23.51.04" class="alignnone size-full wp-image-789" srcset="/images/2015/09/87fe328607615af11722bfe947725838.png 683w, /images/2015/09/87fe328607615af11722bfe947725838-150x127.png 150w, /images/2015/09/87fe328607615af11722bfe947725838-300x255.png 300w" sizes="(max-width: 683px) 100vw, 683px" />
 
 **一人じゃんけん感はんぱねぇ・・・！**
 
@@ -265,7 +265,7 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
   
 ぼっち開発環境第一弾、ひとまず完成です。
 
-<img src="http://leko.jp/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png" alt="スクリーンショット 2015-09-06 23.54.55" class="alignnone size-full wp-image-790" srcset="http://leko.jp/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png 575w, http://leko.jp/images/2015/09/9c7139b6049070cfdfb72271aed71dea-150x33.png 150w, http://leko.jp/images/2015/09/9c7139b6049070cfdfb72271aed71dea-300x66.png 300w" sizes="(max-width: 575px) 100vw, 575px" />
+<img src="/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png" alt="スクリーンショット 2015-09-06 23.54.55" class="alignnone size-full wp-image-790" srcset="/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png 575w, /images/2015/09/9c7139b6049070cfdfb72271aed71dea-150x33.png 150w, /images/2015/09/9c7139b6049070cfdfb72271aed71dea-300x66.png 300w" sizes="(max-width: 575px) 100vw, 575px" />
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

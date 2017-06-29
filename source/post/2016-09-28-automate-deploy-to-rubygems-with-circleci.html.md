@@ -69,7 +69,7 @@ CircleCIと連携したままのだと、read onlyなデプロイキーが使用
   
 こんな感じの画面になればOKだと思います。
 
-<img src="http://leko.jp/images/2016/09/5aad2dde2722e323044dce1b2cd9bc04.png" alt="スクリーンショット 2016-09-25 4.21.40" width="1182" height="348" class="alignnone size-full wp-image-873" />
+<img src="/images/2016/09/5aad2dde2722e323044dce1b2cd9bc04.png" alt="スクリーンショット 2016-09-25 4.21.40" width="1182" height="348" class="alignnone size-full wp-image-873" />
 
 circle.ymlにデプロイ処理を追加する
 ----------------------------------------
@@ -97,11 +97,11 @@ deployment:
 
 CircleCI上の表示は
 
-<img src="http://leko.jp/images/2016/09/e1084e909de8fec85c82e780658b59f3.png" alt="スクリーンショット 2016-09-25 4.25.59" width="1175" height="303" class="alignnone size-full wp-image-875" />
+<img src="/images/2016/09/e1084e909de8fec85c82e780658b59f3.png" alt="スクリーンショット 2016-09-25 4.25.59" width="1175" height="303" class="alignnone size-full wp-image-875" />
 
 デプロイした後のrubygems.orgは
 
-<img src="http://leko.jp/images/2016/09/4c1c1aa1469d47ee9ae877356b7b87da.png" alt="スクリーンショット 2016-09-25 4.26.54" width="814" height="342" class="alignnone size-full wp-image-874" />
+<img src="/images/2016/09/4c1c1aa1469d47ee9ae877356b7b87da.png" alt="スクリーンショット 2016-09-25 4.26.54" width="814" height="342" class="alignnone size-full wp-image-874" />
 
 はい、OKそうです。
 

@@ -166,7 +166,7 @@ Karmaの設定ファイルは[こちら](https://github.com/Leko/karma-ievm-seed
 karma start
 ```
 
-![Karma result without IE](http://leko.jp/images/2015/05/5ac7135e55fda451dcc7ad8d69ae344d.png)
+![Karma result without IE](/images/2015/05/5ac7135e55fda451dcc7ad8d69ae344d.png)
 
 設定ファイルの`browsers`に指定されたブラウザが立ち上がりテストが実行されたと思います。
   
@@ -212,7 +212,7 @@ find ~/.ievms -type f ! -name "*.vmdk" -exec rm {} \;
 
 インストールが終わり、Virtualboxで下記のように表示されていればOKです。
 
-![After Installed IE VMS](http://leko.jp/images/2015/05/e9e5157275790571849ed8e701768f1c.png)
+![After Installed IE VMS](/images/2015/05/e9e5157275790571849ed8e701768f1c.png)
 
 IE用にKarmaの設定を変更
 ----------------------------------------

@@ -26,7 +26,7 @@ tags:
 
 まずは、何経由で当ブログへお越しいただいているのかの統計です。
 
-<img src="http://leko.jp/images/2014/01/oimg.png" alt="oimg" class="alignnone wp-image-709" srcset="http://leko.jp/images/2014/01/oimg.png 600w, http://leko.jp/images/2014/01/oimg-150x92.png 150w, http://leko.jp/images/2014/01/oimg-300x185.png 300w" sizes="(max-width: 600px) 100vw, 600px" />
+<img src="/images/2014/01/oimg.png" alt="oimg" class="alignnone wp-image-709" srcset="/images/2014/01/oimg.png 600w, /images/2014/01/oimg-150x92.png 150w, /images/2014/01/oimg-300x185.png 300w" sizes="(max-width: 600px) 100vw, 600px" />
 
 検索からの圧倒的に多く、ソーシャルメディアからの訪問はごくわずかとなっております。
 
@@ -43,7 +43,7 @@ tags:
   
 どのサービスからの訪問が多いのかのデータを集計しました。
 
-<img src="http://leko.jp/images/2014/01/oimg-1.png" alt="oimg-1" class="alignnone size-medium wp-image-708" srcset="http://leko.jp/images/2014/01/oimg-1.png 600w, http://leko.jp/images/2014/01/oimg-1-150x92.png 150w, http://leko.jp/images/2014/01/oimg-1-300x185.png 300w" sizes="(max-width: 600px) 100vw, 600px" />
+<img src="/images/2014/01/oimg-1.png" alt="oimg-1" class="alignnone size-medium wp-image-708" srcset="/images/2014/01/oimg-1.png 600w, /images/2014/01/oimg-1-150x92.png 150w, /images/2014/01/oimg-1-300x185.png 300w" sizes="(max-width: 600px) 100vw, 600px" />
 
 やはりボタンを設置しているTwitter, Facebook, はてブからの訪問が多いようです。
 

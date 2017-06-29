@@ -120,7 +120,7 @@ alert('チャットワークです');
 
 メニューから拡張機能のページを開き、
 
-<img src="http://leko.jp/images/2014/07/step01.png" alt="Step01" title="step01.png" border="0" width="600" height="245" />
+<img src="/images/2014/07/step01.png" alt="Step01" title="step01.png" border="0" width="600" height="245" />
 
 「パッケージ化されていない拡張機能を読み込む…」ボタンをクリックします。
   
@@ -128,7 +128,7 @@ alert('チャットワークです');
 
 フォルダを選択すると、下記の画面のように拡張機能の一覧に現れます。
 
-<img src="http://leko.jp/images/2014/07/step02.png" alt="Step02" title="step02.png" border="0" width="600" height="246" />
+<img src="/images/2014/07/step02.png" alt="Step02" title="step02.png" border="0" width="600" height="246" />
 
 なお、一度取り込みを行ってしまえば、
   
@@ -207,7 +207,7 @@ cheet('U U D D L R L R b a', function() {
   
 「↑ ↑ ↓ ↓ ← → ← → B A」と入力してみると、以下のようになります。
 
-<img src="http://leko.jp/images/2014/07/step03.png" alt="Step03" title="step03.png" border="0" width="457" height="186" />
+<img src="/images/2014/07/step03.png" alt="Step03" title="step03.png" border="0" width="457" height="186" />
 
 cheet.js側が反応するようになったのでOKです。次へ進みます。
 
@@ -369,7 +369,7 @@ $(function() {
 });
 ```
 
-<img src="http://leko.jp/images/2014/07/Screen-Shot-2014-07-20-at-5.30.13-PM.png" alt="Screen Shot 2014 07 20 at 5 30 13 PM" title="Screen Shot 2014-07-20 at 5.30.13 PM.png" border="0" width="600" height="92" />
+<img src="/images/2014/07/Screen-Shot-2014-07-20-at-5.30.13-PM.png" alt="Screen Shot 2014 07 20 at 5 30 13 PM" title="Screen Shot 2014-07-20 at 5.30.13 PM.png" border="0" width="600" height="92" />
 
 OKです。
 
@@ -454,7 +454,7 @@ main.jsの内容は以下の通りになります。
 
 コナミコマンドを入力してみます。
 
-<img src="http://leko.jp/images/2014/07/Screen-Shot-2014-07-20-at-5.46.36-PM1.png" alt="Screen Shot 2014 07 20 at 5 46 36 PM" title="Screen Shot 2014-07-20 at 5.46.36 PM.png" border="0" width="600" height="329" />
+<img src="/images/2014/07/Screen-Shot-2014-07-20-at-5.46.36-PM1.png" alt="Screen Shot 2014 07 20 at 5 46 36 PM" title="Screen Shot 2014-07-20 at 5.46.36 PM.png" border="0" width="600" height="329" />
 
 OKです。
 

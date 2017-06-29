@@ -47,7 +47,7 @@ AWSのページを見つけました
   
 ここで、実際の画面を見てみましょう
 
-<img src="http://leko.jp/images/2017/04/693663e8211dbcfade29c5af49de6d5e.png" alt="" width="1007" height="410" class="alignnone size-full wp-image-953" />
+<img src="/images/2017/04/693663e8211dbcfade29c5af49de6d5e.png" alt="" width="1007" height="410" class="alignnone size-full wp-image-953" />
 
 お分かりいただけたであろうか。
   
