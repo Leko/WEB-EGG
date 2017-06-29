@@ -112,7 +112,6 @@ file_exists($file); // true, ！？
 </p>
 
 ```
-
 $ php -i | grep realpath_cache_
 realpath_cache_size => 16K => 16K
 realpath_cache_ttl => 120 => 120
