@@ -72,8 +72,9 @@ Sample::hogehoge(1,2,3,4,5);
   これを利用して、<code>find_all_by_*</code>を実装してみたいと思います。
 </p>
 
-<code>fund_all_by_*</code>とは？
-----------------------------------------
+<h2>
+  find_all_by_* とは？
+</h2>
 
 <p>
   先ほどから出ているfind_all_byメソッドとは何でしょうか。<br />
