@@ -34,16 +34,14 @@ $a = false or false;
 
 <!--more-->
 
-<h2>
-  答え
-</h2>
+答え
+----------------------------------------
 
 <p>
   答えは以下の通りです。
 </p>
 
-```
-
+```php
 $a = false and false => false
 $a = true and false  => true
 $a = true and true   => true
@@ -83,7 +81,6 @@ $a = false or false  => false
 </p>
 
 ```php
-
 ($a = true) and false;  // 後ろのfalseは評価されるだけで$aに影響しない
 ($a = false) or true;   // 後ろのtrueは評価されるだけで$aに影響しない
 ```
@@ -99,9 +96,8 @@ $a = false or false  => false
 
 <!--more-->
 
-<h2>
-  面白い書き方
-</h2>
+面白い書き方
+----------------------------------------
 
 <p>
   and, orは論理演算子なので基本的にif文やwhile等の評価式の中に使用します。<br />
@@ -109,7 +105,6 @@ $a = false or false  => false
 </p>
 
 ```php
-
 <?php
 
 function p($str) { echo $str; }
@@ -127,7 +122,6 @@ false or p("false orn");
 </p>
 
 ```
-
 true and
 false or
 ```
@@ -165,9 +159,8 @@ false or
   
 </blockquote>
 
-<h2>
-  実用例
-</h2>
+実用例
+----------------------------------------
 
 <p>
   （実用的かどうか微妙な例ですが、）実際にある場面を例にあげます。
@@ -179,7 +172,6 @@ false or
 </p>
 
 ```php
-
 function hoge($fn = null) {
     if(is_null($fn)) $fn = function() {};
 
@@ -193,7 +185,6 @@ function hoge($fn = null) {
 </p>
 
 ```php
-
 function foo($fn = null) {
     is_null($fn) and $fn = function() {};
 
@@ -206,7 +197,6 @@ function foo($fn = null) {
 </p>
 
 ```
-
 var_dump(hoge());   // class Closure#1 (0) {}
 
 var_dump(foo());    // class Closure#1 (0) {}
@@ -222,7 +212,6 @@ var_dump(foo());    // class Closure#1 (0) {}
 </p>
 
 ```php
-
 function foo($fn = false) {
     $fn or $fn = function() {};
 
@@ -240,9 +229,8 @@ function foo($fn = false) {
   というご紹介でした。
 </p>
 
-<h2>
-  あとがき
-</h2>
+あとがき
+----------------------------------------
 
 <p>
   ちなみに<code>&&</code>と<code>||</code>でも同じことができます。<br />
