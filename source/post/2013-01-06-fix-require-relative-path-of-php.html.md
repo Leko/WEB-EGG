@@ -10,15 +10,11 @@ categories:
 tags:
   - PHP
 ---
-<q>photo by <a href="http://www.flickr.com/photos/masahiko/" target="_blank">masahiko</a></q><section id="intro"> 
+<q>photo by <a href="http://www.flickr.com/photos/masahiko/" target="_blank">masahiko</a></q>
 
 こんにちは。 phpでクラスベースの開発をしているときに、 require_onceで相対パスを使って読み込むときにハマったのでメモ。
 
-</section> 
-
 <!--more-->
-
-<section id="sample"> 
 
 エラーが起こるケース
 ----------------------------------------
@@ -39,12 +35,12 @@ C.phpをrequireしたB.phpを、A.phpがrequireするときに、B.phpで
 ```php
 <?php
 
- require_once("C.php");
+require_once("C.php");
 ```
 
  
 
-と書くとB.phpのrequire_onceは失敗します。 B.phpとC.phpは同じ階層にあるから読み込まれるはずなのに。</section> <section id="practive"> 
+と書くとB.phpのrequire_onceは失敗します。 B.phpとC.phpは同じ階層にあるから読み込まれるはずなのに。 id="practive"> 
 
 phpの規則
 ----------------------------------------
@@ -53,7 +49,7 @@ phpの規則
 
 <q>PHPでは、「実行したファイルのあるディレクトリが常に実行時のカレントディレクトリになる」っていう規則があるためエラーとなってしまうのです。 この問題は、実行ファイルのディレクトリではなく、参照しているファイルのディレクトリを基にパスを取得することで回避することができます。</q> <figcaption> <cite><a href="http://www.hoge256.net/2007/08/61.html" target="_blank">PHP の include, require で相対パスを指定して読み込む場合のメモ – hoge256ブログ</a></cite> </figcaption> </figure> 
 
-とあるように、A.phpを実行しているので、 B.phpのrequire_once("C.php")はA.phpと同階層のC.phpを探してエラーになるようです。 これを回避するには、**dirname(\_\_FILE\_\_)**を使います。</section> <section id="solved"> 
+とあるように、A.phpを実行しているので、 B.phpのrequire_once("C.php")はA.phpと同階層のC.phpを探してエラーになるようです。 これを回避するには、**dirname(\_\_FILE\_\_)**を使います。section id="solved"> 
 
 dirname(\_\_FILE\_\_)
 ----------------------------------------
@@ -63,12 +59,13 @@ dirname(\_\_FILE\_\_)は、自分自身へのパスを返します。 B.phpで�
 ```php
 <?php
 
- require\_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む require\_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む
+require_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む 
+require_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む
 ```
 
  
 
-と書くことで、実行されるファイルやカレントディレクトリを気にすること無く 相対パスでrequireをすることが出来ます。 </section> 
+と書くことで、実行されるファイルやカレントディレクトリを気にすること無く 相対パスでrequireをすることが出来ます。 
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>
