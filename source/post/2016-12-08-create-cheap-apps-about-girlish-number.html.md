@@ -74,65 +74,71 @@ URLはこちらです。 なお、 **PC版Chromeでしか動作確認してま�
 
 > — [GitHub – troybetz/react-youtube: react.js powered YouTube player component](https://github.com/troybetz/react-youtube)
 
-```javascript
+```jsx
 import React, { Component } from 'react'
 import Youtube from 'react-youtube'
 
 export default class TextToSpeech extends Component {
-handleReady (playerVars, e) {
-this.player(playerVars, e.target)
-}
+  handleReady (playerVars, e) {
+    this.player(playerVars, e.target)
+  }
+  
+  player (playerVars, player) {
+    const start = playerVars.start || 0
 
-player (playerVars, player) {
-const start = playerVars.start || 0
+    player.seekTo(start)
+    player.playVideo()
+  }
 
-player.seekTo(start)
-player.playVideo()
-}
+  stopper (playerVars, e) {
+    if (e.data !== 1) return
+    
+    setTimeout(() => {
+      e.target.pauseVideo()
+    }, (playerVars.end - playerVars.start) * 1000)
+  }
 
-stopper (playerVars, e) {
-if (e.data !== 1) return
-
-setTimeout(() =&gt; {
-e.target.pauseVideo()
-}, (playerVars.end - playerVars.start) * 1000)
-}
-
-getPlayerOptions () {
-const base = {
-autoplay: 0,
-controls: 0,
-disablekb: 1,
-fs: 0,
-rel: 0,
-showinfo: 0,
-loop: 0,
-modestbranding: 1,
-origin: location.origin
-}
-
-if (this.props.text === null) {
-return base
-}
-
-switch (this.props.text) {
-case '勝ったな、ガハハ':
-return Object.assign(base, { start: 2.3, end: 4 })
-case 'かっぱな、アハハハハ':
-return Object.assign(base, { start: 7.7, end: 9.6 })
-default:
-return Object.assign(base, { start: 17.3, end: 20.8 })
-}
-}
-
-render () {
-const playerVars = this.getPlayerOptions()
-
-return (
-&lt;youtube ref="player" videoid="{'G9zyLfez5sM'}" opts="{{" playervars:="" _.omit(playervars,="" 'start',="" 'end')="" }}="" onready="{this.handleReady.bind(this," playervars)}="" onstatechange="{this.stopper.bind(this," onerror="{(e)" ==""> console.error(e)}
-/&gt;
-)
-}
+  getPlayerOptions () {
+    const base = {
+      autoplay: 0,
+      controls: 0,
+      disablekb: 1,
+      fs: 0,
+      rel: 0,
+      showinfo: 0,
+      loop: 0,
+      modestbranding: 1,
+      origin: location.origin
+    }
+    
+    if (this.props.text === null) {
+      return base
+    }
+    
+    switch (this.props.text) {
+      case '勝ったな、ガハハ':
+        return Object.assign(base, { start: 2.3, end: 4 })
+      case 'かっぱな、アハハハハ':
+        return Object.assign(base, { start: 7.7, end: 9.6 })
+      default:
+        return Object.assign(base, { start: 17.3, end: 20.8 })
+    }
+  }
+  
+  render () {
+    const playerVars = this.getPlayerOptions()
+  
+    return (
+      <Youtube
+        ref='player'
+        videoId={'G9zyLfez5sM'}
+        opts={{ playerVars: _.omit(playerVars, 'start', 'end') }}
+        onReady={this.handleReady.bind(this, playerVars)}
+        onStateChange={this.stopper.bind(this, playerVars)}
+        onError={(e) => console.error(e)}
+      />
+    )
+  }
 }
 ```
 
