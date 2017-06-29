@@ -172,10 +172,10 @@ export default function DirtyCheckable (cls) {
 
 ```javascript
 set (instance, prop, value) {
-    instance.dirties[prop] = instance.dirties[prop] || new DirtyChecker()
-    instance.dirties[prop].set(value)
-    instance[prop] = value
-  }
+  instance.dirties[prop] = instance.dirties[prop] || new DirtyChecker()
+  instance.dirties[prop].set(value)
+  instance[prop] = value
+}
 ```
 
 これで変更検知の仕組みは完成したので、後はユーティリティを実装します。
