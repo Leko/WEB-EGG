@@ -10,8 +10,7 @@ tags:
   - AWS
   - AWS Athena
 ---
-こんにちは
-  
+こんにちは。  
 はじめてAWS Athenaを使用してみました
 
 試しにS3に置いてあるCSVをもとにテーブルを作ろうとしたら`Access Denied`のエラーが発生
