@@ -41,7 +41,7 @@ tags:
 記事をMarkdown管理する際に求めたものは、
 
   1. プラグインを使ってもいいのでローカル上では管理画面上ではMarkdown形式で書ける
-  2. [Fenced Code Blocks](https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks)(` ```言語名 `)でシンタックスハイライトがかけられる
+  2. [Fenced Code Blocks](https://help.github.com/articles/github-flavored-markdown#fenced-code-blocks)(```` ```{言語名} ````)でシンタックスハイライトがかけられる
   3. パースによるパフォーマンス低下が起きた時のためにHTMLにも変換可能
 
 の3点です。
