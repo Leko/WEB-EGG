@@ -119,8 +119,8 @@ link
 headタグ内に必ず入れると思います。  
 これを展開すると、
 
-```
-&lt;link rel="stylesheet" href=""&gt;
+```html
+<link rel="stylesheet" href="">
 ```
 
 と、`rel="stylesheet"`、`href=""`を付加した状態にしてくれます。
@@ -130,22 +130,22 @@ headタグ内に必ず入れると思います。
 よくあるメニューは、こんな感じになると思います。
 
 ```
-nav&gt;ul#menu&gt;li*5&gt;a[href=#]
+nav>ul#menu>li*5>a[href=#]
 ```
 
 `nav`の中に`idがmenu`の`ul`を入れて…という具合です。  
 これを展開するとこんな感じになります。
 
-```
-&lt;nav&gt;
-    &lt;ul id="menu"&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;
+```html
+<nav>
+    <ul id="menu">
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</nav>
 ```
 
 liに`*5`とついていますが、タグ名の後ろに`*数字`を入れることで、  
@@ -165,13 +165,13 @@ liに`*5`とついていますが、タグ名の後ろに`*数字`を入れる�
 タグ名を省略すると、デフォルトでは`div`になります。  
 ulの中でタグ名を省略すると`li`になったり、だいたいいい感じになります。
 
-```
-&lt;div class="thumb"&gt;サンプル1&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル2&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル3&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル4&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル5&lt;/div&gt;
-&lt;div class="thumb"&gt;サンプル6&lt;/div&gt;
+```html
+<div class="thumb">サンプル1</div>
+<div class="thumb">サンプル2</div>
+<div class="thumb">サンプル3</div>
+<div class="thumb">サンプル4</div>
+<div class="thumb">サンプル5</div>
+<div class="thumb">サンプル6</div>
 ```
 
 連番って、行コピペする際に、  
@@ -192,17 +192,17 @@ ulの中でタグ名を省略すると`li`になったり、だいたいいい�
 なんと1文字です。びっくり。  
 これを展開するとHTML5のひな形が出来ます。
 
-```
-&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+```html
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
 
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 ```
 
 **文字コード指定のmetaタグまで入れてくれます！！！**
@@ -222,17 +222,17 @@ html:4t
 IEが居る限り4.01と戦わざるを得ません。**何とか覚えましょう**。  
 展開すると以下のようになります。
 
-```
-&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta http-equiv="Content-Type" content="text/html;charset=UTF-8"&gt;
-    &lt;title&gt;Document&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Document</title>
+</head>
+<body>
 
-&lt;/body&gt;
-&lt;/html&gt;
+</body>
+</html>
 ```
 
 XHTML transitionalにしたい場合は、`html:xt`です。
@@ -245,9 +245,9 @@ Emmetの記事はHTMLについて書かれている場合が結構多いので�
 
 EmmetでCSSを書く時に意識すべきことは、
 
-  * 複数行まとめて展開は出来ない
-  * 基本的に`-`で繋がるプロパティ名は、**頭文字**を打てばOK
-  * 先頭に`-`を打つと、**ベンダープレフィックス**を適切に入れてくれる
+* 複数行まとめて展開は出来ない
+* 基本的に`-`で繋がるプロパティ名は、**頭文字**を打てばOK
+* 先頭に`-`を打つと、**ベンダープレフィックス**を適切に入れてくれる
 
 です。
 
@@ -264,7 +264,7 @@ tac
 
 唐突すぎてわけがわかりませんね。展開してみます。
 
-```
+```css
 text-align: center;
 ```
 
@@ -274,15 +274,15 @@ text-align: center;
 他にも例を出していきます。
 
 ```
-db =&gt; display: block;
-m:a =&gt; margin: auto;
-tdn =&gt; text-decoration: none;
-posl =&gt; position: relative;
-poa =&gt; position: absolute;
-pf =&gt; position: fixed;
-w100 =&gt; width: 100px;
-fsz12 =&gt; font-size: 12px;
-fsz12pt =&gt; font-size: 12pt;
+db => display: block;
+m:a => margin: auto;
+tdn => text-decoration: none;
+posl => position: relative;
+poa => position: absolute;
+pf => position: fixed;
+w100 => width: 100px;
+fsz12 => font-size: 12px;
+fsz12pt => font-size: 12pt;
 ```
 
 このように、被るプロパティ名が多い頭文字は  
@@ -300,9 +300,9 @@ fsz12pt =&gt; font-size: 12pt;
 backgroundなどを一括指定する場合に使うことが多いかと思います。
 
 ```
-bg+ =&gt; background: #fff url() 0 0 no-repeat;
-f+ =&gt; font: 1em Arial,sans-serif;
-bd+ =&gt; border: 1px solid #000;
+bg+ => background: #fff url() 0 0 no-repeat;
+f+ => font: 1em Arial,sans-serif;
+bd+ => border: 1px solid #000;
 ```
 
 ### ベンダープレフィックス
@@ -317,7 +317,7 @@ Sublime Text2のように、複数カーソルに対応したエディタなら�
 
 #### box-sizing
 
-```
+```css
 -bx
 
 -webkit-box-sizing: border-box;
@@ -333,7 +333,7 @@ box-sizing: content-box;
 
 #### box-shadow
 
-```
+```css
 -bxs
 
 -webkit-box-shadow: inset hoff voff blur color;
@@ -343,7 +343,7 @@ box-shadow: inset hoff voff blur color;
 
 #### transition
 
-```
+```css
 -trans
 
 -webkit-transition: prop time;
@@ -355,7 +355,7 @@ transition: prop time;
 
 #### border-radius
 
-```
+```css
 -dbrs
 
 -webkit-border-radius: ;
