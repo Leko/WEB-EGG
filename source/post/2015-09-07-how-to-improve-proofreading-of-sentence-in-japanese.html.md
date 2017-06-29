@@ -29,7 +29,7 @@ Githubに公開しています。
   
 ざっくり作ったものなのでPRや機能追加などお待ちしております。
 
-[Leko/jp-validate](https://github.com/Leko/jp-validate){.broken_link}
+[Leko/jp-validate](https://github.com/Leko/jp-validate)
 
 Yahooのアプリケーションを作成
 ----------------------------------------

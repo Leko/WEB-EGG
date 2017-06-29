@@ -29,7 +29,7 @@ Alfredには、色々な便利機能があるのですが、
 
 <!---->
 
-> [[太]MacのランチャーアプリAlfred ver2の新機能「workflows」が結構凄そう。 | Fujitaiju Blog](http://fujitaiju.com/blog/apple/mac/mac-launch-app-alfred-ver-2/){.broken_link}
+> [[太]MacのランチャーアプリAlfred ver2の新機能「workflows」が結構凄そう。 | Fujitaiju Blog](http://fujitaiju.com/blog/apple/mac/mac-launch-app-alfred-ver-2/)
 
 ここからが本題です。
   

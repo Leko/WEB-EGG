@@ -147,7 +147,7 @@ const el = document.querySelector('file[name="ファイルパス"]>metrics')
 console.log(el.coveredstatements / el.statements)
 ```
 
-ファイル名（[basepath](php.net/manual/ja/function.basename.php){.broken_link}相当）ではなく、フルパスな点に注意です。
+ファイル名（[basepath](php.net/manual/ja/function.basename.php)相当）ではなく、フルパスな点に注意です。
   
 テストを実行（カバレッジ集計）した環境によって変わるのでご注意下さい。
 

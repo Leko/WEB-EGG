@@ -28,7 +28,7 @@ categories:
   
 仕事の選択と生き方の選択について考えていく場です
   
-<http://www.facebook.com/events/503465703010466/>{.broken_link}
+<http://www.facebook.com/events/503465703010466/>
 
 これに参加して、将来や働くことについて
   

@@ -37,7 +37,7 @@ cross-origin data.`
 
 上記の記事に解説がありますが、外部ドメインのデータによってcanvasが汚染されている、というエラーでした。
 
-> [S3上の画像をCORSを利用してCanvasで使う](http://tech-sketch.jp/2013/05/s3corscanvas.html){.broken_link}
+> [S3上の画像をCORSを利用してCanvasで使う](http://tech-sketch.jp/2013/05/s3corscanvas.html)
 
 上記の記事のように、画像サーバでCORSをわざわざ有効にしてくれるパターンはごく稀で、大体の場合この制限に引っかります。
 

@@ -51,7 +51,7 @@ File APIとは、HTML5で提供されているAPIです。
   
 **リネームツールは諦めて**、単にファイルの情報を読取ることを目的としました。
 
-> [File API （日本語訳）](http://www.hcn.zaq.ne.jp/___/WEB/File_API-ja.html){.broken_link}
+> [File API （日本語訳）](http://www.hcn.zaq.ne.jp/___/WEB/File_API-ja.html)
   
 > [File API (Windows)](http://msdn.microsoft.com/ja-jp/library/ie/hh673542(v=vs.85).aspx)
 

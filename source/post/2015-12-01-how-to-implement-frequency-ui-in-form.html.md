@@ -54,7 +54,7 @@ tags:
 
 ![pwd-demo](https://i.stack.imgur.com/GQ5Yh.png) IE10から取り入れられた「パスワードを表示/非表示する」ボタンです。
   
-詳しくは[こちら(公式, 英語)](http://answers.microsoft.com/en-us/ie/wiki/ie11-iewindows8_1/the-use-of-the-password-reveal-eye-button-in-ie10/19a9dee2-fb0c-4c26-a6bc-ac02cf98d80e){.broken_link}のブログで紹介されています。
+詳しくは[こちら(公式, 英語)](http://answers.microsoft.com/en-us/ie/wiki/ie11-iewindows8_1/the-use-of-the-password-reveal-eye-button-in-ie10/19a9dee2-fb0c-4c26-a6bc-ac02cf98d80e)のブログで紹介されています。
 
 スマフォweb版Facebookのログイン画面にも「パスワードを表示する」機能があったりします。
 

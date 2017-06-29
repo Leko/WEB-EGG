@@ -216,7 +216,7 @@ Herokuにデプロイする（準備）
   
 マニュアルを読んでみてもignoreの話が出てこないので、試してみたところ`_workspace`はignoreしたらデプロイできませんでした。コミット必須なようです。
 
-HerokuでRedisを使用するには[Redis Cloud](https://addons.heroku.com/rediscloud?utm_campaign=search&utm_medium=dashboard&utm_source=addons){.broken_link}というアドオンが良さそうでした。ということで採用。インストールのコマンドは次の章にまとめて掲載しています。
+HerokuでRedisを使用するには[Redis Cloud](https://addons.heroku.com/rediscloud?utm_campaign=search&utm_medium=dashboard&utm_source=addons)というアドオンが良さそうでした。ということで採用。インストールのコマンドは次の章にまとめて掲載しています。
 
 RedistoreでRedis CloudのURLを扱う際は、NewRediStoreだと「too many colons」のエラーが出ます。代わりに
 

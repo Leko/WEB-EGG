@@ -101,7 +101,7 @@ Drupalのロール一覧テーブルには管理者フラグ的なものもな�
 
 > unless you install Drupal in your custom installation profile and modify the administrator role there, the rid or administrator will be always 3.
     
-> &mdash; <http://drupal.stackexchange.com/a/44735>{.broken_link}
+> &mdash; <http://drupal.stackexchange.com/a/44735>
 
 本当・・・？それ本当なら定数が提供されてるものじゃない・・・？
 
@@ -123,7 +123,7 @@ user\_has\_role関数はロールIDが必要なのでなのでロールIDを隠�
     
 > `$rid = array_search('administrator', user_roles());`
     
-> &mdash; <http://drupal.stackexchange.com/a/50437>{.broken_link}
+> &mdash; <http://drupal.stackexchange.com/a/50437>
 
 IDが駄目なら名前で探せって、結局マジックナンバー解消してないじゃん・・・
   

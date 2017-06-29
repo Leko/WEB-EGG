@@ -5,7 +5,7 @@ date: 2012-07-31T01:56:18+00:00
 dsq_thread_id:
   - "3722214559"
 ---
-[Memoized Recursion • プログラマの区分](http://fumieval.tumblr.com/post/28324791101){.broken_link}
+[Memoized Recursion • プログラマの区分](http://fumieval.tumblr.com/post/28324791101)
 
 バーサーカー、サモナー、グラディエーターあたりを目指したい。
 

@@ -10,7 +10,7 @@ categories:
 tags:
   - Ruby
 ---
-久々に、[CodeIQのコードゴルフ](https://codeiq.jp/ace/ozy4dm/q335){.broken_link}をやりました。
+久々に、[CodeIQのコードゴルフ](https://codeiq.jp/ace/ozy4dm/q335)をやりました。
 
 数カ月ぶりに素のRubyを触ったので色々と忘れていました。
   

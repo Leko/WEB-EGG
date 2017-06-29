@@ -27,7 +27,7 @@ tags:
 完成品
 ----------------------------------------
 
-  * [Githubのリポジトリ](https://github.com/Leko/rush){.broken_link}
+  * [Githubのリポジトリ](https://github.com/Leko/rush)
   * [公式ページ](https://rushframework.herokuapp.com)
 
 ↑を作っていく過程を記事に残します。

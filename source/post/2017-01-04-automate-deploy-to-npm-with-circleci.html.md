@@ -24,7 +24,7 @@ gemのときとは微妙に差異があるので、改めて備忘録として�
 
 こちらのリポジトリです。circle.ymlにデプロイ周りのことが書かれています。
 
-> [GitHub – Leko/roulette-cli: Simple roulette game](https://github.com/Leko/roulette-cli){.broken_link}
+> [GitHub – Leko/roulette-cli: Simple roulette game](https://github.com/Leko/roulette-cli)
 
 基本的なnpmのデプロイ手順
 ----------------------------------------
