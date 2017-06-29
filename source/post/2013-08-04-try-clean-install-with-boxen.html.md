@@ -211,7 +211,7 @@ Command Line Toolをインストールするとgccやgitがインストールさ
 
 そしたらターミナルから先ほど作ったboxenのリポジトリをcloneして実行します。 今回は、僕のboxenを使用する例を示します。
 
-```
+```shell
 $ sudo mkdir -p /opt/boxen
 $ sudo chown ${USER}:staff /opt/boxen
 $ git clone  /opt/boxen/repo
@@ -231,7 +231,7 @@ boxenが完了したら、最後にひとつ書き加えます。
   
 .zshrcに
 
-```
+```shell
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
 [ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh
 ```
