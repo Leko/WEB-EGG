@@ -104,16 +104,15 @@ RUN npm set progress=false \
 
 ググっても出てこない情報は、自分が知っている情報の組み合わせで解消することがまれにある。 この方法が正しいのかどうか確証がもてませんが、実現はできたし考える限り大きなリスクはなさそうと判断します。
 
-<li id="fn-931:1">
-  <p>
+<ol>
+  <li id="fn-931:1">
     <a href="https://docs.npmjs.com/files/package.json#github-urls">GitHub URLs — package.json | npm Documentation</a> <a href="#fnref-931:1" rev="footnote">↩</a>
-  </p>
-</li>
+  </li>
 
-<li id="fn-931:2">
-  <p>
+  <li id="fn-931:2">
     <a href="https://www.npmjs.com/pricing">Pricing — npm</a> <a href="#fnref-931:2" rev="footnote">↩</a>
-  </p></fn></footnotes> 
+  </li>
+</ol>
   
   <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
   </div>

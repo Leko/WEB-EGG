@@ -314,16 +314,15 @@ $book->similarBooks();  // => 青空文庫のレコードがマッチする
   
 せっかく環境を作ったので、次は`mecab`と係り受け解析のライブラリとか使って文章の要約でもしてみようかなと思います。
 
-<li id="fn-754:1">
-  <p>
+<ol>
+  <li id="fn-754:1">
     <a href="http://dev.mysql.com/doc/refman/5.6/en/fulltext-restrictions.html">12.9.5 Full-Text Restrictions</a> <a href="#fnref-754:1" rev="footnote">↩</a>
-  </p>
-</li>
+  </li>
 
-<li id="fn-754:2">
-  <p>
+  <li id="fn-754:2">
     <a href="http://y-ken.hatenablog.com/entry/mysql-casual-talks-vol4-innodb-fts">MySQL-5.6.4からの新機能「InnoDB FullText Search」を用いた全文検索エンジンのベンチマークLTをしました。#mysqlcasual</a> <a href="#fnref-754:2" rev="footnote">↩</a>
-  </p></fn></footnotes> 
+  </li>
+</ol>
   
   <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
   </div>
