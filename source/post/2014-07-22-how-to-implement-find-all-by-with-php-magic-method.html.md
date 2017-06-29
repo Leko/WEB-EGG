@@ -11,6 +11,7 @@ categories:
   - やってみた
 tags:
   - PHP
+  - FuelPHP
   - Ruby
   - Ruby on Rails
 ---
