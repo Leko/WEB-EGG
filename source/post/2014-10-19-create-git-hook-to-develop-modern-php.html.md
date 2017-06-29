@@ -248,10 +248,10 @@ exit $IS_ERROR
 
 ```json
 "require-dev": {
-        "phpmd/phpmd" : "@stable",
-        "fabpot/php-cs-fixer": "@stable",
-        "phpunit/phpunit": "4.*"
-    }
+  "phpmd/phpmd": "@stable",
+  "fabpot/php-cs-fixer": "@stable",
+  "phpunit/phpunit": "4.*"
+}
 ```
 
 プロジェクト作成コマンドまとめ
