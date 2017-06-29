@@ -24,6 +24,7 @@ FizzBuzzとは
 FizzBuzzとは、プログラマーの小手調べだったり、お遊びだったりします。
 
 > <q>1から100までの数をプリントするプログラムを書け。<br /> ただし3の倍数のときは数の代わりに「Fizz」と、5の倍数のときは「Buzz」とプリントし、3と5両方の倍数の場合には「FizzBuzz」とプリントすること。 <a href="http://d.hatena.ne.jp/keyword/Fizz%2DBuzz%CC%E4%C2%EA">Fizz-Buzz問題とは – はてなキーワード</a></q>
+
 CSSのFizzBuzz
 ----------------------------------------
 
