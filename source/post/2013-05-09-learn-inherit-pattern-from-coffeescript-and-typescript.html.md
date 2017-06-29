@@ -62,7 +62,32 @@ JavaScriptパターンから引用すると、
 「クラシカルな継承のパターン」の模範解答は、以下のようになります。
 
 ```javascript
-// 継承を行う関数 var inherit = (function() { var F = function() {}; return function(C, P) { F.prototype = P.prototype; C.prototype = new F(); C.uber = P.prototype; C.prototype.constructor = C; } })(); // Personクラス(のようなオブジェクト(以下省略)) function Parent() {} Parent.prototype.say = function() { return this.name; }; // Childクラス function Child(name) { this.name = name; // 親のコンストラクタを拝借する Parent.apply(this); } // 継承 inherit(Child, Parent); // インスタンスを作成 var kid = new Child('Bob'); console.log(kid.say()); // 'Bob'
+// 継承を行う関数
+var inherit = (function() {
+    var F = function() {};
+    return function(C, P) {
+        F.prototype = P.prototype;
+        C.prototype = new F();
+        C.uber = P.prototype;
+        C.prototype.constructor = C;
+    }
+})();
+// Personクラス(のようなオブジェクト(以下省略)) 
+function Parent() {}
+Parent.prototype.say = function() {
+    return this.name;
+};
+// Childクラス 
+function Child(name) {
+    this.name = name;
+    // 親のコンストラクタを拝借する 
+    Parent.apply(this);
+}
+// 継承 
+inherit(Child, Parent);
+// インスタンスを作成 
+var kid = new Child('Bob');
+console.log(kid.say()); // 'Bob'
 ```
 
 上記のように、  
@@ -77,13 +102,26 @@ Childクラスのインスタンスである`kid`は、sayメソッドをParent�
 それはさておき、ここで重要なのが、継承を行う関数`inherit()`です。
 
 ```javascript
-var inherit = (function() { var F = function() {}; // CとPのプロキシとなる関数F return function(C, P) { F.prototype = P.prototype; // Fのプロトタイプオブジェクトを親と共有する C.prototype = new F(); // 子のプロトタイプオブジェクトは、Fのインスタンスを設定 C.uber = P.prototype; // スーパークラス(uberという名前にする)には親のプロトタイプを設定 C.prototype.constructor = C; // コンストラクタのポインタを再設定する } })();
+var inherit = (function() {
+    var F = function() {};
+    // CとPのプロキシとなる関数F 
+    return function(C, P) {
+        F.prototype = P.prototype;
+        // Fのプロトタイプオブジェクトを親と共有する 
+        C.prototype = new F();
+        // 子のプロトタイプオブジェクトは、Fのインスタンスを設定 
+        C.uber = P.prototype;
+        // スーパークラス(uberという名前にする)には親のプロトタイプを設定 
+        C.prototype.constructor = C;
+        // コンストラクタのポインタを再設定する
+    }
+})();
 ```
 
 このinherit()は、
 
-  * 親と子のプロトタイプの共有を切りつつ、プロトタイプ連鎖の利点は残す
-  * 親のメンバ(this.XXX)を継承する
+* 親と子のプロトタイプの共有を切りつつ、プロトタイプ連鎖の利点は残す
+* 親のメンバ(this.XXX)を継承する
 
 ために、子と親をつなぐプロキシとなる関数F()を作成します  
 この関数Fを利用することで、プロトタイプの共有を切りつつも、親のメンバを共有することが可能になります。
@@ -92,7 +130,7 @@ var inherit = (function() { var F = function() {}; // CとPのプロキシとな
 jsのプロトタイプチェインについて詳しくは触れません。  
 プロトタイプ連鎖については、以下の記事が参考になるかと思います。
 
-  * [JavaScriptのプロトタイプチェインをちゃんと理解する – builder](http://builder.japan.zdnet.com/script/sp_javascript-kickstart-2007/20369792/)
+* [JavaScriptのプロトタイプチェインをちゃんと理解する – builder](http://builder.japan.zdnet.com/script/sp_javascript-kickstart-2007/20369792/)
 
 Coffeescriptでのclassと継承
 ----------------------------------------
@@ -108,7 +146,18 @@ CoffeeScriptでクラスと継承を用いた例が、以下となります。
 (CoffeeScript.orgの[Classes](http://coffeescript.org/#classes)の説明から持ってきて一部改変)
 
 ```coffeescript
-class Parent constructor: (@name) -> move: (meters) -> console.log @name + " moved #{meters}m." class Child extends Parent move: -> console.log "slithering…" super 5 child = new Child() child.move()
+class Parent
+  constructor: (@name) ->
+  move: (meters) ->
+    console.log @name + " moved #{meters}m."
+
+class Child extends Parent
+  move: ->
+    console.log "slithering…"
+    super 5
+
+child = new Child()
+child.move()
 ```
 
 ものすごくシンプルです。  
@@ -127,7 +176,23 @@ TypeScriptでのclassと継承
 TypeScriptでのクラスの定義と継承の例は以下となります。
 
 ```javascript
-class Parent { name: string; constructor(name: string) { this.name = name; } move(meters: number): void { console.log(this.name + " moved " + meters + "m."); } } class Child extends Parent { move(): void { console.log("slithering…"); super.move(5); } } var child: Child = new Child(); child.move();
+class Parent {
+    name: string;
+    constructor(name: string) {
+        this.name = name;
+    }
+    move(meters: number): void {
+        console.log(this.name + " moved " + meters + "m.");
+    }
+}
+class Child extends Parent {
+    move(): void {
+        console.log( "slithering… "); 
+        super.move(5);
+    }
+}
+var child: Child = new Child();
+child.move();
 ```
 
 ややコード量が増えていますが、とても見やすいです。  
@@ -146,7 +211,20 @@ jsにコンパイルする際に、**特定の表現と、継承を行う汎用�
 まずはCoffeeScriptバージョンを見ていきます。
 
 ```javascript
-var __hasProp = {}.hasOwnProperty, __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+var __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) {
+        for (var key in parent) {
+            if (__hasProp.call(parent, key)) child[key] = parent[key];
+        }
+
+        function ctor() {
+            this.constructor = child;
+        }
+        ctor.prototype = parent.prototype;
+        child.prototype = new ctor();
+        child.__super__ = parent.prototype;
+        return child;
+    };
 ```
 
 `__hasProp`は、安全で確実に`Object.hasOwnProperty()`を呼ぶためのショートカットです。  
@@ -164,7 +242,17 @@ inherit()と異なる点は、for文を用いて**親のメンバを子にコピ
 書籍のコード少し改造した例が以下となります。
 
 ```javascript
-function extend(parent, child) { var hasProp = {}.hasOwnProperty, p; child = child || {}; for ( p in parent ) { if ( hasProp.call(parent, p) ) { child[i] = parent[i]; } } return child; }
+function extend(parent, child) {
+    var hasProp = {}.hasOwnProperty,
+        p;
+    child = child || {};
+    for (p in parent) {
+        if (hasProp.call(parent, p)) {
+            child[i] = parent[i];
+        }
+    }
+    return child;
+}
 ```
 
 もうお分かりかと思いますが、Coffee版に出てくるfor文と同じです。
@@ -177,7 +265,13 @@ CoffeeScriptにおける継承用の関数`__extends`となっています。
 では、次にTypeScriptバージョンを見てみます。
 
 ```javascript
-var __extends = this.__extends || function (d, b) { function __() { this.constructor = d; } __.prototype = b.prototype; d.prototype = new __(); };
+var __extends = this.__extends || function(d, b) {
+    function __() {
+        this.constructor = d;
+    }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
 ```
 
 TypeScriptの方はややシンプルです。  
@@ -197,7 +291,27 @@ CoffeeScriptもTypeScriptもほぼ同様の表現になっています。
 下記はCoffeeScriptの先程の例のクラス部分をjsにコンパイルしたコードです。
 
 ```javascript
-var Parent = (function () { function Parent(name) { this.name = name; } Parent.prototype.move = function (meters) { console.log(this.name + " moved " + meters + "m."); }; return Parent; })(); var Child = (function (_super) { __extends(Child, _super); function Child() { _super.apply(this, arguments); } Child.prototype.move = function () { console.log("slithering…"); _super.prototype.move.call(this, 5); }; return Child; })(Parent);
+var Parent = (function() {
+    function Parent(name) {
+        this.name = name;
+    }
+    Parent.prototype.move = function(meters) {
+        console.log(this.name + " moved " + meters + "m.");
+    };
+    return Parent;
+})();
+var Child = (function(_super) {
+    __extends(Child, _super);
+
+    function Child() {
+        _super.apply(this, arguments);
+    }
+    Child.prototype.move = function() {
+        console.log("slithering… ");
+        _super.prototype.move.call(this, 5);
+    };
+    return Child;
+})(Parent);
 ```
 
 まず、`var クラス名 = (function() {})();`とクラスの定義を即時関数に包み、  
@@ -213,8 +327,8 @@ var Parent = (function () { function Parent(name) { this.name = name; } Parent.p
 
 この書き方はTypeScriptでもほぼ同様の表現になっており、
 
-  * \_superを\\_\_super\_\_等のオブジェクトに格納せずに直接使う
-  * 用いている変数名が若干異なる
+* \_superを\\_\_super\_\_等のオブジェクトに格納せずに直接使う
+* 用いている変数名が若干異なる
 
 程度の違いがありますが、同様のパターンとみなすことができます。
 
@@ -223,14 +337,14 @@ var Parent = (function () { function Parent(name) { this.name = name; } Parent.p
 
 jsで、継承を行うためには、
 
-  * 親と子のプロキシとなる関数(CoffeeScriptでは`ctor()`、TypeScriptでは`__()`)を定義
-  * プロキシ関数のprototypeに親のprototypeを設定
-  * 子のprototypeにプロキシ関数のインスタンスを設定
+* 親と子のプロキシとなる関数(CoffeeScriptでは`ctor()`、TypeScriptでは`__()`)を定義
+* プロキシ関数のprototypeに親のprototypeを設定
+* 子のprototypeにプロキシ関数のインスタンスを設定
 
 の３ステップが最低限必要となります。 ここに、上乗せとして
 
-  * コンストラクタのポインタを再設定
-  * 親から子へプロパティのコピー
+* コンストラクタのポインタを再設定
+* 親から子へプロパティのコピー
 
 などが乗っかって来るようです。
 
