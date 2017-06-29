@@ -30,7 +30,8 @@ tags:
 まずは動かないサンプルを書きます。 
 
 ```php
-<?php require_once("XXX.php"); //存在しないファイル ?>; 
+<?php
+ require_once("XXX.php"); //存在しないファイル ?>; 
 ```
 
  
@@ -43,7 +44,8 @@ tags:
 このスクリプトの何処にエラーが出てるのかを出力してみます。 
 
 ```php
-<?php ini\_set('display\_errors', 1); require_once("XXX.php"); //存在しないファイル ?>; 
+<?php
+ ini\_set('display\_errors', 1); require_once("XXX.php"); //存在しないファイル ?>; 
 ```
 
  

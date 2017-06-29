@@ -337,7 +337,8 @@ MOCO'sキッチンオリーブAPIのURLは、
 先ほどのGoogle Suggestにならって作ったコードがこちらです。
 
 ```php
-<?php require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ”, $json->error, ”, 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.”: “.$info->olive.”オリーブ”; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
+<?php
+ require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ”, $json->error, ”, 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.”: “.$info->olive.”オリーブ”; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
 ```
 
 先ほどのGoogle Suggestの例を見れば、

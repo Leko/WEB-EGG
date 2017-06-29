@@ -182,9 +182,9 @@ VagrantのSynced folderで紐付けを行っています。
 godemo/
 ├── Godeps            # ライブラリの依存性定義とソースコード
 ├── assets            # フロントエンドのファイル(gulpを使ってビルド)
-│   ├── dist          
-│   ├── scss          
-│   └── vendor        
+│   ├── dist    
+│   ├── scss    
+│   └── vendor  
 ├── controller        # コントローラ
 │   └── users.go
 ├── database          # データベース接続(PostgreSQL, Redisのユーティリティ)
