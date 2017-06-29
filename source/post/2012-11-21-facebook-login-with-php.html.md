@@ -132,7 +132,7 @@ $config = array(
 );
 
 $facebook = new Facebook($config);
-$user = $facebook->getUser(); 
+$user = $facebook->getUser();
 ```
 
 まずはこれだけ。

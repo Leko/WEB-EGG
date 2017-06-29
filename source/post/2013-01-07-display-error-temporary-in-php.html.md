@@ -32,7 +32,7 @@ tags:
 ```php
 <?php
 
- require_once("XXX.php"); //存在しないファイル ?>; 
+ require_once("XXX.php"); //存在しないファイル ?>;
 ```
 
  
@@ -47,7 +47,7 @@ tags:
 ```php
 <?php
 
- ini\_set('display\_errors', 1); require_once("XXX.php"); //存在しないファイル ?>; 
+ ini\_set('display\_errors', 1); require_once("XXX.php"); //存在しないファイル ?>;
 ```
 
  

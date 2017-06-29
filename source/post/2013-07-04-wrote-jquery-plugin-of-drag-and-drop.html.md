@@ -169,7 +169,7 @@ FileAPIの`FileReader`インタフェースを使います。
 用途によりますが、配列にしておいたほうが使える範囲が広がると思います。
 
 ```javascript
- var tmp = e.originalEvent.dataTransfer.files, files = Array.prototype.slice.call(tmp); console.log(Array.isArray(tmp)); // false console.log(Array.isArray(files)); // true 
+var tmp = e.originalEvent.dataTransfer.files, files = Array.prototype.slice.call(tmp); console.log(Array.isArray(tmp)); // false console.log(Array.isArray(files)); // true
 ```
 
 ### 各イベントの説明

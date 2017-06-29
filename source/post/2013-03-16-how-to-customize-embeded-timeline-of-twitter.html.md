@@ -87,7 +87,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 コピーしたコードは以下の様な感になっていると思います。
 
 ```html
- <a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″>@L_e_k_o からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″>@L_e_k_o からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 ```
 
 このコードを、埋め込みタイムラインを設置したいHTMLファイルに貼り付けて、保存。 これで設置完了です。
@@ -147,7 +147,7 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
   * 横幅を220pxに指定
 
 ```html
- <a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″ width="220″ data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a> 
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″ width="220″ data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a>
 ```
 
 ### 例２
@@ -157,7 +157,7 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
   * リンクの色を#000000に指定
 
 ```html
- <a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″ data-theme="dark" lang="en" data-link-color="#000000″>L_e_k_oさんのツイート（返信を除く）</a> 
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″ data-theme="dark" lang="en" data-link-color="#000000″>L_e_k_oさんのツイート（返信を除く）</a>
 ```
 
 注意事項

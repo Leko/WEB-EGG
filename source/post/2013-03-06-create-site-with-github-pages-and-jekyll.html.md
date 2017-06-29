@@ -89,7 +89,7 @@ jekyllをインストールする
 ターミナルを開いて、
 
 ```shell
- $ cd ~ $ gem install jekyll 
+$ cd ~ $ gem install jekyll
 ```
 
 を実行します。インストール完了です。
@@ -126,7 +126,7 @@ config.ymlは上でも言いましたが、jekyllで使うための設定ファ�
 これを適当なエディタで開き、
 
 ```yaml
- auto: true server: true markdown: kramdown 
+auto: true server: true markdown: kramdown
 ```
 
 と入力して保存します。  
@@ -139,7 +139,7 @@ default.htmlを編集する
 これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
 
 ```html
- <!DOCTYPE html> <meta charset="UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel="stylesheet" href="css/common.css"> <script src="js/top.js"></script> <div class="container"> {{ content }} </div> 
+<!DOCTYPE html> <meta charset="UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel="stylesheet" href="css/common.css"> <script src="js/top.js"></script> <div class="container"> {{ content }} </div>
 ```
 
 と入力して、保存します。  
@@ -187,13 +187,13 @@ layout: default
 再びターミナルを開いて、
 
 ```shell
- $ cd (USER_NAME.github.comリポジトリへのパス) $ jekyll 
+$ cd (USER_NAME.github.comリポジトリへのパス) $ jekyll
 ```
 
 と入力します。すると、
 
 ```shell
- Configuration from /Users/***/leko.github.com/_config.yml Auto-regenerating enabled: /Users/***/leko.github.com -> /Users/***/leko.github.com/_site [2013-02-26 22:38:59] regeneration: 7 files changed [2013-02-26 22:39:00] INFO WEBrick 1.3.1 [2013-02-26 22:39:00] INFO ruby 1.9.2 (2012-04-20) [x86_64-darwin11.4.2] [2013-02-26 22:39:00] INFO WEBrick::HTTPServer#start: pid=70965 port=4000 
+Configuration from /Users/***/leko.github.com/_config.yml Auto-regenerating enabled: /Users/***/leko.github.com -> /Users/***/leko.github.com/_site [2013-02-26 22:38:59] regeneration: 7 files changed [2013-02-26 22:39:00] INFO WEBrick 1.3.1 [2013-02-26 22:39:00] INFO ruby 1.9.2 (2012-04-20) [x86_64-darwin11.4.2] [2013-02-26 22:39:00] INFO WEBrick::HTTPServer#start: pid=70965 port=4000
 ```
 
 というのが表示されると思うので、  

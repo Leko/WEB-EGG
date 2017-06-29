@@ -18,7 +18,7 @@ tags:
 こんにちは。 jQueryMobileの1.2でwebアプリの開発を行なっているときに、 独自のJavaScriptを書く必要があったので、jQueryのように 
 
 ```javascript
- $(function() { //write your program here. } 
+$(function() { //write your program here. }
 ```
 
  
@@ -44,7 +44,7 @@ pageinitのサンプル
 pageinitを使ったコードはこのようになります。 なお、jQueryのバージョンは1.8.2となっています。 
 
 ```javascript
- $(document).on('pageinit', '#selector', function() { //ここに処理を記述 }); 
+$(document).on('pageinit', '#selector', function() { //ここに処理を記述 });
 ```
 
  
@@ -65,7 +65,7 @@ pageinitとpageshowを使い分ける
 pageinitとpageshowを使い分けたサンプルが以下となります。 
 
 ```javascript
- $(document).on('pageshow', '#selector', function() { //ページが表示されるたびに実行する }); $(document).on('pageinit', '#selector', function() { //ページが初めて読み込まれたとき１回だけ実行する }); 
+$(document).on('pageshow', '#selector', function() { //ページが表示されるたびに実行する }); $(document).on('pageinit', '#selector', function() { //ページが初めて読み込まれたとき１回だけ実行する });
 ```
 
  

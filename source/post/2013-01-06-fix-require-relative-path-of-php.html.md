@@ -39,7 +39,7 @@ C.phpをrequireしたB.phpを、A.phpがrequireするときに、B.phpで
 ```php
 <?php
 
- require_once("C.php"); 
+ require_once("C.php");
 ```
 
  
@@ -63,7 +63,7 @@ dirname(\_\_FILE\_\_)は、自分自身へのパスを返します。 B.phpで�
 ```php
 <?php
 
- require\_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む require\_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む 
+ require\_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む require\_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む
 ```
 
  

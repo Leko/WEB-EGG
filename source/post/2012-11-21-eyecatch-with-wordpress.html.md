@@ -82,7 +82,7 @@ wordpressで表示されている項目は、
  
 
 ```php
- // This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add\_theme\_support( 'post-thumbnails' ); 
+// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add\_theme\_support( 'post-thumbnails' );
 ```
 
  
@@ -115,7 +115,6 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
 この中の、下記の行を探して下さい。  
 
 ```php
- 
 
 <div class="entry-content">
 <?php
@@ -131,7 +130,7 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
   </div>' ) ); ?>
 </div>
 
-<!-- .entry-content --> 
+<!-- .entry-content -->
 ```
 
  
@@ -143,7 +142,6 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
 the\_post\_thumbnail() を記述します。  
 
 ```php
- 
 
 <div class="entry-content">
 <?php
@@ -163,7 +161,7 @@ the\_post\_thumbnail() を記述します。
   </div>' ) ); ?>
 </div>
 
-<!-- .entry-content --> 
+<!-- .entry-content -->
 ```
 
  

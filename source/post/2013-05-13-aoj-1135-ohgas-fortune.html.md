@@ -69,7 +69,7 @@ AOJの1135、Ohgas' Fortuneをjsで解きました。
     }
     
 
-})(require("fs").readFileSync("/dev/stdin", "utf8")); 
+})(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

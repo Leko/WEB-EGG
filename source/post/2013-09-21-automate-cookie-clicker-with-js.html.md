@@ -27,7 +27,7 @@ tags:
 おもむろに左側に表示されているクッキーを右クリックして「要素を検証」してみたところ、
 
 ```html
- <div id="bigCookie"… 
+<div id="bigCookie"…
 ```
 
 **あ、これはいけるわ。**
@@ -151,7 +151,7 @@ CSSのセレクタを使って要素を取得できる組み込みメソッド�
 リピートの間隔は、適当に設定して下さい。
 
 ```javascript
- !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs("#upgrades .upgrade"), products = qs("#products .product"), cookie = qs("#bigCookie"), golden = qs("#goldenCookie"); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
+!function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs("#upgrades .upgrade"), products = qs("#products .product"), cookie = qs("#bigCookie"), golden = qs("#goldenCookie"); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }();
 ```
 
 基本的な枠組みはこんな感じになると思います。
@@ -165,7 +165,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 指定した要素が特定のクラスを持っているか調べる`hasClass`を定義しました
 
 ```javascript
- var each = function(arr, fn) { for(var i = 0; i < arr.length; i++) { fn.call(arr[i], arr[i], i); } }, hasClass = function(el, className) { return el.classList.contains(className); }; 
+var each = function(arr, fn) { for(var i = 0; i < arr.length; i++) { fn.call(arr[i], arr[i], i); } }, hasClass = function(el, className) { return el.classList.contains(className); };
 ```
 
 こんな感じです。 これ以降の処理は、特に記述がない限りsetIntervalの中の関数に書いていきます。
@@ -179,7 +179,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 ゴールデンクッキーも同様に、**出現してようとなかろうとひたすら連打**です。
 
 ```javascript
- cookie.onclick(); golden.onclick(); 
+cookie.onclick(); golden.onclick();
 ```
 
 これだけです。設定したFPS分だけクッキーがクリックされます。 ゴールデンクッキーは出現した瞬間にクリックされるので全く見えません。笑
@@ -201,7 +201,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 同様に、eachの第１引数をupgradesにするだけで、アップグレードも同様に買えます。
 
 ```javascript
- each(products, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); each(upgrades, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); 
+each(products, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); each(upgrades, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } });
 ```
 
 ここはお好みで。
@@ -230,7 +230,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
   
 
 ```javascript
- // 全ビルディングを10個ずつ, 50個ずつ、と買い揃えていく var BUY_STEPS = [10, 50, 100, 128, Number.MAX_VALUE]; // 所持数を取得するメソッドを定義 var getOwnedCnt = function(el) { var cnt = el.childNodes[1].childNodes[2]; return cnt ? +cnt.textContent : 0; } 
+// 全ビルディングを10個ずつ, 50個ずつ、と買い揃えていく var BUY_STEPS = [10, 50, 100, 128, Number.MAX_VALUE]; // 所持数を取得するメソッドを定義 var getOwnedCnt = function(el) { var cnt = el.childNodes[1].childNodes[2]; return cnt ? +cnt.textContent : 0; }
 ```
 
 次に、eachの部分を書き換えます。
@@ -238,7 +238,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
   
 
 ```javascript
- var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, 'enabled') && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift(); 
+var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, 'enabled') && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift();
 ```
 
 アイテムを単に買い揃えていくことが最適な行動ではないのですが、
@@ -267,7 +267,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
 ダイアログを操作するより、**関数の動作を変える方が楽なので、上書き**します。
 
 ```javascript
- window.confirm = function(){ return true; }; 
+window.confirm = function(){ return true; };
 ```
 
 これで、ダイアログは出ず、強制的に"はい"が選択されたことになります。
