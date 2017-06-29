@@ -83,17 +83,17 @@ PSR7の登場により、ほんの1~2年前くらいに誕生した比較的新�
 欲しい要件・要素の洗い出し
 ----------------------------------------
 
-  * 実装は最小限。ニーズを満たせない所だけ作る
-  * PHP5.5以上対応
-  * HTTPリクエスト/レスポンスはPSR7準拠
-  * ルーティング
-  * HTTPミドルウェア
-  * DB操作のモデル
-  * DIコンテナ
-  * テンプレートエンジン
-  * 設定ファイルを扱う仕組み
-  * ファイルパス操作
-  * フロントエンドは色々な構成がありすぎるので何も手を入れない
+* 実装は最小限。ニーズを満たせない所だけ作る
+* PHP5.5以上対応
+* HTTPリクエスト/レスポンスはPSR7準拠
+* ルーティング
+* HTTPミドルウェア
+* DB操作のモデル
+* DIコンテナ
+* テンプレートエンジン
+* 設定ファイルを扱う仕組み
+* ファイルパス操作
+* フロントエンドは色々な構成がありすぎるので何も手を入れない
 
 ### PHPのバージョン
 
@@ -127,50 +127,46 @@ Slimと互換性があることと、色々種類が揃っているため便利�
   
 ということでジェネレータ非対応ですがこのライブラリを採用します。
 
-  * 採用する 
-      * これらのミドルウェアはフレームワーク内に組み込みます。
-  
-        とはいえ依存しているのはルーティングくらいなのであとは取捨選択可能です。
-      * [FastRoute](https://github.com/oscarotero/psr7-middlewares#fastroute) 
-          * ルーティングで採用しているFastRouteのミドルウェアがありました
-  
-            ルーティングはHTTPミドルウェアの1つとして動作させます
-      * [ClientIp](https://github.com/oscarotero/psr7-middlewares#clientip) 
-          * 主な想定はHerokuですが、PHPなら自前で組むとしてもFastCGIサーバが手前に噛む構成が多いと思います。そんな時にも使いやすいミドルウェアです 
-          * ちなみにHerokuの場合だと以下のヘッダがアプリケーションサーバへ渡ってくるそうです。 [参照](https://devcenter.heroku.com/articles/http-routing) 
-              * `X-Forwarded-For`: the originating IP address of the client connecting to the Heroku router
-              * `X-Forwarded-Proto`: the originating protocol of the HTTP request (example: https)
-              * `X-Forwarded-Port`: the originating port of the HTTP request (example: 443)
-              * `X-Request-Start`: unix timestamp (milliseconds) when the request was received by the router
-              * `X-Request-Id`: the Heroku HTTP Request ID
-              * `Via`: a code name for the Heroku router
-      * [Csrf](https://github.com/oscarotero/psr7-middlewares#csrf) 
-          * 言わずもがなCSRFプロテクションです
-          * アプリケーションの仕様上これを入れることにで都合が悪くなることもあるので、付け外し出来る前提で組み込みます
-      * [LanguageNegotiation](https://github.com/oscarotero/psr7-middlewares#languagenegotiation) 
-          * 多言語化の文言管理、取得の仕組み自体は色々有りますが、 _何の言語で表示したら良いのか_ は地味に面倒で、かつついオレオレ仕様で書いてしまいがちです
-          * PHPのドキュメントのように言語情報をパスに込めることも可能です
-          * 原則はHTTPの仕様通り、最悪Cookieで上書きできる、という形で組み込もうと思います
-      * [ErrorHandler](https://github.com/oscarotero/psr7-middlewares#errorhandler) 
-          * エラーハンドリングもミドルウェアとして提供されています。 **その手があったか！** と感動したし便利なので採用
-      * [Whoops](https://github.com/oscarotero/psr7-middlewares#whoops) 
-          * Railsで言うところの[better_errors](https://github.com/charliesome/better_errors)のようなデバッグ用エラー画面です
-          * 開発環境ではこれ使うのが捗るので居れておきます
-  * 紹介するだけ 
-      * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます。
-      * [Csp](https://github.com/oscarotero/psr7-middlewares#csp) 
-          * [Content Security Policy](https://developer.mozilla.org/ja/docs/Web/Security/CSP)の設定を提供してくれるミドルウェア
-  
-            まだブラウザの対応状況が微妙なのでフレームワークでの採用は見送り。要件や対応ブラウザによっては使えそうです
-      * [GoogleAnalytics](https://github.com/oscarotero/psr7-middlewares#googleanalytics) 
-          * 言わずと知れたGoogle Analyticsのトラッキングコードを仕込むミドルウェア
-          * テンプレート自体が共通化されていればPHPでやることはないので、見送り
-      * [Minify](https://github.com/oscarotero/psr7-middlewares#minify) 
-          * 出力するファイルを圧縮して送信できるミドルウェア
-          * HTTPミドルウェアの責務ではなくて、静的ファイル(gzipなど)ならWebサーバやビルドツール、動的文字列ならテンプレートエンジンの役割だと思っているため見送り
-      * [Rename](https://github.com/oscarotero/psr7-middlewares#rename) 
-          * ルーティングの上書きができるミドルウェア
-          * 必要なケースが限定的なので見送り
+* 採用する 
+  * これらのミドルウェアはフレームワーク内に組み込みます。  
+    とはいえ依存しているのはルーティングくらいなのであとは取捨選択可能です。
+  * [FastRoute](https://github.com/oscarotero/psr7-middlewares#fastroute)
+      * ルーティングで採用しているFastRouteのミドルウェアがありました。ルーティングはHTTPミドルウェアの1つとして動作させます
+  * [ClientIp](https://github.com/oscarotero/psr7-middlewares#clientip) 
+      * 主な想定はHerokuですが、PHPなら自前で組むとしてもFastCGIサーバが手前に噛む構成が多いと思います。そんな時にも使いやすいミドルウェアです 
+      * ちなみにHerokuの場合だと以下のヘッダがアプリケーションサーバへ渡ってくるそうです。 [参照](https://devcenter.heroku.com/articles/http-routing) 
+          * `X-Forwarded-For`: the originating IP address of the client connecting to the Heroku router
+          * `X-Forwarded-Proto`: the originating protocol of the HTTP request (example: https)
+          * `X-Forwarded-Port`: the originating port of the HTTP request (example: 443)
+          * `X-Request-Start`: unix timestamp (milliseconds) when the request was received by the router
+          * `X-Request-Id`: the Heroku HTTP Request ID
+          * `Via`: a code name for the Heroku router
+  * [Csrf](https://github.com/oscarotero/psr7-middlewares#csrf) 
+      * 言わずもがなCSRFプロテクションです
+      * アプリケーションの仕様上これを入れることにで都合が悪くなることもあるので、付け外し出来る前提で組み込みます
+  * [LanguageNegotiation](https://github.com/oscarotero/psr7-middlewares#languagenegotiation) 
+      * 多言語化の文言管理、取得の仕組み自体は色々有りますが、 _何の言語で表示したら良いのか_ は地味に面倒で、かつついオレオレ仕様で書いてしまいがちです
+      * PHPのドキュメントのように言語情報をパスに込めることも可能です
+      * 原則はHTTPの仕様通り、最悪Cookieで上書きできる、という形で組み込もうと思います
+  * [ErrorHandler](https://github.com/oscarotero/psr7-middlewares#errorhandler) 
+      * エラーハンドリングもミドルウェアとして提供されています。 **その手があったか！** と感動したし便利なので採用
+  * [Whoops](https://github.com/oscarotero/psr7-middlewares#whoops) 
+      * Railsで言うところの[better_errors](https://github.com/charliesome/better_errors)のようなデバッグ用エラー画面です
+      * 開発環境ではこれ使うのが捗るので居れておきます
+* 紹介するだけ 
+    * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます。
+    * [Csp](https://github.com/oscarotero/psr7-middlewares#csp) 
+        * [Content Security Policy](https://developer.mozilla.org/ja/docs/Web/Security/CSP)の設定を提供してくれるミドルウェア  
+        まだブラウザの対応状況が微妙なのでフレームワークでの採用は見送り。要件や対応ブラウザによっては使えそうです
+    * [GoogleAnalytics](https://github.com/oscarotero/psr7-middlewares#googleanalytics) 
+        * 言わずと知れたGoogle Analyticsのトラッキングコードを仕込むミドルウェア
+        * テンプレート自体が共通化されていればPHPでやることはないので、見送り
+    * [Minify](https://github.com/oscarotero/psr7-middlewares#minify) 
+        * 出力するファイルを圧縮して送信できるミドルウェア
+        * HTTPミドルウェアの責務ではなくて、静的ファイル(gzipなど)ならWebサーバやビルドツール、動的文字列ならテンプレートエンジンの役割だと思っているため見送り
+    * [Rename](https://github.com/oscarotero/psr7-middlewares#rename) 
+        * ルーティングの上書きができるミドルウェア
+        * 必要なケースが限定的なので見送り
 
 ### DB操作のモデル
 
@@ -198,12 +194,11 @@ phpdiを採用しました。
   
 どれを採用するかとても迷いました。Githubでの人気具合だと
 
-  * [Pimple](https://github.com/silexphp/Pimple): スター数 1225 
-      * 人気だけど連想配列っぽく扱うのがあまり好きではない。こんな記事もあったり
-  
-        [Dependency Injection Containers with PHP. When Pimple is not enough.](http://gonzalo123.com/2012/09/03/dependency-injection-containers-with-php-when-pimple-is-not-enough/)
-  * [phpdi](https://github.com/PHP-DI/PHP-DI): スター数 658
-  * [Aura.DI](https://github.com/auraphp/Aura.Di): スター数 213
+* [Pimple](https://github.com/silexphp/Pimple): スター数 1225
+    * 人気だけど連想配列っぽく扱うのがあまり好きではない。こんな記事もあったり  
+      [Dependency Injection Containers with PHP. When Pimple is not enough.](http://gonzalo123.com/2012/09/03/dependency-injection-containers-with-php-when-pimple-is-not-enough/)
+* [phpdi](https://github.com/PHP-DI/PHP-DI): スター数 658
+* [Aura.DI](https://github.com/auraphp/Aura.Di): スター数 213
 
 という感じでした
   
