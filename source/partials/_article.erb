@@ -1,0 +1,51 @@
+<article class="post post-card <%= 'post-card--first' if index === 0 %>">
+  <div class="card">
+    <header class="card__header">
+      <%= partial 'partials/article/header', locals: { article: article } %>
+    </header>
+    <section class="card__body">
+      <div class="post__content markdown">
+        <%= current_resource.summary %>
+
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7627436148097691"
+             data-ad-slot="5524834567"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+        <%= current_resource.body.remove(current_resource.summary) %>
+      </div>
+    </section>
+    <footer class="card__footer card__footer--nopad">
+      <%= partial 'partials/share', locals: { post: current_resource } %>
+      <%= partial 'partials/related_post', locals: { post: current_resource } %>
+
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-7627436148097691"
+           data-ad-slot="3077393762"
+           data-ad-format="auto"></ins>
+      <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+
+      <div id="disqus_thread"></div>
+      <script>
+        var disqus_config = function () {
+          this.page.url = '<%= current_resource.url %>'
+          this.page.identifier = '<%= current_resource.data.dsq_thread_id.try(:first) || current_resource.path %>'
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+          var d = document, s = d.createElement('script');
+          s.src = 'https://wpwebegg.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })()
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </footer>
+  </div>
+</article>
