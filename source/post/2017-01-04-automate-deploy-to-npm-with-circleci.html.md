@@ -11,8 +11,7 @@ tags:
   - Nodejs
   - npm
 ---
-こんにちは。
-  
+こんにちは。  
 [RubygemsへのデプロイをCircleCIで自動化してみた \| WEB EGG](http://leko.jp/archives/871)に引き続きnpmのデプロイも自動化してみました。
   
 gemのときとは微妙に差異があるので、改めて備忘録として残しておきます。

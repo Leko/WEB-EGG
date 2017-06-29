@@ -13,8 +13,7 @@ tags:
   - Mocha
   - sinon.js
 ---
-こんにちは。
-
+こんにちは。  
 最近、[Backbone.js](http://backbonejs.org/)というライブラリを使って、制作をしています。
 
 Backboneいいですね〜。

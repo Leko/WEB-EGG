@@ -12,8 +12,7 @@ categories:
 tags:
   - Sublime Text2
 ---
-こんにちは。
-  
+こんにちは。  
 SublimeText2で**SublimeLinter**という構文チェックパッケージを使っているのですが、
   
 いつからかアップデートがかかって、**日本語を含むコードがエラー**になってしまいました。

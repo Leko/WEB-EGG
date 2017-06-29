@@ -11,8 +11,7 @@ tags:
   - JavaScript
   - security
 ---
-こんにちは。
-  
+こんにちは。  
 [画像をくっつけるツール](http://img-concater.herokuapp.com)というjsで簡単な画像処理を行うSPAを作った時に、
 
 URLを指定して画像を読み込んで結合する、という要件があり、

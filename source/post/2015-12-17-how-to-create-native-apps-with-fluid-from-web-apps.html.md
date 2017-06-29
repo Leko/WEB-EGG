@@ -11,8 +11,7 @@ tags:
   - Google Analytics
   - Mac
 ---
-こんにちは。
-
+こんにちは。  
 Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報を出してくれなくなってはや1ヶ月。
   
 もうiPhoneでの閲覧はあきらめてPCでどうにかしようと思い立ったものの、 **ただでさえ増えがちなChromeのタブを増やしたくない** 。

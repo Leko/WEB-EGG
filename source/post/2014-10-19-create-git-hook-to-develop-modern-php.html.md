@@ -13,8 +13,7 @@ tags:
   - Git
   - PHP
 ---
-こんにちは。
-  
+こんにちは。  
 久々の更新です。
 
 最近<span class="removed_link" title="https://github.com/Leko/schema">Schema</span>というフレームワークを作っており、

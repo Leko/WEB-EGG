@@ -9,8 +9,7 @@ categories:
 tags:
   - Nodejs
 ---
-こんにちは。
-  
+こんにちは。  
 この記事は[Hamee Advent Calendar 2016](http://qiita.com/advent-calendar/2016/hamee)の25日目の記事です。
 
 Hameeカレンダーの大トリを努めます。れこです。

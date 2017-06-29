@@ -10,8 +10,7 @@ categories:
 tags:
   - JavaScript
 ---
-こんにちは。
-  
+こんにちは。  
 最近、オライリー・ジャパンの
   
 「[JavaScriptパターン――優れたアプリケーションのための作法](http://www.oreilly.co.jp/books/9784873114880/)」という本を読んでいます。

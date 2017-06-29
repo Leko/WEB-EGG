@@ -14,8 +14,7 @@ tags:
   - Docker
   - Docker compose
 ---
-こんにちは。
-  
+こんにちは。  
 かれこれ1年くらい仕事でCircleCI + Dockerを使ってみているのですが、 **とにかくツラい** 。
   
 CircleCI + Docker構成でCIしたい方はだいぶマゾいとすら思います。

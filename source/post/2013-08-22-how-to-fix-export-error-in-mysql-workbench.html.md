@@ -10,8 +10,7 @@ categories:
 tags:
   - MySQL
 ---
-こんにちは。
-  
+こんにちは。  
 今日、[MySQLWorkbench](http://www-jp.mysql.com/products/workbench/)というMySQL純正ツールを使ってDDLを作っていたのですが、
 
 GUIでテーブルを設定し、SQLにエクスポートしたら

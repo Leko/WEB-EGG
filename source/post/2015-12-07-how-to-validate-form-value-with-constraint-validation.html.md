@@ -11,8 +11,7 @@ tags:
   - HTML5 Constraint validation
   - JavaScript
 ---
-こんにちは。
-  
+こんにちは。  
 [Hamee Advent Calendar 2015](http://qiita.com/advent-calendar/2015/hamee) 8日目の記事です。
 
 Chromeの開発者ツールでHTMLの要素を眺めていたら`validity`という属性を見つけました

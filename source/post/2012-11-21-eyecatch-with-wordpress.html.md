@@ -10,10 +10,7 @@ categories:
 ---
 <section> 
 
-こんにちは。
-    
-
-    
+こんにちは。  
 このブログはWordpressのデフォルトテーマの１つ
     
 「Twenty Eleven」を少しだけ改変して使っているのですが、

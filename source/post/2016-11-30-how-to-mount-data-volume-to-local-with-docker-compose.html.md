@@ -13,8 +13,7 @@ tags:
 ---
 この記事は[12/1のDocker2 Advent Calendar](http://qiita.com/advent-calendar/2016/docker2), [12/3のHamee Advent Calendar](http://qiita.com/advent-calendar/2016/hamee)の記事です。
 
-こんにちは。
-  
+こんにちは。  
 docker composeめちゃくちゃ便利ですよね。
   
 Chef, Vagrant, Puppet, Ansible, Fabric…とプロビジョニングツールとか仮想化ツールを色々触ってきましたが、

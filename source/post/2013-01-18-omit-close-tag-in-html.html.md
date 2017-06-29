@@ -12,8 +12,7 @@ tags:
 ---
 <section id="intro"> 
 
-こんにちは。
-  
+こんにちは。  
 Web Designing様主催の「<a href="http://book.mycom.co.jp/special/tapapp/" target="_blank">Tap App Awards 2013</a>」というコンテストに出すアプリの開発が終わりました。
   
 jQueryMobileを初めて使ってみたので、色々と記事のネタが溜まっております。

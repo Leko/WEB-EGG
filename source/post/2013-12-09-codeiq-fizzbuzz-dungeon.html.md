@@ -10,8 +10,7 @@ tags:
   - fizzbuzz
   - JavaScript
 ---
-こんにちは。
-  
+こんにちは。  
 [CodeIQ](https://codeiq.jp/)というプログラミングの問題を解くサービスで面白そうな問題を見つけました。
 
 > <span class="removed_link" title="https://codeiq.jp/ace/yanai_masakazu_fizzbuzz/">挑戦者求む！クロノス・クラウン合同会社 柳井 政和@FizzBuzzダンジョンさん｜CodeIQ</span>
