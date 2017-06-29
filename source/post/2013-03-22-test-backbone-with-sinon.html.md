@@ -57,12 +57,22 @@ sinonjsとは、テストダブルのライブラリのことです。
 ざっくりした使い方を書くと、
 
 ```javascript
-it('sinon.spyのテスト', function() { var hoge, spy; hoge = { foo: function() { return true; } }; spy = sinon.spy(hoge, 'foo'); hoge.foo(); return expect(spy.calledOnce).to.be.ok(); });
+it('sinon.spyのテスト', function() {
+    var hoge, spy;
+    hoge = {
+        foo: function() {
+            return true;
+        }
+    };
+    spy = sinon.spy(hoge, 'foo');
+    hoge.foo();
+    return expect(spy.calledOnce).to.be.ok();
+});
 ```
 
 という感じに書けます。
 
-```
+```javascript
 spy = sinon.spy( object, 'proterty' );
 ```
 
@@ -76,7 +86,23 @@ spy = sinon.spy( object, 'proterty' );
 少し長いのでCoffeeScriptで書きます。
 
 ```coffeescript
-describe 'Backbone * sinon.spy', -> Model = Backbone.Model.extend defaults: name: 'hoge' View = Backbone.View.extend initialize: -> _.bindAll @, 'render' @model.on 'change:name', @render render: -> @$el.html @model.get('name') before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, 'render' ) after -> @spy.restore() it 'Modelモデルが変更された時View.renderが呼ばれる', -> @view.model.set('name', 'leko') expect(@spy.calledOnce).to.be.ok()
+describe 'Backbone * sinon.spy', -> 
+	Model = Backbone.Model.extend
+		defaults:
+			name: 'hoge'
+	View = Backbone.View.extend
+		initialize: -> 
+			_.bindAll @, 'render'
+			@model.on 'change:name', @render
+		render: -> 
+			@$el.html @model.get('name')
+	before -> 
+		@view = new View(model: new Model())
+		@spy = sinon.spy(@view, 'render')
+	after -> 
+		@spy.restore()
+	it 'Modelモデルが変更された時View.renderが呼ばれる', -> 
+		@view.model.set('name', 'leko') expect(@spy.calledOnce).to.be.ok()
 ```
 
 実行してみると、通りません。。
@@ -89,7 +115,7 @@ Backboneを理解されてる方なら
 
 先ほどの例のように、
 
-```
+```javascript
 spy = sinon.spy(view, 'render')
 ```
 
@@ -112,7 +138,14 @@ console.logなどを挟んで関数が呼ばれているか試したところ、
 間違っていたのは、spyの設定の仕方でした。
 
 ```coffeescript
-# 間違い before -> @view = new View( model: new Model() ) @spy = sinon.spy( @view, 'render' ) # 合ってる before -> @spy = sinon.spy( View.prototype, 'render' ) @view = new View( model: new Model() )
+# 間違い
+before ->
+	@view = new View( model: new Model() )
+	@spy = sinon.spy( @view, 'render' )
+# 合ってる
+before ->
+	@spy = sinon.spy( View.prototype, 'render' )
+	@view = new View( model: new Model() )
 ```
 
 実行してみると、通ります。
