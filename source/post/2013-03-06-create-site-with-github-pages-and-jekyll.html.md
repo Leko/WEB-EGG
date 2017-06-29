@@ -38,8 +38,8 @@ Markdownについては、過去に書いた記事
 必要なもの
 ----------------------------------------
 
-  * Githubアカウント
-  * gem
+* Githubアカウント
+* gem
 
 これだけです。  
 Githubへの登録は、あらかじめ済ませておいて下さい。
@@ -49,13 +49,13 @@ Githubへの登録は、あらかじめ済ませておいて下さい。
 手順
 ----------------------------------------
 
-  * Githubページ用のリポジトリを作る
-  * jekyllをインストール
-  * _config.ymlを編集
-  * default.htmlを編集
-  * index.mdを編集
-  * プレビューしてみる
-  * Githubにプッシュする
+* Githubページ用のリポジトリを作る
+* jekyllをインストール
+* _config.ymlを編集
+* default.htmlを編集
+* index.mdを編集
+* プレビューしてみる
+* Githubにプッシュする
 
 Githubページを作る
 ----------------------------------------
@@ -89,7 +89,8 @@ jekyllをインストールする
 ターミナルを開いて、
 
 ```shell
-$ cd ~ $ gem install jekyll
+$ cd ~
+$ gem install jekyll
 ```
 
 を実行します。インストール完了です。
@@ -126,7 +127,9 @@ config.ymlは上でも言いましたが、jekyllで使うための設定ファ�
 これを適当なエディタで開き、
 
 ```yaml
-auto: true server: true markdown: kramdown
+auto: true
+server: true
+markdown: kramdown
 ```
 
 と入力して保存します。  
@@ -139,7 +142,13 @@ default.htmlを編集する
 これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
 
 ```html
-<!DOCTYPE html> <meta charset="UTF-8"> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel="stylesheet" href="css/common.css"> <script src="js/top.js"></script> <div class="container"> {{ content }} </div>
+<!DOCTYPE html> 
+<meta charset="UTF-8">
+<title>Lekohub</title>
+<!-- cssとかjsもここで読み込み --> 
+<link rel="stylesheet" href="css/common.css">
+<script src="js/top.js"></script> 
+<div class="container"> {{ content }} </div>
 ```
 
 と入力して、保存します。  
@@ -187,7 +196,8 @@ layout: default
 再びターミナルを開いて、
 
 ```shell
-$ cd (USER_NAME.github.comリポジトリへのパス) $ jekyll
+$ cd (USER_NAME.github.comリポジトリへのパス) 
+$ jekyll
 ```
 
 と入力します。すると、
