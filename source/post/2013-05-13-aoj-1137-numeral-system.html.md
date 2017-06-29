@@ -28,7 +28,25 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
 コード
 ----------------------------------------
 
-\[js\] (function (input) { var decodeMCXI = function() { var cache = {}, table = { "m": 1000, "c": 100, "x": 10, "i": 1 }; return function(str) { // 文字列はこの順番で来ると仮定 var keywords = ["m", "c", "x", "i"], sum = 0;
+```javascript
+(function (input) {
+    var decodeMCXI = function() {
+        var cache = {},
+            table = {
+                "m": 1000,
+                "c": 100,
+                "x": 10,
+                "i": 1
+            };
+        return function(str) {
+            // 文字列はこの順番で来ると仮定
+            var keywords = [
+                    "m",
+                    "c",
+                    "x",
+                    "i"
+                ],
+                sum = 0;
 
             keywords.forEach(function(k) {
                 var index = str.indexOf(k),
