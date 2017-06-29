@@ -1,5 +1,5 @@
 ---
-path: /post/create-cheap-apps-about-firlish-number/
+path: /post/create-cheap-apps-about-girlish-number/
 title: 難波社長と「勝ったな ガハハ」できるクソアプリ作った
 date: 2016-12-08T13:50:56+00:00
 dsq_thread_id:
