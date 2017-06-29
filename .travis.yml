@@ -13,14 +13,7 @@ install:
 
 script:
 - bundle exec middleman build
-- npm run lint
+# - npm run lint
 
-deploy:
-  - provider: script
-    script: npm run deploy:review
-    on:
-      branch: master
-  - provider: script
-    script: npm run deploy:prod
-    on:
-      condition: $TRAVIS_BRANCH != 'master'
+# Netlify deploy `master` branch automatically. No need to configure
+# deploy:

@@ -102,6 +102,9 @@ GEM
     middleman-minify-html (3.4.1)
       htmlcompressor (~> 0.2.0)
       middleman-core (>= 3.2)
+    middleman-search_engine_sitemap (1.4.0)
+      builder
+      middleman-core (~> 4.0)
     middleman-syntax (3.0.0)
       middleman-core (>= 3.2)
       rouge (~> 2.0)
@@ -144,6 +147,7 @@ DEPENDENCIES
   middleman-blog-similar
   middleman-dotenv (~> 2.0)
   middleman-minify-html
+  middleman-search_engine_sitemap
   middleman-syntax
   redcarpet (~> 3.3, >= 3.3.3)
   tzinfo-data
