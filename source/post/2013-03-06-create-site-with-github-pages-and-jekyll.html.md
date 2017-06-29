@@ -88,14 +88,9 @@ jekyllをインストールする
 
 ターミナルを開いて、
 
-<div>
-  
-
 ```bash
  $ cd ~ $ gem install jekyll 
 ```
-
-</div>
 
 を実行します。インストール完了です。
 
@@ -130,14 +125,9 @@ config.ymlを編集する
 config.ymlは上でも言いましたが、jekyllで使うための設定ファイルです。  
 これを適当なエディタで開き、
 
-<div>
-  
-
 ```yaml
  auto: true server: true markdown: kramdown 
 ```
-
-</div>
 
 と入力して保存します。  
 設定について詳しく知りたい方は、[設定一覧](https://github.com/mojombo/jekyll/wiki/Configuration)を御覧ください。
@@ -148,14 +138,9 @@ default.htmlを編集する
 次に、_layoutsの中の**default.html**を編集します。  
 これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
 
-<div>
-  
-
 ```markup
  <!DOCTYPE html> <meta charset=”UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel=”stylesheet” href=”css/common.css”> <script src=”js/top.js”></script> <div class=”container”> {{ content }} </div> 
 ```
-
-</div>
 
 と入力して、保存します。  
 このファイルがページの枠組みとなって、  
@@ -175,8 +160,6 @@ index.mdを編集する
 
 index.mdを適当なエディタで開き、Markdown形式で入力します。
 
-<div>
-  
 ```
 ---
 layout: default
@@ -189,8 +172,6 @@ layout: default
 
 ほげほげ
 ```
-
-</div>
 
 と入力して、保存。
 
@@ -205,25 +186,15 @@ layout: default
 
 再びターミナルを開いて、
 
-<div>
-  
-
 ```bash
  $ cd (USER_NAME.github.comリポジトリへのパス) $ jekyll 
 ```
 
-</div>
-
 と入力します。すると、
-
-<div>
-  
 
 ```bash
  Configuration from /Users/***/leko.github.com/_config.yml Auto-regenerating enabled: /Users/***/leko.github.com -> /Users/***/leko.github.com/_site [2013-02-26 22:38:59] regeneration: 7 files changed [2013-02-26 22:39:00] INFO WEBrick 1.3.1 [2013-02-26 22:39:00] INFO ruby 1.9.2 (2012-04-20) [x86_64-darwin11.4.2] [2013-02-26 22:39:00] INFO WEBrick::HTTPServer#start: pid=70965 port=4000 
 ```
-
-</div>
 
 というのが表示されると思うので、  
 ブラウザを開き、**http://localhost:4000**にアクセスします。

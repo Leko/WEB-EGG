@@ -146,14 +146,9 @@ Examplesに、同様の機能を持った**Amazon Suggest**というものもあ
   
 あまり行数はないです。PHPで書かれています。
 
-<div>
-  
-
 ```php
  require_once('workflows.php'); $wf = new Workflows(); $orig = “{query}”; $xml = $wf->request( “http://google.com/complete/search?output=toolbar&q=”.urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), “$data”, “$data”, 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( 'googlesuggest', $orig, 'No Suggestions', 'No search suggestions found. Search Google for '.$orig, 'icon.png' ); endif; echo $wf->toxml(); 
 ```
-
-</div>
 
 これで分かる方なら、もう早速作り始められると思います。
   
@@ -189,14 +184,9 @@ PHPで書く際の注意点は、
 
 ### 1. workflows.phpとWorkflowsクラス
 
-<div>
-  
-
 ```php
  require_once('workflows.php'); $wf = new Workflows(); 
 ```
-
-</div>
 
 この部分、いかにもなクラスをrequireしています。
   
@@ -212,14 +202,9 @@ Workflowsクラスは、workflowsを作る上でのユーティリティです�
 
 ### 2. 入力値の格納
 
-<div>
-  
-
 ```php
  $orig = “{query}”; 
 ```
-
-</div>
 
 とありますが、これはworkflows上での**おまじない**です。
 
@@ -243,14 +228,9 @@ urlを渡すだけでレスポンスを取得することができます。
 
 ### 4. $wf->result()
 
-<div>
-  
-
 ```php
  foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), “$data”, “$data”, 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; 
 ```
-
-</div>
 
 レスポンスを取得したら、
   
@@ -262,14 +242,9 @@ result()に突っ込まれたデータが、Alfred上で表示されます。
   
 Workflows.phpの中身を見てみました。
 
-<div>
-  
-
 ```php
  /** * Description: * Helper function that just makes it easier to pass values into a function * and create an array result to be passed back to Alfred * * @param $uid – the uid of the result, should be unique * @param $arg – the argument that will be passed on * @param $title – The title of the result item * @param $sub – The subtitle text for the result item * @param $icon – the icon to use for the result item * @param $valid – sets whether the result item can be actioned * @param $auto – the autocomplete value for the result item * @return array – array item to be passed back to Alfred */ public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto=null, $type=null ) { // … } 
 ```
-
-</div>
 
 という引数になっています。
   
@@ -350,14 +325,9 @@ MOCO'sキッチンオリーブAPIのURLは、
   
 にアクセスして、レスポンスを整形したものが以下です。
 
-<div>
-  
-
 ```javascript
  { “2013-05-21”: { “menu”: “もこみち流　ペンネのミネストローネ”, “url”: “http://www.ntv.co.jp/zip/mokomichi/397800.html”, “olive”: “大２”, “thumb”: “http://pastak.cosmio.net/mocoDB/oliveAPI/img/thumb_800.jpg” } } 
 ```
-
-</div>
 
 レスポンスは、上記の形式で得られます。
 
@@ -366,14 +336,9 @@ MOCO'sキッチンオリーブAPIのURLは、
 
 先ほどのGoogle Suggestにならって作ったコードがこちらです。
 
-<div>
-  
-
 ```php
 <?php require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ”, $json->error, ”, 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.”: “.$info->olive.”オリーブ”; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
 ```
-
-</div>
 
 先ほどのGoogle Suggestの例を見れば、
   
