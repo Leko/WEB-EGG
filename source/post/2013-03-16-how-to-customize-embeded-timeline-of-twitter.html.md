@@ -126,7 +126,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 * `noheader`: タイムラインのヘッダーをなくす
 * `nofooter`: タイムラインのフッターやツイートボックスをなくす
 * `noborders`: ウィジェットの周りやツイートの間のボーダー(境界線)をなくす
-* `noscrollbar`r: タイムラインのスクロールバーが表示されないようにする。**※サイトのアクセシビリティが悪くなる場合があるので要注意**
+* `noscrollbar`: タイムラインのスクロールバーが表示されないようにする。**※サイトのアクセシビリティが悪くなる場合があるので要注意**
 * `transparent`: タイムラインの背景を透明にする
 
 これにより、見た目のカスタマイズ性がかなり向上したと思います。 「Twitterのタイムライン」感をかなり少なくして、自サイト内に組み込めそうです。
@@ -147,7 +147,12 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
 * 横幅を220pxに指定
 
 ```html
-<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777" width="220" data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a>
+<a
+  class="twitter-timeline"
+  href="https://twitter.com/L_e_k_o"
+  data-widget-id="310714279731019777"
+  width="220"
+  data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a>
 ```
 
 ### 例２
@@ -157,7 +162,13 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
 * リンクの色を#000000に指定
 
 ```html
-<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777" data-theme="dark" lang="en" data-link-color="#000000">L_e_k_oさんのツイート（返信を除く）</a>
+<a
+  class="twitter-timeline"
+  href="https://twitter.com/L_e_k_o"
+  data-widget-id="310714279731019777"
+  data-theme="dark"
+  lang="en"
+  data-link-color="#000000">L_e_k_oさんのツイート（返信を除く）</a>
 ```
 
 注意事項
