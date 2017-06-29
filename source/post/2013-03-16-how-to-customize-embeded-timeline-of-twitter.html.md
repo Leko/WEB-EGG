@@ -86,7 +86,8 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 コピーしたコードは以下の様な感になっていると思います。
 
 ```html
-<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″>@L_e_k_o からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777">@L_e_k_o からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 ```
 
 このコードを、埋め込みタイムラインを設置したいHTMLファイルに貼り付けて、保存。 これで設置完了です。
@@ -122,11 +123,11 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 
 ウィジェットのレイアウトやインターフェースをカスタマイズする `data-chrome`属性を利用します。
 
-  * `noheader`: タイムラインのヘッダーをなくす
-  * `nofooter`: タイムラインのフッターやツイートボックスをなくす
-  * `noborders`: ウィジェットの周りやツイートの間のボーダー(境界線)をなくす
-  * `noscrollbar`r: タイムラインのスクロールバーが表示されないようにする。**※サイトのアクセシビリティが悪くなる場合があるので要注意**
-  * `transparent`: タイムラインの背景を透明にする
+* `noheader`: タイムラインのヘッダーをなくす
+* `nofooter`: タイムラインのフッターやツイートボックスをなくす
+* `noborders`: ウィジェットの周りやツイートの間のボーダー(境界線)をなくす
+* `noscrollbar`r: タイムラインのスクロールバーが表示されないようにする。**※サイトのアクセシビリティが悪くなる場合があるので要注意**
+* `transparent`: タイムラインの背景を透明にする
 
 これにより、見た目のカスタマイズ性がかなり向上したと思います。 「Twitterのタイムライン」感をかなり少なくして、自サイト内に組み込めそうです。
 
@@ -141,22 +142,22 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
 
 ### 例１
 
-  * テーマを白
-  * L_e_k_oをおすすめユーザに指定
-  * 横幅を220pxに指定
+* テーマを白
+* L_e_k_oをおすすめユーザに指定
+* 横幅を220pxに指定
 
 ```html
-<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″ width="220″ data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a>
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777" width="220" data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a>
 ```
 
 ### 例２
 
-  * テーマを黒に
-  * 言語を英語に
-  * リンクの色を#000000に指定
+* テーマを黒に
+* 言語を英語に
+* リンクの色を#000000に指定
 
 ```html
-<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777″ data-theme="dark" lang="en" data-link-color="#000000″>L_e_k_oさんのツイート（返信を除く）</a>
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777" data-theme="dark" lang="en" data-link-color="#000000">L_e_k_oさんのツイート（返信を除く）</a>
 ```
 
 注意事項
@@ -164,7 +165,7 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
 
 埋め込みタイムラインを設置する上で気をつけなければならないことが１つあります。
 
-  * **同じウィジェットを、同一ページ内に複数置くことは出来ません。**
+* **同じウィジェットを、同一ページ内に複数置くことは出来ません。**
 
 1ページに複数のタイムラインを埋め込みたいなら、 その数だけウィジェットを作らないといけないようです。
 

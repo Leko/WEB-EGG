@@ -56,7 +56,7 @@ RasbianをSDカードに書き込み
 sudo dd bs=1m if=$HOME/Downloads/2017-04-10-raspbian-jessie.img of=/dev/rdisk2
 ```
 
-> "/dev/rdisk2″と指定すると、"/dev/disk2″とするよりも早く書き込みができるらしいです。
+> "/dev/rdisk2"と指定すると、"/dev/disk2"とするよりも早く書き込みができるらしいです。
 > 
 > &mdash; [Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用) – Qiita](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
 
