@@ -99,7 +99,7 @@ WordPressプロジェクトをgit管理する
 
 今回は、テーマの改造にあたって、親（Twenty Thirteen）の子テーマとしてテーマを作ります。
 
-```
+```shell
 cd /path/to/wordpress/
 git init
 git commit -am "initial commit"
@@ -127,7 +127,7 @@ git commit -am "テーマをサブモジュール化"
 
 プラグインを追加するときは、`wp-content/plugins`の中にaddするだけです。
 
-## ローカルから`git push`するだけでデプロイ
+## ローカルから git push するだけでデプロイ
 
 いちいちsshでログインしてgit pullするのは面倒です。
 
@@ -141,7 +141,7 @@ git commit -am "テーマをサブモジュール化"
   
 そのbareリポジトリ内の`post-recieve`を作成してコマンドを書きます
 
-```
+```shell
 $ cd path/to/create/repo
 $ mkdir wp
 $ cd wp
@@ -150,7 +150,7 @@ $ cp hooks/post-update-sample hooks/post-update
 $ vim hooks/post-recieve
 ```
 
-```
+```shell
 (cd /path/to/docroot/repo && git --git-dir=. pull)
 ```
 
@@ -158,14 +158,14 @@ $ vim hooks/post-recieve
   
 apache側の設定とかは適宜やっといてください。
 
-```
+```shell
 $ cd ~
 $ git clone /path/to/bare/repo wp
 ```
 
 ローカル側でリモートを指定
 
-```
+```shell
 $ git remote add ssh://hoge@foo.jp/~/path/to/bare/repo
 $ git push origin master
 ```
