@@ -31,7 +31,7 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
 コード
 ----------------------------------------
 
-\[js\] (function (input) { var decodeMCXI = function() { var cache = {}, table = { “m”: 1000, “c”: 100, “x”: 10, “i”: 1 }; return function(str) { // 文字列はこの順番で来ると仮定 var keywords = [“m”, “c”, “x”, “i”], sum = 0;
+\[js\] (function (input) { var decodeMCXI = function() { var cache = {}, table = { "m": 1000, "c": 100, "x": 10, "i": 1 }; return function(str) { // 文字列はこの順番で来ると仮定 var keywords = ["m", "c", "x", "i"], sum = 0;
 
             keywords.forEach(function(k) {
                 var index = str.indexOf(k),
@@ -101,7 +101,7 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
     }
     
 
-})(require(“fs”).readFileSync(“/dev/stdin”, “utf8”)); 
+})(require("fs").readFileSync("/dev/stdin", "utf8")); 
 ```
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

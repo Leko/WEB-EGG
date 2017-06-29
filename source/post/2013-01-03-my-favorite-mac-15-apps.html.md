@@ -39,7 +39,7 @@ tags:
     <img src="/images/2013/01/sublimetext.png" alt="Sublimetext" title="sublimetext.png" height="200" />
     これも有名だと思います。一時期バズりましたね。 高機能＆多機能＋軽い！ カーソルを一度に複数使えたりと不思議なことの出来るエディタです。 私もまだ全く使いこなせていないので、今度練習しがてらエントリを１つ書いてみようと思います。 <aside> 
     
-      * <a href="http://liginc.co.jp/designer/archives/6774" target="_blank">”恋に落ちるエディタ”「Sublime Text」 完全入門ガイド！ | 株式会社LIG</a> 
+      * <a href="http://liginc.co.jp/designer/archives/6774" target="_blank">"恋に落ちるエディタ"「Sublime Text」 完全入門ガイド！ | 株式会社LIG</a> 
       * <a href="http://blog.huwy.org/article/292827228.html" target="_blank">【Windowsアプリケーション】Sublime Text 2 メニュー日本語化: ゆーがいぶろぐ</a></aside> 
   * ### OmmWriter
     

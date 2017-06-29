@@ -231,7 +231,7 @@ redisurlはredis.Connを返し、NewRediStoreWithPoolはredis.Poolを受け取�
   
 使っているライブラリが違うなど、直接の原因や対策が出てこず苦戦しました。まだ人口の少ない言語なので仕方ないかと思います。
 
-> [Go – JSON-RPC – “too many colons”](http://stackoverflow.com/questions/8854682/go-json-rpc-too-many-colons)
+> [Go – JSON-RPC – "too many colons"](http://stackoverflow.com/questions/8854682/go-json-rpc-too-many-colons)
 
 <!---->
 

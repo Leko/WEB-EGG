@@ -40,7 +40,7 @@ DDLのタスクにて`Access Denied`が起きているよ、とのこと
 
 AWSのページを見つけました
 
-> The S3 location should match the format s3://bucket/path; don't include the endpoint. For example, s3://us-east-1.amazonaws.com/bucket/path would result in an “Access Denied” error.
+> The S3 location should match the format s3://bucket/path; don't include the endpoint. For example, s3://us-east-1.amazonaws.com/bucket/path would result in an "Access Denied" error.
 > 
 > &mdash; [Resolve "Access Denied" Errors When Running Amazon Athena Queries](https://aws.amazon.com/premiumsupport/knowledge-center/access-denied-athena/)
 

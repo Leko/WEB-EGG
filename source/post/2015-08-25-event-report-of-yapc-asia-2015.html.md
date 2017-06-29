@@ -80,7 +80,7 @@ OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語�
 ## Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜
 
   * [Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/4bab2728-00fa-11e5-9931-79c97d574c3a)
-  * [みんなが聞きたいIoT!!”Akerun”の作り方~Webからハードウェアへの移行での苦労~ #yapcasia #yapcasiaD – Togetterまとめ](http://togetter.com/li/863373)
+  * [みんなが聞きたいIoT!!"Akerun"の作り方~Webからハードウェアへの移行での苦労~ #yapcasia #yapcasiaD – Togetterまとめ](http://togetter.com/li/863373)
   * [スライド](http://kazuph.github.io/presentation/yapc-2015-iot-presentation/)
   * [本人 発表後日談](http://kazuph.hateblo.jp/entry/2015/08/22/163000)
 

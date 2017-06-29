@@ -40,7 +40,7 @@ redmine "Mysql2::Error: Incorrect string value"
 
 というエラーが。
 
-## “Mysql2::Error: Incorrect string value”を解消する
+## "Mysql2::Error: Incorrect string value"を解消する
 
 エラーメッセージを見る限り、まぁ文字コード系だろうなぁ。という感触。
   
@@ -88,7 +88,7 @@ utf8mb4は4バイト対応のUTF8だそうです。絵文字とか特殊文字�
   
 ということでコンテナを破棄してもう一度マイグレーションからやり直したらこんなエラーが。
 
-## “Mysql2::Error: Specified key was too long”を解消する
+## "Mysql2::Error: Specified key was too long"を解消する
 
 結局、恒久的な対応策が見つかりませんでした。
 

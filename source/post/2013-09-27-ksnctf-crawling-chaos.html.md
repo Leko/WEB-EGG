@@ -67,9 +67,9 @@ jsでは、**マルチバイト文字を変数名などの識別子として利�
 例：
 
 ```javascript
- var あいうえお配列 = “あいうえお”.split(“”);
+ var あいうえお配列 = "あいうえお".split("");
 
-あいうえお配列.join(“”) === “あいうえお”; // true 
+あいうえお配列.join("") === "あいうえお"; // true 
 ```
 
 とこんな感じで、さも当たり前のように全角の文字も扱うことができます。
@@ -117,7 +117,7 @@ jQueryを読み込んでないので実行が止まったようです。
 カンマ区切りでいうところの、41行目です。
 
 ```javascript
- $(function(){$(“form”).submit(function(){var t=$('input[type=”text”]').val();var p=Array(70,152,195,284,475,612,791,896,810,850,737,1332,1469,1120,1470,832,1785,2196,1520,1480,1449);var f=false;if(p.length==t.length){f=true;for(var i=0;i<p.length;i++)if(t.charCodeAt(i)*(i+1)!=p[i])f=false;if(f)alert(“(」・ω・)」うー!(/・ω・)/にゃー!”);}if(!f)alert(“No”);return false;});}); 
+ $(function(){$("form").submit(function(){var t=$('input[type="text"]').val();var p=Array(70,152,195,284,475,612,791,896,810,850,737,1332,1469,1120,1470,832,1785,2196,1520,1480,1449);var f=false;if(p.length==t.length){f=true;for(var i=0;i<p.length;i++)if(t.charCodeAt(i)*(i+1)!=p[i])f=false;if(f)alert("(」・ω・)」うー!(/・ω・)/にゃー!");}if(!f)alert("No");return false;});}); 
 ```
 
 こんな文字列が出てきます。
@@ -145,7 +145,7 @@ jQueryを読み込んでないので実行が止まったようです。
 配列pとその扱い方の部分だけを抜き出してみます。
 
 ```javascript
- var t = $('input[type=”text”]').val(); var p = Array(70,152,195,284,475,612,791,896,810,850,737,1332,1469,1120,1470,832,1785,2196,1520,1480,1449); for(var i=0; i<p.length; i++) if(t.charCodeAt(i) * (i+1) != p[i]) f = false; 
+ var t = $('input[type="text"]').val(); var p = Array(70,152,195,284,475,612,791,896,810,850,737,1332,1469,1120,1470,832,1785,2196,1520,1480,1449); for(var i=0; i<p.length; i++) if(t.charCodeAt(i) * (i+1) != p[i]) f = false; 
 ```
 
 tはフォームのinputタグに入力した文字列です。
@@ -157,7 +157,7 @@ tはフォームのinputタグに入力した文字列です。
 for分の中身を変えて確認してみます。
 
 ```javascript
- var str = “”; for(var i=0; i<p.length; i++) str += String.fromCharCode(p[i] / (i+1)); console.log(str); 
+ var str = ""; for(var i=0; i<p.length; i++) str += String.fromCharCode(p[i] / (i+1)); console.log(str); 
 ```
 
 こいつを問題ページのフォームに貼り付けてみると、

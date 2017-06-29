@@ -125,7 +125,7 @@ Pocketからアクセストークンを取得する
 Fetchを押してみると、以下の様なレスポンスが帰ってくると思います。
 
 ```
-HTTP/1.1 200 OK ———————————REQUEST————————————– Content-Type = application/x-www-form-urlencoded Accept-Encoding = gzip Content-Length = 77 User-Agent = Fetcher 1.4 (Macintosh; Mac OS X 10.8.4; ja_US) ———————————RESPONSE———————————— Server = Apache/2.2.23 (Amazon) Status = 200 OK Content-Type = application/x-www-form-urlencoded X-Powered-By = PHP/5.3.20 X-Source = Pocket P3P = policyref=”/w3c/p3p.xml”, CP=”ALL CURa ADMa DEVa OUR IND UNI COM NAV INT STA PRE” Date = Tue, 06 Aug 2013 11:23:38 GMT Content-Length = 35 Cache-Control = private Connection = keep-alive code=XXXXXXXXXXXXXXXXXXX
+HTTP/1.1 200 OK ———————————REQUEST————————————– Content-Type = application/x-www-form-urlencoded Accept-Encoding = gzip Content-Length = 77 User-Agent = Fetcher 1.4 (Macintosh; Mac OS X 10.8.4; ja_US) ———————————RESPONSE———————————— Server = Apache/2.2.23 (Amazon) Status = 200 OK Content-Type = application/x-www-form-urlencoded X-Powered-By = PHP/5.3.20 X-Source = Pocket P3P = policyref="/w3c/p3p.xml", CP="ALL CURa ADMa DEVa OUR IND UNI COM NAV INT STA PRE" Date = Tue, 06 Aug 2013 11:23:38 GMT Content-Length = 35 Cache-Control = private Connection = keep-alive code=XXXXXXXXXXXXXXXXXXX
 ```
 
 一番下の行の、code=XXXXXXXXXXXXの部分を使います。
@@ -203,7 +203,7 @@ APIの公式ドキュメントはこちら。
 ソースはこんな感じになると思います。
 
 ```javascript
-(function(global, undefined) { “use strict”; var https = require(“https”), endpoint = “https://getpocket.com/v3/get”, param = “”; param += “consumer_key=YOUR_CONSUMER_KEY”; param += “&access_token=YOUR_ACCESS_TOKEN”; param += “&sort=newest”; param += “&count=1”; https.get(endpoint + “?” + serialize(param), function(res) { var response = “”; // データを受信したら res.on(“data”, function(buff) { response += buff.toString(); }); // データの受信が完了したら res.on(“end”, function() { var json = JSON.parse(response), p; for (p in json.list) { var item = json.list[p], title = item.resolved_title, url = item.resolved_url; console.log(title + “n” + url + “n”); } }); }); }(this)); 
+(function(global, undefined) { "use strict"; var https = require("https"), endpoint = "https://getpocket.com/v3/get", param = ""; param += "consumer_key=YOUR_CONSUMER_KEY"; param += "&access_token=YOUR_ACCESS_TOKEN"; param += "&sort=newest"; param += "&count=1"; https.get(endpoint + "?" + serialize(param), function(res) { var response = ""; // データを受信したら res.on("data", function(buff) { response += buff.toString(); }); // データの受信が完了したら res.on("end", function() { var json = JSON.parse(response), p; for (p in json.list) { var item = json.list[p], title = item.resolved_title, url = item.resolved_url; console.log(title + "n" + url + "n"); } }); }); }(this)); 
 ```
 
 これを実行してみると、こんな表示がされると思います。
@@ -232,7 +232,7 @@ APIクライアントの実装
 上記のnodejs-pocket.jsをダウンロードした上で、下記のように使ってもらえます。 requireのパスは適宜変えて下さい。
 
 ```javascript
-var Pocket = require(“./nodejs-pocket.js”), pocket = new Pocket({ consumer_key: “あなたのconsumer_key”, access_token: “あなたのaccess_token” }); // Pocketから取得 var opt = { sort: “newest”, count: 10 }; pocket.get(opt, function(json) { // 記事の配列 }); // Pocketされている記事の情報変更 var opt = { actions: [ { “action”: “favorite”, “item_id”: 99999999 } ] }; pocket.modify(opt, function(json) { // 送信したアクションを行った結果 }); // Pocketに記事を追加 var opt = { url: “http://leko.jp”, title: “うぇぶえっぐ”, tags: “web,egg” }; pocket.add(opt, function(json) { // 記事をPocketに追加した結果 }); 
+var Pocket = require("./nodejs-pocket.js"), pocket = new Pocket({ consumer_key: "あなたのconsumer_key", access_token: "あなたのaccess_token" }); // Pocketから取得 var opt = { sort: "newest", count: 10 }; pocket.get(opt, function(json) { // 記事の配列 }); // Pocketされている記事の情報変更 var opt = { actions: [ { "action": "favorite", "item_id": 99999999 } ] }; pocket.modify(opt, function(json) { // 送信したアクションを行った結果 }); // Pocketに記事を追加 var opt = { url: "http://leko.jp", title: "うぇぶえっぐ", tags: "web,egg" }; pocket.add(opt, function(json) { // 記事をPocketに追加した結果 }); 
 ```
 
 APIは、APIクライアント系のgem(Rubyだけど)によくある形に合わせてみたつもりですが、

@@ -27,7 +27,7 @@ tags:
 
 /\* —————— gem,rails編 —————— \*/ rails 3.2をインストール
 
-/\* —————— エラー潰し編 —————— \*/ Invalid gemspec in [/usr/lib/ruby/gems/1.9.1/specifications/mail-2.4.4.gemspec]: invalid date format in specification: “2012-03-14 00:00:00.000000000Z” Invalid gemspec in [/usr/lib/ruby/gems/1.9.1/specifications/jquery-rails-2.1.3.gemspec]: invalid date format in specification: “2012-09-24 00:00:00.000000000Z” Invalid gemspec in [/usr/lib/ruby/gems/1.9.1/specifications/sass-rails-3.2.5.gemspec]: invalid date format in specification: “2012-03-19 00:00:00.000000000Z” みたいなエラーが出る
+/\* —————— エラー潰し編 —————— \*/ Invalid gemspec in [/usr/lib/ruby/gems/1.9.1/specifications/mail-2.4.4.gemspec]: invalid date format in specification: "2012-03-14 00:00:00.000000000Z" Invalid gemspec in [/usr/lib/ruby/gems/1.9.1/specifications/jquery-rails-2.1.3.gemspec]: invalid date format in specification: "2012-09-24 00:00:00.000000000Z" Invalid gemspec in [/usr/lib/ruby/gems/1.9.1/specifications/sass-rails-3.2.5.gemspec]: invalid date format in specification: "2012-03-19 00:00:00.000000000Z" みたいなエラーが出る
 
 -> gemのインストール時に invalid date format in specification でエラー – TitaniumMobile勉強記 http://h5y1m141.hatenablog.com/entry/20110812/p1
 

@@ -122,12 +122,12 @@ index.phpを開いて下記の内容を記入。
 <?php
 
 // facebookSDKを読み込み
-require_once(“src/facebook.php”);
+require_once("src/facebook.php");
 
 // アプリの情報を$configに格納
 $config = array(
-  'appId' => “登録したアプリのID”,
-  'secret' => “取得したアプリのsecret”
+  'appId' => "登録したアプリのID",
+  'secret' => "取得したアプリのsecret"
 );
 
 $facebook = new Facebook($config);
@@ -153,13 +153,13 @@ if ( $user ) {
 	// ユーザ情報を取得
 	$user_info = $facebook->getUser();
 	// ログアウト用のリンクを出力
-	echo “[ログアウト](".$logoutUrl.")“;
+	echo "[ログアウト](".$logoutUrl.")";
 	// ユーザ情報を出力
 	print\_r($user\_info);
 } else {
 	// ログインURLを生成
 	$loginUrl = $facebook->getLoginUrl();
-	echo “[facebookでログイン！](".$loginUrl.")“;
+	echo "[facebookでログイン！](".$loginUrl.")";
 }
 ```
 

@@ -178,7 +178,7 @@ README(英語)を見てみると、
 と書いてあるので、jsファイルを開いてこんな感じのjsを記述。
 
 ```javascript
- (function(glocal, $) { var hoge = “aaa”; alert(hoge); }(this, jQuery)); 
+ (function(glocal, $) { var hoge = "aaa"; alert(hoge); }(this, jQuery)); 
 ```
 
 F7キーを押してみると、コンソールが表示され[Finished.]と出力されました。
@@ -186,7 +186,7 @@ F7キーを押してみると、コンソールが表示され[Finished.]と出�
 生成されたmin.jsを見てみるとこんな感じに。
 
 ```javascript
- (function(a,b){var c=”aaa”;alert(c);}(this,jQuery)); 
+ (function(a,b){var c="aaa";alert(c);}(this,jQuery)); 
 ```
 
 便利！( ´◔‿ゝ◔\`)

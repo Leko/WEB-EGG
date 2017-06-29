@@ -27,7 +27,7 @@ tags:
 おもむろに左側に表示されているクッキーを右クリックして「要素を検証」してみたところ、
 
 ```markup
- <div id=”bigCookie”… 
+ <div id="bigCookie"… 
 ```
 
 **あ、これはいけるわ。**
@@ -151,7 +151,7 @@ CSSのセレクタを使って要素を取得できる組み込みメソッド�
 リピートの間隔は、適当に設定して下さい。
 
 ```javascript
- !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs(“#upgrades .upgrade”), products = qs(“#products .product”), cookie = qs(“#bigCookie”), golden = qs(“#goldenCookie”); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
+ !function() { // 長いので省略 var qs = function(selector) { document.querySelectorAll(selector); }; var FPS = 500, // 1秒で処理を実行する回数 upgrades = qs("#upgrades .upgrade"), products = qs("#products .product"), cookie = qs("#bigCookie"), golden = qs("#goldenCookie"); setInterval(function() { // ここに操作を追加 }, 1000 / FPS); }(); 
 ```
 
 基本的な枠組みはこんな感じになると思います。
@@ -270,7 +270,7 @@ jQueryをjsから読み込ませることも出来るのですが、大した処
  window.confirm = function(){ return true; }; 
 ```
 
-これで、ダイアログは出ず、強制的に”はい”が選択されたことになります。
+これで、ダイアログは出ず、強制的に"はい"が選択されたことになります。
   
 jsの処理を止めるのはこいつだけなので、ここさえ超えてしまえばあとは放って置くだけです。
 

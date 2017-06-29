@@ -75,9 +75,9 @@ Nodejsが使われているなら日本語エラー出ないし。
 
 > `設定>SublimeLinter>設定 - ユーザ`に以下を追加します。
 > 
-> “sublimelinter\_executable\_map”: {
+> "sublimelinter\_executable\_map": {
   
-> “javascript”: “/Users/leon/.nvm/v0.10.8/bin/node” // which node
+> "javascript": "/Users/leon/.nvm/v0.10.8/bin/node" // which node
   
 > },
 

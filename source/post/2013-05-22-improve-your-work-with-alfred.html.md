@@ -147,7 +147,7 @@ Examplesに、同様の機能を持った**Amazon Suggest**というものもあ
 あまり行数はないです。PHPで書かれています。
 
 ```php
- require_once('workflows.php'); $wf = new Workflows(); $orig = “{query}”; $xml = $wf->request( “http://google.com/complete/search?output=toolbar&q=”.urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), “$data”, “$data”, 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( 'googlesuggest', $orig, 'No Suggestions', 'No search suggestions found. Search Google for '.$orig, 'icon.png' ); endif; echo $wf->toxml(); 
+ require_once('workflows.php'); $wf = new Workflows(); $orig = "{query}"; $xml = $wf->request( "http://google.com/complete/search?output=toolbar&q=".urlencode( $orig ) ); $xml = simplexml_load_string( utf8_encode($xml) ); $int = 1; foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), "$data", "$data", 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; $results = $wf->results(); if ( count( $results ) == 0 ): $wf->result( 'googlesuggest', $orig, 'No Suggestions', 'No search suggestions found. Search Google for '.$orig, 'icon.png' ); endif; echo $wf->toxml(); 
 ```
 
 これで分かる方なら、もう早速作り始められると思います。
@@ -203,7 +203,7 @@ Workflowsクラスは、workflowsを作る上でのユーティリティです�
 ### 2. 入力値の格納
 
 ```php
- $orig = “{query}”; 
+ $orig = "{query}"; 
 ```
 
 とありますが、これはworkflows上での**おまじない**です。
@@ -229,7 +229,7 @@ urlを渡すだけでレスポンスを取得することができます。
 ### 4. $wf->result()
 
 ```php
- foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), “$data”, “$data”, 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; 
+ foreach( $xml as $sugg ): $data = $sugg->suggestion->attributes()->data; $wf->result( $int.'.'.time(), "$data", "$data", 'Search Google for '.$data, 'icon.png' ); $int++; endforeach; 
 ```
 
 レスポンスを取得したら、
@@ -326,7 +326,7 @@ MOCO'sキッチンオリーブAPIのURLは、
 にアクセスして、レスポンスを整形したものが以下です。
 
 ```javascript
- { “2013-05-21”: { “menu”: “もこみち流　ペンネのミネストローネ”, “url”: “http://www.ntv.co.jp/zip/mokomichi/397800.html”, “olive”: “大２”, “thumb”: “http://pastak.cosmio.net/mocoDB/oliveAPI/img/thumb_800.jpg” } } 
+ { "2013-05-21": { "menu": "もこみち流　ペンネのミネストローネ", "url": "http://www.ntv.co.jp/zip/mokomichi/397800.html", "olive": "大２", "thumb": "http://pastak.cosmio.net/mocoDB/oliveAPI/img/thumb_800.jpg" } } 
 ```
 
 レスポンスは、上記の形式で得られます。
@@ -338,7 +338,7 @@ MOCO'sキッチンオリーブAPIのURLは、
 
 ```php
 <?php
- require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ”, $json->error, ”, 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.”: “.$info->olive.”オリーブ”; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
+ require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ", $json->error, ", 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.": ".$info->olive."オリーブ"; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML(); 
 ```
 
 先ほどのGoogle Suggestの例を見れば、

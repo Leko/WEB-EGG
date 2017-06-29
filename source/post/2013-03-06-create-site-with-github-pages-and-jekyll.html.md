@@ -139,7 +139,7 @@ default.htmlを編集する
 これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
 
 ```markup
- <!DOCTYPE html> <meta charset=”UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel=”stylesheet” href=”css/common.css”> <script src=”js/top.js”></script> <div class=”container”> {{ content }} </div> 
+ <!DOCTYPE html> <meta charset="UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel="stylesheet" href="css/common.css"> <script src="js/top.js"></script> <div class="container"> {{ content }} </div> 
 ```
 
 と入力して、保存します。  

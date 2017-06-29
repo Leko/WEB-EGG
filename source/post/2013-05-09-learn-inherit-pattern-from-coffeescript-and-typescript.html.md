@@ -70,7 +70,7 @@ JavaScriptはプロトタイプベースのオブジェクト指向言語であ�
   
 あくまで**それらに似た振る舞いを再現**できる、というだけです。
 
-「Javascriptパターン」による”聖杯パターン”
+「Javascriptパターン」による"聖杯パターン"
 ----------------------------------------
 
 JavaScriptパターンから引用すると、
@@ -134,7 +134,7 @@ CoffeeScriptでクラスと継承を用いた例が、以下となります。
 (CoffeeScript.orgの[Classes](http://coffeescript.org/#classes)の説明から持ってきて一部改変)
 
 ```coffeescript
- class Parent constructor: (@name) -> move: (meters) -> console.log @name + ” moved #{meters}m.” class Child extends Parent move: -> console.log “slithering…” super 5 child = new Child() child.move() 
+ class Parent constructor: (@name) -> move: (meters) -> console.log @name + " moved #{meters}m." class Child extends Parent move: -> console.log "slithering…" super 5 child = new Child() child.move() 
 ```
 
 ものすごくシンプルです。
@@ -155,7 +155,7 @@ TypeScriptでのclassと継承
 TypeScriptでのクラスの定義と継承の例は以下となります。
 
 ```javascript
- class Parent { name: string; constructor(name: string) { this.name = name; } move(meters: number): void { console.log(this.name + ” moved ” + meters + “m.”); } } class Child extends Parent { move(): void { console.log(“slithering…”); super.move(5); } } var child: Child = new Child(); child.move(); 
+ class Parent { name: string; constructor(name: string) { this.name = name; } move(meters: number): void { console.log(this.name + " moved " + meters + "m."); } } class Child extends Parent { move(): void { console.log("slithering…"); super.move(5); } } var child: Child = new Child(); child.move(); 
 ```
 
 ややコード量が増えていますが、とても見やすいです。
@@ -235,7 +235,7 @@ CoffeeScriptもTypeScriptもほぼ同様の表現になっています。
 下記はCoffeeScriptの先程の例のクラス部分をjsにコンパイルしたコードです。
 
 ```javascript
- var Parent = (function () { function Parent(name) { this.name = name; } Parent.prototype.move = function (meters) { console.log(this.name + ” moved ” + meters + “m.”); }; return Parent; })(); var Child = (function (_super) { __extends(Child, _super); function Child() { _super.apply(this, arguments); } Child.prototype.move = function () { console.log(“slithering…”); _super.prototype.move.call(this, 5); }; return Child; })(Parent); 
+ var Parent = (function () { function Parent(name) { this.name = name; } Parent.prototype.move = function (meters) { console.log(this.name + " moved " + meters + "m."); }; return Parent; })(); var Child = (function (_super) { __extends(Child, _super); function Child() { _super.apply(this, arguments); } Child.prototype.move = function () { console.log("slithering…"); _super.prototype.move.call(this, 5); }; return Child; })(Parent); 
 ```
 
 まず、`var クラス名 = (function() {})();`とクラスの定義を即時関数に包み、
@@ -287,7 +287,7 @@ CoffeeScript、TypeScript共にほぼ同じなので、 上記のような書き
 
 JavaScriptにはprototypeを用いた柔軟な継承の表現が他にもあります。
   
-今回の例はあくまで**jsで”クラス”っぽいことがやりたい人**向けの内容であることをご留意下さい。
+今回の例はあくまで**jsで"クラス"っぽいことがやりたい人**向けの内容であることをご留意下さい。
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>
