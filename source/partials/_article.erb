@@ -19,7 +19,7 @@
         <%= current_resource.body.remove(current_resource.summary) %>
       </div>
     </section>
-    <footer class="card__footer card__footer--nopad">
+    <footer class="card__footer">
       <%= partial 'partials/share', locals: { post: current_resource } %>
       <%= partial 'partials/related_post', locals: { post: current_resource } %>
 
