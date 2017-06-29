@@ -8,6 +8,10 @@ dsq_thread_id:
   - "5316515685"
 categories:
   - やってみた
+tags:
+  - PHP
+  - FuelPHP
+  - MySQL
 ---
 こんにちは。お久しぶりの更新です。
 
