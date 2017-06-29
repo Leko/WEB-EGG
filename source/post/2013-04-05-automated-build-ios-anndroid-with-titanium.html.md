@@ -48,10 +48,10 @@ iOSアプリの開発をするため、Macは必須です。
 他には、お好みのテキストエディタなどをご用意下さい。  
 なお、今回の記事は、
 
-  * **Mac Book Air 11インチ**
-  * **ＯＳ　：Mac OS X 10.8.3 Moutain Lion**
-  * **ＣＰＵ：Intel Core i7 1.8GHz**
-  * **メモリ：4GB**
+* **Mac Book Air 11インチ**
+* **ＯＳ　：Mac OS X 10.8.3 Moutain Lion**
+* **ＣＰＵ：Intel Core i7 1.8GHz**
+* **メモリ：4GB**
 
 のPCで試しています。
 
@@ -176,32 +176,21 @@ Titanium-cliのインストールが完了したので、 次に環境設定を�
 $ titanium setup
 ```
 
-と入力します。 いくつか設定項目があるので、支持通り入力します。
+と入力します。 いくつか設定項目があるので、指示通り入力します。
 
-  * **What is your name?**
-    
+* **What is your name?**
       * ユーザー名。半角アルファベットならなんでもOKです
-
-  * **What is your email address used for logging into the Appcelerator Network?**
-    
+* **What is your email address used for logging into the Appcelerator Network?**
       * 先ほどAppceleratorに登録したメールアドレスを入力します
-
-  * **What would you like as your default locale?**
-    
+* **What would you like as your default locale?**
       * 国を指定します。日本の方なら`ja`と入力
-
-  * **What Titanium SDK would you like to use by default? (3.0.2.GA)**
-    
+* **What Titanium SDK would you like to use by default? (3.0.2.GA)**
       * Titanium SDKのバージョンを指定します。  
         `(3.0.2.GA)`と表示されていたら、そのままEnter
-
-  * **Path to your workspace where your projects should be created**
-    
+* **Path to your workspace where your projects should be created**
       * プロジェクトを作成するときのパスを指定する  
         `./`と入力しておけばOKかと
-
-  * **Path to the Android SDK**
-    
+* **Path to the Android SDK**
       * Android SDKのパスを指定する  
         先ほどTitanium Studioで設定した通り、`/Developers/android-sdk/`と入力
 
@@ -220,22 +209,17 @@ $ titanium create
 
 またいくつか質問をされるので、埋めていきます。
 
-  * **Target platforms**
-    
-      * 対象のプラットフォームをカンマ区切りで入力  
-        今回はiosとandroid用のアプリを作りたいので、`android,ios`と入力
-
-  * **App ID**
-    
-      * アプリのIDを入力  
-        これは、自分のドメインを逆順に書き、最後に`.アプリ名`を書くのが通例のようです。  
-        私の場合、持っているドメインは`leko.jp`なので、  
-        アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります。
-
-  * **Project name**
-    
-      * アプリの名前を入力  
-        App IDで`myapp`としたので、そのまま`myapp`と入力
+* **Target platforms**
+    * 対象のプラットフォームをカンマ区切りで入力  
+      今回はiosとandroid用のアプリを作りたいので、`android,ios`と入力
+* **App ID**
+    * アプリのIDを入力  
+      これは、自分のドメインを逆順に書き、最後に`.アプリ名`を書くのが通例のようです。  
+      私の場合、持っているドメインは`leko.jp`なので、  
+      アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります。
+* **Project name**
+    * アプリの名前を入力  
+      App IDで`myapp`としたので、そのまま`myapp`と入力
 
 上記を入力すると、
 
@@ -344,9 +328,9 @@ Androidのエミュレータが起動してアプリが表示されればOKで�
 
 ### 参考サイト
 
-  * [Titanium Mobile入門 (全28回) – プログラミングならドットインストール](http://dotinstall.com/lessons/basic_titanium)
-  * [先取り "新" Titanium CLI \| old.imthinker.net](http://old.imthinker.net/2012/10/anticipate-new-titanium-cli/)
-  * [Titanium CLIのセットアップ・ビルドなど導入編 ::ハブろぐ](http://havelog.ayumusato.com/develop/others/e549-titanium_cli_install.html)
+* [Titanium Mobile入門 (全28回) – プログラミングならドットインストール](http://dotinstall.com/lessons/basic_titanium)
+* [先取り "新" Titanium CLI \| old.imthinker.net](http://old.imthinker.net/2012/10/anticipate-new-titanium-cli/)
+* [Titanium CLIのセットアップ・ビルドなど導入編 ::ハブろぐ](http://havelog.ayumusato.com/develop/others/e549-titanium_cli_install.html)
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>
