@@ -27,13 +27,13 @@ Google Cloud StorageはブラウザからGUIで操作する方法と、[Google C
 
 [公式](https://cloud.google.com/sdk/docs/#install_the_latest_version_cloudsdk_current_version)にインストールガイドがあるのですが、<del>面倒なので</del>インストールはHomebrew-caskでやってしまいます。
 
-```bash
+```shell
 brew cask install google-cloud-sdk
 ```
 
 インストールできたか動作確認。
 
-```bash
+```shell
 gsutil
 ```
 
@@ -62,7 +62,7 @@ gsutil
 
 コマンドの場合は、`gsutil ls -L {URL}`で見れるようです。
 
-```bash
+```shell
 $ gsutil ls -L gs://web.timer.builderscon.io/all.css
 gs://web.timer.builderscon.io/all.css:
     Creation time:      Mon, 27 Jun 2016 00:02:53 GMT
@@ -83,7 +83,7 @@ TOTAL: 1 objects, 2225 bytes (2.17 KiB)
 
 curlからファイルにアクセスし、レスポンスヘッダを見てみます。
 
-```bash
+```shell
 $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 *   Trying 172.217.25.112...
 * Connected to web.timer.builderscon.io (172.217.25.112) port 80 (#0)
@@ -127,7 +127,7 @@ Edit metadataからキャッシュの情報を書き換えられます。
 
 書き換えたらcurlでアクセス。
 
-```bash
+```shell
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 &lt; Cache-Control: public, max-age=30
 ```
@@ -138,7 +138,7 @@ $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 
 gsutilコマンドの場合は`setmeta`サブコマンドを使用します。
 
-```bash
+```shell
 gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.builderscon.io/all.css
 Setting metadata on gs://web.timer.builderscon.io/all.css...
 BadRequestException: 400 Invalid argument.
@@ -148,7 +148,7 @@ BadRequestException: 400 Invalid argument.
   
 よくよく考えたらログインしてないですね。プロジェクトのメンバーでないとファイルの変更ができないので、gcloudコマンドでログインします。
 
-```bash
+```shell
 $ gcloud auth login
 Your browser has been opened to visit:
 
@@ -163,14 +163,14 @@ Your current project is [None].  You can change this setting by running:
 
 ログインが完了したら、もう一度メタデータを更新。
 
-```bash
+```shell
 $ gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.builderscon.io/all.css
 Setting metadata on gs://web.timer.builderscon.io/all.css...
 ```
 
 今度はうまくいったようです。書き換えたらcurlでアクセス。
 
-```bash
+```shell
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 &lt; Cache-Control: public, max-age=100
 ```

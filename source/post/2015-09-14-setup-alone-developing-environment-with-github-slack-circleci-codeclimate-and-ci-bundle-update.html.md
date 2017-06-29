@@ -49,7 +49,7 @@ Slackに通知を飛ばすのは書くまでもなく、矢印が煩雑になる
   
 リポジトリの作成には[hub](https://github.com/github/hub)コマンドを使用しています。
 
-```bash
+```shell
 cd /path/to/work
 mkdir repo-name && cd repo-name
 echo '# Repo name' > README.md
@@ -90,7 +90,7 @@ Circle CIにログインし、Githubに登録したリポジトリをCI対象と
 
 YAMLファイルでもRubyのバージョンを指定できるそうなのですが、`.ruby-version`の方が汎用的かと思いそちらを使用しています。
 
-```bash
+```shell
 git checkout -b feat/circle-ci
 rbenv local 2.2.2
 git add .ruby-version

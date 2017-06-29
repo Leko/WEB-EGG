@@ -84,7 +84,7 @@ JasmineはMochaと書き方がほとんど変わらないのでどちらか知�
   
 以降の手順でもバシバシ使っています。
 
-```bash
+```shell
 cd /path/to/work
 mkdir karma-ievm-seed && cd karma-ievm-seed
 git init
@@ -116,7 +116,7 @@ Karmaでそのようなブラウザを起動する場合、`FIREFOX_BIN`とい�
 
 [dotenv](https://www.npmjs.com/package/dotenv)はプロジェクト直下の`.env`というファイルを読み取り環境変数に自動的にセットしてくれるツールです。
 
-```bash
+```shell
 npm i -D dotenv
 echo "FIREFOX_BIN=/opt/homebrew-cask/Caskroom/firefox/latest/Firefox.app/Contents/MacOS/firefox-bin" > .env
 ```
@@ -145,7 +145,7 @@ IE8で使用できないメソッドとして、`Array#reduce`を採用しまし
 Karmaの設定を変更してローカルのChromeで結果を確認
 ----------------------------------------
 
-```bash
+```shell
 npm i -D karma-browserify brfs
 ```
 
@@ -162,7 +162,7 @@ Karmaの設定ファイルは[こちら](https://github.com/Leko/karma-ievm-seed
   
 以上の設定をしたらテストを実行してみます。
 
-```bash
+```shell
 karma start
 ```
 
@@ -197,7 +197,7 @@ IEのVMを入れる
 
 > インストール中は`ダウンロードしてきたVM`と`Virtualboxに取り込んだVM`で **本来の約２倍の容量を食う** ので、だいたい20GBくらい、としています。
 
-```bash
+```shell
 curl -s https://raw.githubusercontent.com/xdissent/ievms/master/ievms.sh | env IEVMS_VERSIONS="8 9" bash
 find ~/.ievms -type f ! -name "*.vmdk" -exec rm {} \;
 ```
@@ -225,7 +225,7 @@ Karmaの設定を変更し、VM内のIEでテストコードを実行できる�
   
 念のためコマンドも載せておきます。
 
-```bash
+```shell
 npm i -D karma-ievms
 ```
 
@@ -256,7 +256,7 @@ karma-es5-shimを入れてIE8のテストを通す
   
 es5-shimは、ざっくり言うとIE8などes5のメソッドに対応していないブラウザ向けのpolyfillです。
 
-```bash
+```shell
 npm i -D karma-es5-shim
 ```
 

@@ -65,7 +65,7 @@ HTMLやjsの回収があった場合には動作しなくなる可能性が非�
   
 チャットワークのドメイン（`https://www.chatwork.com`）ならalertを出すようにしてみます。
 
-```bash
+```shell
 cd /path/to/work
 mkdir chrome-ext-gradius && cd chrome-ext-gradius
 bower init # 適当に入力()

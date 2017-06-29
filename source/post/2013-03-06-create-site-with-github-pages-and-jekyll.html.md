@@ -88,7 +88,7 @@ jekyllをインストールする
 
 ターミナルを開いて、
 
-```bash
+```shell
  $ cd ~ $ gem install jekyll 
 ```
 
@@ -186,13 +186,13 @@ layout: default
 
 再びターミナルを開いて、
 
-```bash
+```shell
  $ cd (USER_NAME.github.comリポジトリへのパス) $ jekyll 
 ```
 
 と入力します。すると、
 
-```bash
+```shell
  Configuration from /Users/***/leko.github.com/_config.yml Auto-regenerating enabled: /Users/***/leko.github.com -> /Users/***/leko.github.com/_site [2013-02-26 22:38:59] regeneration: 7 files changed [2013-02-26 22:39:00] INFO WEBrick 1.3.1 [2013-02-26 22:39:00] INFO ruby 1.9.2 (2012-04-20) [x86_64-darwin11.4.2] [2013-02-26 22:39:00] INFO WEBrick::HTTPServer#start: pid=70965 port=4000 
 ```
 

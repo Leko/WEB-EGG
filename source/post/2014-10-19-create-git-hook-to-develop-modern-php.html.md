@@ -136,14 +136,14 @@ gitプロジェクトであれば、`./.git/hooks`の中に色々とファイル
   
 hooksディレクトリの中に`pre-commit.sample`というファイルがあるので、`.sample`を除去したファイルを複製します。
 
-```bash
+```shell
 ls .git/hooks
 cp .git/hooks/pre-commit.sample .git/hooks/pre-commit
 ```
 
 エディタはなんでもいいので、複製した`pre-commit`を開いて下さい。
 
-```bash
+```shell
 #!/bin/sh
 #
 # An example hook script to verify what is about to be committed.
@@ -259,7 +259,7 @@ exit $IS_ERROR
 
 これらを考慮し、新規プロジェクトを作成するときの最低限のコマンドをまとめます。
 
-```bash
+```shell
 mkdir SOME_PROJECT
 cd SOME_PROJECT
 git init

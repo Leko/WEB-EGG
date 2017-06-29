@@ -60,7 +60,7 @@ Mecabは次の環境構築にてインストールしていきます。
 
 `sudo`は省略しているため、コマンドが動かない場合はルートになるか適宜sudoの追加をして下さい。
 
-```bash
+```shell
 # my.cnfにInnoDBの全文検索用の設定を追加。既にして有れば不要です
 sed -i -e 's|\[mysqld\]|[mysqld]\n#fulltext index\ninnodb_ft_min_token_size=2\n|' /etc/my.cnf
 
@@ -102,7 +102,7 @@ InnoDBの全文検索用の設定はこちらの記事が参考になりまし�
 
 インストールできたか確認しておきます。
 
-```bash
+```shell
 $ echo '東京特許許可局局長' | mecab
 東京  名詞,固有名詞,地域,一般,*,*,東京,トウキョウ,トーキョー
 特許  名詞,サ変接続,*,*,*,*,特許,トッキョ,トッキョ
@@ -178,7 +178,7 @@ class Add_content_splited_to_demands
   
 追加した分かち書き用カラムにcontentをパースした結果を足して更新する必要があるかと思いますが、この記事では本筋から外れるため割愛しています。
 
-```bash
+```shell
 $ php oil r migrate
 Performed migrations for app:default:
 008_add_content_splited_to_books

@@ -100,7 +100,7 @@ APIドキュメントでAPIサーバをテストする
     
 > [Support for node v4.X #292](https://github.com/apiaryio/dredd/issues/292)
 
-```bash
+```shell
 npm i -g dredd
 ```
 
@@ -110,7 +110,7 @@ npm i -g dredd
 
 Goのサーバを起動しておき、書かれているとおりにコマンドを実行します。
 
-```bash
+```shell
 dredd init # 省略,対話CLIがあります
 dredd
 ```
