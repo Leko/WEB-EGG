@@ -51,7 +51,7 @@ tags:
 
 XMLはざっくり、こんな感じになりました
 
-```markup
+```html
 &lt;coverage>
   &lt;project>
     &lt;file name="ファイルパス">

@@ -66,7 +66,7 @@ jQueryMobileを初めて使ってみたので、色々と記事のネタが溜�
 
 です。 そして、実験に用意したHTMLはこちらです。  
 
-```markup
+```html
  <!DOCTYPE html> <title>タグ省略時の速度計測</title> <script> var st = new Date().getTime(); </script> <ul> <li>1 <li>4 (50万行繰り返し) </ul> <p>1 <p>2 (50万行繰り返し) <script> alert(new Date().getTime() – st); </script> 
 ```
 

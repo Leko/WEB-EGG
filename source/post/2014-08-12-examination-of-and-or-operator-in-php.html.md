@@ -249,7 +249,7 @@ function foo($fn = false) {
   あれ、その書き方どこかで・・・
 </p>
 
-```markup
+```html
 
 ```
 

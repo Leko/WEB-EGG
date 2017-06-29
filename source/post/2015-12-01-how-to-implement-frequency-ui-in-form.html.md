@@ -81,7 +81,7 @@ GithubのリポジトリのURL（上記画像を参考）のように、フォ�
 
 ざっくりjQueryプラグイン化するなら、こんな感じかと思います。
 
-```markup
+```html
 <input type="url" class="form-control focus-then-select" readonly value="ssh://hoge.git" />
 ```
 

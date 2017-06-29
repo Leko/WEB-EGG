@@ -75,7 +75,7 @@ checkValidityとValidityState
 
 では早速本題に入ります。まずは例から。
 
-```markup
+```html
 <input id="form-text" type="text" required />
 ```
 
@@ -109,7 +109,7 @@ willValidateというプロパティもあります。
   
 候補の場合にtrueが、候補でない時にはfalseが、そもそもinput系のタグじゃない場合にはプロパティ自体が存在しません。
 
-```markup
+```html
 ```
 
 ```javascript

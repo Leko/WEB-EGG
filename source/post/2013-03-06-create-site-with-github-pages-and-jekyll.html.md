@@ -138,7 +138,7 @@ default.htmlを編集する
 次に、_layoutsの中の**default.html**を編集します。  
 これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
 
-```markup
+```html
  <!DOCTYPE html> <meta charset="UTF-8″> <title>Lekohub</title> <!– cssとかjsもここで読み込み –> <link rel="stylesheet" href="css/common.css"> <script src="js/top.js"></script> <div class="container"> {{ content }} </div> 
 ```
 
