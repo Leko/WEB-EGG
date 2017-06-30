@@ -408,7 +408,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
           * ログ解析 
               * Apacheなら`%D`つける（レスポンス時間）
               * アクセスログ消して再起動してベンチマーク使用
-              * [analyze\_apache\_logs](https://github.com/tagomoris/Apache-Log-Parser/blob/master/bin/analyze_apache_logs)
+              * [analyze_apache_logs](https://github.com/tagomoris/Apache-Log-Parser/blob/master/bin/analyze_apache_logs)
               * [kataribe](https://github.com/matsuu/kataribe/)
       * SlowQuery解析 
           * 時間だけでなく、 **頻度**
@@ -492,7 +492,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 
 ### モジュールの例
 
-  * [ngx\_small\_light](https://github.com/cubicdaiya/ngx_small_light) 
+  * [ngx_small_light](https://github.com/cubicdaiya/ngx_small_light) 
       * 動的画像変換、Proxy噛ませればS3にある画像も対応可能
   * [perusio/nginx-hello-world-module](https://github.com/perusio/nginx-hello-world-module) 
       * 小さなモジュール

@@ -49,18 +49,18 @@ phpの規則
 
 <q>PHPでは、「実行したファイルのあるディレクトリが常に実行時のカレントディレクトリになる」っていう規則があるためエラーとなってしまうのです。 この問題は、実行ファイルのディレクトリではなく、参照しているファイルのディレクトリを基にパスを取得することで回避することができます。</q> <figcaption> <cite><a href="http://www.hoge256.net/2007/08/61.html" target="_blank">PHP の include, require で相対パスを指定して読み込む場合のメモ – hoge256ブログ</a></cite> </figcaption> </figure> 
 
-とあるように、A.phpを実行しているので、 B.phpのrequire_once("C.php")はA.phpと同階層のC.phpを探してエラーになるようです。 これを回避するには、**dirname(\_\_FILE\_\_)**を使います。section id="solved"> 
+とあるように、A.phpを実行しているので、 B.phpのrequire_once("C.php")はA.phpと同階層のC.phpを探してエラーになるようです。 これを回避するには、**dirname(__FILE__)**を使います。section id="solved"> 
 
-dirname(\_\_FILE\_\_)
+dirname(__FILE__)
 ----------------------------------------
 
-dirname(\_\_FILE\_\_)は、自分自身へのパスを返します。 B.phpで用いた場合には、"/Class"という文字列が返ります。 **パスの最後に/は付かないので、要注意。** これを使って、 
+dirname(__FILE__)は、自分自身へのパスを返します。 B.phpで用いた場合には、"/Class"という文字列が返ります。 **パスの最後に/は付かないので、要注意。** これを使って、 
 
 ```php
 <?php
 
-require_once(dirname(\\_\_FILE\_\_)."/C.php"); //C.phpを読み込む 
-require_once(dirname(\\_\_FILE\_\_)."/../D.php"); //D.phpを読み込む
+require_once(dirname(__FILE__)."/C.php"); //C.phpを読み込む 
+require_once(dirname(__FILE__)."/../D.php"); //D.phpを読み込む
 ```
 
  

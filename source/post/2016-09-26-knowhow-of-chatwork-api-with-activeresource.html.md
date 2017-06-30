@@ -158,7 +158,7 @@ Chatworkでの例に置き換えると、
 `belongs_to`はパスを生成する時にレスポンスの中身しか見てくれないないようです。なぜか`prefix_options`を見てくれません。  
 ということでメソッドを自作します。
 
-[lib/chatwork/nest\_of\_room.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/nest_of_room.rb)に定義してます。
+[lib/chatwork/nest_of_room.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/nest_of_room.rb)に定義してます。
 
 ```
 module Chatwork

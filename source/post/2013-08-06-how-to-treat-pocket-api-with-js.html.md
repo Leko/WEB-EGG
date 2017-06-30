@@ -131,10 +131,10 @@ XXXXXXXX…としていますが、実際には英語と数字とハイフン混
 今回はFetcherではなくブラウザを使います。  
 ブラウザのアドレスバーに、 https://getpocket.com/auth/authorize?request_token=
 
-**YOUR\_REQUEST\_TOKEN**&redirect_uri=**YOUR\_REDIRECT\_URI** 
+**YOUR_REQUEST_TOKEN**&redirect_uri=**YOUR_REDIRECT_URI** 
 
-と入力して下さい。 **YOUR\_REQUEST\_TOKEN**のところには、先ほど取得したリクエストトークンを、  
-**YOUR\_REDIRECT\_URI**のところには、先ほど設定したリダイレクトURLを入れます。
+と入力して下さい。 **YOUR_REQUEST_TOKEN**のところには、先ほど取得したリクエストトークンを、  
+**YOUR_REDIRECT_URI**のところには、先ほど設定したリダイレクトURLを入れます。
 
 <img src="/images/2013/08/f91ab41bde5ae5e886c1a19bbcfd53ca.png" alt="こんな画面" title="こんな画面.png" width="600" />
 

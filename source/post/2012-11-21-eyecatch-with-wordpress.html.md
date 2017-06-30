@@ -79,12 +79,12 @@ wordpressで表示されている項目は、
  
 
 ```php
-// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add\_theme\_support( 'post-thumbnails' );
+// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add_theme_support( 'post-thumbnails' );
 ```
 
  
 
-add\_theme\_support( 'post-thumbnails' );
+add_theme_support( 'post-thumbnails' );
     
 が指定されていると、アイキャッチ画像が有効になるようです。
     
@@ -134,7 +134,7 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
     
 ここの先頭に、アイキャッチ画像を表示するための関数、
     
-the\_post\_thumbnail() を記述します。  
+the_post_thumbnail() を記述します。  
 
 ```php
 

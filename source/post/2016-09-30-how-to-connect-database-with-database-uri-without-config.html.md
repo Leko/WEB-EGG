@@ -84,7 +84,7 @@ private
   end
 ```
 
-該当ファイルは[rails/activerecord/lib/active\_record/connection\_handling.rb](https://github.com/rails/rails/blob/bb1ecdcc677bf6e68e0252505509c089619b5b90/activerecord/lib/active_record/connection_handling.rb#L76)。  
+該当ファイルは[rails/activerecord/lib/active_record/connection_handling.rb](https://github.com/rails/rails/blob/bb1ecdcc677bf6e68e0252505509c089619b5b90/activerecord/lib/active_record/connection_handling.rb#L76)。  
 もしDATABASE_URLという環境変数があれば設定ファイルでいうところの
 
 ```yaml

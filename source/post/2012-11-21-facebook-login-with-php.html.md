@@ -155,7 +155,7 @@ if ( $user ) {
 	// ログアウト用のリンクを出力
 	echo "[ログアウト](".$logoutUrl.")";
 	// ユーザ情報を出力
-	print\_r($user\_info);
+	print_r($user_info);
 } else {
 	// ログインURLを生成
 	$loginUrl = $facebook->getLoginUrl();

@@ -45,8 +45,8 @@ if (array_key_exists(variable_get('user_admin_role'), $account->roles)) {
       * なので"特定のロールをAdminだとみなす"という概念になる
   * AdminのロールIDに相当する定数が存在しない
   * AdminのロールIDは3固定らしい（？）
-  * [user\_has\_role](https://api.drupal.org/api/drupal/modules!user!user.module/function/user_has_role/7.x)関数はロールIDが必要なのでなのでロールIDを隠蔽してくれない
-  * ロール名は編集可能なので[user\_role\_load\_by\_name](https://api.drupal.org/api/drupal/modules%21user%21user.module/function/user_role_load_by_name/7.x)関数を使うとどハマりする恐れがある
+  * [user_has_role](https://api.drupal.org/api/drupal/modules!user!user.module/function/user_has_role/7.x)関数はロールIDが必要なのでなのでロールIDを隠蔽してくれない
+  * ロール名は編集可能なので[user_role_load_by_name](https://api.drupal.org/api/drupal/modules%21user%21user.module/function/user_role_load_by_name/7.x)関数を使うとどハマりする恐れがある
   * ソースを追ってたら初期化処理と正解を見つけた
 
 という感じでした。
@@ -96,16 +96,16 @@ Drupalのロール一覧テーブルには管理者フラグ的なものもな�
 
 本当・・・？それ本当なら定数が提供されてるものじゃない・・・？
 
-user\_has\_role関数はロールIDが必要なのでなのでロールIDを隠蔽してくれない
+user_has_role関数はロールIDが必要なのでなのでロールIDを隠蔽してくれない
 ----------------------------------------
 
-[user\_has\_role](https://api.drupal.org/api/drupal/modules!user!user.module/function/user_has_role/7.x)関数というものがあるらしい。  
+[user_has_role](https://api.drupal.org/api/drupal/modules!user!user.module/function/user_has_role/7.x)関数というものがあるらしい。  
 これじゃん！と思ったんですが、引数にロールIDが必要でした。
 
 つまりAdmin相当のロールIDを知っていない限りこれを利用できません。  
 あと無駄にSELECT走るのでN+1が余裕で起きそう。
 
-ロール名は編集可能なのでuser\_role\_load\_by\_name関数を使うとどハマりする恐れがある
+ロール名は編集可能なのでuser_role_load_by_name関数を使うとどハマりする恐れがある
 ----------------------------------------
 
 > One liner would be:

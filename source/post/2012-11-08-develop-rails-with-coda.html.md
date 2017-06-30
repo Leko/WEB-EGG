@@ -47,7 +47,7 @@ rake DB:migrateをしようとすると 「/usr/lib/ruby/1.9.1/rake.rb:2482:in \
 
 -> Coda2を入れたらまず行っている設定 | 1bit::memo http://1bit.mobi/20120525091346.html
 
-/Users/\___/Libraryが表示されない
+/Users/___/Libraryが表示されない
 
 -> Lionではユーザディレクトリのライブラリーが表示されない – 自分のためのメモ帳Mac http://blog.livedoor.jp/present_favorites/archives/51721905.html
 
