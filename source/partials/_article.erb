@@ -23,6 +23,13 @@
       <%= partial 'partials/share', locals: { post: current_resource } %>
       <%= partial 'partials/related_post', locals: { post: current_resource } %>
 
+      <h3>問題を報告する</h3>
+      <p>
+        このサイトはGithubのリポジトリを公開しています。<br>
+        もし問題などがありましたらIssueにてご報告いただけますと幸いです。<br>
+        <%= link_to 'Leko/WEB-EGG', 'https://github.com/Leko/WEB-EGG', target: '_blank' %>
+      </p>
+
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-7627436148097691"
