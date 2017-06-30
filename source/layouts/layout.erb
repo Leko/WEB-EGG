@@ -1,20 +1,20 @@
+<%= partial 'partials/google_tagmanager' -%>
+<%= partial 'partials/google_font' -%>
+<%= partial 'partials/google_adsense' -%>
+<%= partial 'partials/disqus' -%>
+<%= partial 'partials/fontawesome' -%>
 <!doctype html>
 <html>
   <head>
+    <%= yield_content :head_opened %>
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
     <title><%= "#{current_article.title} | " unless current_article.nil? %><%= config[:meta][:sitename] %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-
-    <%= partial 'partials/google_font' %>
-    <%= partial 'partials/google_adsense' %>
-    <%= partial 'partials/disqus' %>
-    <%= partial 'partials/fontawesome' %>
-
     <%= stylesheet_link_tag 'all', 'highlighting' %>
     <%= yield_content :stylesheets %>
+    <%= yield_content :head_close %>
   </head>
   <body>
     <%= yield_content :body_opened %>
@@ -108,5 +108,6 @@
     <%= partial 'partials/footer' %>
     <%= yield_content :scripts %>
     <%= javascript_include_tag 'main', async: 'async' %>
+    <%= yield_content :body_close %>
   </body>
 </html>
