@@ -1,0 +1,18 @@
+<div class="post__header__wrapper">
+  <div class="post__eyecatch" <%= "style=\"background-image: url(#{article.data.image})\"" if article.data.image.present? %>></div>
+  <header class="post__header">
+    <time class="post__published">
+      <%= article.date.strftime config[:date_format] %>
+    </time>
+    <h1 class="post__title">
+      <%= link_to article.title, article, :class => 'post__title__link' %>
+    </h1>
+    <ul class="post__tags">
+      <% article.tags.each do |tag| %>
+        <li>
+          <%= link_to tag, tag_path(tag), :class => 'post__tags__tag' %>
+        </li>
+      <% end %>
+    </ul>
+  </header>
+</div>

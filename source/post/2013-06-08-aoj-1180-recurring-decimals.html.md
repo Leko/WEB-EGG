@@ -12,8 +12,7 @@ tags:
 ---
 AOJの1180、Recurring Decimalsをc++で解きました。
 
-足すだけ問題です。
-  
+足すだけ問題です。  
 しかし、重複をどう見つけるかで凡ミスをやらかし、つまずきました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1180&lang=jp)
@@ -23,6 +22,7 @@ AOJの1180、Recurring Decimalsをc++で解きました。
 コード
 ----------------------------------------
 
+<script src="https://gist.github.com/Leko/5734938.js"></script>
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -8,8 +8,7 @@ categories:
   - やってみた
   - 問題を解決した
 ---
-この前公開した記事([Buildersconのセッションタイマーを作った](http://leko.jp/archives/852))を実装する過程で、はじめて[Google Cloud Storage](https://cloud.google.com/storage/)を利用しました。
-  
+この前公開した記事([Buildersconのセッションタイマーを作った](/post/create-session-timer-of-builderscon/))を実装する過程で、はじめて[Google Cloud Storage](https://cloud.google.com/storage/)を利用しました。  
 利用してみたところ、キャッシュ周りの設定を変更する方法がよく分からなかったので、備忘録を残します。
 
 <!--more-->
@@ -17,37 +16,31 @@ categories:
 まえおき
 ----------------------------------------
 
-
 Google Cloud StorageはブラウザからGUIで操作する方法と、[Google Cloud SDK](https://cloud.google.com/sdk/)という公式のCLIツールを利用する方法があるようです。 今回は両方の方法でまとめてみます。
 
-※GCP自体はISUCONで使用したことがあるので、GCPことはじめ的なことは割愛します。
-  
+※GCP自体はISUCONで使用したことがあるので、GCPことはじめ的なことは割愛します。  
 また、GCSでバケット作成、ファイルアップロードなどのGCSことはじめも割愛します。
 
 ## Google Cloud SDKのインストール
 
 [公式](https://cloud.google.com/sdk/docs/#install_the_latest_version_cloudsdk_current_version)にインストールガイドがあるのですが、<del>面倒なので</del>インストールはHomebrew-caskでやってしまいます。
 
-```bash
+```shell
 brew cask install google-cloud-sdk
 ```
 
-
 インストールできたか動作確認。
 
-```bash
+```shell
 gsutil
 ```
-
 
 ヘルプが表示されていればOKだと思います。
 
 メタデータの確認
 ----------------------------------------
 
-
-キャッシュの情報はメタデータと呼ばれるオブジェクトに格納されています。
-  
+キャッシュの情報はメタデータと呼ばれるオブジェクトに格納されています。  
 デフォルトでは`Cache-Control: public, max-age=3600`となっているようです。
 
 開発途中に1時間もキャッシュが効いてしまうのは辛いので、もうちょっと短くしたい。
@@ -56,17 +49,17 @@ gsutil
 
 ファイル一覧の各ファイルの右端にメニューが有ります。
 
-<img src="http://leko.jp/images/2016/07/9899cad30c9613f429309d9242dc9746.png" alt="スクリーンショット 2016-07-06 10.49.00" width="1007" height="226" class="alignnone size-full wp-image-854" />
+<img src="/images/2016/07/9899cad30c9613f429309d9242dc9746.png" alt="スクリーンショット 2016-07-06 10.49.00" width="1007" height="226" class="alignnone size-full wp-image-854" />
 
 **Edit metadata** を選択すると、メタデータの詳細が表示/編集されます。
 
-<img src="http://leko.jp/images/2016/07/7aae685d0e8c76f43a6bc656c884f942.png" alt="スクリーンショット 2016-07-06 10.49.18" width="499" height="447" class="alignnone size-full wp-image-855" />
+<img src="/images/2016/07/7aae685d0e8c76f43a6bc656c884f942.png" alt="スクリーンショット 2016-07-06 10.49.18" width="499" height="447" class="alignnone size-full wp-image-855" />
 
 ### Google Cloud SDKで見る
 
 コマンドの場合は、`gsutil ls -L {URL}`で見れるようです。
 
-```bash
+```shell
 $ gsutil ls -L gs://web.timer.builderscon.io/all.css
 gs://web.timer.builderscon.io/all.css:
     Creation time:      Mon, 27 Jun 2016 00:02:53 GMT
@@ -83,12 +76,11 @@ gs://web.timer.builderscon.io/all.css:
 TOTAL: 1 objects, 2225 bytes (2.17 KiB)
 ```
 
-
 ### httpでアクセスしてみる
 
 curlからファイルにアクセスし、レスポンスヘッダを見てみます。
 
-```bash
+```shell
 $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 *   Trying 172.217.25.112...
 * Connected to web.timer.builderscon.io (172.217.25.112) port 80 (#0)
@@ -119,26 +111,23 @@ $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 ...
 ```
 
-
 このように、メタデータ内のキャッシュの項目がレスポンスヘッダに含まれています。
 
 キャッシュの有効期限を変更してみる
 ----------------------------------------
 
-
 ### GUIから変更する
 
 Edit metadataからキャッシュの情報を書き換えられます。
 
-<img src="http://leko.jp/images/2016/07/2dfe421c7eaddb77926bbd551fc9b938.png" alt="スクリーンショット 2016-07-06 11.05.07" width="496" height="447" class="alignnone size-full wp-image-856" />
+<img src="/images/2016/07/2dfe421c7eaddb77926bbd551fc9b938.png" alt="スクリーンショット 2016-07-06 11.05.07" width="496" height="447" class="alignnone size-full wp-image-856" />
 
 書き換えたらcurlでアクセス。
 
-```bash
+```shell
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 &lt; Cache-Control: public, max-age=30
 ```
-
 
 意図したとおりになりました。
 
@@ -146,23 +135,20 @@ $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 
 gsutilコマンドの場合は`setmeta`サブコマンドを使用します。
 
-```bash
+```shell
 gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.builderscon.io/all.css
 Setting metadata on gs://web.timer.builderscon.io/all.css...
 BadRequestException: 400 Invalid argument.
 ```
 
-
-**ん？**
-  
+**ん？**  
 よくよく考えたらログインしてないですね。プロジェクトのメンバーでないとファイルの変更ができないので、gcloudコマンドでログインします。
 
-```bash
+```shell
 $ gcloud auth login
 Your browser has been opened to visit:
 
     https://accounts.google.com/o/oauth2/auth?XXXXXXXXXXXXXXXX
-
 
 Saved Application Default Credentials.
 
@@ -171,22 +157,19 @@ Your current project is [None].  You can change this setting by running:
   $ gcloud config set project PROJECT_ID
 ```
 
-
 ログインが完了したら、もう一度メタデータを更新。
 
-```bash
+```shell
 $ gsutil setmeta -h 'Cache-Control:public, max-age=100' gs://web.timer.builderscon.io/all.css
 Setting metadata on gs://web.timer.builderscon.io/all.css...
 ```
 
-
 今度はうまくいったようです。書き換えたらcurlでアクセス。
 
-```bash
+```shell
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 &lt; Cache-Control: public, max-age=100
 ```
-
 
 意図したとおりになりました。
 

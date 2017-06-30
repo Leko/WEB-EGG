@@ -12,14 +12,11 @@ tags:
 ---
 AOJの1130、Red and Blackをc++で解きました。
 
-よくあるグリッド系の問題ですが、初めてこれ系の解きました。
-  
+よくあるグリッド系の問題ですが、初めてこれ系の解きました。  
 これでfor文でゴリ押し出来ない問題が解けるようになりました。
 
-今回は練習がてらに
-  
-幅優先探索・深さ優先探索どちらでも解いてみました。
-  
+今回は練習がてらに  
+幅優先探索・深さ優先探索どちらでも解いてみました。  
 DPでも解けるそうですが、イマイチDPは書き方が分かりません。。。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1130&lang=jp)
@@ -29,10 +26,12 @@ DPでも解けるそうですが、イマイチDPは書き方が分かりませ�
 コード(幅優先)
 ----------------------------------------
 
+<script src="https://gist.github.com/Leko/5734871.js"></script>
 
 コード(深さ優先)
 ----------------------------------------
 
+<script src="https://gist.github.com/Leko/5734881.js"></script>
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

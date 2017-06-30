@@ -16,7 +16,7 @@
     }
   }
   h3 {
-    font-size: $font-size-normal;
+    font-size: $font-size-large - 8px;
   }
   h4 {
     font-size: $font-size-normal;
@@ -34,6 +34,10 @@
   p {
     margin-bottom: $margin-item;
     line-height: 1.4rem;
+  }
+  img {
+    max-width: 100%;
+    height:auto;
   }
   strong {
     background: linear-gradient(transparent 60%, $base-accent 60%);
@@ -89,6 +93,10 @@
       ul {
         margin-top: 0;
         margin-bottom: 0;
+
+        li {
+          margin-left: 1.5em;
+        }
       }
 
       &::before {
@@ -127,11 +135,11 @@
   }
   blockquote {
     position: relative;
-    // border-left: 5px solid $base-mellow;
-    position: relative;
     margin: 0;
     padding: 5px 0 5px 20px;
+    color: $base-mellow;
     font-size: $font-size-normal;
+    font-style: italic;
 
     &::before {
       position: absolute;
@@ -148,7 +156,13 @@
       margin: 0;
     }
   }
-  img {
 
+  /**
+   * From wordpress
+   */
+  // Broken link checker
+  .removed_link {
+    text-decoration: line-through;
   }
+  // foot note
 }

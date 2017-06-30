@@ -1,6 +1,6 @@
 ---
 path: /post/should-use-delete-option-to-delete-git-branch-or-tag/
-title: 'リモートのタグを一括削除するときは&#8211;deleteを使おうと思った話'
+title: 'リモートのタグを一括削除するときは–deleteを使おうと思った話'
 date: 2016-12-21T23:50:48+00:00
 dsq_thread_id:
   - "5318199219"
@@ -23,32 +23,29 @@ tags:
 
 :は区切り文字に相当しており、おそらく普段使っているように省略すると
 
-
 ```
 git push origin master # 省略前
 git push origin master:master # 省略後
 ```
 
-
 のように扱われています。 これを応用すればローカルとリモートで異なるブランチ名にpushできるのですが、そんなことする得が無いので基本省略すると思います。
 
-> :<dst> part can be omitted—​such a push will update a ref that <src> normally updates without any <refspec> on the command line. Otherwise, missing :<dst> means to update the same ref as the <src>. > — [Git &#8211; git-push Documentation](https://git-scm.com/docs/git-push)</src></dst></refspec></src></dst>
+> :<dst> part can be omitted—​such a push will update a ref that <src> normally updates without any <refspec> on the command line. Otherwise, missing :<dst> means to update the same ref as the <src>. > — [Git – git-push Documentation](https://git-scm.com/docs/git-push)</src></dst></refspec></src></dst>
 
 で、`:`を付けて左側に何も書かないと、「無とpushする」みたいな動作になります。 これに関しては、どこぞのTAS動画で「無を掴む」とか表現されたりするように、概念的に理解しようとするより、結果論で覚えたほうが早いと思います。
 
-> Pushing an empty <src> allows you to delete the <dst> ref from the remote repository. > — [Git &#8211; git-push Documentation](https://git-scm.com/docs/git-push)</dst></src>
+> Pushing an empty <src> allows you to delete the <dst> ref from the remote repository. > — [Git – git-push Documentation](https://git-scm.com/docs/git-push)</dst></src>
 
-## git push origin &#8211;delete タグ名
+## git push origin –delete タグ名
 
 `git push --delete origin hogehoge` のようなコマンドを叩くとリモートブランチが削除されます。
 
-> &#8211;delete > All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon. > — [Git &#8211; git-push Documentation](https://git-scm.com/docs/git-push)
+> –delete > All listed refs are deleted from the remote repository. This is the same as prefixing all refs with a colon. > — [Git – git-push Documentation](https://git-scm.com/docs/git-push)
 
 ただ、どうにも遅い。なんとかできないか調べてました。
 
 push時に複数ブランチ・タグが指定できる
 ----------------------------------------
-
 
 git-pushは複数のブランチを一気にpushすることが可能だったようです。試したことがなかった。
 
@@ -56,7 +53,6 @@ git-pushは複数のブランチを一気にpushすることが可能だった�
 
 どれくらい違うのか
 ----------------------------------------
-
 
 タグを100個切ってリモートにあげてから、それを全部削除するまでの時間を図ってみました。 ネットワーク状況の揺れを最小限にするよう有線で試しましたが、それでも誤差はあると思います。
 
@@ -71,7 +67,6 @@ git-pushは複数のブランチを一気にpushすることが可能だった�
 
 まとめ
 ----------------------------------------
-
 
 私は、破壊的な操作をショートハンドでやるのは怖い（1文字オプションも見間違い・勘違いが怖いので使わない）と思っているので、 セーフティという意味では十分意図通りの挙動と安全性を提供してくれていると思います。
 

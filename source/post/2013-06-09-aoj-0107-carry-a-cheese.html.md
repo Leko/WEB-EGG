@@ -12,8 +12,7 @@ tags:
 ---
 AOJの0107、Carry a Cheeseをc++で解きました。
 
-与えられた３辺から、小さい２辺を選んで、
-  
+与えられた３辺から、小さい２辺を選んで、  
 その**長方形の対角線の長さが、通れる最小の半径*2になっている**と考え、実装しました。
 
 特に詰まることもなく、コーディング時間は15分でした。
@@ -25,6 +24,7 @@ AOJの0107、Carry a Cheeseをc++で解きました。
 コード
 ----------------------------------------
 
+<script src="https://gist.github.com/Leko/5735539.js"></script>
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

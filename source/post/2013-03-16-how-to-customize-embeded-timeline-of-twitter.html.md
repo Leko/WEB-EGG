@@ -28,18 +28,16 @@ tags:
 当記事の目標
 ----------------------------------------
 
-
 当記事は **Twitterの埋め込みタイムラインを設置し、好みによってカスタマイズする** を目標にしています。
 
 旧ウィジェットは使えなくなるらしい？
 ----------------------------------------
 
-
 TwitterのAPIのバージョン移行に伴って、 古いAPIを利用しているTwitter公式ウィジェットが使えなくなるそうです。
 
 Twitter公式ウィジェットとは、こんな感じのやつです。 **画像** どこかしらのwebページで見たことあるかと思います。
 
-> [Twitter API 1.1リリース　開発者の対応リミットは2013年3月5日に &#8211; ITmedia ニュース](http://www.itmedia.co.jp/news/articles/1209/06/news038.html)
+> [Twitter API 1.1リリース　開発者の対応リミットは2013年3月5日に – ITmedia ニュース](http://www.itmedia.co.jp/news/articles/1209/06/news038.html)
 とのことらしいのですが、 2013/03/16現在、私の知る限りでは普通に使えてしまっています。
 
 とはいえ、それに甘んじていてはいけません。 どうせいつか変えなければならないなら、**今対応してしまいましょう。**
@@ -49,22 +47,19 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 代替手段「埋め込みタイムライン」
 ----------------------------------------
 
-
 **埋め込みタイムライン**とは、 名前が変わっていますが今まで通り、自分のツイートなどを埋め込んで webページに設置できるウィジェットのことです。
 
-> [埋め込みタイムライン \| Twitter Developers](https://dev.twitter.com/ja/docs/embedded-timelines){.broken_link}
+> [埋め込みタイムライン \| Twitter Developers](https://dev.twitter.com/ja/docs/embedded-timelines)
 1箇所だけ注意すれば、設定も設置もカスタマイズも簡単です。 さくっとやってしまいましょう。
 
 埋め込みタイムラインを作成
 ----------------------------------------
-
 
 まず、Twitterにログインした状態で以下のページを開きます。
 
 > [twitter widgets](https://twitter.com/settings/widgets)
 
 ![Twitter Widgets](/images/2013/03/20130313_step2.jpeg) widget一覧ページを開いたら、「新規作成」をクリックします。
-
 
 ![step2](/images/2013/03/20130313_step3.jpeg) すると、上記画面のように埋め込みタイムラインの設定と、 そのプレビューが表示されると思います。
 
@@ -77,8 +72,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 <div class="caution">
   <h2>
     2013/05/21 追記
-  </h2>
-  
+  </h2>  
   <p>
     ドメインの設定は現在なくなっているようです。
   </p>
@@ -87,21 +81,14 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 埋め込みタイムラインを設置
 ----------------------------------------
 
-
-
 ![step3](/images/2013/03/20130313_step4.jpeg) すると、おそらく上のような文字が 埋め込みタイムラインのプレビューの下に現れると思います。 これをコピーしておく。
 
 コピーしたコードは以下の様な感になっていると思います。
 
-<div>
-  
-
-```markup
- <a class=&#8221;twitter-timeline&#8221; href=&#8221;https://twitter.com/L_e_k_o&#8221; data-widget-id=&#8221;310714279731019777&#8243;>@L_e_k_o からのツイート</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=&#8221;//platform.twitter.com/widgets.js&#8221;;fjs.parentNode.insertBefore(js,fjs);}}(document,&#8221;script&#8221;,&#8221;twitter-wjs&#8221;);</script> 
+```html
+<a class="twitter-timeline" href="https://twitter.com/L_e_k_o" data-widget-id="310714279731019777">@L_e_k_o からのツイート</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 ```
-
-
-</div>
 
 このコードを、埋め込みタイムラインを設置したいHTMLファイルに貼り付けて、保存。 これで設置完了です。
 
@@ -109,7 +96,6 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 
 埋め込みタイムラインをカスタマイズ
 ----------------------------------------
-
 
 埋め込みタイムラインの設定は、HTMLの属性で指定します。 難しく考えなくても、あっさりカスタマイズ出来てしまいます。 まず設定可能な項目の一覧を載せます。
 
@@ -119,7 +105,7 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 
 ### テーマ（data-theme）
 
-ウィジェットの背景色を設定する **&#8220;light&#8221;**か**&#8220;dark&#8221;**を指定することができる。
+ウィジェットの背景色を設定する **"light"**か**"dark"**を指定することができる。
 
 ### 言語（lang）
 
@@ -137,19 +123,18 @@ Twitter公式ウィジェットとは、こんな感じのやつです。 **画�
 
 ウィジェットのレイアウトやインターフェースをカスタマイズする `data-chrome`属性を利用します。
 
-  * `noheader`: タイムラインのヘッダーをなくす
-  * `nofooter`: タイムラインのフッターやツイートボックスをなくす
-  * `noborders`: ウィジェットの周りやツイートの間のボーダー(境界線)をなくす
-  * `noscrollbar`r: タイムラインのスクロールバーが表示されないようにする。**※サイトのアクセシビリティが悪くなる場合があるので要注意**
-  * `transparent`: タイムラインの背景を透明にする
+* `noheader`: タイムラインのヘッダーをなくす
+* `nofooter`: タイムラインのフッターやツイートボックスをなくす
+* `noborders`: ウィジェットの周りやツイートの間のボーダー(境界線)をなくす
+* `noscrollbar`: タイムラインのスクロールバーが表示されないようにする。**※サイトのアクセシビリティが悪くなる場合があるので要注意**
+* `transparent`: タイムラインの背景を透明にする
 
 これにより、見た目のカスタマイズ性がかなり向上したと思います。 「Twitterのタイムライン」感をかなり少なくして、自サイト内に組み込めそうです。
 
-設定可能な項目はおおよそこれくらいです。 詳しくは、[公式ドキュメント](https://dev.twitter.com/ja/docs/embedded-timelines){.broken_link}を参照。
+設定可能な項目はおおよそこれくらいです。 詳しくは、[公式ドキュメント](https://dev.twitter.com/ja/docs/embedded-timelines)を参照。
 
 カスタマイズ例
 ----------------------------------------
-
 
 ただ設定可能な項目を羅列してもしょうが無いので、いくつか例を載せます。
 
@@ -157,49 +142,46 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
 
 ### 例１
 
-  * テーマを白
-  * L_e_k_oをおすすめユーザに指定
-  * 横幅を220pxに指定
+* テーマを白
+* L_e_k_oをおすすめユーザに指定
+* 横幅を220pxに指定
 
-<div>
-  
-
-```markup
- <a class=&#8221;twitter-timeline&#8221; href=&#8221;https://twitter.com/L_e_k_o&#8221; data-widget-id=&#8221;310714279731019777&#8243; width=&#8221;220&#8243; data-theme=&#8221;light&#8221; data-related=&#8221;L_e_k_o&#8221;>L_e_k_oさんのツイート（返信を除く）</a> 
+```html
+<a
+  class="twitter-timeline"
+  href="https://twitter.com/L_e_k_o"
+  data-widget-id="310714279731019777"
+  width="220"
+  data-theme="light" data-related="L_e_k_o">L_e_k_oさんのツイート（返信を除く）</a>
 ```
-
-
-</div>
 
 ### 例２
 
-  * テーマを黒に
-  * 言語を英語に
-  * リンクの色を#000000に指定
+* テーマを黒に
+* 言語を英語に
+* リンクの色を#000000に指定
 
-<div>
-  
-
-```markup
- <a class=&#8221;twitter-timeline&#8221; href=&#8221;https://twitter.com/L_e_k_o&#8221; data-widget-id=&#8221;310714279731019777&#8243; data-theme=&#8221;dark&#8221; lang=&#8221;en&#8221; data-link-color=&#8221;#000000&#8243;>L_e_k_oさんのツイート（返信を除く）</a> 
+```html
+<a
+  class="twitter-timeline"
+  href="https://twitter.com/L_e_k_o"
+  data-widget-id="310714279731019777"
+  data-theme="dark"
+  lang="en"
+  data-link-color="#000000">L_e_k_oさんのツイート（返信を除く）</a>
 ```
-
-
-</div>
 
 注意事項
 ----------------------------------------
 
-
 埋め込みタイムラインを設置する上で気をつけなければならないことが１つあります。
 
-  * **同じウィジェットを、同一ページ内に複数置くことは出来ません。**
+* **同じウィジェットを、同一ページ内に複数置くことは出来ません。**
 
 1ページに複数のタイムラインを埋め込みたいなら、 その数だけウィジェットを作らないといけないようです。
 
 まとめ
 ----------------------------------------
-
 
 カスタマイズの属性を覚えるのに少々手間を要しますが、 慣れれば1~2分で全行程完了する程度の軽い作業です。
 

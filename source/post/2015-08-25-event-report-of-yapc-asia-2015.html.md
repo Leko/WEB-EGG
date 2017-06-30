@@ -15,18 +15,14 @@ tags:
   - YAPC
   - カンファレンス
 ---
-こんにちは。
-
-会社の先輩に誘っていただき、 [YAPC 2015](http://yapcasia.org/2015/) に行ってきました。
-  
+こんにちは。  
+会社の先輩に誘っていただき、 [YAPC 2015](http://yapcasia.org/2015/) に行ってきました。  
 Perlの祭典です。<del>Perl全く書かないけど。</del>人生初のカンファレンスです。
 
-Perl色がもっと強いものかと思ってましたが、「申し訳程度のPerl要素・・・」
-  
+Perl色がもっと強いものかと思ってましたが、「申し訳程度のPerl要素・・・」  
 と何度も思うくらいにはPerl要素が薄く、初心者にも入りやすかったです。
 
-**「ブログに書くまでがYAPCです」** と何度も念を押されたので、というわけではなく、
-  
+**「ブログに書くまでがYAPCです」** と何度も念を押されたので、というわけではなく、  
 単に自分への備忘録とイベントレポートとして残します。
 
 <!--more-->
@@ -34,9 +30,8 @@ Perl色がもっと強いものかと思ってましたが、「申し訳程度�
 メリークリスマス！
 ----------------------------------------
 
-
-  * [メリークリスマス！ &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a636430c-0fbf-11e5-8a02-43ec7d574c3a)
-  * [Perlの父 Larry Wall が描く『指輪物語』 そしてメリークリスマス！ #yapcasia #yapcasiaA &#8211; Togetterまとめ](http://togetter.com/li/863357)
+  * [メリークリスマス！ – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a636430c-0fbf-11e5-8a02-43ec7d574c3a)
+  * [Perlの父 Larry Wall が描く『指輪物語』 そしてメリークリスマス！ #yapcasia #yapcasiaA – Togetterまとめ](http://togetter.com/li/863357)
 
 メモ
 
@@ -47,23 +42,19 @@ Perl色がもっと強いものかと思ってましたが、「申し訳程度�
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     <a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a> 言語を構築するのは世界を構築するのと同じ
-  </p>&mdash; しょーちゃん (@show_m001) 
-  
+  </p>&mdash; しょーちゃん (@show_m001)   
   <a href="https://twitter.com/show_m001/status/634536792679694341">2015, 8月 21</a>
 </blockquote>
 
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     2015/12/25「Perl6を出すといったな、あれは嘘だ」 <a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a>
-  </p>&mdash; れこ (@L_e_k_o) 
-  
+  </p>&mdash; れこ (@L_e_k_o)   
   <a href="https://twitter.com/L_e_k_o/status/634540578013868032">2015, 8月 21</a>
 </blockquote>
 
-OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語に例えつつな感じでした。
-  
-どちらもタイトルしか知らないのでうまく喩え話が頭に入らず。。。
-  
+OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語に例えつつな感じでした。  
+どちらもタイトルしか知らないのでうまく喩え話が頭に入らず。。。  
 そして **「同時翻訳すごい！すごい！」** と感動して肝心の話を殆ど聞いてませんでした。
 
 * * *
@@ -80,8 +71,8 @@ OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語�
 
 ## Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜
 
-  * [Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜 &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/4bab2728-00fa-11e5-9931-79c97d574c3a)
-  * [みんなが聞きたいIoT!!”Akerun”の作り方~Webからハードウェアへの移行での苦労~ #yapcasia #yapcasiaD &#8211; Togetterまとめ](http://togetter.com/li/863373)
+  * [Web由来の組み込みエンジニアの半年間のすべて 〜WebとiOSとBLEとハードウェアデバイスのこと〜 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/4bab2728-00fa-11e5-9931-79c97d574c3a)
+  * [みんなが聞きたいIoT!!"Akerun"の作り方~Webからハードウェアへの移行での苦労~ #yapcasia #yapcasiaD – Togetterまとめ](http://togetter.com/li/863373)
   * [スライド](http://kazuph.github.io/presentation/yapc-2015-iot-presentation/)
   * [本人 発表後日談](http://kazuph.hateblo.jp/entry/2015/08/22/163000)
 
@@ -142,9 +133,9 @@ OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語�
 
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
-    GPIO(Lチカ)⇒PWM(Lフワ)⇒Timer割込でいろいろ⇒I2C通信という流れで進んだ模様。&#10;<a href="https://twitter.com/hashtag/yapcasiaD?src=hash">#yapcasiaD</a>
-  </p>&mdash; takasago (@sago35tk) 
-  
+    GPIO(Lチカ)⇒PWM(Lフワ)⇒Timer割込でいろいろ⇒I2C通信という流れで進んだ模様。
+<a href="https://twitter.com/hashtag/yapcasiaD?src=hash">#yapcasiaD</a>
+  </p>&mdash; takasago (@sago35tk)   
   <a href="https://twitter.com/sago35tk/status/634553318098907136">2015, 8月 21</a>
 </blockquote>
 
@@ -153,13 +144,12 @@ OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語�
 HTTP/2時代のウェブサイト設計
 ----------------------------------------
 
-
 <div style="margin-bottom:5px">
   <strong> <a href="//www.slideshare.net/kazuho/http2-51888328" title="HTTP/2時代のウェブサイト設計" target="_blank">HTTP/2時代のウェブサイト設計</a> </strong> from <strong><a href="//www.slideshare.net/kazuho" target="_blank">Kazuho Oku</a></strong>
 </div>
 
-  * [HTTP/2時代のウェブサイト設計 &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/dead6890-09b7-11e5-998a-67dc7d574c3a)
-  * [H2Oは先を行く！HTTP/2時代にむけたウェブサイト設計のポイント #yapcasia #yapcasiaD #http2 &#8211; Togetterまとめ](http://togetter.com/li/863416)
+  * [HTTP/2時代のウェブサイト設計 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/dead6890-09b7-11e5-998a-67dc7d574c3a)
+  * [H2Oは先を行く！HTTP/2時代にむけたウェブサイト設計のポイント #yapcasia #yapcasiaD #http2 – Togetterまとめ](http://togetter.com/li/863416)
 
 メモ
 
@@ -187,8 +177,7 @@ HTTP/2時代のウェブサイト設計
   * 転送データ量の低減 
       * コア化な粒度でレスポンスの順序を変更したい
 
-すべての通信データは **フレーム** に格納される
-  
+すべての通信データは **フレーム** に格納される  
 色々な種類がある
 
   * https://http2.github.io/http2-spec/
@@ -200,10 +189,8 @@ HTTP/2時代のウェブサイト設計
 
 ### 優先度制御
 
-ex.
-  
-CSS, jsを再優先でとっておいて、HTMLは低優先度で取ってくる
-  
+ex.  
+CSS, jsを再優先でとっておいて、HTMLは低優先度で取ってくる  
 HTMLが取得された時点でCSS, jsの読み取りは完了しているので、その時点でレンダリングを開始できる
 
 #### サーバ
@@ -248,39 +235,34 @@ HTMLが取得された時点でCSS, jsの読み取りは完了しているので
 
 ### まとめ
 
-  * Webサイトを早くすればページビューが増える 
-      * HTTPにすれば売上が伸びる
-
-  * H2Oは一番早いHTTP/2サーバ
-
-  * Cipersuites
-
-  * Forward Secrecy 
-      * 長期鍵が漏洩・解析されてもカコの友心内容が解読可能にならない、という性質
-  * session ticket 
-      * サーバが使う共通鍵をクライアントが覚える
-      * サーバは共通鍵をクライアントに送信 
-          * session ticketの暗号化に使う鍵はサーバ動作中は変わらない
-          * PFS対応のcupersuiteを使っていても、この鍵がバレたら全通信が解読可能になる
-      * 一般的なサーバではsession ticketを無効にしておこう
+* Webサイトを早くすればページビューが増える 
+    * HTTPにすれば売上が伸びる
+* H2Oは一番早いHTTP/2サーバ
+* Cipersuites
+* Forward Secrecy 
+    * 長期鍵が漏洩・解析されてもカコの友心内容が解読可能にならない、という性質
+* session ticket 
+    * サーバが使う共通鍵をクライアントが覚える
+    * サーバは共通鍵をクライアントに送信 
+        * session ticketの暗号化に使う鍵はサーバ動作中は変わらない
+        * PFS対応のcupersuiteを使っていても、この鍵がバレたら全通信が解読可能になる
+    * 一般的なサーバではsession ticketを無効にしておこう
 
 HTTP2クライアントとしてlibcurlが優れている
 
-サーバ証明書買わなきゃいけないの&#8230;？
-  
+サーバ証明書買わなきゃいけないの…？  
 [LeysEncrypt](https://letsencrypt.org/) がリリースされれば無料で取れる
 
 * * *
 
-「HTTP/2でオワコンになる最適化」の話で
-  
+「HTTP/2でオワコンになる最適化」の話で  
 今のフロントエンドのビルドツール周り（アセットの結合）が圧縮技術＋オーバヘッド削減によって、むしろボトルネックになる可能性があるという話が印象的でした。
 
 * * *
 
 ## Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜
 
-  * [Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜 &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/de9e7a1e-136d-11e5-a9fc-d9f87d574c3a)
+  * [Perlの上にも三年 〜 ずっとイケてるサービスを作り続ける技術 〜 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/de9e7a1e-136d-11e5-a9fc-d9f87d574c3a)
   * [最高のオブジェクト指向&最高のドメイン駆動 ひとでくんさんのPerlの上の三年 #yapcasia #yapcasiaE](http://togetter.com/li/863438)
 
 メモ
@@ -313,26 +295,24 @@ HTTP2クライアントとしてlibcurlが優れている
       * エンジニアも営業も企画もデザイナーも同じ名前で呼ぶ
       * 用語集.md
 
-内容は広くいろいろな話題があって気付かされることが多かったです。
-  
+内容は広くいろいろな話題があって気付かされることが多かったです。  
 エリック・エヴァンスのドメイン駆動設計の本2冊ともポチりました。
 
 * * *
 
 ## Electron: Building desktop apps with web technologies
 
-  * [Electron: Building desktop apps with web technologies &#8211; YAPC::Asia Tokyo 2015]()
+  * [Electron: Building desktop apps with web technologies – YAPC::Asia Tokyo 2015]()
   * [WEB技術を使ってデスクトップ開発！Electronとは!? #yapcasia #yapcasiaA](http://togetter.com/li/863466)
 
-中の人がわざわざいらしてお話してくれた。
-  
+中の人がわざわざいらしてお話してくれた。  
 でもビギナー向けな内容で、話す内容も質疑応答も知ってたという感じでした。ざっくりと。
 
 * * *
 
-## esa.io &#8211; 趣味から育てたWebサービスで生きていく
+## esa.io – 趣味から育てたWebサービスで生きていく
 
-  * [esa.io &#8211; 趣味から育てたWebサービスで生きていく &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/c191c08a-0a98-11e5-be34-67dc7d574c3a)
+  * [esa.io – 趣味から育てたWebサービスで生きていく – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/c191c08a-0a98-11e5-be34-67dc7d574c3a)
   * [趣味からサービスへ！esa.ioの中の人に学ぶプロダクト開発 #yapcasia #yapcasiaA](http://togetter.com/li/863489)
   * [esa.io](https://esa.io/)
 
@@ -350,38 +330,33 @@ HTTP2クライアントとしてlibcurlが優れている
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     βリリース前に知人の会社が使ってくれて、フィードバックいっぱいくれた。これは仕事にできそうだなぁと思った。会社を作ったのは、真面目に続けてく意思表示みたいなもの <a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a> <a href="https://twitter.com/hashtag/yapcasiaA?src=hash">#yapcasiaA</a>
-  </p>&mdash; たま● (@tmd45) 
-  
+  </p>&mdash; たま● (@tmd45)   
   <a href="https://twitter.com/tmd45/status/634623202833010689">2015, 8月 21</a>
 </blockquote>
 
-他のセッションに比べて濃いわけではなかったけど、一番心に残ったセッションでした。
-  
-(&#92;( ⁰⊖⁰)/)
+他のセッションに比べて濃いわけではなかったけど、一番心に残ったセッションでした。  
+(\( ⁰⊖⁰)/)
 
 * * *
 
 ISUCONの勝ち方
 ----------------------------------------
 
-
 <div style="margin-bottom:5px">
   <strong> <a href="//www.slideshare.net/kazeburo/isucon-yapcasia-tokyo-2015" title="ISUCONの勝ち方 YAPC::Asia Tokyo 2015" target="_blank">ISUCONの勝ち方 YAPC::Asia Tokyo 2015</a> </strong> from <strong><a href="//www.slideshare.net/kazeburo" target="_blank">Masahiro Nagano</a></strong>
 </div>
 
-  * [ISUCONの勝ち方 &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/86ebd212-fab3-11e4-8f5a-8ab37d574c3a)
+  * [ISUCONの勝ち方 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/86ebd212-fab3-11e4-8f5a-8ab37d574c3a)
   * [「ISUCONの勝ち方」！ 100万円を獲るためのチューニングの極意 #yapcasia #yapcasiaE](http://togetter.com/li/863801)
 
 ### ISUCONとは
 
-ISUCONで得られた知見を公開されることで、業界の技術力に寄与
-  
+ISUCONで得られた知見を公開されることで、業界の技術力に寄与  
 ベンチマーク：動作の変更がないことをチェック、テストに落ちたら失格
 
 ### 私とISUCON
 
-2年連続優勝
-  
+2年連続優勝  
 事前に出題に挑戦し、ベンチマークの問題を洗い出す
 
 ### ISUCONから生まれた技術
@@ -390,8 +365,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 
 ### Webアプリケーションのパフォーマンス
 
-管理コスト・障害対応のコストも減らせる
-  
+管理コスト・障害対応のコストも減らせる  
 大規模なインフラでは嬉しい
 
 ### ISUCONの勝ち方
@@ -434,7 +408,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
           * ログ解析 
               * Apacheなら`%D`つける（レスポンス時間）
               * アクセスログ消して再起動してベンチマーク使用
-              * [analyze\_apache\_logs](https://github.com/tagomoris/Apache-Log-Parser/blob/master/bin/analyze_apache_logs)
+              * [analyze_apache_logs](https://github.com/tagomoris/Apache-Log-Parser/blob/master/bin/analyze_apache_logs)
               * [kataribe](https://github.com/matsuu/kataribe/)
       * SlowQuery解析 
           * 時間だけでなく、 **頻度**
@@ -508,9 +482,8 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 実践nginxモジュール開発〜CとLua〜
 ----------------------------------------
 
-
   * [Nginxを拡張しよう！ モジュールとLuaがあればなんでも出来る！？ #yapcasia #yapcasiaB](http://togetter.com/li/863872)
-  * [実践nginxモジュール開発〜CとLua〜 &#8211; YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a4318242-f5f2-11e4-afb7-49b37d574c3a)
+  * [実践nginxモジュール開発〜CとLua〜 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a4318242-f5f2-11e4-afb7-49b37d574c3a)
 
 ### Nginxのhttpモジュール
 
@@ -519,7 +492,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 
 ### モジュールの例
 
-  * [ngx\_small\_light](https://github.com/cubicdaiya/ngx_small_light) 
+  * [ngx_small_light](https://github.com/cubicdaiya/ngx_small_light) 
       * 動的画像変換、Proxy噛ませればS3にある画像も対応可能
   * [perusio/nginx-hello-world-module](https://github.com/perusio/nginx-hello-world-module) 
       * 小さなモジュール
@@ -536,11 +509,11 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
   * time
   * regular-expression
   * temporary-file
-  * etc&#8230;
+  * etc…
 
 ### NginxのテストはPerlで書かれている（重要なので2回言いました）
 
-ただしPerlあまり好きじゃnあっ&#8230;
+ただしPerlあまり好きじゃnあっ…
 
 Perlは2行だけ。Perl知らんでも書ける
 
@@ -575,8 +548,7 @@ Perlは2行だけ。Perl知らんでも書ける
   * [資料](https://github.com/bradfitz/talk-yapc-asia-2015/blob/master/talk.md)
   * [鮮やかすぎるライブコーディング！よりAwesomeな #golang ! #yapcasia #yapcasiaA](http://togetter.com/li/863950)
 
-目からうろこというか、新しいことの連続でした。
-  
+目からうろこというか、新しいことの連続でした。  
 Goはまだ入門したばかりでツール周りなど全く触れていなかったので、足がかりとしてものすごくありがたいスピーチでした。
 
 コーディング早すぎる。ぼけーっとしながら眺めるばかりという感じでした。
@@ -586,12 +558,10 @@ Goはまだ入門したばかりでツール周りなど全く触れていなか
 その他雑多な感想
 ----------------------------------------
 
-
 <blockquote class="twitter-tweet" lang="ja">
   <p lang="ja" dir="ltr">
     うおおおお、本がすげーと思ったら、ただのタペストリーだった。かんっぜんに騙されてもうた。　<a href="https://twitter.com/hashtag/yapcasia?src=hash">#yapcasia</a> <a href="http://t.co/1pi8KZ5WLX">pic.twitter.com/1pi8KZ5WLX</a>
-  </p>&mdash; tabunmuri (@tabunmuri255) 
-  
+  </p>&mdash; tabunmuri (@tabunmuri255)   
   <a href="https://twitter.com/tabunmuri255/status/634539982930227201">2015, 8月 21</a>
 </blockquote>
 

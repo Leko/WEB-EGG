@@ -1,6 +1,6 @@
 ---
 path: /post/aoj-1135-ohgas-fortune/
-title: '[AOJ] 1135 Ohgas&#8217; Fortune'
+title: "[AOJ] 1135 Ohgas' Fortune"
 date: 2013-05-13T02:03:47+00:00
 twitter_id:
   - "333629151972057088"
@@ -10,8 +10,7 @@ tags:
   - AOJ
   - JavaScript
 ---
-AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
-  
+AOJの1135、Ohgas' Fortuneをjsで解きました。  
 こちらも入力の処理に手間取り、クリアタイムは24分です。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1135&lang=jp)
@@ -23,14 +22,14 @@ AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
 コード
 ----------------------------------------
 
-
-\[js\] (function (input) { /* 利子：運用資金残高に年利率をかけ、1円未満は切り捨て
-
-    複利：利子は翌年以降の運用資金の残高に加算
-    単利：利子は別の場所へ蓄積
-    
-    手数料：上記の処理を行ったあとに、運用資金の残高から手数料が引かれる
-    */
+```javascript
+(function (input) {
+    /**
+     * 利子：運用資金残高に年利率をかけ、1円未満は切り捨て
+     * 複利：利子は翌年以降の運用資金の残高に加算
+     * 単利：利子は別の場所へ蓄積
+     * 手数料：上記の処理を行ったあとに、運用資金の残高から手数料が引かれる
+     */
     var inputs = input.replace(/r/g, '').split("n"),
         n;
     
@@ -70,10 +69,8 @@ AOJの1135、Ohgas&#8217; Fortuneをjsで解きました。
     }
     
 
-})(require(&#8220;fs&#8221;).readFileSync(&#8220;/dev/stdin&#8221;, &#8220;utf8&#8221;)); 
+})(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```
-
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -11,12 +11,10 @@ tags:
   - JavaScript
   - security
 ---
-こんにちは。
-  
+こんにちは。  
 [画像をくっつけるツール](http://img-concater.herokuapp.com)というjsで簡単な画像処理を行うSPAを作った時に、
 
-URLを指定して画像を読み込んで結合する、という要件があり、
-  
+URLを指定して画像を読み込んで結合する、という要件があり、  
 この要件とcanvas周りでハマったので対象方法を残します。
 
 <!--more-->
@@ -24,13 +22,11 @@ URLを指定して画像を読み込んで結合する、という要件があ�
 何が起きたか、なぜ起きるか
 ----------------------------------------
 
-
   1. URLをimgタグのsrc属性にセット
   2. 画像の読込が完了したらcanvasに描画
   3. canvas.toDataURL()でdata uriに変換
 
-という流れで処理をしようと目論んでいたのですが、3でエラーが起きました。
-  
+という流れで処理をしようと目論んでいたのですが、3でエラーが起きました。  
 `Unable to get image data from canvas because the canvas has been tainted by
 cross-origin data.`
 
@@ -38,13 +34,12 @@ cross-origin data.`
 
 上記の記事に解説がありますが、外部ドメインのデータによってcanvasが汚染されている、というエラーでした。
 
-> [S3上の画像をCORSを利用してCanvasで使う](http://tech-sketch.jp/2013/05/s3corscanvas.html){.broken_link}
+> [S3上の画像をCORSを利用してCanvasで使う](http://tech-sketch.jp/2013/05/s3corscanvas.html)
 
 上記の記事のように、画像サーバでCORSをわざわざ有効にしてくれるパターンはごく稀で、大体の場合この制限に引っかります。
 
 どう対処するか
 ----------------------------------------
-
 
   * 返ってくるのはjsではなく画像のバイナリなのでjsonpは使えない。
   * imgタグに入れても外部URLならこの制限に引っかかる
@@ -57,8 +52,7 @@ cross-origin data.`
 
 として、自分のサーバから返されたバイナリなので制限を突破する、という作戦で行きます。
 
-もちろんセキュリティ上の制限を無理やり超えるので、ブラウザの脆弱性を突かれる可能性があります。ご留意の上ご使用下さい。
-  
+もちろんセキュリティ上の制限を無理やり超えるので、ブラウザの脆弱性を突かれる可能性があります。ご留意の上ご使用下さい。  
 以下に具体的な手段を載せます。
 
 > 今回の場合、セッションを持っておらず、URLパラメータに対しても反応しないので、悪意のあるURLを誰かに踏ませることは出来ないので自分で悪意のある入力をして自分に攻撃をすることしかできない。iframe埋め込みもさせないので、他人のPCへ攻撃はできない。という仮定で作っています。
@@ -67,8 +61,7 @@ cross-origin data.`
 
 ## 生XHRを使用する or jQueryにオプションを足す
 
-バイナリのレスポンスを受け取るには、XHRのresponseTypeに`arraybuffer`を使用する必要があります。
-  
+バイナリのレスポンスを受け取るには、XHRのresponseTypeに`arraybuffer`を使用する必要があります。  
 出ないと文字化けした良く分からないテキスト、がレスポンスになってしまいます。
 
 なおAjaxのライブラリ(jQueryや[superagent](https://github.com/visionmedia/superagent)あたり)を使用している場合注意が必要です。
@@ -80,12 +73,10 @@ cross-origin data.`
 画像URLをGoに投げ画像を取得しバイナリをレスポンス
 ----------------------------------------
 
-
 Goで実装してますが、サーバ側は何の言語でも同じです。URLに対応する画像の中身を取得し、バイナリのレスポンスを吐きます。
 
 jsでバイナリを受け取ってBlob化
 ----------------------------------------
-
 
 responseType: arraybufferで受け取ったレスポンスをバイナリに変換します。
 
@@ -97,26 +88,21 @@ xhr.onreadystatechange = function() {
 }
 ```
 
-
-引数はArraybufferの配列なのでご注意下さい。
-  
+引数はArraybufferの配列なのでご注意下さい。  
 配列になっているのは複数のArrayBufferを指定できるためだそうです。
 
 Blobをimgタグのsrcに指定する
 ----------------------------------------
 
-
-[window.URL.createObjectURL()](https://developer.mozilla.org/ja/docs/Web/API/URL/createObjectURL)を使用して、バイナリをsrc属性に指定可能な形式に変換します。
-  
+[window.URL.createObjectURL()](https://developer.mozilla.org/ja/docs/Web/API/URL/createObjectURL)を使用して、バイナリをsrc属性に指定可能な形式に変換します。  
 このURLはいつでも使えるパーマリンクではなく、そのページを開いている間のみ有効なものなので、リロードすると使えなくなります。
 
 drawImage
 ----------------------------------------
 
-
 Imageオブジェクトに自分のサーバから返されたバイナリ(画像)がセットされたので、あとは普通にcanvasで扱うだけです。
 
-> [drawImage() メソッド &#8211; Canvasリファレンス &#8211; HTML5.JP](http://www.html5.jp/canvas/ref/method/drawImage.html)
+> [drawImage() メソッド – Canvasリファレンス – HTML5.JP](http://www.html5.jp/canvas/ref/method/drawImage.html)
 
 CORS制限を回避したので、canvas内で加工した画像を書き出すことができるようになっています。
 

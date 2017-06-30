@@ -10,8 +10,7 @@ tags:
   - AOJ
   - JavaScript
 ---
-AOJの1137、Numeral SystemをJavaScriptで解きました。
-  
+AOJの1137、Numeral SystemをJavaScriptで解きました。  
 入力の処理に時間を取られ、35分強かかってしまいました。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=1137&lang=jp)
@@ -20,19 +19,34 @@ AOJの1137、Numeral SystemをJavaScriptで解きました。
 
 文字列操作系の問題ですね。
 
-replace＋evalというゴリ押しを真っ先に思いついたのですが、
-  
+replace＋evalというゴリ押しを真っ先に思いついたのですが、  
 前置詞の扱いが面倒 + ゴルフではないので真っ当に解くことに。
 
-どれだけ重複が来るか不明でしたが、
-  
+どれだけ重複が来るか不明でしたが、  
 メモ化の練習がてらキャッシュを使ってみました。
 
 コード
 ----------------------------------------
 
-
-\[js\] (function (input) { var decodeMCXI = function() { var cache = {}, table = { &#8220;m&#8221;: 1000, &#8220;c&#8221;: 100, &#8220;x&#8221;: 10, &#8220;i&#8221;: 1 }; return function(str) { // 文字列はこの順番で来ると仮定 var keywords = [&#8220;m&#8221;, &#8220;c&#8221;, &#8220;x&#8221;, &#8220;i&#8221;], sum = 0;
+```javascript
+(function (input) {
+    var decodeMCXI = function() {
+        var cache = {},
+            table = {
+                "m": 1000,
+                "c": 100,
+                "x": 10,
+                "i": 1
+            };
+        return function(str) {
+            // 文字列はこの順番で来ると仮定
+            var keywords = [
+                    "m",
+                    "c",
+                    "x",
+                    "i"
+                ],
+                sum = 0;
 
             keywords.forEach(function(k) {
                 var index = str.indexOf(k),
@@ -102,10 +116,8 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
     }
     
 
-})(require(&#8220;fs&#8221;).readFileSync(&#8220;/dev/stdin&#8221;, &#8220;utf8&#8221;)); 
+})(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```
-
-
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>
