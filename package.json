@@ -1,7 +1,7 @@
 {
   "name": "webegg",
   "version": "1.0.0",
-  "description": "[WIP]",
+  "description": "まだまだひよこ。サバクラ問わずwebに関連することを書き留めています",
   "main": "index.js",
   "scripts": {
     "postinstall": "flow-typed install",

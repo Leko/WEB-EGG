@@ -15,9 +15,9 @@ end
 
 config[:meta] = {
   locale: 'ja',
-  sitename: '[WIP] WEB EGG',
+  sitename: 'WEB EGG',
   siteurl: 'https://blog.leko.jp',
-  catchcopy: 'Work in progress...',
+  catchcopy: 'まだまだひよこ。サバクラ問わずwebに関連することを書き留めています',
   email: 'leko.noor@gmail.com',
   author: 'れこ',
   bio: 'サイト移転しました。いまどきブックマークあるのかわかりませんがURLの更新をお願いします',
