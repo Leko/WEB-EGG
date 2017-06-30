@@ -8,7 +8,6 @@ image: /images/2012/11/20121121_eye1-604x240.jpg
 categories:
   - 問題を解決した
 ---
-<section> 
 
 こんにちは。  
 このブログはWordpressのデフォルトテーマの１つ
@@ -32,7 +31,7 @@ categories:
 
 <!--more-->
 
- と、その前に、 </section> <section id="what\_is\_eyecatch"> 
+ と、その前に、 
 
 アイキャッチ画像とは何か
 ----------------------------------------
@@ -49,7 +48,7 @@ categories:
 
 <p class="link_box">
   自分が死んだ時、大切な人にメッセージを届けてくれるサービス「Proof of Life」 : ライフハッカー［日本版］<br /> <a href="http://www.lifehacker.jp/2012/11/proof_of_life.html">http://www.lifehacker.jp/2012/11/proof_of_life.html</a>
-</p></section> <section id="what\_edit\_file"> 
+</p>
 
 どこをいじれば良いの？
 ----------------------------------------
@@ -67,8 +66,6 @@ wordpressで表示されている項目は、
 **wp-content > themes > twentyeleven**
     
 の中身をいじることになります。
-
-</section> <section id="step1"> 
 
 １，アイキャッチ画像を使うための準備をする
 ----------------------------------------
@@ -95,7 +92,7 @@ add\_theme\_support( 'post-thumbnails' );
     
 しかし、テーマTwenty Elevenは最初からこの指定が入っているので、
     
-いじるところはありません。見るだけです！ </section> <section id="step2"> 
+いじるところはありません。見るだけです！ 
 
 ２，アイキャッチ画像を実際に表示させる
 ----------------------------------------
@@ -177,7 +174,7 @@ the\_post\_thumbnail() を記述します。
     
 アイキャッチ画像は、上記の手順で表示させられるので、
     
-オリジナルのテーマを作るときなどの、参考になれば幸いです。 </section> 
+オリジナルのテーマを作るときなどの、参考になれば幸いです。 
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>
