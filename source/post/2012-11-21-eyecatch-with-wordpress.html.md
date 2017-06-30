@@ -76,15 +76,14 @@ wordpressで表示されている項目は、
     
 を見てみます。110行目あたりに、以下の様な行があると思います。
 
- 
-
 ```php
-// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images add_theme_support( 'post-thumbnails' );
+// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
+add_theme_support( 'post-thumbnails' );
 ```
 
  
 
-add_theme_support( 'post-thumbnails' );
+`add_theme_support( 'post-thumbnails' );`
     
 が指定されていると、アイキャッチ画像が有効になるようです。
     
@@ -109,10 +108,9 @@ add_theme_support( 'post-thumbnails' );
     
 content.phpは、投稿一覧の、１記事分にあたるものだと思って下さい。
     
-この中の、下記の行を探して下さい。  
+この中の、下記の行を探して下さい。
 
 ```php
-
 <div class="entry-content">
 <?php
 
@@ -137,7 +135,6 @@ content.phpは、投稿一覧の、１記事分にあたるものだと思って
 the_post_thumbnail() を記述します。  
 
 ```php
-
 <div class="entry-content">
 <?php
 
