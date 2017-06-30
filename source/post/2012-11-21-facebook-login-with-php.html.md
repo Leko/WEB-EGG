@@ -54,8 +54,10 @@ Twitterでも同様ですね。では早速作っていきます。
 
 まんまコピペで出来たので参考にさせて頂いたリンクをご紹介します。あとはぐぐれ。
 
-  * PHP で「Login with Facebook」を実装する基本的な方法まとめ – 頭ん中  
-    <a href="http://www.msng.info/archives/2012/10/facebook-login-with-php.php" target="_blank">http://www.msng.info/archives/2012/10/facebook-login-with-php.php</a>  アプリケーションの作成は手順はやや多いですが、
+* PHP で「Login with Facebook」を実装する基本的な方法まとめ – 頭ん中  
+    <a href="http://www.msng.info/archives/2012/10/facebook-login-with-php.php" target="_blank">http://www.msng.info/archives/2012/10/facebook-login-with-php.php</a>  
+
+アプリケーションの作成は手順はやや多いですが、
 
 上記のサイト様を見ればすぐに分かると思います。
 
@@ -76,11 +78,11 @@ facebook-php-sdkのソースを見れば、
 
 まずこれを整えます。同じディレクトリに、srcとindex.phpを置きます。こんな感じ。
 
+```
 /
-    
-+- src（facebook-php-sdkのsrcです）
-    
-+- index.php
+    +- src（facebook-php-sdkのsrcです）
+    +- index.php
+```
 
 今回は、この構成で実装します。たったこれだけです。
 
@@ -145,7 +147,6 @@ $userにはユーザIDが入っています。
 index.phpに下記を追加して下さい。 
 
 ```php
-
 // もしユーザがログインしていたら
 if ( $user ) {
 	// ログアウトURLを生成
