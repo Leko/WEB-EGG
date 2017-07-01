@@ -2,6 +2,7 @@
 path: /post/migrate-wp-to-middleman-and-netlify/
 title: Wordpressで運用していたブログをMiddleman+Netlifyに変更した
 date: 2017-07-04T11:30:02+00:00
+image: /images/2017/07/eyecatch-migrate-wp-to-middleman-and-netlify.png
 tags:
   - Wordpress
   - AWS
