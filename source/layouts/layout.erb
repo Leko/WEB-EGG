@@ -3,6 +3,7 @@
 <%= partial 'partials/google_adsense' -%>
 <%= partial 'partials/disqus' -%>
 <%= partial 'partials/fontawesome' -%>
+<%= partial 'partials/load_css' -%>
 <!doctype html>
 <html>
   <head>
@@ -12,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title><%= "#{current_article.title} | " unless current_article.nil? %><%= config[:meta][:sitename] %></title>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <%= stylesheet_link_tag 'all', 'highlighting' %>
+    <%= preload_stylesheet_link_tag 'all', 'highlighting', rel: 'preload', as: 'style', onload: "this.rel='stylesheet'" %>
     <%= yield_content :stylesheets %>
     <%= yield_content :head_close %>
   </head>
