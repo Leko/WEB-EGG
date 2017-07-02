@@ -3,6 +3,7 @@
 <%= partial 'partials/google_adsense' -%>
 <%= partial 'partials/disqus' -%>
 <%= partial 'partials/fontawesome' -%>
+<%= partial 'partials/load_css' -%>
 <!doctype html>
 <html>
   <head>
@@ -15,7 +16,7 @@
       <link rel="canonical" href="<%= config[:meta][:siteurl] %><%= current_article.data.path %>" />
     <% end %>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-    <%= stylesheet_link_tag 'all', 'highlighting' %>
+    <%= preload_stylesheet_link_tag 'all', 'highlighting', rel: 'preload', as: 'style', onload: "this.rel='stylesheet'" %>
     <%= yield_content :stylesheets %>
     <%= yield_content :head_close %>
   </head>
