@@ -96,7 +96,9 @@ activate :syntax, :line_numbers => false
 activate :similar
 
 set :url_root, config[:meta][:siteurl]
-activate :search_engine_sitemap
+activate :search_engine_sitemap, {
+  default_change_frequency: 'weekly'
+}
 
 activate :external_pipeline, {
   name: :webpack,
