@@ -8,6 +8,7 @@
     "test": "{TODO}",
     "lint": "npm run lint:flow",
     "lint:flow": "flow",
+    "lint:md": "textlint source/post/*.md -f pretty-error",
     "build": "webpack --config ./webpack.config.dev.js --bail -p",
     "develop": "webpack --config ./webpack.config.dev.js --watch -d --progress --colors",
     "deploy:review": "netlify deploy -e deploy-preview",
@@ -54,6 +55,8 @@
     "flow-bin": "^0.48.0",
     "flow-typed": "^2.1.2",
     "netlify-cli": "^1.2.2",
+    "textlint": "^8.2.1",
+    "textlint-rule-no-todo": "^2.0.0",
     "webpack": "^3.0.0"
   }
 }
