@@ -6,7 +6,6 @@
   "scripts": {
     "postinstall": "flow-typed install",
     "test": "{TODO}",
-    "lint": "npm run lint:flow",
     "lint:flow": "flow",
     "lint:md": "textlint source/post/*.md -f pretty-error",
     "build": "webpack --config ./webpack.config.dev.js --bail -p",
