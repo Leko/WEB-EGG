@@ -126,10 +126,10 @@ helpers do
 
     sources.flatten.reduce(::ActiveSupport::SafeBuffer.new) do |all, source|
       all << tag(:link, {
-        href: asset_path(:css, source, path_options)
+        href: asset_path(:css, URI.escape(source), path_options)
       }.update(options))
       all << content_tag(:noscript) do
-        stylesheet_link_tag(source, path_options)
+        stylesheet_link_tag(URI.escape(source), path_options)
       end
     end
   end
