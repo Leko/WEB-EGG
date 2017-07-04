@@ -108,7 +108,7 @@ Herokuには[Log Drains](https://devcenter.heroku.com/articles/log-drains)とい
     
 > &mdash; [システムログを外部へドレイン（排出）する](https://github.com/herokaijp/devcenter/wiki/logging#%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%AD%E3%82%B0%E3%82%92%E5%A4%96%E9%83%A8%E3%81%B8%E3%83%89%E3%83%AC%E3%82%A4%E3%83%B3%E6%8E%92%E5%87%BA%E3%81%99%E3%82%8B)
 
-邦訳記事感謝です。  
+邦訳記事に感謝します。  
 ということで、 **ドレインの機能を使用してログをどこかしらのサーバへ垂れ流せばよいのでは？** という過程で調査をすすめていきました。  
 ログサーバを自前でホスティングすればFluentd+Elasticsearch+KibanaだったりBigQueryだったりと何でもやれますが、Herokuにしたきっかけが自分でサーバを持ちたくないことなので、本末転倒になってしまうため選外としました。
 

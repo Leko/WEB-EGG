@@ -10,7 +10,7 @@ tags:
 
 こんにちは。  
 [前回の記事](/post/migrate-wp-to-middleman-and-netlify/)にてブログをNetlify+Middlemanに置き換えた、と書きましたが、  
-静的サイトジェネレータを利用したときの弱点の１つである、予約投稿機能をNetlifyのBuildhookと、Heroku schedulerで再現してみました。
+静的サイトジェネレータを利用したときの弱点の１つである、予約投稿する機能をNetlifyのBuildhookと、Heroku schedulerで再現してみました。
 
 <!--more-->
 

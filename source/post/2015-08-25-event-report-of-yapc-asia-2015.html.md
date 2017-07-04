@@ -460,7 +460,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 
 * テンプレートの処理
 * 外部プロセスの起動
-* テキスト、画像変換処理
+* テキスト、画像を変換する処理
 * RDBMS/Cacheとの接続
 * N+1問題
 
@@ -493,7 +493,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 ### モジュールの例
 
 * [ngx_small_light](https://github.com/cubicdaiya/ngx_small_light) 
-    * 動的画像変換、Proxy噛ませればS3にある画像も対応可能
+    * 動的な画像変換、Proxy噛ませればS3にある画像も対応可能
 * [perusio/nginx-hello-world-module](https://github.com/perusio/nginx-hello-world-module) 
     * 小さなモジュール
 
@@ -530,7 +530,7 @@ Perlは2行だけ。Perl知らんでも書ける
 * `ngx.req.set_header()` nginxのレスポンスヘッダにアクセス、上書きする
 * `ngx.time()` タイムスタンプを返す(`ngx.localtime()`などもある)
 
-### Luaの標準正規表現のほうがはるかに速い
+### Lua標準の正規表現のほうがはるかに速い
 
 が、機能がそこまでない。必要に応じて`ngx.re`を使用する
 

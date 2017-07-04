@@ -72,7 +72,7 @@ PHPのコーディング標準として、[PSR](http://www.php-fig.org/)とい�
 
 ### 4. composer.jsonはvalidになっているか
 
-[composer](https://getcomposer.org/)というPHPの依存関係解決ツールがあります。  
+PHPには[composer](https://getcomposer.org/)という依存関係の解決ツールがあります。  
 Rubyでいうとこの`Bundler`みたいなものです。
 
 ナウいPHP開発をしているなら`composer`の存在はほぼマストになっていると思います。  

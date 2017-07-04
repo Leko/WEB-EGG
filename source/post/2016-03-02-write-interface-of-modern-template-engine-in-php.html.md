@@ -85,7 +85,7 @@ parserパッケージのように複数テンプレートエンジンを同一�
 [rush/php-view-strategies](https://github.com/Leko/php-view-strategies)という名前で公開しています。
 
 説明や使い方などはREADMEを御覧下さい。  
-記事執筆時点では最低限の機能しか提供していないので、ご要望やご提案などあれば[Issue](https://github.com/Leko/php-view-strategies/issues)にお願いします。
+記事を執筆した時点では最低限の機能しか提供していないので、ご要望やご提案などあれば[Issue](https://github.com/Leko/php-view-strategies/issues)にお願いします。
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

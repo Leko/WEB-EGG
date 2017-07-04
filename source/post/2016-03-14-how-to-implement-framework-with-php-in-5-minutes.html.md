@@ -113,7 +113,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
 
 * 採用する 
   * これらのミドルウェアはフレームワーク内に組み込みます。  
-    とはいえ依存しているのはルーティングくらいなのであとは取捨選択可能です
+    とはいえ依存しているのはルーティングくらいなのであとは取捨選択できます
   * [FastRoute](https://github.com/oscarotero/psr7-middlewares#fastroute)
       * ルーティングで採用しているFastRouteのミドルウェアがありました。ルーティングはHTTPミドルウェアの1つとして動作させます
   * [ClientIp](https://github.com/oscarotero/psr7-middlewares#clientip) 

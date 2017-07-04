@@ -238,7 +238,7 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
 **スポポポポッ** ってなって **「うん、知ってる」** ってなる！ ！
 
 意識高そうな感じでやってる感はすごく出るので、一人でも比較的モチベは保ちやすいかなと思います。  
-ぼっち開発環境第一弾、ひとまず完成です。
+ぼっち開発環境の第一弾、ひとまず完成です。
 
 <img src="/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png" alt="スクリーンショット 2015-09-06 23.54.55" class="alignnone size-full wp-image-790" srcset="/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png 575w, /images/2015/09/9c7139b6049070cfdfb72271aed71dea-150x33.png 150w, /images/2015/09/9c7139b6049070cfdfb72271aed71dea-300x66.png 300w" sizes="(max-width: 575px) 100vw, 575px" />
 

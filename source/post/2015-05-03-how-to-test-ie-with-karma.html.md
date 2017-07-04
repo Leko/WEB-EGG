@@ -51,7 +51,7 @@ tags:
   * [karma-ievms](https://www.npmjs.com/package/karma-ievms)
   * その他各種Karma用アダプタ
 
-さり気なくBrowserifyが出てきていますが、下記参考資料を見つつ情報を保管してもらえればと思います。  
+さり気なくBrowserifyが出てきていますが、下記の参考資料を見つつ情報を保管してもらえればと思います。  
 JasmineはMochaと書き方がほとんど変わらないのでどちらか知っていれば大丈夫だと思います。
 
 参考リンク
