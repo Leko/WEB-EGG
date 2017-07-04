@@ -35,7 +35,7 @@ GUIの開発環境「Titanium Studio」でも良いのですが、
 Eclipseライクな開発環境が苦手（嫌い）なのでCLIのほうを使って、  
 環境の準備からアプリのビルドまで行いたいと思います。
 
-更に、  
+さらに、  
 TitaniumではJavaScriptが使えるので、楽なCoffeeScriptで書こうと思いつき、  
 そしたら**保存時にCoffeeScriptの自動コンパイル＋アプリの自動ビルドもしたいなぁ。**
 

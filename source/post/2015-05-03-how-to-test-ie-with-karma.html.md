@@ -230,7 +230,7 @@ npm i -D karma-es5-shim
 
 Karmaの設定ファイルも合わせて[こちら](https://github.com/Leko/karma-ievm-seed/commit/1b3ccd382332b7f7b5d0e3d1b4d46640a99a6cc1)のように編集しておきます。
 
-改めて`karma start`してみると、IE8もテストに通ったと思います。  
+あらためて`karma start`してみると、IE8もテストに通ったと思います。  
 これでIE9以上が対象だけど、shimを入れればIE8対応、とうたえるようになりました。
 
 まとめ

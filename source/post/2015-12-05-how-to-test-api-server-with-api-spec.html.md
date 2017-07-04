@@ -109,7 +109,7 @@ dredd
 <img src="/images/2015/11/Screen-Shot-2015-12-06-at-1.25.59-AM.png" alt="APIドキュメントでAPIサーバをテストする" width="909" height="174" class="alignnone size-full wp-image-820" />
 
 ↑こんな感じになります。  
-更に、 **Apiaryの言うとおりにdredd initしておくと、そのテストの通知結果が集約される** ようになっています。
+さらに、 **Apiaryの言うとおりにdredd initしておくと、そのテストの通知結果が集約される** ようになっています。
 
 <img src="/images/2015/11/Screen-Shot-2015-12-06-at-1.27.02-AM.png" alt="APIドキュメントでAPIサーバをテストする" width="1600" height="1020" class="alignnone size-full wp-image-821" />
 

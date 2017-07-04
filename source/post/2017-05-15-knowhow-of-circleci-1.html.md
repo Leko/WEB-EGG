@@ -27,7 +27,7 @@ CircleCI + Docker構成でCIしたい方はだいぶマゾいとすら思いま�
 
 という構成だと、色々なDockerに関する操作が動きません。  
 ローカルでは動くので、基本ドはまりする要素満載です。  
-更にdocker-composeでブラックボックスに包むと、余計にわけがわからなくなります。
+さらにdocker-composeでブラックボックスに包むと、余計にわけがわからなくなります。
 
 ということでハマったことと、CircleCIでDockerを扱うための基本戦術を残します。
 
@@ -102,7 +102,7 @@ open /proc/self/oom_score_adj: no such file or directory
 
 > &mdash; [Docker Error removing intermediate container – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/docker-error-removing-intermediate-container/70)
 
-リポジトリでDockerfileを管理しており、ビルドが正しく動くかどうかCIしたい、なんてケースでドハマリすることがあります。  
+リポジトリでDockerfileを管理しており、ビルドがきちんと動くかどうかCIしたい、なんてケースでドハマリすることがあります。  
 その場合はもう諦めてDocker hubなどのDockerレジストリに上げておいて、そのイメージをpullして使用する形で回避できます。  
 （もうこの時点でだいぶ無理が来ていると思う）
 

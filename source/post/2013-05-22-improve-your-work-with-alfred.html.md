@@ -90,7 +90,7 @@ workflowsの下の方にある**[+]**を押し、
 
 <img src="/images/2013/05/20130521_step2.png" alt="Google Suggestが作成されたか確認" title="20130521_step2.png" border="0" width="327" height="75" />
 
-これは、Alfredに予めサンプルとして入っているworkflowsで、  
+これは、Alfredにあらかじめサンプルとして入っているworkflowsで、  
 このまま利用できます。
 
 ### 2. 使ってみる

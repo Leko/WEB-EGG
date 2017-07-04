@@ -172,7 +172,7 @@ jQueryやeasing、jQuery UIなどjQuery系を始め、
 Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、  
 **bonsai.jsやEasel.jsなど色々なライブラリ**も充実しています。
 
-更に、cssもあります！ mayer-reset.cssや、normarize.cssなど、  
+さらに、cssもあります！ mayer-reset.cssや、normarize.cssなど、  
 だいたいのニーズは満たしていると思います。
 
 提供されているファイルが一覧できるweb版はこちらから。

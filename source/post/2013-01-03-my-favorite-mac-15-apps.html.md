@@ -55,7 +55,7 @@ tags:
 
 <img src="/images/2013/01/ommwriter.png" alt="Ommwriter" title="ommwriter.png" height="200" />
 
-癖になるエディターアプリ。 起動するとフルスクリーンになり、癒される音と背景に、何者にも邪魔されること無く文章を書くことができます。 更に、キーボードを叩くたびにタイプライターのようなパチパチ音があり、一度入力すると病みつきになります。 <aside> 
+癖になるエディターアプリ。 起動するとフルスクリーンになり、癒される音と背景に、何者にも邪魔されること無く文章を書くことができます。 さらに、キーボードを叩くたびにタイプライターのようなパチパチ音があり、一度入力すると病みつきになります。 <aside> 
 
 * <a href="http://d.hatena.ne.jp/iumem/20110331/1301501697" target="_blank">OmmWriterとかいうテキストエディタを全力で紹介する。 – Nemui！ (id:iumem)</a>
 * <a href="http://ozpa-h4.com/2011/02/26/ommwrite/" target="_blank">Macで集中して文章を書くなら「OmmWriter」を使うべき | OZPAの表4</a></aside> 
