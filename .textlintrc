@@ -11,6 +11,7 @@
     "no-mix-dearu-desumasu": true,
     "no-double-negative-ja": true,
     "no-dropping-the-ra": true,
+    "no-doubled-conjunction": true,
     "max-kanji-continuous-len": {
       "allow": [
         "大文字小文字",
