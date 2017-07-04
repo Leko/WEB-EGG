@@ -91,7 +91,7 @@ workflowsの下の方にある**[+]**を押し、
 <img src="/images/2013/05/20130521_step2.png" alt="Google Suggestが作成されたか確認" title="20130521_step2.png" border="0" width="327" height="75" />
 
 これは、Alfredに予めサンプルとして入っているworkflowsで、  
-このまま利用することができます。
+このまま利用できます。
 
 ### 2. 使ってみる
 
@@ -205,7 +205,7 @@ $origには、`"{query}"`ではなく、変換後の`jQuery`という文字列�
 ### 3. $wf->requesr( url )
 
 Workflowsクラス大活躍です。  
-urlを渡すだけでレスポンスを取得することができます。
+urlを渡すだけでレスポンスを取得できます。
 
 必要に応じて、**urlencode**を使ってエンコードして下さい。
 

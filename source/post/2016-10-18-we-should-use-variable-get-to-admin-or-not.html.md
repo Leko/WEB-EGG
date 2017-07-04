@@ -148,7 +148,7 @@ variable_setは内部的にDBを使用しているので、永続化される値
 variable_get('user_admin_role')
 ```
 
-でAdmin相当のロールIDを入手することができました。  
+でAdmin相当のロールIDを入手できました。  
 `user_role_save`を呼ぶよりも前でridに相当する値をハードコートしてないことからわかるように、 **AdminロールのIDは3とは限りません**  
 コードを読んでおいて良かった…
 
