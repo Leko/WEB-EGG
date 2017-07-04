@@ -136,7 +136,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
       * エラーハンドリングもミドルウェアとして提供されています。 **その手があったか！** と感動したし便利なので採用
   * [Whoops](https://github.com/oscarotero/psr7-middlewares#whoops) 
       * Railsで言うところの[better_errors](https://github.com/charliesome/better_errors)のようなデバッグ用エラー画面です
-      * 開発環境ではこれ使うのが捗るので居れておきます
+      * 開発環境ではこれ使うのが捗るので入れておきます
 * 紹介するだけ 
     * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます
     * [Csp](https://github.com/oscarotero/psr7-middlewares#csp) 
