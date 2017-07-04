@@ -12,7 +12,7 @@ tags:
   - Proxy
   - Ruby
 ---
-過去に[phpのマジックメソッドを使ってRailsのfind_all_by_*メソッドを実装してみる \| WEB EGG](/post/how-to-implement-find-all-by-with-php-magic-method/)という記事を書いたのですが、Node.jsでも[Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy)の登場により、似たようなことができるのでは？と思ったので試してみました。
+過去に[phpのマジックメソッドを使ってRailsのfind_all_by_*メソッドを実装してみる \| WEB EGG](/post/how-to-implement-find-all-by-with-php-magic-method/)という記事を書いたのですが、Node.jsでも[Proxy](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Proxy)の登場により、似たようなことができるのでは？ と思ったので試してみました。
 
 今回の題材は、同じくRailsのActiveRecordから、[ActiveModel::Dirty](http://api.rubyonrails.org/classes/ActiveModel/Dirty.html)モジュールです。
 
@@ -88,7 +88,7 @@ function DirtyCheckable (cls) {
 }
 ```
 
-継承の逆？と言えば伝わるんでしょうか。  
+継承の逆？ と言えば伝わるんでしょうか。  
 渡されたクラスを親クラスにとる無名クラスを作成して返す感じです。
 
 Proxyの挙動

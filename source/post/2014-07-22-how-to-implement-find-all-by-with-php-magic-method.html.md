@@ -42,7 +42,7 @@ __callStaticの仕様を読む
     
 > &mdash; [PHP: オーバーロード – Manual](http://php.net/manual/ja/language.oop5.overloading.php#object.callstatic)
 
-サンプルコードを呼んでみると、`__callStatic`はPHP5.3以上で動作可能な機能のようです。
+サンプルコードを呼んでみると、`__callStatic`はPHP 5.3以上で動作可能な機能のようです。
 
 引数の説明が分かりにくいので、コードを交えつつ解説します。
 

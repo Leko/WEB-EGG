@@ -74,7 +74,7 @@ PSR7の登場により、ほんの1~2年前くらいに誕生した比較的新�
 ----------------------------------------
 
 * 実装は最小限。ニーズを満たせない所だけ作る
-* PHP5.5以上対応
+* PHP 5.5以上対応
 * HTTPリクエスト/レスポンスはPSR7準拠
 * ルーティング
 * HTTPミドルウェア
@@ -88,7 +88,7 @@ PSR7の登場により、ほんの1~2年前くらいに誕生した比較的新�
 ### PHPのバージョン
 
 [PHPのサポート状況](http://php.net/supported-versions.php)から対応すべきバージョンを決定しました  
-PHP5.4のサポートって既に終了していたんですね。 <del>知りませんでした</del>
+PHP 5.4のサポートって既に終了していたんですね。 <del>知りませんでした</del>
 
 ### ルーティング
 
@@ -122,7 +122,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
           * `X-Forwarded-For`: the originating IP address of the client connecting to the Heroku router
           * `X-Forwarded-Proto`: the originating protocol of the HTTP request (example: https)
           * `X-Forwarded-Port`: the originating port of the HTTP request (example: 443)
-          * `X-Request-Start`: unix timestamp (milliseconds) when the request was received by the router
+          * `X-Request-Start`: unix タイムスタンプ (milliseconds) when the request was received by the router
           * `X-Request-Id`: the Heroku HTTP Request ID
           * `Via`: a code name for the Heroku router
   * [Csrf](https://github.com/oscarotero/psr7-middlewares#csrf) 
@@ -241,7 +241,7 @@ nodeでいう[path](https://nodejs.org/api/path.html)モジュールのような
 ```
 
 Adonisを真似ました。このディレクトリ構成気に入っています  
-コントローラは居るのか？という自問自答に対しては、「無名関数はユニットテストしにくい」という結果から採用しました  
+コントローラは居るのか？ という自問自答に対しては、「無名関数はユニットテストしにくい」という結果から採用しました  
 コントローラを使わなければならないわけではないので、その辺のお手軽さも柔軟にやれればと思います。
 
 まとめ

@@ -24,12 +24,12 @@ RedmineのDBをMySQLへの切り替える
 
   * MySQLコンテナ 
       * `MYSQL_ROOT_PASSWORD`にパスワードを指定
-      * `MYSQL_DATABASE`に`redmine`を指定（固定？任意の値に変更可能？）
+      * `MYSQL_DATABASE`に`redmine`を指定（固定？ 任意の値に変更可能？）
   * Redmineコンテナ 
       * `REDMINE_DB_MYSQL`という環境変数にMySQLコンテナの名前を指定
       * `REDMINE_DB_PASSWORD`にMySQLコンテナに指定したパスワードを指定
 
-これでmysqlに切り替わります。Railsサーバが起動し画面でのアクセスも可能です。  
+これでMySQLに切り替わります。Railsサーバが起動し画面でのアクセスも可能です。  
 でも管理画面でデフォルト設定をロードしようとすると
 
 ```
@@ -54,8 +54,8 @@ character-set-server=utf8mb4
 collation-server=utf8mb4_general_ci
 ```
 
-MySQL5.5から`utf8mb4`に対応していたそうなので、せっかくなので指定してみる。  
-utf8mb4は4バイト対応のUTF8だそうです。絵文字とか特殊文字とか稀に存在する4バイトにも対応しているエンコーディング。  
+MySQL 5.5から`utf8mb4`に対応していたそうなので、せっかくなので指定してみる。  
+UTF-8mb4は4バイト対応のUTF-8だそうです。絵文字とか特殊文字とか稀に存在する4バイトにも対応しているエンコーディング。  
 詳しくはこちらが参考になりました。
 
 > [RDS MySQL5.5.33 で『utf8mb4』(4バイト対応UTF-8文字コードセット)を試してみた ｜ Developers.IO](http://dev.classmethod.jp/cloud/aws/utf8mb4-on-rds-mysql/)

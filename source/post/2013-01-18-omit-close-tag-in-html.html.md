@@ -24,14 +24,14 @@ jQueryMobileを初めて使ってみたので、色々と記事のネタが溜�
 
 <q>終了タグのみ省略できるタグ（次のタグの開始と共に自動的に終了タグがはさまれるので） li, dt, dd, p, tr, td, th，rt, rp, optgroup, option, thread, tfoot 開始タグ終了タグ共に省略してよいタグ（タグが無ければデフォルト値が使われる） html, head, body, tbody, colgroup</q> </blockqupte> <figcaption> <cite><span class="removed_link" title="http://victreal.com/Junk/htmlTag/">HTMLにて終了タグがいるタグいらないタグ・・の話とか</span></cite> </figcaption> </figure> 
 
-**！？**  
-HTMLの閉じタグって省略可能なんですね・・・今まで知りませんでした。  
+**！ ？**  
+HTMLの閉じタグって省略可能なんですね…今まで知りませんでした。  
 というのも、こちらの記事 <a href="http://detarame.moo.jp/2012/08/07/google%E3%81%8C%E6%8E%A8%E8%96%A6%E3%81%99%E3%82%8Bhtml%E3%81%A8css%E3%81%AE%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E6%96%B9%E6%B3%95/" target="_blank">Googleが推薦するHTMLとCSSのコーディング方法 | 簡単ホームページ作成支援-Detaramehp</a> から知ったのですが、 調べてみたところこの書き方はW3Cの仕様でもOKだそうです。id="feel"> 
 
 閉じタグの省略は何処か気持ち悪い。
 ----------------------------------------
 
-しかし、今まで閉じタグをしっかり書いていた人間としては、 なんか落ち着かない・・・と思うわけです。 しかし、天下のGoogleさんが仰るなら、 何か良い事が有るのだろうと私なりに利点を整理してみました。
+しかし、今まで閉じタグをしっかり書いていた人間としては、 なんか落ち着かない…と思うわけです。 しかし、天下のGoogleさんが仰るなら、 何か良い事が有るのだろうと私なりに利点を整理してみました。
 
 * インデントが浅くなり見やすくなる
 * カッコカッコって並ばずにすっきりしていて、見やすくなる
@@ -58,7 +58,7 @@ HTMLの閉じタグって省略可能なんですね・・・今まで知りま�
 :   MacBook Air 11inch OSX Lion メモリ4GB Intel Core i7 1.8GHz
 
 ブラウザ
-:   Google Chrome 23.0.1271.101 FireFox 18.0 Opera 12.12 Safari 6.0.2
+:   Google Chrome 23.0.1271.101 Firefox 18.0 Opera 12.12 Safari 6.0.2
 
 です。 そして、実験に用意したHTMLはこちらです。  
 
@@ -91,7 +91,7 @@ HTMLの閉じタグって省略可能なんですね・・・今まで知りま�
 
 非省略：53998.8ms 省略　：45836.6ms(**-8162.2ms**)
 
-### FireFox
+### Firefox
 
 非省略：104364.8ms 省略　：74252.6ms(**-30112.2ms**)
 

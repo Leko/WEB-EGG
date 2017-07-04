@@ -60,7 +60,7 @@ docker-machineでvolumesを利用すると、
 
   * ローカルのパーミッション・オーナー・グループが無視される 
       * uid=1000のユーザがオーナーになる。上記Yamlの場合はftpユーザがオーナーになってました。
-  * mysqlの実行ユーザでは権限が足りず、Permission deniedや…not writable的なエラーが起きる
+  * MySQLの実行ユーザでは権限が足りず、Permission deniedや…not writable的なエラーが起きる
   * マウントした時に発生するので、Dockerfile内でごにょっておく等の事前準備は不可能
   * MySQLの実行ユーザを無理やりuid=1000にすることでも解消できそうですが、MySQLと関係のないユーザでMySQLを操作するのはキモい…
 
@@ -96,7 +96,7 @@ Docker for Macでも動作確認しましたが、この構成で動いてくれ
 もしチーム内に１人でもdocker-machineの人が居たら、上記のハックを使ったら良いと思います。
 
 ベンチマーク取ってないので分かりませんが、  
-Docker for Macの方が主にマウント・ファイルIO周りの速度が向上しているように感じます。  
+Docker for Macの方が主にマウント・ファイルI/O周りの速度が向上しているように感じます。  
 まだdocker-machineとDocker for Macの違いを体系的に理解できていないので、また別途記事を書きます。
 
 おまけ：エンコーディング問題

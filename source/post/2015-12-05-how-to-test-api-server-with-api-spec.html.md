@@ -144,7 +144,7 @@ API Blueprintはまだ発展途上で、[Authorizationに対応して欲しい](
 > [RESTful APIの記述標準化を目指す「Open API Initiative」をマイクロソフト、Google、IBMらが立ち上げ。Swaggerをベースに － Publickey](http://www.publickey1.jp/blog/15/open_api_initiative.html)
 
 最後に。↑の記事の通り、先月くらいに[Open API Initiative](https://openapis.org/)という団体が結成したようです。  
-名だたる企業たちがコアメンバに入っているので、活動を追って行きたいと思います。
+名だたる企業たちがコアメンバーに入っているので、活動を追って行きたいと思います。
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

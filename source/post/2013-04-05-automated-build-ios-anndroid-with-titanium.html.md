@@ -48,7 +48,7 @@ iOSアプリの開発をするため、Macは必須です。
 他には、お好みのテキストエディタなどをご用意下さい。  
 なお、今回の記事は、
 
-* **Mac Book Air 11インチ**
+* **MacBook Air 11インチ**
 * **ＯＳ　：Mac OS X 10.8.3 Moutain Lion**
 * **ＣＰＵ：Intel Core i7 1.8GHz**
 * **メモリ：4GB**
@@ -90,7 +90,7 @@ Titanium Studioを起動したら、
 2.iOS,AndroidのSDKを入手する
 ----------------------------------------
 
-iOSのSDKは、XCodeのからインストールして下さい。 インストールが完了すると、**iOSのSDKは**Titaniumが自動的に認識してくれます。
+iOSのSDKは、Xcodeのからインストールして下さい。 インストールが完了すると、**iOSのSDKは**Titaniumが自動的に認識してくれます。
 
 AndroidのSDKは自分でパスを指定してあげないといけません。 先ほどの設定で指定した、**/Developers/android-sdk/**の中に、 AndroidのSDKを入れてあげます。
 

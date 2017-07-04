@@ -116,7 +116,7 @@ development: # ※ここは実行時の環境による
 英語とRuby力が足らず決定打が見つからなかったので試してみました。  
 [参考記事](http://www.johng.co.uk/2014/04/29/rails-41-database-urls/)のコマンドをお借りして試してみます。
 
-  * config/database.yml上ではsqliteで接続するよう設定(gem等も入れとく)
+  * config/database.yml上ではSQLiteで接続するよう設定(gem等も入れとく)
   * ローカルにPostgreSQLは入っていない
 
 という状態で下記コマンドを実行して、ポスグレで接続しようとすれば接続エラーになるはず。  
@@ -164,7 +164,7 @@ FuelPHPも探してみたものの、それらしい記事が見つからず。
 
 ### Nodejs
 
-新進気鋭のフレームワーク[Adonis](http://www.adonisjs.com/)や個人的に好きなORマッパーの[objection](https://github.com/Vincit/objection.js)が内部で使用している[knex](http://knexjs.org/)はもちろん対応しています。
+新進気鋭のフレームワーク[Adonis](http://www.adonisjs.com/)や個人的に好きなO/Rマッパーの[objection](https://github.com/Vincit/objection.js)が内部で使用している[knex](http://knexjs.org/)はもちろん対応しています。
 
 Nodeはフルスタックなフレームワークが少ない（流行ってない）ので、内部的にknexを使ってればOKくらいの認識で居ます
 

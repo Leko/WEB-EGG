@@ -31,7 +31,7 @@ tags:
 
 <img src="/images/2013/01/Coda2.png" alt="Coda2" title="Coda2.png" height="200" />
 
-言わずと知れた開発環境Coda2。 痒いところに手が届くコード補完、クオリティの高いシンタックスハイライト、綺麗なカラーリング、自然な操作でローカル->サーバへアップロード出来る、などなど 多少お高くても文句なしです！（私は半額セールだった時に買いましたが。） そして地味に楽しいのが、「サイト」機能にサムネイル機能が有ることです！ どのサイトかひと目でわかるし、見た目に現れることでモチベが上がります。 <aside>
+言わずと知れた開発環境Coda2。 痒いところに手が届くコード補完、クオリティの高いシンタックスハイライト、綺麗なカラーリング、自然な操作でローカル->サーバへアップロード出来る、などなど 多少お高くても文句なしです！（私は半額セールだった時に買いましたが）。 そして地味に楽しいのが、「サイト」機能にサムネイル機能が有ることです！ どのサイトかひと目でわかるし、見た目に現れることでモチベが上がります。 <aside>
 
 * <a href="http://stocker.jp/diary/coda-2/" target="_blank">Coda 2 ファーストインプレッション | Stocker.jp / diary</a>
 * <a href="http://www.webcreatorbox.com/tech/dreamweaver-to-coda/" target="_blank">DreamweaverからCodaに変えました | Webクリエイターボックス</a></aside> 
@@ -73,7 +73,7 @@ Todo管理
 
 色々なTodo管理アプリを使ってみた中で、 手軽さと綺麗さ、使いやすさのバランスが一番しっくり来たTodo管理アプリ。 iPhoneや他のOS、デバイスにも対応しているのも吉。 UIがとても綺麗で使っててクセになります。 <aside> 
 
-* <a href="http://matome.naver.jp/odai/2132454671916471701" target="_blank">2011年ベストiPhoneアプリに輝いたWunderlistって何？【使い方まとめ】 – NAVER まとめ</a>
+* <a href="http://matome.naver.jp/odai/2132454671916471701" target="_blank">2011年ベストiPhoneアプリに輝いたWunderlistって何？ 【使い方まとめ】 – NAVER まとめ</a>
 * <a href="http://www.lifehacker.jp/2012/12/121222wunderlist_2.html" target="_blank">To-Doリストに欲しい機能満載！ ほぼ全てのプラットフォームで使える『Wunderlist』 : ライフハッカー［日本版］</a></aside> 
 
 情報収集
@@ -103,7 +103,7 @@ Todo管理
 
 標準アプリSpotlightの強化版、といった感じです。 Spotlightよりも動作が軽くて高機能。愛用しています。 ロックやスリープもこれから一発！ 参考エントリを読まれると魅力が伝わるかも知れません。 <aside> 
 
-* <a href="http://www.danshihack.com/2011/06/09/saku/alfred.html" target="_blank">Quick Silverを超えた？AlfredでMacをカチャカチャ使う | 男子ハック</a>
+* <a href="http://www.danshihack.com/2011/06/09/saku/alfred.html" target="_blank">Quick Silverを超えた？ AlfredでMacをカチャカチャ使う | 男子ハック</a>
 * <a href="http://kazoo1837.blog23.fc2.com/blog-entry-272.html" target="_blank">Macのランチャーアプリ「Alfred」の便利さに、今さらながら気がついた。</a></aside> 
 
 ### TotalTerminal
@@ -123,10 +123,10 @@ Todo管理
 
 <a href="http://blog.boastr.net/" target="_blank">ダウンロード</a> <img src="/images/2013/01/btt.png" alt="BetterTouchTool" title="btt.png" height="200" />
 
-Macで不便に思っていた動作の多くをこれで実現できます！！ Windows7のように、ウィンドウを左右に分割したりデスクトップを表示したり… トラックパッドのジェスチャーもかなり設定できるので詳しくはこちらでどうぞ！！ <aside> 
+Macで不便に思っていた動作の多くをこれで実現できます！ ！ Windows 7のように、ウィンドウを左右に分割したりデスクトップを表示したり… トラックパッドのジェスチャーもかなり設定できるので詳しくはこちらでどうぞ！ ！ <aside> 
 
 * <a href="http://bamka.info/267/" target="_blank">アプリをキーボードから一発起動するショートカットを作成できる。そう、BetterTouchToolならね。</a>
-* <a href="http://bamka.info/2045/" target="_blank">ウインドウの一発リサイズは、BetterTouchToolなら無料。Macユーザーは入れるべき。</a></aside> 
+* <a href="http://bamka.info/2045/" target="_blank">ウィンドウの一発リサイズは、BetterTouchToolなら無料。Macユーザーは入れるべき。</a></aside> 
 
 ### Scroll Reverser
 
@@ -136,7 +136,7 @@ Macで不便に思っていた動作の多くをこれで実現できます！�
 
 トラックパッドとマウスを同時に使うことってありませんか？ いくらトラックパッドでのスクロールに慣れても、マウスのスクロールが逆になると、私は不自然です。 そんなときにこのアプリ。 マウスとトラックパッドでのスクロール方向を逆にしてくれます。 これで作業がだいぶ捗っております。 <aside> 
 
-* <a href="http://www.conchikuwa.com/2011/09/08/crollreverser/" target="_blank">[Mac]マウス派の方にオススメ！OS X LIONでマウスのスクロール方向だけを今までと同じ方向にする方法を見つけた！！ | こんちくわのぶろぐ</a></aside> image"> 
+* <a href="http://www.conchikuwa.com/2011/09/08/crollreverser/" target="_blank">[Mac]マウス派の方にオススメ！ OS X LIONでマウスのスクロール方向だけを今までと同じ方向にする方法を見つけた!! | こんちくわのぶろぐ</a></aside> image"> 
 
 画像
 ----------------------------------------
@@ -172,7 +172,7 @@ Macで不便に思っていた動作の多くをこれで実現できます！�
 JPEG画像を（ほぼ）無劣化で1/5くらいにサイズダウンできるwebサービスが、アプリになりました！ 今までこれで変換をかけて「荒いなぁ」と思ったことはありません。 使う側は容量の節約に、見る側は表示速度の劇的改善になりWIN-WINです。 ちなみに無料版だと、20枚/日までしか変換できません。 <aside> 
 
 * <a href="http://www.jpegmini.com/main/home" target="_blank">JPEGmini – Your Photos on a Diet!</a>
-* <a href="http://www.danshihack.com/2012/06/09/junp/macapp-jpegmini.html" target="_blank">1.2MB→394KBってすごいぞ！画像データを軽くする「JPEG mini」がMacアプリに！ | 男子ハック</a></aside> 
+* <a href="http://www.danshihack.com/2012/06/09/junp/macapp-jpegmini.html" target="_blank">1.2MB→394KBってすごいぞ！ 画像データを軽くする「JPEG mini」がMacアプリに！ | 男子ハック</a></aside> 
 
 データベース
 ----------------------------------------

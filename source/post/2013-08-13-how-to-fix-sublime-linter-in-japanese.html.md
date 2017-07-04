@@ -34,7 +34,7 @@ SublimeText2で**SublimeLinter**という構文チェックパッケージを使
 
 > On Mac OS X, you must install Node.js if you plan to edit JavaScript or CSS files that use non-ASCII characters in strings or comments, because JavaScriptCore is not Unicode-aware.
 
-どうやら、このエラーはMac+javascript時のみ発生する不具合のようです。  
+どうやら、このエラーはMac+JavaScript時のみ発生する不具合のようです。  
 なぜjsだけダメなのかというと、  
 他の言語と異なり、Nodejsのコマンドラインは入っていない場合が多いため、  
 Nodejs依存ではなく、**JavaScriptCore**というMacのデフォルトjsエンジンを使っているようです。

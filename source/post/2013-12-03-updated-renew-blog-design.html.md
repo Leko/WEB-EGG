@@ -24,7 +24,7 @@ tags:
 
   1. ローカル側でMarkdown形式で記事を管理する
   2. ローカルにテスト環境を構築
-  3. WordPressプロジェクトをgit管理する
+  3. WordPressプロジェクトをGit管理する
   4. ローカルから`git push`するだけでデプロイ
 
 とローカル管理＋Markdown周りの強化を行いました。
@@ -81,11 +81,11 @@ tags:
     
 > 2013/12/02近辺にアクセスされた方にはご不便をおかけいたしました。。。
 
-WordPressプロジェクトをgit管理する
+WordPressプロジェクトをGit管理する
 ----------------------------------------
 
 普通にWordpressをダウンロードしてきて、全体をプロジェクト管理しています。  
-テーマファイルと、gitでホスティングされているプラグインをサブモジュール化します。
+テーマファイルと、Gitでホスティングされているプラグインをサブモジュール化します。
 
 今回は、テーマの改造にあたって、親（Twenty Thirteen）の子テーマとしてテーマを作ります。
 
@@ -116,14 +116,14 @@ git commit -am "テーマをサブモジュール化"
 
 プラグインを追加するときは、`wp-content/plugins`の中にaddするだけです。
 
-## ローカルから git push するだけでデプロイ
+## ローカルから Git push するだけでデプロイ
 
-いちいちsshでログインしてgit pullするのは面倒です。
+いちいちsshでログインしてGit pullするのは面倒です。
 
-ローカルからmasterブランチにgit pushするだけで、リモート側でgit pullを自動的にかける  
+ローカルからmasterブランチにGit pushするだけで、リモート側でgit pullを自動的にかける  
 という風にしたいです。
 
-<span class="removed_link" title="http://blog.catatsuy.org/a/142">gitを使ってホームページを更新する | catatsuyのBlog</span>
+<span class="removed_link" title="http://blog.catatsuy.org/a/142">Gitを使ってホームページを更新する | catatsuyのBlog</span>
 
 リモートにログインして、bareリポジトリを作成  
 そのbareリポジトリ内の`post-recieve`を作成してコマンドを書きます
@@ -142,7 +142,7 @@ $ vim hooks/post-recieve
 ```
 
 ドキュメントルートするディレクトリで↑のリポジトリをcloneする  
-apache側の設定とかは適宜やっといてください。
+Apache側の設定とかは適宜やっといてください。
 
 ```shell
 $ cd ~

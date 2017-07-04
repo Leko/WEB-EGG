@@ -19,7 +19,7 @@ tags:
 会社の先輩に誘っていただき、 [YAPC 2015](http://yapcasia.org/2015/) に行ってきました。  
 Perlの祭典です。<del>Perl全く書かないけど。</del>人生初のカンファレンスです。
 
-Perl色がもっと強いものかと思ってましたが、「申し訳程度のPerl要素・・・」  
+Perl色がもっと強いものかと思ってましたが、「申し訳程度のPerl要素…」  
 と何度も思うくらいにはPerl要素が薄く、初心者にも入りやすかったです。
 
 **「ブログに書くまでがYAPCです」** と何度も念を押されたので、というわけではなく、  
@@ -53,9 +53,9 @@ Perl色がもっと強いものかと思ってましたが、「申し訳程度�
   <a href="https://twitter.com/L_e_k_o/status/634540578013868032">2015, 8月 21</a>
 </blockquote>
 
-OSSのお話とか、Perl5とPerl6の話をホビットの冒険と指輪物語に例えつつな感じでした。  
+OSSのお話とか、Perl 5とPerl 6の話をホビットの冒険と指輪物語に例えつつな感じでした。  
 どちらもタイトルしか知らないのでうまく喩え話が頭に入らず。。。  
-そして **「同時翻訳すごい！すごい！」** と感動して肝心の話を殆ど聞いてませんでした。
+そして **「同時翻訳すごい！ すごい！」** と感動して肝心の話を殆ど聞いてませんでした。
 
 * * *
 
@@ -198,7 +198,7 @@ HTMLが取得された時点でCSS, jsの読み取りは完了しているので
 サーバ側が正しく実装しないと、クライアント側がチューニングできない。
 
   * H2O 
-      * reprioritize-blocking-assets オプションで20%ほど高速化できる
+      * reprioritize-blocking-assets オプションで20％ほど高速化できる
   * nghttp2
 
 この二つ以外はまともに実装されていない
@@ -241,12 +241,12 @@ HTMLが取得された時点でCSS, jsの読み取りは完了しているので
 * Cipersuites
 * Forward Secrecy 
     * 長期鍵が漏洩・解析されてもカコの友心内容が解読可能にならない、という性質
-* session ticket 
+* セッション ticket 
     * サーバが使う共通鍵をクライアントが覚える
     * サーバは共通鍵をクライアントに送信 
-        * session ticketの暗号化に使う鍵はサーバ動作中は変わらない
+        * セッション ticketの暗号化に使う鍵はサーバ動作中は変わらない
         * PFS対応のcupersuiteを使っていても、この鍵がバレたら全通信が解読可能になる
-    * 一般的なサーバではsession ticketを無効にしておこう
+    * 一般的なサーバではセッション ticketを無効にしておこう
 
 HTTP2クライアントとしてlibcurlが優れている
 
@@ -423,7 +423,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
       * サーバ負荷の確認 
           * top: 全体の負荷
           * iftop: ネットワーク
-          * iotop: Disk I/O
+          * iotop: ディスク I/O
           * dstat
           * などなど。使い慣れたものを
       * **プロファイリング結果を読み解く慣れ**
@@ -451,9 +451,9 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
 
 ### Webサーバ
 
-  * Apache vs Nginx 
-      * ISUCONの環境では大体の場合Nginxが有利
-  * Nginx vs h2o 
+  * Apache vs nginx 
+      * ISUCONの環境では大体の場合nginxが有利
+  * nginx vs h2o 
       * h2oはプロセスではなくスレッド、スレッド間の情報の共有がしやすい、コンテキストスイッチのコストが低い
 
 ### よくある重い処理
@@ -485,7 +485,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
   * [Nginxを拡張しよう！ モジュールとLuaがあればなんでも出来る！？ #yapcasia #yapcasiaB](http://togetter.com/li/863872)
   * [実践nginxモジュール開発〜CとLua〜 – YAPC::Asia Tokyo 2015](http://yapcasia.org/2015/talk/show/a4318242-f5f2-11e4-afb7-49b37d574c3a)
 
-### Nginxのhttpモジュール
+### nginxのhttpモジュール
 
   * シングルプロセス
   * モジュール指向
@@ -511,7 +511,7 @@ ISUCONで得られた知見を公開されることで、業界の技術力に�
   * temporary-file
   * etc…
 
-### NginxのテストはPerlで書かれている（重要なので2回言いました）
+### nginxのテストはPerlで書かれている（重要なので2回言いました）
 
 ただしPerlあまり好きじゃnあっ…
 
@@ -524,10 +524,10 @@ Perlは2行だけ。Perl知らんでも書ける
   * `ngx.say(message)` レスポンスボディに出力する
   * `ngx.exit(status)` ステータスコードを指定して返す(`ngx.HTTP_OK`など)
   * `ngx.log(level, message)` エラーログに吐く(`ngx.ALERT`, `ngx.CRIT`などがある)
-  * `ngx.var.VARIABLE` Nginxの変数を上書きする、ただし新規作成はできない。上書きのみ。
-  * `ngx.shared.DICT` Nginxの共有メモリにアクセスする
-  * `ngx.header.HEADER` Nginxのレスポンスヘッダにアクセス、上書きする
-  * `ngx.req.set_header()` Nginxのレスポンスヘッダにアクセス、上書きする
+  * `ngx.var.VARIABLE` nginxの変数を上書きする、ただし新規作成はできない。上書きのみ。
+  * `ngx.shared.DICT` nginxの共有メモリにアクセスする
+  * `ngx.header.HEADER` nginxのレスポンスヘッダにアクセス、上書きする
+  * `ngx.req.set_header()` nginxのレスポンスヘッダにアクセス、上書きする
   * `ngx.time()` タイムスタンプを返す(`ngx.localtime()`などもある)
 
 ### Luaの標準正規表現のほうがはるかに速い
@@ -536,7 +536,7 @@ Perlは2行だけ。Perl知らんでも書ける
 
 ### ブロッキングしない
 
-  * Nginxの強みを消さないため
+  * nginxの強みを消さないため
 
 ### OpenResty https://openresty.org/ 
 

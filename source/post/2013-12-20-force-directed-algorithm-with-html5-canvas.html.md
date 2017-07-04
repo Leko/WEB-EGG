@@ -14,7 +14,7 @@ tags:
 ---
 こんにちは。  
 今回は、[力学モデル (グラフ描画アルゴリズム) – Wikipedia](http://ja.wikipedia.org/wiki/%E5%8A%9B%E5%AD%A6%E3%83%A2%E3%83%87%E3%83%AB_(%E3%82%B0%E3%83%A9%E3%83%95%E6%8F%8F%E7%94%BB%E3%82%A2%E3%83%AB%E3%82%B4%E3%83%AA%E3%82%BA%E3%83%A0))というグラフを描画するための面白いアルゴリズムを見つけたので、  
-こいつをjavascript(CoffeeScript)とcanvasで実装してみました。
+こいつをJavaScript(CoffeeScript)とcanvasで実装してみました。
 
 <!--more-->
 
@@ -42,7 +42,7 @@ tags:
 基本的な理論のおさらい
 ----------------------------------------
 
-力学モデルのwikiに書いてある通りですが、少し噛み砕いてみます。
+力学モデルのWikiに書いてある通りですが、少し噛み砕いてみます。
 
 まず、ノードの座標決定には  
 **[クーロンの法則](http://www.mag2.com/sample/P0005602/html)**と**[フックの法則](http://www.wakariyasui.sakura.ne.jp/3-2-0-0/3-2-2-1dannseiryoku.html)**という法則が絡んできます。
@@ -162,7 +162,7 @@ class ForceDirectedGraph
             targetNode.y += targetNode.vy
 ```
 
-wikiに書いてある擬似コード、ほぼそのままだと思います。
+Wikiに書いてある擬似コード、ほぼそのままだと思います。
 
 Canvasユーティリティの作成
 ----------------------------------------
