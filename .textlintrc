@@ -10,6 +10,7 @@
     "date-weekday-mismatch": true,
     "no-mix-dearu-desumasu": true,
     "no-double-negative-ja": true,
+    "no-dropping-the-ra": true,
     "max-kanji-continuous-len": {
       "allow": [
         "大文字小文字",
