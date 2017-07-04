@@ -8,6 +8,7 @@
     "no-nfd": true,
     "ja-no-abusage": true,
     "date-weekday-mismatch": true,
+    "no-mix-dearu-desumasu": true,
     "max-kanji-continuous-len": {
       "allow": [
         "大文字小文字",
