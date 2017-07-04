@@ -1,5 +1,18 @@
 {
   "rules": {
-    "no-todo": true
+    "no-todo": true,
+    "spellcheck-tech-word": true,
+    // "ja-no-redundant-expression": true,
+    // "no-mixed-zenkaku-and-hankaku-alphabet": true,
+    // "period-in-list-item": {
+    //   "periodMarks": [".", "。", "．"],
+    //   "forceAppendPeriod": false
+    // },
+    // "ja-no-mixed-period": {
+    //   "periodMark": "。",
+    //   "allowEmojiAtEnd": true
+    // },
+    // "ja-hiragana-fukushi": true,
+    // "no-nfd": true,
   }
 }
