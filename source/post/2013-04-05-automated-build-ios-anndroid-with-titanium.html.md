@@ -49,8 +49,8 @@ iOSアプリの開発をするため、Macは必須です。
 なお、今回の記事は、
 
 * **MacBook Air 11インチ**
-* **ＯＳ　：Mac OS X 10.8.3 Moutain Lion**
-* **ＣＰＵ：Intel Core i7 1.8GHz**
+* **OS　：Mac OS X 10.8.3 Moutain Lion**
+* **CPU：Intel Core i7 1.8GHz**
 * **メモリ：4GB**
 
 のPCで試しています。
