@@ -35,8 +35,8 @@ Goなどのマルチスレッドができる言語でやる"並列化"と私が�
 用語の整理。多重化と並列化とマルチプロセス化は別物である
 ----------------------------------------
 
-たとえばGoで並列処理をする場合、[goroutine](https://tour.golang.org/concurrency/1)を使用すると思います。  
-たとえばjsで複数の非同期処理を同時に行おうとした場合、[Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)を使用すると思います。  
+たとえば、Goで並列処理をする場合、[goroutine](https://tour.golang.org/concurrency/1)を使用すると思います。  
+jsで複数の非同期処理を同時に行おうとした場合、[Promise.all](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)を使用すると思います。  
 [Herokuの記事](https://devcenter.heroku.com/articles/node-concurrency)によると、Nodeでワーカーの並列度を最適化するには、[throng](https://github.com/hunterloftis/throng)などのクラスタリングマネージャを使用して、マルチプロセス化したら良いと思う的なことが書かれています。
 
 **一体なにがどれにあたるんだ、違いがわからん** と思っていたのですが、  
