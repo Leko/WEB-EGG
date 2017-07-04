@@ -524,7 +524,7 @@ Perlは2行だけ。Perl知らんでも書ける
 * `ngx.say(message)` レスポンスボディに出力する
 * `ngx.exit(status)` ステータスコードを指定して返す(`ngx.HTTP_OK`など)
 * `ngx.log(level, message)` エラーログに吐く(`ngx.ALERT`, `ngx.CRIT`などがある)
-* `ngx.var.VARIABLE` nginxの変数を上書きする、ただし新規作成はできない。上書きのみ。
+* `ngx.var.VARIABLE` nginxの変数を上書きする、ただし新規作成はできない。上書きのみ
 * `ngx.shared.DICT` nginxの共有メモリにアクセスする
 * `ngx.header.HEADER` nginxのレスポンスヘッダにアクセス、上書きする
 * `ngx.req.set_header()` nginxのレスポンスヘッダにアクセス、上書きする

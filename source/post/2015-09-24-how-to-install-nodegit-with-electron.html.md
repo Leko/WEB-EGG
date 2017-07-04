@@ -54,9 +54,9 @@ Electronで後方互換のないバージョンアップが行われたようで
 
       なので「nan2に対応しなければ動かないよ」に該当し、動かない。
 
-      この互換性の差が具体的にどうビルドの失敗に繋がるのかは未調査。現状そこまで追る気がしない。
+      この互換性の差が具体的にどうビルドの失敗に繋がるのかは未調査。現状そこまで追る気がしない
 3. [Bump nan to v2](https://github.com/nodegit/nodegit/pull/702)のPRによって[対応するnanのバージョンが2.0.9になった](https://github.com/nodegit/nodegit/commit/9bc60984f8765049b70eb6f84a3276dc96aad419#diff-b9cfc7f2cdf78a7f4b91a753d10865a2)
-4. ただしこのコミットはまだリリースされているバージョンには入っていない。
+4. ただしこのコミットはまだリリースされているバージョンには入っていない
 5. Gitのタグではなくコミットで`npm install`する方法を探る
 6. `npm i -S https://github.com/nodegit/nodegit/tarball/ece6f2413073f4033316a7c36006a586b7bd94ce`
 

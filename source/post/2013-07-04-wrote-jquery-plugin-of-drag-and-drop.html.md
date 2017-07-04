@@ -151,7 +151,7 @@ var tmp = e.originalEvent.dataTransfer.files, files = Array.prototype.slice.call
       * ドラッグしたものが要素の中でドロップされたとき
   * `FileReader.onload` 
       * **FileReader.readAsText**などでファイルの読み取りが完了したとき
-      * 読み込んだ内容は`e.target.result`で取れます。
+      * 読み込んだ内容は`e.target.result`で取れます
 
 jQuery.file-drop.js
 ----------------------------------------
@@ -169,9 +169,9 @@ jQuery.file-drop.js
 jQuery.filedrop.jsは4つのオプションを提供します。
 
   * dragEnter 
-      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropenterイベントと同じです。
+      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropenterイベントと同じです
   * dragLeave 
-      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropleaveイベントと同じです。
+      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropleaveイベントと同じです
   * drop 
       * ファイルがドロップされた際に実行される
       * 引数はドロップされたファイルの配列

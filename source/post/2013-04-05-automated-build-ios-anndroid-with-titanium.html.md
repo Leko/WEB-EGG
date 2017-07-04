@@ -216,7 +216,7 @@ $ titanium create
     * アプリのIDを入力  
       これは、自分のドメインを逆順に書き、最後に`.アプリ名`を書くのが通例のようです。  
       私の場合、持っているドメインは`leko.jp`なので、  
-      アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります。
+      アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります
 * **Project name**
     * アプリの名前を入力  
       App IDで`myapp`としたので、そのまま`myapp`と入力

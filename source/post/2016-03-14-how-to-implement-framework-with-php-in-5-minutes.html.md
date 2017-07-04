@@ -113,7 +113,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
 
 * 採用する 
   * これらのミドルウェアはフレームワーク内に組み込みます。  
-    とはいえ依存しているのはルーティングくらいなのであとは取捨選択可能です。
+    とはいえ依存しているのはルーティングくらいなのであとは取捨選択可能です
   * [FastRoute](https://github.com/oscarotero/psr7-middlewares#fastroute)
       * ルーティングで採用しているFastRouteのミドルウェアがありました。ルーティングはHTTPミドルウェアの1つとして動作させます
   * [ClientIp](https://github.com/oscarotero/psr7-middlewares#clientip) 
@@ -138,7 +138,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
       * Railsで言うところの[better_errors](https://github.com/charliesome/better_errors)のようなデバッグ用エラー画面です
       * 開発環境ではこれ使うのが捗るので居れておきます
 * 紹介するだけ 
-    * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます。
+    * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます
     * [Csp](https://github.com/oscarotero/psr7-middlewares#csp) 
         * [Content Security Policy](https://developer.mozilla.org/ja/docs/Web/Security/CSP)の設定を提供してくれるミドルウェア  
         まだブラウザの対応状況が微妙なのでフレームワークでの採用は見送り。要件や対応ブラウザによっては使えそうです
