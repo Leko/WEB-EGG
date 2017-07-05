@@ -1,0 +1,50 @@
+<% if defined?(tagname).present? %>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "name": "Tag"
+      }
+    }, {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@id": "<%= config[:meta][:siteurl] %><%= tag_path(tagname) %>",
+        "name": "<%= tagname %>"
+      }
+    }, {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "name": "Page <%= page_number %>"
+      }
+    }]
+  }
+  </script>
+<% elsif current_article.present? %>
+  記事
+  <script type="application/ld+json">
+  {
+
+  }
+  </script>
+<% elsif defined?(page_number).present? %>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@id": "<%= config[:meta][:siteurl] %><%= current_page.url %>",
+        "name": "Page <%= page_number %>"
+      }
+    }]
+  }
+  </script>
+<% end %>
