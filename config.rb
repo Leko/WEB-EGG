@@ -164,23 +164,29 @@ helpers do
 
   # Single article
   def google_linked_data_article(article)
-    eyecatch_width, eyecatch_height = FastImage.size(File.join(__dir__, 'source', article.data.image))
+    if article.data.image.present?
+      eyecatch_url = "#{config[:meta][:siteurl]}#{article.data.image}"
+      eyecatch_width, eyecatch_height = FastImage.size(File.join(__dir__, 'source', article.data.image)) || []
+    else
+      eyecatch_url = avatar_url
+      eyecatch_width, eyecatch_height = FastImage.size(avatar_url)
+    end
     avatar_width, avatar_height = FastImage.size(avatar_url)
     [google_linked_data_base, {
       '@context': 'http://schema.org',
       '@type': 'NewsArticle',
       'headline': article.title[0...110],
-      'image': article.data.image.present? ? {
+      'image': {
         '@type': 'ImageObject',
-        'url': "#{config[:meta][:siteurl]}#{article.data.image}",
+        'url': eyecatch_url,
         'height': eyecatch_height,
         'width': eyecatch_width,
-      } : nil,
-      'mainEntityOfPage': { # ignored (non-AMP)
+      },
+      # Non-AMP: Ignored
+      'mainEntityOfPage': {
         '@type': 'WebPage',
         '@id': "#{config[:meta][:siteurl]}#{article.data.path}",
       },
-      # Non-AMP: Ignored
       'description': strip_tags(article.summary),
       'datePublished': article.date.strftime('%Y-%m-%dT%T%:z'),
       'dateModified': (article.data.updated_at || article.date).strftime('%Y-%m-%dT%T%:z'),
