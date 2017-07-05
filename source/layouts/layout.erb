@@ -11,6 +11,7 @@
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <%= yield_content :meta %>
     <title><%= "#{current_article.title} | " unless current_article.nil? %><%= config[:meta][:sitename] %></title>
     <% if current_article.present? %>
       <link rel="canonical" href="<%= config[:meta][:siteurl] %><%= current_article.data.path %>" />
