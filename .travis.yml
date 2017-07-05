@@ -12,8 +12,9 @@ install:
 - npm install
 
 script:
+- npm run lint:flow
+- npm run lint:md
 - bundle exec middleman build
-- npm run lint
 
 # Netlify deploy `master` branch automatically. No need to configure
 # deploy:

@@ -21,7 +21,7 @@ SublimeText2で**SublimeLinter**という構文チェックパッケージを使
 
 <img src="/images/2013/08/90f7e96e11d56ed0e19f02fae013ef9e1.png" alt="コメントの中に日本語を含めてもエラー" title="コメントの中に日本語を含めてもエラー.png" width="572" />
 
-**なんという英語強要装置。**  
+**なんという英語養成ギブス。**  
 日本のエンジニアの未来は明るいかもしれませんが、  
 日本語ゼロは不便なので直してみたいと思います。
 
@@ -34,7 +34,7 @@ SublimeText2で**SublimeLinter**という構文チェックパッケージを使
 
 > On Mac OS X, you must install Node.js if you plan to edit JavaScript or CSS files that use non-ASCII characters in strings or comments, because JavaScriptCore is not Unicode-aware.
 
-どうやら、このエラーはMac+javascript時のみ発生する不具合のようです。  
+どうやら、このエラーはMac+JavaScript時のみ発生する不具合のようです。  
 なぜjsだけダメなのかというと、  
 他の言語と異なり、Nodejsのコマンドラインは入っていない場合が多いため、  
 Nodejs依存ではなく、**JavaScriptCore**というMacのデフォルトjsエンジンを使っているようです。
@@ -50,7 +50,7 @@ Nodejs依存ではなく、**JavaScriptCore**というMacのデフォルトjsエ
 「SublimeLinter 日本語」でググるとまずこの記事が出てくるのですが、  
 僕はこの記事の内容（Nodejsをインストールすれば勝手に治る）では治りませんでした。
 
-元々Nodejsはインストールしてあったのですが、それが使われていない感じがします。  
+もともとNodejsはインストールしてあったのですが、それが使われていない感じがします。  
 Nodejsが使われているなら日本語エラー出ないし。  
 ということで、**インストール済みのNodejsを使うように切り替える設定**がありそうだと思って探してみました。
 

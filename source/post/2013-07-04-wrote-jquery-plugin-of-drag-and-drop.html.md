@@ -151,9 +151,9 @@ var tmp = e.originalEvent.dataTransfer.files, files = Array.prototype.slice.call
       * ドラッグしたものが要素の中でドロップされたとき
   * `FileReader.onload` 
       * **FileReader.readAsText**などでファイルの読み取りが完了したとき
-      * 読み込んだ内容は`e.target.result`で取れます。
+      * 読み込んだ内容は`e.target.result`で取れます
 
-jquery.file-drop.js
+jQuery.file-drop.js
 ----------------------------------------
 
 これらのサンプルを手軽に利用できるように、jQueryプラグイン化してみました。  
@@ -166,12 +166,12 @@ jquery.file-drop.js
 
 使い方はこんな感じです。
 
-jquery.filedrop.jsは4つのオプションを提供します。
+jQuery.filedrop.jsは4つのオプションを提供します。
 
   * dragEnter 
-      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropenterイベントと同じです。
+      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropenterイベントと同じです
   * dragLeave 
-      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropleaveイベントと同じです。
+      * ブラウザのデフォルトの挙動をキャンセルしている以外、dropleaveイベントと同じです
   * drop 
       * ファイルがドロップされた際に実行される
       * 引数はドロップされたファイルの配列
@@ -186,13 +186,13 @@ jquery.filedrop.jsは4つのオプションを提供します。
 
 ファイルの読み取りは簡単なのに、書き込みがファイルの面倒でした。。。
 
-ドラッグ＆ドロップについては、  
+ドラッグ&ドロップについては、  
 APIがなくても、mouseoverやmousedownを使って書けますが、  
 APIを用いたほうが可読性が高く柔軟なコードになると思います。
 
 環境に制限が無いなら、こちらを使ってみるといいと思います。
 
-最後に、jquery.filedrop.jsのソースはGistに上げてあります。  
+最後に、jQuery.filedrop.jsのソースはGistに上げてあります。  
 最期まで読んで頂き、ありがとうございました！
 
 [jquery.filedrop.js](https://gist.github.com/Leko/5927774)

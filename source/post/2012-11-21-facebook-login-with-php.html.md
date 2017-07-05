@@ -14,7 +14,7 @@ tags:
 こんにちは。  
 先日、友達がシステムの実装を行なっている時に、
 
-「phpでfacebookでログインを実装したいけど詰まった」と言っていまして、
+「phpでFacebookでログインを実装したいけど詰まった」と言っていまして、
 
 そんな難しいものでもないだろうと思ったら、そのとおり簡単だったのですが
 
@@ -24,38 +24,38 @@ tags:
 
 <!--more-->
 
-facebook-php-sdkを用意
+Facebook-php-sdkを用意
 ----------------------------------------
 
-有難いことに、facebook公式がsdkを公開してくれています。
+有難いことに、Facebook公式がsdkを公開してくれています。
 
 これがあるのと無いのでは天と地との差があります。
 
 さくっと手に入れてしまいましょう。
 
-リンクはこちら。<a href="https://github.com/facebook/facebook-php-sdk" target="_blank">https://github.com/facebook/facebook-php-sdk</a>
+リンクはこちら。<a href="https://github.com/facebook/facebook-php-sdk" target="_blank">https://github.com/facebook/Facebook-php-sdk</a>
 
 上記のリンクをクリックして、「ZIP」をクリック。
 
 ダウンロードが始まるので、適当なディレクトリに解凍して、
 
-「src」フォルダとその中身を、facebookでログインを使いたいphpファイルと同じ場所へ置いて下さい。
+「src」フォルダとその中身を、Facebookでログインを使いたいphpファイルと同じ場所へ置いて下さい。
 
 これでOKです。次に行きましょう。 
 
 アプリケーションを作成
 ----------------------------------------
 
-facebookでログインをするには、ユーザ情報を得る元となるアプリケーションが必要になります。
+Facebookでログインをするには、ユーザ情報を得る元となるアプリケーションが必要になります。
 
 Twitterでも同様ですね。では早速作っていきます。
 
 ですが、アプリケーションの作成については多くの資料があり、
 
-まんまコピペで出来たので参考にさせて頂いたリンクをご紹介します。あとはぐぐれ。
+まんまコピー&ペーストで出来たので参考にさせて頂いたリンクをご紹介します。あとはぐぐれ。
 
 * PHP で「Login with Facebook」を実装する基本的な方法まとめ – 頭ん中  
-    <a href="http://www.msng.info/archives/2012/10/facebook-login-with-php.php" target="_blank">http://www.msng.info/archives/2012/10/facebook-login-with-php.php</a>  
+    <a href="http://www.msng.info/archives/2012/10/facebook-login-with-php.php" target="_blank">http://www.msng.info/archives/2012/10/Facebook-login-with-php.php</a>  
 
 アプリケーションの作成は手順はやや多いですが、
 
@@ -66,7 +66,7 @@ Twitterでも同様ですね。では早速作っていきます。
 処理の流れ
 ----------------------------------------
 
-facebook-php-sdkのソースを見れば、
+Facebook-php-sdkのソースを見れば、
 
 丁寧に書かれているので、分かると思うのですが、それじゃ備忘録にならないので書きます。笑
 
@@ -96,11 +96,11 @@ facebook-php-sdkのソースを見れば、
 
 ログイン時には、
 
-**index.php -> facebook -> アプリで設定したURLへリダイレクト(ログイン完了)**
+**index.php -> Facebook -> アプリで設定したURLへリダイレクト(ログイン完了)**
 
 という順番になります。ログアウトするときは、
 
-**index.php -> facebook -> 指定したURLへリダイレクト -> セッションをリセット -> ログアウト完了**
+**index.php -> Facebook -> 指定したURLへリダイレクト -> セッションをリセット -> ログアウト完了**
 
 と、少々手順が増えます。
 

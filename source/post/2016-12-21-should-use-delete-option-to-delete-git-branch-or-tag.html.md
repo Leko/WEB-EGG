@@ -19,7 +19,7 @@ tags:
 
 <!--more-->
 
-## git push origin :タグ名
+## Git push origin :タグ名
 
 :は区切り文字に相当しており、おそらく普段使っているように省略すると
 
@@ -36,7 +36,7 @@ git push origin master:master # 省略後
 
 > Pushing an empty <src> allows you to delete the <dst> ref from the remote repository. > — [Git – git-push Documentation](https://git-scm.com/docs/git-push)</dst></src>
 
-## git push origin –delete タグ名
+## Git push origin –delete タグ名
 
 `git push --delete origin hogehoge` のようなコマンドを叩くとリモートブランチが削除されます。
 
@@ -47,7 +47,7 @@ git push origin master:master # 省略後
 push時に複数ブランチ・タグが指定できる
 ----------------------------------------
 
-git-pushは複数のブランチを一気にpushすることが可能だったようです。試したことがなかった。
+Git-pushは複数のブランチを一気にpushすることが可能だったようです。試したことがなかった。
 
 `git push origin :hoge :foo :bar`のようにやれば、複数のブランチ・タグを一括削除できます。 もしくは`--delete`オプションをつけても内部挙動としては同じです。 １個ずつ指定していく場合と比べてめちゃくちゃ早いです。
 

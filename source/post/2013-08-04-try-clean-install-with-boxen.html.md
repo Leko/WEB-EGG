@@ -145,7 +145,7 @@ Screenhelo、Droplr、ImageOptim、Mou
 
 ### コマンドライン
 
-Vagrant、heroku、imagemagic、java、phantomjs、jenkins、wget
+Vagrant、heroku、imagemagic、java、phantomjs、Jenkins、wget
 
 ### Homebrew産
 
@@ -153,7 +153,7 @@ tree、lua、luajit
 
 ### gem
 
-compass、json、sass、twitter
+compass、json、sass、Twitter
 
 ### Nodejsモジュール
 
@@ -164,7 +164,7 @@ asciify、coffee-script、grunt-cli、mocha、titanium、typescript、yuidocjs
 Android SDK、Google日本語入力、ログインシェルをzshに、OSXの設定諸々
 
 結構色々と入れました。  
-これが揃ってれば僕の環境はほぼ100%再現できるので、これらを設定ファイルに指定しておきます。
+これが揃ってれば僕の環境はほぼ100％再現できるので、これらを設定ファイルに指定しておきます。
 
 設定ファイルの書き方などは、boxenのGithubのREADME(英語)や、  
 先ほどリンクしたboxen紹介記事などを御覧ください。
@@ -178,7 +178,7 @@ boxenしてみる
 まずは、App storeからXcodeをインストールして、  
 設定にあるCommand Line Toolもインストールします。
 
-Command Line Toolをインストールするとgccやgitがインストールされます。
+Command Line ToolをインストールするとgccやGitがインストールされます。
 
 そしたらターミナルから先ほど作ったboxenのリポジトリをcloneして実行します。 今回は、僕のboxenを使用する例を示します。
 

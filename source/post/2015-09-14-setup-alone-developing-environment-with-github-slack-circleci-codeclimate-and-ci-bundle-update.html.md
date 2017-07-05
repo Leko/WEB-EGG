@@ -188,14 +188,14 @@ Githubにプルリクエストを作ってマージし、Code climateにカバ�
 **これから毎日bundle updateしようぜ？**
 
 ということで早速導入。  
-[解説記事](http://masutaka.net/chalow/2015-07-28-1.html)の内容でハマったところがあったので、改めて記事として手順を残します。
+[解説記事](http://masutaka.net/chalow/2015-07-28-1.html)の内容でハマったところがあったので、あらためて記事として手順を残します。
 
 > このように circle.yml の deployment section を変更します。
     
 > https://github.com/masutaka/masutaka-29hours/commit/0ba9ef03348568baaa5cf271d4f6e41305f8fdfe
 
 とありますが、ここでハマりました。  
-`./script/deploy-circleci.sh`なんて無いぞ・・・？Circle CIでのお決まりなのかな・・・？  
+`./script/deploy-circleci.sh`なんて無いぞ…？ Circle CIでのお決まりなのかな…？  
 と思いながらそのまま書いたら、案の定ビルドにコケました。なので以下のように修正
 
 ```diff
@@ -211,7 +211,7 @@ Githubにプルリクエストを作ってマージし、Code climateにカバ�
 
 > 環境変数 BUNDLE_UPDATE が指定されていたら、circleci-bundle-update-pr gem をインストールして、同コマンドを実行しています。この環境変数は後述するトリガーが設定してきます。
 
-とあったので、Circle CI側にも環境変数の設定が必要なのか・・・？  
+とあったので、Circle CI側にも環境変数の設定が必要なのか…？  
 と思って指定したらビルド通らなくなりました。
 
 **日本語読めよ** という話なのですが、Circle CI側にはこの環境変数の指定は不要です。
@@ -232,13 +232,13 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
 
 <img src="/images/2015/09/87fe328607615af11722bfe947725838.png" alt="スクリーンショット 2015-09-06 23.51.04" class="alignnone size-full wp-image-789" srcset="/images/2015/09/87fe328607615af11722bfe947725838.png 683w, /images/2015/09/87fe328607615af11722bfe947725838-150x127.png 150w, /images/2015/09/87fe328607615af11722bfe947725838-300x255.png 300w" sizes="(max-width: 683px) 100vw, 683px" />
 
-**一人じゃんけん感はんぱねぇ・・・！**
+**一人じゃんけん感はんぱねぇ…！**
 
 自分でPull request作ってマージしてブランチ消した途端Slackの通知が  
-**スポポポポッ** ってなって **「うん、知ってる。」** ってなる！！
+**スポポポポッ** ってなって **「うん、知ってる」** ってなる！ ！
 
 意識高そうな感じでやってる感はすごく出るので、一人でも比較的モチベは保ちやすいかなと思います。  
-ぼっち開発環境第一弾、ひとまず完成です。
+ぼっち開発環境の第一弾、ひとまず完成です。
 
 <img src="/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png" alt="スクリーンショット 2015-09-06 23.54.55" class="alignnone size-full wp-image-790" srcset="/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png 575w, /images/2015/09/9c7139b6049070cfdfb72271aed71dea-150x33.png 150w, /images/2015/09/9c7139b6049070cfdfb72271aed71dea-300x66.png 300w" sizes="(max-width: 575px) 100vw, 575px" />
 

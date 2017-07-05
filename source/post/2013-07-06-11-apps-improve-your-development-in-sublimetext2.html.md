@@ -156,7 +156,7 @@ F7キーを押してみると、コンソールが表示され[Finished.]と出�
 (function(a,b){var c="aaa";alert(c);}(this,jQuery));
 ```
 
-便利！( ´◔‿ゝ◔\`)  
+便利！ ( ´◔‿ゝ◔\`)  
 キーボード一発で簡単にminifyできるので重宝しそうです。
 
 cdnjs
@@ -172,7 +172,7 @@ jQueryやeasing、jQuery UIなどjQuery系を始め、
 Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、  
 **bonsai.jsやEasel.jsなど色々なライブラリ**も充実しています。
 
-更に、cssもあります！ mayer-reset.cssや、normarize.cssなど、  
+さらに、cssもあります！ mayer-reset.cssや、normarize.cssなど、  
 だいたいのニーズは満たしていると思います。
 
 提供されているファイルが一覧できるweb版はこちらから。
@@ -217,7 +217,7 @@ Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、
 
 **ファイルが保存された時に非ascii文字が含まれていたら、  
 encodingコメントを追加する（既に指定が入っている場合は挿入しない）**  
-という動作にできます！地味に便利！
+という動作にできます！ 地味に便利！
 
 Image2Base64
 ----------------------------------------
@@ -243,7 +243,7 @@ sublimerge
 コマンドパレットに`view diff`と入力すると、  
 現在開いているファイルと、どのファイルのdiffを取るか聞かれるので選択。
 
-すると、こんな画面になります。（画像は適当な２ファイルを選びました）
+すると、こんな画面になります（画像は適当な２ファイルを選びました）
 
 <img src="/images/2013/07/SUBLIME_DIFF.png" alt="SUBLIME DIFF" title="SUBLIME_DIFF.png" border="0" width="600" height="274" />
 
@@ -263,7 +263,7 @@ Sublime textで書いているコードを、[Aizu Online Judge](http://judge.u-
 送信できないよと怒られます。設定しましょう。
 
 ユーザ設定はパッケージのREADMEを見て  
-ユーザ情報を表したJSONを自分でコピペしなきゃいけないのでやや不親切。
+ユーザ情報を表したJSONを自分でコピー&ペーストしなきゃいけないのでやや不親切。
 
 パッケージのユーザ設定に以下の内容を追加します。
 

@@ -88,7 +88,7 @@ Facebookにブログの記事を告知してみたり、閲覧してくれた方
 
 来年も集計を取ろうと思います。
 
-重ね重ねとなりますが、今年もWEB EGGを宜しくお願い致します。
+重ね重ねとなりますが、今年もWeb EGGを宜しくお願い致します。
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

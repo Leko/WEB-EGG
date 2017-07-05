@@ -74,7 +74,7 @@ PSR7の登場により、ほんの1~2年前くらいに誕生した比較的新�
 ----------------------------------------
 
 * 実装は最小限。ニーズを満たせない所だけ作る
-* PHP5.5以上対応
+* PHP 5.5以上対応
 * HTTPリクエスト/レスポンスはPSR7準拠
 * ルーティング
 * HTTPミドルウェア
@@ -88,7 +88,7 @@ PSR7の登場により、ほんの1~2年前くらいに誕生した比較的新�
 ### PHPのバージョン
 
 [PHPのサポート状況](http://php.net/supported-versions.php)から対応すべきバージョンを決定しました  
-PHP5.4のサポートって既に終了していたんですね。 <del>知りませんでした</del>
+PHP 5.4のサポートって既に終了していたんですね。 <del>知りませんでした</del>
 
 ### ルーティング
 
@@ -113,7 +113,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
 
 * 採用する 
   * これらのミドルウェアはフレームワーク内に組み込みます。  
-    とはいえ依存しているのはルーティングくらいなのであとは取捨選択可能です。
+    とはいえ依存しているのはルーティングくらいなのであとは取捨選択できます
   * [FastRoute](https://github.com/oscarotero/psr7-middlewares#fastroute)
       * ルーティングで採用しているFastRouteのミドルウェアがありました。ルーティングはHTTPミドルウェアの1つとして動作させます
   * [ClientIp](https://github.com/oscarotero/psr7-middlewares#clientip) 
@@ -122,7 +122,7 @@ Slimと互換性があることと、色々種類が揃っているため便利�
           * `X-Forwarded-For`: the originating IP address of the client connecting to the Heroku router
           * `X-Forwarded-Proto`: the originating protocol of the HTTP request (example: https)
           * `X-Forwarded-Port`: the originating port of the HTTP request (example: 443)
-          * `X-Request-Start`: unix timestamp (milliseconds) when the request was received by the router
+          * `X-Request-Start`: unix タイムスタンプ (milliseconds) when the request was received by the router
           * `X-Request-Id`: the Heroku HTTP Request ID
           * `Via`: a code name for the Heroku router
   * [Csrf](https://github.com/oscarotero/psr7-middlewares#csrf) 
@@ -136,9 +136,9 @@ Slimと互換性があることと、色々種類が揃っているため便利�
       * エラーハンドリングもミドルウェアとして提供されています。 **その手があったか！** と感動したし便利なので採用
   * [Whoops](https://github.com/oscarotero/psr7-middlewares#whoops) 
       * Railsで言うところの[better_errors](https://github.com/charliesome/better_errors)のようなデバッグ用エラー画面です
-      * 開発環境ではこれ使うのが捗るので居れておきます
+      * 開発環境ではこれ使うのが捗るので入れておきます
 * 紹介するだけ 
-    * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます。
+    * これらのミドルウェアは便利そうなのですが入れると余計なロックインが起きそうだったので見送りました。紹介までにとどめます
     * [Csp](https://github.com/oscarotero/psr7-middlewares#csp) 
         * [Content Security Policy](https://developer.mozilla.org/ja/docs/Web/Security/CSP)の設定を提供してくれるミドルウェア  
         まだブラウザの対応状況が微妙なのでフレームワークでの採用は見送り。要件や対応ブラウザによっては使えそうです
@@ -209,10 +209,10 @@ JSON, YAML, PHP, Iniに対応しているようです
 PHP組み込み定数の`DIRECTORY_SEPARATOR`は名前が長い。長過ぎます  
 とはいえFuelPHPのように`DS`といった略称を作っても仕方ないので、もっと根本的な解決策を探った結果、見つけました
 
-更に言えば、PHPのファイル操作関数は命名に統一性がなくバラバラで分かりにくいです  
+さらに言えば、PHPのファイル操作関数は命名に統一性がなくバラバラで分かりにくいです  
 nodeでいう[path](https://nodejs.org/api/path.html)モジュールのようなのがほしいな～と探して見つけたのがこのライブラリです
 
-なんだかんだでファイルパス操作はよく行うので、予め入れておくとコア層でもアプリ層でもいい感じになるだろう。と見込んで採用しました
+なんだかんだでファイルパス操作はよく行うので、あらかじめ入れておくとコア層でもアプリ層でもいい感じになるだろう。と見込んで採用しました
 
 ディレクトリ構成
 ----------------------------------------
@@ -241,8 +241,8 @@ nodeでいう[path](https://nodejs.org/api/path.html)モジュールのような
 ```
 
 Adonisを真似ました。このディレクトリ構成気に入っています  
-コントローラは居るのか？という自問自答に対しては、「無名関数はユニットテストしにくい」という結果から採用しました  
-コントローラを使わなければならないわけではないので、その辺のお手軽さも柔軟にやれればと思います。
+コントローラは居るのか？ という自問自答に対しては、「無名関数はユニットテストしにくい」という結果から採用しました  
+コントローラを使わなくても良いので、その辺のお手軽さも柔軟にやれればと思います。
 
 まとめ
 ----------------------------------------

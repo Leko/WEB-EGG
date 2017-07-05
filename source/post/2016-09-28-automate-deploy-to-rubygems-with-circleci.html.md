@@ -31,13 +31,13 @@ gemのデプロイ手順
 ----------------------------------------
 
 まずは自動化すべきタスクの内容をおさらいします。  
-rakeタスクにデプロイコマンドがくっついているので、それを利用します。
+Rakeタスクにデプロイコマンドがくっついているので、それを利用します。
 
   1. [rubygems.org](https://rubygems.org/)にユーザ登録
   2. ログインして[Edit Profile](https://rubygems.org/profile/edit)へ移動
   3. **API ACCESS** という節にコマンドが書かれているので、それを実行
 
-これで公開準備完了です。ここまでの操作は最初の1回で良いようです。  
+これで公開準備は完了しました。ここまでの操作は最初の1回で良いようです。  
 デプロイ自体は
 
 ```
@@ -68,7 +68,7 @@ circle.ymlにデプロイ処理を追加する
 ----------------------------------------
 
 `deployment`セクションを追加して、`master`ブランチのビルドが走ったときのデプロイ処理を指定します。  
-私の場合rubygemsのユーザもGit(hub)のユーザも`Leko`なので、以下のような内容になると思います。  
+私の場合RubyGemsのユーザもGit(hub)のユーザも`Leko`なので、以下のような内容になると思います。  
 パスワードやメールアドレスをリポジトリに載せたくないので、環境変数に切り出してProject settings画面から設定しています。
 
 ```yaml
@@ -90,7 +90,7 @@ CircleCI上の表示は
 
 <img src="/images/2016/09/e1084e909de8fec85c82e780658b59f3.png" alt="スクリーンショット 2016-09-25 4.25.59" width="1175" height="303" class="alignnone size-full wp-image-875" />
 
-デプロイした後のrubygems.orgは
+デプロイした後のRubyGems.orgは
 
 <img src="/images/2016/09/4c1c1aa1469d47ee9ae877356b7b87da.png" alt="スクリーンショット 2016-09-25 4.26.54" width="814" height="342" class="alignnone size-full wp-image-874" />
 

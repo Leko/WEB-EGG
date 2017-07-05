@@ -47,7 +47,7 @@ phpの規則
 
 調べてみるとすぐに見つかりました。<figure>
 
-<q>PHPでは、「実行したファイルのあるディレクトリが常に実行時のカレントディレクトリになる」っていう規則があるためエラーとなってしまうのです。 この問題は、実行ファイルのディレクトリではなく、参照しているファイルのディレクトリを基にパスを取得することで回避することができます。</q> <figcaption> <cite><a href="http://www.hoge256.net/2007/08/61.html" target="_blank">PHP の include, require で相対パスを指定して読み込む場合のメモ – hoge256ブログ</a></cite> </figcaption> </figure> 
+<q>PHPでは、「実行したファイルのあるディレクトリが常に実行時のカレントディレクトリになる」っていう規則があるためエラーとなってしまうのです。 この問題は、実行ファイルのディレクトリではなく、参照しているファイルのディレクトリを基にパスを取得することで回避できます。</q> <figcaption> <cite><a href="http://www.hoge256.net/2007/08/61.html" target="_blank">PHP の include, require で相対パスを指定して読み込む場合のメモ – hoge256ブログ</a></cite> </figcaption> </figure> 
 
 とあるように、A.phpを実行しているので、 B.phpのrequire_once("C.php")はA.phpと同階層のC.phpを探してエラーになるようです。 これを回避するには、**dirname(__FILE__)**を使います。section id="solved"> 
 

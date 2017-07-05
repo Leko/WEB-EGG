@@ -51,7 +51,7 @@ tags:
   * [karma-ievms](https://www.npmjs.com/package/karma-ievms)
   * その他各種Karma用アダプタ
 
-さり気なくBrowserifyが出てきていますが、下記参考資料を見つつ情報を保管してもらえればと思います。  
+さり気なくBrowserifyが出てきていますが、下記の参考資料を見つつ情報を保管してもらえればと思います。  
 JasmineはMochaと書き方がほとんど変わらないのでどちらか知っていれば大丈夫だと思います。
 
 参考リンク
@@ -67,7 +67,7 @@ JasmineはMochaと書き方がほとんど変わらないのでどちらか知�
     
 > <http://efcl.info/2014/0411/res3820/>
 
-今自分が使っている環境ではSauceLabsやpower-assertなどモリモリなのですが、  
+今自分が使っている環境ではSauce Labsやpower-assertなどモリモリなのですが、  
 今回はあくまで **Karma x MacでIE** にフォーカスするため本題から逸れる話はなるべく割愛します。
 
 リポジトリをつくる
@@ -230,7 +230,7 @@ npm i -D karma-es5-shim
 
 Karmaの設定ファイルも合わせて[こちら](https://github.com/Leko/karma-ievm-seed/commit/1b3ccd382332b7f7b5d0e3d1b4d46640a99a6cc1)のように編集しておきます。
 
-改めて`karma start`してみると、IE8もテストに通ったと思います。  
+あらためて`karma start`してみると、IE8もテストに通ったと思います。  
 これでIE9以上が対象だけど、shimを入れればIE8対応、とうたえるようになりました。
 
 まとめ
@@ -244,7 +244,7 @@ Karmaの設定ファイルも合わせて[こちら](https://github.com/Leko/kar
 ちなみに、本格的に色々なブラウザ・OS・バージョンでテストを行いたい場合には[SauceLabs](https://saucelabs.com/)を使ったほうが良いと思います。  
 ただし、ちょろっと試しに使ってみた感じだと **ものすごく遅い** ので、CI回したり、確実な品質担保をしたいとき向けといった印象があります。
 
-とりあえずIEに最低限対応していることをテスト駆動で書いていくだけなら、今回の記事のようにローカル環境を活用したほうがスピーディにことが済みそうです。 SauceLabsでのテストに慣れてきたら、TravisCIと組み合わせて、PR時に各ブラウザのテストを走らせる方法を書きたいと思います。
+とりあえずIEに最低限対応していることをテスト駆動で書いていくだけなら、今回の記事のようにローカル環境を活用したほうがスピーディにことが済みそうです。 Sauce Labsでのテストに慣れてきたら、Travis CIと組み合わせて、PR時に各ブラウザのテストを走らせる方法を書きたいと思います。
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

@@ -90,8 +90,8 @@ workflowsの下の方にある**[+]**を押し、
 
 <img src="/images/2013/05/20130521_step2.png" alt="Google Suggestが作成されたか確認" title="20130521_step2.png" border="0" width="327" height="75" />
 
-これは、Alfredに予めサンプルとして入っているworkflowsで、  
-このまま利用することができます。
+これは、Alfredにあらかじめサンプルとして入っているworkflowsで、  
+このまま利用できます。
 
 ### 2. 使ってみる
 
@@ -205,7 +205,7 @@ $origには、`"{query}"`ではなく、変換後の`jQuery`という文字列�
 ### 3. $wf->requesr( url )
 
 Workflowsクラス大活躍です。  
-urlを渡すだけでレスポンスを取得することができます。
+urlを渡すだけでレスポンスを取得できます。
 
 必要に応じて、**urlencode**を使ってエンコードして下さい。
 
@@ -269,7 +269,7 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 
 と言った３ステップになると思います。
 
-### 補足. キーワード？？？
+### 補足. キーワード？ ？ ？
 
 `g 検索ワード`のように、  
 `g`というキーワードにこのworkflowsが反応させるように決めます。

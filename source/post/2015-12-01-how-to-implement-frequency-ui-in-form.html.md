@@ -26,7 +26,7 @@ tags:
 
 当記事で紹介するライブラリ、コードを[全部まとめたデモを作りました](https://jsfiddle.net/leko/znos4wf0/)。  
 記事と内容を読みつつ、具体的なコードはデモをご参照ください。  
-**記事内にはコードはほとんど書きません** 。デモがあるのと、READMEの内容をコピペしてもすぐ情報が古くなるためです。
+**記事内にはコードはほとんど書きません** 。デモがあるのと、READMEの内容をコピー&ペーストしてもすぐ情報が古くなるためです。
 
 また、ライブラリを採用する場合には以下の採用基準で選んでいます
 
@@ -117,17 +117,17 @@ Bootstrap3用に最適化されたCSSも公式で対応していたりします�
   * Star: <a class="github-button broken_link" href="/ajaxzip3/ajaxzip3.github.io/stargazers" api="/repos/ajaxzip3/ajaxzip3.github.io#stargazers_count" label="Star ajaxzip3/ajaxzip3.github.io on GitHub">Star</a>
   * デモ: <https://ajaxzip3.github.io/sample-page/>
 
-[BASE](https://thebase.in)というネットショップを作成できるサービスの、購入者情報入力画面では[AjaxZip 2.0 – Ajax郵便番号→住所自動入力フォーム（CGI不要版）](http://www.kawa.net/works/ajax/ajaxzip2/ajaxzip2.html)というライブラリが使用されていました。
+[BASE](https://thebase.in)というネットショップを作成できるサービスの、購入者情報を入力する画面では[AjaxZip 2.0 – Ajax郵便番号→住所自動入力フォーム（CGI不要版）](http://www.kawa.net/works/ajax/ajaxzip2/ajaxzip2.html)というライブラリが使用されていました。
 
 > &mdash; [いつのまにかajaxzipが進化して、メンテ不要の住所入力支援ツールになっててビビった件。](http://blog.motoo.net/2010/10/15/102802)
 
-Google codeが廃れ、Githubに移転し、郵便番号データを保持する必要がなくなり、バージョン3だそうです。（スターが全然ついてないのが怖い）
+Google codeが廃れ、Githubに移転し、郵便番号データを保持する必要がなくなり、バージョン3だそうです（スターが全然ついてないのが怖い）
 
 こういったライブラリ、サービスを利用すればサーバに郵便番号マスタや差分更新バッチを持たなくても良いのですが、 **代償として非公式の外部リソースに依存する** のってどうなんでしょう。。。  
-郵便番号検索系のAPIを公開している人は多いものの、全部非公式なのでどうにも不安です。  
-なら自社で郵便番号検索用サービスをマイクロサービスとして切り出して運用とかのほうがマシかもしれません。
+郵便番号を検索するAPIを公開している人は多いものの、全部非公式なのでどうにも不安です。  
+なら自社で郵便番号を検索できるサービスをマイクロサービスとして切り出して運用とかのほうがマシかもしれません。
 
-そもそも[郵便番号一覧を公開している](http://www.post.japanpost.jp/zipcode/download.html)日本郵便さん公式でAPIを公開・運用してくれればこんな悩みを抱えずに済むのに・・・
+そもそも[郵便番号一覧を公開している](http://www.post.japanpost.jp/zipcode/download.html)日本郵便さん公式でAPIを公開・運用してくれればこんな悩みを抱えずに済むのに…
 
 まとめ
 ----------------------------------------

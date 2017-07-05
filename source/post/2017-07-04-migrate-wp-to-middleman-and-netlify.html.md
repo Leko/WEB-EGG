@@ -61,7 +61,7 @@ tags:
 - Githubを中心に自動化・効率化を入れて行ける
 - 画像の最適化など、事前ビルドできないと難しいことを簡単にやれる
 
-想定するデメリットと対処方法
+想定するデメリットと対処法法
 -------------------------------------------
 ### ブログ自体を作成するコスト
 もともと使い慣れているMiddlemanを使用すれば大した手間もハマりもなく行けるであろうと予想  
@@ -120,7 +120,7 @@ Heroku vs Github pages vs S3 vs Netlify
 * 独自に取得したサブドメインを指定する
 * サブドメのDNSは移譲していいが、権威DNSはさくらから移行しない
 
-|#|Heroku+Nginx|Github pages|AWS S3+CloudFront+Route53+ACM|Netlify|
+|#|Heroku+nginx|Github pages|AWS S3+CloudFront+Route53+ACM|Netlify|
 |---|---|---|---|---|
 |HTTPS|✔︎|✔︎||✔|
 |HTTP/2|✔||✔|✔|
@@ -191,4 +191,4 @@ Rubyの[Rouge](https://github.com/jneen/rouge)を使って、HTML作成時にハ
 もしこのブログ（記事の内容も含めて）に何か問題があれば、リポジトリのIssueを立てていただければと思います。  
 また、書こうとしている記事のネタもIssueで管理しているので、暇つぶしがてらチラッと眺めてみていただけると幸いです。
 
-これからもWEB EGGをよろしくおねがいいたします。
+これからもWeb EGGをよろしくおねがいいたします。

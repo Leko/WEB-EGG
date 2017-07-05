@@ -46,7 +46,7 @@ AWSのページを見つけました
 
 <img src="/images/2017/04/693663e8211dbcfade29c5af49de6d5e.png" alt="" width="1007" height="410" class="alignnone size-full wp-image-953" />
 
-お分かりいただけたであろうか。  
+お分かりいただけただろうか。  
 プレースホルダがエンドポイントまで含めたURLを促しているのに対し、  
 **バケットパスを入力する要素の下に、ヘルプテキストが書かれている**
 

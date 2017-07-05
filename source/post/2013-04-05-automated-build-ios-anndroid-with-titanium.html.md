@@ -35,7 +35,7 @@ GUIの開発環境「Titanium Studio」でも良いのですが、
 Eclipseライクな開発環境が苦手（嫌い）なのでCLIのほうを使って、  
 環境の準備からアプリのビルドまで行いたいと思います。
 
-更に、  
+さらに、  
 TitaniumではJavaScriptが使えるので、楽なCoffeeScriptで書こうと思いつき、  
 そしたら**保存時にCoffeeScriptの自動コンパイル＋アプリの自動ビルドもしたいなぁ。**
 
@@ -48,9 +48,9 @@ iOSアプリの開発をするため、Macは必須です。
 他には、お好みのテキストエディタなどをご用意下さい。  
 なお、今回の記事は、
 
-* **Mac Book Air 11インチ**
-* **ＯＳ　：Mac OS X 10.8.3 Moutain Lion**
-* **ＣＰＵ：Intel Core i7 1.8GHz**
+* **MacBook Air 11インチ**
+* **OS　：Mac OS X 10.8.3 Moutain Lion**
+* **CPU：Intel Core i7 1.8GHz**
 * **メモリ：4GB**
 
 のPCで試しています。
@@ -90,7 +90,7 @@ Titanium Studioを起動したら、
 2.iOS,AndroidのSDKを入手する
 ----------------------------------------
 
-iOSのSDKは、XCodeのからインストールして下さい。 インストールが完了すると、**iOSのSDKは**Titaniumが自動的に認識してくれます。
+iOSのSDKは、Xcodeのからインストールして下さい。 インストールが完了すると、**iOSのSDKは**Titaniumが自動的に認識してくれます。
 
 AndroidのSDKは自分でパスを指定してあげないといけません。 先ほどの設定で指定した、**/Developers/android-sdk/**の中に、 AndroidのSDKを入れてあげます。
 
@@ -216,7 +216,7 @@ $ titanium create
     * アプリのIDを入力  
       これは、自分のドメインを逆順に書き、最後に`.アプリ名`を書くのが通例のようです。  
       私の場合、持っているドメインは`leko.jp`なので、  
-      アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります。
+      アプリ名を`myapp`とすると、App IDは`jp.leko.myapp`となります
 * **Project name**
     * アプリの名前を入力  
       App IDで`myapp`としたので、そのまま`myapp`と入力

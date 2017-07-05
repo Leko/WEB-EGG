@@ -96,7 +96,7 @@ Goについて調べているうちに、並列・スケールしやすいとか
   * Vagrant
   * Ansible
   * (軽量)フレームワーク: [gin-gonic/gin](https://github.com/gin-gonic/gin)
-  * ORM兼マイグレーション: [jinzhu/gorm](https://github.com/jinzhu/gorm)
+  * O/Rマッパ兼マイグレーション: [jinzhu/gorm](https://github.com/jinzhu/gorm)
   * 環境変数: [joho/godotenv](https://github.com/joho/godotenv)
   * CSRF対策: [gin-gonic/nosurf](https://github.com/gin-gonic/nosurf)
   * パスワードハッシュ: [crypto/bcrypt](https://godoc.org/golang.org/x/crypto/bcrypt)
@@ -110,7 +110,7 @@ Macローカルに色々インストールするのは嫌なので、Vagrant+Ans
 セッション管理にはRedisを使ってみます。複数台構成にするときに面倒にならないよう早めにセッション共有を突っ込んでおく狙いです。 ライブリロードに使用しているginとフレームワークのginは別物なので要注意です。
 
 今回の記事で作るものはこちらのリポジトリにて公開しています。記事と合わせてご覧ください。  
-（無料プランなので接続に時間がかかる場合があります。 **Goが遅いわけではなくHerokuが原因です。** ご留意ください。）
+（無料プランなので接続に時間がかかる場合があります。 **Goが遅いわけではなくHerokuが原因です。** ご留意ください）。
 
 リポジトリ： [Leko/godemo](https://github.com/Leko/godemo)  
 動作デモ(Heroku)： [go-demo](https://go-demo.herokuapp.com/)
@@ -199,7 +199,7 @@ Herokuにデプロイする（準備）
 
 > [Getting Started with Go on Heroku \| Heroku Dev Center](https://devcenter.heroku.com/articles/getting-started-with-go#introduction)
 
-ここでの疑問は、できあがった`Godeps/_workspace`というディレクトリはコミットする必要があるのか？ignoreして大丈夫なのか？です。  
+ここでの疑問は、できあがった`Godeps/_workspace`というディレクトリはコミットする必要があるのか？ ignoreして大丈夫なのか？ です。  
 マニュアルを読んでみてもignoreの話が出てこないので、試してみたところ`_workspace`はignoreしたらデプロイできませんでした。コミット必須なようです。
 
 HerokuでRedisを使用するには[Redis Cloud](https://addons.heroku.com/rediscloud?utm_campaign=search&utm_medium=dashboard&utm_source=addons)というアドオンが良さそうでした。ということで採用。インストールのコマンドは次の章にまとめて掲載しています。
@@ -207,11 +207,11 @@ HerokuでRedisを使用するには[Redis Cloud](https://addons.heroku.com/redis
 RedistoreでRedis CloudのURLを扱う際は、NewRediStoreだと「too many colons」のエラーが出ます。代わりに
 
   * `github.com/garyburd/redigo/redis`と`github.com/soveran/redisurl`をインポート
-  * [soveran/redisurl](https://github.com/soveran/redisurl)を使用して、redis.Connを入手（デモのコード参照）
-  * それを返す関数を作成し、redis.NewPoolに渡す（デモのコード参照）
+  * [soveran/redisurl](https://github.com/soveran/redisurl)を使用して、Redis.Connを入手（デモのコード参照）
+  * それを返す関数を作成し、Redis.NewPoolに渡す（デモのコード参照）
   * NewRediStoreの代わりにNewRediStoreWithPoolを使用してインスタンスを生成
 
-redisurlはredis.Connを返し、NewRediStoreWithPoolはredis.Poolを受け取る想定なので、変換に一手間かかりました。 かなりゴリ押し感が出てしまっているので、良い対処法をご存知の方がいらっしゃいましたらご教授いただけると幸いです。
+redisurlはRedis.Connを返し、NewRediStoreWithPoolはredis.Poolを受け取る想定なので、変換に一手間かかりました。 かなりゴリ押し感が出てしまっているので、良い対処法をご存知の方がいらっしゃいましたらご教授いただけると幸いです。
 
 この件はこちらの記事（Stackoverflow）が参考になりました。  
 使っているライブラリが違うなど、直接の原因や対策が出てこず苦戦しました。まだ人口の少ない言語なので仕方ないかと思います。
@@ -250,7 +250,7 @@ $ heroku open
 
 Goを触っていて思ったことの雑記です。
 
-### 型を制するものがGoを制す？？
+### 型を制するものがGoを制す？ ？
 
 配列を制すものがPHPを制す、関数を制すものがjsを制す、  
 とか他の言語で適当な標語を掲げたりしていますが、Goはtypeキーワードを使った片付け周りが柔軟かつ高機能なので、そこがキーになりそうだなと感じました。  
@@ -261,7 +261,7 @@ Goを触っていて思ったことの雑記です。
 C, Java, スクリプト言語と入っているので、プログラミングを始めた頃は型付け+コンパイルがお友達でした。  
 スクリプト言語のゆるふわさは楽で良いのですが、他の人が書いたコードはじっくり読まないと扱いにくいし破綻しやすいという感じがしています。
 
-例えばPHPなら[タイプヒンティング](http://php.net/manual/ja/language.oop5.typehinting.php)で引数の型は縛れますが戻り値の型は矯正できません。PHP7でできるようになりますが、 **PHP5で書かれたものを7にリプレースする体力はあるのだろうか、新規なら別に7で書けばいいけど言語の選択肢がある新規プロジェクトならわざわざPHP選択したくないよ。** といった感じです。
+例えばPHPなら[タイプヒンティング](http://php.net/manual/ja/language.oop5.typehinting.php)で引数の型は縛れますが戻り値の型は矯正できません。PHP 7でできるようになりますが、 **PHP 5で書かれたものを7にリプレースする体力はあるのだろうか、新規なら別に7で書けばいいけど言語の選択肢がある新規プロジェクトならわざわざPHP選択したくないよ。** といった感じです。
 
 ### 言語構造がシンプル
 
