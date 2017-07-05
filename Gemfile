@@ -10,6 +10,7 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 gem 'rake'
 gem 'typhoeus'
+gem 'fastimage'
 
 # Middleman Gems
 gem 'middleman', '~> 4.1'
