@@ -114,6 +114,122 @@ activate :external_pipeline, {
 # Helpers
 ###
 helpers do
+  def avatar_url
+    "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(config[:meta][:email])}?size=600"
+  end
+
+  def google_linked_data_base
+    {
+      '@context' => 'http://schema.org',
+      '@type' => 'WebSite',
+      'name' => config[:meta][:sitename],
+      'url' => config[:meta][:siteurl]
+    }
+  end
+
+  # List article by tag
+  def google_linked_data_tag(tagname, page_number)
+    [google_linked_data_base, {
+      '@context' => 'http://schema.org',
+      '@type' => 'BreadcrumbList',
+      'itemListElement' => [{
+        '@type' => 'ListItem',
+        'position' => 1,
+        'item' => {
+          '@id' => config[:meta][:siteurl],
+          'name' => 'Post'
+        }
+      }, {
+        '@type' => 'ListItem',
+        'position' => 2,
+        'item' => {
+          'name' => 'Tag'
+        }
+      }, {
+        '@type' => 'ListItem',
+        'position' => 3,
+        'item' => {
+          '@id' => "#{config[:meta][:siteurl]}#{tag_path(tagname)}",
+          'name' => "#{tagname}"
+        }
+      }, {
+        '@type' => 'ListItem',
+        'position' => 4,
+        'item' => {
+          'name' => "Page #{page_number}"
+        }
+      }]
+    }]
+  end
+
+  # Single article
+  def google_linked_data_article(article)
+    if article.data.image.present?
+      eyecatch_url = "#{config[:meta][:siteurl]}#{article.data.image}"
+      eyecatch_width, eyecatch_height = FastImage.size(File.join(__dir__, 'source', article.data.image)) || []
+    else
+      eyecatch_url = avatar_url
+      eyecatch_width, eyecatch_height = FastImage.size(avatar_url)
+    end
+    avatar_width, avatar_height = FastImage.size(avatar_url)
+    [google_linked_data_base, {
+      '@context': 'http://schema.org',
+      '@type': 'NewsArticle',
+      'headline': article.title[0...110],
+      'image': {
+        '@type': 'ImageObject',
+        'url': eyecatch_url,
+        'height': eyecatch_height,
+        'width': eyecatch_width,
+      },
+      # Non-AMP: Ignored
+      'mainEntityOfPage': {
+        '@type': 'WebPage',
+        '@id': "#{config[:meta][:siteurl]}#{article.data.path}",
+      },
+      'description': strip_tags(article.summary),
+      'datePublished': article.date.strftime('%Y-%m-%dT%T%:z'),
+      'dateModified': (article.data.updated_at || article.date).strftime('%Y-%m-%dT%T%:z'),
+      'author': {
+        '@type': 'Person',
+        'name': config[:meta][:author],
+      },
+      'publisher': {
+        '@type': 'Organization',
+        'name': config[:meta][:author],
+        'logo': {
+          '@type': 'ImageObject',
+          'url': avatar_url,
+          'width': avatar_width,
+          'height': avatar_height,
+        }
+      },
+    }]
+  end
+
+  # List article
+  def google_linked_data_list(current_page, page_number)
+    [google_linked_data_base, {
+      '@context' => 'http://schema.org',
+      '@type' => 'BreadcrumbList',
+      'itemListElement' => [{
+        '@type' => 'ListItem',
+        'position' => 1,
+        'item' => {
+          '@id' => config[:meta][:siteurl],
+          'name' => 'Post'
+        }
+      }, {
+        '@type' => 'ListItem',
+        'position' => 2,
+        'item' => {
+          '@id' => "#{config[:meta][:siteurl]}#{current_page.url}",
+          'name' => "Page #{page_number}"
+        }
+      }]
+    }]
+  end
+
   def preload_stylesheet_link_tag(*sources)
     options = {
       rel: 'preload',

@@ -147,6 +147,7 @@ DEPENDENCIES
   algoliasearch
   bootstrap (~> 4.0.0.alpha6)
   builder (~> 3.0)
+  fastimage
   middleman (~> 4.1)
   middleman-blog
   middleman-blog-similar

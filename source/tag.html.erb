@@ -2,22 +2,20 @@
 pageable: true
 per_page: 8
 ---
-<% if paginate %>
-  <% content_for :breadcrumb do %>
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-      <li class="breadcrumb-item">Tag</li>
-      <li class="breadcrumb-item"><a href="<%= tag_path(tagname) %>"><%= tagname %></a></li>
-      <li class="breadcrumb-item active">Page <%= page_number %> of <%= num_pages %></li>
-    </ol>
-  <% end %>
+<% content_for :breadcrumb do %>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item">Tag</li>
+    <li class="breadcrumb-item"><a href="<%= tag_path(tagname) %>"><%= tagname %></a></li>
+    <li class="breadcrumb-item active">Page <%= page_number %> of <%= num_pages %></li>
+  </ol>
 <% end %>
 
 <% page_articles.each_with_index do |article, i| %>
   <%= partial 'partials/article_summary', locals: { article: article, index: i } %>
 <% end %>
 
-<% if paginate && num_pages > 1 %>
+<% if num_pages > 1 %>
   <ul class="pagination">
     <% if page_number > 2 %>
       <li>
