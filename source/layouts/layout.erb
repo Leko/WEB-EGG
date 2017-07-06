@@ -14,6 +14,7 @@
     <title><% if current_article.present? -%><%= current_article.title -%> | <% elsif defined?(tagname).present? -%>タグ：<%= tagname -%> | <% end %><%= config[:meta][:sitename] -%></title>
     <% if current_article.present? %>
       <link rel="canonical" href="<%= config[:meta][:siteurl] %><%= current_article.data.path %>" />
+      <%= partial 'partials/ogp', locals: { article: current_article } %>
       <%= partial 'partials/twitter_card', locals: { article: current_article } %>
     <% end %>
     <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>

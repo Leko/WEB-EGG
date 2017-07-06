@@ -15,6 +15,7 @@ end
 
 config[:meta] = {
   locale: 'ja',
+  locale_long: 'ja_JP',
   sitename: 'WEB EGG',
   siteurl: 'https://blog.leko.jp',
   catchcopy: 'まだまだひよこ。サバクラ問わずwebに関連することを書き留めています',
