@@ -1,0 +1,19 @@
+<meta property="fb:app_id" content="<%= config[:meta][:facebook_app_id] %>" />
+<meta property="og:type" content="article" />
+<meta property="og:locale" content="<%= config[:meta][:locale_long] %>" />
+<meta property="og:site_name" content="<%= config[:meta][:sitename] %>" />
+<meta property="og:url" content="<%= config[:meta][:siteurl] %><%= article.data.path %>" />
+<meta property="og:title" content="<%= escape_html(article.title) %>" />
+<meta property="og:description" content="<%= escape_html(strip_tags(article.summary)) %>" />
+<meta property="article:published_time" content="<%= article.date.iso8601 %>" />
+<meta property="article:modified_time" content="<%= (article.data.updated_at || article.date).iso8601 %>" />
+<% article.tags.each do |tag| %>
+  <meta property="article:tag" content="<%= tag %>" />
+<% end %>
+<% if article.data.image.present? %>
+  <meta property="og:image" content="<%= config[:meta][:siteurl] %><%= article.data.image %>" />
+  <meta property="og:image:secure_url" content="<%= config[:meta][:siteurl] %><%= article.data.image %>" />
+  <meta property="og:image:type" content="image/<%= FastImage.type(File.join(::Middleman::Util.current_directory, 'source', article.data.image)) %>" />
+  <meta property="og:image:width" content="<%= FastImage.size(File.join(::Middleman::Util.current_directory, 'source', article.data.image))[0] %>" />
+  <meta property="og:image:height" content="<%= FastImage.size(File.join(::Middleman::Util.current_directory, 'source', article.data.image))[1] %>" />
+<% end %>

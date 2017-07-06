@@ -1,0 +1,5 @@
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@<%= config[:meta][:twitter] %>" />
+<meta name="twitter:title" content="<%= escape_html(article.title[0...70]) %>" />
+<meta name="twitter:description" content="<%= escape_html(strip_tags(article.summary))[0...200] %>" />
+<meta name="twitter:image" content="<%= config[:meta][:siteurl] %><%= article.data.image %>" />

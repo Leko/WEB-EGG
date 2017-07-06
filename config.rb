@@ -15,6 +15,7 @@ end
 
 config[:meta] = {
   locale: 'ja',
+  locale_long: 'ja_JP',
   sitename: 'WEB EGG',
   siteurl: 'https://blog.leko.jp',
   catchcopy: 'まだまだひよこ。サバクラ問わずwebに関連することを書き留めています',
@@ -23,6 +24,7 @@ config[:meta] = {
   bio: 'サイト移転しました。いまどきブックマークあるのかわかりませんがURLの更新をお願いします',
   twitter: 'L_e_k_o',
   facebook: 'shingo.inoue.967',
+  facebook_app_id: '1434873820060880',
   github: 'Leko',
   qiita: 'L_e_k_o',
 }
