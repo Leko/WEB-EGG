@@ -19,6 +19,7 @@ gem 'middleman-blog'
 gem 'middleman-syntax'
 gem 'middleman-dotenv', '~> 2.0'
 gem 'middleman-search_engine_sitemap'
+gem 'middleman-imageoptim', git: 'https://github.com/plasticine/middleman-imageoptim', branch: 'master'
 
 # site search
 gem 'algoliasearch'
