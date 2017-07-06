@@ -24,6 +24,7 @@ config[:meta] = {
   bio: 'サイト移転しました。いまどきブックマークあるのかわかりませんがURLの更新をお願いします',
   twitter: 'L_e_k_o',
   facebook: 'shingo.inoue.967',
+  facebook_app_id: '1434873820060880',
   github: 'Leko',
   qiita: 'L_e_k_o',
 }
