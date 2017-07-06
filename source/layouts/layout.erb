@@ -12,18 +12,18 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title><% if current_article.present? -%><%= current_article.title -%> | <% elsif defined?(tagname).present? -%>タグ：<%= tagname -%> | <% end %><%= config[:meta][:sitename] -%></title>
-    <% if current_article.present? %>
+    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
+
+    <% if defined?(tagname).present? # List of articles group by tag %>
+      <%= partial 'partials/google_linked_data', locals: {linked_data: google_linked_data_tag(tagname, page_number)} %>
+
+    <% elsif current_article.present? # One of article %>
       <link rel="canonical" href="<%= config[:meta][:siteurl] %><%= current_article.data.path %>" />
       <%= partial 'partials/ogp', locals: { article: current_article } %>
       <%= partial 'partials/twitter_card', locals: { article: current_article } %>
-    <% end %>
-    <%= feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed" %>
-
-    <% if defined?(tagname).present? %>
-      <%= partial 'partials/google_linked_data', locals: {linked_data: google_linked_data_tag(tagname, page_number)} %>
-    <% elsif current_article.present? %>
       <%= partial 'partials/google_linked_data', locals: {linked_data: google_linked_data_article(current_article)} %>
-    <% elsif defined?(page_number).present? %>
+
+    <% elsif defined?(page_number).present? # List of articles %>
       <%= partial 'partials/google_linked_data', locals: {linked_data: google_linked_data_list(current_page, page_number)} %>
     <% end %>
 
