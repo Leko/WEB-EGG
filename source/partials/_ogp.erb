@@ -12,6 +12,7 @@
 <% if article.data.image.present? %>
   <meta property="og:image" content="<%= config[:meta][:siteurl] %><%= article.data.image %>" />
   <meta property="og:image:secure_url" content="<%= config[:meta][:siteurl] %><%= article.data.image %>" />
+  <meta property="og:image:type" content="image/<%= FastImage.type(File.join(::Middleman::Util.current_directory, 'source', article.data.image)) %>" />
   <meta property="og:image:width" content="<%= FastImage.size(File.join(::Middleman::Util.current_directory, 'source', article.data.image))[0] %>" />
   <meta property="og:image:height" content="<%= FastImage.size(File.join(::Middleman::Util.current_directory, 'source', article.data.image))[1] %>" />
 <% end %>
