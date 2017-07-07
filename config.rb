@@ -315,12 +315,10 @@ configure :build do
         :svgo           => false,
       }
       image_optim = ImageOptim.new(opts)
-      p #{base}/**/*"
       files = Dir.glob("#{base}/**/*")
         .reject {|p| File.directory?(p) || %w(. ..).include?(File.basename(p))}
-        .collect {|p| image_optim.optimizable?(p)}
-        .collect {|p| Digest::MD5.file(p).to_s == Digest::MD5.file(p.gsub('/build/', '/source/')).to_s}
-      p files
+        .select {|p| image_optim.optimizable?(p)}
+        .select {|p| Digest::MD5.file(p).to_s == Digest::MD5.file(p.gsub('/build/', '/source/')).to_s}
       image_optim.optimize_images!(files)
     end
 
