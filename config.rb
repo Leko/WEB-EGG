@@ -312,7 +312,7 @@ configure :build do
 
         :gifsicle       => { interlace: false },
 
-        :svgo           => {},
+        :svgo           => false,
       }
       image_optim = ImageOptim.new(opts)
       p #{base}/**/*"
