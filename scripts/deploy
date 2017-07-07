@@ -4,5 +4,5 @@ curl -v \
   -H "Content-Type: application/zip" \
   -H "Authorization: Bearer $NETLIFY_ACCESS_TOKEN" \
   -T blog.zip \
-  https://api.netlify.com/api/v1/a9e839fd-b312-4823-8f9e-27ce6696ed27/deploys
+  https://api.netlify.com/api/v1/$NETLIFY_SITE_ID/deploys
 rm blog.zip
