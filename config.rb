@@ -322,7 +322,9 @@ configure :build do
       image_optim.optimize_images!(files)
     end
 
-    optimize_images('./build/images/')
+    if ENV['RAILS_ENV'] == 'production'
+      optimize_images('./build/images/')
+    end
     update_search_index('./build/posts.json')
   end
 end
