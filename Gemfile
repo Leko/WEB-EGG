@@ -11,6 +11,8 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem 'rake'
 gem 'typhoeus'
 gem 'fastimage'
+gem 'image_optim', '~> 0.25'
+gem 'image_optim_pack'
 
 # Middleman Gems
 gem 'middleman', '~> 4.1'
