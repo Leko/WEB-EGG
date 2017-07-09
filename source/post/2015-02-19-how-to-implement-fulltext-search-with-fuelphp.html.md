@@ -47,8 +47,7 @@ MeCabは次の環境構築にてインストールしていきます。
 環境構築
 ----------------------------------------
 
-> phpでmecabを使う手順
-    
+> phpでmecabを使う手順  
 > <http://qiita.com/Keech/items/3b51a60c89b9e803b256>
 
 こちらの記事を参考に環境構築をしたのですが、自分の環境ではコピー&ペーストでは動かない箇所があったのでそれを込みでインストールコマンド全てを貼り付けます。
@@ -231,8 +230,7 @@ class Model_Book extends \Orm\Model
 オブザーバのコードはやや長くなるのでgistに上げました。  
 環境構築時の設定で、2文字未満の単語は検索する際に無視する設定にしているので、2文字に満たない単語は保存しない処理が入っています。
 
-> FuelPHPでMecabを使用して分かち書きするオブザーバ
-    
+> FuelPHPでMecabを使用して分かち書きするオブザーバ  
 > <https://gist.github.com/Leko/6c98685bdb048b949392#file-wakati-php>
 > 
 > Creating – Observers – Orm Package – FuelPHP ドキュメント <http://fuelphp.jp/docs/1.7/packages/orm/observers/creating.html>
@@ -271,8 +269,7 @@ $book->content_splited; // => 'すれ を以て 言い たい こと 言う か�
 
 本の内容（`content`カラム）まで検索キーワードに含めるとノイズが多すぎるので、タイトルだけを検索キーワードにしています。
 
-> （言い訳）カラム名と検索用テキスト、ふるい落とす文字数を渡してwhereの中身を１個の`Database_Expression`のインスタンスとしてwhereに渡したかったのですが、
-    
+> （言い訳）カラム名と検索用テキスト、ふるい落とす文字数を渡してwhereの中身を１個の`Database_Expression`のインスタンスとしてwhereに渡したかったのですが、  
 > まだ理解が浅いのかそもそもできないのか、うまくいかなかったので汚い書き方になっています。
 
 全文検索用のメソッドを作成する

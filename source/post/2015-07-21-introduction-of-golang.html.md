@@ -152,7 +152,10 @@ $ vagrant@precise64:~/go/src/godemo$ go get github.com/codegangsta/gin
 $ vagrant@precise64:~/go/src/godemo$ gin -p 8080
 ```
 
-<img src="/images/2015/07/ping.png" alt="/ping" title="/ping.png" border="0" width="415" height="97" />
+
+![/ping](/images/2015/07/ping.png)
+
+
 
 `http://localhost:3000/ping`にアクセスし、上記画面になれば動作確認OKです。  
 以下の内容はこのデモアプリの解説になります。

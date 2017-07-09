@@ -86,8 +86,7 @@ Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btr
 open /proc/self/oom_score_adj: no such file or directory
 ```
 
-> &mdash; [Exit Code 255 on all Docker exec commands – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/exit-code-255-on-all-docker-exec-commands/2506)
-    
+> &mdash; [Exit Code 255 on all Docker exec commands – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/exit-code-255-on-all-docker-exec-commands/2506)  
 > &mdash; [Docker 1.10.0 is available (Beta) – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/docker-1-10-0-is-available-beta/2100/15)
 
 というエラーが発生しました。

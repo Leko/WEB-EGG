@@ -100,12 +100,9 @@ Goに入門してからはHerokuにGoのアプリをデプロイするように�
 
 Herokuには[Log Drains](https://devcenter.heroku.com/articles/log-drains)という機能があります。
 
-> Logplexのドレイン（外部への排出機能）は、Herokuのログを外部のシステムログ管理用サーバーへ長期間アーカイブするために、転送することを許可しています。Herokuのシステムログのパケットを取得可能とするためには、Logplexのドレイン、またはシステムログ管理用サーバー自体を設定する必要があります。この設定の後で、システムログのURL（ホスト名とポート番号を含む）をドレインとして追加する必要があります。
-    
-> ドレインするログは、 RFC5424に沿ってフォーマットされます。これらはRFC6587で説明されるTCPプロトコルとoctet counting framing methodを経由し伝達されます。
-    
-> ログ監視系のサービスを見つけるには、Herokuアドオンを訪問して下さい。
-    
+> Logplexのドレイン（外部への排出機能）は、Herokuのログを外部のシステムログ管理用サーバーへ長期間アーカイブするために、転送することを許可しています。Herokuのシステムログのパケットを取得可能とするためには、Logplexのドレイン、またはシステムログ管理用サーバー自体を設定する必要があります。この設定の後で、システムログのURL（ホスト名とポート番号を含む）をドレインとして追加する必要があります。  
+> ドレインするログは、 RFC5424に沿ってフォーマットされます。これらはRFC6587で説明されるTCPプロトコルとoctet counting framing methodを経由し伝達されます。  
+> ログ監視系のサービスを見つけるには、Herokuアドオンを訪問して下さい。  
 > &mdash; [システムログを外部へドレイン（排出）する](https://github.com/herokaijp/devcenter/wiki/logging#%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%AD%E3%82%B0%E3%82%92%E5%A4%96%E9%83%A8%E3%81%B8%E3%83%89%E3%83%AC%E3%82%A4%E3%83%B3%E6%8E%92%E5%87%BA%E3%81%99%E3%82%8B)
 
 邦訳記事に感謝します。  
@@ -124,8 +121,7 @@ Herokuには[Log Drains](https://devcenter.heroku.com/articles/log-drains)とい
 
 ものすごく高機能で高性能で高精度で、名だたる企業さんも導入していたりといい事尽くしですが、 **これだけ色々できて有名なサービスで値段調べても出てこないならtoB向けで、かつ安いわけない** 。と勝手に推測し、残念ながら趣味プロダクトの身の丈には合わないと判断して断念しました。
 
-> こちらの記事も参考になりました。
-    
+> こちらの記事も参考になりました。  
 > [TreasureData – 世界最速でFluentdを立ち上げる on Heroku – Qiita](http://qiita.com/kiyoto/items/24e15ac38804ca48b06d)
 
 ## 断念: [Bonsai.io](https://bonsai.io) + Elasticsearch + Kibana
@@ -164,8 +160,7 @@ Herokuでよく出るログはあらかじめフィルタとして登録して�
 導入も最初手間取りましたが必要な手順は少なく、通知の設定も簡単です。  
 導入にあたり下記の２記事が参考になりました。ありがとうございます。
 
-> &mdash; [herokuのログ管理はPapertrailがいい感じ – Oh! My! Enter! ～バッチを起動しようと勢いよくキーを叩いたら、それはシフトキーだった～](http://d.hatena.ne.jp/itmammoth/20130729/1375112798)
-    
+> &mdash; [herokuのログ管理はPapertrailがいい感じ – Oh! My! Enter! ～バッチを起動しようと勢いよくキーを叩いたら、それはシフトキーだった～](http://d.hatena.ne.jp/itmammoth/20130729/1375112798)  
 > &mdash; [herokuにpapertrailを導入して、アラートをhubot経由でslackへ通知する](http://qiita.com/yukofeb/items/f7c0b4f9bdc11a9daf40)
 
 デフォルトでついてるデプロイのログと、Dynoのステータスが変わった時のログ、あとアプリケーションのログであるキーワードに引っかかるログが1時間に1000行以上出たら要警戒、それぞれをSlackに通知するようにAlertの設定を行いました。  

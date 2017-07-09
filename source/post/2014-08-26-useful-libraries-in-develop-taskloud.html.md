@@ -28,8 +28,7 @@ tags:
 FastClick
 ----------------------------------------
 
-> ftlabs/fastclick
-    
+> ftlabs/fastclick  
 > <https://github.com/ftlabs/fastclick>
 
 **Githubでstar7300越え**。  
@@ -40,8 +39,7 @@ FastClick
 Flipsnap
 ----------------------------------------
 
-> flipsnap.js
-    
+> flipsnap.js  
 > <http://pxgrid.github.io/js-flipsnap/>
 
 [PixelGrid](http://www.pxgrid.com/)という会社さんが作られている、スライダーを実現するライブラリです。  
@@ -51,8 +49,7 @@ Flipsnap
 Zepto
 ----------------------------------------
 
-> Zepto.js: the aerogel-weight jQuery-compatible JavaScript library
-    
+> Zepto.js: the aerogel-weight jQuery-compatible JavaScript library  
 > <http://zeptojs.com/>
 
 ざっくり言えば軽量版jQuery。  
@@ -65,8 +62,7 @@ jQueryとの互換性を保ちつつ、余計な機能を省いて読み込み�
 Underscore.js
 ----------------------------------------
 
-> Underscore.js
-    
+> Underscore.js  
 > <http://underscorejs.org/>
 
 Backbone.jsを使用するための依存ライブラリと思っていたのですが、これ単体でも十分に使えます。  
@@ -78,8 +74,7 @@ Taskloudはタスク管理ツールということで、リスト操作を行う
 Backbone.js
 ----------------------------------------
 
-> Backbone.js
-    
+> Backbone.js  
 > <http://backbonejs.org/>
 
 軽量、自由度の高いMV*なフレームワークです。  
@@ -96,8 +91,7 @@ Backbone.js
 Marionette
 ----------------------------------------
 
-> Marionette.js
-    
+> Marionette.js  
 > <http://marionettejs.com/>
 
 Backboneにいくつかの制約と拡張を加えるライブラリです。  
@@ -124,8 +118,7 @@ DefinitelyTyped
 Firebase
 ----------------------------------------
 
-> Firebase – Build Realtime Apps
-    
+> Firebase – Build Realtime Apps  
 > <https://www.firebase.com/>
 
 これはライブラリというよりはWebサービスなのですが、ご紹介です。  
@@ -140,8 +133,7 @@ WebSocketを使うと通信操作がどのような感じになるのか、サ�
 backfire
 ----------------------------------------
 
-> BackFire: Firebase bindings for Backbone.js – Firebase
-    
+> BackFire: Firebase bindings for Backbone.js – Firebase  
 > <https://www.firebase.com/blog/2013-01-29-backfire-firebase-bindings-for-backbonejs.html>
 
 最後です。  

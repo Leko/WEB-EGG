@@ -19,7 +19,6 @@ tags:
 ---
 こんにちは。  
 しばらく更新が停滞してしまいました。  
-  
 今回は、<span class="removed_link" title="http://atnd.org/event/jsapp">第一回 JS-App勉強会@タネマキ</span>という勉強会に参加させていただいたので、  
 勉強会内で行われたLTのメモを残します。
 

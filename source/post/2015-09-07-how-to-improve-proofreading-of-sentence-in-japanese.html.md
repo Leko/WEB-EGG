@@ -53,8 +53,7 @@ CLIツール化については[Thor](http://whatisthor.com/)を使用しまし�
 
 まず表外漢字とは、ざっくり言うと「常用漢字でないもの」だそうです。
 
-> 表外漢字字体表によって、印刷文字における印刷標準字体及び簡易慣用字体を定めたことは、表外漢字使用における字体の混乱を軽減し、常用漢字とともに表外漢字を使用していく場合の字体選択のよりどころとなるものである。
-    
+> 表外漢字字体表によって、印刷文字における印刷標準字体及び簡易慣用字体を定めたことは、表外漢字使用における字体の混乱を軽減し、常用漢字とともに表外漢字を使用していく場合の字体選択のよりどころとなるものである。  
 > &mdash; [表外漢字字体表：文部科学省](http://www.mext.go.jp/b_menu/shingi/old_bunka/kokugo_index/toushin/1325296.htm)
 
 Yahooの校正支援APIだけでは、表外漢字が含まれていた場合に指摘はしてくれますが、変換候補が出てきません。  
@@ -63,8 +62,7 @@ Yahooの校正支援APIだけでは、表外漢字が含まれていた場合に
 できれば「遙か」などの表外漢字は「遥か」と常用漢字に変換する[こちら](http://homepage3.nifty.com/jgrammar/ja/tools/tradkan0.htm)のようなWeb APIを探したのですが、見つかりませんでした。  
 APIは見つかりませんでしたが、代わりに素敵なgemが見つかりました。
 
-> Convert japanese from itaiji(異体字) to seijitai(正字体) and also reverse convert.
-    
+> Convert japanese from itaiji(異体字) to seijitai(正字体) and also reverse convert.  
 > [camelmasa/itaiji](https://github.com/camelmasa/itaiji)
 
 今回の目的そのままなgemだったので、有りがたく使用させていただきました。

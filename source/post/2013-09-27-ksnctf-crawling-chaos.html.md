@@ -82,7 +82,10 @@ var あいうえお配列 = "あいうえお".split("");
 こういう問題は初めて挑んだので、気持ち悪いし解けないしでヤケになり  
 そのコードを**jsファイルとして保存して、Nodejsから実行**してみました。
 
-<img src="/images/2013/09/c2261ba9a74cecec9931fd139464b87a.png" alt="jQueryっぽい文字列" title="jQueryっぽい文字列.png" width="600" />
+
+![jQueryっぽい文字列](/images/2013/09/c2261ba9a74cecec9931fd139464b87a.png)
+
+
 
 **？ ？ ？ ？ ？ ？**
 
@@ -142,7 +145,10 @@ var str = ""; for(var i=0; i<p.length; i++) str += String.fromCharCode(p[i] / (i
 
 こいつを問題ページのフォームに貼り付けてみると、
 
-<img src="/images/2013/09/5ed78b8482e49764873c864276ccfece.png" alt="うーにゃー" title="うーにゃー.png" width="429" />
+
+![うーにゃー](/images/2013/09/5ed78b8482e49764873c864276ccfece.png)
+
+
 
 答えは、ここに書いてしまうと面白くなさそうなので、  
 この問題に興味を持った方↑のコードを実行してみて下さい。

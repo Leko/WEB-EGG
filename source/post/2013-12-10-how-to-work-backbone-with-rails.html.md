@@ -76,8 +76,7 @@ end
 RailsのWeb APIのデフォルトフォーマットを指定する
 ----------------------------------------
 
-> respond_to でデフォルトフォーマットを指定する - The Second Longest Day in My Life...
-    
+> respond_to でデフォルトフォーマットを指定する - The Second Longest Day in My Life...  
 > http://d.hatena.ne.jp/tnksaigon/20110124/1295839007
 
 こちらの記事によると、respond_doの中に、`format.any`という指定ができるそうです。
