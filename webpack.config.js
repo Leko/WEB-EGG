@@ -8,7 +8,6 @@ module.exports = {
   entry: [
     'babel-polyfill',
     './source/javascripts/main.js',
-    './source/javascripts/service-worker-registration.js',
   ],
   resolve: {
     extensions: ['.jsx', '.js']

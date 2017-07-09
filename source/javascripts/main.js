@@ -6,6 +6,8 @@ import { Context, Dispatcher } from 'almin'
 import { shallowEqual } from 'shallow-equal-object'
 import AppStoreGroup from './store/AppStoreGroup'
 import SearchApp from './SearchApp'
+import { registerWorkers } from './ServiceWorker'
+import swPrecacheConfig from '../../sw-precache-config'
 
 const dispatcher = new Dispatcher()
 const appContext = new Context({
@@ -55,3 +57,7 @@ class Root extends Component {
 
 // const Root = AlminReactContainer.create(SearchApp, appContext)
 ReactDOM.render(<Root appContext={appContext} />, document.getElementById('search'))
+
+registerWorkers([
+  swPrecacheConfig.swFile
+])
