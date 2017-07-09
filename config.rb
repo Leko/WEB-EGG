@@ -106,8 +106,8 @@ activate :search_engine_sitemap, {
 activate :external_pipeline, {
   name: :webpack,
   command: build? ?
-    "npm run build" :
-    "npm run develop",
+    "NODE_ENV=production npm run build" :
+    "NODE_ENV=develop npm run develop",
   source: ".tmp/dist",
   latency: 1
 }
