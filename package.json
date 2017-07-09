@@ -9,10 +9,9 @@
     "lint:flow": "flow",
     "lint:md": "textlint -f pretty-error source/post/*.md",
     "lint:md:fix": "textlint --fix source/post/*.md",
-    "build": "webpack --config ./webpack.config.dev.js --bail -p",
-    "develop": "webpack --config ./webpack.config.dev.js --watch -d --progress --colors",
-    "deploy:review": "netlify deploy -e deploy-preview",
-    "deploy:prod": "netlify deploy -e production"
+    "build": "webpack --config ./webpack.config.js --bail -p",
+    "develop": "webpack --config ./webpack.config.js --watch -d --progress --colors",
+    "build:cache": "sw-precache --config sw-precache-config.js"
   },
   "repository": {
     "type": "git",
@@ -56,6 +55,7 @@
     "flow-bin": "^0.48.0",
     "flow-typed": "^2.1.2",
     "netlify-cli": "^1.2.2",
+    "sw-precache": "^5.2.0",
     "textlint": "^8.2.1",
     "textlint-rule-date-weekday-mismatch": "^1.0.5",
     "textlint-rule-ja-hiragana-fukushi": "^1.0.3",
