@@ -3,6 +3,7 @@
  */
 module.exports = {
   root: 'build',
+  swFile: 'sw-precache.js',
   staticFileGlobs: [
     'build/javascripts/main.js',
     'build/stylesheets/**.css',
