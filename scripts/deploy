@@ -1,4 +1,5 @@
 bundle exec middleman build --clean
+npm run build:cache
 zip -r blog.zip build
 curl -v \
   -H "Content-Type: application/zip" \
