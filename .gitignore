@@ -21,3 +21,5 @@ vendor
 .tmp
 node_modules/
 .env
+flow-typed
+

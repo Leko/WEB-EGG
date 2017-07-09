@@ -33,7 +33,10 @@ GUIでテーブルを設定し、SQLにエクスポートしたら
 
 しかし、AUTO INCREMENTを設定したカラムは主キーにしてあります。
 
-<img src="/images/2013/08/ef5ef751157160f8bf9c0fac717015a2.png" alt="AUTO INCREMENTを設定したカラムは主キーに" title="AUTO INCREMENTを設定したカラムは主キーに.png" width="502" />
+
+![AUT](/images/2013/08/ef5ef751157160f8bf9c0fac717015a2.png)
+
+
 
 ではなぜエラーが起こるのでしょう。
 
@@ -65,7 +68,10 @@ GUIからチェックボックスを選んだ順番なんてまともに見る�
 
 ということでチェックを解除して`PK`>`AI`の順番でチェックを入れなおしたら治りました。
 
-<img src="/images/2013/08/8d64668f22f50892748e9a13f350eaa0.png" alt="チェックを入れなおし" title="チェックを入れなおし.png" width="502" />
+
+![チェックを入れなおし](/images/2013/08/8d64668f22f50892748e9a13f350eaa0.png)
+
+
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

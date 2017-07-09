@@ -36,10 +36,8 @@ IDEからステップ実行もできるので、１手順ずつ動作確認し�
 
 Selenium IDEの詳しい使い方については色んな方が記事書いてくださっていますので割愛します。
 
-> &mdash; [5分でわかるSelenium IDEの使い方 – Qiita](http://qiita.com/naoqoo2/items/90d382cd9370d3526509)
-    
-> &mdash; [これだけはおさえておきたい！Selenium IDEのコマンド – Qiita](http://qiita.com/oh_rusty_nail/items/c59d4345d5372213128f)
-    
+> &mdash; [5分でわかるSelenium IDEの使い方 – Qiita](http://qiita.com/naoqoo2/items/90d382cd9370d3526509)  
+> &mdash; [これだけはおさえておきたい！Selenium IDEのコマンド – Qiita](http://qiita.com/oh_rusty_nail/items/c59d4345d5372213128f)  
 > &mdash; [Selenium IDEでWebページのテストを自動化しよう！｜社員ブログ｜株式会社Qript](http://www.qript.co.jp/blog/technique/1691/)
 
 IDE上でアサーションを書き加える
@@ -80,7 +78,10 @@ selenese-runnerで実行する
 
 selenese-runner単体をホスト側実行するとブラウザが起動し、HTMLの内容が実行されます。
 
-<img src="/images/2016/12/selenese-runner.gif" alt="selenese-runner" width="696" height="417" class="alignnone size-full wp-image-911" />
+
+![selenese-runner](/images/2016/12/selenese-runner.gif)
+
+
 
 どうでしょう。いい感じです。
 
@@ -93,7 +94,10 @@ cron等で定期実行したり、CIを回したりするには、GUIのないLi
 
 動作させると、
 
-<img src="/images/2016/12/compose-selenese-runner.gif" alt="compose-selenese-runner" width="621" height="394" class="alignnone size-full wp-image-912" />
+
+![compose-selenese-runner](/images/2016/12/compose-selenese-runner.gif)
+
+
 
 こんな感じです。いかがでしょうか。  
 これならGUI不要なので、cronでもCIでもexecでもいい感じにもらえばいいと思います。
@@ -112,8 +116,7 @@ cron等で定期実行したり、CIを回したりするには、GUIのないLi
 Selenium hub使ったことなかったので理解するまでが難しかったですが、実際に動かしてみたら簡単に理解できました。  
 Selenium hub自体については公式リポジトリとこちらの記事が参考になりました。
 
-> &mdash; [GitHub – SeleniumHQ/docker-selenium: Docker images for Selenium Standalone Server](https://github.com/SeleniumHQ/docker-selenium)
-    
+> &mdash; [GitHub – SeleniumHQ/docker-selenium: Docker images for Selenium Standalone Server](https://github.com/SeleniumHQ/docker-selenium)  
 > &mdash;  [&raquo; Selenium Gridで複数の実機ブラウザで自動テスト TECHSCORE BLOG](http://www.techscore.com/blog/2015/05/10/selenium-grid/)
 
 ### 日本語サポート

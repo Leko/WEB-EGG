@@ -38,7 +38,6 @@ C.phpをrequireしたB.phpを、A.phpがrequireするときに、B.phpで
 require_once("C.php");
 ```
 
- 
 
 と書くとB.phpのrequire_onceは失敗します。 B.phpとC.phpは同じ階層にあるから読み込まれるはずなのに。 id="practive"> 
 
@@ -63,7 +62,6 @@ require_once(dirname(__FILE__)."/C.php"); //C.phpを読み込む
 require_once(dirname(__FILE__)."/../D.php"); //D.phpを読み込む
 ```
 
- 
 
 と書くことで、実行されるファイルやカレントディレクトリを気にすること無く 相対パスでrequireをすることが出来ます。 
 

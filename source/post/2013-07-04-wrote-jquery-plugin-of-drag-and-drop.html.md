@@ -118,14 +118,20 @@ FileAPIの`FileReader`インタフェースを使います。
 配列のように各要素にブラケット（`[]`）でアクセスできますが、  
 **配列ではありません**。
 
-<img src="/images/2013/07/20130704_dump_filelist.png" alt="20130704 dump filelist" title="20130704_dump_filelist.png" border="0" width="495" height="17" />
+
+![2013070](/images/2013/07/20130704_dump_filelist.png)
+
+
 
 こんな感じ。
 
 関数に渡される**arguments**のようなオブジェクトです。  
 なので、配列のメソッドをそのまま使うことができません。
 
-<img src="/images/2013/07/20130704_filelist_error.png" alt="20130704 filelist error" title="20130704_filelist_error.png" border="0" width="467" height="18" />
+
+![2013070](/images/2013/07/20130704_filelist_error.png)
+
+
 
 エラー。
 

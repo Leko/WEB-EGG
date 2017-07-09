@@ -23,7 +23,10 @@ tags:
 
 まずは、何経由で当ブログへお越しいただいているのかの統計です。
 
-<img src="/images/2014/01/oimg.png" alt="oimg" class="alignnone wp-image-709" srcset="/images/2014/01/oimg.png 600w, /images/2014/01/oimg-150x92.png 150w, /images/2014/01/oimg-300x185.png 300w" sizes="(max-width: 600px) 100vw, 600px" />
+
+![oimg](/images/2014/01/oimg.png)
+
+
 
 検索からの圧倒的に多く、ソーシャルメディアからの訪問はごくわずかとなっております。
 
@@ -38,7 +41,10 @@ tags:
 次に、全体で見た訪問元としては少ないソーシャルメディアですが、  
 どのサービスからの訪問が多いのかのデータを集計しました。
 
-<img src="/images/2014/01/oimg-1.png" alt="oimg-1" class="alignnone size-medium wp-image-708" srcset="/images/2014/01/oimg-1.png 600w, /images/2014/01/oimg-1-150x92.png 150w, /images/2014/01/oimg-1-300x185.png 300w" sizes="(max-width: 600px) 100vw, 600px" />
+
+![oimg-1](/images/2014/01/oimg-1.png)
+
+
 
 やはりボタンを設置しているTwitter, Facebook, はてブからの訪問が多いようです。
 

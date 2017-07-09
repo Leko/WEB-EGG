@@ -45,7 +45,10 @@ F#のプロジェクトのインストールは初めてだったので右も左
 
 で、動作結果はこのような感じに。
 
-<img src="/images/2017/03/l3rEWRHgyB.gif" alt="l3rEWRHgyB" width="441" height="143" class="alignnone size-full wp-image-934" />
+
+![l3rEWRHgyB](/images/2017/03/l3rEWRHgyB.gif)
+
+
 
 すごーい！ Macでも簡単に実行できるんだね！
 

@@ -38,8 +38,7 @@ __callStaticの仕様を読む
 
 > __callStatic() は、 アクセス不能メソッドを静的コンテキストで実行したときに起動します。
 > 
-> 引数 $name は、 コールしようとしたメソッドの名前です。 引数 $arguments は配列で、メソッド $name に渡そうとしたパラメータが格納されます。
-    
+> 引数 $name は、 コールしようとしたメソッドの名前です。 引数 $arguments は配列で、メソッド $name に渡そうとしたパラメータが格納されます。  
 > &mdash; [PHP: オーバーロード – Manual](http://php.net/manual/ja/language.oop5.overloading.php#object.callstatic)
 
 サンプルコードを呼んでみると、`__callStatic`はPHP 5.3以上で動作可能な機能のようです。
@@ -236,15 +235,12 @@ public static function __callStatic($method_name, $args) {
   <li>
     呼び出されたメソッド名が<code>find_all_by_*</code>(※<code>self::FIND_ALL_BY</code>)の書式なら、  
   </li>  
-  
   <li>
     メソッド名を<code>_and_</code>で千切って配列化し、  
   </li>  
-  
   <li>
     <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 =&gt; 値</code>の連想配列へ変換し、  
   </li>  
-  
   <li>
     それをfind_allメソッドへパスする
   </li>  
@@ -352,7 +348,6 @@ PHPだってRailsっぽいことしたい
   <li>
     PHPだと古臭いコードになる
   </li>  
-  
   <li>
     PHPイケてない
   </li>  

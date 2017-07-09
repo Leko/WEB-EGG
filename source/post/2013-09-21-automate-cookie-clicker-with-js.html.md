@@ -59,7 +59,10 @@ Chromeの`メニュー > 開発/管理 > JavaScriptコンソール`をクリッ�
 
 試しに２つほどjsを流し込んでみます。
 
-<img src="/images/2013/09/2e351d28a49190b1d0cfb8e88191406a.png" alt="流し込んだjs" title="流し込んだjs.png" width="359" />
+
+![流し込んだjs](/images/2013/09/2e351d28a49190b1d0cfb8e88191406a.png)
+
+
 
 このページで定義されているグローバルな変数にもアクセスできるので、  
 **CookieClickerのゲームを司るGameオブジェクトにもアクセス出来るし、書き換えられます**。
@@ -195,7 +198,6 @@ each(products, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); 
 
 まず、購入する数を制御する配列をFPSの下あたりに定義しておきます。
 
-  
 
 ```javascript
 // 全ビルディングを10個ずつ, 50個ずつ、と買い揃えていく var BUY_STEPS = [10, 50, 100, 128, Number.MAX_VALUE]; // 所持数を取得するメソッドを定義 var getOwnedCnt = function(el) { var cnt = el.childNodes[1].childNodes[2]; return cnt ? +cnt.textContent : 0; }
@@ -203,7 +205,6 @@ each(products, function(el) { if(hasClass(el, 'enabled')) { el.onclick(); } }); 
 
 次に、eachの部分を書き換えます。
 
-  
 
 ```javascript
 var nextStep = true; each(products, function(el) { var buyCnt = getOwnedCnt(el); if(hasClass(el, 'enabled') && buyCnt < BUY_STEPS[0]) { el.onclick(); } nextStep = nextStep && buyCnt >= BUY_STEPS[0]; }); if(nextStep) BUY_STEPS.shift();
@@ -254,7 +255,6 @@ Cookie.onclick()の行をコメントアウトして下さい。 ゴールデン
 最後に
 ----------------------------------------
 
-  
 
 今回は重いきり無駄遣いをしていましたが、
 

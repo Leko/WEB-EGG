@@ -44,7 +44,10 @@ AWSのページを見つけました
 えぇ…  
 ここで、実際の画面を見てみましょう
 
-<img src="/images/2017/04/693663e8211dbcfade29c5af49de6d5e.png" alt="" width="1007" height="410" class="alignnone size-full wp-image-953" />
+
+![undefined](/images/2017/04/693663e8211dbcfade29c5af49de6d5e.png)
+
+
 
 お分かりいただけただろうか。  
 プレースホルダがエンドポイントまで含めたURLを促しているのに対し、  

@@ -31,16 +31,13 @@ AOJの1135、Ohgas' Fortuneをjsで解きました。
      * 手数料：上記の処理を行ったあとに、運用資金の残高から手数料が引かれる
      */
     var inputs = input.replace(/r/g, '').split("n"),
-        n;
-    
-    n = parseInt(inputs.shift());
-    
+        n;  
+    n = parseInt(inputs.shift());  
     while ( n-- ) {
         var funds = parseInt(inputs.shift()),   // 初期運用資金
             years = parseInt(inputs.shift()),   // 運用年数
             m = parseInt(inputs.shift()),       // データセット数
-            max = 0;
-    
+            max = 0;  
         // 最高最終資金を求める
         while ( m-- ) {
             var line = inputs.shift().split(' '),
@@ -63,11 +60,9 @@ AOJの1135、Ohgas' Fortuneをjsで解きました。
             if ( funds_tmp > max ) {
                 max = funds_tmp;
             }
-        }
-    
+        }  
         console.log(max);
-    }
-    
+    }  
 
 })(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```

@@ -11,6 +11,14 @@ after_configuration do
     end
   end
   Middleman::Blog::TagPages.prepend(TagPagesExtension)
+
+  module MarkdownParserExtension
+    def image(link, title, alt_text)
+      w, h = FastImage.size(File.join(__dir__, 'source', link))
+      "<img data-src=\"#{link}\" alt=\"#{alt_text || title}\" width=\"#{w}\" height=\"#{h}\" style=\"width:#{w}px;height:#{h}px;\" />"
+    end
+  end
+  Middleman::Renderers::MiddlemanRedcarpetHTML.prepend(MarkdownParserExtension)
 end
 
 config[:meta] = {
@@ -106,8 +114,8 @@ activate :search_engine_sitemap, {
 activate :external_pipeline, {
   name: :webpack,
   command: build? ?
-    "npm run build" :
-    "npm run develop",
+    "NODE_ENV=production npm run build" :
+    "NODE_ENV=develop npm run develop",
   source: ".tmp/dist",
   latency: 1
 }
@@ -282,10 +290,49 @@ configure :build do
   activate :minify_html
 
   after_build do
-    Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
-    index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
-    batch = JSON.parse(File.read('./build/posts.json'))
-    index.save_objects!(batch)
-    File.delete('./build/posts.json')
+    def update_search_index(path)
+      Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
+      index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
+      batch = JSON.parse(File.read(path))
+      index.save_objects!(batch)
+      File.delete(path)
+    end
+
+    def optimize_images(base)
+      opts = {
+        :skip_missing_workers => true, # Skip workers with missing or problematic binaries _(defaults to `false`)_
+        :verbose => true,              # Verbose output _(defaults to `false`)_
+        :allow_lossy => true,          # Allow lossy workers and optimizations _(defaults to `false`)_
+
+        # PNG では OptiPNG または PNGOUT をおすすめします。
+        # https://developers.google.com/speed/docs/insights/OptimizeImages
+        :advpng         => false,
+        :optipng        => { level: 7, interlace: false, strip: true },
+        :pngcrush       => false,
+        :pngout         => false,
+        :pngquant       => false,
+
+        # Best of JPEG optimization: http://qiita.com/kaibadash@github/items/4d4732ba5c25a4e49da7
+        :jpegoptim      => { strip: ['all'], allow_lossy: true, max_quality: 80 },
+        :jpegtran       => false,
+        :jhead          => false,
+        :jpegrecompress => false,
+
+        :gifsicle       => { interlace: false },
+
+        :svgo           => false,
+      }
+      image_optim = ImageOptim.new(opts)
+      files = Dir.glob("#{base}/**/*")
+        .reject {|p| File.directory?(p) || %w(. ..).include?(File.basename(p))}
+        .select {|p| image_optim.optimizable?(p)}
+        .select {|p| Digest::MD5.file(p).to_s == Digest::MD5.file(p.gsub('/build/', '/source/')).to_s}
+      image_optim.optimize_images!(files)
+    end
+
+    if ENV['RAILS_ENV'] == 'production'
+      optimize_images('./build/images/')
+    end
+    update_search_index('./build/posts.json')
   end
 end

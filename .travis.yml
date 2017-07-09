@@ -16,5 +16,12 @@ script:
 - npm run lint:md
 - bundle exec middleman build
 
-# Netlify deploy `master` branch automatically. No need to configure
-# deploy:
+# Netlify deploy `master` branch automatically.
+# But max build time is 15min. It's not enough to my build.
+# So I must deploy from TravisCI
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: scripts/deploy
+  on:
+    branch: master

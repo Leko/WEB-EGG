@@ -39,8 +39,7 @@ config/database.ymlを書き換えたり消したりする必要はなく、環�
 
 まずは何事にも公式ドキュメント。
 
-> You can connect to the database by setting an environment variable `ENV['DATABASE_URL']` or by using a configuration file called `config/database.yml`.
-    
+> You can connect to the database by setting an environment variable `ENV['DATABASE_URL']` or by using a configuration file called `config/database.yml`.  
 > [3.14 Configuring a Database](http://edgeguides.rubyonrails.org/configuring.html#configuring-a-database)
 
 とあるように、`DATABASE_URL`という環境変数が使用可能らしいということがわかりました。  

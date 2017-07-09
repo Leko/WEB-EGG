@@ -1,12 +1,14 @@
 // @flow
-import Promise from 'bluebird'
-import React, { Component } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import { Context, Dispatcher } from 'almin'
-import { shallowEqual } from 'shallow-equal-object'
+import { Dispatcher, Context } from 'almin'
 import AppStoreGroup from './store/AppStoreGroup'
 import SearchApp from './SearchApp'
+import LazyLoadApp from './LazyLoadApp'
+import { registerWorkers } from './ServiceWorker'
+import swPrecacheConfig from '../../sw-precache-config'
 
+// --- Init SearchApp
 const dispatcher = new Dispatcher()
 const appContext = new Context({
   dispatcher,
@@ -19,39 +21,12 @@ if (process.env.NODE_ENV !== 'production') {
   logger.startLogging(appContext)
 }
 
-class Root extends Component {
-  unSubscribe: Function
+ReactDOM.render(<SearchApp appContext={appContext} />, document.getElementById('search'))
 
-  constructor (props) {
-    super(props)
-    this.state = props.appContext.getState()
-  }
+// --- Init LazyLoadApp
+LazyLoadApp(document.querySelectorAll('.markdown img'))
 
-  shouldComponentUpdate(nextProps: any, nextState: any) {
-    return !shallowEqual(this.state, nextState)
-  }
-
-  componentWillMount () {
-    const context = this.props.appContext
-    const handleChange = () => {
-      // $FlowFixMe
-      this.setState(context.getState())
-    }
-    this.unSubscribe = context.onChange(handleChange)
-  }
-
-  componentWillUnmount () {
-    if (typeof this.unSubscribe === "function") {
-      this.unSubscribe()
-    }
-  }
-
-  render () {
-    return (
-      <SearchApp appContext={appContext} {...this.state} />
-    )
-  }
-}
-
-// const Root = AlminReactContainer.create(SearchApp, appContext)
-ReactDOM.render(<Root appContext={appContext} />, document.getElementById('search'))
+// --- Init ServiceWorker
+registerWorkers([
+  swPrecacheConfig.swFile
+])
