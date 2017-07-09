@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import { Context, Dispatcher } from 'almin'
 import { shallowEqual } from 'shallow-equal-object'
 import AppStoreGroup from '../store/AppStoreGroup'
-import SearchApp from '../SearchApp'
+import Root from './Root'
 
 const dispatcher = new Dispatcher()
 const appContext = new Context({

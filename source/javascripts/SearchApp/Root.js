@@ -1,13 +1,24 @@
 // @flow
+import type { Context } from 'almin'
+import type PostState from '../store/PostState'
 import React, { Component } from 'react'
 import { shallowEqual } from 'shallow-equal-object'
 import SearchApp from './SearchApp'
 
-export default class Root extends Component {
+type Props = {
+  appContext: Context,
+}
+type State = {
+  postState: PostState
+}
+
+export default class Root extends Component<void, Props, State> {
+  state: State
   unSubscribe: Function
 
-  constructor (props) {
+  constructor (props: Props) {
     super(props)
+    // $FlowFixMe
     this.state = props.appContext.getState()
   }
 
