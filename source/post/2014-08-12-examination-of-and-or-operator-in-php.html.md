@@ -63,7 +63,6 @@ $a = false or false  => false
   <li>
     <code>$a = true and false =&gt; true</code>
   </li>  
-  
   <li>
     <code>$a = false or true  =&gt; false</code>
   </li>  
@@ -132,11 +131,9 @@ false or
   <li>
     andの手前の式がtrueと評価される場合には後ろの式が実行され、
   </li>  
-  
   <li>
     orの手前の式がfalseと評価される場合には後ろの式が実行され、
   </li>  
-  
   <li>
     それ意外の場合は後ろの式が実行されない
   </li>  

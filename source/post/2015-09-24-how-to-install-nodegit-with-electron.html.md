@@ -35,8 +35,7 @@ Electronでnodegitを使おうとして、どの参考記事も助けになら�
 
 * [Nodegit build fails with Electron 0.31.x / 0.32.x](https://github.com/nodegit/nodegit/issues/686)
 
-> Upgrade notice: (from the above link)
-    
+> Upgrade notice: (from the above link)  
 > Most native modules are broken because of io.js upgrade, modules writers need to use NAN v2 to rewrite the modules.
 
 これが答えでした。  

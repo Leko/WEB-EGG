@@ -245,7 +245,10 @@ sublimerge
 
 すると、こんな画面になります（画像は適当な２ファイルを選びました）
 
-<img src="/images/2013/07/SUBLIME_DIFF.png" alt="SUBLIME DIFF" title="SUBLIME_DIFF.png" border="0" width="600" height="274" />
+
+![SUBLIM](/images/2013/07/SUBLIME_DIFF.png)
+
+
 
 `Ctrl + Alt + ,`で左のファイルの差分を右のファイルに、  
 `Ctrl + Alt + .`で右のファイルの差分を左にファイルにマージします。
@@ -276,7 +279,10 @@ Sublime textで書いているコードを、[Aizu Online Judge](http://judge.u-
 
 既にACを取ってあるファイルで送信テスト。 
 
-<img src="/images/2013/07/sublime_aoj.png" alt="Sublime aoj" title="sublime_aoj.png" border="0" width="426" height="202" />
+
+![Sublim](/images/2013/07/sublime_aoj.png)
+
+
 
 AC取れました。submit結果はアラートで表示されます。
 

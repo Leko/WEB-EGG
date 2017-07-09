@@ -1,13 +1,13 @@
 // @flow
 import type { Context } from 'almin'
-import type PostState from './store/PostState'
+import type PostState from '../store/PostState'
 import React, { Component } from 'react'
 import classnames from 'classnames'
 import moment from 'moment'
 import debounce from 'lodash/debounce'
-import Post from './domain/Post'
-import PostList from './domain/PostList'
-import { FilterPostListUseCaseFactory } from './usecase/FilterPostListUseCase'
+import Post from '../domain/Post'
+import PostList from '../domain/PostList'
+import { FilterPostListUseCaseFactory } from '../usecase/FilterPostListUseCase'
 
 type Props = {
   appContext: Context,

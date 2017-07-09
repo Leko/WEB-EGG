@@ -85,8 +85,7 @@ UTF-8mb4は4バイト対応のUTF-8だそうです。絵文字とか特殊文字
 
 結局、恒久的な対応策が見つかりませんでした。
 
-> Fixed by [8744632](https://github.com/rails/rails/commit/8744632fb5649cf26cdcd1518a3554ece95a401b) 😁
-    
+> Fixed by [8744632](https://github.com/rails/rails/commit/8744632fb5649cf26cdcd1518a3554ece95a401b) 😁  
 > [MySQL UTF8MB4 breaks ActiveRecord schema setup · Issue #9855 · rails/rails](https://github.com/rails/rails/issues/9855)
 
 Githubを探すと↑のissueが出てきたのですが、これで治らんということはおそらくRedmineコンテナのRailsにこの修正が当たっていないのだろう。  

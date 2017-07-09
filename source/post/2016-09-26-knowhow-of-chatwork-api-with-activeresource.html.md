@@ -93,8 +93,7 @@ end
 Chatworkは`/v1/rooms/:room_id/messages/:message_id`のように、ネストしたルーティングが必要になります。  
 ActiveResourceにはActiveRecordのように[リレーション](https://github.com/rails/activeresource#associations)の機能があるようですが、一部要件を満たせなかった(※後述)ので、下記の記事も参考にしつつ試してみました。
 
-> [ActiveResource : Passing prefix options](http://blog.revathskumar.com/2013/12/activeresource-passing-prefix-options.html)
-    
+> [ActiveResource : Passing prefix options](http://blog.revathskumar.com/2013/12/activeresource-passing-prefix-options.html)  
 > ちなみに情報が古いのか`update_attributes`に関しては上手く動きませんでした。
 
 リポジトリの[lib/chatwork/message.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/message.rb)に実装例が有りますが、大枠としては

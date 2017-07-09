@@ -19,7 +19,10 @@ SublimeText2で**SublimeLinter**という構文チェックパッケージを使
 日本語というか、マルチバイト文字なんでしょうが、  
 この不具合がタチ悪いのが、**コメントの中に日本語を含めてもエラー**になります。
 
-<img src="/images/2013/08/90f7e96e11d56ed0e19f02fae013ef9e1.png" alt="コメントの中に日本語を含めてもエラー" title="コメントの中に日本語を含めてもエラー.png" width="572" />
+
+![コメントの中に日本語を含めてもエラー](/images/2013/08/90f7e96e11d56ed0e19f02fae013ef9e1.png)
+
+
 
 **なんという英語養成ギブス。**  
 日本のエンジニアの未来は明るいかもしれませんが、  
@@ -80,7 +83,10 @@ Nodejsが使われているなら日本語エラー出ないし。
 
 保存してSublimeTextを再起動したら治りました！
 
-<img src="/images/2013/08/ee9eefaa7f57d09488f344b5dc980a92.png" alt="コメントの中に日本語を含めてもエラーなし" title="コメントの中に日本語を含めてもエラーなし.png" width="463" />
+
+![コメントの中に日本語を含めてもエラーなし](/images/2013/08/ee9eefaa7f57d09488f344b5dc980a92.png)
+
+
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
 </div>

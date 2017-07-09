@@ -67,11 +67,17 @@ CircleCIと連携したままのだと、read onlyなデプロイキーが使用
 
 CircleCIの表示は
 
-<img src="/images/2017/01/b782c30ff31333c2cea5152a250c73b0.png" alt="スクリーンショット 2017-01-03 21.09.59" width="872" height="662" class="alignnone size-full wp-image-929" />
+
+![スクリーンショッ](/images/2017/01/b782c30ff31333c2cea5152a250c73b0.png)
+
+
 
 npmのパッケージは
 
-<img src="/images/2017/01/b203346692a299a373192edf35b2a426.png" alt="スクリーンショット 2017-01-03 21.08.25" width="257" height="162" class="alignnone size-full wp-image-928" />
+
+![スクリーンショッ](/images/2017/01/b203346692a299a373192edf35b2a426.png)
+
+
 
 いい感じです。
 

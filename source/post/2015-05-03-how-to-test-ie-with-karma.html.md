@@ -37,8 +37,7 @@ tags:
 今回の記事の内容を反映したリポジトリも作成しました。  
 記事だけではわからない箇所はそちらも合わせてご覧下さい。
 
-> Leko/karma-ievm-seed
-    
+> Leko/karma-ievm-seed  
 > <https://github.com/Leko/karma-ievm-seed>
 
 使うもの
@@ -57,14 +56,12 @@ JasmineはMochaと書き方がほとんど変わらないのでどちらか知�
 参考リンク
 ----------------------------------------
 
-> Browserify: それはrequire()を使うための魔法の杖
-    
+> Browserify: それはrequire()を使うための魔法の杖  
 > <http://qiita.com/cognitom/items/4c63969b5085c90639d4>
 
 <!---->
 
-> power-assertでJavaScriptのテストをする ブラウザ編
-    
+> power-assertでJavaScriptのテストをする ブラウザ編  
 > <http://efcl.info/2014/0411/res3820/>
 
 今自分が使っている環境ではSauce Labsやpower-assertなどモリモリなのですが、  

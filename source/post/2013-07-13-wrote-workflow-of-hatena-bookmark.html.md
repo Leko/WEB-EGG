@@ -35,18 +35,27 @@ AlfredのWorkflowの作り方については、先日書いた記事をご参照
 Workflowはこんな感じになっています。  
 hatebu_setとhatebuというキーワードを設定しています。
 
-<img src="/images/2013/07/dea9ecf6dfc71804e344c8c5c25187b3.png" alt="スクリーンショット 2013 07 13 19 57 24" title="スクリーンショット 2013-07-13 19.57.24.png" border="0" width="600" height="280" />
+
+![スクリーンショッ](/images/2013/07/dea9ecf6dfc71804e344c8c5c25187b3.png)
+
+
 
 ### ユーザID登録
 
 まず、前準備として**自分のはてブのIDを登録**します。  
 IDを登録するには、`hatebu_set 登録したいユーザ名`と入力します。
 
-<img src="/images/2013/07/064af0b3aec3668fe2e74fdc395dc2b4.png" alt="スクリーンショット 2013 07 13 21 42 20" title="スクリーンショット 2013-07-13 21.42.20.png" border="0" width="600" height="184" />
+
+![スクリーンショッ](/images/2013/07/064af0b3aec3668fe2e74fdc395dc2b4.png)
+
+
 
 ユーザIDの保存に成功すると通知センターから通知が来ると思います。
 
-<img src="/images/2013/07/48d803ab954a226d7fd052ef1ee6a89d.png" alt="スクリーンショット 2013 07 13 21 42 25" title="スクリーンショット 2013-07-13 21.42.25.png" border="0" width="347" height="110" />
+
+![スクリーンショッ](/images/2013/07/48d803ab954a226d7fd052ef1ee6a89d.png)
+
+
 
 > tips  
 > ユーザIDさえ分かれば認証とか要らずにGETでrssを取得できるので、  
@@ -58,7 +67,10 @@ IDを登録するには、`hatebu_set 登録したいユーザ名`と入力し�
 
 記事検索をするには、 `hatena 検索したいワード`と入力します。
 
-<img src="/images/2013/07/99b725f88bc6114fa54b393b4175d15c.png" alt="スクリーンショット 2013 07 13 21 46 01" title="スクリーンショット 2013-07-13 21.46.01.png" border="0" width="600" height="244" />
+
+![スクリーンショッ](/images/2013/07/99b725f88bc6114fa54b393b4175d15c.png)
+
+
 
 **大文字小文字は区別せずに検索**しています。
 

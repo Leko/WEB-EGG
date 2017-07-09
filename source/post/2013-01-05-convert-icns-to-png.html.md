@@ -26,7 +26,10 @@ icnsファイルをpngに変換するには、「Finderとプレビュー.app」
 
 ### 1,変換したいicnsファイルをプレビューで開く
 
-<img src="/images/2013/01/20130102_step1.png" alt="20130102 step1" title="20130102_step1.png" height="128" />
+
+![2013010](/images/2013/01/20130102_step1.png)
+
+
 
 Finderでpngにしたいicnsファイルを選択して、プレビュー.appで開きます。  
 アプリケーションのアイコンをpng化したい時には、  
@@ -35,7 +38,10 @@ Finderでpngにしたいicnsファイルを選択して、プレビュー.appで
 
 ### 2,PNG形式で保存する
 
-<img src="/images/2013/01/20130102_step5.png" alt="20130102 step5" title="20130102_step5.png" height="200" />
+
+![2013010](/images/2013/01/20130102_step5.png)
+
+
 
 ここまで来たら、もうpngはすぐそこです。  
 メニューのファイル→保存を選び、フォーマットをPNGにします  
