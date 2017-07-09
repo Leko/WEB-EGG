@@ -1,4 +1,8 @@
 // @flow
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Dispatcher, Context } from 'almin'
+import AppStoreGroup from './store/AppStoreGroup'
 import SearchApp from './SearchApp'
 import LazyLoadApp from './LazyLoadApp'
 import { registerWorkers } from './ServiceWorker'
@@ -17,7 +21,7 @@ if (process.env.NODE_ENV !== 'production') {
   logger.startLogging(appContext)
 }
 
-ReactDOM.render(<Root appContext={appContext} />, document.getElementById('search'))
+ReactDOM.render(<SearchApp appContext={appContext} />, document.getElementById('search'))
 
 // --- Init LazyLoadApp
 LazyLoadApp(document.querySelectorAll('.markdown img'))
