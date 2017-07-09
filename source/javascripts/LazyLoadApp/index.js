@@ -1,12 +1,3 @@
-// @flow
-type IntersectionObserverInit = {
-  root: string | null,
-  rootMargin: string,
-}
-declare class IntersectionObserver {
-  constructor(function, IntersectionObserverInit): IntersectionObserver;
-  observe(HTMLElement): void;
-}
 
 export default function lazyLoader (images: NodeList<HTMLElement>): void {
   const callback = function(entries, observer) { 
