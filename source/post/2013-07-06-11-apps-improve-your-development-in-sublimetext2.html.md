@@ -245,7 +245,6 @@ sublimerge
 
 すると、こんな画面になります（画像は適当な２ファイルを選びました）
 
-  
 
 ![SUBLIM](/images/2013/07/SUBLIME_DIFF.png)
 
@@ -280,7 +279,6 @@ Sublime textで書いているコードを、[Aizu Online Judge](http://judge.u-
 
 既にACを取ってあるファイルで送信テスト。 
 
-  
 
 ![Sublim](/images/2013/07/sublime_aoj.png)
 

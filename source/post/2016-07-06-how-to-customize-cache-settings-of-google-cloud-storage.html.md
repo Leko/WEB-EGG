@@ -49,7 +49,6 @@ gsutil
 
 ファイル一覧の各ファイルの右端にメニューが有ります。
 
-  
 
 ![スクリーンショッ](/images/2016/07/9899cad30c9613f429309d9242dc9746.png)
 
@@ -57,7 +56,6 @@ gsutil
 
 **Edit metadata** を選択すると、メタデータの詳細が表示/編集されます。
 
-  
 
 ![スクリーンショッ](/images/2016/07/7aae685d0e8c76f43a6bc656c884f942.png)
 
@@ -128,7 +126,6 @@ $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 
 Edit metadataからキャッシュの情報を書き換えられます。
 
-  
 
 ![スクリーンショッ](/images/2016/07/2dfe421c7eaddb77926bbd551fc9b938.png)
 

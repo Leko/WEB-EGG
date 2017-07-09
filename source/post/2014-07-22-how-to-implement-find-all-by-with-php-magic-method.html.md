@@ -235,15 +235,12 @@ public static function __callStatic($method_name, $args) {
   <li>
     呼び出されたメソッド名が<code>find_all_by_*</code>(※<code>self::FIND_ALL_BY</code>)の書式なら、  
   </li>  
-  
   <li>
     メソッド名を<code>_and_</code>で千切って配列化し、  
   </li>  
-  
   <li>
     <a href="http://php.net/manual/ja/function.array-combine.php">array_combine()</a>関数を使用して<code>カラム名 =&gt; 値</code>の連想配列へ変換し、  
   </li>  
-  
   <li>
     それをfind_allメソッドへパスする
   </li>  
@@ -351,7 +348,6 @@ PHPだってRailsっぽいことしたい
   <li>
     PHPだと古臭いコードになる
   </li>  
-  
   <li>
     PHPイケてない
   </li>  

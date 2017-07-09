@@ -152,7 +152,6 @@ $ vagrant@precise64:~/go/src/godemo$ go get github.com/codegangsta/gin
 $ vagrant@precise64:~/go/src/godemo$ gin -p 8080
 ```
 
-  
 
 ![/ping](/images/2015/07/ping.png)
 

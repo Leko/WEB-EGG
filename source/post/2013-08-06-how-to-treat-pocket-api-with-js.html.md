@@ -38,7 +38,6 @@ Pocketのアプリを登録
 
 すると、このような画面になると思うので、画像の説明の通り入力していきます。
 
-  
 
 ![Creat](/images/2013/08/Create-a-New-App1.png)
 
@@ -100,7 +99,6 @@ Pocketからアクセストークンを取得する
 `Content-Type=application/x-www-form-urlencoded`を指定してあげます。  
 これらを合わせると、
 
-  
 
 ![リクエストトークンを取得](/images/2013/08/8223fde78c3ee79b98e79042f1607e04.png)
 
@@ -144,7 +142,6 @@ XXXXXXXX…としていますが、実際には英語と数字とハイフン混
 と入力して下さい。 **YOUR_REQUEST_TOKEN**のところには、先ほど取得したリクエストトークンを、  
 **YOUR_REDIRECT_URI**のところには、先ほど設定したリダイレクトURLを入れます。
 
-  
 
 ![こんな画面](/images/2013/08/f91ab41bde5ae5e886c1a19bbcfd53ca.png)
 
@@ -173,7 +170,6 @@ HTTPメソッドは`POST`
 
 これをFetcherに入れるとこんなかんじになります。
 
-  
 
 ![Acces](/images/2013/08/access_token.png)
 
@@ -236,7 +232,6 @@ APIの公式ドキュメントはこちら。
 
 これを実行してみると、こんな表示がされると思います。
 
-  
 
 ![Pocketから取得した結果](/images/2013/08/aa4012ad6bc2891b4a3bdc99d8ae9c41.png)
 

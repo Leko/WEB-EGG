@@ -91,7 +91,6 @@ Google Suggestというサンプルを利用します。
 
 ### 1. Google Suggestを作成
 
-  
 
 ![Googl](/images/2013/05/20130521_step1.png)
 
@@ -100,7 +99,6 @@ Google Suggestというサンプルを利用します。
 workflowsの下の方にある**[+]**を押し、  
 **Examples→Google Suggest**をクリックすると、作成完了です。 workflowsのリストにGoogle Suggestというのが表示されたと思います。
 
-  
 
 ![Googl](/images/2013/05/20130521_step2.png)
 
@@ -116,7 +114,6 @@ Alfredを起動し、`g 検索ワード(何でもいい)`と入力します。
 
 例えば`g jQ`と入力すると、このようなリストが表示されます。
 
-  
 
 ![Googl](/images/2013/05/20130521_step3.png)
 
@@ -294,7 +291,6 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 `g 検索ワード`のように、  
 `g`というキーワードにこのworkflowsが反応させるように決めます。
 
-  
 
 ![Scrip](/images/2013/05/20130521_step4.png)
 
@@ -302,7 +298,6 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 
 反応させるキーワードは、図の上部に書かれた文字を見れば分かります。
 
-  
 
 ![反応させたいキーワードを入力する](/images/2013/05/20130521_step5.png)
 
@@ -326,7 +321,6 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 
 と言った機能を作ります。 完成図はこんな感じ。
 
-  
 
 ![MOCO'sキッチンオリーブAPIのWorkflow完成図](/images/2013/05/20130521_step6.png)
 
@@ -377,11 +371,9 @@ PHPでJSONのパースを行うには、`json_decode()`を利用します。
 
 workflowsの全体図とopen URLの設定内容がこちらです。
 
-  
 
 ![Workflows全体図](/images/2013/05/20130521_step71.png)
 
-  
 
 ![ope](/images/2013/05/20130521_step8.png)
 

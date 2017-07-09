@@ -67,7 +67,6 @@ CircleCIと連携したままのだと、read onlyなデプロイキーが使用
 
 CircleCIの表示は
 
-  
 
 ![スクリーンショッ](/images/2017/01/b782c30ff31333c2cea5152a250c73b0.png)
 
@@ -75,7 +74,6 @@ CircleCIの表示は
 
 npmのパッケージは
 
-  
 
 ![スクリーンショッ](/images/2017/01/b203346692a299a373192edf35b2a426.png)
 

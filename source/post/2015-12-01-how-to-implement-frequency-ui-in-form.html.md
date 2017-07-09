@@ -53,7 +53,6 @@ tags:
 
 スマフォweb版Facebookのログイン画面にも「パスワードを表示する」機能があったりします。
 
-  
 
 ![20151124010528](/images/2015/11/20151124010528.jpg)
 
@@ -68,7 +67,6 @@ tags:
 クリックしたら全選択
 ----------------------------------------
 
-  
 
 ![undefined](/images/2015/11/Screen-Shot-2015-11-24-at-1.33.10-AM.png)
 
@@ -101,7 +99,6 @@ $('input.focus-then-select').focusThenSelect();
   * Star: <a class="github-button broken_link" href="/brianreavis/selectize.js/stargazers" api="/repos/brianreavis/selectize.js#stargazers_count" label="Star brianreavis/selectize.js on GitHub">Star</a>
   * デモ: <https://brianreavis.github.io/selectize.js/>
 
-  
 
 ![undefined](/images/2015/11/Screen-Shot-2015-11-24-at-1.50.23-AM.png)
 
@@ -113,7 +110,6 @@ Bootstrap3用に最適化されたCSSも公式で対応していたりします�
 インクリメンタルサーチする
 ----------------------------------------
 
-  
 
 ![undefined](/images/2015/11/Screen-Shot-2015-11-24-at-3.13.51-AM.png)
 

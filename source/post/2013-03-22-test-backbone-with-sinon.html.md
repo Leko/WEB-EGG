@@ -107,7 +107,6 @@ describe 'Backbone * sinon.spy', ->
 
 実行してみると、通りません。。
 
-  
 
 ![Moch](/images/2013/03/mocha_ng.png)
 
@@ -154,7 +153,6 @@ before ->
 
 実行してみると、通ります。
 
-  
 
 ![Moch](/images/2013/03/mocha_ok.png)
 

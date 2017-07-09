@@ -65,7 +65,6 @@ iOSアプリの開発をするため、Macは必須です。
 
 まず、Titaniumシリーズを公開している[Appcelerator](http://www.appcelerator.com/)を開きます。
 
-  
 
 ![Appcelerator](/images/2013/04/appcelerator1.png)
 
@@ -76,7 +75,6 @@ iOSアプリの開発をするため、Macは必須です。
 
 会員登録が完了すると、以下のような画面に行くと思います。
 
-  
 
 ![Downloa](/images/2013/04/download_tstudio.png)
 
@@ -89,7 +87,6 @@ Titanium Studioを起動したら、
 メニュー→Titanium Studio→環境設定を開きます。  
 [Titanium]を選択して、Android SDKの保存場所を設定します。
 
-  
 
 ![Settin](/images/2013/04/setting-android-sdk.png)
 
@@ -110,7 +107,6 @@ Titanium Studioのダッシュボードに行き、 **Configure Native SDKs**の
 
 すると、AndroidのSDKをインストールするマネージャーが起動します。
 
-  
 
 ![Androi](/images/2013/04/android-sdk-list.png)
 
@@ -125,7 +121,6 @@ API7が無いとエミュレータの起動でエラーが出てたので、API7
 これでSDKの設定は完了です。  
 ダッシュボードに戻って、Get startedを見て下さい。
 
-  
 
 ![スクリーンショッ](/images/2013/04/6771558919b40e75d25738805045577f.png)
 
@@ -322,7 +317,6 @@ Please report bugs to http://jira.appcelerator.org/
 
 そのまましばらく待っていると、 iOSシミュレータが起動して、アプリが表示されると思います。
 
-  
 
 ![Previe](/images/2013/04/preview_io.png)
 
@@ -336,7 +330,6 @@ $ titanium build -p android
 
 **Androidのエミュレータは重い**ので、１〜２分くらいのんびり待ってみて下さい。
 
-  
 
 ![Previe](/images/2013/04/preview_an.png)
 

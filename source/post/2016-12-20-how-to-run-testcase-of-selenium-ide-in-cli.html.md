@@ -78,7 +78,6 @@ selenese-runnerで実行する
 
 selenese-runner単体をホスト側実行するとブラウザが起動し、HTMLの内容が実行されます。
 
-  
 
 ![selenese-runner](/images/2016/12/selenese-runner.gif)
 
@@ -95,7 +94,6 @@ cron等で定期実行したり、CIを回したりするには、GUIのないLi
 
 動作させると、
 
-  
 
 ![compose-selenese-runner](/images/2016/12/compose-selenese-runner.gif)
 

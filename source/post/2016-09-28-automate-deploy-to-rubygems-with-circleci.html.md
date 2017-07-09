@@ -62,7 +62,6 @@ CircleCIと連携したままのだと、read onlyなデプロイキーが使用
 で、連携しているリポジトリにwrite権限を持つキーが作成できます。  
 こんな感じの画面になればOKだと思います。
 
-  
 
 ![スクリーンショッ](/images/2016/09/5aad2dde2722e323044dce1b2cd9bc04.png)
 
@@ -92,7 +91,6 @@ deployment:
 
 CircleCI上の表示は
 
-  
 
 ![スクリーンショッ](/images/2016/09/e1084e909de8fec85c82e780658b59f3.png)
 
@@ -100,7 +98,6 @@ CircleCI上の表示は
 
 デプロイした後のRubyGems.orgは
 
-  
 
 ![スクリーンショッ](/images/2016/09/4c1c1aa1469d47ee9ae877356b7b87da.png)
 

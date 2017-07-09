@@ -78,7 +78,6 @@ godep save実行後に`Godeps/Godeps.json`のdiffを見てもし差分が出て�
 
 実行結果のgifアニメを撮ってみました。
 
-  
 
 ![Pw4PrxxEfo](/images/2015/12/Pw4PrxxEfo1.gif)
 

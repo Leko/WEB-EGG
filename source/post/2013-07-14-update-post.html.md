@@ -37,7 +37,6 @@ Markdownとは、Markdownの書き方については、[基礎編](/post/write-p
 
 ### Mou
 
-  
 
 ![MouApp](/images/2013/07/MouApp.png)
 
@@ -60,7 +59,6 @@ Markdownとは、Markdownの書き方については、[基礎編](/post/write-p
 
 例えば今書いている文章をMouで見るとこんな感じです。
 
-  
 
 ![プラグインを使わずにmarkdownでwordpressのブログを更新す](/images/2013/07/9862465f269e9a789b7039573acd90ab.png)
 
@@ -105,7 +103,6 @@ Markdownに慣れていないうちは、
 
 ### Sublime Text2
 
-  
 
 ![Sublime](/images/2013/07/sublime.png)
 
@@ -129,7 +126,6 @@ WordPressのプラグインを利用せずにMarkdownでブログ記事を書く
 MouでMarkdownで書いたものを、  
 HTMLとしてコピー(`⌘+Alt+c`)して、MarsEditに貼り付けます。
 
-  
 
 ![スクリーンショッ](/images/2013/07/11f4946e5875d625bf0b353a51072d94.png)
 

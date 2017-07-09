@@ -34,7 +34,6 @@ tags:
 完成図
 ----------------------------------------
 
-  
 
 ![完成図](/images/2015/09/d8885565b3dd45e3fbc0abc752d159d8.png)
 
@@ -71,7 +70,6 @@ Githubの通知をSlackに送る
 `https://{slackのチーム名}.slack.com/services/new`  
 を開くと、各種サービスとの連携ができます。
 
-  
 
 ![スクリーンショッ](/images/2015/09/a375213d384a7b683e3b9f4704cbe945.png)
 
@@ -106,7 +104,6 @@ git push origin feat/circle-ci
 
 連携が完了していると、pullリクエストを作成した時に以下のようになると思います。
 
-  
 
 ![スクリーンショッ](/images/2015/09/aa6524b9ba48606ea27c160b6fc9cee5.png)
 
@@ -114,7 +111,6 @@ git push origin feat/circle-ci
 
 少し待って
 
-  
 
 ![スクリーンショッ](/images/2015/09/6ba1a268d2bfba7053226520cc58cb5e.png)
 
@@ -127,7 +123,6 @@ git push origin feat/circle-ci
 
 ついでにSlackとの連携も済ませておきます。
 
-  
 
 ![スクリーンショッ](/images/2015/09/ee193825a3bffe1ef11bdae8117b3555.png)
 
@@ -142,7 +137,6 @@ Code climateはコードの静的解析ツールです。
 Code climateにログインし、対象のリポジトリを有効にしておきます。  
 初回起動までが結構長いので、先にやっておくと良いです。
 
-  
 
 ![スクリーンショッ](/images/2015/09/8487259c49da7defc179d4e0202d5e0a.png)
 
@@ -162,7 +156,6 @@ Code climateにログインし、対象のリポジトリを有効にしてお�
 
 settingsの中にある「Integrations」タブを開き、「GitHub Pull Requests」を選択します。
 
-  
 
 ![スクリーンショッ](/images/2015/09/ae0b48fb75da31a8be3a203df45c2f33.png)
 
@@ -179,7 +172,6 @@ settingsの中にある「Integrations」タブを開き、「GitHub Pull Reques
 
 ついでにCode climateもSlackと連携させます。
 
-  
 
 ![スクリーンショッ](/images/2015/09/fb65dada8776ca82d73bf6ff177bd56a.png)
 
@@ -194,7 +186,6 @@ settingsの中にある「Integrations」タブを開き、「GitHub Pull Reques
 
 は判定可能になりました。ついでなのでテストのカバレッジも出力してみたいと思います。
 
-  
 
 ![スクリーンショッ](/images/2015/09/86f5823b3a5d2f30434dc16f2685d6ae.png)
 
@@ -206,7 +197,6 @@ Code climateのsettingsを開き、「Test Coverage」を選択します。
 マニュアル内の`CODECLIMATE_REPO_TOKEN=....`となっている箇所をCircle CI側にも指定する必要があるのでコピーして貼り付けます。  
 Circle CIのプロジェクト設定の、「Environment variables」に設定します。
 
-  
 
 ![スクリーンショッ](/images/2015/09/aa56c553c600d6ad9d8ba37416434eef.png)
 
@@ -214,7 +204,6 @@ Circle CIのプロジェクト設定の、「Environment variables」に設定�
 
 Githubにプルリクエストを作ってマージし、Code climateにカバレッジが出れば成功です。
 
-  
 
 ![スクリーンショッ](/images/2015/09/457b301edc06959d1515de8c92e9ba06.png)
 
@@ -271,7 +260,6 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
 
 全部設定するとSlackがだいぶ賑わってきます。
 
-  
 
 ![スクリーンショッ](/images/2015/09/87fe328607615af11722bfe947725838.png)
 
@@ -285,7 +273,6 @@ tachikomaについては別途Nodeのプロジェクトで試している最中�
 意識高そうな感じでやってる感はすごく出るので、一人でも比較的モチベは保ちやすいかなと思います。  
 ぼっち開発環境の第一弾、ひとまず完成です。
 
-  
 
 ![スクリーンショッ](/images/2015/09/9c7139b6049070cfdfb72271aed71dea.png)
 

@@ -29,7 +29,6 @@ tags:
 
 <a href="https://itunes.apple.com/jp/app/coda-2/id499340368?mt=12" target="_blank">App Storeで見る</a>
 
-  
 
 ![Coda2](/images/2013/01/Coda2.png)
 
@@ -46,7 +45,6 @@ tags:
 
 <a href="http://www.sublimetext.com/" target="_blank">ダウンロード</a>
 
-  
 
 ![Sublimetext](/images/2013/01/sublimetext.png)
 
@@ -61,7 +59,6 @@ tags:
 
 ¥450 | Herraiz Sato & AsociadosSL <a href="https://itunes.apple.com/jp/app/ommwriter-dana-ii/id412347921?mt=12" target="_blank">App Storeで見る</a>
 
-  
 
 ![Ommwriter](/images/2013/01/ommwriter.png)
 
@@ -81,7 +78,6 @@ Todo管理
 
 <a class="app_store" href="https://itunes.apple.com/jp/app/wunderlist/id410628904?mt=12" target="_blank">App Storeで見る</a>
 
-   
 
 ![Wunderlist](/images/2013/01/wunderlist.png)
 
@@ -119,7 +115,6 @@ Todo管理
 
 <a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12" target="_blank">App Storeで見る</a>
 
-   
 
 ![Alfred](/images/2013/01/alfred.png)
 
@@ -197,7 +192,6 @@ Macで不便に思っていた動作の多くをこれで実現できます！ �
 
 <a href="https://itunes.apple.com/jp/app/wallpapers-hd-lite/id441812880?mt=12" target="_blank">App Storeで見る</a>
 
-   
 
 ![WallpaperHD](/images/2013/01/wallpaperhd.png)
 
@@ -211,7 +205,6 @@ Macで不便に思っていた動作の多くをこれで実現できます！ �
 
 <a class="app_store" href="https://itunes.apple.com/jp/app/jpegmini-lite/id525742250?mt=12" target="_blank">App Storeで見る</a>
 
-   
 
 ![Jpegmini](/images/2013/01/jpegmini.png)
 

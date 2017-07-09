@@ -96,7 +96,6 @@ npm i -g dredd
 
 テストの環境のセットアップは、ApiaryのTestsタブに記述されています。
 
-  
 
 ![Scree](/images/2015/12/Screen-Shot-2015-12-06-at-12.03.57-AM.png)
 
@@ -109,7 +108,6 @@ dredd init # 省略,対話CLIがあります
 dredd
 ```
 
-  
 
 ![APIドキュメントでAPIサーバをテストする](/images/2015/11/Screen-Shot-2015-12-06-at-1.25.59-AM.png)
 
@@ -118,7 +116,6 @@ dredd
 ↑こんな感じになります。  
 さらに、 **Apiaryの言うとおりにdredd initしておくと、そのテストの通知結果が集約される** ようになっています。
 
-  
 
 ![APIドキュメントでAPIサーバをテストする](/images/2015/11/Screen-Shot-2015-12-06-at-1.27.02-AM.png)
 

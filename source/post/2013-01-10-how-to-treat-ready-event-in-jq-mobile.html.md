@@ -22,7 +22,6 @@ $(function() {
 })
 ```
 
- 
 
 という風に書けばいいのかと思ったら、見事にハマったので対応策をメモします。
 
@@ -55,7 +54,6 @@ $(document).on('pageinit', '#selector', function() {
 });
 ```
 
- 
 
 #selectorの部分は、**data-role="page"**に対応するidです。適宜変更して下さい。
 
@@ -81,7 +79,6 @@ $(document).on('pageinit', '#selector', function() {
 });
 ```
 
- 
 
 例えば、 pageinitはスライドショーなどで使うHTMLの挿入（１回だけ必要）などに使い、 pageshowはGoogleAnalyticsの読み込みや、要素の座標等の調整（表示のたびに必要）などと使い分けることができるかな、と思います。 これで、目的の動作を達成できました。 初歩的なハマり方ですみません。。。
 
