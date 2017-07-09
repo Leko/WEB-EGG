@@ -296,10 +296,10 @@ configure :build do
         :verbose => true,              # Verbose output _(defaults to `false`)_
         :allow_lossy => true,          # Allow lossy workers and optimizations _(defaults to `false`)_
 
-        # Compressor worker options, individual optimisers can be disabled by passing false instead of a hash
-        # Best of PNG optimization: http://takaaki.info/2013/10/15/png-optimization/
-        :advpng         => { level: 4 },
-        :optipng        => false,
+        # PNG では OptiPNG または PNGOUT をおすすめします。
+        # https://developers.google.com/speed/docs/insights/OptimizeImages
+        :advpng         => false,
+        :optipng        => { level: 7, interlace: false, strip: true },
         :pngcrush       => false,
         :pngout         => false,
         :pngquant       => false,
