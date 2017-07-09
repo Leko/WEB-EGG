@@ -7,14 +7,15 @@ require('dotenv').config()
 module.exports = {
   entry: [
     'babel-polyfill',
-    './source/javascripts/main.js'
+    './source/javascripts/main.js',
+    './source/javascripts/service-worker-registration.js',
   ],
   resolve: {
     extensions: ['.jsx', '.js']
   },
   output: {
     path: __dirname + '/.tmp/dist/javascripts',
-    filename: '[name].js'
+    filename: 'main.js'
   },
   devtool: 'source-map',
   module: {
