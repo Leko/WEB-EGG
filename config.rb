@@ -11,6 +11,14 @@ after_configuration do
     end
   end
   Middleman::Blog::TagPages.prepend(TagPagesExtension)
+
+  module MarkdownParserExtension
+    def image(link, title, alt_text)
+      w, h = FastImage.size(File.join(__dir__, 'source', link))
+      "<img data-src=\"#{link}\" alt=\"#{alt_text || title}\" width=\"#{w}\" height=\"#{h}\" style=\"width:#{w}px;height:#{h}px;\" />"
+    end
+  end
+  Middleman::Renderers::MiddlemanRedcarpetHTML.prepend(MarkdownParserExtension)
 end
 
 config[:meta] = {

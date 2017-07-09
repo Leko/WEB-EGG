@@ -37,7 +37,11 @@
   }
   img {
     max-width: 100%;
-    height:auto;
+    height: auto;
+    background-color: $base-light;
+    font-size: 0;
+    border: 0;
+    outline: 0;
   }
   strong {
     background: linear-gradient(transparent 60%, $base-accent 60%);
