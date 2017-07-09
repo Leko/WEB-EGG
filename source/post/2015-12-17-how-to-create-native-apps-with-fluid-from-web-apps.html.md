@@ -45,7 +45,11 @@ Fluidは[こちら](http://fluidapp.com/)のページの[Free Download]からダ
 
 Fluidを起動すると以下の様な画面になると思います
 
-<img src="/images/2015/12/Screen-Shot-2015-12-14-at-3.55.25-AM.png" alt="Screen Shot 2015 12 14 at 3 55 25 AM" title="Screen Shot 2015-12-14 at 3.55.25 AM.png" border="0" width="528" />
+  
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-14-at-3.55.25-AM.png)
+
+
 
 | 項目        | 意味                                                   |
 | --------- | ---------------------------------------------------- |
@@ -57,26 +61,42 @@ Fluidを起動すると以下の様な画面になると思います
 おっ、ファビコン使ってくれんだ便利じゃ〜んと思っていたのですが、だいたいうまく行きませんでした。なぜ。  
 失敗するとこのようなアイコンになり、何開いてんだか全くわかりません。
 
-<img src="/images/2015/12/Screen-Shot-2015-12-14-at-3.58.36-AM.png" alt="Screen Shot 2015 12 14 at 3 58 36 AM" title="Screen Shot 2015-12-14 at 3.58.36 AM.png" border="0" width="598" />
+  
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-14-at-3.58.36-AM.png)
+
+
 
 アイコンがないとパット見でわからずモチベも上がらないので、アイコンは作ります。
 
 アイコンを作る
 ----------------------------------------
 
-<img src="/images/2015/12/2ccae8abad198c3d70a0c855fd6cc643.png" alt="Header icon 2x" title="header-icon@2x.png" border="0" width="270" />
+  
+
+![Heade](/images/2015/12/2ccae8abad198c3d70a0c855fd6cc643.png)
+
+
 
 [Image2icon](http://www.img2icnsapp.com/)というアプリを使用しました。  
 過去に[.icnsをPNGで書き出す](/post/convert-icns-to-png/)方法については書きましたが、逆はできないようだったのでアプリを利用します。
 
 App storeからダウンロードして起動します。
 
-<img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.02.26-AM.png" alt="Screen Shot 2015 12 14 at 4 02 26 AM" title="Screen Shot 2015-12-14 at 4.02.26 AM.png" border="0" width="412" />
+  
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-14-at-4.02.26-AM.png)
+
+
 
 こんな画面になれば想定通りです。  
 画像をドロップすると以下の様な画面になります。いろいろな形式・装飾でエクスポートできるので便利です。
 
-<img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.06.07-AM.png" alt="Screen Shot 2015 12 14 at 4 06 07 AM" title="Screen Shot 2015-12-14 at 4.06.07 AM.png" border="0" width="395" />
+  
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-14-at-4.06.07-AM.png)
+
+
 
 Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパスをFluidの`Icon`のところに指定します。  
 以下の内容はこれらのアプリを使用してアプリを作っていきます。
@@ -86,7 +106,11 @@ Export→ICNSで保存すれば`.icns`ファイルが作れるので、そのパ
 完成！
 ----------------------------------------
 
-<img src="/images/2015/12/Screen-Shot-2015-12-14-at-4.14.58-AM.png" alt="Screen Shot 2015 12 14 at 4 14 58 AM" title="Screen Shot 2015-12-14 at 4.14.58 AM.png" border="0" width="142" />
+  
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-14-at-4.14.58-AM.png)
+
+
 
 いかがでしょうか。ブラウザのタブの1つではなく、単独のアプリとして起動しています。  
 jsもざっくり触った感じでは動いていました。中身見てませんが、おそらく単にWebViewのアプリを吐き出してるだけだと思われます。

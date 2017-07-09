@@ -78,7 +78,11 @@ godep save実行後に`Godeps/Godeps.json`のdiffを見てもし差分が出て�
 
 実行結果のgifアニメを撮ってみました。
 
-<img src="/images/2015/12/Pw4PrxxEfo1.gif" alt="Pw4PrxxEfo" width="569" class="alignnone size-full wp-image-826" />
+  
+
+![Pw4PrxxEfo](/images/2015/12/Pw4PrxxEfo1.gif)
+
+
 
 二回目の実行では全部okになります。  
 これで(シェルがバグってなければ)冪等性が担保できるようになりました。

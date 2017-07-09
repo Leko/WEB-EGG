@@ -163,7 +163,11 @@ the_post_thumbnail() を記述します。
     
 
     
-<img src="/images/2012/11/20121121_screen_shot.png" alt="表示確認" title="20121121_screen_shot" width="677" height="458" class="alignnone size-full wp-image-200" />
+  
+
+![表示確認](/images/2012/11/20121121_screen_shot.png)
+
+
     
 
     

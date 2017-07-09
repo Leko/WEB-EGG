@@ -112,14 +112,22 @@ alert('チャットワークです');
 
 メニューから拡張機能のページを開き、
 
-<img src="/images/2014/07/step01.png" alt="Step01" title="step01.png" border="0" width="600" height="245" />
+  
+
+![Step01](/images/2014/07/step01.png)
+
+
 
 「パッケージ化されていない拡張機能を読み込む…」ボタンをクリックします。  
 選択するファイルは、先ほど作成したchrome-ext-gradiusフォルダです。
 
 フォルダを選択すると、下記の画面のように拡張機能の一覧に現れます。
 
-<img src="/images/2014/07/step02.png" alt="Step02" title="step02.png" border="0" width="600" height="246" />
+  
+
+![Step02](/images/2014/07/step02.png)
+
+
 
 なお、一度取り込みを行ってしまえば、  
 ファイルを変更した時に拡張機能のページをリロードするだけで再読込されます。
@@ -188,7 +196,11 @@ cheet('U U D D L R L R b a', function() {
 拡張機能をリロードし、チャットワークもリロードし、  
 「↑ ↑ ↓ ↓ ← → ← → B A」と入力してみると、以下のようになります。
 
-<img src="/images/2014/07/step03.png" alt="Step03" title="step03.png" border="0" width="457" height="186" />
+  
+
+![Step03](/images/2014/07/step03.png)
+
+
 
 cheet.js側が反応するようになったのでOKです。次へ進みます。
 
@@ -338,7 +350,11 @@ $(function() {
 });
 ```
 
-<img src="/images/2014/07/Screen-Shot-2014-07-20-at-5.30.13-PM.png" alt="Screen Shot 2014 07 20 at 5 30 13 PM" title="Screen Shot 2014-07-20 at 5.30.13 PM.png" border="0" width="600" height="92" />
+  
+
+![Scree](/images/2014/07/Screen-Shot-2014-07-20-at-5.30.13-PM.png)
+
+
 
 OKです。
 
@@ -420,7 +436,11 @@ main.jsの内容は以下の通りになります。
 
 コナミコマンドを入力してみます。
 
-<img src="/images/2014/07/Screen-Shot-2014-07-20-at-5.46.36-PM1.png" alt="Screen Shot 2014 07 20 at 5 46 36 PM" title="Screen Shot 2014-07-20 at 5.46.36 PM.png" border="0" width="600" height="329" />
+  
+
+![Scree](/images/2014/07/Screen-Shot-2014-07-20-at-5.46.36-PM1.png)
+
+
 
 OKです。
 

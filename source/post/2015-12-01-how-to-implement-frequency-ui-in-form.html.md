@@ -53,7 +53,11 @@ tags:
 
 スマフォweb版Facebookのログイン画面にも「パスワードを表示する」機能があったりします。
 
-<img src="/images/2015/11/20151124010528.jpg" alt="20151124010528" title="20151124010528.jpg" border="0" width="300" />
+  
+
+![20151124010528](/images/2015/11/20151124010528.jpg)
+
+
 
 パスワードは入力しても「●●●●」のようになってしまうため、打ち間違えた場合にも中身が見えません。  
 特に打ち間違えやすいスマートフォンなどでは、表示/非表示の切り替えがあると親切な場合があるかもしれません。
@@ -64,7 +68,11 @@ tags:
 クリックしたら全選択
 ----------------------------------------
 
-<img src="/images/2015/11/Screen-Shot-2015-11-24-at-1.33.10-AM.png" border="0" width="574" />
+  
+
+![undefined](/images/2015/11/Screen-Shot-2015-11-24-at-1.33.10-AM.png)
+
+
 
 GithubのリポジトリのURL（上記画像を参考）のように、フォーカスを当てたら全選択される要素の作り方です。
 
@@ -93,7 +101,11 @@ $('input.focus-then-select').focusThenSelect();
   * Star: <a class="github-button broken_link" href="/brianreavis/selectize.js/stargazers" api="/repos/brianreavis/selectize.js#stargazers_count" label="Star brianreavis/selectize.js on GitHub">Star</a>
   * デモ: <https://brianreavis.github.io/selectize.js/>
 
-<img src="/images/2015/11/Screen-Shot-2015-11-24-at-1.50.23-AM.png" width="569" />
+  
+
+![undefined](/images/2015/11/Screen-Shot-2015-11-24-at-1.50.23-AM.png)
+
+
 
 語彙力が足りずすみません。上記画像のようなUIです。  
 Bootstrap3用に最適化されたCSSも公式で対応していたりします。「流石のstar数である」と感嘆するクオリティです。
@@ -101,7 +113,11 @@ Bootstrap3用に最適化されたCSSも公式で対応していたりします�
 インクリメンタルサーチする
 ----------------------------------------
 
-<img src="/images/2015/11/Screen-Shot-2015-11-24-at-3.13.51-AM.png" width="569" />
+  
+
+![undefined](/images/2015/11/Screen-Shot-2015-11-24-at-3.13.51-AM.png)
+
+
 
 タグっぽい入力でも紹介したSelectizeにかかれば、インクリメンタルサーチもお手のものです。
 

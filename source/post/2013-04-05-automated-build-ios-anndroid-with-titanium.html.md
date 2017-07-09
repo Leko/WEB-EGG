@@ -65,14 +65,22 @@ iOSアプリの開発をするため、Macは必須です。
 
 まず、Titaniumシリーズを公開している[Appcelerator](http://www.appcelerator.com/)を開きます。
 
-<img src="/images/2013/04/appcelerator1.png" alt="Appcelerator" title="appcelerator.png" border="0" width="600" height="374" />
+  
+
+![Appcelerator](/images/2013/04/appcelerator1.png)
+
+
 
 次に、[Download Titanium for Free]をクリックして、会員登録をします。  
 この会員情報は後々使うので、忘れないようにしておいて下さい。
 
 会員登録が完了すると、以下のような画面に行くと思います。
 
-<img src="/images/2013/04/download_tstudio.png" alt="Download tstudio" title="download_tstudio.png" border="0" width="600" height="296" />
+  
+
+![Downloa](/images/2013/04/download_tstudio.png)
+
+
 
 このページの、[Download Titanium Studio]をクリックして、  
 「osx」を選択してTitanium Studioをダウンロードします。
@@ -81,7 +89,11 @@ Titanium Studioを起動したら、
 メニュー→Titanium Studio→環境設定を開きます。  
 [Titanium]を選択して、Android SDKの保存場所を設定します。
 
-<img src="/images/2013/04/setting-android-sdk.png" alt="Setting android sdk" title="setting-android-sdk.png" border="0" width="600" height="109" />
+  
+
+![Settin](/images/2013/04/setting-android-sdk.png)
+
+
 
 今回の記事では、  
 **/Developers/android-sdk/**  
@@ -98,7 +110,11 @@ Titanium Studioのダッシュボードに行き、 **Configure Native SDKs**の
 
 すると、AndroidのSDKをインストールするマネージャーが起動します。
 
-<img src="/images/2013/04/android-sdk-list.png" alt="Android sdk list" title="android-sdk-list.png" border="0" width="546" height="528" />
+  
+
+![Androi](/images/2013/04/android-sdk-list.png)
+
+
 
 とりあえず最新版と、Tools、**API8**、**API7**をインストールすればOKかと思います。
 
@@ -109,7 +125,11 @@ API7が無いとエミュレータの起動でエラーが出てたので、API7
 これでSDKの設定は完了です。  
 ダッシュボードに戻って、Get startedを見て下さい。
 
-<img src="/images/2013/04/6771558919b40e75d25738805045577f.png" alt="スクリーンショット 2013 04 02 16 25 30" title="スクリーンショット 2013-04-02 16.25.30.png" border="0" width="355" height="147" />
+  
+
+![スクリーンショッ](/images/2013/04/6771558919b40e75d25738805045577f.png)
+
+
 
 上記のように、 AndroidSDKのアイコンから「？」が消えていたら、読み込みに成功しています。
 
@@ -302,7 +322,11 @@ Please report bugs to http://jira.appcelerator.org/
 
 そのまましばらく待っていると、 iOSシミュレータが起動して、アプリが表示されると思います。
 
-<img src="/images/2013/04/preview_io.png" alt="Preview io" title="preview_io.png" border="0" width="312" height="600" />
+  
+
+![Previe](/images/2013/04/preview_io.png)
+
+
 
 次に、Androidのアプリ形式にビルドします。 ターミナルの以下の内容を入力して下さい。
 
@@ -312,7 +336,11 @@ $ titanium build -p android
 
 **Androidのエミュレータは重い**ので、１〜２分くらいのんびり待ってみて下さい。
 
-<img src="/images/2013/04/preview_an.png" alt="Preview an" title="preview_an.png" border="0" width="400" />
+  
+
+![Previe](/images/2013/04/preview_an.png)
+
+
 
 iOSのシミュレータと同じように、  
 Androidのエミュレータが起動してアプリが表示されればOKです。

@@ -107,7 +107,11 @@ describe 'Backbone * sinon.spy', ->
 
 実行してみると、通りません。。
 
-<img src="/images/2013/03/mocha_ng.png" alt="Mocha ng" title="mocha_ng.png" border="0" width="600" height="227" />
+  
+
+![Moch](/images/2013/03/mocha_ng.png)
+
+
 
 Backboneを理解されてる方なら  
 「初心者乙」  
@@ -150,7 +154,11 @@ before ->
 
 実行してみると、通ります。
 
-<img src="/images/2013/03/mocha_ok.png" alt="Mocha ok" title="mocha_ok.png" border="0" width="380" height="56" />
+  
+
+![Moch](/images/2013/03/mocha_ok.png)
+
+
 
 このように、インスタンス化したオブジェクトにspyを忍び込ませるのではなく、  
 **コンストラクタ関数のprototypeにspyを設定して、  

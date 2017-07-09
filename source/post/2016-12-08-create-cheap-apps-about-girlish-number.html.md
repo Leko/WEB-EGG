@@ -28,11 +28,19 @@ URLはこちらです。 なお、 **PC版Chromeでしか動作確認してま�
 
 スクショはこんな感じ。
 
-<img src="/images/2016/12/Screen-Shot-2016-11-27-at-10.22.44-PM.png" alt="Screen Shot 2016-11-27 at 10.22.44 PM" width="400" class="alignnone size-full wp-image-906" />
+  
+
+![Scree](/images/2016/12/Screen-Shot-2016-11-27-at-10.22.44-PM.png)
+
+
 
 声と音を使うアプリなので、 **あらかじめスピーカーの音量は最大にしておいてください。** 「おだててもらう」ボタンを押すと録音が開始されます。
 
-<img src="/images/2016/12/Screen-Shot-2016-11-27-at-10.22.55-PM.png" alt="Screen Shot 2016-11-27 at 10.22.55 PM" width="400" class="alignnone size-full wp-image-905" />
+  
+
+![Scree](/images/2016/12/Screen-Shot-2016-11-27-at-10.22.55-PM.png)
+
+
 
 赤いバーが出てる間に、例えば「勝った？ 勝った！ ？ これ勝った！」と喋ってみてください。
 

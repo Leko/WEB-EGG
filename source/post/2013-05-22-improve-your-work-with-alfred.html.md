@@ -61,7 +61,15 @@ Alfredには**Workflows**という機能があります。
 [公式](http://www.alfredapp.com/)かApp Storeからインストールをします。  
 **インストール+利用は無料**です。
 
-<a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&uo=4" rel="nofollow" target="_blank"><img align="left" hspace="6" src="http://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png" width="75" style="margin-right: 6px;" /><b>Alfred</b> <img alt="App" src="http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_macappstore-sm.gif" style="vertical-align: text-bottom;" /><br /> </a>カテゴリ: 仕事効率化  
+<a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&uo=4" rel="nofollow" target="_blank">  
+
+![undefined](http://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png)
+
+<b>Alfred</b>   
+
+![App](http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_macappstore-sm.gif)
+
+<br /> </a>カテゴリ: 仕事効率化  
 価格: 無料<br clear="all" />
 
 そして、残念ですが、注意事項です。
@@ -83,12 +91,20 @@ Google Suggestというサンプルを利用します。
 
 ### 1. Google Suggestを作成
 
-<img src="/images/2013/05/20130521_step1.png" alt="Google Suggestを作成" title="20130521_step1.png" border="0" width="466" height="299" />
+  
+
+![Googl](/images/2013/05/20130521_step1.png)
+
+
 
 workflowsの下の方にある**[+]**を押し、  
 **Examples→Google Suggest**をクリックすると、作成完了です。 workflowsのリストにGoogle Suggestというのが表示されたと思います。
 
-<img src="/images/2013/05/20130521_step2.png" alt="Google Suggestが作成されたか確認" title="20130521_step2.png" border="0" width="327" height="75" />
+  
+
+![Googl](/images/2013/05/20130521_step2.png)
+
+
 
 これは、Alfredにあらかじめサンプルとして入っているworkflowsで、  
 このまま利用できます。
@@ -100,7 +116,11 @@ Alfredを起動し、`g 検索ワード(何でもいい)`と入力します。
 
 例えば`g jQ`と入力すると、このようなリストが表示されます。
 
-<img src="/images/2013/05/20130521_step3.png" alt="Google Suggestのテスト" title="20130521_step3.png" border="0" width="427" height="322" />
+  
+
+![Googl](/images/2013/05/20130521_step3.png)
+
+
 
 表示されたものを選択し、Enterを押すと、  
 その検索結果ページがブラウザで開かれます。
@@ -274,11 +294,19 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 `g 検索ワード`のように、  
 `g`というキーワードにこのworkflowsが反応させるように決めます。
 
-<img src="/images/2013/05/20130521_step4.png" alt="Script Filter" title="20130521_step4.png" border="0" width="233" height="192" />
+  
+
+![Scrip](/images/2013/05/20130521_step4.png)
+
+
 
 反応させるキーワードは、図の上部に書かれた文字を見れば分かります。
 
-<img src="/images/2013/05/20130521_step5.png" alt="反応させたいキーワードを入力する" title="20130521_step5.png" border="0" width="338" height="115" />
+  
+
+![反応させたいキーワードを入力する](/images/2013/05/20130521_step5.png)
+
+
 
 反応キーワードを変更したい場合には、  
 この図をダブルクリックして、keywordを変更すればOKです。
@@ -298,7 +326,11 @@ workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って
 
 と言った機能を作ります。 完成図はこんな感じ。
 
-<img src="/images/2013/05/20130521_step6.png" alt="MOCO'sキッチンオリーブAPIのWorkflow完成図" title="20130521_step6.png" border="0" width="428" height="183" />
+  
+
+![MOCO'sキッチンオリーブAPIのWorkflow完成図](/images/2013/05/20130521_step6.png)
+
+
 
 このAPIはパラメータは１種類しか取らず、  
 その書式もはっきりしているのでHello worldに最適だと思います。
@@ -345,7 +377,15 @@ PHPでJSONのパースを行うには、`json_decode()`を利用します。
 
 workflowsの全体図とopen URLの設定内容がこちらです。
 
-<img src="/images/2013/05/20130521_step71.png" alt="Workflows全体図" title="20130521_step7.png" border="0" width="600" height="219" /> <img src="/images/2013/05/20130521_step8.png" alt="open URLの設定内容" title="20130521_step8.png" border="0" width="600" height="175" />
+  
+
+![Workflows全体図](/images/2013/05/20130521_step71.png)
+
+  
+
+![ope](/images/2013/05/20130521_step8.png)
+
+
 
 繰り返しますが、**$wf->result()の第二匹数$argは、次の処理へ渡す値を指定しています**。  
 そして、**次の処理でも同様に`"{query}"`という文字列で値を取ることが出来る**ようです。

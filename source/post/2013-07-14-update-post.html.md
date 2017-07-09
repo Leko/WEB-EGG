@@ -37,7 +37,11 @@ Markdownとは、Markdownの書き方については、[基礎編](/post/write-p
 
 ### Mou
 
-<img src="/images/2013/07/MouApp.png" alt="MouApp" title="MouApp.png" border="0" width="200" />
+  
+
+![MouApp](/images/2013/07/MouApp.png)
+
+
 
 ２つとか行っておきながらも、  
 **MacでMarkdown書くならこれ一択**だと思います。
@@ -56,7 +60,11 @@ Markdownとは、Markdownの書き方については、[基礎編](/post/write-p
 
 例えば今書いている文章をMouで見るとこんな感じです。
 
-<img src="/images/2013/07/9862465f269e9a789b7039573acd90ab.png" alt="プラグインを使わずにmarkdownでwordpressのブログを更新する 実践編 md" title="プラグインを使わずにmarkdownでwordpressのブログを更新する（実践編）.md.png" border="0" width="600" />
+  
+
+![プラグインを使わずにmarkdownでwordpressのブログを更新す](/images/2013/07/9862465f269e9a789b7039573acd90ab.png)
+
+
 
 他のエディタでもある程度はハイライトしてくれるのですが、  
 **Mouのシンタックスハイライトは完璧**です（主観）。  
@@ -97,7 +105,11 @@ Markdownに慣れていないうちは、
 
 ### Sublime Text2
 
-<img src="/images/2013/07/sublime.png" alt="Sublime" title="sublime.png" border="0" width="200" />
+  
+
+![Sublime](/images/2013/07/sublime.png)
+
+
 
 言わずもがな知れたSublime Text2(ST2)です。  
 こちらは**削除や置換など、文章の編集にめっぽう強い**ので、
@@ -117,7 +129,11 @@ WordPressのプラグインを利用せずにMarkdownでブログ記事を書く
 MouでMarkdownで書いたものを、  
 HTMLとしてコピー(`⌘+Alt+c`)して、MarsEditに貼り付けます。
 
-<img src="/images/2013/07/11f4946e5875d625bf0b353a51072d94.png" alt="スクリーンショット 2013 07 14 18 19 11" title="スクリーンショット 2013-07-14 18.19.11.png" border="0" width="600" />
+  
+
+![スクリーンショッ](/images/2013/07/11f4946e5875d625bf0b353a51072d94.png)
+
+
 
 貼り付けると、ブログでのプレビューが表示されます。
 

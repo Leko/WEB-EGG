@@ -97,7 +97,11 @@ npm i -g dredd
 
 テストの環境のセットアップは、ApiaryのTestsタブに記述されています。
 
-<img src="/images/2015/12/Screen-Shot-2015-12-06-at-12.03.57-AM.png" alt="Screen Shot 2015 12 06 at 12 03 57 AM" title="Screen Shot 2015-12-06 at 12.03.57 AM.png" border="0" width="598" height="290" />
+  
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-06-at-12.03.57-AM.png)
+
+
 
 Goのサーバを起動しておき、書かれているとおりにコマンドを実行します。
 
@@ -106,12 +110,20 @@ dredd init # 省略,対話CLIがあります
 dredd
 ```
 
-<img src="/images/2015/11/Screen-Shot-2015-12-06-at-1.25.59-AM.png" alt="APIドキュメントでAPIサーバをテストする" width="909" height="174" class="alignnone size-full wp-image-820" />
+  
+
+![APIドキュメントでAPIサーバをテストする](/images/2015/11/Screen-Shot-2015-12-06-at-1.25.59-AM.png)
+
+
 
 ↑こんな感じになります。  
 さらに、 **Apiaryの言うとおりにdredd initしておくと、そのテストの通知結果が集約される** ようになっています。
 
-<img src="/images/2015/11/Screen-Shot-2015-12-06-at-1.27.02-AM.png" alt="APIドキュメントでAPIサーバをテストする" width="1600" height="1020" class="alignnone size-full wp-image-821" />
+  
+
+![APIドキュメントでAPIサーバをテストする](/images/2015/11/Screen-Shot-2015-12-06-at-1.27.02-AM.png)
+
+
 
 立てておいたGoのサーバに対してHTTPリクエストが飛び、どんなレスポンスが返ってきたかをテストしてくれます。  
 これで実装が変わっても、ドキュメントが変わってもコマンド一つで整合性を確認できます。
@@ -125,13 +137,29 @@ Githubと連携する
 反映漏れや食い違いを起こさないために、  
 APIドキュメントをGitで管理して、GithubのmasterにpushされたらApiaryのドキュメントに自動反映されるようにします。
 
-Apiaryのアカウント設定を開き、Githubのアカウントと紐付けます。 <img src="/images/2015/12/Screen-Shot-2015-12-05-at-2.51.19-PM.png" alt="APIドキュメントでAPIサーバをテストする" title="Screen Shot 2015-12-05 at 2.51.19 PM.png" border="0" width="423" height="252" />
+Apiaryのアカウント設定を開き、Githubのアカウントと紐付けます。   
 
-Apiaryのドキュメントの設定を開き、Githubと連携させる設定をしておきます <img src="/images/2015/11/Screen-Shot-2015-12-06-at-1.05.14-AM.png" alt="Screen Shot 2015-12-06 at 1.05.14 AM" width="1742" height="930" class="alignnone size-full wp-image-819" />
+![APIドキュメントでAPIサーバをテストする](/images/2015/12/Screen-Shot-2015-12-05-at-2.51.19-PM.png)
 
-Githubのリポジトリの設定を開き、Apiaryを選択します。 <img src="/images/2015/12/Screen-Shot-2015-12-05-at-2.52.55-PM.png" alt="APIドキュメントでAPIサーバをテストする" title="Screen Shot 2015-12-05 at 2.52.55 PM.png" border="0" width="392" height="224" />
 
-domainのところには、Apiaryのドメインを設定します。写真の太字の箇所が入力すべき値です。 <img src="/images/2015/12/Screen-Shot-2015-12-05-at-2.53.30-PM.png" alt="Screen Shot 2015 12 05 at 2 53 30 PM" title="Screen Shot 2015-12-05 at 2.53.30 PM.png" border="0" width="598" height="222" />
+
+Apiaryのドキュメントの設定を開き、Githubと連携させる設定をしておきます   
+
+![Scree](/images/2015/11/Screen-Shot-2015-12-06-at-1.05.14-AM.png)
+
+
+
+Githubのリポジトリの設定を開き、Apiaryを選択します。   
+
+![APIドキュメントでAPIサーバをテストする](/images/2015/12/Screen-Shot-2015-12-05-at-2.52.55-PM.png)
+
+
+
+domainのところには、Apiaryのドメインを設定します。写真の太字の箇所が入力すべき値です。   
+
+![Scree](/images/2015/12/Screen-Shot-2015-12-05-at-2.53.30-PM.png)
+
+
 
 まとめ
 ----------------------------------------
