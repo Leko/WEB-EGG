@@ -11,7 +11,10 @@
     "lint:md:fix": "textlint --fix source/post/*.md",
     "build": "webpack --config ./webpack.config.js --bail -p",
     "develop": "webpack --config ./webpack.config.js --watch -d --progress --colors",
-    "build:cache": "sw-precache --config sw-precache-config.js"
+    "build:blog": "bundle exec middleman build",
+    "build:cache": "sw-precache --config sw-precache-config.js",
+    "deploy:netlify": "$(npm bin)/netlify -t $NETLIFY_ACCESS_TOKEN deploy -s $NETLIFY_SITE_ID",
+    "deploy": "npm run build:blog && npm run build:cache && npm run deploy:netlify --"
   },
   "repository": {
     "type": "git",
