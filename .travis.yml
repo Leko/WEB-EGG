@@ -22,11 +22,11 @@ script:
 deploy:
   - skip_cleanup: true
     provider: script
-    script: NODE_ENV=production RAILS_ENV=production npm run deploy
+    script: scripts/deploy
     on:
       branch: master
   - skip_cleanup: true
     provider: script
-    script: NODE_ENV=production RAILS_ENV=production npm run deploy -- --draft
+    script: scripts/deploy --draft
     on:
       all_branches: true
