@@ -1,3 +1,4 @@
+// @flow
 export default (images) => {
   const callback = function(entries, observer) { 
     for (let entry of entries) {

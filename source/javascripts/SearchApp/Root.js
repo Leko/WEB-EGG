@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react'
 import { shallowEqual } from 'shallow-equal-object'
 import SearchApp from './SearchApp'
