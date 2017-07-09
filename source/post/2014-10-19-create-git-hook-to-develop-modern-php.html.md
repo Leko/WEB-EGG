@@ -157,8 +157,7 @@ exec 1>&2
 
 既に先駆者の方がいらっしゃったので、そちらをパクりつつ、拡張とカスタマイズを加えます。
 
-> gitのpre-commit hookを使って、綺麗なPHPファイルしかコミットできないようにする
-    
+> gitのpre-commit hookを使って、綺麗なPHPファイルしかコミットできないようにする  
 > &mdash; http://blog.manaten.net/entry/645
 
 先ほどの長いので割愛以下に、このコードを貼り付けて下さい。
@@ -273,14 +272,12 @@ PHPのプロジェクト作成と一口にとっても、色々と改良の余�
 冒頭に紹介したschemaはまだこの記事を書く前に作成されたプロジェクトなので、PSR0準拠できていません。  
 ぼちぼちと修正中です。
 
-> PHPMD – PHP Mess Detector
-    
+> PHPMD – PHP Mess Detector  
 > &mdash; http://phpmd.org/
 
 <!---->
 
-> The PHP Coding Standards Fixer for PSR-1 and PSR-2
-    
+> The PHP Coding Standards Fixer for PSR-1 and PSR-2  
 > &mdash; http://cs.sensiolabs.org/
 
 <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">

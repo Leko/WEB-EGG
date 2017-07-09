@@ -173,10 +173,8 @@ settingsの中にある「Integrations」タブを開き、「GitHub Pull Reques
 
 **と思ったのですが** 、オープンソースのリポジトリは常にポーリングしているのでPR連携は提供してませんよ、とのこと。
 
-> Note: If you added your repository by clicking Add Open Source Repo, Code Climate will always check for new commits based a poll or when you manually trigger a refresh. We don't yet support service hooks for these types of repositories.
-    
-> &mdash; [GitHub Pull Request Integration](http://docs.codeclimate.com/article/213-github-pull-request-integration)
-    
+> Note: If you added your repository by clicking Add Open Source Repo, Code Climate will always check for new commits based a poll or when you manually trigger a refresh. We don't yet support service hooks for these types of repositories.  
+> &mdash; [GitHub Pull Request Integration](http://docs.codeclimate.com/article/213-github-pull-request-integration)  
 > &mdash; [How do I install Code Climate's Github service hook?](http://docs.codeclimate.com/article/222-how-do-i-install-code-climates-github-service-hook)
 
 ついでにCode climateもSlackと連携させます。
@@ -234,8 +232,7 @@ Githubにプルリクエストを作ってマージし、Code climateにカバ�
 ということで早速導入。  
 [解説記事](http://masutaka.net/chalow/2015-07-28-1.html)の内容でハマったところがあったので、あらためて記事として手順を残します。
 
-> このように circle.yml の deployment section を変更します。
-    
+> このように circle.yml の deployment section を変更します。  
 > https://github.com/masutaka/masutaka-29hours/commit/0ba9ef03348568baaa5cf271d4f6e41305f8fdfe
 
 とありますが、ここでハマりました。  

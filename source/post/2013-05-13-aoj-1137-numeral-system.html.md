@@ -101,20 +101,16 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
             }
             return cache[num];
         }
-    }();
-    
+    }();  
     var inputs = input.replace(/r/g, '').split("n"),
-        n;
-    
-    n = parseInt(inputs.shift());
-    
+        n;  
+    n = parseInt(inputs.shift());  
     for ( var i = 0; i < n; i++ ) {
         var line = inputs.shift().split(' '),
             a = decodeMCXI(line[0]),
             b = decodeMCXI(line[1]);
         console.log(encodeMCXI(a+b));
-    }
-    
+    }  
 
 })(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```

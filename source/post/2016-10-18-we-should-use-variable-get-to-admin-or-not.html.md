@@ -90,8 +90,7 @@ AdminのロールIDは3固定らしい（？）
 
 Drupalのロール一覧テーブルには管理者フラグ的なものもないし、Drupalが提供しているロールIDに相当する定数もないならどないせえっちゅうねん。という感じなんですが、どうやらAdminのロールIDは3で固定らしい（？）という情報が出てきました。
 
-> unless you install Drupal in your custom installation profile and modify the administrator role there, the rid or administrator will be always 3.
-    
+> unless you install Drupal in your custom installation profile and modify the administrator role there, the rid or administrator will be always 3.  
 > &mdash; <http://drupal.stackexchange.com/a/44735>
 
 本当…？ それ本当なら定数が提供されてるものじゃない…？
@@ -108,10 +107,8 @@ user_has_role関数はロールIDが必要なのでなのでロールIDを隠蔽
 ロール名は編集可能なのでuser_role_load_by_name関数を使うとどハマりする恐れがある
 ----------------------------------------
 
-> One liner would be:
-    
-> `$rid = array_search('administrator', user_roles());`
-    
+> One liner would be:  
+> `$rid = array_search('administrator', user_roles());`  
 > &mdash; <http://drupal.stackexchange.com/a/50437>
 
 IDが駄目なら名前で探せって、結局マジックナンバー解消してないじゃん…  

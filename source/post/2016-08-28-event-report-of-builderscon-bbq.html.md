@@ -41,8 +41,7 @@ tags:
   <blockquote cite="https://www.facebook.com/events/1091601347586795/permalink/1126706224076307/" class="fb-xfbml-parse-ignore">
     <p>
       &#x713c;&#x304d;&#x5e2b;&#x304c;&#x65ad;&#x5ff5;&#x3057;&#x307e;&#x3057;&#x305f;&#x3002;&#x3053;&#x308c;&#x304b;&#x3089;&#x5148;&#x306f;&#x8089;&#x304c;&#x3067;&#x307e;&#x305b;&#x3093;&#x3002;
-    </p>Posted by 
-    
+    </p>Posted by   
     <a href="#" role="button">いしだ じゅんいち</a> on
 
 <a href="https://www.facebook.com/events/1091601347586795/permalink/1126706224076307/">Friday, August 26, 2016</a>

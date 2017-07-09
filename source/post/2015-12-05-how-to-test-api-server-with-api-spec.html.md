@@ -87,8 +87,7 @@ APIドキュメントでAPIサーバをテストする
 早速テストしてみます。テストにはApiaryが提供するdreddというツールを使用します。  
 導入の注意点として、**Dredd周りのツールがNode4や5に対応しておらず、dreddを入れるためにはnode0.10系が必要になります。** 古い…。
 
-> [Error compiling on Mac OS X 10.10.5 #287](https://github.com/apiaryio/dredd/issues/287)
-    
+> [Error compiling on Mac OS X 10.10.5 #287](https://github.com/apiaryio/dredd/issues/287)  
 > [Support for node v4.X #292](https://github.com/apiaryio/dredd/issues/292)
 
 ```shell

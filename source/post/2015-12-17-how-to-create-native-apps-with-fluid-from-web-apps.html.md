@@ -30,8 +30,7 @@ Google AnalyticsのiOS版がなぜか「Temporary unavailable」で何も情報�
 早速やってきます。  
 なお動作確認は Mac OSX 10.10.5 Yosemite にて行っています。
 
-> 参考
-    
+> 参考  
 > [チャットワークをMacのアプリとして動かしてみる](http://qiita.com/masarufuruya/items/8117c26859c4d41d482f)
 
 Fluidを落とす

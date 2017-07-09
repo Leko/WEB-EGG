@@ -98,8 +98,7 @@ export default class TextToSpeech extends Component {
   }
 
   stopper (playerVars, e) {
-    if (e.data !== 1) return
-    
+    if (e.data !== 1) return  
     setTimeout(() => {
       e.target.pauseVideo()
     }, (playerVars.end - playerVars.start) * 1000)
@@ -116,12 +115,10 @@ export default class TextToSpeech extends Component {
       loop: 0,
       modestbranding: 1,
       origin: location.origin
-    }
-    
+    }  
     if (this.props.text === null) {
       return base
-    }
-    
+    }  
     switch (this.props.text) {
       case '勝ったな、ガハハ':
         return Object.assign(base, { start: 2.3, end: 4 })

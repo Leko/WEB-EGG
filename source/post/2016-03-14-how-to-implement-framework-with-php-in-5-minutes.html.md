@@ -182,8 +182,7 @@ phpdiを採用しました。
 という感じでした  
 中くらいの人気度、コードベースでなく設定ベースなところからphpdiを採用します
 
-> 蛇足。悩んだのでSlimを調べてみたところ、[container-interop/container-interop](https://github.com/container-interop/container-interop)
-    
+> 蛇足。悩んだのでSlimを調べてみたところ、[container-interop/container-interop](https://github.com/container-interop/container-interop)  
 > というライブラリが使われていました。幅広く抽象的なインタフェースだと思います。要メモ
 
 ### テンプレートエンジン
