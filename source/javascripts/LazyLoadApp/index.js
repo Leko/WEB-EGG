@@ -5,6 +5,9 @@ export default function lazyLoader (images: NodeList<HTMLElement>): void {
       if (entry.isIntersecting && !entry.target.src) {
         let target = entry.target
         target.setAttribute('src', target.getAttribute('data-src'))
+        target.addEventListener('load', () => {
+          target.removeAttribute('style')
+        })
       }
     }
   }
