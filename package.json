@@ -9,9 +9,10 @@
     "lint:flow": "flow",
     "lint:md": "textlint -f pretty-error source/post/*.md",
     "lint:md:fix": "textlint --fix source/post/*.md",
-    "build": "webpack --config ./webpack.config.js --bail -p",
     "develop": "webpack --config ./webpack.config.js --watch -d --progress --colors",
-    "build:cache": "sw-precache --config sw-precache-config.js"
+    "build": "webpack --config ./webpack.config.js --bail -p",
+    "build:cache": "sw-precache --config sw-precache-config.js",
+    "deploy": "netlify -t $NETLIFY_ACCESS_TOKEN deploy -s $NETLIFY_SITE_ID"
   },
   "repository": {
     "type": "git",

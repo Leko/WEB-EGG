@@ -1,9 +1,6 @@
-bundle exec middleman build --clean
+export NODE_ENV=production
+export RAILS_ENV=production
+
+# bundle exec middleman build
 npm run build:cache
-zip -r blog.zip build
-curl -v \
-  -H "Content-Type: application/zip" \
-  -H "Authorization: Bearer $NETLIFY_ACCESS_TOKEN" \
-  -T blog.zip \
-  https://api.netlify.com/api/v1/$NETLIFY_SITE_ID/deploys
-rm blog.zip
+npm run deploy -- $@
