@@ -38,3 +38,9 @@ a {
 .breadcrumb-item {
   font-size: 14px;
 }
+
+.oneline {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
