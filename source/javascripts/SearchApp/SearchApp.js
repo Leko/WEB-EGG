@@ -71,7 +71,7 @@ export default class SearchApp extends Component<void, Props, State> {
 
   render () {
     return (
-      <form className='form-inline search'>
+      <form className='search'>
         <div className='input-group'>
           <div className='input-group-addon'>
             <i className='fa fa-search' />
