@@ -16,11 +16,12 @@ type Props = {
 type State = {
   keyword: string,
   cursor: number,
-  inFocus: boolean,
+  shown: boolean,
 }
 
 export default class SearchApp extends Component<void, Props, State> {
   state: State
+  handleClose: Function
   handleChange: Function
   handleKeyPress: Function
   handleBlur: Function
@@ -31,10 +32,11 @@ export default class SearchApp extends Component<void, Props, State> {
     this.state = {
       keyword: '',
       cursor: -1,
-      inFocus: false,
+      shown: false,
     }
     this.handleChange = debounce(this.handleChange.bind(this), 200)
     this.handleKeyPress = debounce(this.handleKeyPress.bind(this), 200)
+    this.handleClose = debounce(this.handleClose.bind(this), 200)
     this.handleBlur = debounce(this.handleBlur.bind(this), 200)
     this.handleFocus = debounce(this.handleFocus.bind(this), 200)
   }
@@ -53,12 +55,16 @@ export default class SearchApp extends Component<void, Props, State> {
     // TODO
   }
 
+  handleClose () {
+    this.setState({ shown: false })
+  }
+
   handleBlur () {
-    this.setState({ inFocus: false, cursor: -1 })
+    this.setState({ cursor: -1 })
   }
 
   handleFocus () {
-    this.setState({ inFocus: true, cursor: -1 })
+    this.setState({ shown: true, cursor: -1 })
   }
 
   setCursor (index: number) {
@@ -67,7 +73,7 @@ export default class SearchApp extends Component<void, Props, State> {
 
   render () {
     return (
-      <form className='form-inline search'>
+      <form className='search'>
         <div className='input-group'>
           <div className='input-group-addon'>
             <i className='fa fa-search' />
@@ -83,11 +89,12 @@ export default class SearchApp extends Component<void, Props, State> {
             onKeyPress={this.handleKeyPress}
           />
         </div>
-        {this.state.inFocus && this.state.keyword
+        {this.state.shown && this.state.keyword
           ? (
             <div className='card'>
               <div className='card__header'>
-                <h3>Search result of '{this.state.keyword}'</h3>
+                <h3 className='oneline'>Search result of '{this.state.keyword}'</h3>
+                <button type='button' className="btn btn-link search__close" onClick={this.handleClose}>&times;</button>
               </div>
               <div className='card__body'>
                 <ol className='search-result-list'>
