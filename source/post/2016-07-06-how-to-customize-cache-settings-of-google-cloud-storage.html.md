@@ -95,24 +95,24 @@ $ curl -v http://web.timer.builderscon.io/all.css | grep -i cache
 > User-Agent: curl/7.43.0
 > Accept: */*
 >
-&lt; HTTP/1.1 200 OK
-&lt; X-GUploader-UploadID: AEnB2Uo-VyZzLzndQK4fCwxFlWUnnbZJX36oxapS-DRXklr34ke74Liu8A8_uDWimrSzjS3hWoVpUh318hW9MVFQacQrjl_ozA
-&lt; Date: Wed, 06 Jul 2016 01:56:29 GMT
-&lt; Cache-Control: public, max-age=300
-&lt; Expires: Wed, 06 Jul 2016 02:01:29 GMT
-&lt; Last-Modified: Sat, 25 Jun 2016 13:11:51 GMT
-&lt; ETag: "04730d8796a05f4ad6f95c4551e3b8bc"
-&lt; x-goog-generation: 1466860311276839
-&lt; x-goog-metageneration: 4
-&lt; x-goog-stored-content-encoding: identity
-&lt; x-goog-stored-content-length: 2225
-&lt; Content-Type: text/css
-&lt; x-goog-hash: crc32c=TTdzRQ==
-&lt; x-goog-hash: md5=BHMNh5agX0rW+VxFUeO4vA==
-&lt; x-goog-storage-class: STANDARD
-&lt; Accept-Ranges: bytes
-&lt; Content-Length: 2225
-&lt; Server: UploadServer
+< HTTP/1.1 200 OK
+< X-GUploader-UploadID: AEnB2Uo-VyZzLzndQK4fCwxFlWUnnbZJX36oxapS-DRXklr34ke74Liu8A8_uDWimrSzjS3hWoVpUh318hW9MVFQacQrjl_ozA
+< Date: Wed, 06 Jul 2016 01:56:29 GMT
+< Cache-Control: public, max-age=300
+< Expires: Wed, 06 Jul 2016 02:01:29 GMT
+< Last-Modified: Sat, 25 Jun 2016 13:11:51 GMT
+< ETag: "04730d8796a05f4ad6f95c4551e3b8bc"
+< x-goog-generation: 1466860311276839
+< x-goog-metageneration: 4
+< x-goog-stored-content-encoding: identity
+< x-goog-stored-content-length: 2225
+< Content-Type: text/css
+< x-goog-hash: crc32c=TTdzRQ==
+< x-goog-hash: md5=BHMNh5agX0rW+VxFUeO4vA==
+< x-goog-storage-class: STANDARD
+< Accept-Ranges: bytes
+< Content-Length: 2225
+< Server: UploadServer
 
 ...
 ```
@@ -135,7 +135,7 @@ Edit metadataからキャッシュの情報を書き換えられます。
 
 ```shell
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
-&lt; Cache-Control: public, max-age=30
+< Cache-Control: public, max-age=30
 ```
 
 意図したとおりになりました。
@@ -177,7 +177,7 @@ Setting metadata on gs://web.timer.builderscon.io/all.css...
 
 ```shell
 $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
-&lt; Cache-Control: public, max-age=100
+< Cache-Control: public, max-age=100
 ```
 
 意図したとおりになりました。

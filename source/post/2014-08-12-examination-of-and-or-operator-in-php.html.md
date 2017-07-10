@@ -61,10 +61,10 @@ $a = false or false  => false
 
 <ul>
   <li>
-    <code>$a = true and false =&gt; true</code>
+    <code>$a = true and false => true</code>
   </li>  
   <li>
-    <code>$a = false or true  =&gt; false</code>
+    <code>$a = false or true  => false</code>
   </li>  
 </ul>
 
