@@ -16,10 +16,12 @@ type Props = {
 type State = {
   keyword: string,
   cursor: number,
+  shown: boolean,
 }
 
 export default class SearchApp extends Component<void, Props, State> {
   state: State
+  handleClose: Function
   handleChange: Function
   handleKeyPress: Function
   handleBlur: Function
