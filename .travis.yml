@@ -25,8 +25,4 @@ deploy:
     script: scripts/deploy
     on:
       branch: master
-  - skip_cleanup: true
-    provider: script
-    script: scripts/deploy --draft
-    on:
-      all_branches: true
+ 
