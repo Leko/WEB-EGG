@@ -1,6 +1,6 @@
 ---
 title: ネイティブのPromiseより早いbluebirdのPromiseの便利機能をまとめてみた
-date: 2017-07-18T11:30:00+00:00
+date: 2017-07-18T11:30:00+09:00
 image: /images/2017/07/eyecatch-benefits-of-node-bluebird.png
 tags:
   - Nodejs
