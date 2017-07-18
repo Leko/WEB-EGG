@@ -1,5 +1,7 @@
 # WEB EGG
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Leko/WEB-EGG.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/Leko/WEB-EGG.svg?branch=master)](https://travis-ci.org/Leko/WEB-EGG)
 
 My blog templates and articles.
