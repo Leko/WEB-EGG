@@ -99,6 +99,7 @@ npmのソースを見てみたところ、内部で使用しているのは[iarn
 // \r ≒ 行頭にカーソル移動
 // スペースは消したい文字の数分だけ入れる。今回は1文字のアニメーションなので１文字で足りる。
 // `process.stdout.columns`でウィンドウ幅を取得して、その分だけスペースを出力すると行の内容がすべてクリアできる
+// https://stackoverflow.com/questions/30335637/get-width-of-terminal-in-node-js
 process.stdout.write('\r \r')
 ```
 
