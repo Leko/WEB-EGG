@@ -8,6 +8,7 @@ module.exports = {
     'build/javascripts/main.js',
     'build/stylesheets/**.css',
     'build/images/**/*.*',
+    'build/post/*.html',
   ],
   stripPrefix: 'build/'
 }
