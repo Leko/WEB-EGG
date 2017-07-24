@@ -10,7 +10,7 @@ tags:
 こんにちは。  
 とある案件でdocomoの音声合成APIを利用することが合ったのですが、  
 エーアイ版のAPIのデモを試していたら「これゆかりんの声やんけ！ と思ったら葵ちゃんもいる！」とテンションが上ってしまいました。  
-本来VOICELOIDは有償（それも安くはないお値段）なのに、docomoのAPIを介せば無料で使えるというワクワク感。  
+本来**VOICELOIDは有償（それも安くはないお値段）なのに、docomoのAPIを介せば無料**で使えるというワクワク感。  
 
 もはや仕事なんてしている場合じゃない、理解を深めなければ。ということで試してみました。
 
@@ -29,8 +29,8 @@ tags:
 
 の３名が使えることを確認できました。  
 残念ながらdocomoのAPIだけでは全ボイロは試せませんでした。  
-エーアイ版APIを提供してらっしゃる[AITalkのデモ版](http://www.ai-j.jp/demonstration/)には葵ちゃんの声があるので、APIから使えないのは残念です。  
-特に琴葉姉妹、きりたんはとても試してみたかったのでとても悔やまれますが、使いたければ買えという話なので仕方ない。
+特にエーアイ版APIを提供してらっしゃる[AITalkのデモ版](http://www.ai-j.jp/demonstration/)には葵ちゃんの声があるので、APIで使えないのが残念です。  
+とても悔やまれますが、使いたければ買えという話なので仕方ない。
 
 ### 利用規約を確認してみる
 
@@ -43,16 +43,26 @@ tags:
 
 作ったもの
 -----------------------------------------------------------------
+### 題材
+今回の記事でお借りする台詞は、  
+個人的に好きな[豚野郎さんのsm30193805](http://www.nicovideo.jp/watch/sm30193805)の"ここテン"をお借りしました。
+
+<iframe width="312" height="230" src="http://ext.nicovideo.jp/thumb/sm30193805" scrolling="no" style="border:solid 1px #ccc;" frameborder="0"><a href="http://www.nicovideo.jp/watch/sm30193805">[Watch Dogs 2] 　ゆかりさんハッキングする [VOICEROID+ゆっくり実況]</a></iframe>
+
+今回作る台本・プリセットで音声化したものが以下の音声ファイルです
+
+<audio src="/sounds/voiceloid-like-text2speech.wav" preload="auto" controls>
+
+### デモ
 とりあえず３名の声は使えるとわかったので、それら３役でかけあいができるような簡単なスクリプトを書きました。  
 [こちら](https://gist.github.com/Leko/937b97724def8de90b8fe97a3bfb639c)に公開しています。  
 README通りにセットアップを済ませ、
 
 ```js
-./playbook-to-voices xxx.csv
+./playbook-to-voices 台本.csv -p 台本preset.csv -o ./音声.wav
 ```
 
 と実行すると、CSVで書いた台本が音声ファイル（.wav）として入手できます。  
-ごく簡素なデモなので、生成した音声ファイルのパス、フォーマットの指定などはいじれないのでご了承下さい。
 
 下準備
 -----------------------------------------------------------------
@@ -60,16 +70,18 @@ APIを利用するためにやや学習コストが発生します。各要素�
 
 ### 利用するAPI
 既に名前が出てきていますが、利用するAPIはdocomo Developer APIの[音声合成API エーアイ REST SSML版](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)です。  
-他のAPIも声を確かめてみたのですが、ボイロの声はなかったので、このAPIだけを利用します。
+他のAPIも試してみたのですが、ボイロの声ではなかったので、この記事では上記APIだけを利用します。
 
 ### docomo developerに登録してAPIキーを入手
-APIを使うためにはAPIキーが必要です。  
+docomoAPIを使うためにはAPIキーが必要です。  
 会員登録とアプリケーションの利用申請を出して、APIキーを入手しておいて下さい。
 
 ### SSMLとはなんぞや
 さらっとSSML版と書きましたが、SSMLとは[Speech Synthesis Markup Language](https://www.w3.org/TR/speech-synthesis11/)の略です。  
 音声合成のためのマークアップ言語です。  
-微妙にフォーマットが違いますが、Amazon Polly(Alexa)などでも使用されている仕様だそうです。
+微妙にフォーマットが違いますが、Amazon Echoなどでも使用されている仕様だそうです。
+
+> &mdash; [Amazon Echoで「バルス」を実現する - Qiita](http://qiita.com/sparkgene/items/cf4ca976dbf09b45971d)
 
 詳しくはAPIを叩くときに解説しますが、  
 声の種類や話す内容だけではなく、**よみがな（ルビ）やイントネーションを操作することも可能**なパワフルな言語です。  
@@ -78,35 +90,28 @@ APIを使うためにはAPIキーが必要です。
 
 ### 台本を作る
 とはいえ、最近素のHTMLで愚直なマークアップする機会もなかなか減っていると思います。XMLベースの言語って冗長で面倒くさいですし。  
-ということで、ExcelやGoogle Spreadsheetなどで編集することを想定に、CSVの「台本」を受け取って音声化する、ということを試してみます。  
-調声かなり難しかったので、デフォ値にこだわらずに調声のプリセットも与えられるようにして、細かい調声は利用者側でできるようにします。
-
+ということで、ExcelやGoogle Spreadsheetなどで編集することを想定に、**CSVの「台本」を受け取ってSSMLに変換して音声化**してみます。  
 台本のフォーマットはこんな感じです。  
-個人的に好きな[豚野郎さんのsm30193805](http://www.nicovideo.jp/watch/sm30193805)の"ここテン"を台本化してみました。
 
-```csv
-結月ゆかり,,皆さんこんにちは、結月ゆかりです
-弦巻マキ,,"<phoneme ph=""ツル’／マ’キ"">弦巻</phoneme>マキです"
-ゆっくり霊夢,,ゆっくり霊夢です
-結月ゆかり,,突然ですけど私、スーパーハカーになりました！
-ゆっくり霊夢,,この人いきなり何言ってんだ…
-弦巻マキ,,なろうと思って簡単になれるものじゃないぞ
-弦巻マキ,,あとハカーじゃなくてハッカーね
-結月ゆかり,,ゆかりさんの華麗なハッキング技術で
-結月ゆかり,,お前たちの個人情報を丸裸にしてやる！
-結月ゆかり,,具体的にはPCのDドライブの中身を晒してやる！
-```
+<iframe height="400" class="full-width" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK-kMNHZuTHF55cC2JWa-NyUmlOlFyqLtFPVjTEXykkyQNutvg_OQfgq1kDl0zEyz7vbu8Pk1m9sYh/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
-**既に嫌な予感MAX**ななんかが出てきていますが、「弦巻マキ」の発音がおかしくて調整した結果です。  
+「１列目はボイス名、２列目は調声プリセット（デフォは空）、３列目は喋る内容」という構成にしました。  
+
+**既に嫌な予感MAX**な記述が出てきていますが、**字幕と喋っている音声が違う**箇所と、「弦巻マキ」の発音がおかしくて**イントネーションを弄った**結果です。  
 デフォルトだと「小比類巻」みたいな山なりの発音になってしまうので、ツルマキの部分を「うずまき」的な発音に寄せた調声です。  
 詳しくはマキマキのところで後述します。
 
-「１列目はボイス名、２列目は調声プリセット（デフォは空）、３列目は喋る内容」という構成にしました。  
-ボイロ動画を作るなら、背景やら字幕タイミング、立ち絵プリセットだったり差分プリセットだったりと色々必要になってしまうと思うのですが、今回は**音声のみ**に絞って実装します。
+ボイロ動画を作るなら、背景やら字幕タイミング、立ち絵プリセットだったり差分プリセットだったりと色々必要になってしまうと思うのですが、今回はシンプルに**音声のみ**に絞って実装します。
 
-なお、上記の台本を音声化したものが以下のファイルになります。
+### プリセットを作る
+調声がかなり難しかったので、デフォ値にこだわらずに調声のプリセットも与えられるようにして、利用者側で細かく調声できるようにします。  
+調声用のプリセットは以下の通りです
 
-<audio src="/sounds/voiceloid-like-text2speech.wav" preload="auto" controls>
+<iframe height="230" class="full-width" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK-kMNHZuTHF55cC2JWa-NyUmlOlFyqLtFPVjTEXykkyQNutvg_OQfgq1kDl0zEyz7vbu8Pk1m9sYh/pubhtml?gid=2080442496&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+
+キャラ名、プリセット名、喋るスピード、ピッチ、抑揚、ボリューム　の順です。  
+空の場合はデフォ値を使います。  
+プリセット名が空の場合は、プリセットなし（デフォルト）の調声を変更します
 
 VOICELOIDっぽい声を生成する
 -----------------------------------------------------------------
@@ -136,7 +141,10 @@ VOICELOIDっぽい声を生成する
 </speak>
 ```
 
-長いので省略しました。最低限必要なのはこれらのタグだと思います。
+長いので省略しました。  
+お察しの通りさほど複雑ではないので、SSMLを生成するロジック自体は[gist](https://gist.github.com/Leko/937b97724def8de90b8fe97a3bfb639c#file-playbook-to-voices)の方を見ていただければと思います。  
+記事ではSSMLで使うタグの説明にとどめます。  
+ボイロ化に最低限必要なのは、これらのタグでした。
 
 |タグ名|説明|
 |---|---|
@@ -144,9 +152,6 @@ VOICELOIDっぽい声を生成する
 |voice|声の種類を指定する。指定可能な値は後述|
 |prosody|日本語だと[韻律](https://ja.wikipedia.org/wiki/%E9%9F%BB%E5%BE%8B_(%E8%A8%80%E8%AA%9E%E5%AD%A6))というそう。ピッチや抑揚、スピードを制御できるので調声するために必須|
 |phoneme|日本語だと[音素](https://ja.wikipedia.org/wiki/%E9%9F%B3%E7%B4%A0)というそう。その言葉に対する発音の仕方を定義できます。イントネーションを変えたい場合に使用可能|
-
-お察しの通り複雑ではないので、SSMLを生成するロジック自体は[gist](https://gist.github.com/Leko/937b97724def8de90b8fe97a3bfb639c#file-playbook-to-voices-L48)の方を見ていただければと思います。  
-記事ではSSMLで使うタグの説明にとどめます。
 
 `voice`のname属性に与えられる値のうち、ボイロ製品に該当するのは
 
@@ -167,15 +172,16 @@ VOICELOIDっぽい声を生成する
 * `volume`（音量）
 
 です。  
-これらを調整するだけでかなりそれっぽくなります。詳しくは公式のドキュメントを読んで下さい。
+これらを調整するだけでかなりそれっぽくなります。詳しくは[公式のAPIドキュメント](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)を読んで下さい。
 
 `phoneme`のph属性には[JEITAカナ](http://www.jeita.or.jp/cgi-bin/standard/pdf.cgi?jk_n=1408&amp;jk_pdf_file=20110307080703_8FnXHkG4Y0.pdf')という仕様にもとづいた値が指定可能です。  
-これがまーぁ難しい。ドキュメントが読みづらく、pdfに書かれている仕様が100％はカバーされていないようで、何が使えて何が使えないのかわからない。  
-完全に手探りでほしいイントネーションを探り当てる必要があるので、よほど気になる発音でない限りは触れないほうが無難だと思います。
+これが**めちゃくちゃ難しい**。何が難しいかって、ドキュメントを読み解くのに一苦労で、なおかつpdfに書かれている仕様が100％はカバーされていないようで、何が使えて何が使えないのかがわからない。  
+完全に手探りで、欲しいイントネーションを探り当てる必要があるので、よほど気になる発音でない限りは触れないほうが無難だと思います。
 
 ### 音声合成APIを叩く
 SSMLが作れたら、APIを叩きます。
-APIを叩くのは、よくあるPOSTリクエストです。リクエストボディには先程生成したSSMLを与えます。
+APIを叩くのは、よくあるPOSTリクエストです。詳細は[公式のAPIドキュメント](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)に記載があります。  
+リクエストボディには先程生成したSSMLを与えます。
 
 ```js
 const querystring = require('querystring')
@@ -202,20 +208,20 @@ Content-TypeはSSMLなので良いとして、Acceptの`audio/L16`ってなん�
 音声フォーマットなのですが、これが音声に詳しくない人（私）にとっては曲者だったので説明します
 
 ### audio/l16(PCM音源)をwav形式に変換する
-audio/l16（以降PCM）というのは、16bitのリニアPCMと呼ばれるオーディオコーデックの形式です。  
+audio/l16（以降PCM）というのは、16bitのリニアPCMと呼ばれる音声ファイルの形式です。  
 
 > &mdash; [PCM(ぴーしーえむ)とは - コトバンク](https://kotobank.jp/word/PCM-7659)
 
 > &mdash; [ＰＣＭの基礎知識](http://www.hikari-ongaku.com/study/pcm.html)
 
-.wavとPCMの大きな違いは、メタデータの有無です。  
+**.wavとPCMの大きな違いは、メタデータの有無**です。  
 
-PCMはただの音声波形にすぎず、「サンプリングレート」や「ビットレート」などの情報がファイル自体に含まれていません。  
-そうすると、音声プレイヤーなどは与えられた音声波形をどう再生したら良いかが分からないので、意図したとおり再生されないなどの現象が起こります。  
-一方WAVEファイルの中にはそれらのメタデータ＋PCMが含まれているので、音声として正しく再生可能になります。
+PCMはただの音声波形にすぎず、「サンプリングレート」や「ビットレート」などの情報がファイル自体には含まれていません。  
+そうすると、音声プレイヤーやコンバータなどは与えられた音声波形をどう扱えば良いかが分からず、期待した通りに再生/変換されないなどの現象が起こります。  
+一方WAVEファイルの中にはそれらのメタデータ＋PCMが含まれているので、音声として期待した通りに再生可能になります。
 
-pcm単体では扱いにくいデータなので、ffmpegで.wavに変換してしまいましょう。  
-幸いpcmの詳細はドキュメントに記載されているので、ちゃちゃっと変換してしまいます。
+pcm単体では扱いにくいので、ffmpegで.wavに変換してしまいましょう。  
+幸いpcmのメタデータ詳細は[公式のAPIドキュメント](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)に記載されているので、ちゃちゃっと変換してしまいます。
 
 ```js
 const fs = require('fs')
@@ -244,9 +250,10 @@ const toWav = async (pcmPath) => {
 }
 ```
 
-`inputOptions`と`inputFormat`が無いとまさしく変換されません。  
-なぜなら、先程説明したとおりpcmにはメタデータが含まれていないからです。  
-なのでそれらの値を外部から明示的に指定する必要があります。
+`inputOptions`と`inputFormat`が無いと期待通りに変換されません。  
+キュルキュルと早回し再生しているかのような音になってしまいます。  
+なぜなら、先程説明したとおり**pcmにはメタデータが含まれていない**からです。  
+なのでそれらの値を**外部から明示的に指定する**必要があります。
 
 吐き出されたwavは汎用的なフォーマットなので、だいたいのPCで再生可能だと思います。  
 
@@ -275,7 +282,7 @@ const toWav = async (pcmPath) => {
 
 ```xml
     <voice name="maki">
-        <prosody rate="1.2">
+        <prosody rate="1.4">
             <phoneme ph="ツル’／マ’キ">弦巻</phoneme>マキです
         </prosody>
     </voice>
@@ -283,12 +290,12 @@ const toWav = async (pcmPath) => {
 
 ### 月読アイボイスを試してみる
 ゆっくり霊夢（Softalk）はWeb APIがなかったので、代わりにアイちゃんに喋ってもらいました。  
-これは似せるもなにもないので、デフォルトでいってます。  
+これは似せるもなにもないので、適当に合わせています。  
 アイちゃんは声自体の癖が強めなので、どう調声してもだいたいアイちゃんに聞こえると思います。
 
 ```xml
     <voice name="reina">
-        <prosody rate="1">ゆっくり霊夢です</prosody>
+        <prosody rate="1.4">ゆっくり霊夢です</prosody>
     </voice>
 ```
 
@@ -296,12 +303,18 @@ const toWav = async (pcmPath) => {
 さいごに
 -----------------------------------------------------------------
 
-```xml
-    <voice name="maki">
-        <prosody range="2.0" pitch="2.0" rate="0.5">
-            グレートエレキファイアー
-        </prosody>
-    </voice>
+```csv
+voice,preset,text
+弦巻マキ,ｾﾔﾅｰ,グレートエレキファイア
+```
+
+```csv
+voice,name,rate,pitch,range,volume
+弦巻マキ,ｾﾔﾅｰ,0.5,2.0,2.0,
+```
+
+```
+./playbook-to-voices グレートエレキファイア.csv -p グレートエレキファイア_preset.csv -o ./talk.wav
 ```
 
 <audio src="/sounds/voiceloid-like-text2speech-great-elechi-fire.wav" preload="auto" controls>
