@@ -27,6 +27,14 @@
   h6 {
     font-size: $font-size-normal;
   }
+  iframe {
+    border: 0;
+    max-width: 100%;
+
+    &.full-width {
+      width: 100%;
+    }
+  }
   hr {
     margin: 3em 0;
     background-color: $base-mellow;
