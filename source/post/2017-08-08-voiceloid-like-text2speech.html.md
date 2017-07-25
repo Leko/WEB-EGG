@@ -220,8 +220,6 @@ const Promise = require('bluebird')
 const ffmpeg = require('fluent-ffmpeg')
 
 const unlink = Promise.promisify(fs.unlink)
-const readFile = Promise.promisify(fs.readFile)
-const writeFile = Promise.promisify(fs.writeFile)
 
 const toWav = async (pcmPath) => {
   const destPath = pcmPath + '.wav'
@@ -241,7 +239,7 @@ const toWav = async (pcmPath) => {
 }
 ```
 
-PCMファイルについてや、`inputOptions`と`inputFormat`などについては別途詳細を書いてますので、そちらの記事をご確認下さい。
+PCMファイルについての説明や、変換処理については別途記事を書いてますので、そちらもあわせてご確認下さい。
 
 > &mdash; [ffmpegでPCM音源をWAVE形式に変換するときにハマったこと | WEB EGG](https://blog.leko.jp/post/how-to-convert-pcm-to-wav-with-ffmpeg/)
 
