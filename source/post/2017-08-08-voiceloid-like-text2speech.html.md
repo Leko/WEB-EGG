@@ -243,6 +243,8 @@ const toWav = async (pcmPath) => {
 
 PCMファイルについてや、`inputOptions`と`inputFormat`などについては別途詳細を書いてますので、そちらの記事をご確認下さい。
 
+> &mdash; [ffmpegでPCM音源をWAVE形式に変換するときにハマったこと | WEB EGG](https://blog.leko.jp/post/how-to-convert-pcm-to-wav-with-ffmpeg/)
+
 まとめ
 ------------------------------------------
 
