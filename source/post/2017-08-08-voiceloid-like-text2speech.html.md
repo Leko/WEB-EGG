@@ -1,6 +1,7 @@
 ---
 title: docomoの音声合成APIを利用して無料でVOICELOIDっぽい声を生成してみる
 date: 2017-08-08 10:30 JST
+image: /images/2017/08/eyecatch-voiceloid-like-text2speech.png
 tags:
 - Nodejs
 - 音声合成
@@ -210,16 +211,6 @@ Content-TypeはSSMLなので良いとして、Acceptの`audio/L16`ってなん�
 ### audio/l16(PCM音源)をwav形式に変換する
 audio/l16（以降PCM）というのは、16bitのリニアPCMと呼ばれる音声ファイルの形式です。  
 
-> &mdash; [PCM(ぴーしーえむ)とは - コトバンク](https://kotobank.jp/word/PCM-7659)
-
-> &mdash; [ＰＣＭの基礎知識](http://www.hikari-ongaku.com/study/pcm.html)
-
-**.wavとPCMの大きな違いは、メタデータの有無**です。  
-
-PCMはただの音声波形にすぎず、「サンプリングレート」や「ビットレート」などの情報がファイル自体には含まれていません。  
-そうすると、音声プレイヤーやコンバータなどは与えられた音声波形をどう扱えば良いかが分からず、期待した通りに再生/変換されないなどの現象が起こります。  
-一方WAVEファイルの中にはそれらのメタデータ＋PCMが含まれているので、音声として期待した通りに再生可能になります。
-
 pcm単体では扱いにくいので、ffmpegで.wavに変換してしまいましょう。  
 幸いpcmのメタデータ詳細は[公式のAPIドキュメント](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)に記載されているので、ちゃちゃっと変換してしまいます。
 
@@ -250,12 +241,7 @@ const toWav = async (pcmPath) => {
 }
 ```
 
-`inputOptions`と`inputFormat`が無いと期待通りに変換されません。  
-キュルキュルと早回し再生しているかのような音になってしまいます。  
-なぜなら、先程説明したとおり**pcmにはメタデータが含まれていない**からです。  
-なのでそれらの値を**外部から明示的に指定する**必要があります。
-
-吐き出されたwavは汎用的なフォーマットなので、だいたいのPCで再生可能だと思います。  
+PCMファイルについてや、`inputOptions`と`inputFormat`などについては別途詳細を書いてますので、そちらの記事をご確認下さい。
 
 まとめ
 ------------------------------------------
@@ -320,3 +306,11 @@ voice,name,rate,pitch,range,volume
 <audio src="/sounds/voiceloid-like-text2speech-great-elechi-fire.wav" preload="auto" controls>
 
 ｾﾔﾅｰしたかった
+
+---
+
+アイキャッチ画像に使用した立ち絵はこちらからお借りしました。
+
+> &mdash; [結月ゆかり 動画用素材 / 柚子胡椒 さんのイラスト - ニコニコ静画 (イラスト)](http://seiga.nicovideo.jp/seiga/im5449281)
+
+> &mdash; [弦巻マキ 動画用素材 / 柚子胡椒 さんのイラスト - ニコニコ静画 (イラスト)](http://seiga.nicovideo.jp/seiga/im5517795)
