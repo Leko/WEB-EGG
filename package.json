@@ -44,7 +44,7 @@
     "shallow-equal-object": "^1.0.1"
   },
   "devDependencies": {
-    "almin-logger": "^5.0.0",
+    "almin-logger": "^6.0.0",
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.0",
     "babel-preset-env": "^1.5.2",
