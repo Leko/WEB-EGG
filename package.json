@@ -53,7 +53,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "dotenv": "^4.0.0",
-    "flow-bin": "^0.51.0",
+    "flow-bin": "^0.52.0",
     "flow-typed": "^2.1.2",
     "netlify-cli": "^1.2.2",
     "sw-precache": "^5.2.0",
