@@ -7,7 +7,7 @@ dsq_thread_id:
 categories:
   - イベントレポート
 tags:
-  - builderscon
+  - Builderscon
 ---
 こんにちは。[BuildersconでタイマーWeb版作った](/post/create-session-timer-of-builderscon/)れこです。  
 今回はBuildersconのBBQに参加してきました
