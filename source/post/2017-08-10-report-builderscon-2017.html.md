@@ -1,6 +1,7 @@
 ---
 title: Builderscon tokyo 2017に行ってきた
 date: 2017-08-10 10:30 JST
+image: /images/2017/08/eyecatch-report-builderscon-2017.png
 tags:
 - Builderscon
 - カンファレンス
