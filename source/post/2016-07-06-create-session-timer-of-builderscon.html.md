@@ -7,6 +7,8 @@ dsq_thread_id:
 image: /images/2016/07/099d91afa53de3892408d332de58ecbb-1.png
 categories:
   - お知らせ
+tags:
+  - Builderscon
 ---
 元 YAPC::Asia 主催の牧さん [@lestrrat](https://twitter.com/lestrrat) によるカンファレンス [Builderscon](http://builderscon.io/) の[Web版セッションタイマー](http://web.timer.builderscon.io/)を作りました。
 
