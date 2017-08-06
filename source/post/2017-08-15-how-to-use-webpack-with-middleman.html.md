@@ -78,6 +78,6 @@ activate :external_pipeline, {
 ![middleman build](/images/2017/08/middleman-build.gif)
 
 このように、middleman build時にwebpackのビルドが走り、実行完了を待ってから次の処理へ進む、という挙動になっています。  
-ということで、Middlemanにwebpackを導入することができました。
+ということで、Middlemanにwebpackを導入できました。
 
 Middlemanでサイトを作っているものの、フロントの資源管理に悩まれている時はぜひ検討してみてください。
