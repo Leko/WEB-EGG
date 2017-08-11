@@ -1,3 +1,4 @@
+
 ---
 path: /post/release-taskloud/
 title: Taskloudというアプリをリリースしました
@@ -10,7 +11,7 @@ image: /images/2014/07/Untitled-12.png
 categories:
   - お知らせ
 tags:
-  - iOSアプリ
+  - iOS
   - Taskloud
   - いちれこプロジェクト
 ---

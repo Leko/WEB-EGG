@@ -11,7 +11,7 @@ categories:
   - 問題を解決した
 tags:
   - Android
-  - iOSアプリ
+  - iOS
   - JavaScript
   - Titanium studio
 ---
