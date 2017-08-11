@@ -25,3 +25,17 @@ tags:
 
 <!--more-->
 
+(iOS) xcodebuildでReactNativeアプリをビルド
+---------------------------
+
+(iOS) xcodebuildでIPAファイルを作成
+---------------------------
+
+(Android) GradleでReactNativeアプリをビルドしてAPKファイルを作成
+---------------------------
+
+DeployGate APIでアプリをアップロード
+---------------------------
+
+Circle CIでCDしてみる
+---------------------------
