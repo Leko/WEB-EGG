@@ -11,7 +11,7 @@ tags:
 こんにちは。  
 仕事でReactNativeを触っているのですが、ステージング（DeployGate）へアプリを反映するときに、
 
-* XCodeを起動
+* Xcodeを起動
 * Product > Archiveを選択
 * しばらく待つ
 * エクスポート方法（Ad-Hoc）を選択
@@ -31,8 +31,8 @@ iOSでipaファイルを作るには、ビルドとエクスポートの２ス�
 どちらも`xcodebuild`コマンドで実行できます。
 
 ### ipaファイルを作るための下準備
-XCodeの起動は必要ありませんが、インストールは必要です。  
-インストールした上で、XCodeのコマンドラインツールもインストールしておいてください。
+Xcodeの起動は必要ありませんが、インストールは必要です。  
+インストールした上で、Xcodeのコマンドラインツールもインストールしておいてください。
 
 > &mdash; [Running On Device – React Native | A framework for building native apps using React](https://facebook.github.io/react-native/releases/0.19/docs/running-on-device-ios.html)
 
@@ -48,7 +48,7 @@ xcodebuild \
 ```
 
 プロジェクト名はおそらく問題ないと思います。  
-`{スキーム名}`は、`xcodebuild -list -project "ios/{プロジェクト名}.xcodeproj"`とコマンドを打つとスキーム名の一覧が出てくるので、そこからコピペするといいと思います。
+`{スキーム名}`は、`xcodebuild -list -project "ios/{プロジェクト名}.xcodeproj"`とコマンドを打つとスキーム名の一覧が出てくるので、そこからコピーするといいと思います。
 
 ```bash
 $ xcodebuild -list -project ios/{アプリ}.xcodeproj/
@@ -70,7 +70,7 @@ Information about project "{アプリ}":
         ...
 ```
 
-みたいな出力が得られると思うので、`Schemes:`以下に出力されている行をコピペしましょう。
+のような出力が得られると思うので、`Schemes:`以下に出力されている行をコピーしましょう。
 
 ### xcodebuildでIPAファイルを作成
 IPAファイルを作るには、以下のコマンドを入力します。
@@ -106,10 +106,10 @@ xcodebuild \
 </plist>
 ```
 
-XCodeの画面からipaファイル作ったことある方なら、なんとなくマッピングできるかと思います。  
+Xcodeの画面からipaファイル作ったことある方なら、なんとなくマッピングできるかと思います。  
 このGUIで選択することをそのままXMLにしたものです。
 
-![XCode export](/images/2017/08/xcode-archive-settings.png)
+![Xcode export](/images/2017/08/xcode-archive-settings.png)
 
 AndroidでAPKファイルを作成する
 ---------------------------
@@ -172,7 +172,7 @@ DEPLOY_GATE_TOKEN=XXXXX ./scripts/deploy target/アプリ名.ipa Leko
 ---------------------------
 [Fastlaneのgym](https://github.com/fastlane/fastlane/tree/master/gym)コマンドが同じようなことをしてくれますが、  
 Fastlane自体の学習コストは決して安くないので、もっと質素にビルドできる方法が見つかってよかったです。  
-主にXCode周りの面倒なところ、安く自動化できる手作業はガンガン自動化して開発効率あげましょう！！！
+主にXcode周りの面倒なところ、安く自動化できる手作業はガンガン自動化して開発効率あげましょう!!!
 
 なお、今回の記事のコマンドたちは[Gist](https://gist.github.com/Leko/e6d205993466ce7865a905259b6d18a2)に上げてあります。  
 ぜひ見てみてください
