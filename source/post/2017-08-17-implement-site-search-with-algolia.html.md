@@ -97,6 +97,7 @@ Algoliaは無料で始められます。
   * 当ブログに置き換えると1万記事までOK
 * Algolia APIを月10万回まで実行可能
   * 記事の登録も1回、記事の検索も1回
+* Algoliaを用いている箇所にAlgoliaのロゴを表示すること
 
 で用途として足りていれば、無料のまま継続利用できます。  
 月10万回というのがとても絶妙な数でして、月1万PVほどの当ブログで1ヶ月試した結果、ギリギリアウトでした。（残３日にて回数上限オーバー）  
@@ -111,23 +112,147 @@ Algoliaは無料で始められます。
 
 記事をJSON化してAlgoliaに登録する
 ---------------------------------------
+当ブログはMiddleman(Ruby)を使用しているので、[algolia/algoliasearch-client-ruby](https://github.com/algolia/algoliasearch-client-ruby)を使用します。  
+おそらく大体の言語の公式クライアントライブラリがあるので、言語に合わせて読み替えてください。
+
+使用するメソッドは`Algolia::Index#save_objects!`です。ソースは[こちら](https://github.com/algolia/algoliasearch-client-ruby/blob/5062d7b6fff7d58694731c7c294d82677620a07b/lib/algolia/index.rb#L295)  
+記事を検索できるように、記事データを登録するために、記事データをJSON化する必要があります。
+
+Middlemanの場合、幸い.jsonのついたファイルを作っておくだけで勝手にJSONを吐いてくれるので、とても楽でした。  
+**なんて美味い話はなくて**、多少は楽だったんですが、多少の工夫が必要でした。  
+記事データをJSON化しているのは[このファイル](https://github.com/Leko/WEB-EGG/blob/master/source/posts.json.erb)で、以下の通りです。
+
+```erb
+<%= all_articles.select{|a| a[:published]}.to_json %>
+```
+
+ここはとてもシンプル。公開されている記事だけフィルタしてJSON化してます。  
+ここで出てくる`all_articles`は自作のヘルパです。[このファイル](https://github.com/Leko/WEB-EGG/blob/master/config.rb)に記述しており、以下の通りです。
+
+```ruby
+helpers do
+  # ...
+  def all_articles
+    blog.articles.map{|post|
+      {
+        objectID: Digest::MD5.hexdigest(post.slug),
+        title: post.title,
+        date: post.date,
+        body: strip_tags(post.body),
+        summary: strip_tags(post.summary),
+        tags: post.tags,
+        published: post.published?,
+        locale: post.locale,
+        slug: post.slug,
+        path: post.data.path,
+      }
+    }
+  end
+  # ...
+end
+```
+
+* objectIDという一位なキーがAlgoliaに必要
+* 記事の本文や冒頭文はHTMLになってるので、HTMLを剥がす必要がある
+
+という手を加えています。
+
+> &mdash; [Middlemanでstrip_tagsを使ってサマリーをplain textにする方法](http://webfood.info/middleman-how-to-strip-tag-to-plain-text/)
+
+という感じでMiddlemanなら簡単に記事データをJSON化できたので、あとはそれをクライアントライブラリに渡すだけです。
+記事データの登録に成功すると、記事データがAlgoliaに登録されて、検索可能な状態になります。
 
 検索機能を実装する
 ---------------------------------------
+検索対象を登録したので、早速記事データを検索してみます。  
+実装の全体像は[こちら](https://github.com/Leko/WEB-EGG/tree/master/source/javascripts/SearchApp)を見るといいかと思います。
 
-開発環境と本番環境でAlgoliaのインデックスを分ける
----------------------------------------
+Reactと、[Almin](https://github.com/almin/almin)というユースケース駆動、CQRS、DDDと相性の良いFlux実装を使って実装してます。  
+Algoliaを使って検索する、という点はオリジナルですが、実装の雛形はAlmin公式のTODO MVCのチュートリアルがほぼ全てです。  
+データの取得方法と、取って来たデータの見せ方を変えただけ、という感じです。
+
+> In this guide, we’ll walk through the process of creating a simple Todo app.
+>
+> &mdash; [Todo App · Almin.js](https://almin.js.org/docs/tutorial/todomvc/)
+
+上記チュートリアルで`MemoryDB`というオンメモリの値をDBかのように振る舞うインフラレイヤのアダプタを参考に、[Algolia用のインフラレイヤのアダプタ](https://github.com/Leko/WEB-EGG/blob/master/source/javascripts/infra/adapter/Algolia.js)を実装してあります。  
+Almin自体の詳細はもっとノウハウを貯めて別の記事にて書ければと思います。
 
 記事を書いたら自動でAlgoliaにコンテンツが登録されるようにする
 ---------------------------------------
+当ブログはTravisCIで事前にビルドしたものをデプロイしているので、  
+サイトのビルド・デプロイ時に自動的に記事データをAlgoliaに登録する処理を入れてみました。
 
-Alminとは
----------------------------------------
+```ruby
+configure :build do
+  after_build do
+    def update_search_index(path)
+      Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
+      index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
+      batch = JSON.parse(File.read(path))
+      index.save_objects!(batch)
+      File.delete(path)
+    end
+    update_search_index('./build/posts.json')
+  end
+end
+```
 
-検索機能をAlminとDDDと
+`build/posts.json`は、先ほどのJSON化するためのファイルが出力される場所です。  
+Algoliaに登録したらもうJSONデータは使わないので消してあります。
+
+これで`middleman build`すれば自動的にAlgoliaに記事データが登録されます。  
+差分更新にするには記事の追加だけでなく変更や削除まで対応する必要があり、面倒だったので全件更新にしてます。  
+何か問題が起きたら差分更新にすると思います。
+
+検索対象のデータと、レスポンスに含めるフィールドを調整する
 ---------------------------------------
+記事の本文も検索対象に含めたかったのですが、記事本文が丸ごとレスポンスに入っているとデータ量が多くてパフォーマンスが出なかったので、調整をしました。
+
+検索する側のパラメータは
+
+```js
+  async find (keyword: string): Promise<PostList> {
+    const algoliaOptions = {
+      query: keyword,
+      hitsPerPage: 1000,
+      attributesToRetrieve: [
+        'title',
+        'summary',
+        'tags',
+        'path',
+        'objectID',
+        'date',
+        'published',
+        'locale',
+        'slug',
+      ]
+    }
+    const response: AlgoliaResponse = await this.index.search(algoliaOptions)
+    // ...
+  }
+```
+
+`attributesToRetrieve`を指定すると、レスポンスに含めるフィールドを指定できます。  
+記事本文をレスポンスから除外したら、かなりパフォーマンスが上がりました。
+
+検索にマッチした箇所をハイライト表示
+---------------------------------------
+![ハイライト](/images/2017/08/algolia-search-highlight.png)
+
+当サイトの検索機能はキーワードにマッチしたところがハイライトされるようにしてるのですが、  
+これは実装したわけではなく、Algolia側が勝手にやってくれてます。まじすごい。
+
+レスポンスの中に`_highlightResult`というキーが入っており、ここにハイライト済みのHTMLが格納されています。  
+HTML文字列をそのまま表示させるので普通にReactは使えなくなってしまうのですが、[dangerouslySetInnerHTML](https://facebook.github.io/react/docs/dom-elements.html#dangerouslysetinnerhtml)というpropを使うとお茶を濁せます。
 
 まとめ
 ---------------------------------------
+* Algoliaはすごい
+* Algoliaで検索するときはレスポンスのデータ量を最小限にすると早い
+* Alminとても可能性を感じる、手に馴染む
 
-すごいぞAlgolia、すごいぞAlmin！！
+他にも検索可能なフィールドを絞ったり、検索結果の優先度設定などパラメータをいじっているのですが、  
+それだけで一本記事書けるレベルに量が多くなると思うので、この記事では割愛します。
+
+ぜひAlgoliaとAlmin試してみてください。
