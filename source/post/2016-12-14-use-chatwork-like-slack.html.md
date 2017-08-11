@@ -1,6 +1,6 @@
 ---
 path: /post/use-chatwork-like-slack/
-title: ChatworkだってSlackしたい！！
+title: ChatWorkだってSlackしたい！！
 date: 2016-12-14T23:45:16+00:00
 dsq_thread_id:
   - "5379762353"
@@ -13,12 +13,12 @@ tags:
   - JavaScript
 ---
 なんとも日本語が不自由な感じのタイトルですが、始めます。  
-普段仕事でChatworkを使っているのですが、どうにもUIが好きになれない。
+普段仕事でChatWorkを使っているのですが、どうにもUIが好きになれない。
 
 別に使いにくくはないんですが、趣味でSlack使ってるせいでどうにも馴染めません。  
 でも仕事で使うのでどうにかして向き合わなければならない。
 
-**ならSlack使ってる感覚に陥るChatworkであれば違和感なく使えるのでは…？**  
+**ならSlack使ってる感覚に陥るChatWorkであれば違和感なく使えるのでは…？**  
 ということで試してみました。
 
 <!--more-->
@@ -31,9 +31,9 @@ tags:
 
 ソースはGithubに公開してあります。
 
-> [GitHub – Leko/chatwork-skin-slack: Chrome extension to apply Slack skin to Chatwork](https://github.com/Leko/chatwork-skin-slack)
+> [GitHub – Leko/chatwork-skin-slack: Chrome extension to apply Slack skin to ChatWork](https://github.com/Leko/chatwork-skin-slack)
 
-**※Chatworkのマークアップと密結合しているため突然動かなくなることが有ります。あらかじめご了承ください。**
+**※ChatWorkのマークアップと密結合しているため突然動かなくなることが有ります。あらかじめご了承ください。**
 
 チャット送信部分
 ----------------------------------------
@@ -115,7 +115,7 @@ Slackっぽくなります。
 使い心地どうなの
 ----------------------------------------
 
-とかとか、「あ、Chatworkやだ」って思った時に拡張機能をちょこちょこ作っています。  
+とかとか、「あ、ChatWorkやだ」って思った時に拡張機能をちょこちょこ作っています。  
 実際に半年くらい使ってみての感想なんですが、 **めっちゃ使いやすいです** 。  
 デザイナーの方にはとても申し訳ないと思いつつ、この拡張がなかったら若干イライラするくらいには馴染んできてしまいました。
 

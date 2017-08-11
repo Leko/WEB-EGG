@@ -12,7 +12,7 @@ tags:
   - Ruby
   - Rubygems
 ---
-[ActiveResourceでChatworkのAPIを叩くgem](/post/knowhow-of-chatwork-api-with-activeresource/)を作ってみました。  
+[ActiveResourceでChatWorkのAPIを叩くgem](/post/knowhow-of-chatwork-api-with-activeresource/)を作ってみました。  
 これが初めて作ったgemなのですが、手で運用すると色々忘れそうな感じがした。
 
 ライブラリのメンテはただでさえ手がかかるので、パッケージ管理サービスへのデプロイくらい手を抜きたい。  
@@ -25,7 +25,7 @@ tags:
 
 作ったgemのリポジトリを御覧ください。circle.ymlにかかれています
 
-> [GitHub – Leko/activeresource-chatwork: ActiveResource classes for Chatwork API](https://github.com/Leko/activeresource-chatwork)
+> [GitHub – Leko/activeresource-chatwork: ActiveResource classes for ChatWork API](https://github.com/Leko/activeresource-chatwork)
 
 gemのデプロイ手順
 ----------------------------------------

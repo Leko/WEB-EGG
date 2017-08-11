@@ -1,6 +1,6 @@
 ---
 path: /post/knowhow-of-chatwork-api-with-activeresource/
-title: ActiveResourceでChatworkのAPIクライアントを作る際にハマったところと解決策
+title: ActiveResourceでChatWorkのAPIクライアントを作る際にハマったところと解決策
 date: 2016-09-26T12:00:15+00:00
 meaningless:
   - 'yes'
@@ -12,16 +12,16 @@ categories:
   - 問題を解決した
 tags:
   - ActiveResource
-  - Chatwork
+  - ChatWork
   - Ruby
 ---
 れこです。  
 久々にRubyの記事です。
 
-仕事でよくChatworkを使用するので、いい加減オレオレAPIクライアントじゃなくてちゃんとしたのを作ろう  
+仕事でよくChatWorkを使用するので、いい加減オレオレAPIクライアントじゃなくてちゃんとしたのを作ろう  
 ということで、[ActiveResourceを利用したAPIクライアント](https://github.com/Leko/activeresource-chatwork)を作ってみました。
 
-ActiveResourceは基本的にRuby on Railsで作られたアプリケーション用のAPIクライアントなのですが、汎用的に作られているのでChatworkのAPIにも対応できました。  
+ActiveResourceは基本的にRuby on Railsで作られたアプリケーション用のAPIクライアントなのですが、汎用的に作られているのでChatWorkのAPIにも対応できました。  
 ということで他のAPIにもActiveResourceを利用するために備忘録を残しておきます
 
 <!--more-->
@@ -31,14 +31,14 @@ ActiveResourceは基本的にRuby on Railsで作られたアプリケーショ�
 
 gem化してGithubに上げてあります。
 
-> [GitHub – Leko/activeresource-chatwork: ActiveResource classes for Chatwork API](https://github.com/Leko/activeresource-chatwork)
+> [GitHub – Leko/activeresource-chatwork: ActiveResource classes for ChatWork API](https://github.com/Leko/activeresource-chatwork)
 
 gemの作り方については、[こちら](http://masarakki.github.io/blog/2014/02/15/how-to-create-gem/)の記事がとても参考になりました。
 
 リクエスト/レスポンスの共通部分
 ----------------------------------------
 
-ChatworkのAPIは、リクエストは`x-www-form-urlencoded`に対しレスポンスは`application/json`という特殊な要件なので、  
+ChatWorkのAPIは、リクエストは`x-www-form-urlencoded`に対しレスポンスは`application/json`という特殊な要件なので、  
 `ActiveResource::Formats::JsonFormat`を拡張したフォーマッタを作成しました。
 
 リポジトリの[lib/chatwork/base.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/base.rb)に定義してます。コードはこんな感じ。
@@ -90,7 +90,7 @@ end
 ネストしたリソースを扱いたい
 ----------------------------------------
 
-Chatworkは`/v1/rooms/:room_id/messages/:message_id`のように、ネストしたルーティングが必要になります。  
+ChatWorkは`/v1/rooms/:room_id/messages/:message_id`のように、ネストしたルーティングが必要になります。  
 ActiveResourceにはActiveRecordのように[リレーション](https://github.com/rails/activeresource#associations)の機能があるようですが、一部要件を満たせなかった(※後述)ので、下記の記事も参考にしつつ試してみました。
 
 > [ActiveResource : Passing prefix options](http://blog.revathskumar.com/2013/12/activeresource-passing-prefix-options.html)  
@@ -111,7 +111,7 @@ has_many :members, class_name: 'chatwork/member'
 `class_name`オプションを渡さないと、クラスが定義されている名前空間によらずトップレベルの名前空間が指定されてしまうので注意です。  
 **注意点として、この方法ではクエリパラメータを渡すことが出来ません** 解決方法は後述します。
 
-belongs_to的なものは、残念ながらChatworkでは意図したとおりに動きません。  
+belongs_to的なものは、残念ながらChatWorkでは意図したとおりに動きません。  
 これも後述します。
 
 利用方法は[テスト](https://github.com/Leko/activeresource-chatwork/tree/master/spec/chatwork)を見ていただくほうが早いと思います。
@@ -152,7 +152,7 @@ def messages(params = {})
 
 のようなものを想定しているため、レスポンスの中に`user_id`に相当するフィールドがないとcommentsからuserを見ることが出来ません。
 
-Chatworkでの例に置き換えると、  
+ChatWorkでの例に置き換えると、  
 `/rooms/:room_id/members`のレスポンスに`room_id`が含まれていないので、belongs_toでは紐付けが出来ません。  
 `belongs_to`はパスを生成する時にレスポンスの中身しか見てくれないないようです。なぜか`prefix_options`を見てくれません。  
 ということでメソッドを自作します。
@@ -160,7 +160,7 @@ Chatworkでの例に置き換えると、
 [lib/chatwork/nest_of_room.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/nest_of_room.rb)に定義してます。
 
 ```
-module Chatwork
+module ChatWork
   module NestOfRoom
     def room
       Room.find(prefix_options[:room_id])
@@ -168,9 +168,9 @@ module Chatwork
   end
 end
 
-module Chatwork
+module ChatWork
   class Member < Base
-    include Chatwork::NestOfRoom
+    include ChatWork::NestOfRoom
   end
 end
 ```
@@ -185,7 +185,7 @@ ActiveResourceには[カスタムメソッド](http://api.rubyonrails.org/v3.2.6
 
 ```ruby
 # {ActiveResource::Baseを継承したクラス}.{HTTPメソッド(小文字)}(:パス, オプション)
-Chatwork::My.get(:tasks, status: 'open')
+ChatWork::My.get(:tasks, status: 'open')
 ```
 
 という感じで、ただのHTTPクライアント的な使い方もできるようです。  
@@ -203,7 +203,7 @@ ActiveResource::Base.newはHashを受け取るので、受け取ったレスポ�
 
 ```ruby
 def self.tasks(params = {})
-      get(:tasks, params).map { |t| Chatwork::Task.new(t, true) }
+      get(:tasks, params).map { |t| ChatWork::Task.new(t, true) }
     end
 ```
 
@@ -214,7 +214,7 @@ def self.tasks(params = {})
 ----------------------------------------
 
 デフォルトだとレスポンス内の`id`というフィールドを主キーと見なす、という作りになっています。  
-Chatworkでいえば、`/rooms`のレスポンス内の主キーは`room_id`というフィールド名になっています。  
+ChatWorkでいえば、`/rooms`のレスポンス内の主キーは`room_id`というフィールド名になっています。  
 このままではフィールド名が噛み合わず`save`や`destroy`の挙動に支障をきたします。
 
 これを上書きするには、`primary_key`というプロパティを変更します。
@@ -229,7 +229,7 @@ self.primary_key = 'room_id'
 ----------------------------------------
 
 やはりRailsでないアプリケーションにActiveResourceを対応させるのは少々無理が生じるようです。  
-それでもChatworkのURL構造はだいぶRailsにRESTfulな感じなので、比較的軽度に収まりました。  
+それでもChatWorkのURL構造はだいぶRailsにRESTfulな感じなので、比較的軽度に収まりました。  
 もしオレオレ全開なAPIに対応するとしたら、カスタムメソッドを多用することになりそうだなぁ、、、と感じました。
 
 この内容が、少しでもActiveResourceでRails以外のAPIクライアントを作るときの助けになれば幸いです。

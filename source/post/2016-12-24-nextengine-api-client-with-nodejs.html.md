@@ -51,7 +51,7 @@ NE APIを利用していて、既存のSDKたちを見ていて思った問題�
 `/api_v1_receiveorder_base/count`のような感じでパスの途中に`v1`と思い切りバージョン番号が入っています。  
 もしアプデかかったらどうするんだろう。一括置換でもするのだろうか。と不安があります。
 
-例えばChatworkのように`https://api.chatwork.com/v1`と、先頭に入ってくれていればまだ救いようがあるのですが、パスの途中は辛い。  
+例えばChatWorkのように`https://api.chatwork.com/v1`と、先頭に入ってくれていればまだ救いようがあるのですが、パスの途中は辛い。  
 同じく非公式の[NE API Ruby版SDK](https://github.com/infinity-octaver/ne_api)はおそらく同じことを感じたのか回避されています。
 
 ということでパスを隠蔽してコード内にバージョン番号が混じらないようにしました。
