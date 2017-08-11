@@ -16,8 +16,8 @@ const appContext = new Context({
 })
 
 if (process.env.NODE_ENV !== 'production') {
-  const ContextLogger = require('almin-logger')
-  const logger = new ContextLogger()
+  const { AlminLogger } = require('almin-logger')
+  const logger = new AlminLogger()
   logger.startLogging(appContext)
 }
 
