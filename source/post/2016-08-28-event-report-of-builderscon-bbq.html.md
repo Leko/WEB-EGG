@@ -72,6 +72,3 @@ tags:
 肉は食えたけど、コミュニケーションが全然ダメだったと反省中。
 
 そんな感じのBBQでした。また参加したい。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

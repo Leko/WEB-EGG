@@ -37,6 +37,3 @@ tags:
 ソースコードはGithubにあげているので、詳しい内容はそちらを御覧ください。
 
 > [builderscon/session-timer](https://github.com/builderscon/session-timer)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

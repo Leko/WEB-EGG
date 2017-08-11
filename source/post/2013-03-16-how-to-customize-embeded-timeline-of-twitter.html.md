@@ -188,6 +188,3 @@ scriptタグは設定を変えても共通なので、aタグの部分だけを�
 もし旧ウィジェットを使ったサイトを制作されている方は、 これを機に新ウィジェットへ移行をしてみて下さい。
 
 最後まで読んでくださいまして、ありがとうございました。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

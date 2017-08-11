@@ -175,6 +175,3 @@ Herokuがデフォルトでアクセスログも残してくれており、Paper
 代わりにバズWordに惑わされず自分の要件に合うものを探し続けたら見つかったので、その点何かを探す時のモチベーションにしたいなと思いました。
 
 もしこの記事を読んでいて同じような悩みを抱えてる方がいらっしゃいましたら[Papertrail](https://papertrailapp.com/?thank=15fc38)を使ってみると良いと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

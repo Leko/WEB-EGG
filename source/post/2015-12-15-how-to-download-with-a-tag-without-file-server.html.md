@@ -61,6 +61,3 @@ download('data://text/html,Hello world!!', 'dummy.html');
 [Can I use](http://caniuse.com/#search=download)によると、IEとSafari(Mac、iOS）は最新版でも動きません。  
 Chrome、Firefox限定のアプリケーションなどでは使用できそうです。  
 あと機種に依りそうですが、Androidのブラウザでは動作するようです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

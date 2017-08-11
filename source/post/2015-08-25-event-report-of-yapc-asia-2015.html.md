@@ -564,6 +564,3 @@ Goはまだ入門したばかりでツール周りなど全く触れていなか
   </p>&mdash; tabunmuri (@tabunmuri255)   
   <a href="https://twitter.com/tabunmuri255/status/634539982930227201">2015, 8月 21</a>
 </blockquote>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

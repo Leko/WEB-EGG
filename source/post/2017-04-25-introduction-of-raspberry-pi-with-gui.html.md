@@ -111,6 +111,3 @@ Lite版はCLIオンリーな場合だけ使ったら良いと思った。
 
 Lite版ではなくFull版で構築すればChromium browserもデフォで入っているので、後は良しなにすればよい。  
 という感じでした。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

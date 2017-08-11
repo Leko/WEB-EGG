@@ -290,6 +290,3 @@ knockout = js-MVVMの叩き台として重要なポジション
     * お客様にとって可読性の高いテストが書ける
 * １行＝１ステップ
 * Seleniumとの連携もできる = ブラウザを操作することも出来る
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

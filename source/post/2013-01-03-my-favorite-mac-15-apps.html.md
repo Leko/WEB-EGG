@@ -251,6 +251,3 @@ ORACLE MySQL公式のGUIツールです。 ER図の作成は設計時だけで�
 * <a href="http://freemind.asia/" target="_blank">FreeMind使おう会 | 思考整理の定番フリーソフトFreeMindユーザー会</a></aside> 
 
 いかがでしたでしょうか。 以上が、私のおすすめアプリです。 何かの助けになれれば幸いです。 最近また新しいアプリを入れて使い心地を確かめているので 半年後くらいにエントリを書くかも知れません。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

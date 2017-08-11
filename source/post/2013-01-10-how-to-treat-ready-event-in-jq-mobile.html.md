@@ -81,6 +81,3 @@ $(document).on('pageinit', '#selector', function() {
 
 
 例えば、 pageinitはスライドショーなどで使うHTMLの挿入（１回だけ必要）などに使い、 pageshowはGoogleAnalyticsの読み込みや、要素の座標等の調整（表示のたびに必要）などと使い分けることができるかな、と思います。 これで、目的の動作を達成できました。 初歩的なハマり方ですみません。。。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

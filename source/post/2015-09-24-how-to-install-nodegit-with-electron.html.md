@@ -83,6 +83,3 @@ Electronの0.31.*以降を使っている場合、nodegitはリリースされ�
 このコミットの入ったリリースが楽しみです。
 
 以上、備忘録でした。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -47,6 +47,3 @@ Finderでpngにしたいicnsファイルを選択して、プレビュー.appで
 メニューのファイル→保存を選び、フォーマットをPNGにします  
 アルファにチェックを入れてままにして、保存。  
 これで完了です。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

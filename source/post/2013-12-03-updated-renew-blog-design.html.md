@@ -159,6 +159,3 @@ $ git push origin master
 ということで、Markdownで快適かつ簡潔に記事管理ができて、 テスト環境を作ったことで本番環境にいきなりバグを持っていくこともなくなりました。
 
 今後とも、よろしくお願いします。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

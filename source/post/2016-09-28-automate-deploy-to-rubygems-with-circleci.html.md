@@ -115,6 +115,3 @@ gem作るのもCircleCIのdeployment機能を使用したのも今回が始め�
 gemもCircleCIのデプロイも色々な方向に活用していきたいです。
 
 いつかnpmのデプロイ自動化も記事にしようと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -61,6 +61,3 @@ Zendが似たようなの作ってたのを知らず作ってしまいました�
 
 今後は、似た目的の良さげなやつをなるべく探して、それに貢献する。無ければ作るというスタイルでいきたいと思っています。  
 英語のIssue作る抵抗は無くなったので、あるものに貢献する、というのを頑張っていきたい。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -400,6 +400,3 @@ web APIと連携したAlfred Workflowsの作り方は、
 * [Alfred 2のWorkflowをまとめたサイト『Alfred 2 Workflow List』が宝の山](http://veadardiary.blog29.fc2.com/blog-entry-4435.html)
 
 * [[Mac] バージョンアップした Alfred2で使える、おすすめ Workflows まとめ20個。 « Appdrill](http://appdrill.net/63089/alfred2-workflows.html)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

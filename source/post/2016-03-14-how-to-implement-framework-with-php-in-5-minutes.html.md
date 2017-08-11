@@ -250,6 +250,3 @@ Adonisを真似ました。このディレクトリ構成気に入っていま�
 これらのライブラリを組み合わせて、次回実装編でフレームワークを組み上げます。
 
 この記事の中で、1つでも知らなくて役に立つライブラリが見つかっていれば、してやったりです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

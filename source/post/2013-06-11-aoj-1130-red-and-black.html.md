@@ -32,6 +32,3 @@ DPでも解けるそうですが、イマイチDPは書き方が分かりませ�
 ----------------------------------------
 
 <script src="https://gist.github.com/Leko/5734881.js"></script>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

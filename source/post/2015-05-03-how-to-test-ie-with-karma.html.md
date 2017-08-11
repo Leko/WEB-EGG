@@ -242,6 +242,3 @@ Karmaの設定ファイルも合わせて[こちら](https://github.com/Leko/kar
 ただし、ちょろっと試しに使ってみた感じだと **ものすごく遅い** ので、CI回したり、確実な品質担保をしたいとき向けといった印象があります。
 
 とりあえずIEに最低限対応していることをテスト駆動で書いていくだけなら、今回の記事のようにローカル環境を活用したほうがスピーディにことが済みそうです。 Sauce Labsでのテストに慣れてきたら、Travis CIと組み合わせて、PR時に各ブラウザのテストを走らせる方法を書きたいと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

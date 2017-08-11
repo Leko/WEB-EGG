@@ -124,6 +124,3 @@ the_post_thumbnail() を記述します。
 如何でしょうか！  
 アイキャッチ画像は、上記の手順で表示させられるので、  
 オリジナルのテーマを作るときなどの、参考になれば幸いです。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

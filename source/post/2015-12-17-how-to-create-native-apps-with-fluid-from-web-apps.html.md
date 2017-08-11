@@ -112,6 +112,3 @@ Chromeで常に開いてるアプリはアプリ化してしまったほうが�
 他にも`Command + Tab`の切り替えでアプリが切り替えられるので、捗りそうな予感がします。
 
 他にも色々とアプリ化したら便利そうなものがあるので、今後試してみます。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

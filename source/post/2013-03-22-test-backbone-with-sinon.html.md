@@ -161,6 +161,3 @@ before ->
 このように、インスタンス化したオブジェクトにspyを忍び込ませるのではなく、  
 **コンストラクタ関数のprototypeにspyを設定して、  
 その後にインスタンスを生成するとうまく動くようです。**
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -115,6 +115,3 @@ Integerクラスにdownto()というメソッドがあるそうです。
 ```rb
 a = [1, 2, 3, 4] a.join("|") #=> "1|2|3|4" a*"|" #=> "1|2|3|4"
 ```
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

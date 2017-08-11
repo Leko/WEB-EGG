@@ -279,6 +279,3 @@ PHPのプロジェクト作成と一口にとっても、色々と改良の余�
 
 > The PHP Coding Standards Fixer for PSR-1 and PSR-2  
 > &mdash; http://cs.sensiolabs.org/
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

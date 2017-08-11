@@ -356,6 +356,3 @@ CoffeeScript、TypeScript共にほぼ同じなので、 上記のような書き
 
 JavaScriptにはprototypeを用いた柔軟な継承の表現が他にもあります。  
 今回の例はあくまで**jsで"クラス"っぽいことがやりたい人**向けの内容であることをご留意下さい。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

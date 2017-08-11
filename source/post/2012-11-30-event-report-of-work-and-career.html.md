@@ -181,6 +181,3 @@ web制作の外注や、学生エンジニア向けのイベントに参加し�
 
 色々と将来について考えさせられる機会をくれた  
 良いイベントだったと思います。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

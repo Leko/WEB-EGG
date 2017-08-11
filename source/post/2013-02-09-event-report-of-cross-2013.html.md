@@ -111,6 +111,3 @@ HTML,CSS,jsのまま変換をかけてしまおうと思っています。
 モチベーションの獲得としても、  
 アプリの改善案の獲得としても、  
 満足のいく出展だったと思います。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

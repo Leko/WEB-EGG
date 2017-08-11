@@ -139,6 +139,3 @@ Seleniumはデフォルトでは日本語などのマルチバイト文字をサ
 
 これをベースに自分たちなりのアレンジで運用してもらえれば、  
 スクレイピングもシナリオテストもいい感じに回っていくかな、と思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

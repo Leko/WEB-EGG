@@ -106,6 +106,3 @@ console.log('Hello, world!')
   シバンは分かってしまえば簡単なんですが、なかなか覚えようと思うきっかけがないと思います<br />
   もしシバン知らない人がいらっしゃったら、シバン便利なので広めてあげて下さい
 </p>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
-</div>

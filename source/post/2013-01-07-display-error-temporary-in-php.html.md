@@ -62,6 +62,3 @@ ini_setの１行を追加してブラウザを開いてみます。 すると、
 ![2013010](/images/2013/01/20130107_success.png)
 
 ※注意 ただし、Parse error（多くの場合文法ミス）だとプログラム自体が実行できないので、 ini_setも当然実行されず。。 実行前エラーは表示できません。 そこは目勘を鍛えて発見しましょう。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

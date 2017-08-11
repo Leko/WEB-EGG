@@ -80,6 +80,3 @@ Markdown自体かなりシンプルに書けるので、あまりショートカ
 インラインコードや強調がサクッと出来ないものかなぁ、と思っていたので、
 
 単語選択->インラインコードの組み合わせは今後末永くお世話になりそうです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -131,6 +131,3 @@ var Task = Backbone.Model.extend({
 ```
 
 送信時は、明示的に文字列に再変換しなくとも文字列化して送信してくれます。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

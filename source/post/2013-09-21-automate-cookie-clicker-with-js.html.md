@@ -263,6 +263,3 @@ Cookie.onclick()の行をコメントアウトして下さい。 ゴールデン
 最終的に、自分が実績全解放までに使ったjsは、以下のようになりました。  
 １週目のプレイでは`DONT_BUY_ELDER`をfalseにしてあげて、  
 頃合いを見てリセットが必要になります。そこまでの自動化は、また後々ということで。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

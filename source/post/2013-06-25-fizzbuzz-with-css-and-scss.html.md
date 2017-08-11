@@ -102,6 +102,3 @@ mixinも、より効率よく、シンプルに書けそうです。
 ----------------------------------------
 
 [Sass control directives: @if, @for, @each and @while – Intermediate](http://thesassway.com/intermediate/if-for-each-while#while)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

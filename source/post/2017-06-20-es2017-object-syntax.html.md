@@ -181,6 +181,3 @@ MDNによると、（2017/06/16現在）ChromeとFirefoxは素で動きます。
 色々な構文が増えてどんどんシンプルに記述できるようになっている一方、古いjsしか知らない人たちとの知識レベルの差がどんどん広がっています。
 
 少しでも情報格差が減っていき、JSerの人と非JSerの人が手を取り合える世界がくることを願ってます
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

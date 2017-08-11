@@ -426,6 +426,3 @@ formやinputタグ回りや、CSSの面白い省略記法などアリアリで�
 あと、日本語化で少し触れましたが、  
 自分流の**カスタマイズも手軽**にできるので、  
 チームで共有したりなんだりして、コーディングの効率をあげましょう!!！
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

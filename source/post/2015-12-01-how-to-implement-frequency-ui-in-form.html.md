@@ -146,8 +146,3 @@ Google codeが廃れ、Githubに移転し、郵便番号データを保持する
 
 以上です。他に思いつくものがありましたら調査して乗せます。  
 もし調査の希望や「これいいよ！」等がございましたらコメントにてご連絡いただけると幸いです。
-
-<!-- Place this tag in your head or just before your close body tag. -->
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

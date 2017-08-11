@@ -181,6 +181,3 @@ $ curl -v http://web.timer.builderscon.io/all.css 2>&1 | grep -i cache
 ```
 
 意図したとおりになりました。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

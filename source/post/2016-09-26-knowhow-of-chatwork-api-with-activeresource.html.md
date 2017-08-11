@@ -233,6 +233,3 @@ self.primary_key = 'room_id'
 もしオレオレ全開なAPIに対応するとしたら、カスタムメソッドを多用することになりそうだなぁ、、、と感じました。
 
 この内容が、少しでもActiveResourceでRails以外のAPIクライアントを作るときの助けになれば幸いです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

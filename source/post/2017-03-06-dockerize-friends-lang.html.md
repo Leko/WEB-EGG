@@ -59,6 +59,3 @@ Dockerizeたーのしー！
 「一度苦労してしまえば、同じ手間に苦しむ人は居なくなる」 というプロビジョニング系ツールの思想あるあるとしても魅力を感じています。
 
 わー！ IQが溶けて無くなりそうなのでこれくらいで終わります。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

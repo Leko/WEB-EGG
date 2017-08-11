@@ -123,6 +123,3 @@ Slackっぽくなります。
 ----------------------------------------
 
 歴史的経緯に挫けないための技術スキルなのではないかとすら思っている(✌ ՞ਊ ՞)✌
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

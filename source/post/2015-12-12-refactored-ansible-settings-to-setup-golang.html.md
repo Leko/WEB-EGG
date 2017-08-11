@@ -88,6 +88,3 @@ godep save実行後に`Godeps/Godeps.json`のdiffを見てもし差分が出て�
 
 <del>今回の場合は開発環境の初期構築しかやってないので最初の一回しか実行する必要無いんですが、</del>冪等性のある設定がきちんと書けるようになっていると必要なときに何かと役立つと思います。  
 まだまだAnsibleの知識と慣れが不足しているので、よりよい書き方などご教授頂けると幸いです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

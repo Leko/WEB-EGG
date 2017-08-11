@@ -106,5 +106,3 @@ Taskloudを制作・アップデートする過程で色々得たものがあっ
   * ハイブリッドアプリのライブラリ管理にBowerを使用してみた
   * ハイブリッドアプリのアプリ内広告にNendを使ってみた
 
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>
