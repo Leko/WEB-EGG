@@ -156,6 +156,3 @@ export default class TextToSpeech extends Component {
 これから毎晩欠かさず難波社長とガハハしてから寝ます。嘘です。
 
 勢いでゴリゴリと作ってしまいましたが、なにげに音声利用するアプリをReactで作るの初めてでした。 タグで表現できないオブジェクトもコンポーネントとしてラップできる抽象概念は素晴らしいな、とあらためて感じつつ、いつか使えるスニペットとして蓄積できそうです。 YouTubeのjs APIの扱いにもかなり詳しくなったし、後々に役立つ知見が色々たまったと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

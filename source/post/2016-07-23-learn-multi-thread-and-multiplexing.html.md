@@ -136,6 +136,3 @@ if (cluster.isMaster) {
 「え、これ実装しなきゃ早くならないの？ ？ 実装汚れるなぁ…」と不安に思っていたので、独自実装はすべきでないという同じ方向性で良かった。
 
 現時点で理解したことは以上です。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

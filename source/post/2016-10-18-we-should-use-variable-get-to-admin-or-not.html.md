@@ -160,6 +160,3 @@ PHPの野良情報はかなりの確実で外れだったり、不確実だっ�
 
 Drupalについて調べるときは、公式ドキュメントとソースコード以外信じないことにしました。  
 もしかしたら、公式ドキュメントすら信じられずにソースコードしか信じないときがくるかもしれません。笑
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

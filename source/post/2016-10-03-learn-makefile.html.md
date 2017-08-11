@@ -83,6 +83,3 @@ Makefileというファイル名を見ていてふと気になったのですが
 
 傍から見てると うまみうまあじ戦争 みたいだなーなんて思ってます。  
 うまみ派はgulpでも使ってればいいと思います
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

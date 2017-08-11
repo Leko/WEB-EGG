@@ -74,6 +74,3 @@ titleタグにマッチする箇所を抜き出すだけです。
 > [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](/post/write-post-with-markdown-without-plugin-beginner/)
 > 
 > [プラグインを使わずにMarkdownでWordPressのブログを更新する（実践編） \| WEB EGG](/post/update-post/)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

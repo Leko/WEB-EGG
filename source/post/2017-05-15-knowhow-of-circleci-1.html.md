@@ -141,6 +141,3 @@ rmはダメ、と言いましたができることもあります。
 
 色々と調査不足が目立つ内容なので、必ずしもこの記事を読んだ方の環境でも同様の減少になるかどうかは分かりません。  
 もしご指摘や補足があればして頂けると幸いです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

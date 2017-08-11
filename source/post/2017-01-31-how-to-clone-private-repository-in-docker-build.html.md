@@ -103,5 +103,3 @@ RUN npm set progress=false \
     <a href="https://www.npmjs.com/pricing">Pricing — npm</a> <a href="#fnref-931:2" rev="footnote">↩</a>
   </li>
 </ol>  
-  <div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-  </div>

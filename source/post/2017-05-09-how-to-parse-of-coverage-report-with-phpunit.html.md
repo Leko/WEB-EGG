@@ -228,6 +228,3 @@ PHPUnitの設定ファイルにて[カバレッジ集計対象の設定]()をし
   * PHPには結構豊富なリフレクションのメソッドがあるので、突合は技術的には可能。今回は使ってない
 
 結果的な感想としては「ツラい」のただ一言でした。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

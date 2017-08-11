@@ -28,6 +28,3 @@ AOJの1179、Millenniumをc++で解きました。
 ----------------------------------------
 
 <script src="https://gist.github.com/Leko/5734926.js"></script>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

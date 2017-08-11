@@ -92,6 +92,3 @@ Githubを探すと↑のissueが出てきたのですが、これで治らんと
 MySQLの文字コードを`utf8mb4`から`utf8`に変更したところ治りました。  
 暫定的な対応ではなくきれいに直したかったけど、とりあえず治ったのでいいか。  
 暇な時に調べてみます。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

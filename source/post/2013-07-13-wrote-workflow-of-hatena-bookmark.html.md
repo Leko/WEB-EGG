@@ -107,6 +107,3 @@ Workflowのダウンロードはこちらからどうぞ！
 ダウンロードしてダブルクリックすればインポートできると思います。
 
 [Dropbox &bull; はてぶ for Alfred.alfredworkflow](https://www.dropbox.com/s/0fmikugbmpndyvy/hatebu_for_alfred.alfredworkflow?dl=0)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

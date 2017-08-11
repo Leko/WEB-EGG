@@ -152,6 +152,3 @@ var str = ""; for(var i=0; i<p.length; i++) str += String.fromCharCode(p[i] / (i
 
 答えは、ここに書いてしまうと面白くなさそうなので、  
 この問題に興味を持った方↑のコードを実行してみて下さい。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

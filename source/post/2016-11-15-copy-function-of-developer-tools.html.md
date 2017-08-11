@@ -85,6 +85,3 @@ copy(
 ----------------------------------------
 
 使い方次第で色々な作業を楽にできるので、ぜひ使ってみてください。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

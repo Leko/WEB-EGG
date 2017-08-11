@@ -227,6 +227,3 @@ Githubにプッシュしたら、もう一度**http://USER_NAME.github.com**に�
 
 たったこれだけの手順で、  
 テンプレート＋Markdownを使ったページ作成が出来ました。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -104,6 +104,3 @@ Imageオブジェクトに自分のサーバから返されたバイナリ(画�
 > [drawImage() メソッド – Canvasリファレンス – HTML5.JP](http://www.html5.jp/canvas/ref/method/drawImage.html)
 
 CORS制限を回避したので、canvas内で加工した画像を書き出すことができるようになっています。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

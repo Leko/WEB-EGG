@@ -114,6 +114,3 @@ replace＋evalというゴリ押しを真っ先に思いついたのですが、
 
 })(require("fs").readFileSync("/dev/stdin", "utf8"));
 ```
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

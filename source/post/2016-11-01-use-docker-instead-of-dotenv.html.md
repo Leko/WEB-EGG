@@ -101,6 +101,3 @@ Dockerはいいぞ。
 
 Docker composeを使いだすと、コンテナを複数個使うハードルが途端に下がり、  
 つい「コンテナ=物理サーバ」という境界線を引いてしまいがちですが、「コンテナ=プロセス」と捉えることを忘れないようにすれば、考えはシンプルなまま便利さを享受できると思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

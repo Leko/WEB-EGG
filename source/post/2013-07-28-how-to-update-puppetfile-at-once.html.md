@@ -159,6 +159,3 @@ Puppetfileのコメントで指定した範囲内がアップデートされま�
 ソースコードはこちらになります。
 
 <script src="https://gist.github.com/Leko/6098584.js"></script>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

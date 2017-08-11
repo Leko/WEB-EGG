@@ -174,6 +174,3 @@ Goは別格です。
 なのでdatabase/sqlパッケージを使わずにオレオレ実装でもしていない限り対応してます。
 
 昔に作った[Goのデモアプリ](https://github.com/Leko/godemo/blob/master/database/postgres.go#L40)でもこの方式を利用しています。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

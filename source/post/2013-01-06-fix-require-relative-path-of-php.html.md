@@ -64,6 +64,3 @@ require_once(dirname(__FILE__)."/../D.php"); //D.phpを読み込む
 
 
 と書くことで、実行されるファイルやカレントディレクトリを気にすること無く 相対パスでrequireをすることが出来ます。 
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

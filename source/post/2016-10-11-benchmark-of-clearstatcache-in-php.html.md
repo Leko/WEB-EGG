@@ -138,6 +138,3 @@ realpath_cache_ttl => 120 => 120
   古いPHPではバグってるし、新しいPHPでも性能に寄与してないし。<br />
   久々に予想を覆す、ベンチマーク取ってよかったと感じる計測でした。
 </p>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
-</div>

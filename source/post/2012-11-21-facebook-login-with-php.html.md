@@ -179,6 +179,3 @@ if ( $user ) {
 自前でログアウト用のURLと、多少の処理を付け加えました。
 
 それについては、また別の記事として書きます。  
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -111,6 +111,3 @@ Analyticsを覗いてみると、休日のPVが絶望的ですが、平日であ
 
 定期的に振り返って、施策を打って、計測して、分析してみて、と１サイクル回すと少し大人になった気がします。  
 という適当な締めで終わろうと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

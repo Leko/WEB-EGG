@@ -461,6 +461,3 @@ OKです。
 <!---->
 
 > &mdash; [グラディウスAA集　（ボスのアスキーアート）](http://bhdaa.sakura.ne.jp/gradius/gradius-asciiart.html)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

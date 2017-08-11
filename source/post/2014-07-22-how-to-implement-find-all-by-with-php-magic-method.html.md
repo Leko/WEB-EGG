@@ -366,6 +366,3 @@ PHPだってRailsっぽいことしたい
   ただ、当然ながらマジックメソッドを使用すると動作速度に影響しますし、<br />
   あまりトリッキーなことはやらないほうが身のためかもしれません。
 </p>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">  
-</div>

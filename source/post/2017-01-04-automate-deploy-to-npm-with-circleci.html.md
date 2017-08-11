@@ -88,6 +88,3 @@ npmのパッケージは
 そのとおりにやっていけば基本的に上手く行ったので、記事を残すことは重要だなとあらためて感じました。
 
 ベースとなる知識があらかじめ備わっているとその派生系を覚えるのも楽ですしね。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

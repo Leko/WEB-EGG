@@ -55,6 +55,3 @@ AWSのページを見つけました
 
 ちゃんと読んでいればハマらないんでしょうが、プレースホルダ見るじゃん。それに従うじゃん。 **エラーになるじゃん**  
 ということで納得はいかないのですが、治りはしました
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

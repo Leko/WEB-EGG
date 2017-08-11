@@ -169,6 +169,3 @@ API Blueprintはまだ発展途上で、[Authorizationに対応して欲しい](
 
 最後に。↑の記事の通り、先月くらいに[Open API Initiative](https://openapis.org/)という団体が結成したようです。  
 名だたる企業たちがコアメンバーに入っているので、活動を追って行きたいと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

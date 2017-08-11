@@ -142,6 +142,3 @@ API GatewayとLambdaをベースにしたサーバレスなAPIサーバとかも
 DreddがApiary(API Blueprint)ではなくSwaggerに対応したことは大きな意味を持つと思います。
 
 尻切れトンボですみません。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

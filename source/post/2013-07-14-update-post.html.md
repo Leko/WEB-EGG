@@ -189,6 +189,3 @@ HTMLで記事を更新していれば、ほとんどの場合バグや不具合�
 最期まで読んで下さいまして、ありがとうございました。
 
 > [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編） \| WEB EGG](/post/write-post-with-markdown-without-plugin-beginner/)
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

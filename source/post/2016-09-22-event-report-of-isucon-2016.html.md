@@ -196,6 +196,3 @@ isupamを解消したことでトップページのボトルベックを全て�
 辛酸を嘗めつつ、解説ブログを読みつつ、「その手があったか」と後悔する日々に浸ろうと思います。
 
 今年も勉強になりました。予選突破したかった…
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

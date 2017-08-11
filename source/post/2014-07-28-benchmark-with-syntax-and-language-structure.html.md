@@ -143,6 +143,3 @@ run(100000, array(
 古くからののPHPerの方だと、読みづらいんでしょうか。
 
 ちなみに私は特にPHP好きでも嫌いでもないですが、`[]`の方が見やすいです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

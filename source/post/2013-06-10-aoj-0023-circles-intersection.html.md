@@ -26,6 +26,3 @@ AOJの0023、Circles Intersectionをc++で解きました。
 ----------------------------------------
 
 <script src="https://gist.github.com/Leko/5734854.js"></script>
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

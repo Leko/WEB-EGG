@@ -297,6 +297,3 @@ pocket.add(opt, function(json) {
 
 APIは、APIクライアント系のgem(Rubyだけど)によくある形に合わせてみたつもりですが、  
 改善点がございましたら、Gistの方にコメントいただけると嬉しいです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

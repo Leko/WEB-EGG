@@ -70,8 +70,3 @@ GUIからチェックボックスを選んだ順番なんてまともに見る�
 
 
 ![チェックを入れなおし](/images/2013/08/8d64668f22f50892748e9a13f350eaa0.png)
-
-
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

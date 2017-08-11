@@ -180,6 +180,3 @@ HTML5についてはメディア系以外は追っかけているつもりだっ
 
 Angularなどのでかいフレームワークを使っているとこの辺一切触ることないですが、  
 素のReactなど薄いビュー層を触っているとついバリデーションをオレオレ実装してしまうことがあるので、こういった便利な標準仕様をもっと抑えていこうと思います。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

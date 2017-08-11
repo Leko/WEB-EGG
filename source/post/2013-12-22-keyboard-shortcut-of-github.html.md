@@ -90,6 +90,3 @@ Network画面
 | 左端へスクロール | `Shift`+`h` or `Shift`+`←` |
 | 右へスクロール  | `l` or `→`                 |
 | 右端へスクロール | `Shift`+`l` or `Shift`+`→` |
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

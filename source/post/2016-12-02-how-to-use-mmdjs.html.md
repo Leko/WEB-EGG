@@ -90,6 +90,3 @@ tags:
 </blockquote>
 
 まだ未検証ですが、最新版のThree.jsを利用することで思った通りの挙動になるようです。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>

@@ -81,6 +81,3 @@ SNSで活動とかしているわけではないので、趣味仕事ともに�
 
 特にストレスも無いし、不自由もないので、ひとまずこの生活を続けてみようと思っている。  
 また1ヶ月位経って変化があったら、なにか書くかもしれません。
-
-<div style="font-size:0px;height:0px;line-height:0px;margin:0;padding:0;clear:both">
-</div>
