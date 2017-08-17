@@ -2,6 +2,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Dispatcher, Context } from 'almin'
+import AlminLogger from 'almin-logger'
 import AppStoreGroup from './store/AppStoreGroup'
 import SearchApp from './SearchApp'
 import LazyLoadApp from './LazyLoadApp'
@@ -16,7 +17,6 @@ const appContext = new Context({
 })
 
 if (process.env.NODE_ENV !== 'production') {
-  const { AlminLogger } = require('almin-logger')
   const logger = new AlminLogger()
   logger.startLogging(appContext)
 }
