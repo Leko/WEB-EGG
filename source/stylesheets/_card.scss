@@ -1,6 +1,7 @@
 .card {
   $padding-vertical: 20px;
   $padding-horizontal: 20px;
+  $padding-horizontal-on-xs: 12px;
 
   background-color: $base-ex-light;
   box-shadow: 0px 0px 4px lighten($base-dark, 50%);
@@ -24,5 +25,19 @@
   &__header + &__body,
   &__body + &__footer {
     border-top: 1px solid lighten($base-mellow, 50%);
+  }
+
+  @include media-breakpoint-down(xs) {
+    &__header {
+      padding: $padding-vertical $padding-horizontal-on-xs;
+    }
+
+    &__body {
+      padding: $padding-vertical $padding-horizontal-on-xs;
+    }
+
+    &__footer {
+      padding: $padding-vertical $padding-horizontal-on-xs;
+    }
   }
 }
