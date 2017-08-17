@@ -38,6 +38,10 @@
 
     &__footer {
       padding: $padding-vertical $padding-horizontal-on-xs;
+
+      &--nopad {
+        padding: 0;
+      }
     }
   }
 }
