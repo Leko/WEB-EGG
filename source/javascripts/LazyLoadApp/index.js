@@ -1,3 +1,5 @@
+// importだと静的に解決されてpolifillにならないのでrequire
+import 'intersection-observer'
 
 export default function lazyLoader (images: NodeList<HTMLElement>): void {
   const callback = function(entries, observer) { 
