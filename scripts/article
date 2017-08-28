@@ -1,7 +1,7 @@
 # ./scripts/article hoge-foo-bar ほげふーばー 2017-05-12 tag1,tag2,tag3
 bundle exec middleman article $1 -d $3 -t $4 \
   && gsed -ie "s|title: $1|title: $2|g" source/post/$3-$1.html.md \
-  && gsed -ie "s|00:00 UTC|10:30 JST|g" source/post/$3-$1.html.md \
+  && gsed -ie "s|00:00 UTC|11:55 JST|g" source/post/$3-$1.html.md \
   && gsed -ie "s|,|\n- |g" source/post/$3-$1.html.md \
   && gsed -ie "s|tags: |tags:\n- |g" source/post/$3-$1.html.md \
   && subl source/post/$3-$1.html.md
