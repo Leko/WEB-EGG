@@ -59,7 +59,7 @@ Algoliaのバックエンドを利用する点は同じですが、**タグを�
 導入例はかなり強力で、その界隈の開発者にとっては馴染み深いドキュメントで広く活躍してます。
 もしかしたらこれらのドキュメントを読んでる過程で、サイト内検索を利用し、Algoliaのロゴに出会ったりしていないでしょうか。
 
-* [ReactNative](https://facebook.github.io/react-native/)
+* [React Native](https://facebook.github.io/react-native/)
 * [Babel](https://babeljs.io/)
 * [Middleman](https://middlemanapp.com/basics/install/)
 * [Vue.js](http://vuejs.org/v2/guide/)
