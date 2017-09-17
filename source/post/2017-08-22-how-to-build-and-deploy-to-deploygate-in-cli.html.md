@@ -1,15 +1,15 @@
 ---
-title: CLIだけでReactNativeアプリをビルドしてDeployGateにデプロイする方法
+title: CLIだけでReact NativeアプリをビルドしてDeployGateにデプロイする方法
 date: 2017-08-22 10:30 JST
 tags:
 - iOS
 - Android
-- ReactNative
+- React Native
 - DeployGate
 ---
 
 こんにちは。  
-仕事でReactNativeを触っているのですが、ステージング（DeployGate）へアプリを反映するときに、
+仕事でReact Nativeを触っているのですが、ステージング（DeployGate）へアプリを反映するときに、
 
 * Xcodeを起動
 * Product > Archiveを選択
@@ -125,7 +125,7 @@ AndroidのAPKファイルつくるのはとても簡単です
 で署名についてのセットアップを済ませておきます。
 これをやらないと、署名ができずビルドの最後の方でエラーになります。
 
-### GradleでReactNativeアプリをビルドしてAPKファイルを作成
+### GradleでReact NativeアプリをビルドしてAPKファイルを作成
 
 ```bash
 ./android/gradlew --project-dir ./android assembleRelease

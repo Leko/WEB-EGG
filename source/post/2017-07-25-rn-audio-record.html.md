@@ -5,13 +5,13 @@ image: /images/2017/07/eyecatch-rn-audio-record.png
 tags:
 - JavaScript
 - React
-- ReactNative
+- React Native
 - iOS
 - Android
 ---
 
 こんにちは。  
-ReactNativeで音声の録音機能を実装した時のメモです。
+React Nativeで音声の録音機能を実装した時のメモです。
 
 使用するライブラリはAndroidにも対応しているので、iOS/Android両方対応してみます。
 
@@ -24,7 +24,7 @@ ReactNativeで音声の録音機能を実装した時のメモです。
 ここにおいてあります。  
 この記事に関係する差分は[このPR](https://github.com/Leko/ReactNative-KitchenSink/pull/1)になります。
 
-先の話ですが、今後ReactNativeの実験的な記事を書いていくときにここにコードを置いていこうと思います。
+先の話ですが、今後React Nativeの実験的な記事を書いていくときにここにコードを置いていこうと思います。
 
 react-native-audioを導入
 ------------------------------------------
