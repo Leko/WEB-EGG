@@ -100,6 +100,7 @@ export default class SearchApp extends Component<void, Props, State> {
                 <ol className='search-result-list'>
                   {this.props.postState.posts.getAllPosts().map((post, i) => (
                     <li
+                      key={post.objectID}
                       tabIndex={-1}
                       onFocus={this.setCursor.bind(this, i)}
                       ref={i === this.state.cursor ? 'focusResult' : null}
