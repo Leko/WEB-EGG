@@ -9,6 +9,9 @@ import LazyLoadApp from './LazyLoadApp'
 import { registerWorkers } from './ServiceWorker'
 import swPrecacheConfig from '../../sw-precache-config'
 
+// --- Init error tracking
+Raven.config('https://12665dacfb554ecea25f3ef119a904af@sentry.io/244064').install()
+
 // --- Init SearchApp
 const dispatcher = new Dispatcher()
 const appContext = new Context({

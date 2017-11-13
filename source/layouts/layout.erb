@@ -120,6 +120,7 @@
       </div>
     </div>
     <%= partial 'partials/footer' %>
+    <script src="https://cdn.ravenjs.com/3.19.1/raven.min.js" crossorigin="anonymous"></script>
     <%= yield_content :scripts %>
     <%= javascript_include_tag 'main', async: 'async' %>
     <%= yield_content :body_close %>
