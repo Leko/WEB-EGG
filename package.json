@@ -53,7 +53,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
-    "dotenv": "^4.0.0",
+    "dotenv": "^5.0.0",
     "flow-bin": "^0.52.0",
     "flow-typed": "^2.1.2",
     "netlify-cli": "^1.2.2",
