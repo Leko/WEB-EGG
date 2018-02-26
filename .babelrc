@@ -2,11 +2,9 @@
   "presets": [
     "flow",
     "react",
-    "es2016",
-    "es2017",
     ["env", {
       "targets": {
-        "browsers": ["last 4 versions", "safari >= 7"]
+        "browsers": ["last 4 versions"]
       }
     }]
   ],
