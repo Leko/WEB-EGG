@@ -1,131 +1,188 @@
+---
+title: React Componentの薄くし方、reduxにおけるユースケース層を考えてみる
+date: 2017-02-15 11:55 JST
+tags:
+- JavaScript
+- React
+- Redux
+---
 
-React Componentの薄くし方、reduxにおけるユースケース層を考えてみる
-==============================================================
+こんにちは。れこです。
 
-こんにちは。れこです。  
+最近はReact Native+Reduxでネイティヴアプリを作ってます。  
+非同期Actionには[redux-thunk][]を使用しています。  
+Componentをなるべく薄く、状態を持たないようにしながら、現実世界に沿っていて開発がしやすく、防腐対策ができているぐらいの、ちょうどいい温度感を探っています。
 
-最近はReact Native+Reduxでアプリケーションを書いてます。  
-Componentをなるべく薄く、状態を持たないように、でもべき論ではなく現実世界に沿っていて開発がしやすく、防腐対策ができているちょうどいい温度感を探ってます。
+NativeでもDOMでも"コンポーネント"という粒度で見たときに大きな違いはなく、Redux層とReact Componentをどう棲み分けるべきかという議論は共有していると思います。
 
-本記事のおおよその構成要素は、redux-thunkの活用とHOCによるロジックとrenderの分離の話である。
-
-非同期のActionには[redux-thunk](https://github.com/gaearon/redux-thunk)を使用しています。  
-API通信するような処理や、AsyncStorageへの書き込みなどの副作用をThunkActionとして実装しています。  
-その他アラートやpush通知の取り扱いなどのRNに密結合した副作用はMiddlewareとして実装しています。
-
-ThunkAction+見た目上の副作用はMiddlewareという構成が、ReactのComponentを薄くする鍵となる
-
-これから記載する多くのことは[やまたつ](https://twitter.com/yamatatsu193)氏からもらった発想なのだが、  
-最初はあまりピンときてないまま、自分なりにコードを書きながら咀嚼した結果思ってることを記事にしているので、一応実体験に基づく言葉だと思う。
+半年くらい書いてみて個人的にしっくりくる形が定まってきたので、
+いかにComponentからロジックを剥がし、コアとなるロジック≒ユースケースを独立させてテスタブルに保つかについて考えて見ました。
 
 <!--more-->
 
 まえおき
 ------------------------------------------------
 
-本記事ではredux-thunkを用いたActionのことをThunkActionを表記する。
+本記事ではredux-thunkを用いるActionのことをThunkActionを表記します。
 
 
-dispatchにstateの値を渡すためにmapStateToPropsを使わない
+redux-thunkとは？
 ------------------------------------------------
+Reduxで非同期のActionを行う方法として代表的なのが[redux-promise](https://github.com/acdlite/redux-promise)、[redux-saga](https://github.com/redux-saga/redux-saga)、そして[redux-thunk][]があるかなと思います。  
+**個人的には圧倒的にredux-thunk推しです。**
+具体的にどう良いかは、ケーススタディがある方が伝わりやすいと思うので、この記事を通じて書きます。
 
-まずはThunkActionを活用するための前提知識。  
-redux-thunkのドキュメントをちゃんと読んでいなかったため、つい最近知った。  
-ThunkActionの第二引数に`getState`という同期でStateを返してくれる関数が渡ってくる
-
-例えばアプリにログインに成功するとユーザ情報を持つreducerがあったとして、  
-「ログイン済みユーザが保持するなにがしかのエンティティを取得したい」というケースはよくあると思う  
-ThunkActionがstateを見れると知らなかった私は
+ThunkActionのざっくりした定義としては、
 
 ```js
-const getMyEntity = (user) => async (dispatch) => {
-  // ユーザIDなどを見て何か取得する処理
+import type { State, Dispatch } from 'redux'
+
+type ThunkAction = (dispatch: Dispatch, getState: () => State) => Promise<void>
+
+const someThunkAction = (): ThunkAction => async (dispatch, getState) => {
+  // 現在のreduxStateの値を返す（同期）
+  const beforeState = getState()
+
+  // 何かPromiseを待ってdispatch。try-catchでエラーハンドリングも可能
+  await somePromise
+  dispatch(someActionCreator())
+
+  // thunk-actionを結合できるし、それの完了を待てる
+  await dispatch(someThunkAction2())
+
+  // 特定のActionに反応するMiddlewareがPromiseを返す場合もawaitで待てる
+  await dispatch(someActionCreatorWithMiddleware())
+
+  // 一連の処理で変わった結果のstateが参照できる（途中参照も可能）
+  const afterState = getState()
+  // ...
+}
+```
+
+上記のように、特定の形式の高階関数（戻り値の関数を便宜上ThunkActionと呼ぶ）を返す関数を定義します。
+このActionをdispatchするには、
+
+```js
+await dispatch(someThunkAction())
+```
+
+と、通常のActionCreatorを扱うときのようにdispatchできます。  
+なお、上記の書き方をした場合、**dispatchの戻り値はPromiseです**。
+
+上記のように扱えるredux-thunkを活用し、コンポーネントからロジックを剥がしていきます。
+導入方法についてはredux-thunkのリポジトリをご参照ください。ここでは説明を割愛します。
+
+dispatchに引数を渡すためのmapStateToPropsをやめる
+------------------------------------------------
+
+例えばログイン処理に成功するとセッションやログインしたユーザの情報をredux stateに持つreducerがあったとして、  
+**ログイン済みユーザが保持する何かしらのエンティティ（userId=ログイン済みユーザのID）をAPIから取得したい**
+というケースはよくあると思います。
+
+例えばこんな（良くない）実装が考えられるかなと思います。
+
+```js
+const getUserEntity = (user) => async (dispatch) => {
+  // ユーザIDなどを見てAPIを叩く非同期処理
 }
 
 mapStateToProps(({ user }) => ({
   user,
 })
 mapDispatchToProps((dispatch) => ({
-  getMyEntity (user) {
-    dispatch(getMyEntity(user))
+  async getUserEntity (user) {
+    try {
+      const userEntity = await getUserEntity(user)
+      dispatch(setUserEntity(userEntity))
+    } catch (error) {
+      dispatch(setError(error))
+    }
   }
 })
 
 // ...
 
-const SomeComponent = ({ user, getMyEntity }) => (
-  <TouchableOpacity onPress={() => getMyEntity(user)}>
+const SomeComponent = ({ user, getUserEntity }) => (
+  <TouchableOpacity onPress={() => getUserEntity(user)}>
     ...
   </TouchableOpacity>
 )
 ```
 
-みたいな書き方をしていた。  
-こんな大げさな書き方をしなくても、ThunkAction配下で直接Stateを見れば良い
+container層に、getUserEntityの呼び出しとPromiseのハンドリングが混じっています。
+さらに、**表示には使わない**userの値が、getUserEntityに値を渡すためだけにコンポーネントに渡っています。
+
+ユーザIDをクライアントから渡すのか、それともセッションIDだけ渡してサーバサイドがユーザIDを処理するのか、その違いはこの議論の対象ではありません。
+結局セッションIDをクライアントが渡さなければならない以上、上記の値の受け渡し問題が発生します。
+
+redux-thunkを使用しない場合の回避策としては、Middlewareに状態管理ロジックをもたせたり、reduxのconnectの第3引数である[mergeProps](https://github.com/reactjs/react-redux/blob/master/docs/api.md#connectmapstatetoprops-mapdispatchtoprops-mergeprops-options)を利用するなどがあると思います。
+Middlewareが複雑になると容易にスパゲティorピタゴラスイッチ化するので、私はいい手段とは思いません。
+
+> connect関数を使っているとひとつ困ることがあって、それはmapDispatchToPropsの中でステートを知ることができないということです。
+>
+> &mdash; [react-reduxのconnectでmergePropsを活用する - Qiita](https://qiita.com/IzumiSy/items/10ce3b629e24e1cac164)
+
+redux-thunkを使う場合は、ThunkActionの中でStateを見れるので、mergePropsのようなややこしい書き方をせずにすみます。
 
 ```js
-const getMyEntity = () => async (dispatch, getState) => {
+const getUserEntity = () => async (dispatch, getState) => {
   const { user } = getState()
-  // ユーザIDなどを見て何か取得する処理
+  try {
+    const userEntity = await ... // ユーザIDなどを見て何か取得する処理
+    dispatch(setUserEntity(userEntity))
+  } catch (error) {
+    dispatch(setError(error))
+  }
 }
 
 mapStateToProps(() => ({})
 mapDispatchToProps((dispatch) => ({
-  getMyEntity () {
-    dispatch(getMyEntity())
+  getUserEntity () {
+    dispatch(getUserEntity())
   }
 })
 
 // ...
 
-const SomeComponent = ({ user, getMyEntity }) => (
-  <TouchableOpacity onPress={getMyEntity}>
+const SomeComponent = ({ getUserEntity }) => (
+  <TouchableOpacity onPress={getUserEntity}>
     ...
   </TouchableOpacity>
 )
 ```
 
-のように書くことができる。だいぶバケツリレーがシンプルになったと思う。  
-悪い方の書き方がReact描くときの当たり前になっていたので普通に読めるのだけど、シンプルな姿に慣れると無駄に複雑な値の取り回しをしていたと感じるようになった。
+のように書くことができます。値の取り回しがシンプルかつ局所的になったと思います。
 
-悪い書き方での大きな問題は、  
-表示に使わない、Componentが知らなくていい値が、dispatchするためだけにpropとして渡されている  
-つまり**ロジックが成立するためには、mapStateToPropsとComponentによる値の正しい取り扱いが不可欠**になってしまうことが問題だと思う。  
-そうなるとロジックの正当性を確かめるために「Componentが正しく関数を呼び出せていること」をテストしないといけなくなる。
+- mapStateToPropsからuserが消えた
+- SomeComponentに渡すpropからuserが消えた
+- **Componentから関数を呼び出し適切に引数を与えるという役割が消えた**
+- **ThunkActionの中にのみロジックがあり、Componentはpropをイベントハンドラに繋ぐだけになった**
 
-ここがバグるというしょうもないことが稀によくあるので、テストしたい気持ちはわかる。  
-でもComponentのテストはプラットフォームと密結合しているためとてもやりづらい。というか面倒臭い。可能なら書きたくない。
+良くない書き方での大きな問題は、  
+表示に使わない、Componentが知らなくていい値が、dispatchするためだけにpropとして渡されています。つまり、**getUserEntityを取り巻く一連の処理の正当性を確かめるために、mapStateToProps及びComponentを同時に確かめなければなりません**。
+この挙動の正当性を確かめるために「mapStateToPropsやComponentが期待した通りに値を受け渡し、適切に関数を呼び出せていること」というしょうもないテストを書く必要があります。
 
-Stateが見れるようになったからといって、reducerは互いに独立しており、相互に関心を持つべきではないという考えもあると思う。  
-それについては次の章で考えを述べたい。
+一方redux-thunkを使った書き方では、そもそもmapStateToPropsの実装がなくなります。Componentはただ受け取ったpropを渡してるだけなのでテストする意義が薄くなります。getUserEntityだけをしっかりテストすれば良くなります。  
+getUserEntityはredux-thunkが提供するミドルウェアに依存していますが、Reduxやredux-thunkは特定のプラットフォームに依存しないので、**テストが非常に書きやすくなります。**
 
 
 SelectorパターンでStateの構造とロジックを分離する
 ------------------------------------------------
 
-Selectorパターンという名前は、本記事で名づけたパターンであるが、概念自体は既存のものであると思う。  
-combineReducersされたオブジェクト（以下StateGroup）の構造を隠蔽し、mapStateToPropsとThunkActionへ防腐処理を施すものだ
+Selectorパターンとは、[reduxのComputing Derived Data](https://redux.js.org/docs/recipes/ComputingDerivedData.html)から発想を得た、本記事で名づけた造語です。  
+**combineReducersされたオブジェクト（以下StateGroup）の構造を隠蔽**し、mapStateToPropsとThunkActionに防腐処理を施します。
 
-なぜこれが必要かというと、表示するための値の整形（単位をつけたりカンマつけたり集計したり）はどんなにシンプルであってもロジックだからだ
+例えば、ログイン済みユーザの情報を取り出す`getLoggedInUser`など、StateGroupの構造を把握し、Computedな値を取り出す処理がSelectorに該当します。  
+**mapStateToPropsのstate加工処理が煩雑になった結果、utilやlib、commonなどに分離しがちなユーティリティ関数は、Selectorの原石**なのです。
 
-各ThunkActionがStateGroupに密結合していると、さまざまなcontainerにStateGroupの構造に依存した処理が発生する。  
-これがコードを腐敗させる因子になると思っている  
-reducerをリファクタすると、気づいたらThunkActionやComponentの値の受け渡しがバグっていることがある  
-Flowなどの静的解析によって回避できる面もあるが、そもそもリファクタした時に一緒に書き換えるべきコードが多いのは精神衛生が良くない。  
-リファクタが億劫になり、腐敗が進んでいく。いざ頑張って慎重になっても、割とバグる。
-
-そこで活用したいのがSelectorパターンだ  
-[reduxのComputing Derived Data](https://redux.js.org/docs/recipes/ComputingDerivedData.html)を読んでいたらしっくり来た。
-
-Selectorは、StateGroupを受け取り、任意の値を返す関数だと定義づける。  
-例えば、ログイン済みユーザの情報を取り出す`getLoggedInUser`など、StateGroupの構造を把握し、Computedな値を取り出す処理がSelectorだ。  
-mapStateToPropsのstate加工処理が煩雑になり、utilやlibなどに分離しがちなユーティリティ関数は、実はSelectorの原石なのである。
-
-例えば`getLoggedInUser`を実装するとしたら、こんな感じになると思う
+例えば`getLoggedInUser`を実装するとしたら、以下のようになると思います
 
 ```js
 // store(reducer)の定義
-const initialState = { user: null }
+const initialState = {
+  user: null,
+}
+
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case 'LOGIN':
@@ -141,10 +198,39 @@ const store = combineReducers({
 
 // ...
 
-const getLoggedInUser = (state): ?User => state.user.user
+const getLoggedInUser = (state) => state.user.user
 ```
 
-Selectorは、mapStateToProps、ThunkActionどちらにも利用できる。  
+わざわざこんな小さな処理をラップする必要がある必要性はなんでしょうか。
+表示するための値の整形（単位をつけたりカンマつけたり集計したり）はどんなにシンプルであってもロジックだからです。そして、いずれ肥大化しコードの重複が蔓延するためです。
+
+各ThunkActionやcontainerがStateGroupに密結合していると、reducerをリファクタリングした時に、ThunkActionやComponentの値の受け渡しも一緒に変える必要があります。１限管理できていないため、バグをうむことがしばしばあります。
+
+Flowなどの静的解析によって回避できることもありますが、各所のStateGroupの構造に依存した処理が蔓延り、リファクタリングが億劫になり、腐敗が進んでいきます。
+
+Selectorの具体的な実装は、StateGroupを受け取り、任意の値を返す関数です。  
+特定のreducerのみに関心を持つのではなく、StateGroup全体に関心を持ちます。
+
+```js
+const getUserId = (state) => state.user.id
+const mapStateToProps = (state) => ({
+  userId: getUserId(state),
+})
+```
+
+と
+
+```js
+const getUserId = (userState) => userState.id
+const mapStateToProps = (state) => ({
+  userId: getUserId(state.user),
+})
+```
+
+では大きく意味が違います。前者の方が良いselectorです。
+呼び出す側がStateの構造を知らなくていいように、丸ごとstateを渡すのであって、`.user`のようにStateGroupの構造に関心を持ってはいけません。
+
+Selectorは、mapStateToProps、ThunkActionどちらにも利用できることも大きなポイントです。  
 例えばログインユーザの情報を表示するプロフィール画面なら
 
 ```js
@@ -153,36 +239,36 @@ const mapStateToProps = (state) => ({
 })
 ```
 
-と書けるし、ログインユーザのエンティティを利用するThunkActionがあったとすれば
+と書けますし、ログインユーザのエンティティを利用するThunkActionがあったとすれば
 
 ```js
-const getMyEntity = () => (dispatch, getState) => {
+const getUserEntity = () => (dispatch, getState) => {
   const user = getLoggedInUser(getState())
   // ...
 }
 ```
 
-と書くことができる。  
-mapStateToPropsやThunkActionからStateGroupの構造を隠蔽することができ、StateGroupの構造と表示/処理に必要な値を分離することができる  
-さらに、mapStateToPropsをテストするよりも粒度が小さいので、よりテスタブルである。
+と書けます。  
+mapStateToPropsやThunkActionからStateGroupの構造を隠蔽でき、StateGroupの構造と表示/処理に必要な値を分離できる  
+さらに、mapStateToPropsをテストするよりも粒度が小さいので、よりテスタブルです。
 
-単に処理の共通化としても便利なので、ThunkAction云々に関わらずSelectorは採用するといいと思っている。
+単に処理の共通化としても便利なので、Selectorです。
 
 
 複数のreducerにまたがるThunkAction = UseCase
 ------------------------------------------------
 
 selectorパターンによって、複数のreducerにまたがる値の計算をしやすくなった  
-reduxのActionCreatorは、特定のreducerに対応した処理になっているが、ThunkActionもまたreducer１つに対応しているのだろうか
+ReduxのActionCreatorは、特定のreducerに対応した処理になっているが、ThunkActionもまたreducer１つに対応しているのだろうか
 
-ThunkActionは、しかるべき非同期処理を行い、ActionCreateを呼ぶか、直接Actionをdispatchするのが良いと思う。  
+ThunkActionは、しかるべき非同期処理を行い、ActionCreateを呼ぶか、直接Actionをdispatchするのが良いと思います。  
 ThunkActionはActionよりも上位の概念であり、複数のActionを束ねる存在、個人的には**UseCase**と呼ぶのが妥当なんじゃないかと思っている。  
-「ログインする」はユースケースなのか？という原理的な話はさておき、便宜上ユースケースと呼んで差し支えないと思う。
+「ログインする」はユースケースなのか？ という原理的な話はさておき、便宜上ユースケースと呼んで差し支えないと思います。
 
 ケーススタディ：validate → 本処理 → 画面遷移 + フィードバック
 ------------------------------------------------
 
-モバイルアプリ（React Native）だと、フォームを含んだ画面であれば、だいたい該当すると思う。  
+モバイルアプリ（React Native）だと、フォームを含んだ画面であれば、だいたい該当すると思います。  
 具体的な例を挙げながらユースケースがどのように実装できるか見ていきたい
 
 ### ログイン
@@ -194,7 +280,7 @@ ThunkActionはActionよりも上位の概念であり、複数のActionを束ね
 
 という処理で考えてみる。  
 どのライブラリを使っているかなどの細かい事情は省略し、詳細な実装は適宜都合の良いように解釈していただきたい。  
-あくまでイメージコードであるという前提で見てもらえると理解が進みやすいと思う。
+あくまでイメージコードですという前提で見てもらえると理解が進みやすいと思います。
 
 ```js
 type Credential = {
@@ -270,9 +356,9 @@ const updateProfile = (profile: UserProfile) => async (dispatch, getState) => {
 Middlewareでプラットフォームとユースケースを分離する
 ------------------------------------------------
 
-ユースケースとプラットフォームを分離しUniversalなコードを保つために、ミドルウェアを利用するといいと思う。  
+ユースケースとプラットフォームを分離しUniversalなコードを保つために、ミドルウェアを利用するといいと思います。  
 製品コードではそのプラットフォームの依存を、テストコードではモックされた依存を渡すことが可能になる。  
-前の章で記載した`feedbackError`と、それをAlertという副作用に変換するミドルウェアは例えばこんな感じになる。
+前の章で記載した`feedbackError`と、それをAlertという副作用に変換するミドルウェアは例えば以下のようにになる。
 
 ```js
 const feedbackError = (error: Error) => ({
@@ -381,7 +467,7 @@ describe('updateProfile', () => {
 ------------------------------------------------
 
 最後に、よくやりがちな処理として、`componentWillMount`や`componentDidMount`でAPIからデータをロードしてくる処理を起動すること  
-reduxの`map*ToProps`では最初の一回だけというライフサイクルを取り扱うことが難しいからだと思う。
+Reduxの`map*ToProps`では最初の一回だけというライフサイクルを取り扱うことが難しいからだと思います。
 
 例えばこんなHOCが改善の鍵にならないだろうか。
 
@@ -408,21 +494,21 @@ withLifecycle({
 })(connect(mapStateToProps, mapDispatchToProps)(Component))
 ```
 
-この概念は[recomposeのlifecycle](https://github.com/acdlite/recompose/blob/master/docs/API.md#lifecycle)と等しいものだと思う。  
+この概念は[recomposeのlifecycle](https://github.com/acdlite/recompose/blob/master/docs/API.md#lifecycle)と等しいものだと思います。  
 **ライフサイクルに応じたロジック**はComponentが関心を持つべきことではなく、その外側の世界に出すべき物事ではないだろうか、と最近思っている
 
 これまでライフサイクルはComponentに書いていた私は、ライフサイクルの分離という発想に1週間くらいしっくり来ていなかった。  
 この書き方に慣れてくると、Componentをclassで書かざるを得ない要因の多くを排除でき、コンポーネントを純粋なStateless Functionにしやすいので、こちらの方がより明確でシンプルだと感じるようになった。
 
-これでもなおComponentが関心を持っていいライフサイクルは、ビュー層で発生するイベントの購読/解除だと思う  
-例えばDOMの世界なら`IntersectionObserver`、RNでの１例を挙げるとしたらデバイスの回転（`Dimensions.addEventListener`）などが挙げられると思う。  
-ただしAPIやキャッシュから何かを読んでくる処理や、Websocketの接続/解除などはComponentが知らない方がいい世界のライフサイクルだと思う。
+これでもなおComponentが関心を持っていいライフサイクルは、ビュー層で発生するイベントの購読/解除だと思います  
+例えばDOMの世界なら`IntersectionObserver`、RNでの１例を挙げるとしたらデバイスの回転（`Dimensions.addEventListener`）などが挙げられると思います。  
+ただしAPIやキャッシュから何かを読んでくる処理や、WebSocketの接続/解除などはComponentが知らない方がいい世界のライフサイクルだと思います。
 
 
 まとめ
 ------------------------------------------------
 
-粒度はお好みで良いと思うけど、結果としてはこのように住み分けると、Componentの内部/外部ともにすっきりすると思う
+粒度はお好みで良いと思いますけど、結果としてはこのように住み分けると、Componentの内部/外部ともにすっきりすると思います
 
 ```
 modules/    # １ファイル１reducer、それに紐づくActionCreatorの集まり
@@ -432,5 +518,7 @@ selectors/  # １ファイル１Selector
 usecase/    # １ファイル１Usecase、ThunkActionの集まり
   login.js
   logout.js
-  getMyEntity.js
+  getUserEntity.js
 ```
+
+[redux-thunk]: https://github.com/gaearon/redux-thunk
