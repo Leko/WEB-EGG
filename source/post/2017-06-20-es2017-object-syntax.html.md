@@ -150,7 +150,7 @@ const name = obj.name
 const age = obj.age
 ```
 
-ちなみにこの構文は関数の引数にも利用することが可能です
+ちなみにこの構文は関数の引数にも利用できます
 
 ```javascript
 // と等価
