@@ -240,26 +240,6 @@ helpers do
     }]
   end
 
-  def preload_stylesheet_link_tag(*sources)
-    options = {
-      rel: 'preload',
-      as: 'style',
-      onload: "this.rel='stylesheet'",
-    }.update(sources.extract_options!.symbolize_keys)
-
-    path_options = {}
-    path_options[:relative] = options.delete(:relative) if options.key?(:relative)
-
-    sources.flatten.reduce(::ActiveSupport::SafeBuffer.new) do |all, source|
-      all << tag(:link, {
-        href: asset_path(:css, URI.escape(source), path_options)
-      }.update(options))
-      all << content_tag(:noscript) do
-        stylesheet_link_tag(URI.escape(source), path_options)
-      end
-    end
-  end
-
   def all_articles
     blog.articles.map{|post|
       {

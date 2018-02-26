@@ -2,7 +2,6 @@
 <%= partial 'partials/google_font' -%>
 <%= partial 'partials/google_adsense' -%>
 <%= partial 'partials/fontawesome' -%>
-<%= partial 'partials/load_css' -%>
 <!doctype html>
 <html>
   <head>
@@ -26,7 +25,7 @@
       <%= partial 'partials/google_linked_data', locals: {linked_data: google_linked_data_list(current_page, page_number)} %>
     <% end %>
 
-    <%= preload_stylesheet_link_tag 'all', 'highlighting', rel: 'preload', as: 'style', onload: "this.rel='stylesheet'" %>
+    <%= stylesheet_link_tag 'all', 'highlighting' %>
     <%= yield_content :stylesheets %>
     <%= yield_content :head_close %>
   </head>
