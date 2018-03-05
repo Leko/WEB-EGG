@@ -4,6 +4,7 @@ node_js:
 cache:
   bundler: true
   directories:
+    - /home/travis/.rvm/
     - node_modules
     - build
     - .imageoptim_cache
