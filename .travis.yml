@@ -7,8 +7,7 @@ cache:
     - /home/travis/.rvm/
     - node_modules
     - build
-    - .imageoptim_cache
-    - .textlintcache
+    - .caches
 
 before_install:
 - git config user.name 'WEB-EGG bot'
