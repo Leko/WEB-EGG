@@ -8,6 +8,7 @@ cache:
     - node_modules
     - build
     - .imageoptim_cache
+    - .textlintcache
 
 before_install:
 - git config user.name 'WEB-EGG bot'
