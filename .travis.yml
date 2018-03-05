@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - 6.1.0
+cache:
+  bundler: true
+  directories:
+    - node_modules
+    - build
 
 before_install:
 - git config user.name 'WEB-EGG bot'
