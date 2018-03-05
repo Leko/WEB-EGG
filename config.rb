@@ -283,7 +283,7 @@ configure :build do
         :skip_missing_workers => true, # Skip workers with missing or problematic binaries _(defaults to `false`)_
         :verbose => true,              # Verbose output _(defaults to `false`)_
         :allow_lossy => true,          # Allow lossy workers and optimizations _(defaults to `false`)_
-        :cache_dir => '.imageoptim_cache'
+        :cache_dir => '.imageoptim_cache',
 
         # PNG では OptiPNG または PNGOUT をおすすめします。
         # https://developers.google.com/speed/docs/insights/OptimizeImages
