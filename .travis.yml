@@ -1,6 +1,14 @@
 language: node_js
 node_js:
   - 6.1.0
+cache:
+  bundler: true
+  directories:
+    - /home/travis/.rvm
+    - /home/travis/.flow-typed
+    - node_modules
+    - build
+    - .caches
 
 before_install:
 - git config user.name 'WEB-EGG bot'
