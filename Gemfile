@@ -28,7 +28,7 @@ gem 'algoliasearch'
 gem 'middleman-blog-similar' # https://ja.ngs.io/2014/05/11/middleman-blog-similar/
 
 gem 'redcarpet', '~> 3.3', '>= 3.3.3'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '4.0.0.alpha6'
 
 # For feed.xml.builder
 gem 'builder', '~> 3.0'
