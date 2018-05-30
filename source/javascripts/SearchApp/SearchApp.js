@@ -21,13 +21,13 @@ type State = {
 
 function formatDate (date: Date): string {
   const year = date.getFullYear()
-  const month = padStart(date.getMonth() + 1, 2, '0')
-  const day = padStart(date.getDate(), 2, '0')
+  const month = padStart(String(date.getMonth()) + 1, 2, '0')
+  const day = padStart(String(date.getDate()), 2, '0')
 
   return `${year}-${month}-${day}`
 }
 
-export default class SearchApp extends Component<void, Props, State> {
+export default class SearchApp extends Component<Props, State> {
   state: State
   handleClose: Function
   handleChange: Function

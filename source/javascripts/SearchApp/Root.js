@@ -12,7 +12,7 @@ type State = {
   postState: PostState
 }
 
-export default class Root extends Component<void, Props, State> {
+export default class Root extends Component<Props, State> {
   state: State
   unSubscribe: Function
 

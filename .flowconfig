@@ -1,5 +1,6 @@
 [ignore]
 .*/vendor/bundle/.*
+.*/build/.*
 
 [include]
 
