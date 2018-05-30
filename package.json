@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/Leko/WEB-EGG#readme",
   "dependencies": {
-    "algoliasearch": "^3.24.0",
+    "algoliasearch": "^3.27.1",
     "almin": "^0.16.0",
     "babel-polyfill": "^6.23.0",
     "bluebird": "^3.5.0",
