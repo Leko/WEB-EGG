@@ -1,14 +1,14 @@
 {
   "presets": [
-    "flow",
-    "react",
-    ["env", {
+    "@babel/preset-flow",
+    "@babel/preset-react",
+    ["@babel/preset-env", {
       "targets": {
         "browsers": ["last 4 versions"]
       }
     }]
   ],
   "plugins": [
-    "transform-flow-strip-types"
+    "@babel/plugin-transform-flow-strip-types"
   ]
 }

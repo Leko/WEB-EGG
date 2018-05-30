@@ -6,7 +6,7 @@ require('dotenv').config()
 
 module.exports = {
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     './source/javascripts/main.js',
   ],
   resolve: {
