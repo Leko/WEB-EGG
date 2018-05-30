@@ -3,8 +3,8 @@ import type { Context } from 'almin'
 import type PostState from '../store/PostState'
 import React, { Component } from 'react'
 import classnames from 'classnames'
-import moment from 'moment'
 import debounce from 'lodash/debounce'
+import padStart from 'lodash/padStart'
 import Post from '../domain/Post'
 import PostList from '../domain/PostList'
 import { FilterPostListUseCaseFactory } from '../usecase/FilterPostListUseCase'
@@ -17,6 +17,14 @@ type State = {
   keyword: string,
   cursor: number,
   shown: boolean,
+}
+
+function formatDate (date: Date): string {
+  const year = date.getFullYear()
+  const month = padStart(date.getMonth() + 1, 2, '0')
+  const day = padStart(date.getDate(), 2, '0')
+
+  return `${year}-${month}-${day}`
 }
 
 export default class SearchApp extends Component<void, Props, State> {
@@ -128,7 +136,7 @@ export default class SearchApp extends Component<void, Props, State> {
                               <i className='fa fa-calendar-o' />
                               <time
                                 className='search-result-list__item__date'
-                                dangerouslySetInnerHTML={{ __html: moment(new Date(post.date)).format('YYYY-MM-DD') }}
+                                dangerouslySetInnerHTML={{ __html: formatDate(new Date(post.date)) }}
                               />
                             </div>
                             <div className='col-md-6'>
