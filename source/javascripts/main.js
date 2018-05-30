@@ -25,7 +25,10 @@ if (process.env.NODE_ENV !== 'production') {
   logger.startLogging(appContext)
 }
 
-ReactDOM.render(<SearchApp appContext={appContext} />, document.getElementById('search'))
+const searchElement = document.getElementById('search')
+if (searchElement) {
+  ReactDOM.render(<SearchApp appContext={appContext} />, searchElement)
+}
 
 // --- Init LazyLoadApp
 LazyLoadApp(document.querySelectorAll('.markdown img'))

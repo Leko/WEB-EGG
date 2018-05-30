@@ -6,7 +6,7 @@ require('dotenv').config()
 
 module.exports = {
   entry: [
-    'babel-polyfill',
+    '@babel/polyfill',
     './source/javascripts/main.js',
   ],
   resolve: {
@@ -28,10 +28,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env.ALGOLIA_APP_ID': JSON.stringify(process.env.ALGOLIA_APP_ID),
-      'process.env.ALGOLIA_API_KEY': JSON.stringify(process.env.ALGOLIA_API_KEY),
-      'process.env.ALGOLIA_INDEX': JSON.stringify(process.env.ALGOLIA_INDEX),
-    })
+    new webpack.EnvironmentPlugin([
+      'ALGOLIA_APP_ID',
+      'ALGOLIA_API_KEY',
+      'ALGOLIA_INDEX',
+    ]),
   ]
 }
