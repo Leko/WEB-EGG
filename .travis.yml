@@ -33,4 +33,3 @@ deploy:
     script: scripts/deploy
     on:
       branch: master
- 
