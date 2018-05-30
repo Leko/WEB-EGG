@@ -1,5 +1,4 @@
 // @flow
-import type Promise from 'bluebird'
 import type PostList from '../domain/PostList'
 import { UseCase } from 'almin'
 import postListRepository from '../infra/PostListRepository'
