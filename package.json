@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "flow-typed install",
     "test": "{TODO}",
-    "lint:flow": "flow",
+    "lint:flow": "flow --show-all-errors",
     "lint:md": "textlint --cache --cache-location .caches/.textlintcache -f pretty-error source/post/*.md",
     "lint:md:fix": "textlint --fix source/post/*.md",
     "develop": "webpack --config ./webpack.config.js --watch -d --progress --colors",
