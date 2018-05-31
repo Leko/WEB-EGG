@@ -1,5 +1,5 @@
 ---
-title: pecoでnpm-scriptsをタブ補完でもっと超簡単に実行したい
+title: タブ補完でpecoでnpm-scriptsをもっと超簡単に実行したい
 date: 2018-06-01 10:30 JST
 tags:
 - npm
@@ -11,14 +11,14 @@ tags:
 
 > &mdash; [pecoでnpm-scriptsを超簡単に実行したい - Qiita](https://qiita.com/hogesuke_1/items/46f009f31b5f2ec8c02c)
 
-という素晴らしい記事が上がり使ってみたのですが、
-`npm run `まで打ってから「あれ、コマンドなんだっけ」と思い出して、入力内容を消して`nrun`を実行する、という一手間があったので、
+という素晴らしい記事が公開されたので実際に使ってみたのですが、  
+`npm run `まで打ってから「あれ、コマンドなんだっけ」と思い、入力内容を消し`nrun`を実行するという一手間を省略したいと思いました。  
 もっと超簡単に実行できるように`npm run <TAB>`でpecoが起動するようにしてみました。
 
 <!--more-->
 
 ## まえおき
-Bashでのみ動作確認しております。
+Bashでのみ動作確認してます。  
 ZやFの方は別途記事書いていただけるとありがたいです。
 
 また、元記事の通りにセットアップができていることを前提とします。
@@ -27,41 +27,66 @@ ZやFの方は別途記事書いていただけるとありがたいです。
 
 ## npm run <TAB>でpecoを作動させる
 
+タブ補完に関しては、こちらの記事を参考にしました。
+
 > &mdash; [Bashタブ補完自作入門 - Cybozu Inside Out | サイボウズエンジニアのブログ](http://blog.cybozu.io/entry/2016/09/26/080000)
 
-タブ補完に関しては、こちらの記事を参考にしました。
+で、実際に書いたシェルがこちら。
 
 ```sh
 _npm_run_peco() {
     local cur prev cword
     _get_comp_words_by_ref -n : cur prev cword
     if [ "$prev" = "run" ]; then
-        COMPREPLY=$(cat package.json | jq -r '.scripts | keys[]' | peco --query=$cur)
+        COMPREPLY=$(cat package.json | jq -r '.scripts | keys[]' | peco --initial-filter=Fuzzy --query=$cur)
     fi
 }
 complete -F _npm_run_peco npm
 ```
 
-このコードをbash_profileなどに書き込み、
+このコードをbash_profileなどに貼り付け、
 
 ```
 source ~/.bash_profile
 ```
 
 などと実行すれば反映されます。
-短いですが一応解説すると、
+コードは短いですが一応解説です。
 
-- `_get_comp_words_by_ref`という便利関数で現在カーソルがある手前の単語が何かわかる
-    - prevが`run`だったら処理するみたいにフィルタできる
-    - curは現在カーソルがある単語を指すので、入力途中のスクリプトをpecoの初期クエリに食わせる
-- `complete -F フックさせたい関数名 補完対象にするコマンド`を実行すると、タブ補完が有効になる
-- `COMPREPLY`に値をセットすると、補完される文字列になる
-    - pecoで選ばれた値をセットする
+### Tab補完の定義方法
+`complete -F フックさせたい関数名 補完対象にするコマンド`を実行すると、タブ補完が有効になります
 
-というコードになります
+### _get_comp_words_by_ref
+便利関数。現在カーソルがある手前の単語が何かわかります。  
+例えば、prevが`run`だった時だけ処理するみたいにフィルタできます。  
+curは現在カーソルがある単語を指すので、入力途中のスクリプト名をpecoの初期クエリに渡せます。
+
+```
+npm run <TAB>  # Tabの位置に単語はないので、クエリは空文字列。全script一覧が表示される
+npm run b<TAB> # Tabのいちに`b`があるので、bにマッチするscript一覧が表示される
+```
+
+### COMPREPLY
+`COMPREPLY`に値をセットすると、補完される文字列になります。  
+例えばCOMPREPLYに`build`という値をセットすると、
+
+```
+npm run build
+```
+
+のような補完になります。  
+これにpecoを組み合わせて、pecoで選ばれたscriptがCOMPREPLYにセットされるようにすれば良い
+
+### pecoでfuzzy search
+設定次第ですが、オプション指定なしでpecoを呼ぶと`IgnoreCase`というフィルタになっています。  
+個人的にはFuzzy searchなら適当にタイプしても見つかるので設定しています。  
+この設定は好みなので、[pecoのオプション](https://github.com/peco/peco#--initial-filter-ignorecasecasesensitivesmartcaseregexpfuzzy)を読みつつ、手に馴染む設定をすると良いと思います。
 
 ## 動作デモ
 
 ![動作デモ](/images/2018/more-more-easy-to-use-npm-run-script/npm-run-tab-completion.gif)
 
-快適٩( 'ω' )و
+> &mdash; [タブ補完でpecoでnpm-scriptsをもっと超簡単に実行したい - asciinema](https://asciinema.org/a/184718)
+
+快適٩( 'ω' )و  
+作ってみたらBashのTab補完とても簡単だったので、これからは積極的に補完していきたい
