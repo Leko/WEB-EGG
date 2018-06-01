@@ -17,6 +17,9 @@ tags:
 
 <!--more-->
 
+## CHANGELOG
+2018/06/01: yarnにも対応しました
+
 ## まえおき
 Bashでのみ動作確認してます。  
 ZやFの方は別途記事書いていただけるとありがたいです。
@@ -37,11 +40,11 @@ ZやFの方は別途記事書いていただけるとありがたいです。
 _npm_run_peco() {
     local cur prev cword
     _get_comp_words_by_ref -n : cur prev cword
-    if [ "$prev" = "run" ]; then
+    if [ "$prev" = "run" ] || [ "$prev" = "yarn" ]; then
         COMPREPLY=$(cat package.json | jq -r '.scripts | keys[]' | peco --initial-filter=Fuzzy --query=$cur)
     fi
 }
-complete -F _npm_run_peco npm
+complete -F _npm_run_peco npm yarn
 ```
 
 このコードをbash_profileなどに貼り付け、
@@ -54,7 +57,8 @@ source ~/.bash_profile
 コードは短いですが一応解説です。
 
 ### Tab補完の定義方法
-`complete -F フックさせたい関数名 補完対象にするコマンド`を実行すると、タブ補完が有効になります
+`complete -F フックさせたい関数名 補完対象にするコマンド（可変長）`を実行すると、タブ補完が有効になります。  
+例えば`complete -F hoge npm yarn`と書けば`npm`と`yarn`コマンドに対して関数`hoge`をフックするタブ補完になります。
 
 ### _get_comp_words_by_ref
 便利関数。現在カーソルがある手前の単語が何かわかります。  
