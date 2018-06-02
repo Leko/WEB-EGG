@@ -73,6 +73,6 @@
     "textlint-rule-period-in-list-item": "^0.2.0",
     "textlint-rule-spellcheck-tech-word": "^5.0.0",
     "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4"
+    "webpack-cli": "^3.0.0"
   }
 }
