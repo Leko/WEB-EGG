@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/Leko/WEB-EGG#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.49",
+    "@babel/polyfill": "^7.0.0-beta.51",
     "algoliasearch": "^3.27.1",
     "almin": "^0.17.0",
     "classnames": "^2.2.5",
