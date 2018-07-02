@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/Leko/WEB-EGG#readme",
   "dependencies": {
-    "@babel/polyfill": "^7.0.0-beta.49",
+    "@babel/polyfill": "^7.0.0-beta.51",
     "algoliasearch": "^3.27.1",
     "almin": "^0.17.0",
     "classnames": "^2.2.5",
@@ -43,12 +43,12 @@
     "shallow-equal-object": "^1.0.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.0.0-beta.49",
-    "@babel/core": "^7.0.0-beta.49",
-    "@babel/plugin-transform-flow-strip-types": "^7.0.0-beta.49",
+    "@babel/cli": "^7.0.0-beta.51",
+    "@babel/core": "^7.0.0-beta.51",
+    "@babel/plugin-transform-flow-strip-types": "^7.0.0-beta.51",
     "@babel/preset-env": "^7.0.0-beta.49",
-    "@babel/preset-flow": "^7.0.0-beta.49",
-    "@babel/preset-react": "^7.0.0-beta.49",
+    "@babel/preset-flow": "^7.0.0-beta.51",
+    "@babel/preset-react": "^7.0.0-beta.51",
     "almin-logger": "^6.1.5",
     "babel-loader": "^8.0.0-beta.3",
     "dotenv": "^6.0.0",
