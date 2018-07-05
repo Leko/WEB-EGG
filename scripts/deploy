@@ -1,6 +1,6 @@
 export NODE_ENV=production
 export RAILS_ENV=production
 
-# bundle exec middleman build
+bundle exec middleman build
 npm run build:cache
 npm run deploy -- $@
