@@ -22,6 +22,7 @@ install:
 script:
 - npm run lint:flow
 - npm run lint:md
+- bundle exec middleman build
 
 # Netlify deploy `master` branch automatically.
 # But max build time is 15min. It's not enough to my build.
