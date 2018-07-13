@@ -128,11 +128,11 @@ helpers do
     "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(config[:meta][:email])}?size=600"
   end
 
-  def gh_embed (url)
+  def gh_embed (url, lang = nil)
     uri = URI.parse(url)
     # https://github.com/gaearon/redux-thunk/blob/4f96ec0239453623adde857b7e7ad8c4f2897bf1/src/index.js
     owner, repo, _, sha_or_branch, *path = uri.path.split('/')[1..-1]
-    lang = File.extname(path.last)[1..-1]
+    lang = lang ||= File.extname(path.last)[1..-1]
     start_line, end_line = uri.fragment&.match(/L(\d+)-L(\d+)/)&.to_a&.map(&:to_i)&.drop(1) || [1, -1]
     raw_url = URI.parse("https://github.com/#{owner}/#{repo}/raw/#{sha_or_branch}/#{path.join('/')}")
     res = Net::HTTP.get_response(raw_url)
