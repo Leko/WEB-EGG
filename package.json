@@ -33,7 +33,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0-beta.49",
     "algoliasearch": "^3.27.1",
-    "almin": "^0.17.0",
+    "almin": "^0.18.0",
     "classnames": "^2.2.5",
     "intersection-observer": "^0.5.0",
     "isomorphic-fetch": "^2.2.1",
