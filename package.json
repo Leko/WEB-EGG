@@ -30,6 +30,11 @@
     "url": "https://github.com/Leko/WEB-EGG/issues"
   },
   "homepage": "https://github.com/Leko/WEB-EGG#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "algoliasearch": "^3.30.0",
@@ -54,8 +59,10 @@
     "dotenv": "^6.0.0",
     "flow-bin": "^0.73.0",
     "flow-typed": "^2.4.0",
+    "husky": "^1.1.2",
     "netlify-cli": "^2.0.0",
     "prettier": "^1.14.3",
+    "pretty-quick": "^1.8.0",
     "sw-precache": "^5.2.0",
     "textlint": "^11.0.0",
     "textlint-rule-date-weekday-mismatch": "^1.0.5",
