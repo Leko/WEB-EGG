@@ -295,7 +295,12 @@ configure :build do
           .each_char
           .each_slice(1000)
           .map(&:join)
-          .map{|chunk| item.merge({ 'body' => chunk })}
+          .map.with_index{|chunk, index|
+            item.merge({
+              'objectID' => "#{item['objectID']}-#{index}",
+              'body' => chunk
+            })
+          }
       }
       index.save_objects!(batch)
       File.delete(path)
