@@ -16,7 +16,8 @@ type Props = {
 type State = {
   keyword: string,
   cursor: number,
-  shown: boolean
+  shown: boolean,
+  inComposition: boolean
 };
 
 function formatDate(date: Date): string {
@@ -31,20 +32,25 @@ export default class SearchApp extends Component<Props, State> {
   state: State = {
     keyword: "",
     cursor: -1,
-    shown: false
+    shown: false,
+    inComposition: false
   };
 
   handleChange = debounce(() => {
+    if (this.inComposition) {
+      return;
+    }
+
     const keyword = this.refs.search.value;
     this.props.appContext
       .useCase(FilterPostListUseCaseFactory.create())
       .execute(keyword);
     this.setState({ keyword, cursor: 0 });
-  }, 1000 / 60);
+  }, 200);
 
-  handleKeyPress = debounce((e: KeyboardEvent) => {
+  handleKeyPress = (e: KeyboardEvent) => {
     // TODO
-  }, 1000 / 60);
+  };
 
   handleClose = () => {
     this.setState({ shown: false });
@@ -58,13 +64,21 @@ export default class SearchApp extends Component<Props, State> {
     this.setState({ shown: true, cursor: -1 });
   };
 
+  onCompositionStart = () => {
+    this.setState({ inComposition: true });
+  };
+
+  onCompositionEnd = () => {
+    this.setState({ inComposition: false });
+  };
+
   setCursor(index: number) {
     this.setState({ cursor: index });
   }
 
   render() {
     return (
-      <form className="search">
+      <div className="search">
         <div className="input-group">
           <div className="input-group-addon">
             <i className="fa fa-search" />
@@ -78,6 +92,8 @@ export default class SearchApp extends Component<Props, State> {
             onBlur={this.handleBlur}
             onFocus={this.handleFocus}
             onKeyPress={this.handleKeyPress}
+            onCompositionStart={this.onCompositionStart}
+            onCompositionEnd={this.onCompositionEnd}
           />
         </div>
         {this.state.shown && this.state.keyword ? (
@@ -160,7 +176,7 @@ export default class SearchApp extends Component<Props, State> {
             </div>
           </div>
         ) : null}
-      </form>
+      </div>
     );
   }
 }
