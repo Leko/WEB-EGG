@@ -10,41 +10,39 @@ tags:
   - PHP
   - PHPUnit
 ---
+
 こんにちは。  
-仕事の方でテストカバレッジをGUIなしに集計する必要が出たので、
+仕事の方でテストカバレッジを GUI なしに集計する必要が出たので、
 
-  * メソッド単位のカバレッジを集計したい
-  * クラス単位でのカバレッジを集計したい
-  * ファイル単位でのカバレッジを集計したい
-  * ディレクトリ単位でのカバレッジを集計したい
+- メソッド単位のカバレッジを集計したい
+- クラス単位でのカバレッジを集計したい
+- ファイル単位でのカバレッジを集計したい
+- ディレクトリ単位でのカバレッジを集計したい
 
-の集計をするために、PHPUnitが出力するClover形式のXMLと格闘して得られた、XMLの構造と扱い方についてまとめてみました
+の集計をするために、PHPUnit が出力する Clover 形式の XML と格闘して得られた、XML の構造と扱い方についてまとめてみました
 
 <!--more-->
 
-はじめに
-----------------------------------------
+## はじめに
 
-レガシーなPHPと戦っており、PHPUnitのバージョンは3.4です  
+レガシーな PHP と戦っており、PHPUnit のバージョンは 3.4 です  
 **最高につらい**
 
-なので出力されるXMLの構造や属性名に差異があるかもしれません  
+なので出力される XML の構造や属性名に差異があるかもしれません  
 また、カバレッジレポートの出力方法は[こちらのドキュメント](https://phpunit.de/manual/3.4/ja/index.html)を参照して下さい
 
-なお、PHPUnitのカバレッジレポート単体ではC0のカバレッジしか計測できませんでした  
-後述するlineタグのnum属性とcount属性の値を使って対象プログラムの静的解析かければ、解析できなくはないかもしれませんが、  
-カバレッジレポート単体ではC0のレポートしか出ません。
+なお、PHPUnit のカバレッジレポート単体では C0 のカバレッジしか計測できませんでした  
+後述する line タグの num 属性と count 属性の値を使って対象プログラムの静的解析かければ、解析できなくはないかもしれませんが、  
+カバレッジレポート単体では C0 のレポートしか出ません。
 
-カバレッジXMLの書式
-----------------------------------------
+## カバレッジ XML の書式
 
-この当時のPHPUnitには`--coverage-clover`というオプションがあります  
-これがXML形式のカバレッジレポートを出力してくれるオプションです
+この当時の PHPUnit には`--coverage-clover`というオプションがあります  
+これが XML 形式のカバレッジレポートを出力してくれるオプションです
 
-カバレッジレポート(XML)の基本的な構造
-----------------------------------------
+## カバレッジレポート(XML)の基本的な構造
 
-XMLはざっくり、こんな感じになりました
+XML はざっくり、こんな感じになりました
 
 ```html
 <coverage>
@@ -88,7 +86,7 @@ XMLはざっくり、こんな感じになりました
         statements="ファイル内の定義行を除いた有効行数"
         coveredstatements="行カバーされているファイル内の定義行を除いた有効行数"
       />
-    </file>  
+    </file>
 
 <!-- 対象カバレッジのメトリクス総まとめ -->
     <metrics
@@ -105,126 +103,137 @@ XMLはざっくり、こんな感じになりました
 </coverage>
 ```
 
-`有効行数`は、空白行やコメントアウトなどを除いた、PHPのコードとして評価される行数を指しています。
+`有効行数`は、空白行やコメントアウトなどを除いた、PHP のコードとして評価される行数を指しています。
 
-クラス単位で行カバレッジを取る
-----------------------------------------
+## クラス単位で行カバレッジを取る
 
-jsで書くと、
+js で書くと、
 
 ```javascript
-const el = document.querySelector('class[name="クラス名"][namespace="名前空間"]>metrics')
-console.log(el.coveredstatements / el.statements)
+const el = document.querySelector(
+  'class[name="クラス名"][namespace="名前空間"]>metrics'
+);
+console.log(el.coveredstatements / el.statements);
 ```
 
 に相当します
 
-classタグ1つにつきmetricsタグが1つはいっているので、  
-目的のクラスの中にあるmetricsタグを抽出し、有効行数とカバーしている有効行数で比較できます。
+class タグ 1 つにつき metrics タグが 1 つはいっているので、  
+目的のクラスの中にある metrics タグを抽出し、有効行数とカバーしている有効行数で比較できます。
 
-namespaceを入れないと衝突する恐れがあります。  
-もしその辺考慮しなくていいならnamespace属性は無視できます。
+namespace を入れないと衝突する恐れがあります。  
+もしその辺考慮しなくていいなら namespace 属性は無視できます。
 
-ファイル単位で行カバレッジを取る
-----------------------------------------
+## ファイル単位で行カバレッジを取る
 
-ファイルも同じ要領で、fileタグ1つの直下にmetricsタグが1つ入っているので、それを比較します。
+ファイルも同じ要領で、file タグ 1 つの直下に metrics タグが 1 つ入っているので、それを比較します。
 
 ```javascript
-const el = document.querySelector('file[name="ファイルパス"]>metrics')
-console.log(el.coveredstatements / el.statements)
+const el = document.querySelector('file[name="ファイルパス"]>metrics');
+console.log(el.coveredstatements / el.statements);
 ```
 
 ファイル名（[basepath](php.net/manual/ja/function.basename.php)相当）ではなく、フルパスな点に注意です。  
 テストを実行（カバレッジ集計）した環境によって変わるのでご注意下さい。
 
-ディレクトリ単位でカバレッジを取る
-----------------------------------------
+## ディレクトリ単位でカバレッジを取る
 
-カバレッジレポートはfileタグ単位で纏まっているので、ディレクトリごとのカバレッジを完璧に取ることは困難です。  
+カバレッジレポートは file タグ単位で纏まっているので、ディレクトリごとのカバレッジを完璧に取ることは困難です。  
 **もしソースの実体があれば** ディレクトリの中身を漁って有効行数を出すことが可能ですが、  
 ソースの実体を持たない限り、カバレッジレポートに記載されているファイルしか計測対象になりません。
 
 その不完全な状態であれば、
 
 ```javascript
-const metricses = document.querySelectorAll('file[name^="ディレクトリまでのパス"]>metrics')
-const dirMetrics = metricses.reduce((acc, metrics) => ({
-  statements: acc.statements + metrics.statements,
-  coveredstatements: acc.coveredstatements + metrics.coveredstatements,
-}), { coveredstatements: 0, statements: 0 })
+const metricses = document.querySelectorAll(
+  'file[name^="ディレクトリまでのパス"]>metrics'
+);
+const dirMetrics = metricses.reduce(
+  (acc, metrics) => ({
+    statements: acc.statements + metrics.statements,
+    coveredstatements: acc.coveredstatements + metrics.coveredstatements
+  }),
+  { coveredstatements: 0, statements: 0 }
+);
 
-console.log(dirMetrics.coveredstatements / dirMetrics.statements)
+console.log(dirMetrics.coveredstatements / dirMetrics.statements);
 ```
 
 相当で取得可能です。  
 ディレクトリ内部のファイルのメトリクスをかき集めて、最後に合算すれば算出可能です
 
-メソッド単位でカバレッジを取る
-----------------------------------------
+## メソッド単位でカバレッジを取る
 
-※前置きでも話しましたが、バージョンアップによって改善されている可能性もあります。あくまで古いPHPUnitについて言及します。
+※前置きでも話しましたが、バージョンアップによって改善されている可能性もあります。あくまで古い PHPUnit について言及します。
 
 メソッド単位も、完全な情報は出せません  
 いや、正確にはメソッドに関するレポートなら出せます。が、関数に関するレポートが出せません しかも不完全な情報の収集ですら地味に面倒でした
 
-lineタグのtype属性は`stmt`か`method`にしかならず、関数の定義開始行は`type=stmt`になってしまいます  
+line タグの type 属性は`stmt`か`method`にしかならず、関数の定義開始行は`type=stmt`になってしまいます  
 関数対して判別可能な値が何もありません。計測不可能です
 
 これもソースの実体があれば静的解析と絡めてレポート可能だとは思いますが、レポート単体では計測不可能でした  
 なので関数のレポートは出ないという前提で良ければ、
 
 ```javascript
-const classes = document.querySelectorAll('file[name="探したいファイル"]>class[]')
-const statementCounts = classes.map(cls => parseInt(cls.querySelector('metrics').statements, 10))
-const lines = Array.from(document.querySelectorAll('file[name="探したいファイル"]>line'))
-let currentClass = classes[0].name
-let currentMethod = null
-let currentStatements = 0
-let metrics = {}
+const classes = document.querySelectorAll(
+  'file[name="探したいファイル"]>class[]'
+);
+const statementCounts = classes.map(cls =>
+  parseInt(cls.querySelector("metrics").statements, 10)
+);
+const lines = Array.from(
+  document.querySelectorAll('file[name="探したいファイル"]>line')
+);
+let currentClass = classes[0].name;
+let currentMethod = null;
+let currentStatements = 0;
+let metrics = {};
 lines.forEach(line => {
-  if (line.type === 'method') {
-    currentMethod = line.name
-  } else if (line.type === 'stmt') {
+  if (line.type === "method") {
+    currentMethod = line.name;
+  } else if (line.type === "stmt") {
     if (!metrics[currentClass]) {
-      metrics[currentClass] = {}
+      metrics[currentClass] = {};
     }
     if (!metrics[currentClass][currentMethod]) {
-      metrics[currentClass][currentMethod] = { statements: 0, coveredStatements: 0 }
+      metrics[currentClass][currentMethod] = {
+        statements: 0,
+        coveredStatements: 0
+      };
     }
     if (parseInt(line.count, 10) > 0) {
-      metrics[currentClass][currentMethod].coveredStatements += 1
+      metrics[currentClass][currentMethod].coveredStatements += 1;
     }
-    metrics[currentClass][currentMethod].statements += 1
-    currentStatements += 1
+    metrics[currentClass][currentMethod].statements += 1;
+    currentStatements += 1;
   } else {
-    throw new Error('知らないタイプ:' + line.type)
+    throw new Error("知らないタイプ:" + line.type);
   }
 
   if (currentStatements === parseInt(classes[0].statements)) {
-    classes.shift()
-    currentClass = classes[0].name
-    currentStatements = 0
+    classes.shift();
+    currentClass = classes[0].name;
+    currentStatements = 0;
   }
-})
+});
 
-const methodMetrics = metrics[集計したいクラス][集計したいメソッド]
-console.log(methodMetrics.coveredStatements / methodMetrics.statements)
+const methodMetrics = metrics[集計したいクラス][集計したいメソッド];
+console.log(methodMetrics.coveredStatements / methodMetrics.statements);
 ```
 
 ただし、これは不完全です  
 例えばクラスに属さない関数がファイルに含まれている場合に対応できません  
 完全なカバレッジを得るためにはソースコードと静的解析が必要です。
 
-PHPUnitの設定ファイルにて[カバレッジ集計対象の設定]()をして、  
+PHPUnit の設定ファイルにて[カバレッジ集計対象の設定]()をして、  
 テストに登場しなかったファイルもカバレッジ集計対象に加えることは可能ですが、結局のところ関数には対応できません
 
-まとめ
-----------------------------------------
+## まとめ
 
-  * 行カバレッジの解析はXMLの構造さえ分かれば結構簡単 
-      * ファイル単位、クラス単位でのカバレッジなら確実に取れる
-      * 関数が1つ以上定義されているファイルに対しては、ソースと突合しないとカバレッジ集計不可能
-  * PHPには結構豊富なリフレクションのメソッドがあるので、突合は技術的には可能。今回は使ってない
+- 行カバレッジの解析は XML の構造さえ分かれば結構簡単
+  - ファイル単位、クラス単位でのカバレッジなら確実に取れる
+  - 関数が 1 つ以上定義されているファイルに対しては、ソースと突合しないとカバレッジ集計不可能
+- PHP には結構豊富なリフレクションのメソッドがあるので、突合は技術的には可能。今回は使ってない
 
 結果的な感想としては「ツラい」のただ一言でした。

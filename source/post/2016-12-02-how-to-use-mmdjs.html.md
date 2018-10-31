@@ -12,40 +12,38 @@ tags:
   - MikuMikuDance
   - Three.js
 ---
+
 2016/12/03 末尾に追記しました
 
 この記事は[12/3 Three.js Advent Calendar](http://qiita.com/advent-calendar/2016/threejs)と[12/4 Hamee Advent Calendar](http://qiita.com/advent-calendar/2016/hamee)の記事です。  
 もう半年以上前の話ですが、猛烈に[ドリームクラブ](https://www.d3p.co.jp/dreamclub/)というゲームの実況にハマりまして、あまりにハマりすぎて **「ノノノちゃん踊らせたい！ ！ ！ 歌ってほしい!!」** と思い、  
 それと同時期にスプラトゥーンの実況にもハマっており、ハイカラシンカを踊るアオリちゃんとホタルちゃんが可愛すぎて **「二人ともぎゃんかわ！ ！ もう手中に収めて無限ループしたい!!！」**
 
-とか思い、 **「ブラウザでもMMDしたい！ ！ ！」** と想いから[three.js](https://threejs.org/)と[MMD.js](https://threejs.org/examples/webgl_loader_mmd.html)を使ってみた話を。
+とか思い、 **「ブラウザでも MMD したい！ ！ ！」** と想いから[three.js](https://threejs.org/)と[MMD.js](https://threejs.org/examples/webgl_loader_mmd.html)を使ってみた話を。
 
 <!--more-->
 
-完成物
-----------------------------------------
+## 完成物
 
-  * [ノノノ ☆Paradise☆(ドリームクラブ)](http://closet.leko.jp/2016/mmd/dreamclub/)
-  * [シオカラーズ ハイカラシンカ(splatoon)](http://ika:fes@closet.leko.jp/2016/mmd/splatoon)
+- [ノノノ ☆Paradise☆(ドリームクラブ)](http://closet.leko.jp/2016/mmd/dreamclub/)
+- [シオカラーズ ハイカラシンカ(splatoon)](http://ika:fes@closet.leko.jp/2016/mmd/splatoon)
 
 どちらも、各素材様へのリンクはページ内にあります。  
-このページから落とすのではなく、素材元のページからDLをお願い致します。  
-ノノノちゃんの方は無音です（ハイカラシンカの曲は裏側にYouTubeを埋め込んで流しているので、動画が消された場合無音です）
+このページから落とすのではなく、素材元のページから DL をお願い致します。  
+ノノノちゃんの方は無音です（ハイカラシンカの曲は裏側に YouTube を埋め込んで流しているので、動画が消された場合無音です）
 
-使ったもの
-----------------------------------------
+## 使ったもの
 
-  * [three.js](https://threejs.org/)
-  * [MMD Loader](https://threejs.org/examples/?q=mmd)
+- [three.js](https://threejs.org/)
+- [MMD Loader](https://threejs.org/examples/?q=mmd)
 
-やったこと
-----------------------------------------
+## やったこと
 
-  * 素材をニコ動とかニコニ・コモンズから見つけてくる
-  * 展開してファイル名の文字化け治す
-  * デモ実装をコピー&ペースト
+- 素材をニコ動とかニコニ・コモンズから見つけてくる
+- 展開してファイル名の文字化け治す
+- デモ実装をコピー&ペースト
 
-## ハマったこととMMD Loader中の人の神対応
+## ハマったことと MMD Loader 中の人の神対応
 
 <blockquote class="twitter-tweet" data-lang="ja">
   <p lang="ja" dir="ltr">
@@ -68,15 +66,14 @@ tags:
 なんかノノノちゃんの足が変な方向に向きますが、それくらいご愛嬌です。  
 **モデルもモーションも完成度が高すぎて、ノノノはがに股でも可愛い** ということが証明されました。
 
-まとめ
-----------------------------------------
+## まとめ
 
 横展開して色々観賞用にしようと思ったのですが、  
 ファイル名が日本語になってるとエンコーディング周りでものすごく面倒で、横展開する元気が削がれてしまいました。
 
 またドはまりした作品が出たら、ブラウザ上でこっそり眺めようと思います。
 
-* * *
+---
 
 2016/12/03 追記
 
@@ -89,4 +86,4 @@ tags:
   <a href="https://twitter.com/superhoge/status/804740710364610560">2016年12月2日</a>
 </blockquote>
 
-まだ未検証ですが、最新版のThree.jsを利用することで思った通りの挙動になるようです。
+まだ未検証ですが、最新版の Three.js を利用することで思った通りの挙動になるようです。

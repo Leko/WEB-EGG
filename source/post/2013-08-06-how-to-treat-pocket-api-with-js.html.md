@@ -11,14 +11,15 @@ tags:
   - Nodejs
   - Pocket
 ---
+
 こんにちは。  
 最近は湿度が高いですね。くせ毛持ちにはつらい毎日です。
 
 今回は、  
-「あとで読む」サービスのPocketのAPIを扱えるようにして、  
-TwitterとかからPocketを操作できるものを作ろうと思い立ったので、調べてみました。
+「あとで読む」サービスの Pocket の API を扱えるようにして、  
+Twitter とかから Pocket を操作できるものを作ろうと思い立ったので、調べてみました。
 
-あと、Nodejsの記事が少ないなーと思ったので、  
+あと、Nodejs の記事が少ないなーと思ったので、  
 少しでも情報源を増やそうと思い、今回は**Nodejs**で実装していきます。
 
 あくまで個人用の用途を想定しているので、  
@@ -26,22 +27,18 @@ TwitterとかからPocketを操作できるものを作ろうと思い立った�
 
 <!--more-->
 
-Pocketのアプリを登録
-----------------------------------------
+## Pocket のアプリを登録
 
-まず、PocketのAPIを利用するには、Pocketにアプリケーションを登録しないといけません。  
+まず、Pocket の API を利用するには、Pocket にアプリケーションを登録しないといけません。  
 というわけで早速登録していきます。
 
-  1. [Pocketのデベロッパーサイト](http://getpocket.com/developer/) に行く
-  2. いつも使っているPocketのIDでログインする
-  3. 左側のメニューの`APPS`>`Create a New App`を選択
+1. [Pocket のデベロッパーサイト](http://getpocket.com/developer/) に行く
+2. いつも使っている Pocket の ID でログインする
+3. 左側のメニューの`APPS`>`Create a New App`を選択
 
 すると、このような画面になると思うので、画像の説明の通り入力していきます。
 
-
 ![Creat](/images/2013/08/Create-a-New-App1.png)
-
-
 
 日本語に対応していないようで、日本語でアプリ名を入れたら文字化けしました。  
 なので、動作に影響はないと思うけど、半角英数のみで打っておいたほうが無難だと思います。
@@ -53,31 +50,30 @@ Pocketのアプリを登録
 左側のメニューの`APPS`>`My Apps`に行き、今作ったアプリを選択します。
 
 すると、上記のような感じに詳細情報が表示されます。 まず、パーミッションを確認します。  
-`Add`・`Modify`・`Retrieve`の３つが表示されていればOKです。
+`Add`・`Modify`・`Retrieve`の３つが表示されていれば OK です。
 
 次に、`URL`を設定します。  
-このURLは、出来れば自分のページ（存在するページならどこでも）のURLを指定して下さい。  
-ここで設定したURLは、後々の説明で**リダイレクトURL**と出てきます。  
+この URL は、出来れば自分のページ（存在するページならどこでも）の URL を指定して下さい。  
+ここで設定した URL は、後々の説明で**リダイレクト URL**と出てきます。  
 メモっておいて下さい。
 
 最後に、アクセストークンを取得するために必要な、  
 **CONSUMEY KEY**というのもメモっておいて下さい。
 
-Pocketからアクセストークンを取得する
-----------------------------------------
+## Pocket からアクセストークンを取得する
 
-**APIを利用するには、今メモったCONSUMER KEYと、アクセストークンが必要です。**  
-アクセストークンを取得するためには、CONSUMER KEYが必要です。  
+**API を利用するには、今メモった CONSUMER KEY と、アクセストークンが必要です。**  
+アクセストークンを取得するためには、CONSUMER KEY が必要です。  
 では、早速取得していきます。
 
 もしサービスにするなら、ごにょごにょとプログラムを書かないと行けないのですが、  
 今回は個人用なので、もっと簡単な方法でアクセストークンを入手します。
 
-各種HTTPメソッドやURLパラメータをGUIから設定して送信できる  
+各種 HTTP メソッドや URL パラメータを GUI から設定して送信できる  
 [Fetcher](https://itunes.apple.com/jp/app/fetcher/id440113616?mt=12)というアプリを使用していきます。
 
 ちなみに、アクセストークンの取得についての公式ドキュメント(英語)はこちらです。  
-すでにアプリケーションを登録してCONSUMER KEYを取得済みなので、公式を参考に進める場合はStep2からになります。
+すでにアプリケーションを登録して CONSUMER KEY を取得済みなので、公式を参考に進める場合は Step2 からになります。
 
 > [Pocket Developer Program: Pocket Authentication API: Documentation](http://getpocket.com/developer/docs/authentication)
 
@@ -85,13 +81,13 @@ Pocketからアクセストークンを取得する
 
 まず、アプリの認証をするための**リクエストトークン**というものを取得します。
 
-アクセスすべきURLは、``です。  
-使うHTTPメソッドは`POST`、必要なパラメータは、
+アクセスすべき URL は、``です。  
+使う HTTP メソッドは`POST`、必要なパラメータは、
 
-  * consumer_key 
-      * アプリを登録した際に設定したCONSUMER KEY
-  * redirect_uri 
-      * アプリを登録した際に設定したリダイレクトURL(パラメータはur**i**なので注意)
+- consumer_key
+  - アプリを登録した際に設定した CONSUMER KEY
+- redirect_uri
+  - アプリを登録した際に設定したリダイレクト URL(パラメータは ur**i**なので注意)
 
 の２つです。
 
@@ -99,13 +95,10 @@ Pocketからアクセストークンを取得する
 `Content-Type=application/x-www-form-urlencoded`を指定してあげます。  
 これらを合わせると、
 
-
 ![リクエストトークンを取得](/images/2013/08/8223fde78c3ee79b98e79042f1607e04.png)
 
-
-
 こんな感じになると思います。  
-Fetchを押してみると、以下の様なレスポンスが帰ってくると思います。
+Fetch を押してみると、以下の様なレスポンスが帰ってくると思います。
 
 ```
 HTTP/1.1 200 OK
@@ -126,28 +119,25 @@ Connection = keep-alive
 code=XXXXXXXXXXXXXXXXXXX
 ```
 
-一番下の行の、code=XXXXXXXXXXXXの部分を使います。  
+一番下の行の、code=XXXXXXXXXXXX の部分を使います。  
 XXXXXXXX…としていますが、実際には英語と数字とハイフン混じりの文字列になっていると思います。  
-**このXXXXXXX…の部分が、リクエストトークンです**。
+**この XXXXXXX…の部分が、リクエストトークンです**。
 
-### 2. Pocketの認証画面へ移動
+### 2. Pocket の認証画面へ移動
 
 今取得したリクエストトークンを使って、アプリの認証画面へ移動します。
 
-今回はFetcherではなくブラウザを使います。  
+今回は Fetcher ではなくブラウザを使います。  
 ブラウザのアドレスバーに、 https://getpocket.com/auth/authorize?request_token=
 
-**YOUR_REQUEST_TOKEN**&redirect_uri=**YOUR_REDIRECT_URI** 
+**YOUR_REQUEST_TOKEN**&redirect_uri=**YOUR_REDIRECT_URI**
 
 と入力して下さい。 **YOUR_REQUEST_TOKEN**のところには、先ほど取得したリクエストトークンを、  
-**YOUR_REDIRECT_URI**のところには、先ほど設定したリダイレクトURLを入れます。
-
+**YOUR_REDIRECT_URI**のところには、先ほど設定したリダイレクト URL を入れます。
 
 ![こんな画面](/images/2013/08/f91ab41bde5ae5e886c1a19bbcfd53ca.png)
 
-
-
-上記のURLにブラウザからアクセスすると、こんな画面になるので、  
+上記の URL にブラウザからアクセスすると、こんな画面になるので、  
 `Authorize`をクリックします。
 
 これで認証完了です。
@@ -157,43 +147,39 @@ XXXXXXXX…としていますが、実際には英語と数字とハイフン混
 やっとアクセストークンです。
 
 認証が完了したら、  
-**先ほどのリクエストトークンと、CONSUMER KEYを利用して、アクセストークンを取得**します。
+**先ほどのリクエストトークンと、CONSUMER KEY を利用して、アクセストークンを取得**します。
 
-アクセスするURLは ``  
-HTTPメソッドは`POST`  
+アクセスする URL は ``  
+HTTP メソッドは`POST`  
 パラメータは、
 
-  * consumer_key 
-      * アプリケーションのCONSUMER KEY
-  * code 
-      * 先ほど取得したリクエストトークン
+- consumer_key
+  - アプリケーションの CONSUMER KEY
+- code
+  - 先ほど取得したリクエストトークン
 
-これをFetcherに入れるとこんなかんじになります。
-
+これを Fetcher に入れるとこんなかんじになります。
 
 ![Acces](/images/2013/08/access_token.png)
 
-
-
-上記内容でFetchボタンを押すと、
+上記内容で Fetch ボタンを押すと、
 
 `access_token=XXXXXXXXXXXXXXXXXXXXXX&username=...`
 
-というレスポンスが帰ってきていると思います。 この`access_token=`以降のXXXの部分をメモっておいて下さい。
+というレスポンスが帰ってきていると思います。 この`access_token=`以降の XXX の部分をメモっておいて下さい。
 
 これで、必要な処理は完了です。
 
-PocketAPIを試してみる
-----------------------------------------
+## PocketAPI を試してみる
 
-APIの仕様についてはドキュメントを見ればわかるので、とりあえず使うだけ使ってみます。
+API の仕様についてはドキュメントを見ればわかるので、とりあえず使うだけ使ってみます。
 
-APIの公式ドキュメントはこちら。
+API の公式ドキュメントはこちら。
 
 > [Pocket Developer Program: Pocket API Documentation](http://getpocket.com/developer/docs/overview)
 
-自分がPocketに**保存した最新１件の記事を取得して、  
-その記事のタイトルとURLを表示**してみましょう。
+自分が Pocket に**保存した最新１件の記事を取得して、  
+その記事のタイトルと URL を表示**してみましょう。
 
 ソースはこんな感じになると思います。
 
@@ -201,8 +187,8 @@ APIの公式ドキュメントはこちら。
 (function(global, undefined) {
   "use strict";
   var https = require("https"),
-      endpoint = "https://getpocket.com/v3/get",
-      param = "";
+    endpoint = "https://getpocket.com/v3/get",
+    param = "";
 
   param += "consumer_key=YOUR_CONSUMER_KEY";
   param += "&access_token=YOUR_ACCESS_TOKEN";
@@ -218,82 +204,78 @@ APIの公式ドキュメントはこちら。
     // データの受信が完了したら
     res.on("end", function() {
       var json = JSON.parse(response),
-          p;
+        p;
       for (p in json.list) {
         var item = json.list[p],
-            title = item.resolved_title,
-            url = item.resolved_url;
+          title = item.resolved_title,
+          url = item.resolved_url;
         console.log(title + "n" + url + "n");
       }
     });
   });
-}(this));
+})(this);
 ```
 
 これを実行してみると、こんな表示がされると思います。
 
-
 ![Pocketから取得した結果](/images/2013/08/aa4012ad6bc2891b4a3bdc99d8ae9c41.png)
 
+Nodejs での通信は割と**お手軽ではない**のですが、上記のように書いて通信出来ます。
 
-
-Nodejsでの通信は割と**お手軽ではない**のですが、上記のように書いて通信出来ます。
-
-APIクライアントの実装
-----------------------------------------
+## API クライアントの実装
 
 上の例でとりあえずの通信は出来るのですが、上のままだとかなり使いにくいと思います。
 
-ということで、PocketのAPIクライアントを書いてみました。
+ということで、Pocket の API クライアントを書いてみました。
 
 > [nodejs-pocket.js](https://gist.github.com/Leko/6164739)
 
 アクセストークンは何らかの手段で取得済みという前提**（アクセストークンを取得する周りの処理は一切なし）**  
 の実装なので汎用性はあまりないと思いますが、
 
-自分のPocketのデータを操作したい場合などに、ご活用いただけたらなーと思います。
+自分の Pocket のデータを操作したい場合などに、ご活用いただけたらなーと思います。
 
 使い方は、  
-上記のnodejs-pocket.jsをダウンロードした上で、下記のように使ってもらえます。 requireのパスは適宜変えて下さい。
+上記の nodejs-pocket.js をダウンロードした上で、下記のように使ってもらえます。 require のパスは適宜変えて下さい。
 
 ```javascript
 var Pocket = require("./nodejs-pocket.js"),
-    pocket = new Pocket({
-        consumer_key: "あなたのconsumer_key",
-        access_token: "あなたのaccess_token"
-    });
+  pocket = new Pocket({
+    consumer_key: "あなたのconsumer_key",
+    access_token: "あなたのaccess_token"
+  });
 // Pocketから取得
 var opt = {
-    sort: "newest",
-    count: 10
+  sort: "newest",
+  count: 10
 };
 pocket.get(opt, function(json) {
-    // 記事の配列
+  // 記事の配列
 });
 
 // Pocketされている記事の情報変更
 var opt = {
-    actions: [
-        {
-            "action": "favorite",
-            "item_id": 99999999
-        }
-    ]
+  actions: [
+    {
+      action: "favorite",
+      item_id: 99999999
+    }
+  ]
 };
 pocket.modify(opt, function(json) {
-    // 送信したアクションを行った結果
+  // 送信したアクションを行った結果
 });
 
 // Pocketに記事を追加
 var opt = {
-    url: "http://leko.jp",
-    title: "うぇぶえっぐ",
-    tags: "web,egg"
+  url: "http://leko.jp",
+  title: "うぇぶえっぐ",
+  tags: "web,egg"
 };
 pocket.add(opt, function(json) {
-    // 記事をPocketに追加した結果
+  // 記事をPocketに追加した結果
 });
 ```
 
-APIは、APIクライアント系のgem(Rubyだけど)によくある形に合わせてみたつもりですが、  
-改善点がございましたら、Gistの方にコメントいただけると嬉しいです。
+API は、API クライアント系の gem(Ruby だけど)によくある形に合わせてみたつもりですが、  
+改善点がございましたら、Gist の方にコメントいただけると嬉しいです。

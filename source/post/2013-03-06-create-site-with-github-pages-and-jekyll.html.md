@@ -12,79 +12,75 @@ tags:
   - jekyll
   - Markdown
 ---
-jsのライブラリや、ドキュメントのページを見ていると、  
+
+js のライブラリや、ドキュメントのページを見ていると、  
 よく**~~~.github.com**というアドレスを目にします。
 
 このアドレスは何なんだろう。  
-Githubに認められしものの証なのだろうか。と調べてみたところ、  
-Githubがホスティングしてくれるサービス[Github Pages](http://pages.github.com/)という物でした。
+Github に認められしものの証なのだろうか。と調べてみたところ、  
+Github がホスティングしてくれるサービス[Github Pages](http://pages.github.com/)という物でした。
 
-手軽に始められるし、Markdownが使えてテンプレートも使えるという代物だったので  
+手軽に始められるし、Markdown が使えてテンプレートも使えるという代物だったので  
 使えるようにするまでの手順をまとめました。
 
 <!--more-->
 
-目標
-----------------------------------------
+## 目標
 
 今回の記事の目標は、  
-「**Githubページを作成し、Markdownで更新する**」ことです。  
-Markdownについては、過去に書いた記事
+「**Github ページを作成し、Markdown で更新する**」ことです。  
+Markdown については、過去に書いた記事
 
-> [プラグインを使わずにMarkdownでWordpressのブログを更新する（基礎編）](/post/write-post-with-markdown-without-plugin-beginner/)
+> [プラグインを使わずに Markdown で Wordpress のブログを更新する（基礎編）](/post/write-post-with-markdown-without-plugin-beginner/)
 
 を御覧ください。では早速始めます。
 
-必要なもの
-----------------------------------------
+## 必要なもの
 
-* Githubアカウント
-* gem
+- Github アカウント
+- gem
 
 これだけです。  
-Githubへの登録は、あらかじめ済ませておいて下さい。
+Github への登録は、あらかじめ済ませておいて下さい。
 
-なお、今回使用しているgemのバージョンは**1.8.24**です。
+なお、今回使用している gem のバージョンは**1.8.24**です。
 
-手順
-----------------------------------------
+## 手順
 
-* Githubページ用のリポジトリを作る
-* jekyllをインストール
-* _config.ymlを編集
-* default.htmlを編集
-* index.mdを編集
-* プレビューしてみる
-* Githubにプッシュする
+- Github ページ用のリポジトリを作る
+- jekyll をインストール
+- \_config.yml を編集
+- default.html を編集
+- index.md を編集
+- プレビューしてみる
+- Github にプッシュする
 
-Githubページを作る
-----------------------------------------
+## Github ページを作る
 
-Githubページは、リポジトリを作るだけで作成出来ます。
+Github ページは、リポジトリを作るだけで作成出来ます。
 
 まず、<span class="removed_link" title="https://github.com/new">こちら</span>からリポジトリの作成画面へ行きます。
 
 ![preview - newrepo](/images/2013/02/db43eed4475be1f11013fbb3551bc634.png)
 
-ここで、Repository nameを、**USER_NAME.github.com_**とします。  
+ここで、Repository name を、**USER*NAME.github.com***とします。  
 この名前のリポジトリを作成すると、  
 自動的に**http://USERNAME.github.com**にアクセスできるようになります。
 
-USER_NAMEの部分は、自分のGithubのIDを入力して下さい。  
-例えば私の場合はIDが**Leko**なので、**leko.github.com**を名前にします。  
+USER_NAME の部分は、自分の Github の ID を入力して下さい。  
+例えば私の場合は ID が**Leko**なので、**leko.github.com**を名前にします。  
 大文字・小文字の区別はされないようです。  
-IDに大文字が混じっている人も小文字で作りましょう。
+ID に大文字が混じっている人も小文字で作りましょう。
 
-Repository nameを入力したら、適当な説明を入れて、pushします。
+Repository name を入力したら、適当な説明を入れて、push します。
 
-リポジトリを作成したら、index.htmlを作成して、**完成！**  
-と行きたいところですが、今回はテンプレートとMarkdownを利用することが目標なので  
-とりあえずindexは作らずに、先へ行きましょう。
+リポジトリを作成したら、index.html を作成して、**完成！**  
+と行きたいところですが、今回はテンプレートと Markdown を利用することが目標なので  
+とりあえず index は作らずに、先へ行きましょう。
 
-jekyllをインストールする
-----------------------------------------
+## jekyll をインストールする
 
-テンプレート＋Markdownを利用するためには、jekyllというライブラリを使います。
+テンプレート＋ Markdown を利用するためには、jekyll というライブラリを使います。
 
 ターミナルを開いて、
 
@@ -95,10 +91,9 @@ $ gem install jekyll
 
 を実行します。インストール完了です。
 
-必要なファイルを作成する
-----------------------------------------
+## 必要なファイルを作成する
 
-次に、先ほど作ったUSER_NAME.github.comフォルダへ移動します。 特に何もしていなければ、リポジトリは空のはずですので、
+次に、先ほど作った USER_NAME.github.com フォルダへ移動します。 特に何もしていなければ、リポジトリは空のはずですので、
 
 ```
 USER_NAME.github.com/
@@ -112,18 +107,17 @@ USER_NAME.github.com/
 上記の構成でファイルを追加します。
 
 ざっと説明すると、  
-README.mdは、Githubでこのリポジトリを誰かが見つけた時の説明文  
-index.mdが、公開されるhtmlの元となるページ  
-_cofig.ymlが、jekyllを使うための設定ファイル  
-_layouts/はテンプレート用のフォルダ  
-default.htmlが、テンプレートファイルです。
+README.md は、Github でこのリポジトリを誰かが見つけた時の説明文  
+index.md が、公開される html の元となるページ  
+\_cofig.yml が、jekyll を使うための設定ファイル  
+\_layouts/はテンプレート用のフォルダ  
+default.html が、テンプレートファイルです。
 
 このファイルをそれぞれ編集していきます。
 
-config.ymlを編集する
-----------------------------------------
+## config.yml を編集する
 
-config.ymlは上でも言いましたが、jekyllで使うための設定ファイルです。  
+config.yml は上でも言いましたが、jekyll で使うための設定ファイルです。  
 これを適当なエディタで開き、
 
 ```yaml
@@ -135,19 +129,18 @@ markdown: kramdown
 と入力して保存します。  
 設定について詳しく知りたい方は、[設定一覧](https://github.com/mojombo/jekyll/wiki/Configuration)を御覧ください。
 
-default.htmlを編集する
-----------------------------------------
+## default.html を編集する
 
-次に、_layoutsの中の**default.html**を編集します。  
-これがテンプレートとなるHTMLファイルで、headタグの中身などは全部こちらへ書きます。 default.htmlを適当なエディタで開き、
+次に、\_layouts の中の**default.html**を編集します。  
+これがテンプレートとなる HTML ファイルで、head タグの中身などは全部こちらへ書きます。 default.html を適当なエディタで開き、
 
 ```html
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <meta charset="UTF-8">
 <title>Lekohub</title>
-<!-- cssとかjsもここで読み込み --> 
+<!-- cssとかjsもここで読み込み -->
 <link rel="stylesheet" href="css/common.css">
-<script src="js/top.js"></script> 
+<script src="js/top.js"></script>
 <div class="container"> {{ content }} </div>
 ```
 
@@ -155,19 +148,18 @@ default.htmlを編集する
 このファイルがページの枠組みとなって、  
 `{{ content }}`の部分に、ページの中身が入ります。
 
-ちなみに、色々とタグが省略されていますが、これでW3Cが認める正常なHTMLです。  
+ちなみに、色々とタグが省略されていますが、これで W3C が認める正常な HTML です。  
 詳しくは、過去に書いた記事
 
-> [「HTMLのタグは一部省略可能」表示速度はどちらが早いのか調べてみた](/post/omit-close-tag-in-html/)
+> [「HTML のタグは一部省略可能」表示速度はどちらが早いのか調べてみた](/post/omit-close-tag-in-html/)
 
 を御覧ください。
 
-index.mdを編集する
-----------------------------------------
+## index.md を編集する
 
-最後に、index.mdを編集します。 ここ部分は、default.htmlで`{{ content }}`と書いた部分にあたります。
+最後に、index.md を編集します。 ここ部分は、default.html で`{{ content }}`と書いた部分にあたります。
 
-index.mdを適当なエディタで開き、Markdown形式で入力します。
+index.md を適当なエディタで開き、Markdown 形式で入力します。
 
 ```
 ---
@@ -185,18 +177,17 @@ layout: default
 と入力して、保存。
 
 ここで重要なのが、**layout: default**と上下の**—**です。  
-`layout: default`と書くことで、先ほど書いたdefault.htmlが  
+`layout: default`と書くことで、先ほど書いた default.html が  
 テンプレートとして読み込まれます。
 
-プレビューしてみる
-----------------------------------------
+## プレビューしてみる
 
 では実際にプレビューしてみましょう。
 
 再びターミナルを開いて、
 
 ```shell
-$ cd (USER_NAME.github.comリポジトリへのパス) 
+$ cd (USER_NAME.github.comリポジトリへのパス)
 $ jekyll
 ```
 
@@ -212,18 +203,17 @@ Configuration from /Users/***/leko.github.com/_config.yml Auto-regenerating enab
 ![preview - jekyll](/images/2013/02/ae0a03f273ee685b1d86a7361380b46b.png)
 
 と表示されていれば完了です。  
-MarkdownがきちんとHTMLに変換されているのがわかると思います。
+Markdown がきちんと HTML に変換されているのがわかると思います。
 
-Githubにプッシュする
-----------------------------------------
+## Github にプッシュする
 
 今の状態で、**http://USER_NAME.github.com**にアクセスしても、  
 まだ何も表示されないと思います。
 
-今まで行った変更は、Githubにプッシュすることで適用されます。
+今まで行った変更は、Github にプッシュすることで適用されます。
 
-Githubにプッシュしたら、もう一度**http://USER_NAME.github.com**にアクセスしてみて下さい。  
+Github にプッシュしたら、もう一度**http://USER_NAME.github.com**にアクセスしてみて下さい。  
 先ほど確認したページと同じように表示されていれば完了です。
 
 たったこれだけの手順で、  
-テンプレート＋Markdownを使ったページ作成が出来ました。
+テンプレート＋ Markdown を使ったページ作成が出来ました。

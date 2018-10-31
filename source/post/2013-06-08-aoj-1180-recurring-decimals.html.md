@@ -1,6 +1,6 @@
 ---
 path: /post/aoj-1180-recurring-decimals/
-title: '[AOJ] 1180 Recurring Decimals'
+title: "[AOJ] 1180 Recurring Decimals"
 date: 2013-06-08T20:57:58+00:00
 twitter_id:
   - "343336535673946113"
@@ -10,7 +10,8 @@ tags:
   - AOJ
   - C++
 ---
-AOJの1180、Recurring Decimalsをc++で解きました。
+
+AOJ の 1180、Recurring Decimals を c++で解きました。
 
 足すだけ問題です。  
 しかし、重複をどう見つけるかで凡ミスをやらかし、つまずきました。
@@ -19,7 +20,6 @@ AOJの1180、Recurring Decimalsをc++で解きました。
 
 <!--more-->
 
-コード
-----------------------------------------
+## コード
 
 <script src="https://gist.github.com/Leko/5734938.js"></script>

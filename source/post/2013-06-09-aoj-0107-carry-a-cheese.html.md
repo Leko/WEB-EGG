@@ -1,6 +1,6 @@
 ---
 path: /post/aoj-0107-carry-a-cheese/
-title: '[AOJ] 0107 Carry a Cheese'
+title: "[AOJ] 0107 Carry a Cheese"
 date: 2013-06-09T12:00:12+00:00
 twitter_id:
   - "343565051199901696"
@@ -10,18 +10,18 @@ tags:
   - AOJ
   - C++
 ---
-AOJの0107、Carry a Cheeseをc++で解きました。
+
+AOJ の 0107、Carry a Cheese を c++で解きました。
 
 与えられた３辺から、小さい２辺を選んで、  
-その**長方形の対角線の長さが、通れる最小の半径*2になっている**と考え、実装しました。
+その**長方形の対角線の長さが、通れる最小の半径\*2 になっている**と考え、実装しました。
 
-特に詰まることもなく、コーディング時間は15分でした。
+特に詰まることもなく、コーディング時間は 15 分でした。
 
 問題文は[こちら](http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=0107&lang=jp)
 
 <!--more-->
 
-コード
-----------------------------------------
+## コード
 
 <script src="https://gist.github.com/Leko/5735539.js"></script>

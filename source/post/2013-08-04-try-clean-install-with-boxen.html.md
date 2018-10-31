@@ -14,58 +14,53 @@ tags:
   - Boxen
   - Mac
 ---
+
 こんにちは。  
-２年ほど使っているMacBookAirの容量がほぼ埋まってしまって、  
+２年ほど使っている MacBookAir の容量がほぼ埋まってしまって、  
 前から**消して消してカサ増し…**を繰り返していたのですが、  
 ついに消せるファイルが無くなってしまいました。
 
 ということで、クリーンインストールすると共に、  
-Github社が提供している**boxen**というツールで、  
+Github 社が提供している**boxen**というツールで、  
 開発環境をコマンド一発でセットアップしてみました。
 
 なお、  
-この記事では、boxenについてあまり詳しく述べません。  
-あくまでboxenした結果をメインに取り扱いますのでご了承ください。
+この記事では、boxen についてあまり詳しく述べません。  
+あくまで boxen した結果をメインに取り扱いますのでご了承ください。
 
 <!--more-->
 
-必要なもの
-----------------------------------------
+## 必要なもの
 
-  1. Mac
-  2. 8G以上の容量があるUSBメモリ（フォーマットしても大丈夫なもの）
-  3. Githubのアカウント
+1. Mac
+2. 8G 以上の容量がある USB メモリ（フォーマットしても大丈夫なもの）
+3. Github のアカウント
 
-クリーンインストールする前のMac
-----------------------------------------
+## クリーンインストールする前の Mac
 
-まずは、クリーンインストールする前のMBAの状況です。
-
+まずは、クリーンインストールする前の MBA の状況です。
 
 ![796519880](/images/2013/08/796519880.png)
 
-
-
-**空き容量は1.77GB**と出ているのですが、 CPUをCore i7に増しているからなのか、重いアプリとかを立ち上げていると、  
+**空き容量は 1.77GB**と出ているのですが、 CPU を Core i7 に増しているからなのか、重いアプリとかを立ち上げていると、  
 リソースを食って**容量が足りなくなったことになる**ようで、  
 「お使いのディスクはいっぱいです」とやたら警告してきます。
 
-SSD内の分類もすべて「その他」。おかしくなっています。
+SSD 内の分類もすべて「その他」。おかしくなっています。
 
-というわけで、一度**SSDをフォーマットして、OSX Mountain Lionを入れ直し**ます。  
+というわけで、一度**SSD をフォーマットして、OSX Mountain Lion を入れ直し**ます。  
 その前に、何かあった時に備えて**必ずバックアップ**を取っておいてください。
 
-クリーンインストールする
-----------------------------------------
+## クリーンインストールする
 
-Mountain Lionは、「ネットワークインストール」という、  
+Mountain Lion は、「ネットワークインストール」という、  
 インストールメディアがなくてもインストール出来る方法があるのですが、
 
-これがうまくいかなかったので、USBのインストールメディアを作っていきます。
+これがうまくいかなかったので、USB のインストールメディアを作っていきます。
 
-### OS X Mountain Lionを入手
+### OS X Mountain Lion を入手
 
-[App Store](https://itunes.apple.com/jp/app/os-x-mountain-lion/id537386512?mt=12)からMountain Lionのインストールアプリをダウンロードします。
+[App Store](https://itunes.apple.com/jp/app/os-x-mountain-lion/id537386512?mt=12)から Mountain Lion のインストールアプリをダウンロードします。
 
 ダウンロードしたら、そのまま触らずに次へ行きます。
 
@@ -75,20 +70,17 @@ Mountain Lionは、「ネットワークインストール」という、
 [Lion DiskMaker](http://liondiskmaker.com/)というアプリを使います。
 
 これをインストールしたら、このような画面が表示されると思います。  
-Mountain Lionのインストールメディアを作りたいので**Mountain Lion**を選択。
-
+Mountain Lion のインストールメディアを作りたいので**Mountain Lion**を選択。
 
 ![スクリーンショッ](/images/2013/08/ceb206c6e130a3595674ca2c9b4f4d29.png)
 
+先ほどダウンロードした Mountain Lion のアプリが自動的に認識されるので、  
+そのまま指示に従って USB にインストールしてください。
 
+### option キーを押しながら再起動
 
-先ほどダウンロードしたMountain Lionのアプリが自動的に認識されるので、  
-そのまま指示に従ってUSBにインストールしてください。
-
-### optionキーを押しながら再起動
-
-上記の手順を済ましたら、準備完了です。 とりあえずMacをシャットダウンします。  
-そして、今作ったUSBメディアを挿して、optionキーを押しながら電源を入れます。
+上記の手順を済ましたら、準備完了です。 とりあえず Mac をシャットダウンします。  
+そして、今作った USB メディアを挿して、option キーを押しながら電源を入れます。
 
 するとブート画面が出てくると思うので、**OSX Mountain Lion**を選択します。  
 その後出てくるメニューの中から、**ディスクユーティリティ**を選択します。
@@ -104,12 +96,9 @@ Mountain Lionのインストールメディアを作りたいので**Mountain Li
 ここで、フォーマットを指定します。 僕は**Mac OS 拡張（ジャーナリング、暗号化）**を選択しました。  
 暗号化を使いたくない場合は、**Mac OS 拡張（ジャーナリング）**の方でいいと思います。
 
-
 ![スクリーンショッ](/images/2013/08/117ce1ca3bc4a2e2ba6b0a8fdb971c5f.png)
 
-
-
-### OS X Mountain Lionを再インストール
+### OS X Mountain Lion を再インストール
 
 消去が完了したら、ディスクユーティリティを終了します。
 
@@ -117,36 +106,34 @@ Mountain Lionのインストールメディアを作りたいので**Mountain Li
 
 こっから先を逐一説明していると長くなるので、詳しくはこちらを御覧ください。
 
-> [OS X Mountain Lion（マウンテンライオン）をクリーンインストールする方法 \| 和洋風KAI](http://wayohoo.com/mac/tips/how-to-clean-install-os-x-mountain-lion.html)
+> [OS X Mountain Lion（マウンテンライオン）をクリーンインストールする方法 \| 和洋風 KAI](http://wayohoo.com/mac/tips/how-to-clean-install-os-x-mountain-lion.html)
 
-上記の記事が完了してMacが使えるようになったらクリーンインストール完了です。
+上記の記事が完了して Mac が使えるようになったらクリーンインストール完了です。
 
-boxenとは
-----------------------------------------
+## boxen とは
 
-boxenとは、冒頭にも書きましたが、  
-Github社が公開しているMacのセットアップツールです。  
+boxen とは、冒頭にも書きましたが、  
+Github 社が公開している Mac のセットアップツールです。  
 概要についてはこちらの記事が詳しく書いているので見てみてください。
 
-[Mac – Boxen使わなくても許されるのは2012年までだよね – Qiita [キータ]](http://qiita.com/yuku_t/items/c6f20de0e4f4c352046c)
+[Mac – Boxen 使わなくても許されるのは 2012 年までだよね – Qiita [キータ]](http://qiita.com/yuku_t/items/c6f20de0e4f4c352046c)
 
 何が出来るかというと、  
 「このアプリ入れます」「こんなツール入れます」と設定ファイルにあらかじめ書いておいて、  
 それを実行すると、**設定したアプリやツールなどが自動でインストールされる**といった具合です。
 
-自動で、HomeberwやRuby、Nodejsなどはインストールされます。  
-導入に手間取るRuby周りもboxenが自動でやってくれるのがありがたい。
+自動で、Homeberw や Ruby、Nodejs などはインストールされます。  
+導入に手間取る Ruby 周りも boxen が自動でやってくれるのがありがたい。
 
-boxenに設定したもの
-----------------------------------------
+## boxen に設定したもの
 
-僕がboxenで指定したものは以下です。
+僕が boxen で指定したものは以下です。
 
 ### ブラウザ
 
 Chrome、Chrome Canary、Firefox、opera
 
-### App storeに無いアプリ
+### App store に無いアプリ
 
 Evernote、Alfred、Wunderlist、iTerm2、Sublime Text2、Dropbox、Github for Mac、  
 BetterTouchTool、Eclipse、XtraFinder、Sequel Pro、Virtual Box、Team Viewer、  
@@ -156,7 +143,7 @@ Screenhelo、Droplr、ImageOptim、Mou
 
 Vagrant、heroku、imagemagic、java、phantomjs、Jenkins、wget
 
-### Homebrew産
+### Homebrew 産
 
 tree、lua、luajit
 
@@ -164,32 +151,31 @@ tree、lua、luajit
 
 compass、json、sass、Twitter
 
-### Nodejsモジュール
+### Nodejs モジュール
 
 asciify、coffee-script、grunt-cli、mocha、titanium、typescript、yuidocjs
 
 ### その他
 
-Android SDK、Google日本語入力、ログインシェルをzshに、OSXの設定諸々
+Android SDK、Google 日本語入力、ログインシェルを zsh に、OSX の設定諸々
 
 結構色々と入れました。  
-これが揃ってれば僕の環境はほぼ100％再現できるので、これらを設定ファイルに指定しておきます。
+これが揃ってれば僕の環境はほぼ 100％再現できるので、これらを設定ファイルに指定しておきます。
 
-設定ファイルの書き方などは、boxenのGithubのREADME(英語)や、  
-先ほどリンクしたboxen紹介記事などを御覧ください。
+設定ファイルの書き方などは、boxen の Github の README(英語)や、  
+先ほどリンクした boxen 紹介記事などを御覧ください。
 
-> (再)[Mac – Boxen使わなくても許されるのは2012年までだよね – Qiita [キータ]](http://qiita.com/yuku_t/items/c6f20de0e4f4c352046c)
+> (再)[Mac – Boxen 使わなくても許されるのは 2012 年までだよね – Qiita [キータ]](http://qiita.com/yuku_t/items/c6f20de0e4f4c352046c)
 
-boxenしてみる
-----------------------------------------
+## boxen してみる
 
-設定ファイルを書いたら、それをクリーンインストールしたMacに適用します。  
-まずは、App storeからXcodeをインストールして、  
-設定にあるCommand Line Toolもインストールします。
+設定ファイルを書いたら、それをクリーンインストールした Mac に適用します。  
+まずは、App store から Xcode をインストールして、  
+設定にある Command Line Tool もインストールします。
 
-Command Line ToolをインストールするとgccやGitがインストールされます。
+Command Line Tool をインストールすると gcc や Git がインストールされます。
 
-そしたらターミナルから先ほど作ったboxenのリポジトリをcloneして実行します。 今回は、僕のboxenを使用する例を示します。
+そしたらターミナルから先ほど作った boxen のリポジトリを clone して実行します。 今回は、僕の boxen を使用する例を示します。
 
 ```shell
 $ sudo mkdir -p /opt/boxen
@@ -199,15 +185,15 @@ $ cd /opt/boxen/repo
 $ script/boxen
 ```
 
-管理者パスワードを求められたり、Githubにログインするよう言われるので、  
-それを入力したらあとはboxenが完了するのを待つだけです。
+管理者パスワードを求められたり、Github にログインするよう言われるので、  
+それを入力したらあとは boxen が完了するのを待つだけです。
 
-上記の設定だと、回線によりますがだいたい1時間くらいで終わると思います。
+上記の設定だと、回線によりますがだいたい 1 時間くらいで終わると思います。
 
-boxenが完了したら、最後にひとつ書き加えます。
+boxen が完了したら、最後にひとつ書き加えます。
 
-僕の場合はログインシェルをzshに書き換えているので、  
-.zshrcに
+僕の場合はログインシェルを zsh に書き換えているので、  
+.zshrc に
 
 ```shell
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
@@ -216,21 +202,17 @@ boxenが完了したら、最後にひとつ書き加えます。
 
 と書いて、`source ~/.zshrc`とコマンドを実行し、適用します。
 
-これでboxenから入れたもののパスが全て通り、準備完了です。
+これで boxen から入れたもののパスが全て通り、準備完了です。
 
-あとは、App storeから買ったアプリをダウンロードしたり、  
+あとは、App store から買ったアプリをダウンロードしたり、  
 諸々細かい調整してください。
 
-作業完了後のMBAのMac
-----------------------------------------
+## 作業完了後の MBA の Mac
 
 お疲れ様でした。  
 さて、どれくらい容量がダイエットできているかというと、驚きでした。
 
-
 ![スクリーンショッ](/images/2013/08/8edc4b2ac5826e677782f1fd6acaffd4.png)
-
-
 
 こんなに必要な容量が減るってどれだけゴミファイル溜まってたんでしょうね。。。  
 分類も、ぱっと見正常に表示されていると思います。  

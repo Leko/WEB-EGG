@@ -13,59 +13,60 @@ tags:
   - Alfred Workflows
   - PHP
 ---
+
 こんにちは。  
 最近は、[Alfred](http://www.alfredapp.com/)というアプリに大変お世話になっております。  
 アプリを起動するのにいちいちトラックパッドを使わなくて済むので、すごく捗ります。
 
-Alfredには、色々な便利機能があるのですが、
+Alfred には、色々な便利機能があるのですが、
 
 今回はもう少し突っ込んだことについて書きたいので、  
 参考になった記事を貼っておきます。
 
-> [Mac仕事効率化！Spotlightを完全に超えた神ランチャーアプリ「Alfred 2」の使い方とおすすめWorkflows10選。[Mac] | MacWin Ver.1.0](http://macwin.org/mac/alfred-2-workflows/)
+> [Mac 仕事効率化！Spotlight を完全に超えた神ランチャーアプリ「Alfred 2」の使い方とおすすめ Workflows10 選。[Mac] | MacWin Ver.1.0](http://macwin.org/mac/alfred-2-workflows/)
 
 <!---->
 
-> [[太]MacのランチャーアプリAlfred ver2の新機能「workflows」が結構凄そう。 | Fujitaiju Blog](http://fujitaiju.com/blog/apple/mac/mac-launch-app-alfred-ver-2/)
+> [[太]Mac のランチャーアプリ Alfred ver2 の新機能「workflows」が結構凄そう。 | Fujitaiju Blog](http://fujitaiju.com/blog/apple/mac/mac-launch-app-alfred-ver-2/)
 
 ここからが本題です。  
-Alfredには**Workflows**という機能があります。
+Alfred には**Workflows**という機能があります。
 
-このWorkflowsが非常に強力で、
+この Workflows が非常に強力で、
 
-* Evernoteのクリップしてある記事から検索をかけたり
-* リマインダーにワンライナーでタスクを追加したり
-* Amazonの商品検索のサジェスト機能を使ったり
-* カラーコードを入力すると該当する色を表示してくれたり
-* URLを入力すると、短縮URLが生成されてクリップボードにコピーできたり
+- Evernote のクリップしてある記事から検索をかけたり
+- リマインダーにワンライナーでタスクを追加したり
+- Amazon の商品検索のサジェスト機能を使ったり
+- カラーコードを入力すると該当する色を表示してくれたり
+- URL を入力すると、短縮 URL が生成されてクリップボードにコピーできたり
 
-と、他にも色々ありますが、 Alfredというアプリ上で、**一つのまとまった作業を一気に行うことができます**。
+と、他にも色々ありますが、 Alfred というアプリ上で、**一つのまとまった作業を一気に行うことができます**。
 
 で、この中から  
-**WebでAPIが公開されているサービスに何らかの問い合わせをし、  
+**Web で API が公開されているサービスに何らかの問い合わせをし、  
 その結果を元に、何かアクションを起こす**
 
-といったタスクを行うWorkflowsを作ってみようと思います。
+といったタスクを行う Workflows を作ってみようと思います。
 
 ググっても、チュートリアル系の記事が１件も見つからなかったので、 ソースを読んで作り方を学んでいきます。
 
 今回は、日付を入力すると、  
-速水もこみちがMOCO'sキッチンで使ったオリーブオイルの量を検索出来るAPI  
-[MOCO'SキッチンオリーブオイルAPI]()を利用したWorkflowsを作ります。
+速水もこみちが MOCO's キッチンで使ったオリーブオイルの量を検索出来る API  
+[MOCO'S キッチンオリーブオイル API]()を利用した Workflows を作ります。
 
 <!--more-->
 
-## Alfred Workflowsの前提知識
+## Alfred Workflows の前提知識
 
-まず、Alfredというアプリをインストールしないと始まらないので、  
-[公式](http://www.alfredapp.com/)かApp Storeからインストールをします。  
+まず、Alfred というアプリをインストールしないと始まらないので、  
+[公式](http://www.alfredapp.com/)か App Store からインストールをします。  
 **インストール+利用は無料**です。
 
-<a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&uo=4" rel="nofollow" target="_blank">  
+<a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&uo=4" rel="nofollow" target="_blank">
 
 ![undefined](http://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png)
 
-<b>Alfred</b>   
+<b>Alfred</b>
 
 ![App](http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_macappstore-sm.gif)
 
@@ -74,71 +75,61 @@ Alfredには**Workflows**という機能があります。
 
 そして、残念ですが、注意事項です。
 
-**Alfred Workflows(以下workflows)を利用するには、課金が必要です**。
+**Alfred Workflows(以下 workflows)を利用するには、課金が必要です**。
 
-価格にして、15英ポンド、2013/05/21現在**¥2,300くらい**です。  
+価格にして、15 英ポンド、2013/05/21 現在**¥2,300 くらい**です。  
 しかし、**それだけのお金を払う価値は十分にある**と思います。
 
 ここから先の内容は、  
-Alfredの有料機能を使うためのPowerPackを買った人を対象に進めます。
+Alfred の有料機能を使うための PowerPack を買った人を対象に進めます。
 
-## サンプルのGoogle Suggestを利用してみる
+## サンプルの Google Suggest を利用してみる
 
-PowerPackを購入すると、workflowsが利用できるようになります。
+PowerPack を購入すると、workflows が利用できるようになります。
 
 まずは感覚をつかむために、  
-Google Suggestというサンプルを利用します。
+Google Suggest というサンプルを利用します。
 
-### 1. Google Suggestを作成
-
+### 1. Google Suggest を作成
 
 ![Googl](/images/2013/05/20130521_step1.png)
 
-
-
-workflowsの下の方にある**[+]**を押し、  
-**Examples→Google Suggest**をクリックすると、作成完了です。 workflowsのリストにGoogle Suggestというのが表示されたと思います。
-
+workflows の下の方にある**[+]**を押し、  
+**Examples→Google Suggest**をクリックすると、作成完了です。 workflows のリストに Google Suggest というのが表示されたと思います。
 
 ![Googl](/images/2013/05/20130521_step2.png)
 
-
-
-これは、Alfredにあらかじめサンプルとして入っているworkflowsで、  
+これは、Alfred にあらかじめサンプルとして入っている workflows で、  
 このまま利用できます。
 
 ### 2. 使ってみる
 
 では早速使ってみます。  
-Alfredを起動し、`g 検索ワード(何でもいい)`と入力します。
+Alfred を起動し、`g 検索ワード(何でもいい)`と入力します。
 
 例えば`g jQ`と入力すると、このようなリストが表示されます。
 
-
 ![Googl](/images/2013/05/20130521_step3.png)
 
-
-
-表示されたものを選択し、Enterを押すと、  
+表示されたものを選択し、Enter を押すと、  
 その検索結果ページがブラウザで開かれます。
 
 ### 3. つまり
 
-このように、**Googleの検索窓で打つのと同じことを、  
-Alfred上で完結できます**。
+このように、**Google の検索窓で打つのと同じことを、  
+Alfred 上で完結できます**。
 
 今回、  
-**urlを叩いてjsonやらxmlを入手して、その結果を元に処理を行う**ことがしたいので、  
+**url を叩いて json やら xml を入手して、その結果を元に処理を行う**ことがしたいので、  
 このサンプルは非常に参考になります。
 
-Examplesに、同様の機能を持った**Amazon Suggest**というものもあるんですが、  
-こちらはコードがあまりシンプルじゃなかったので、Google Suggestの方を見ていきます。
+Examples に、同様の機能を持った**Amazon Suggest**というものもあるんですが、  
+こちらはコードがあまりシンプルじゃなかったので、Google Suggest の方を見ていきます。
 
-サンプルのコードを読む
-----------------------------------------
+## サンプルのコードを読む
 
-まず、Google Suggestのコードを、全部貼っつけてみます。  
-あまり行数はないです。PHPで書かれています。
+まず、Google Suggest のコードを、全部貼っつけてみます。  
+あまり行数はないです。PHP で書かれています。
 
 ```php
 require_once("workflows.php");
@@ -164,43 +155,43 @@ echo $wf->toxml();
 
 ### 0. 言語について
 
-その前に、workflows作成に利用できる言語について。
+その前に、workflows 作成に利用できる言語について。
 
-Google SuggestもAmazon Suggestも**PHP**で書かれています。  
+Google Suggest も Amazon Suggest も**PHP**で書かれています。  
 ですが、もちろん**他の言語でも書くことができます**。
 
 他に対応している言語は、
 
-* bash
-* zsh
-* Ruby
-* Python
-* Perl
+- bash
+- zsh
+- Ruby
+- Python
+- Perl
 
 があります。
 
-PHPで書く際の注意点は、  
+PHP で書く際の注意点は、  
 **ファイルの先頭、末尾に`<\?php`と`?>`を入れない**こと、くらいです。
 
-**今回は、Google Suggestに倣って書くので、PHPで書きます**。  
+**今回は、Google Suggest に倣って書くので、PHP で書きます**。  
 ご了承下さい。
 
-<span class="line-through">というかPHP以外の言語あまり分かりません。<span></span></span>
+<span class="line-through">というか PHP 以外の言語あまり分かりません。<span></span></span>
 
-### 1. workflows.phpとWorkflowsクラス
+### 1. workflows.php と Workflows クラス
 
 ```php
 require_once('workflows.php');
 $wf = new Workflows();
 ```
 
-この部分、いかにもなクラスをrequireしています。  
-Workflowsクラスは、workflowsを作る上でのユーティリティです。
+この部分、いかにもなクラスを require しています。  
+Workflows クラスは、workflows を作る上でのユーティリティです。
 
 これのお陰で、通信などの処理を自前で書かずとも、  
-簡単にworkflowsが作成できるようになっています。
+簡単に workflows が作成できるようになっています。
 
-**workflows.phpは、workflowsを作成すると自動的に生成される**ので、  
+**workflows.php は、workflows を作成すると自動的に生成される**ので、  
 自前で揃える必要はありません。
 
 ### 2. 入力値の格納
@@ -209,20 +200,20 @@ Workflowsクラスは、workflowsを作る上でのユーティリティです�
 $orig = "{query}";
 ```
 
-とありますが、これはworkflows上での**おまじない**です。
+とありますが、これは workflows 上での**おまじない**です。
 
-`"{query}"`という文字列は、Google Suggestで設定されている、  
+`"{query}"`という文字列は、Google Suggest で設定されている、  
 `g`キーワード以降に入力された文字列に置き換えられます。
 
 例えば、`g jQuery`と入力すると、  
-$origには、`"{query}"`ではなく、変換後の`jQuery`という文字列が入ります。
+$orig には、`"{query}"`ではなく、変換後の`jQuery`という文字列が入ります。
 
 どのタイミングで置換が行われるかは、調査はしていません。
 
 ### 3. $wf->requesr( url )
 
-Workflowsクラス大活躍です。  
-urlを渡すだけでレスポンスを取得できます。
+Workflows クラス大活躍です。  
+url を渡すだけでレスポンスを取得できます。
 
 必要に応じて、**urlencode**を使ってエンコードして下さい。
 
@@ -239,10 +230,10 @@ endforeach;
 レスポンスを取得したら、  
 必要なデータを抜き出して`$wf->result`に突っ込んでいます。
 
-result()に突っ込まれたデータが、Alfred上で表示されます。
+result()に突っ込まれたデータが、Alfred 上で表示されます。
 
 この$wf->result()の引数が分かりにくいので、  
-Workflows.phpの中身を見てみました。
+Workflows.php の中身を見てみました。
 
 ```php
 /**
@@ -265,74 +256,63 @@ public function result( $uid, $arg, $title, $sub, $icon, $valid='yes', $auto=nul
 ```
 
 という引数になっています。  
-リストに見える部分は、$titleと$sub、$iconです。
+リストに見える部分は、$title と$sub、$icon です。
 
-$argは、取得結果を表示した**次のアクションに渡される値**です。
+$arg は、取得結果を表示した**次のアクションに渡される値**です。
 
-例えば、取得結果にURLが存在する場合には、そのURLを$argに渡しておくと、  
-次のURLを開くアクションなどで$argの値を渡すことができます。
+例えば、取得結果に URL が存在する場合には、その URL を$arg に渡しておくと、  
+次の URL を開くアクションなどで$arg の値を渡すことができます。
 
 ### 5. echo $wf->toxml();
 
-workflowsは、`echo $wf->toxml()`でechoされたxml文字列を受け取って、リスト表示するようです。
+workflows は、`echo $wf->toxml()`で echo された xml 文字列を受け取って、リスト表示するようです。
 
 ### 6. まとめ
 
 これらの処理をすごくざっくりまとめると、
 
-  1. $wf->request()でAPIを叩く
-  2. レスポンスから、使いたいデータを$wf->result()に突っ込む
-  3. echo $wf->toXML()でリスト表示させる
+1. $wf->request()で API を叩く
+2. レスポンスから、使いたいデータを$wf->result()に突っ込む
+3. echo $wf->toXML()でリスト表示させる
 
 と言った３ステップになると思います。
 
 ### 補足. キーワード？ ？ ？
 
 `g 検索ワード`のように、  
-`g`というキーワードにこのworkflowsが反応させるように決めます。
-
+`g`というキーワードにこの workflows が反応させるように決めます。
 
 ![Scrip](/images/2013/05/20130521_step4.png)
 
-
-
 反応させるキーワードは、図の上部に書かれた文字を見れば分かります。
-
 
 ![反応させたいキーワードを入力する](/images/2013/05/20130521_step5.png)
 
-
-
 反応キーワードを変更したい場合には、  
-この図をダブルクリックして、keywordを変更すればOKです。
+この図をダブルクリックして、keyword を変更すれば OK です。
 
-今回作るものの詳細
-----------------------------------------
+## 今回作るものの詳細
 
 冒頭でも話しましたが、  
-今回は、[MOCO'sキッチンオリーブAPI]()を利用したサンプルを作ります。
+今回は、[MOCO's キッチンオリーブ API]()を利用したサンプルを作ります。
 
 今回使用するキーワードは、`mocos`として、
 
-* `mocos 日付(YYYY-MM-DD)[,日付…]`と入力する
-* 該当する日付に使われたオリーブの数とレシピの名前を表示
-* レシピを選択してEnterキーを押すとブラウザでレシピが見れる
-* `YYYY/MM/DD`形式でも入力を受け付ける
+- `mocos 日付(YYYY-MM-DD)[,日付…]`と入力する
+- 該当する日付に使われたオリーブの数とレシピの名前を表示
+- レシピを選択して Enter キーを押すとブラウザでレシピが見れる
+- `YYYY/MM/DD`形式でも入力を受け付ける
 
 と言った機能を作ります。 完成図はこんな感じ。
 
-
 ![MOCO'sキッチンオリーブAPIのWorkflow完成図](/images/2013/05/20130521_step6.png)
 
+この API はパラメータは１種類しか取らず、  
+その書式もはっきりしているので Hello world に最適だと思います。
 
+## 今回利用する API について学ぶ
 
-このAPIはパラメータは１種類しか取らず、  
-その書式もはっきりしているのでHello worldに最適だと思います。
-
-今回利用するAPIについて学ぶ
-----------------------------------------
-
-MOCO'sキッチンオリーブAPIのURLは、  
+MOCO's キッチンオリーブ API の URL は、  
 `GET:` です。
 
 パラメータは`date`のみで、  
@@ -348,10 +328,9 @@ MOCO'sキッチンオリーブAPIのURLは、
 
 レスポンスは、上記の形式で得られます。
 
-コードの説明
-----------------------------------------
+## コードの説明
 
-先ほどのGoogle Suggestにならって作ったコードがこちらです。
+先ほどの Google Suggest にならって作ったコードがこちらです。
 
 ```php
 <?php
@@ -359,44 +338,39 @@ MOCO'sキッチンオリーブAPIのURLは、
  require_once('workflows.php'); $wf = new Workflows(); $in = "{query}"; define("REQUEST_URL", "http://pastak.cosmio.net/mocoDB/oliveAPI/getJson.php"); // YYYY/MM/DD形式の場合パラメータを変換 $in = str_replace("/", "-", $in); $url = REQUEST_URL."?date=".$in; $json = json_decode($wf->request($url)); // エラーがある場合 if ( $json->error ) { $wf->result(time(), ", $json->error, ", 'icon.png'); // 正常に取得ができた場合 } else { foreach($json as $menu => $info) { $title = $menu.": ".$info->olive."オリーブ"; $wf->result(time(), $info->url, $title, $info->menu, 'icon.png'); } } echo $wf->toXML();
 ```
 
-先ほどのGoogle Suggestの例を見れば、  
+先ほどの Google Suggest の例を見れば、  
 特に難しいことは無いと思います。
 
-PHPでJSONのパースを行うには、`json_decode()`を利用します。
+PHP で JSON のパースを行うには、`json_decode()`を利用します。
 
 ポイントは、  
-**result()の第２引数$argに、レシピのURLを設定している**ところです。
+**result()の第２引数$arg に、レシピの URL を設定している**ところです。
 
-これによって、この後に続く**「URLを開く」という処理が可能に**なります。
+これによって、この後に続く**「URL を開く」という処理が可能に**なります。
 
-workflowsの全体図とopen URLの設定内容がこちらです。
-
+workflows の全体図と open URL の設定内容がこちらです。
 
 ![Workflows全体図](/images/2013/05/20130521_step71.png)
 
-
 ![ope](/images/2013/05/20130521_step8.png)
 
-
-
-繰り返しますが、**$wf->result()の第二匹数$argは、次の処理へ渡す値を指定しています**。  
+繰り返しますが、**$wf->result()の第二匹数$arg は、次の処理へ渡す値を指定しています**。  
 そして、**次の処理でも同様に`"{query}"`という文字列で値を取ることが出来る**ようです。
 
-まとめ
-----------------------------------------
+## まとめ
 
-web APIと連携したAlfred Workflowsの作り方は、  
+web API と連携した Alfred Workflows の作り方は、  
 このような感じになっています。
 
-シンプルなMOCO'sキッチンAPIだから簡単だったわけではなく、  
-他のAPIを利用しても同様の方法でかなり簡単に書けます。
+シンプルな MOCO's キッチン API だから簡単だったわけではなく、  
+他の API を利用しても同様の方法でかなり簡単に書けます。
 
-これを機に、是非皆さんもworkflow製作者になってみては如何でしょうか。
+これを機に、是非皆さんも workflow 製作者になってみては如何でしょうか。
 
-* [Alfred App – Productivity App for Mac OS X](http://www.alfredapp.com/)
+- [Alfred App – Productivity App for Mac OS X](http://www.alfredapp.com/)
 
-* [Alfred 2のユーザ体験をロケットスタートで始めるための13の偉大なWorkflow – Macの手書き説明書](http://veadardiary.blog29.fc2.com/blog-entry-4425.html)
+- [Alfred 2 のユーザ体験をロケットスタートで始めるための 13 の偉大な Workflow – Mac の手書き説明書](http://veadardiary.blog29.fc2.com/blog-entry-4425.html)
 
-* [Alfred 2のWorkflowをまとめたサイト『Alfred 2 Workflow List』が宝の山](http://veadardiary.blog29.fc2.com/blog-entry-4435.html)
+- [Alfred 2 の Workflow をまとめたサイト『Alfred 2 Workflow List』が宝の山](http://veadardiary.blog29.fc2.com/blog-entry-4435.html)
 
-* [[Mac] バージョンアップした Alfred2で使える、おすすめ Workflows まとめ20個。 « Appdrill](http://appdrill.net/63089/alfred2-workflows.html)
+- [[Mac] バージョンアップした Alfred2 で使える、おすすめ Workflows まとめ 20 個。 « Appdrill](http://appdrill.net/63089/alfred2-workflows.html)

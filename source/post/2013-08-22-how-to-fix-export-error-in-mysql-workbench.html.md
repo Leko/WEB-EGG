@@ -10,10 +10,11 @@ categories:
 tags:
   - MySQL
 ---
-こんにちは。  
-今日、[MySQLWorkbench](http://www-jp.mysql.com/products/workbench/)というMySQL純正ツールを使ってDDLを作っていたのですが、
 
-GUIでテーブルを設定し、SQLにエクスポートしたら
+こんにちは。  
+今日、[MySQLWorkbench](http://www-jp.mysql.com/products/workbench/)という MySQL 純正ツールを使って DDL を作っていたのですが、
+
+GUI でテーブルを設定し、SQL にエクスポートしたら
 
 **Incorrect table definition; there can be only one auto column and it must be defined as a key**
 
@@ -21,8 +22,7 @@ GUIでテーブルを設定し、SQLにエクスポートしたら
 
 <!--more-->
 
-なぜエラーが起こるのか(SQLのお作法)
-----------------------------------------
+## なぜエラーが起こるのか(SQL のお作法)
 
 まずエラーの意味を理解します。
 
@@ -31,30 +31,25 @@ GUIでテーブルを設定し、SQLにエクスポートしたら
 とは、`AUTO INCREMENT`**が設定されたカラムは主キーでなければならない**  
 と言っています。
 
-しかし、AUTO INCREMENTを設定したカラムは主キーにしてあります。
-
+しかし、AUTO INCREMENT を設定したカラムは主キーにしてあります。
 
 ![AUT](/images/2013/08/ef5ef751157160f8bf9c0fac717015a2.png)
 
-
-
 ではなぜエラーが起こるのでしょう。
 
-なぜエラーが起こるのか(ツールのバグ？ )
-----------------------------------------
+## なぜエラーが起こるのか(ツールのバグ？ )
 
 こちらのページに引っかかる記述がありました。
 
-> 主キーの設定をしていない場合は、主キーの設定をしてからAUTO_INCREMENT属性を設定する必要があります。  
-> [主キーの設定・削除、AUTO_ICREMENT属性の設定｜カラム（フィールド）：データ定義（SQL文）｜MySQL｜PHP & JavaScript Room](http://phpjavascriptroom.com/?t=mysql&p=autoincerment)
+> 主キーの設定をしていない場合は、主キーの設定をしてから AUTO_INCREMENT 属性を設定する必要があります。  
+> [主キーの設定・削除、AUTO_ICREMENT 属性の設定｜カラム（フィールド）：データ定義（SQL 文）｜ MySQL ｜ PHP & JavaScript Room](http://phpjavascriptroom.com/?t=mysql&p=autoincerment)
 
-どうやら、主キーの設定がされる前に、AUTO INCREMENTの指定がされてしまっているようです。
+どうやら、主キーの設定がされる前に、AUTO INCREMENT の指定がされてしまっているようです。
 
 そんなこと言われましても…。  
-**吐き出されたSQLをいちいち手動で修正**しなければならないのかと思いましたが、**直せました**。
+**吐き出された SQL をいちいち手動で修正**しなければならないのかと思いましたが、**直せました**。
 
-対処法
-----------------------------------------
+## 対処法
 
 上記のエラーが起こる原因は、**カラムの属性を選ぶ"順番"が左右していた**ようです。
 
@@ -63,10 +58,9 @@ GUIでテーブルを設定し、SQLにエクスポートしたら
 
 **そんな馬鹿な**。。。
 
-GUIからチェックボックスを選んだ順番なんてまともに見る術も無いのに、  
+GUI からチェックボックスを選んだ順番なんてまともに見る術も無いのに、  
 あまりに不親切すぎませんか…
 
 ということでチェックを解除して`PK`>`AI`の順番でチェックを入れなおしたら治りました。
-
 
 ![チェックを入れなおし](/images/2013/08/8d64668f22f50892748e9a13f350eaa0.png)

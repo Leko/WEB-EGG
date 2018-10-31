@@ -2,25 +2,27 @@
 title: middleman-blogで日本語のタグのURLが空になる問題を解消する方法
 date: 2017-08-29 11:55 JST
 tags:
-- Middleman
+  - Middleman
 ---
 
 こんにちは。  
-Middlemanで日本語のタグを使ったときに、そのタグのURLが空になってしまうことがあります。  
+Middleman で日本語のタグを使ったときに、そのタグの URL が空になってしまうことがあります。  
 このブログでは日本語のタグも使えるようにしてありますが、一手間加える必要がありました。  
 なぜそうなるのかと、どうすれば治るのかを残しておこうと思います。
 
 <!--more-->
 
 ## はじめに
-使用しているgemとそのバージョンです
 
-|gem|Version|
-|---|---|
-|middleman|4.2.1|
-|middleman-blog|4.0.2|
+使用している gem とそのバージョンです
+
+| gem            | Version |
+| -------------- | ------- |
+| middleman      | 4.2.1   |
+| middleman-blog | 4.0.2   |
 
 ## 原因
+
 ```ruby
       ##
       # Get a path to the given tag, based on the :taglink setting.
@@ -33,8 +35,8 @@ Middlemanで日本語のタグを使ったときに、そのタグのURLが空�
       end
 ```
 
-`middleman-blog`gemの中の`lib/middleman-blog/tag_pages.rb`にあります。  
-`safe_parameterize`された結果がURLになるのですが、これが日本語が弾かれて空文字になります。
+`middleman-blog`gem の中の`lib/middleman-blog/tag_pages.rb`にあります。  
+`safe_parameterize`された結果が URL になるのですが、これが日本語が弾かれて空文字になります。
 
 ```ruby
       ##
@@ -50,11 +52,12 @@ Middlemanで日本語のタグを使ったときに、そのタグのURLが空�
 ```
 
 `lib/middleman-blog/uri_templates.rb`に定義があります。  
-ActiveSupport::Inflector#parameterizeの説明は[こちら](https://apidock.com/rails/v4.2.7/ActiveSupport/Inflector/parameterize)を読むと良いと思います。
+ActiveSupport::Inflector#parameterize の説明は[こちら](https://apidock.com/rails/v4.2.7/ActiveSupport/Inflector/parameterize)を読むと良いと思います。
 
-これらの処理が日本語というかマルチバイト文字を弾いてしまい、日本語のタグのURLが空になります。  
+これらの処理が日本語というかマルチバイト文字を弾いてしまい、日本語のタグの URL が空になります。
 
 ## 対処法
+
 `ActiveSupport::Inflector`に設定を渡したりして回避はできるそうなのですが、わざわざ日本語と英語のマッピング作るよりも、汎用的に％エンコードすればいいのでは？  
 と思い、そんな感じで対処しました。  
 結論としては[こちら](https://github.com/Leko/WEB-EGG/blob/master/config.rb#L7)の設定ファイルのような対処をとりました。

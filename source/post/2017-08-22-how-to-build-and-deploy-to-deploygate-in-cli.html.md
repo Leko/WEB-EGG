@@ -2,41 +2,43 @@
 title: CLIだけでReact NativeアプリをビルドしてDeployGateにデプロイする方法
 date: 2017-08-22 10:30 JST
 tags:
-- iOS
-- Android
-- React Native
-- DeployGate
+  - iOS
+  - Android
+  - React Native
+  - DeployGate
 ---
 
 こんにちは。  
-仕事でReact Nativeを触っているのですが、ステージング（DeployGate）へアプリを反映するときに、
+仕事で React Native を触っているのですが、ステージング（DeployGate）へアプリを反映するときに、
 
-* Xcodeを起動
-* Product > Archiveを選択
-* しばらく待つ
-* エクスポート方法（Ad-Hoc）を選択
-* オプション（Code Signingに使用するアカウント）を選択
-* しばらく待つ
-* DeployGateを開く
-* 出来上がったipaファイルをDeployGateにドロップ
+- Xcode を起動
+- Product > Archive を選択
+- しばらく待つ
+- エクスポート方法（Ad-Hoc）を選択
+- オプション（Code Signing に使用するアカウント）を選択
+- しばらく待つ
+- DeployGate を開く
+- 出来上がった ipa ファイルを DeployGate にドロップ
 
 という手作業をちまちまやるのが面倒になったので、  
-どうにかできないか調べてみたらCLIだけで完結できたので、その方法を残します
+どうにかできないか調べてみたら CLI だけで完結できたので、その方法を残します
 
 <!--more-->
 
-iOSアプリで.ipaファイルを作成する
----------------------------
-iOSでipaファイルを作るには、ビルドとエクスポートの２ステップが必要です。
+## iOS アプリで.ipa ファイルを作成する
+
+iOS で ipa ファイルを作るには、ビルドとエクスポートの２ステップが必要です。
 どちらも`xcodebuild`コマンドで実行できます。
 
-### ipaファイルを作るための下準備
-Xcodeの起動は必要ありませんが、インストールは必要です。  
-インストールした上で、Xcodeのコマンドラインツールもインストールしておいてください。
+### ipa ファイルを作るための下準備
+
+Xcode の起動は必要ありませんが、インストールは必要です。  
+インストールした上で、Xcode のコマンドラインツールもインストールしておいてください。
 
 > &mdash; [Running On Device – React Native | A framework for building native apps using React](https://facebook.github.io/react-native/releases/0.19/docs/running-on-device-ios.html)
 
-### xcodebuildでビルド
+### xcodebuild でビルド
+
 ビルドするには、プロジェクトルートで以下のコマンドを実行します。
 
 ```
@@ -72,8 +74,9 @@ Information about project "{アプリ}":
 
 のような出力が得られると思うので、`Schemes:`以下に出力されている行をコピーしましょう。
 
-### xcodebuildでIPAファイルを作成
-IPAファイルを作るには、以下のコマンドを入力します。
+### xcodebuild で IPA ファイルを作成
+
+IPA ファイルを作るには、以下のコマンドを入力します。
 
 ```bash
 xcodebuild \
@@ -83,9 +86,9 @@ xcodebuild \
   -exportOptionsPlist "説明します"
 ```
 
--archivePathはビルドしたファイルのパスを指定、  
--exportPathには、ipaファイルの出力先を指定、  
--exportOptionsPlistには、**ビルド用の設定ファイル（plist）**のファイルパスを指定します。
+-archivePath はビルドしたファイルのパスを指定、  
+-exportPath には、ipa ファイルの出力先を指定、  
+-exportOptionsPlist には、**ビルド用の設定ファイル（plist）**のファイルパスを指定します。
 
 ビルド用の設定ファイル（plist）はこんな感じです。
 
@@ -106,26 +109,27 @@ xcodebuild \
 </plist>
 ```
 
-Xcodeの画面からipaファイル作ったことある方なら、なんとなくマッピングできるかと思います。  
-このGUIで選択することをそのままXMLにしたものです。
+Xcode の画面から ipa ファイル作ったことある方なら、なんとなくマッピングできるかと思います。  
+この GUI で選択することをそのまま XML にしたものです。
 
 ![Xcode export](/images/2017/08/xcode-archive-settings.png)
 
-AndroidでAPKファイルを作成する
----------------------------
-AndroidのAPKファイルつくるのはとても簡単です
+## Android で APK ファイルを作成する
 
-### APKファイルを作成するための下準備
+Android の APK ファイルつくるのはとても簡単です
+
+### APK ファイルを作成するための下準備
+
 > &mdash; [Android Setup – React Native | A framework for building native apps using React](https://facebook.github.io/react-native/releases/0.23/docs/android-setup.html)
 
-でAndroidの開発環境のセットアップと、
+で Android の開発環境のセットアップと、
 
 > &mdash; [Generating Signed APK](https://facebook.github.io/react-native/docs/signed-apk-android.html)
 
 で署名についてのセットアップを済ませておきます。
 これをやらないと、署名ができずビルドの最後の方でエラーになります。
 
-### GradleでReact NativeアプリをビルドしてAPKファイルを作成
+### Gradle で React Native アプリをビルドして APK ファイルを作成
 
 ```bash
 ./android/gradlew --project-dir ./android assembleRelease
@@ -134,15 +138,15 @@ AndroidのAPKファイルつくるのはとても簡単です
 これだけです。  
 `--project-dir`を指定しないとディレクトリがずれてうまくいきません。
 
-DeployGate APIでアプリをアップロード
----------------------------
-iOSでipaファイルを、Androidでapkファイルを生成できたら、DeployGateへアップロードします。  
-あらかじめログインしてAPIキーを入手しておいてください。
+## DeployGate API でアプリをアップロード
+
+iOS で ipa ファイルを、Android で apk ファイルを生成できたら、DeployGate へアップロードします。  
+あらかじめログインして API キーを入手しておいてください。
 
 コマンドはこんな感じでいかがでしょう。  
-Gitの最新コミットメッセージを混ぜていたりとか、好みが分かれる処理も入っているので書き換えて使用してください。
+Git の最新コミットメッセージを混ぜていたりとか、好みが分かれる処理も入っているので書き換えて使用してください。
 
-コミットID、メッセージが入っていると、反映されたバージョンを確認できるので便利だと思います。
+コミット ID、メッセージが入っていると、反映されたバージョンを確認できるので便利だと思います。
 
 ```bash
 #!/usr/bin/env bash
@@ -168,11 +172,11 @@ curl \
 DEPLOY_GATE_TOKEN=XXXXX ./scripts/deploy target/アプリ名.ipa Leko
 ```
 
-さいごに
----------------------------
-[Fastlaneのgym](https://github.com/fastlane/fastlane/tree/master/gym)コマンドが同じようなことをしてくれますが、  
-Fastlane自体の学習コストは決して安くないので、もっと質素にビルドできる方法が見つかってよかったです。  
-主にXcode周りの面倒なところ、安く自動化できる手作業はガンガン自動化して開発効率あげましょう!!!
+## さいごに
+
+[Fastlane の gym](https://github.com/fastlane/fastlane/tree/master/gym)コマンドが同じようなことをしてくれますが、  
+Fastlane 自体の学習コストは決して安くないので、もっと質素にビルドできる方法が見つかってよかったです。  
+主に Xcode 周りの面倒なところ、安く自動化できる手作業はガンガン自動化して開発効率あげましょう!!!
 
 なお、今回の記事のコマンドたちは[Gist](https://gist.github.com/Leko/e6d205993466ce7865a905259b6d18a2)に上げてあります。  
 ぜひ見てみてください

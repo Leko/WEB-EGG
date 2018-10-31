@@ -3,7 +3,7 @@ path: /post/knowhow-of-chatwork-api-with-activeresource/
 title: ActiveResourceでChatWorkのAPIクライアントを作る際にハマったところと解決策
 date: 2016-09-26T12:00:15+00:00
 meaningless:
-  - 'yes'
+  - "yes"
 dsq_thread_id:
   - "5173509051"
 dsq_needs_sync:
@@ -15,30 +15,29 @@ tags:
   - ChatWork
   - Ruby
 ---
+
 れこです。  
-久々にRubyの記事です。
+久々に Ruby の記事です。
 
-仕事でよくChatWorkを使用するので、いい加減オレオレAPIクライアントじゃなくてちゃんとしたのを作ろう  
-ということで、[ActiveResourceを利用したAPIクライアント](https://github.com/Leko/activeresource-chatwork)を作ってみました。
+仕事でよく ChatWork を使用するので、いい加減オレオレ API クライアントじゃなくてちゃんとしたのを作ろう  
+ということで、[ActiveResource を利用した API クライアント](https://github.com/Leko/activeresource-chatwork)を作ってみました。
 
-ActiveResourceは基本的にRuby on Railsで作られたアプリケーション用のAPIクライアントなのですが、汎用的に作られているのでChatWorkのAPIにも対応できました。  
-ということで他のAPIにもActiveResourceを利用するために備忘録を残しておきます
+ActiveResource は基本的に Ruby on Rails で作られたアプリケーション用の API クライアントなのですが、汎用的に作られているので ChatWork の API にも対応できました。  
+ということで他の API にも ActiveResource を利用するために備忘録を残しておきます
 
 <!--more-->
 
-作ったもの
-----------------------------------------
+## 作ったもの
 
-gem化してGithubに上げてあります。
+gem 化して Github に上げてあります。
 
 > [GitHub – Leko/activeresource-chatwork: ActiveResource classes for ChatWork API](https://github.com/Leko/activeresource-chatwork)
 
-gemの作り方については、[こちら](http://masarakki.github.io/blog/2014/02/15/how-to-create-gem/)の記事がとても参考になりました。
+gem の作り方については、[こちら](http://masarakki.github.io/blog/2014/02/15/how-to-create-gem/)の記事がとても参考になりました。
 
-リクエスト/レスポンスの共通部分
-----------------------------------------
+## リクエスト/レスポンスの共通部分
 
-ChatWorkのAPIは、リクエストは`x-www-form-urlencoded`に対しレスポンスは`application/json`という特殊な要件なので、  
+ChatWork の API は、リクエストは`x-www-form-urlencoded`に対しレスポンスは`application/json`という特殊な要件なので、  
 `ActiveResource::Formats::JsonFormat`を拡張したフォーマッタを作成しました。
 
 リポジトリの[lib/chatwork/base.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/base.rb)に定義してます。コードはこんな感じ。
@@ -74,8 +73,7 @@ class Base < ActiveResource::Base
 end
 ```
 
-URL末尾から.json等のフォーマットを消したい
-----------------------------------------
+## URL 末尾から.json 等のフォーマットを消したい
 
 [ActiveResource::Base#format_extension](https://github.com/rails/activeresource/blob/master/lib/active_resource/base.rb)を読んでいたら発見。
 
@@ -87,21 +85,20 @@ end
 
 で対応できました。
 
-ネストしたリソースを扱いたい
-----------------------------------------
+## ネストしたリソースを扱いたい
 
-ChatWorkは`/v1/rooms/:room_id/messages/:message_id`のように、ネストしたルーティングが必要になります。  
-ActiveResourceにはActiveRecordのように[リレーション](https://github.com/rails/activeresource#associations)の機能があるようですが、一部要件を満たせなかった(※後述)ので、下記の記事も参考にしつつ試してみました。
+ChatWork は`/v1/rooms/:room_id/messages/:message_id`のように、ネストしたルーティングが必要になります。  
+ActiveResource には ActiveRecord のように[リレーション](https://github.com/rails/activeresource#associations)の機能があるようですが、一部要件を満たせなかった(※後述)ので、下記の記事も参考にしつつ試してみました。
 
 > [ActiveResource : Passing prefix options](http://blog.revathskumar.com/2013/12/activeresource-passing-prefix-options.html)  
 > ちなみに情報が古いのか`update_attributes`に関しては上手く動きませんでした。
 
 リポジトリの[lib/chatwork/message.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/message.rb)に実装例が有りますが、大枠としては
 
-  * `prefix`プロパティに`:hoge_id`のように:付きのパスを定義する
-  * `params`に`hoge_id`を指定する
+- `prefix`プロパティに`:hoge_id`のように:付きのパスを定義する
+- `params`に`hoge_id`を指定する
 
-has_many的なものは
+has_many 的なものは
 
 ```ruby
 has_many :members, class_name: 'chatwork/member'
@@ -111,15 +108,14 @@ has_many :members, class_name: 'chatwork/member'
 `class_name`オプションを渡さないと、クラスが定義されている名前空間によらずトップレベルの名前空間が指定されてしまうので注意です。  
 **注意点として、この方法ではクエリパラメータを渡すことが出来ません** 解決方法は後述します。
 
-belongs_to的なものは、残念ながらChatWorkでは意図したとおりに動きません。  
+belongs_to 的なものは、残念ながら ChatWork では意図したとおりに動きません。  
 これも後述します。
 
 利用方法は[テスト](https://github.com/Leko/activeresource-chatwork/tree/master/spec/chatwork)を見ていただくほうが早いと思います。
 
-クエリパラメータが必要なhas_manyを作りたい
-----------------------------------------
+## クエリパラメータが必要な has_many を作りたい
 
-`has_many`はオプション引数を受け取ってくれないので、クエリパラメータが必要な場合、has_manyを利用することが出来ません。  
+`has_many`はオプション引数を受け取ってくれないので、クエリパラメータが必要な場合、has_many を利用することが出来ません。  
 ということでリレーションが使えないならメソッドを自作します。  
 実装にあたり、下記の記事がとても参考になりました。
 
@@ -134,13 +130,12 @@ def messages(params = {})
 ```
 
 という感じに、リレーションっぽいメソッド名で`.all`や`.find`、`.first`等を使用してそれっぽく見せてます。  
-ちなみに多用すると **N+1のHTTPリクエスト** という甚大なボトルネックが生まれます。  
-まぁHTTP+ActiveResourceではSQL+ActiveRecordのような柔軟さは実現できないので、性能に難が出ない程度にすっぱり諦めた方が良いと思います。。。
+ちなみに多用すると **N+1 の HTTP リクエスト** という甚大なボトルネックが生まれます。  
+まぁ HTTP+ActiveResource では SQL+ActiveRecord のような柔軟さは実現できないので、性能に難が出ない程度にすっぱり諦めた方が良いと思います。。。
 
-レスポンスに主キーがなくてもbelongs_toしたい
-----------------------------------------
+## レスポンスに主キーがなくても belongs_to したい
 
-おそらくActiveResourceは
+おそらく ActiveResource は
 
 ```ruby
 # /users/1.json
@@ -150,10 +145,10 @@ def messages(params = {})
 { id: 100, user_id: 1, content: 'xxx' }
 ```
 
-のようなものを想定しているため、レスポンスの中に`user_id`に相当するフィールドがないとcommentsからuserを見ることが出来ません。
+のようなものを想定しているため、レスポンスの中に`user_id`に相当するフィールドがないと comments から user を見ることが出来ません。
 
-ChatWorkでの例に置き換えると、  
-`/rooms/:room_id/members`のレスポンスに`room_id`が含まれていないので、belongs_toでは紐付けが出来ません。  
+ChatWork での例に置き換えると、  
+`/rooms/:room_id/members`のレスポンスに`room_id`が含まれていないので、belongs_to では紐付けが出来ません。  
 `belongs_to`はパスを生成する時にレスポンスの中身しか見てくれないないようです。なぜか`prefix_options`を見てくれません。  
 ということでメソッドを自作します。
 
@@ -175,28 +170,26 @@ module ChatWork
 end
 ```
 
-という感じで、`prefix_options`を使ってRoom.findすれば、レスポンスにroom_idが無くてもなんとかできます。
+という感じで、`prefix_options`を使って Room.find すれば、レスポンスに room_id が無くてもなんとかできます。
 
-Railsのルーティングに反するURLに対応したい
-----------------------------------------
+## Rails のルーティングに反する URL に対応したい
 
-`/v1/my/tasks`のように、Railsのルーティングに対応してないURLもなんとかしたい。  
-ActiveResourceには[カスタムメソッド](http://api.rubyonrails.org/v3.2.6/classes/ActiveResource/CustomMethods.html)の機能があります。
+`/v1/my/tasks`のように、Rails のルーティングに対応してない URL もなんとかしたい。  
+ActiveResource には[カスタムメソッド](http://api.rubyonrails.org/v3.2.6/classes/ActiveResource/CustomMethods.html)の機能があります。
 
 ```ruby
 # {ActiveResource::Baseを継承したクラス}.{HTTPメソッド(小文字)}(:パス, オプション)
 ChatWork::My.get(:tasks, status: 'open')
 ```
 
-という感じで、ただのHTTPクライアント的な使い方もできるようです。  
+という感じで、ただの HTTP クライアント的な使い方もできるようです。  
 戻り値が配列だったら`Array`、戻り値がオブジェクトなら`Hash`のインスタンスが返るようです。  
-このままではActiveResourceのメソッド郡が使えないのでなんとかしたい。。。
+このままでは ActiveResource のメソッド郡が使えないのでなんとかしたい。。。
 
-カスタムメソッドでもActiveResource::Baseのインスタンスを返したい
-----------------------------------------
+## カスタムメソッドでも ActiveResource::Base のインスタンスを返したい
 
-カスタムメソッドを使うとHashかArrayになってしまうので、なんとかしたい。  
-ActiveResource::Base.newはHashを受け取るので、受け取ったレスポンスをそのまま渡せます。  
+カスタムメソッドを使うと Hash か Array になってしまうので、なんとかしたい。  
+ActiveResource::Base.new は Hash を受け取るので、受け取ったレスポンスをそのまま渡せます。  
 つまりゴリ押しです。もしかしたら相当するオプションが有るのかもしれません。
 
 [lib/chatwork/my.rb](https://github.com/Leko/activeresource-chatwork/blob/master/lib/chatwork/my.rb)に定義してます
@@ -208,13 +201,12 @@ def self.tasks(params = {})
 ```
 
 これを応用すれば、レスポンスを任意のクラスに変換できそうです。  
-件数の多いAPIだと.newのオーバーヘッドが地味にありそうなので、ご利用は計画的に。
+件数の多い API だと.new のオーバーヘッドが地味にありそうなので、ご利用は計画的に。
 
-主キーに相当するフィールド名を上書きしたい
-----------------------------------------
+## 主キーに相当するフィールド名を上書きしたい
 
 デフォルトだとレスポンス内の`id`というフィールドを主キーと見なす、という作りになっています。  
-ChatWorkでいえば、`/rooms`のレスポンス内の主キーは`room_id`というフィールド名になっています。  
+ChatWork でいえば、`/rooms`のレスポンス内の主キーは`room_id`というフィールド名になっています。  
 このままではフィールド名が噛み合わず`save`や`destroy`の挙動に支障をきたします。
 
 これを上書きするには、`primary_key`というプロパティを変更します。
@@ -223,13 +215,12 @@ ChatWorkでいえば、`/rooms`のレスポンス内の主キーは`room_id`と�
 self.primary_key = 'room_id'
 ```
 
-こうすれば、レスポンス内部にidというキーがなくてもマッピングしてくれました。
+こうすれば、レスポンス内部に id というキーがなくてもマッピングしてくれました。
 
-まとめ
-----------------------------------------
+## まとめ
 
-やはりRailsでないアプリケーションにActiveResourceを対応させるのは少々無理が生じるようです。  
-それでもChatWorkのURL構造はだいぶRailsにRESTfulな感じなので、比較的軽度に収まりました。  
-もしオレオレ全開なAPIに対応するとしたら、カスタムメソッドを多用することになりそうだなぁ、、、と感じました。
+やはり Rails でないアプリケーションに ActiveResource を対応させるのは少々無理が生じるようです。  
+それでも ChatWork の URL 構造はだいぶ Rails に RESTful な感じなので、比較的軽度に収まりました。  
+もしオレオレ全開な API に対応するとしたら、カスタムメソッドを多用することになりそうだなぁ、、、と感じました。
 
-この内容が、少しでもActiveResourceでRails以外のAPIクライアントを作るときの助けになれば幸いです。
+この内容が、少しでも ActiveResource で Rails 以外の API クライアントを作るときの助けになれば幸いです。
