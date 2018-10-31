@@ -17,4 +17,5 @@ bundle exec middleman serve
 ```
 
 ## Contribution
+
 Coming soon
