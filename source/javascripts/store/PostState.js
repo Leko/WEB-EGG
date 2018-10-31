@@ -1,18 +1,18 @@
 // @flow
-import type { DispatcherPayload } from 'almin'
-import type Post from '../domain/Post'
-import type PostList from '../domain/PostList'
-import FilterPostListUseCase from '../usecase/FilterPostListUseCase'
+import type { DispatcherPayload } from "almin";
+import type Post from "../domain/Post";
+import type PostList from "../domain/PostList";
+import FilterPostListUseCase from "../usecase/FilterPostListUseCase";
 
 export default class PostState {
-  posts: PostList
+  posts: PostList;
 
   /**
    * @param {PostList} posts
    * @param {string} keyword
    */
-  constructor({ posts }: { posts: PostList }  = {}) {
-    this.posts = posts
+  constructor({ posts }: { posts: PostList } = {}) {
+    this.posts = posts;
   }
 
   /**
@@ -22,10 +22,10 @@ export default class PostState {
   reduce(payload: DispatcherPayload): PostState {
     switch (payload.type) {
       case FilterPostListUseCase.name:
-        const { posts } = payload
-        return new PostState({ posts })
+        const { posts } = payload;
+        return new PostState({ posts });
       default:
-        return this
+        return this;
     }
   }
 }

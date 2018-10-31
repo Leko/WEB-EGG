@@ -15,16 +15,16 @@
  */
 
 /* eslint-env browser */
-'use strict';
+"use strict";
 
 /**
  * Delay registration until after the page has loaded, to ensure that our
  * precaching requests don't degrade the first visit experience.
  * See https://developers.google.com/web/fundamentals/instant-and-offline/service-worker/registration
  */
-export async function register (serviceWorkerFile) {
-  if (!('serviceWorker' in navigator)) {
-    return
+export async function register(serviceWorkerFile) {
+  if (!("serviceWorker" in navigator)) {
+    return;
   }
 
   // Your service-worker.js *must* be located at the top-level directory relative to your site.
@@ -32,7 +32,9 @@ export async function register (serviceWorkerFile) {
   // *Don't* register service worker file in, e.g., a scripts/ sub-directory!
   // See https://github.com/slightlyoff/ServiceWorker/issues/468
   try {
-    const registration = await navigator.serviceWorker.register(`/${serviceWorkerFile}`)
+    const registration = await navigator.serviceWorker.register(
+      `/${serviceWorkerFile}`
+    );
     // updatefound is fired if service-worker.js changes.
     registration.onupdatefound = function() {
       // The updatefound event implies that registration.installing is set; see
@@ -41,31 +43,31 @@ export async function register (serviceWorkerFile) {
 
       installingWorker.onstatechange = function() {
         switch (installingWorker.state) {
-          case 'installed':
+          case "installed":
             if (navigator.serviceWorker.controller) {
               // At this point, the old content will have been purged and the fresh content will
               // have been added to the cache.
               // It's the perfect time to display a "New content is available; please refresh."
               // message in the page's interface.
-              console.log('New or updated content is available.');
+              console.log("New or updated content is available.");
             } else {
               // At this point, everything has been precached.
               // It's the perfect time to display a "Content is cached for offline use." message.
-              console.log('Content is now available offline!');
+              console.log("Content is now available offline!");
             }
             break;
 
-          case 'redundant':
-            console.error('The installing service worker became redundant.');
+          case "redundant":
+            console.error("The installing service worker became redundant.");
             break;
         }
       };
     };
   } catch (e) {
-    console.error('Error during service worker registration:', e);
+    console.error("Error during service worker registration:", e);
   }
 }
 
-export function registerWorkers (workerNames) {
-  return Promise.all(workerNames.map(register))
+export function registerWorkers(workerNames) {
+  return Promise.all(workerNames.map(register));
 }

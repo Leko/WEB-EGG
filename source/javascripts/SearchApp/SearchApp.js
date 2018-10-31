@@ -37,7 +37,7 @@ export default class SearchApp extends Component<Props, State> {
   };
 
   handleChange = debounce(() => {
-    if (this.inComposition) {
+    if (this.state.inComposition) {
       return;
     }
 
