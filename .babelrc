@@ -7,8 +7,5 @@
         "browsers": ["last 4 versions"]
       }
     }]
-  ],
-  "plugins": [
-    "@babel/plugin-transform-flow-strip-types"
   ]
 }
