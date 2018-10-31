@@ -7,5 +7,8 @@
         "browsers": ["last 4 versions"]
       }
     }]
+  ],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties"
   ]
 }
