@@ -28,53 +28,35 @@ function formatDate(date: Date): string {
 }
 
 export default class SearchApp extends Component<Props, State> {
-  state: State;
-  handleClose: Function;
-  handleChange: Function;
-  handleKeyPress: Function;
-  handleBlur: Function;
-  handleFocus: Function;
+  state: State = {
+    keyword: "",
+    cursor: -1,
+    shown: false
+  };
 
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      keyword: "",
-      cursor: -1,
-      shown: false
-    };
-    console.log(this);
-    this.handleChange = debounce(this.handleChange.bind(this), 200);
-    this.handleKeyPress = debounce(this.handleKeyPress.bind(this), 200);
-    this.handleClose = debounce(this.handleClose.bind(this), 200);
-    this.handleBlur = debounce(this.handleBlur.bind(this), 200);
-    this.handleFocus = debounce(this.handleFocus.bind(this), 200);
-  }
-
-  componentDidMount() {}
-
-  handleChange() {
+  handleChange = debounce(() => {
     const keyword = this.refs.search.value;
     this.props.appContext
       .useCase(FilterPostListUseCaseFactory.create())
       .execute(keyword);
     this.setState({ keyword, cursor: 0 });
-  }
+  }, 1000 / 60);
 
-  handleKeyPress(e: KeyboardEvent) {
+  handleKeyPress = debounce((e: KeyboardEvent) => {
     // TODO
-  }
+  }, 1000 / 60);
 
-  handleClose() {
+  handleClose = () => {
     this.setState({ shown: false });
-  }
+  };
 
-  handleBlur() {
+  handleBlur = () => {
     this.setState({ cursor: -1 });
-  }
+  };
 
-  handleFocus() {
+  handleFocus = () => {
     this.setState({ shown: true, cursor: -1 });
-  }
+  };
 
   setCursor(index: number) {
     this.setState({ cursor: index });

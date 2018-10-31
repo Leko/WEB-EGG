@@ -1,6 +1,6 @@
 // @flow
 import type { PostPayload } from "../../domain/Post";
-import algoliasearch from "algoliasearch";
+import algoliasearch from "algoliasearch/lite";
 import has from "lodash/has";
 import get from "lodash/get";
 import map from "lodash/map";
@@ -48,9 +48,6 @@ export default class Algolia extends Base {
   constructor() {
     super();
     this.index = client.initIndex(process.env.ALGOLIA_INDEX);
-    this.index.setSettings({
-      attributeForDistinct: "title"
-    });
   }
 
   /**
