@@ -288,7 +288,20 @@ configure :build do
     def update_search_index(path)
       Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
       index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
-      batch = JSON.parse(File.read(path))
+      index.set_settings(attributeForDistinct: 'title')
+      items = JSON.parse(File.read(path))
+      batch = items.flat_map {|item|
+        item['body']
+          .each_char
+          .each_slice(1000)
+          .map(&:join)
+          .map.with_index{|chunk, index|
+            item.merge({
+              'objectID' => "#{item['objectID']}-#{index}",
+              'body' => chunk
+            })
+          }
+      }
       index.save_objects!(batch)
       File.delete(path)
     end
