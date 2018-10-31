@@ -289,8 +289,8 @@ configure :build do
       Algolia.init application_id: ENV['ALGOLIA_APP_ID'], api_key: ENV['ALGOLIA_API_KEY']
       index = Algolia::Index.new(ENV['ALGOLIA_INDEX'])
       index.set_settings(attributeForDistinct: 'title')
-      batch = JSON.parse(File.read(path))
-      batch.flat_map {|item|
+      items = JSON.parse(File.read(path))
+      batch = items.flat_map {|item|
         item['body']
           .each_char
           .each_slice(1000)
