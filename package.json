@@ -12,7 +12,7 @@
     "develop": "webpack --config ./webpack.config.js --watch -d --progress --colors",
     "build": "webpack --config ./webpack.config.js --bail -p",
     "build:cache": "sw-precache --config sw-precache-config.js",
-    "deploy": "netlify -t $NETLIFY_ACCESS_TOKEN deploy -s $NETLIFY_SITE_ID"
+    "deploy": "netlify deploy"
   },
   "repository": {
     "type": "git",
