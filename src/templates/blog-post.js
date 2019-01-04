@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import { Tag } from '../components/Tag'
 import { BeforeReading } from '../components/BeforeReading'
 import { rhythm, scale } from '../utils/typography'
 
@@ -43,10 +44,8 @@ class BlogPostTemplate extends React.Component {
             }}
           >
             Tags:
-            {post.frontmatter.tags.map(tag => (
-              <Link to={`tag/${tag}`} className="tag">
-                {tag}
-              </Link>
+            {post.frontmatter.tags.map(tagName => (
+              <Tag tagName={tagName} />
             ))}
           </small>
         )}
