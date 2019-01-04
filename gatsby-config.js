@@ -72,7 +72,7 @@ module.exports = {
         short_name: `WEB EGG`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#663399`,
+        theme_color: `#FCB900`,
         display: `minimal-ui`,
         icon: `content/assets/icon.png`,
       },
