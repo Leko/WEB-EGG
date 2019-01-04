@@ -60,7 +60,7 @@ sudo dd bs=1m if=$HOME/Downloads/2017-04-10-raspbian-jessie.img of=/dev/rdisk2
 > 
 > &mdash; [Raspberry Pi 3にRaspbianをインストール(Mac OS X を使用) – Qiita](http://qiita.com/onlyindreams/items/acc70807b69b43e176bf)
 
-え、なにそれ知らないと思って調べたらちょうど同じことに疑問を持たれた方が居ました。
+え、なにそれ聞いたことないと思って調べたらちょうど同じことに疑問を持たれた方が居ました。
 
 > diskもrdiskも同じものを見ているのですが、ユーザーがdiskという名前でアクセスしたときは4kBごとのバッファを経由してアクセスしています。  
 > （原文は from user space と表現されているので、カーネルからだとまた違うのかな？）

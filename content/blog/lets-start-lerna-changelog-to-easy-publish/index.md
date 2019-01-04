@@ -51,7 +51,7 @@ lerna-changelogを使うためのセットアップはざっくり2つありま�
 ラベルのマッピングを設定し忘れていると、**PRはあるはずなのにリリースノートが空**という現象が発生します。リポジトリに合わせてしっかり設定しましょう。  
 hothouseではラベルのマッピングをこのように指定しています。
 
-<%= gh_embed 'https://github.com/Leko/hothouse/blob/3f7f51a7045be8d47c8ef1764094a99929715e77/package.json#L32-L40' %>
+https://github.com/Leko/hothouse/blob/3f7f51a7045be8d47c8ef1764094a99929715e77/package.json#L32-L40
 
 なおラベルはデフォルトではなく、azuさんのこのツールを使用させてもらいました。
 
@@ -86,7 +86,7 @@ hothouseでは、
 を全て一撃で倒すべく、こんなシェルを組んでます。
 ほとんどの処理は`lerna publish`と`lerna-changelog`で自動化されており、それらをつなぎ合わせるちょっとした手間をシェルで埋めて使っています。
 
-<%= gh_embed 'https://github.com/Leko/hothouse/blob/3f7f51a7045be8d47c8ef1764094a99929715e77/scripts/release', 'bash' %>
+https://github.com/Leko/hothouse/blob/3f7f51a7045be8d47c8ef1764094a99929715e77/scripts/release
 
 リリース作業のハードルが下がると、リリースの頻度が上がり、結果的に早くバグ修正や機能追加が届けられるので、効果あると思います。  
 楽だし気に入っているので、問題が出るまではこのままのやり方で進めてみようと思います。  
