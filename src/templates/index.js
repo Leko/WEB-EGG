@@ -11,6 +11,14 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
+    const {
+      current,
+      total,
+      hasNext,
+      hasPrev,
+      nextPath,
+      prevPath,
+    } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -56,6 +64,33 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {hasPrev && (
+              <Link to={prevPath} rel="prev">
+                ← Prev
+              </Link>
+            )}
+          </li>
+          <li>
+            {current} of {total}
+          </li>
+          <li>
+            {hasNext && (
+              <Link to={nextPath} rel="next">
+                Next →
+              </Link>
+            )}
+          </li>
+        </ul>
       </Layout>
     )
   }
@@ -64,13 +99,17 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query {
+  query blogListQuery($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           timeToRead

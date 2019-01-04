@@ -6,6 +6,7 @@ exports.createPages = ({ graphql, actions }) => {
 
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve(`./src/templates/blog-post.js`)
+    const blogPostList = path.resolve(`./src/templates/index.js`)
     resolve(
       graphql(
         `
@@ -33,9 +34,32 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // Create blog posts pages.
+        // Create blog-list pages
+        // https://www.gatsbyjs.org/docs/adding-pagination/
         const posts = result.data.allMarkdownRemark.edges
+        const postsPerPage = 10
+        const numPages = Math.ceil(posts.length / postsPerPage)
+        Array.from({ length: numPages }).forEach((_, index) => {
+          const withPrefix = pageNumber =>
+            pageNumber === 1 ? `/` : `/page/${pageNumber}`
+          const pageNumber = index + 1
+          createPage({
+            path: withPrefix(pageNumber),
+            component: blogPostList,
+            context: {
+              limit: postsPerPage,
+              skip: index * postsPerPage,
+              current: pageNumber,
+              total: numPages,
+              hasNext: pageNumber < numPages,
+              nextPath: withPrefix(pageNumber + 1),
+              hasPrev: index > 0,
+              prevPath: withPrefix(pageNumber - 1),
+            },
+          })
+        })
 
+        // Create blog posts pages.
         posts.forEach((post, index) => {
           const previous =
             index === posts.length - 1 ? null : posts[index + 1].node
