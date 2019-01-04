@@ -11,18 +11,11 @@ class BlogIndex extends React.Component {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
-    const {
-      current,
-      total,
-      hasNext,
-      hasPrev,
-      nextPath,
-      prevPath,
-    } = this.props.pageContext
+    const { tag } = this.props.pageContext
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO title={`Tag:${tag}`} keywords={[tag]} />
         <Bio />
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
@@ -61,33 +54,6 @@ class BlogIndex extends React.Component {
             </div>
           )
         })}
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {hasPrev && (
-              <Link to={prevPath} rel="prev">
-                ← Prev
-              </Link>
-            )}
-          </li>
-          <li>
-            {current} of {total}
-          </li>
-          <li>
-            {hasNext && (
-              <Link to={nextPath} rel="next">
-                Next →
-              </Link>
-            )}
-          </li>
-        </ul>
       </Layout>
     )
   }
@@ -96,7 +62,7 @@ class BlogIndex extends React.Component {
 export default BlogIndex
 
 export const pageQuery = graphql`
-  query blogListQuery($skip: Int!, $limit: Int!) {
+  query taggedListQuery($tag: String!) {
     site {
       siteMetadata {
         title
@@ -104,8 +70,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
+      filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       edges {
         node {

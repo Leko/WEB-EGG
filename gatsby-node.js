@@ -7,6 +7,7 @@ exports.createPages = ({ graphql, actions }) => {
   return new Promise((resolve, reject) => {
     const blogPost = path.resolve(`./src/templates/blog-post.js`)
     const blogPostList = path.resolve(`./src/templates/index.js`)
+    const blogTaggedPostList = path.resolve(`./src/templates/tagged-posts.js`)
     resolve(
       graphql(
         `
@@ -22,6 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   frontmatter {
                     title
+                    tags
                   }
                 }
               }
@@ -34,9 +36,10 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        // Create blog-list pages
-        // https://www.gatsbyjs.org/docs/adding-pagination/
         const posts = result.data.allMarkdownRemark.edges
+
+        // Create list of posts pages
+        // https://www.gatsbyjs.org/docs/adding-pagination/
         const postsPerPage = 10
         const numPages = Math.ceil(posts.length / postsPerPage)
         Array.from({ length: numPages }).forEach((_, index) => {
@@ -55,6 +58,23 @@ exports.createPages = ({ graphql, actions }) => {
               nextPath: withPrefix(pageNumber + 1),
               hasPrev: index > 0,
               prevPath: withPrefix(pageNumber - 1),
+            },
+          })
+        })
+
+        // Create list of tagged posts pages
+        const tags = posts.reduce(
+          (tagsSet, post) =>
+            new Set([...tagsSet, ...new Set(post.node.frontmatter.tags)]),
+          new Set()
+        )
+        Array.from(tags).forEach(tag => {
+          const withPrefix = tagName => `/tag/${tagName}`
+          createPage({
+            path: withPrefix(tag),
+            component: blogTaggedPostList,
+            context: {
+              tag,
             },
           })
         })

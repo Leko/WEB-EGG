@@ -43,6 +43,21 @@ class BlogPostTemplate extends React.Component {
             <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
           )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        {post.frontmatter.tags && (
+          <small
+            style={{
+              display: `block`,
+              marginBottom: rhythm(0.5),
+            }}
+          >
+            Tags:
+            {post.frontmatter.tags.map(tag => (
+              <Link to={`tag/${tag}`} className="tag">
+                {tag}
+              </Link>
+            ))}
+          </small>
+        )}
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -96,6 +111,7 @@ export const pageQuery = graphql`
       timeToRead
       frontmatter {
         title
+        tags
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
           base

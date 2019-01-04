@@ -30,9 +30,19 @@ function Bio() {
             <p>
               <strong>{author}</strong>
               <br />
-              <a href={`https://twitter.com/${social.twitter}`}>Twitter</a>
+              <a
+                href={`https://twitter.com/${social.twitter}`}
+                className="social"
+              >
+                Twitter
+              </a>
               {' / '}
-              <a href={`https://github.com/${social.github}`}>GitHub</a>
+              <a
+                href={`https://github.com/${social.github}`}
+                className="social"
+              >
+                GitHub
+              </a>
             </p>
           </div>
         )
