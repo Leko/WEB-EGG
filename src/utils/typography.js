@@ -3,11 +3,27 @@ import TypographyTheme from 'typography-theme-wordpress-2016'
 
 TypographyTheme.overrideThemeStyles = () => {
   return {
-    'a.gatsby-resp-image-link': {
+    a: {
       boxShadow: `none`,
     },
+    'a.social': {
+      borderBottom: '1px solid currentColor',
+    },
+    'a.gatsby-resp-image-link': {
+      borderBottom: 'none',
+    },
     'a.anchor': {
-      boxShadow: `none`,
+      borderBottom: 'none',
+    },
+    'a.tag': {
+      borderBottom: 'none',
+      display: 'inline-block',
+      marginLeft: '5px',
+      padding: '4px 8px',
+      color: 'white',
+      fontSize: typography.rhythm(0.4),
+      backgroundColor: TypographyTheme.bodyColor,
+      borderRadius: '100px',
     },
     small: {
       fontSize: '16px',
@@ -50,7 +66,7 @@ const codeFontFamily = [
 ]
 TypographyTheme.headerFontFamily = textFontFamily
 TypographyTheme.bodyFontFamily = textFontFamily
-TypographyTheme.baseFontSize = '18px'
+TypographyTheme.baseFontSize = '16px'
 TypographyTheme.bodyColor = 'rgba(0, 0, 0, .84)'
 TypographyTheme.headerWeight = 700
 
