@@ -69,12 +69,13 @@ exports.createPages = ({ graphql, actions }) => {
           new Set()
         )
         Array.from(tags).forEach(tag => {
-          const withPrefix = tagName => `/tag/${encodeURIComponent(tagName)}`
+          const escape = tagName => tagName.replace(/(\#|\?)/g, '')
+          const withPrefix = tagName => `/tag/${escape(tagName)}`
           createPage({
             path: withPrefix(tag),
             component: blogTaggedPostList,
             context: {
-              tag,
+              tag: tag,
             },
           })
         })
