@@ -90,11 +90,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify`,
       options: {
-        allPageHeaders: [
-          'X-Frame-Options: DENY',
-          'X-XSS-Protection: 1; mode=block',
-          'X-Content-Type-Options: nosniff',
-        ],
+        headers: {
+          // x-content-type-options requires that all scripts and stylesheets
+          // https://webhint.io/docs/user-guide/hints/hint-x-content-type-options/
+          '*.js': {
+            'X-Content-Type-Options': 'nosniff',
+          },
+          '*.css': {
+            'X-Content-Type-Options': 'nosniff',
+          },
+          '/*.html': {
+            'X-Frame-Options': 'DENY',
+            'X-XSS-Protection': '1; mode=block',
+          },
+        },
       },
     },
     `gatsby-plugin-zopfli`,
