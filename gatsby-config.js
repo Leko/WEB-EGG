@@ -67,6 +67,12 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-feed`,
     {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://blog.leko.jp`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `WEB EGG`,
@@ -143,11 +149,6 @@ module.exports = {
         ignore: ['prismjs/'],
       },
     },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://blog.leko.jp`,
-      },
-    },
+    `gatsby-plugin-nprogress`,
   ],
 }
