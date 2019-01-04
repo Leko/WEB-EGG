@@ -87,5 +87,15 @@ module.exports = {
     },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify-cache`,
+    {
+      resolve: `gatsby-plugin-netlify`,
+      options: {
+        allPageHeaders: [
+          'X-Frame-Options: DENY',
+          'X-XSS-Protection: 1; mode=block',
+          'X-Content-Type-Options: nosniff',
+        ],
+      },
+    },
   ],
 }
