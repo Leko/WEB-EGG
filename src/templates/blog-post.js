@@ -14,7 +14,16 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title={post.frontmatter.title} description={post.excerpt} />
+        <SEO
+          title={post.frontmatter.title}
+          description={post.excerpt}
+          slug={this.props.pageContext.slug}
+          featuredImageName={
+            post.frontmatter.featuredImage
+              ? post.frontmatter.featuredImage.base
+              : null
+          }
+        />
         <h1>{post.frontmatter.title}</h1>
         <small
           style={{
@@ -89,6 +98,7 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
+          base
           childImageSharp {
             fluid(maxWidth: 700) {
               ...GatsbyImageSharpFluid

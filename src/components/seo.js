@@ -3,13 +3,23 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 
-function SEO({ description, lang, meta, keywords, title }) {
+function SEO({
+  description,
+  lang,
+  meta,
+  keywords,
+  title,
+  slug,
+  featuredImageName,
+}) {
   return (
     <StaticQuery
       query={detailsQuery}
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
+        const publicUrl = `${data.site.siteMetadata.siteUrl}post${slug}`
+
         return (
           <Helmet
             htmlAttributes={{
@@ -23,6 +33,10 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: metaDescription,
               },
               {
+                property: `og:url`,
+                content: publicUrl,
+              },
+              {
                 property: `og:title`,
                 content: title,
               },
@@ -30,6 +44,12 @@ function SEO({ description, lang, meta, keywords, title }) {
                 property: `og:description`,
                 content: metaDescription,
               },
+              featuredImageName
+                ? {
+                    property: `og:image`,
+                    content: publicUrl + featuredImageName,
+                  }
+                : null,
               {
                 property: `og:type`,
                 content: `website`,
@@ -39,16 +59,8 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: `summary`,
               },
               {
-                name: `twitter:creator`,
-                content: data.site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
+                name: `twitter:site`,
+                content: `@${data.site.siteMetadata.social.twitter}`,
               },
             ]
               .concat(
@@ -59,7 +71,8 @@ function SEO({ description, lang, meta, keywords, title }) {
                     }
                   : []
               )
-              .concat(meta)}
+              .concat(meta)
+              .filter(Boolean)}
           />
         )
       }}
@@ -79,6 +92,8 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  featuredImageName: PropTypes.string,
 }
 
 export default SEO
@@ -90,6 +105,10 @@ const detailsQuery = graphql`
         title
         description
         author
+        siteUrl
+        social {
+          twitter
+        }
       }
     }
   }
