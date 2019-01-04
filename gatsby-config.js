@@ -97,5 +97,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-zopfli`,
+    `gatsby-plugin-brotli`,
   ],
 }
