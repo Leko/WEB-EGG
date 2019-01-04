@@ -90,5 +90,6 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-zopfli`,
     `gatsby-plugin-brotli`,
+    `gatsby-plugin-webpack-bundle-analyzer`,
   ],
 }
