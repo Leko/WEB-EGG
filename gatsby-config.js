@@ -143,5 +143,11 @@ module.exports = {
         ignore: ['prismjs/'],
       },
     },
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://blog.leko.jp`,
+      },
+    },
   ],
 }
