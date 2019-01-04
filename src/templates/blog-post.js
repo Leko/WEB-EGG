@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import { BeforeReading } from '../components/BeforeReading'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
@@ -25,19 +26,10 @@ class BlogPostTemplate extends React.Component {
           }
         />
         <h1>{post.frontmatter.title}</h1>
-        <small
-          style={{
-            ...scale(-1 / 5),
-            display: `block`,
-            marginBottom: rhythm(1),
-            marginTop: rhythm(-1),
-          }}
-        >
-          <time dateTime={new Date(post.frontmatter.date).toISOString()}>
-            {post.frontmatter.date}
-          </time>{' '}
-          &middot; {post.timeToRead} min read
-        </small>
+        <BeforeReading
+          publishedAtStr={post.frontmatter.date}
+          timeToRead={post.timeToRead}
+        />
         {post.frontmatter.featuredImage &&
           post.frontmatter.featuredImage.childImageSharp && (
             <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />

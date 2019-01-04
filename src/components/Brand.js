@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { rhythm, scale } from '../utils/typography'
 
-export function Brand({ title, dimmed = false } = {}) {
+export function Brand({ title, dimmed = false }) {
   if (dimmed) {
     return (
       <h3

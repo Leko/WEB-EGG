@@ -4,6 +4,7 @@ import Img from 'gatsby-image'
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
+import { BeforeReading } from '../components/BeforeReading'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogIndex extends React.Component {
@@ -40,17 +41,10 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
-              <small
-                style={{
-                  ...scale(-1 / 5),
-                  display: `block`,
-                }}
-              >
-                <time dateTime={new Date(node.frontmatter.date).toISOString()}>
-                  {node.frontmatter.date}
-                </time>{' '}
-                &middot; {node.timeToRead} min read
-              </small>
+              <BeforeReading
+                publishedAtStr={node.frontmatter.date}
+                timeToRead={node.timeToRead}
+              />
               {node.frontmatter.featuredImage &&
                 node.frontmatter.featuredImage.childImageSharp && (
                   <Img
