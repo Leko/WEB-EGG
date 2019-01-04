@@ -1,9 +1,0 @@
-<footer class="footer">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-xl-10">
-        <small>&copy; <%= all_articles.min_by{|a| a[:date].to_i}[:date].strftime('%Y') %>-<%= Time.now.strftime('%Y') %> <%= config[:meta][:author] %></small>
-      </div>
-    </div>
-  </div>
-</footer>

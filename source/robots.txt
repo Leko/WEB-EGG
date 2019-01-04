@@ -1,4 +1,0 @@
-User-agent: *
-Sitemap: https://blog.leko.jp/sitemap.xml
-Disallow: /javascripts/
-Disallow: /stylesheets/
