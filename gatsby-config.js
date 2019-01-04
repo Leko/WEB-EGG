@@ -135,5 +135,13 @@ module.exports = {
       },
     },
     `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: true,
+        ignore: ['prismjs/'],
+      },
+    },
   ],
 }
