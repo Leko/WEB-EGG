@@ -38,4 +38,4 @@ jobs:
       - restore_cache:
           keys:
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
-      - run: curl -X POST -d '{}' $NETLIFY_BUILD_HOOK_URL
+      - run: curl -X POST -d '{}' "$NETLIFY_BUILD_HOOK_URL?trigger_branch=master&trigger_title=trigger-from-circleci"
