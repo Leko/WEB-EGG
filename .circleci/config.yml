@@ -1,0 +1,41 @@
+workflows:
+  version: 2
+  node-multi-build:
+    jobs:
+      - test
+      - deploy:
+          filters:
+            branches:
+              only: master
+          requires:
+            - test
+
+version: 2
+jobs:
+  base: &base
+    docker:
+      - image: node:8
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
+            - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
+      - run: npm run lint
+      - run: npm run build
+  test:
+    <<: *base
+  deploy:
+    <<: *base
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
+      - run: curl -X POST -d '{}' $NETLIFY_BUILD_HOOK_URL
