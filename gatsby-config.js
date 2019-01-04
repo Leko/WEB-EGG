@@ -134,5 +134,6 @@ module.exports = {
         release: require('git-rev-sync').long(),
       },
     },
+    `gatsby-plugin-twitter`,
   ],
 }
