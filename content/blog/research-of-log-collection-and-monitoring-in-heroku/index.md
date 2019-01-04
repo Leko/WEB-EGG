@@ -107,7 +107,7 @@ Herokuには[Log Drains](https://devcenter.heroku.com/articles/log-drains)とい
 
 ## 断念: TreasureData + fluentd
 
-ログの収集や解析を調べているとだいたいセットで出てくる「fluentd」、実際に使ったことが無いのでなんとなく概要しか知らないのですが、これを期に使ってみようかと思いました。
+ログの収集や解析を調べているとだいたいセットで出てくる「fluentd」、実際に使ったことが無いのでなんとなく概要しか分からないのですが、これを期に使ってみようかと思いました。
 
 ということで「heroku fluentd」と調べてみたところ、fluentdを制作していらっしゃる[TreasureDataさんの記事](http://docs.fluentd.org/articles/install-on-heroku)が見つかりました。
 

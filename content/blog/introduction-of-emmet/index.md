@@ -59,7 +59,7 @@ Ctrl + Shift + Pを押し、Install Packageを選択。
 
 ### Web Storm
 
-**最強**と呼ばれるWeb Stormですが、  
+`最強`と呼ばれるWeb Stormですが、  
 使ったこと無いので導入方法はイマイチわかりません。
 
 > [Enabling Emmet Support](http://www.jetbrains.com/webstorm/webhelp/enabling-emmet-support.html)
