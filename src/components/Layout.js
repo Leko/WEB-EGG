@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import { Copyright } from './Copyright'
 
 import { rhythm, scale } from '../utils/typography'
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
+    const { location, title, children, headerDimmed = false } = this.props
     let header
 
-    if (location.pathname === rootPath) {
+    if (!headerDimmed) {
       header = (
         <h1
           style={{
@@ -63,7 +63,7 @@ class Layout extends React.Component {
       >
         {header}
         {children}
-        <footer>© 2012-{new Date().getFullYear()} Leko</footer>
+        <Copyright />
       </div>
     )
   }
