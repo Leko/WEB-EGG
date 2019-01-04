@@ -9,6 +9,16 @@ workflows:
               only: master
           requires:
             - test
+  reserved-posts:
+    jobs:
+      - deploy
+    triggers:
+      - schedule:
+          cron: "0 0,6,12,18 * * *" # On 6 hours
+          filters:
+            branches:
+              only:
+                - master
 
 version: 2
 jobs:
