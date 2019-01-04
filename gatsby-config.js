@@ -64,6 +64,7 @@ module.exports = {
         // gtmPreview: "YOUR_GOOGLE_TAGMANAGER_ENVIROMENT_PREVIEW_NAME",
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -77,6 +78,37 @@ module.exports = {
         icon: `content/assets/icon.png`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     appId: process.env.ALGOLIA_APP_ID,
+    //     apiKey: process.env.ALGOLIA_API_KEY,
+    //     indexName: process.env.ALGOLIA_INDEX_NAME,
+    //     queries: [
+    //       {
+    //         query: `{
+    //           allSitePage {
+    //             edges {
+    //               node {
+    //                 objectID: id
+    //                 component
+    //                 path
+    //                 componentChunkName
+    //                 jsonName
+    //                 internal {
+    //                   type
+    //                   contentDigest
+    //                   owner
+    //                 }
+    //               }
+    //             }
+    //           }
+    //         }`,
+    //       },
+    //     ],
+    //     chunkSize: 10000,
+    //   },
+    // },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -85,7 +117,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-zopfli`,

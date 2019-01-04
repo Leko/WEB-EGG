@@ -10,6 +10,7 @@
   "dependencies": {
     "gatsby": "^2.0.76",
     "gatsby-image": "^2.0.22",
+    "gatsby-plugin-algolia": "^0.3.0",
     "gatsby-plugin-brotli": "^1.0.0",
     "gatsby-plugin-feed": "^2.0.8",
     "gatsby-plugin-google-tagmanager": "^2.0.7",
