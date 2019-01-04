@@ -1,35 +1,15 @@
 language: node_js
+
+os:
+  - linux
+  - osx
+
 node_js:
-  - '10'
-cache:
-  bundler: true
-  directories:
-    - /home/travis/.rvm
-    - /home/travis/.flow-typed
-    - node_modules
-    - build
-    - .caches
-
-before_install:
-- git config user.name 'WEB-EGG bot'
-- git config user.email webegg-bot@blog.leko.jp
-- rvm install 2.3.1
-
-install:
-- bundle install
-- npm install
+  - 'node'
+  - 'lts/*'
+  - '7'
+  - '8'
 
 script:
-- npm run lint:flow
-- npm run lint:md
-- bundle exec middleman build
-
-# Netlify deploy `master` branch automatically.
-# But max build time is 15min. It's not enough to my build.
-# So I must deploy from TravisCI
-deploy:
-  - skip_cleanup: true
-    provider: script
-    script: scripts/deploy
-    on:
-      branch: master
+  - npm install
+  - npm run lint

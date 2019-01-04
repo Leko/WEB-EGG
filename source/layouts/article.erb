@@ -1,9 +1,0 @@
-<% content_for :breadcrumb do %>
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="/">Home</a></li>
-    <li class="breadcrumb-item active"><%= current_resource.title %></li>
-  </ol>
-<% end %>
-<% wrap_layout :layout do %>
-  <%= partial 'partials/article', locals: { article: current_resource } %>
-<% end %>
