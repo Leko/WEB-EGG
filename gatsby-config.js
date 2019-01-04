@@ -122,5 +122,17 @@ module.exports = {
     `gatsby-plugin-zopfli`,
     `gatsby-plugin-brotli`,
     `gatsby-plugin-webpack-bundle-analyzer`,
+    {
+      resolve: `gatsby-plugin-sentry`,
+      options: {
+        dsn: 'https://12665dacfb554ecea25f3ef119a904af@sentry.io/244064',
+        // https://docs.sentry.io/clients/node/config/#optional-settings
+        // https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
+        // https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables
+        environment: process.env.CONTEXT || process.env.NODE_ENV,
+        enabled: process.env.NODE_ENV === 'production',
+        release: require('git-rev-sync').long(),
+      },
+    },
   ],
 }
