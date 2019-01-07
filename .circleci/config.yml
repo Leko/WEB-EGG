@@ -14,7 +14,7 @@ workflows:
       - deploy
     triggers:
       - schedule:
-          cron: "0 0,6,12,18 * * *" # On 6 hours
+          cron: '0 * * * *' # Every hours
           filters:
             branches:
               only:
