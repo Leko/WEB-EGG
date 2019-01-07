@@ -9,8 +9,10 @@ import { rhythm, scale } from '../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
+    const { data } = this.props
+    const siteTitle = data.site.siteMetadata.title
+    const posts = data.allMarkdownRemark.edges
     const {
-      now,
       current,
       total,
       hasNext,
@@ -18,12 +20,6 @@ class BlogIndex extends React.Component {
       nextPath,
       prevPath,
     } = this.props.pageContext
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const nowTime = new Date(now).getTime()
-    const posts = data.allMarkdownRemark.edges.filter(
-      ({ node }) => new Date(node.frontmatter.rawDate).getTime() <= nowTime
-    )
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -113,7 +109,6 @@ export const pageQuery = graphql`
             slug
           }
           frontmatter {
-            rawDate: date
             date(formatString: "MMMM DD, YYYY")
             title
             featuredImage {

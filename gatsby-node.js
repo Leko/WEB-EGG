@@ -36,7 +36,6 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const now = new Date()
         const posts = result.data.allMarkdownRemark.edges
 
         // Create list of posts pages
@@ -51,7 +50,6 @@ exports.createPages = ({ graphql, actions }) => {
             path: withPrefix(pageNumber),
             component: blogPostList,
             context: {
-              now: now.toISOString(),
               limit: postsPerPage,
               skip: index * postsPerPage,
               current: pageNumber,
