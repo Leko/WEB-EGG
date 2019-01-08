@@ -34,6 +34,7 @@ module.exports = {
               maxWidth: 700,
             },
           },
+          `gatsby-remark-discoverable-oembed`,
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
