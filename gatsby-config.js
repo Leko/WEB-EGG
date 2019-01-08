@@ -34,7 +34,13 @@ module.exports = {
               maxWidth: 700,
             },
           },
-          `gatsby-remark-discoverable-oembed`,
+          {
+            resolve: `gatsby-remark-discoverable-oembed`,
+            options: {
+              maxWidth: 700,
+              whitelist: ['https://npmcharts.com/**/*'],
+            },
+          },
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
