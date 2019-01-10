@@ -90,32 +90,15 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
 
   switch (oEmbed.type) {
     case `link`: {
-      node.type = `html`
-      node.value = `<a href="${url}">
-        <figure>
-          <img src="${thumbnail_url}" width="${thumbnail_width}" height="${thumbnail_height}" title="${title}" />
-          <figcaption>${title}</figcaption>
-        </figure>
-      </a>`
+      console.error(`link type is not supported yet: ${url}`)
       break
     }
     case `photo`: {
-      const { width, height } = oEmbed
-      node.type = `html`
-      node.value = `<a href="${url}">
-        <figure>
-          <img src="${
-            oEmbed.url
-          }" width="${width}" height="${height}" title="${title}" />
-          <figcaption>${title}</figcaption>
-        </figure>
-      </a>`
+      console.error(`photo type is not supported yet: ${url}`)
       break
     }
     case `video`: {
-      const { html } = oEmbed
-      node.type = `html`
-      node.value = html
+      console.error(`video type is not supported yet: ${url}`)
       break
     }
     case `rich`: {
