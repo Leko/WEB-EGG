@@ -14,7 +14,7 @@ workflows:
       - deploy
     triggers:
       - schedule:
-          cron: "0 0,6,12,18 * * *" # On 6 hours
+          cron: '0 0,6,12,18 * * *' # On 6 hours
           filters:
             branches:
               only:
@@ -33,11 +33,14 @@ jobs:
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-
       - run: npm install
+      - run: cd plugins/gatsby-remark-discoverable-oembed && npm install
       - save_cache:
           paths:
             - node_modules
+            - plugins/gatsby-remark-discoverable-oembed/node_modules
           key: v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run lint
+      - run: cd plugins/gatsby-remark-discoverable-oembed && npm test
   test:
     <<: *base
   deploy:
