@@ -1,13 +1,14 @@
-const { promisify } = require('util')
-const { parseString } = require('xml2js')
-const fetch = require('isomorphic-fetch')
+const { promisify } = require(`util`)
+const { parseString } = require(`xml2js`)
+const fetch = require(`isomorphic-fetch`)
 const micromatch = require(`micromatch`)
 const cheerio = require(`cheerio`)
-const visit = require(`unist-util-visit`)
+const visit = require(`unist-util-visit-parents`)
 const Bottleneck = require(`bottleneck`)
 
 const defaultOptions = {
   whitelist: [],
+  notIn: [`blockquote`],
 }
 
 const parseXML = promisify(parseString)
@@ -26,11 +27,11 @@ function normalize(url) {
 
 function setScale(urlStr, { maxWidth, maxHeight }) {
   const url = new URL(urlStr)
-  if (typeof maxWidth !== 'undefined') {
-    url.searchParams.set('maxwidth', maxWidth)
+  if (typeof maxWidth !== `undefined`) {
+    url.searchParams.set(`maxwidth`, maxWidth)
   }
-  if (typeof maxHeight !== 'undefined') {
-    url.searchParams.set('maxheight', maxHeight)
+  if (typeof maxHeight !== `undefined`) {
+    url.searchParams.set(`maxheight`, maxHeight)
   }
 
   return url.toString()
@@ -38,9 +39,9 @@ function setScale(urlStr, { maxWidth, maxHeight }) {
 
 function discoverOEmbed(html, { maxWidth, maxHeight }) {
   const $ = cheerio.load(html)
-  const alternateXMLUrl = $('link[type="text/xml+oembed"]').attr('href')
-  const alternateJsonUrl = $('link[type="application/json+oembed"]').attr(
-    'href'
+  const alternateXMLUrl = $(`link[type="text/xml+oembed"]`).attr(`href`)
+  const alternateJsonUrl = $(`link[type="application/json+oembed"]`).attr(
+    `href`
   )
 
   if (alternateJsonUrl) {
@@ -88,8 +89,8 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
   } = oEmbed
 
   switch (oEmbed.type) {
-    case 'link': {
-      node.type = 'html'
+    case `link`: {
+      node.type = `html`
       node.value = `<a href="${url}">
         <figure>
           <img src="${thumbnail_url}" width="${thumbnail_width}" height="${thumbnail_height}" title="${title}" />
@@ -98,9 +99,9 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
       </a>`
       break
     }
-    case 'photo': {
+    case `photo`: {
       const { width, height } = oEmbed
-      node.type = 'html'
+      node.type = `html`
       node.value = `<a href="${url}">
         <figure>
           <img src="${
@@ -111,44 +112,54 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
       </a>`
       break
     }
-    case 'video': {
+    case `video`: {
       const { html } = oEmbed
-      node.type = 'html'
+      node.type = `html`
       node.value = html
       break
     }
-    case 'rich': {
+    case `rich`: {
       const { html } = oEmbed
-      node.type = 'html'
+      node.type = `html`
       node.value = html
       break
     }
     default:
-    // TODO: Error reporting
+      throw new Error(`Unknown type: ${oEmbed.type}`)
   }
 }
 
-module.export = ({ markdownAST }, pluginOptions = {}) => {
-  const { whitelist, maxWidth, maxHeight } = {
+const attacher = ({ markdownAST }, pluginOptions = {}) => {
+  const { notIn, whitelist, maxWidth, maxHeight } = {
     ...defaultOptions,
     ...pluginOptions,
   }
   const textLinks = []
 
-  visit(markdownAST, `link`, node => {
+  visit(markdownAST, `link`, (node, ancestors) => {
     if (node.url !== node.children[0].value) {
       // Not a text link
+      return
+    }
+    if (ancestors.some(ancestor => notIn.includes(ancestor.type))) {
+      // Matches filtered not types
       return
     }
     textLinks.push({ url: node.url, node })
   })
 
-  const nodesToFetch = micromatch(textLinks.map(({ url }) => url), whitelist)
+  const nodesToFetch = textLinks.filter(({ url }) =>
+    micromatch.some(url, whitelist)
+  )
 
-  return Promise.all(nodesToFetch.map(replacer({ maxWidth, maxHeight })))
+  return Promise.all(
+    Array.from(nodesToFetch, replacer({ maxWidth, maxHeight }))
+  )
 }
 
-exports.setScale = setScale
-exports.discoverOEmbed = discoverOEmbed
-exports.fetchOEmbed = fetchOEmbed
-exports.replacer = replacer
+attacher.setScale = setScale
+attacher.discoverOEmbed = discoverOEmbed
+attacher.fetchOEmbed = fetchOEmbed
+attacher.replacer = replacer
+
+module.exports = attacher

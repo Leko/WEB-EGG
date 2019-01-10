@@ -29,16 +29,20 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 700,
-            },
-          },
-          {
             resolve: `gatsby-remark-discoverable-oembed`,
             options: {
               maxWidth: 700,
-              whitelist: ['https://npmcharts.com/**/*'],
+              whitelist: [
+                `https://npmcharts.com/**/*`,
+                `https://runkit.com/**/*`,
+                `https://speakerdeck.com/**/*`,
+              ],
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 700,
             },
           },
           {
