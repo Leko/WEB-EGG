@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
@@ -69,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
           new Set()
         )
         Array.from(tags).forEach(tag => {
-          const escape = tagName => tagName.replace(/(\#|\?)/g, '')
+          const escape = tagName => tagName.replace(/(#|\?)/g, '')
           const withPrefix = tagName => `/tag/${escape(tagName)}`
           createPage({
             path: withPrefix(tag),

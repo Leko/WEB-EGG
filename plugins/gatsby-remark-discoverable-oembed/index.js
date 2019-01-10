@@ -1,3 +1,4 @@
+/* eslint-env node */
 const { promisify } = require(`util`)
 const { parseString } = require(`xml2js`)
 const fetch = require(`isomorphic-fetch`)
@@ -75,18 +76,6 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
   if (!oEmbed) {
     return
   }
-
-  const {
-    title,
-    author_name,
-    author_url,
-    // provider_name,
-    // provider_url,
-    // cache_age,
-    thumbnail_url,
-    thumbnail_width,
-    thumbnail_height,
-  } = oEmbed
 
   switch (oEmbed.type) {
     case `link`: {

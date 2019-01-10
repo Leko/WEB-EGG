@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { Copyright } from './Copyright'
 import { Brand } from './Brand'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
 
 class Layout extends React.Component {
   render() {
-    const { location, title, children, headerDimmed = false } = this.props
+    const { title, children, headerDimmed = false } = this.props
 
     return (
       <div

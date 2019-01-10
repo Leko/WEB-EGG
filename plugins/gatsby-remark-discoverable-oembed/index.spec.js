@@ -1,3 +1,4 @@
+/* eslint-env node, jest */
 const fetch = require('isomorphic-fetch')
 const { setScale, discoverOEmbed, fetchOEmbed } = require('./index')
 
