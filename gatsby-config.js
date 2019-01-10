@@ -1,3 +1,5 @@
+/* eslint-env node */
+
 module.exports = {
   siteMetadata: {
     title: 'WEB EGG',
@@ -28,6 +30,17 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-discoverable-oembed`,
+            options: {
+              maxWidth: 700,
+              whitelist: [
+                `https://npmcharts.com/**/*`,
+                `https://runkit.com/**/*`,
+                `https://speakerdeck.com/**/*`,
+              ],
+            },
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {

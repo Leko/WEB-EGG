@@ -6,7 +6,7 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Tag } from '../components/Tag'
 import { BeforeReading } from '../components/BeforeReading'
-import { rhythm, scale } from '../utils/typography'
+import { rhythm } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -45,7 +45,7 @@ class BlogPostTemplate extends React.Component {
           >
             Tags:
             {post.frontmatter.tags.map(tagName => (
-              <Tag tagName={tagName} />
+              <Tag key={tagName} tagName={tagName} />
             ))}
           </small>
         )}
