@@ -35,6 +35,7 @@ module.exports = {
             options: {
               maxWidth: 700,
               whitelist: [
+                `https://*.hatenablog.com/entry/**/*`,
                 `https://npmcharts.com/**/*`,
                 `https://runkit.com/**/*`,
                 `https://speakerdeck.com/**/*`,
