@@ -141,7 +141,12 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-zopfli`,
     `gatsby-plugin-brotli`,
-    `gatsby-plugin-webpack-bundle-analyzer`,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+      options: {
+        disable: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-sentry`,
       options: {
