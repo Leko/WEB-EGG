@@ -8,6 +8,7 @@ const visit = require(`unist-util-visit-parents`)
 const Bottleneck = require(`bottleneck`)
 
 const defaultOptions = {
+  experimental_lazyload: false,
   whitelist: [],
   notIn: [`blockquote`],
 }
@@ -71,7 +72,10 @@ function fetchOEmbed(urlStr, { maxWidth, maxHeight }) {
   )()
 }
 
-const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
+const replacer = ({ maxWidth, maxHeight, lazyload }) => async ({
+  url,
+  node,
+}) => {
   const oEmbed = await fetchOEmbed(url, { maxWidth, maxHeight })
   if (!oEmbed) {
     return
@@ -92,8 +96,12 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
     }
     case `rich`: {
       const { html } = oEmbed
+      const $ = cheerio.load(html)
+      if (lazyload) {
+        $('iframe').attr('lazyload', 'on')
+      }
       node.type = `html`
-      node.value = html
+      node.value = $.html()
       break
     }
     default:
@@ -102,7 +110,7 @@ const replacer = ({ maxWidth, maxHeight }) => async ({ url, node }) => {
 }
 
 const attacher = ({ markdownAST }, pluginOptions = {}) => {
-  const { notIn, whitelist, maxWidth, maxHeight } = {
+  const { experimental_lazyload, notIn, whitelist, maxWidth, maxHeight } = {
     ...defaultOptions,
     ...pluginOptions,
   }
@@ -125,7 +133,10 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
   )
 
   return Promise.all(
-    Array.from(nodesToFetch, replacer({ maxWidth, maxHeight }))
+    Array.from(
+      nodesToFetch,
+      replacer({ maxWidth, maxHeight, lazyload: experimental_lazyload })
+    )
   )
 }
 
