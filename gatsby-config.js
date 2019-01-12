@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'WEB EGG',
     author: 'Leko',
-    description: '',
+    description: 'JavaScriptとNode.jsを中心に、web開発関連のことを書きます',
     siteUrl: `https://blog.leko.jp/`,
     social: {
       twitter: `L_e_k_o`,
@@ -33,6 +33,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-discoverable-oembed`,
             options: {
+              experimental_lazyload: true,
               maxWidth: 700,
               whitelist: [
                 `https://*.hatenablog.com/entry/**/*`,
@@ -79,7 +80,51 @@ module.exports = {
       },
     },
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-feed`,
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map(edge => {
+                const permalink = `${site.siteMetadata.siteUrl}post${
+                  edge.node.fields.slug
+                }`
+                return {
+                  title: edge.node.frontmatter.title,
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: permalink,
+                  guid: permalink,
+                }
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  limit: 1000,
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/rss.xml',
+            title: 'RSS Feed | WEB EGG',
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
@@ -141,7 +186,12 @@ module.exports = {
     `gatsby-plugin-netlify`,
     `gatsby-plugin-zopfli`,
     `gatsby-plugin-brotli`,
-    `gatsby-plugin-webpack-bundle-analyzer`,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyzer`,
+      options: {
+        disable: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-sentry`,
       options: {
@@ -155,14 +205,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-twitter`,
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        develop: true,
-        ignore: ['prismjs/'],
-      },
-    },
     `gatsby-plugin-nprogress`,
   ],
 }
