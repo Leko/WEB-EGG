@@ -1,5 +1,5 @@
 ---
-title: Node.jsのzlibモジュールでBrotli圧縮が使えるようになりました
+title: Node.jsの11.7.0からzlibモジュールでBrotli圧縮が使えるようになりました
 date: 2019-01-08T10:30:00+0900
 tags:
   - Node.js
@@ -9,7 +9,8 @@ tags:
 
 > &mdash; [zlib: add Brotli support by addaleax · Pull Request #24938 · nodejs/node](https://github.com/nodejs/node/pull/24938)
 
-まだ master に入ったばかり（2019/01/06 マージ）なので 2019/01/08 現在リリースはされていませんが、手元でビルドすれば試せるようになります。
+~~まだ master に入ったばかり（2019/01/06 マージ）なので 2019/01/08 現在リリースはされていませんが、手元でビルドすれば試せるようになります。~~  
+2019/01/20: 11.7.0 でリリースされました。[リリースノート](https://nodejs.org/en/blog/release/v11.7.0/)
 
 ## Brotli とは
 
@@ -51,7 +52,7 @@ Google 公式の C++をそのまま Node.js で動くよう port にした iltor
 Brotli サポートがリリースされれば、npm パッケージには不要になり、Node.js の`zlib`モジュールから Brotli が利用できるようになります。  
 使い方は[PR 内のドキュメントの差分](https://github.com/nodejs/node/pull/24938/files?short_path=c245d87#diff-c245d87dba893de0b77c7574f0081633)を見るのがわかりやすいです。HTTP サーバでどのように Brotli のリクエストを扱えばいいかのデモコードなどがあります。
 
-例えばファイルを Brotli で圧縮して解凍するプログラムは次ようになります。  
+例えば文字列を Brotli で圧縮して解凍するプログラムは次ようになります。  
 なお、この記事を作成した時点ではまだリリースされてないので、試すには master ブランチでビルドした最新版の Node.js が必要になります。
 
 ```js
