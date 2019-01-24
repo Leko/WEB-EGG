@@ -10,6 +10,10 @@ const defaultOptions = {
   whitelist: [],
   // http://prismjs.com
   extMap: {
+    // https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L1522
+    '.gn': 'python',
+    '.gni': 'python',
+
     '.rs': 'rust',
     '.yml': 'yaml',
     '.jsx': 'js',
@@ -45,6 +49,9 @@ function fetchCode(githubUrl, token) {
     )
       .then(res => res.json())
       .then(data => {
+        if (data.message) {
+          throw new Error(data.message)
+        }
         if (data.sha !== githubUrl.commit) {
           console.warn(
             `sha mismatch detected: ${githubUrl.toString()}\nWe highly recommended to specify static sha, not a dynamic refenrence(branch or tag)`
