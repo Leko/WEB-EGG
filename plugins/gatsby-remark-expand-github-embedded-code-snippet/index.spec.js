@@ -43,22 +43,22 @@ fs.writeFileSync(absHoge, 'aaa', 'utf8')
 
   it('should trim single line', () => {
     expect(trimCodeByRange(code, { from: 2, to: 2 })).toBe(
-      lines.slice(1, 2).join('\n') + '\n'
+      lines.slice(1, 2).join('\n')
     )
   })
   it('should trim multiple lines', () => {
     expect(trimCodeByRange(code, { from: 2, to: 4 })).toBe(
-      lines.slice(1, 4).join('\n') + '\n'
+      lines.slice(1, 4).join('\n')
     )
   })
   it('should trim includes start of code', () => {
     expect(trimCodeByRange(code, { from: 1, to: 4 })).toBe(
-      lines.slice(0, 4).join('\n') + '\n'
+      lines.slice(0, 4).join('\n')
     )
   })
   it('should trim includes end of code', () => {
     expect(trimCodeByRange(code, { from: 4, to: 6 })).toBe(
-      lines.slice(3, 6).join('\n') + '\n'
+      lines.slice(3, 6).join('\n')
     )
   })
 })

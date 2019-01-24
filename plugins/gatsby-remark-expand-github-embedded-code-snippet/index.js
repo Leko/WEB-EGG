@@ -69,12 +69,10 @@ function fetchCode(githubUrl, token) {
 }
 
 function trimCodeByRange(code, range) {
-  return (
-    code
-      .split('\n')
-      .slice(range.from - 1, range.to)
-      .join('\n') + '\n'
-  )
+  return code
+    .split('\n')
+    .slice(range.from - 1, range.to)
+    .join('\n')
 }
 
 function parseLineRange(githubUrl) {
