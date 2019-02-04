@@ -14,14 +14,16 @@ const defaultOptions = {
     '.gn': 'python',
     '.gni': 'python',
 
+    '.cc': 'cpp',
     '.rs': 'rust',
     '.yml': 'yaml',
     '.jsx': 'js',
-    '.tsx': 'ts',
+    '.ts': 'typescript',
+    '.tsx': 'typescript',
   },
 }
 
-const cache = new Map()
+// const cache = new Map()
 const limiter = new Bottleneck({
   // Allow 5000 requests per hour
   // https://developer.github.com/v3/rate_limit/
@@ -30,16 +32,16 @@ const limiter = new Bottleneck({
   reservoirRefreshInterval: 1000 * 60 * 60,
 })
 
-function fetchCode(githubUrl, token) {
-  const cacheKey = githubUrl.toString()
-  if (cache.has(cacheKey)) {
-    return Promise.resolve(cache.get(cacheKey))
-  }
+function fetchCode(url, githubUrl, token) {
+  // const cacheKey = url
+  // if (cache.has(cacheKey)) {
+  //   return Promise.resolve(cache.get(cacheKey))
+  // }
 
-  const { owner, name, filepath } = githubUrl
+  const { owner, name, filepath, commit } = githubUrl
   return limiter.wrap(() =>
     fetch(
-      `https://api.github.com/repos/${owner}/${name}/contents/${filepath}`,
+      `https://api.github.com/repos/${owner}/${name}/contents/${filepath}?ref=${commit}`,
       {
         headers: {
           Authorization: `token ${token}`,
@@ -62,7 +64,7 @@ function fetchCode(githubUrl, token) {
           data.encoding === 'base64'
             ? Buffer.from(data.content, 'base64').toString('utf8')
             : data.content
-        cache.set(cacheKey, code)
+        // cache.set(cacheKey, code)
         return code
       })
   )()
@@ -76,7 +78,7 @@ function trimCodeByRange(code, range) {
 }
 
 function parseLineRange(githubUrl) {
-  const rangeRegExp = /^L(\d+)\-L(\d+)$/
+  const rangeRegExp = /^L(\d+)-L(\d+)$/
   const lineRegExp = /^L(\d+)$/
   if (rangeRegExp.test(githubUrl.hash)) {
     const [, lineFrom, lineTo] = githubUrl.hash.match(rangeRegExp)
@@ -107,7 +109,7 @@ const replacer = ({ extMap, token, codeFetcher }) => async ({
     return
   }
 
-  const code = await codeFetcher(githubUrl, token)
+  const code = await codeFetcher(url, githubUrl, token)
   if (!code) {
     return
   }

@@ -1,5 +1,4 @@
 /* eslint-env node, jest */
-const attacher = require('./index')
 const { replacer, trimCodeByRange, parseLineRange } = require('./index')
 const parseGitHubUrl = require('git-url-parse')
 const remark = require('remark')
@@ -72,8 +71,7 @@ describe('replacer', () => {
 // Line 5
 `
   const expectedCode = `// Line 3
-// Line 4
-`
+// Line 4`
 
   let node = null
   let ancestors = null
