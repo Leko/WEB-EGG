@@ -25,15 +25,10 @@ Deno のディレクトリ構成やレイヤー分けについては[Repo Struct
 
 また、すでに[mizchi](https://twitter.com/mizchi)さんが[Deno のコードを読んだメモ](https://gist.github.com/mizchi/31e5628751330b624a0e8ada9e739b1e)を上げてました。そちらもとても参考になりました。
 
-## src/main.rs
-
-`deno`コマンドを実行したときに真っ先に実行されるファイルは[src/main.rs](https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/src/main.rs)です。詳しくは次の章で書きますが、ビルドツールにエントリポイントとして`src/main.rs`が指定されています。
-
-https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/BUILD.gn#L127-L129
-
 ## Deno のビルドツール
 
-Deno では[gn](https://chromium.googlesource.com/chromium/src/tools/gn/+/48062805e19b4697c5fbd926dc649c78b6aaa138/README.md)という Node.js でおなじみの [gyp](https://gyp.gsrc.io) のようなビルドツールを用いて実行ファイルを生成しています。
+まずDenoのビルドツールについて軽く触れます。  
+Deno では[gn](https://chromium.googlesource.com/chromium/src/tools/gn/+/48062805e19b4697c5fbd926dc649c78b6aaa138/README.md)という Node.js でおなじみの [gyp](https://gyp.gsrc.io) の次期バージョンをビルドツールに用いています。
 
 > What is GN?
 > GN is a meta-build system that generates NinjaBuild files. It's meant to be faster and simpler than GYP. It outputs only Ninja build files.
@@ -44,7 +39,11 @@ Deno では[gn](https://chromium.googlesource.com/chromium/src/tools/gn/+/480628
 
 ## src/main.rs の main 関数のアウトライン
 
-詳細に入る前に src/main.rs の[`main`](https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/src/main.rs#L62)のアウトラインを整理します。main 関数についてはガイドの[Rust main() Entry Point](https://denolib.gitbook.io/guide/advanced/process-lifecycle#lifecycle-example)にも説明があるので併せてご覧ください。
+`deno`コマンドを実行したときに真っ先に実行されるファイルは[src/main.rs](https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/src/main.rs)です。ビルドツールで`deno`コマンドを生成する際のエントリポイントとして`src/main.rs`が指定されています。
+
+https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/BUILD.gn#L127-L129
+
+main.rsの詳細に入る前に[`main`](https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/src/main.rs#L62)関数のアウトラインを整理し、用語の補足をしてから次に進みます。またガイドの[Rust main() Entry Point](https://denolib.gitbook.io/guide/advanced/process-lifecycle#lifecycle-example)にも説明があるので併せてご覧ください。
 
 1. ロガーをセット
 1. コマンドライン引数をパース
