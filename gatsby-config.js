@@ -44,6 +44,13 @@ module.exports = {
             },
           },
           {
+            resolve: `gatsby-remark-expand-github-embedded-code-snippet`,
+            options: {
+              whitelist: [`Leko/*`, `denoland/deno`],
+              token: process.env.GITHUB_TOKEN,
+            },
+          },
+          {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 700,

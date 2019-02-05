@@ -33,14 +33,14 @@ jobs:
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-
       - run: npm install
-      - run: cd plugins/gatsby-remark-discoverable-oembed && npm install
+      - run: npx lerna bootstrap
       - save_cache:
           paths:
             - node_modules
             - plugins/gatsby-remark-discoverable-oembed/node_modules
           key: v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run lint
-      - run: cd plugins/gatsby-remark-discoverable-oembed && npm test
+      - run: npm test
   test:
     <<: *base
   deploy:
