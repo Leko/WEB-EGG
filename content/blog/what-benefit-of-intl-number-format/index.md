@@ -1,5 +1,5 @@
 ---
-title: Intl.NumberFormatを使えばゼロ埋めもカンマ区切りも％表記もできる
+title: Intl.NumberFormatでゼロ埋めや％表記などの数値表現を楽に実装する
 date: '2019-02-25T08:50:30.552Z'
 tags:
   - JavaScript
@@ -142,7 +142,7 @@ new Intl.NumberFormat('ja', {
 ```
 
 currencyDisplay が`symbol`（デフォルト）の場合はどの言語でも表記は固定（通貨の記号）ですが、`name`の場合は第一引数のロケールによって表記も変わります。  
-また、Node.js の場合はビルド設定（もしくは full-icu モジュールの有無）の影響を受けます。
+また、currencyDisplay が`name`の場合は Node.js の場合はビルド設定（もしくは full-icu モジュールの有無）の影響を受けます。
 
 ```js
 new Intl.NumberFormat('en', {
@@ -161,23 +161,6 @@ new Intl.NumberFormat('ja', {
   currency: 'USD',
   currencyDisplay: 'name',
 }).format(1000) // => '1,000.00 米ドル'
-```
-
-通貨ごとに表示桁数のデフォルト値は異なります。オプションを渡すことで変更可能ですが、[ISO 4217 によって規定されている通貨ごとの最小桁数](https://www.currency-iso.org/en/home/tables/table-a1.html)を下回る指定はエラーになります。
-
-```js
-new Intl.NumberFormat('en', {
-  style: 'currency',
-  currency: 'JPY',
-  minimumFractionDigits: 2,
-}).format(1000) // => '¥1,000.00'
-
-// RangeError: maximumFractionDigits value is out of range.
-new Intl.NumberFormat('ja', {
-  style: 'currency',
-  currency: 'USD',
-  maximumFractionDigits: 0,
-}).format(1000)
 ```
 
 また、カンマ区切りを OFF にすれば非カンマ区切りな値も作れます。
@@ -228,26 +211,13 @@ tc39 の[proposal-unified-intl-numberformat](https://github.com/tc39/proposal-un
 
 ## Number.prototype.toLocaleString
 
-Intl.NumberFormat クラスを利用する他に、[Number.prototype.toLocaleString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)という Number のメソッドからも利用可能です。
+Intl.NumberFormat クラスを利用する他に、[Number.prototype.toLocaleString](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toLocaleString)というメソッドからも利用可能です。
 
 実質的には Intl.NumberFormat のコンストラクタと同じ引数を取ります。好みに合わせて使い分けるといいと思います。  
 インスタンス自体を別ファイルに分けて再利用したいので、個人的には Intl.NumberFormat の方をよく使います。
 
-```ts
-export const percentFormatter = new Intl.NumberFormat('en', {
-  style: 'percent',
-  maximumFractionDigits: 2,
-})
-
-// ---
-
-import { percentFormatter } from './formatters'
-
-percentFormatter.format(0.34567) // '34.57%'
-```
-
 ## さいごに
 
-Intl には他にも色々な Format クラスがあるのですが、自然言語に寄りすぎた処理は言葉尻が微妙に要件と合わないってことが多く、活用しきれていません。
+Intl には他にも色々な Format クラスがあるのですが、自然言語に寄りすぎており言葉尻が微妙に要件と合わないってことが多く、活用しきれていません。
 
-一方 NumberFormat クラスは「数値表現」だけにフォーカスされているので、汎用的で強力な API だと思います。使えるところではここぞとばかりに使っていきましょう！
+その中でも NumberFormat クラスは「数値表現」だけにフォーカスされているので、汎用的で強力な API だと思います。使えるところではここぞとばかりに使っていきましょう！
