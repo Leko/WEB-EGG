@@ -40,6 +40,7 @@ module.exports = {
                 `https://npmcharts.com/**/*`,
                 `https://runkit.com/**/*`,
                 `https://speakerdeck.com/**/*`,
+                `https://codesandbox.io/**/*`,
               ],
             },
           },
