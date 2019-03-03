@@ -5,7 +5,7 @@ date: 2017-05-15T10:50:12+00:00
 meaningless:
   - 'yes'
 dsq_thread_id:
-  - "5794626636"
+  - '5794626636'
 categories:
   - 問題を解決した
 tags:
@@ -14,26 +14,27 @@ tags:
   - Docker
   - Docker compose
 ---
+
 こんにちは。  
-かれこれ1年くらい仕事でCircleCI + Dockerを使ってみているのですが、 **とにかくツラい** 。  
-CircleCI + Docker構成でCIしたい方はだいぶマゾいとすら思います。  
-他のCI系のサービスどうなんだろうと調べつつも、これまで戦ってきたノウハウは備忘録として残そうと思います。
+かれこれ 1 年くらい仕事で CircleCI + Docker を使ってみているのですが、 **とにかくツラい** 。  
+CircleCI + Docker 構成で CI したい方はだいぶマゾいとすら思います。  
+他の CI 系のサービスどうなんだろうと調べつつも、これまで戦ってきたノウハウは備忘録として残そうと思います。
 
 なにがツラいかというと、
 
-  * [btrfs（B木ファイルシステム）](https://ja.wikipedia.org/wiki/Btrfs)というファイルシステム上に
-  * [独自にforkしたDocker](https://github.com/circleci/docker)を積んでおり
-  * のと、CIで使用するイメージに色々カスタマイズが入っている（調べきれていない）
+- [btrfs（B 木ファイルシステム）](https://ja.wikipedia.org/wiki/Btrfs)というファイルシステム上に
+- [独自に fork した Docker](https://github.com/circleci/docker)を積んでおり
+- のと、CI で使用するイメージに色々カスタマイズが入っている（調べきれていない）
 
-という構成だと、色々なDockerに関する操作が動きません。  
+という構成だと、色々な Docker に関する操作が動きません。  
 ローカルでは動くので、基本ドはまりする要素満載です。  
-さらにdocker-composeでブラックボックスに包むと、余計にわけがわからなくなります。
+さらに docker-compose でブラックボックスに包むと、余計にわけがわからなくなります。
 
-ということでハマったことと、CircleCIでDockerを扱うための基本戦術を残します。
+ということでハマったことと、CircleCI で Docker を扱うための基本戦術を残します。
 
 <!--more-->
 
-## Tips: ビルドにDocker1.10.0, docker-compose 1.8.0を使用する
+## Tips: ビルドに Docker1.10.0, docker-compose 1.8.0 を使用する
 
 新しければエラーが少ないかというと、よく分かりません。。。  
 相性がそもそも合ってないので、どのバージョンでも割り切ったほうが良いです。
@@ -47,21 +48,19 @@ machine:
 
 を足してあげて下さい
 
-基本的な方針
-----------------------------------------
+## 基本的な方針
 
-  * コンテナの削除に関連するコマンドを実行しない（しても成功しない）
-  * docker execしない
+- コンテナの削除に関連するコマンドを実行しない（しても成功しない）
+- docker exec しない
 
 これに付きます。  
 意外と上記の制約がキツく、リソースが枯れたり思うようにできなかったりします。
 
-Dockerの制限
-----------------------------------------
+## Docker の制限
 
-### run –rmオプションは使わない
+### run –rm オプションは使わない
 
-runしたコンテナをrmする時にエラーになります。
+run したコンテナを rm する時にエラーになります。
 
 ```
 Error removing intermediate container XXXXXXXXX:
@@ -69,18 +68,18 @@ Driver btrfs failed to remove root filesystem XXXXXXXXXXXX Failed to destroy btr
 ```
 
 のようなエラーです。  
-色々試してみたものの、結局のところ **–rmオプションはつけない** ことで回避できます。  
+色々試してみたものの、結局のところ **–rm オプションはつけない** ことで回避できます。  
 要らないコンテナを消せないのはなんとも気持ち悪いですが、動かないんじゃ仕方ない
 
-### rmコマンドは使わない
+### rm コマンドは使わない
 
 `docker rm`も同様です。使ってはいけません。
 
-### execコマンドは使わない
+### exec コマンドは使わない
 
-デフォルトのDockerでも、1.10.0でもどちらもエラーになります。
+デフォルトの Docker でも、1.10.0 でもどちらもエラーになります。
 
-1.10.0の場合、私の環境では
+1.10.0 の場合、私の環境では
 
 ```
 open /proc/self/oom_score_adj: no such file or directory
@@ -91,52 +90,50 @@ open /proc/self/oom_score_adj: no such file or directory
 
 というエラーが発生しました。
 
-[1.10.0からはLXC(Linuxコンテナ) Driverのサポートが切られている模様 ※記事下部コメント参照](http://qiita.com/sawanoboly/items/c6df7cce870f44ed4aaf)です。  
-色々試してみましたが、結局execは使わない方向に倒さないとどうにもなりませんでした。
+[1.10.0 からは LXC(Linux コンテナ) Driver のサポートが切られている模様 ※記事下部コメント参照](http://qiita.com/sawanoboly/items/c6df7cce870f44ed4aaf)です。  
+色々試してみましたが、結局 exec は使わない方向に倒さないとどうにもなりませんでした。
 
-### CircleCI上でdocker buildしない
+### CircleCI 上で docker build しない
 
 流石に`docker build`はできるかというと、できないこともあります。  
 まだ再現性は不明で、突如訪れます。
 
 > &mdash; [Docker Error removing intermediate container – Build Environment – CircleCI Community Discussion](https://discuss.circleci.com/t/docker-error-removing-intermediate-container/70)
 
-リポジトリでDockerfileを管理しており、ビルドがきちんと動くかどうかCIしたい、なんてケースでドハマリすることがあります。  
-その場合はもう諦めてDocker hubなどのDockerレジストリに上げておいて、そのイメージをpullして使用する形で回避できます。  
+リポジトリで Dockerfile を管理しており、ビルドがきちんと動くかどうか CI したい、なんてケースでドハマリすることがあります。  
+その場合はもう諦めて Docker hub などの Docker レジストリに上げておいて、そのイメージを pull して使用する形で回避できます。  
 （もうこの時点でだいぶ無理が来ていると思う）
 
-### CIRCLE_ARTIFACTSをコンテナにマウントしない
+### CIRCLE_ARTIFACTS をコンテナにマウントしない
 
 色々な厄災を招きます。  
-例えばカバレッジレポートなどの副作用が欲しい場合、dockerコマンド上では適当なローカルのフォルダにマウントしておき、  
-circle.yml上で生成されたファイルを`$CIRCLE_ARTIFACTS`へmvしたりcpしたりした方が安定します。
+例えばカバレッジレポートなどの副作用が欲しい場合、docker コマンド上では適当なローカルのフォルダにマウントしておき、  
+circle.yml 上で生成されたファイルを`$CIRCLE_ARTIFACTS`へ mv したり cp したりした方が安定します。
 
 ここも詳しくは調査が足りていません。
 
-docker-composeの制限
-----------------------------------------
+## docker-compose の制限
 
-Dockerのラッパーであるdocker-composeも当然同様の制約がつきまといます。
+Docker のラッパーである docker-compose も当然同様の制約がつきまといます。
 
-  * rmコマンドは使わない
-  * execコマンドは使わない
+- rm コマンドは使わない
+- exec コマンドは使わない
 
 など基本的なことに加え、以下にハマりました。
 
-### up –force-recreateは使わない
+### up –force-recreate は使わない
 
 ビルドの過程でイメージから新鮮なコンテナを再生成したい、というケースでハマりました。  
-明示的にrmしなければ大丈夫なのでは？ と思いましたが、ダメでした。
+明示的に rm しなければ大丈夫なのでは？ と思いましたが、ダメでした。
 
-`--force-recreate`が内部的にrmするので、当然エラーになります。  
-docker-composeの場合、一度立ち上げたコンテナを削除すること無く新鮮な状態にロールバックする回避策が必要です。  
+`--force-recreate`が内部的に rm するので、当然エラーになります。  
+docker-compose の場合、一度立ち上げたコンテナを削除すること無く新鮮な状態にロールバックする回避策が必要です。  
 こればかりはプロジェクトによると思うので割愛します。  
-**なお、このとき動いているコンテナに対してexecすることはできません**
+**なお、このとき動いているコンテナに対して exec はできません**
 
-さいごに
-----------------------------------------
+## さいごに
 
-rmはダメ、と言いましたができることもあります。  
+rm はダメ、と言いましたができることもあります。  
 コンテナにマウントするフォルダによって変わったりするので、条件が分かり次第明記します。
 
 色々と調査不足が目立つ内容なので、必ずしもこの記事を読んだ方の環境でも同様の減少になるかどうかは分かりません。  
