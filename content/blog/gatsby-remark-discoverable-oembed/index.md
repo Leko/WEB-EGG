@@ -126,7 +126,7 @@ HTML をパースし、書いてある URL に対してリクエストをする�
 本来的にはサービス提供者は oEmbed の仕様に沿った API を実装し[iamcal/oembed](https://github.com/iamcal/oembed)に PR を送り oEmbed API のメタ情報を登録しておき、埋め込みしたい oEmbed API 利用者側はそのメタ定義に応じてリクエストして埋め込み用のメタデータを得るという仕様です。しかしサービス提供者と provider のメンテナ（＝仕様策定者）が異なるため「Provider にメタデータの定義はないが oEmbed Discovery に対応したサービス」が存在します。  
 先程のデモで言うとはてなブログと runkit、npmcharts がこれに該当します。  
 Speaker Deck や Flickr などはメタデータの定義もあるし、HTML でも Discover できることを明示してあります。  
-一方 Twitter や YouTube などはメタデータの定義だけ存在し、Discover することはできません。
+一方 Twitter や YouTube などはメタデータの定義だけ存在し、Discover できません。
 
 Discover 用の HTML を追加するとレスポンスサイズが多少なり増えるので、1byte でも多く削りたいってレベルのパフォーマンスを追求すると Discover 用の HTML は削減対象になる得るのかなと思います。
 

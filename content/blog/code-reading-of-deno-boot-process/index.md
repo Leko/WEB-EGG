@@ -27,7 +27,7 @@ Deno のディレクトリ構成やレイヤー分けについては[Repo Struct
 
 ## Deno のビルドツール
 
-まずDenoのビルドツールについて軽く触れます。  
+まず Deno のビルドツールについて軽く触れます。  
 Deno では[gn](https://chromium.googlesource.com/chromium/src/tools/gn/+/48062805e19b4697c5fbd926dc649c78b6aaa138/README.md)という Node.js でおなじみの [gyp](https://gyp.gsrc.io) の次期バージョンをビルドツールに用いています。
 
 > What is GN?
@@ -43,7 +43,7 @@ Deno では[gn](https://chromium.googlesource.com/chromium/src/tools/gn/+/480628
 
 https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/BUILD.gn#L127-L129
 
-main.rsの詳細に入る前に[`main`](https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/src/main.rs#L62)関数のアウトラインを整理し、用語の補足をしてから次に進みます。またガイドの[Rust main() Entry Point](https://denolib.gitbook.io/guide/advanced/process-lifecycle#lifecycle-example)にも説明があるので併せてご覧ください。
+main.rs の詳細に入る前に[`main`](https://github.com/denoland/deno/blob/f9b167deb07a650590b7f1eef8fe86bf9e22d211/src/main.rs#L62)関数のアウトラインを整理し、用語の補足をしてから次に進みます。またガイドの[Rust main() Entry Point](https://denolib.gitbook.io/guide/advanced/process-lifecycle#lifecycle-example)にも説明があるので併せてご覧ください。
 
 1. ロガーをセット
 1. コマンドライン引数をパース
@@ -53,8 +53,8 @@ main.rsの詳細に入る前に[`main`](https://github.com/denoland/deno/blob/f9
 1. `snapshot::deno_snapshot`で V8 スナップショットを取得
 1. V8 スナップショットから V8 Isolate（以下 Isolate）インスタンスを生成
 1. `tokio_util::init`で Tokio を初期化
-1. 生成した Isolate で JS のコード`denoMain();`を実行
-1. コマンドライン引数で与えられたファイルパスを実行（もしくは REPL を起動）
+1. 生成した Isolate で JS のコード`denoMain();`を評価する
+1. コマンドライン引数で与えられたファイルパスを評価する（もしくは REPL を起動）
 1. イベントループを開始
 
 という流れになっています。用語を補足してから詳細を読み進めます。すでに知ってる方は先へお進み下さい。
