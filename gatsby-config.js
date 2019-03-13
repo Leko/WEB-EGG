@@ -41,6 +41,7 @@ module.exports = {
                 `https://runkit.com/**/*`,
                 `https://speakerdeck.com/**/*`,
                 `https://codesandbox.io/**/*`,
+                `https://talks.leko.jp/**/*`,
               ],
             },
           },
