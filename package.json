@@ -8,6 +8,7 @@
     "gatsby": "^2.0.91",
     "gatsby-image": "^2.0.26",
     "gatsby-plugin-algolia": "^0.3.0",
+    "gatsby-plugin-amp": "^0.2.1",
     "gatsby-plugin-brotli": "^1.0.0",
     "gatsby-plugin-canonical-urls": "^2.0.8",
     "gatsby-plugin-feed": "^2.0.11",
