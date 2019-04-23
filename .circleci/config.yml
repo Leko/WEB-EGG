@@ -28,19 +28,22 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run: git fetch
       - restore_cache:
           keys:
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
             - v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-
       - run: npm install
-      - run: npx lerna bootstrap
+      - run: npx lerna bootstrap --since origin/master
       - save_cache:
           paths:
             - node_modules
             - plugins/gatsby-remark-discoverable-oembed/node_modules
+            - plugins/gatsby-remark-expand-github-embedded-code-snippet/node_modules
           key: v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run lint
       - run: npm test
+      - run: npx lerna run test --since origin/master
   test:
     <<: *base
   deploy:
