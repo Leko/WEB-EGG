@@ -38,6 +38,7 @@ jobs:
           paths:
             - node_modules
             - plugins/gatsby-remark-discoverable-oembed/node_modules
+            - plugins/gatsby-remark-expand-github-embedded-code-snippet/node_modules
           key: v{{ .Environment.CIRCLECI_CACHE_VERSION }}-dependencies-{{ checksum "package-lock.json" }}
       - run: npm run lint
       - run: npm test
