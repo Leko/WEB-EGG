@@ -94,7 +94,7 @@ Atomic がついてないシングルスレッド版の[rc](https://doc.rust-lan
 >
 > &mdash; [std::sync::Arc - Rust](https://doc.rust-lang.org/std/sync/struct.Arc.html)
 
-> スレッドをまたいで参照を共有するために、Rust は Arc<T> というラッパ型を提供しています。
+> スレッドをまたいで参照を共有するために、Rust は `Arc<T>` というラッパ型を提供しています。
 >
 > &mdash; [並行性](https://doc.rust-jp.rs/the-rust-programming-language-ja/1.6/book/concurrency.html#sync)
 

@@ -33,7 +33,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-discoverable-oembed`,
             options: {
-              experimental_lazyload: true,
+              experimental_lazyload: false,
               maxWidth: 700,
               whitelist: [
                 `https://*.hatenablog.com/entry/**/*`,
@@ -41,6 +41,7 @@ module.exports = {
                 `https://runkit.com/**/*`,
                 `https://speakerdeck.com/**/*`,
                 `https://codesandbox.io/**/*`,
+                `https://talks.leko.jp/**/*`,
               ],
             },
           },
@@ -57,17 +58,21 @@ module.exports = {
               maxWidth: 700,
             },
           },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
+          // {
+          //   resolve: `gatsby-remark-responsive-iframe`,
+          //   options: {
+          //     wrapperStyle: `margin-bottom: 1.0725rem`,
+          //   },
+          // },
           `gatsby-remark-autolink-headers`,
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
               noInlineHighlight: true,
+              aliases: {
+                sh: 'bash',
+                rb: 'ruby',
+              },
             },
           },
           `gatsby-remark-copy-linked-files`,
@@ -131,12 +136,6 @@ module.exports = {
             title: 'RSS Feed | WEB EGG',
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: `https://blog.leko.jp`,
       },
     },
     {

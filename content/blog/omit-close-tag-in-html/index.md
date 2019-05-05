@@ -20,9 +20,11 @@ jQueryMobile を初めて使ってみたので、色々と記事のネタが溜�
 
 <!--more-->
 
-## HTML にはタグや閉じタグを省略できるタグがある<figure> <blockqupte>
+## HTML にはタグや閉じタグを省略できるタグがある
 
-<q>終了タグのみ省略できるタグ（次のタグの開始と共に自動的に終了タグがはさまれるので） li, dt, dd, p, tr, td, th，rt, rp, optgroup, option, thread, tfoot 開始タグ終了タグ共に省略してよいタグ（タグが無ければデフォルト値が使われる） html, head, body, tbody, colgroup</q> </blockqupte> <figcaption> <cite><span class="removed_link" title="http://victreal.com/Junk/htmlTag/">HTML にて終了タグがいるタグいらないタグ・・の話とか</span></cite> </figcaption> </figure>
+> 終了タグのみ省略できるタグ（次のタグの開始と共に自動的に終了タグがはさまれるので） li, dt, dd, p, tr, td, th，rt, rp, optgroup, option, thread, tfoot 開始タグ終了タグ共に省略してよいタグ（タグが無ければデフォルト値が使われる） html, head, body, tbody, colgroup
+>
+> [HTML にて終了タグがいるタグいらないタグ・・の話とか](http://victreal.com/Junk/htmlTag/)
 
 **！ ？**  
 HTML の閉じタグって省略可能なんですね…今まで知りませんでした。  
@@ -62,8 +64,7 @@ HTML の閉じタグって省略可能なんですね…今まで知りません
 です。 そして、実験に用意した HTML はこちらです。
 
 ```html
-<!DOCTYPE html>
-<title>タグ省略時の速度計測</title>
+<!DOCTYPE html> <title>タグ省略時の速度計測</title>
 <script>
   var st = new Date().getTime()
 </script>

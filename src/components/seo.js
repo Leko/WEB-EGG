@@ -27,6 +27,12 @@ function SEO({
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            link={[
+              {
+                rel: 'amphtml',
+                href: publicUrl.replace('/post/', '/amp/post/'),
+              },
+            ]}
             meta={[
               {
                 name: `description`,
@@ -81,7 +87,7 @@ function SEO({
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ja`,
   meta: [],
   keywords: [],
 }
