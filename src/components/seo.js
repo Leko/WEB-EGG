@@ -27,6 +27,12 @@ function SEO({
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            link={[
+              {
+                rel: 'amphtml',
+                href: publicUrl.replace('/post/', '/amp/post/'),
+              },
+            ]}
             meta={[
               {
                 name: `description`,
@@ -73,12 +79,7 @@ function SEO({
               )
               .concat(meta)
               .filter(Boolean)}
-          >
-            <link
-              rel="amphtml"
-              href={publicUrl.replace('/post/', '/amp/post/')}
-            />
-          </Helmet>
+          />
         )
       }}
     />
