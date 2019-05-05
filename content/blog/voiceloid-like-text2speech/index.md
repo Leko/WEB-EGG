@@ -47,9 +47,9 @@ tags:
 ### 題材
 
 今回の記事でお借りする台詞は、  
-個人的に好きな[豚野郎さんの sm30193805](http://www.nicovideo.jp/watch/sm30193805)の"ここテン"をお借りしました。
+個人的に好きな[豚野郎さんの sm30193805](https://www.nicovideo.jp/watch/sm30193805)の"ここテン"をお借りしました。
 
-<iframe width="312" height="230" src="http://ext.nicovideo.jp/thumb/sm30193805" scrolling="no" style="border:solid 1px #ccc;" frameborder="0"><a href="http://www.nicovideo.jp/watch/sm30193805">[Watch Dogs 2] 　ゆかりさんハッキングする [VOICEROID+ゆっくり実況]</a></iframe>
+<iframe width="312" height="230" src="https://ext.nicovideo.jp/thumb/sm30193805" scrolling="no" style="border:solid 1px #ccc;" frameborder="0"><a href="https://www.nicovideo.jp/watch/sm30193805">[Watch Dogs 2] 　ゆかりさんハッキングする [VOICEROID+ゆっくり実況]</a></iframe>
 
 今回作る台本・プリセットで音声化したものが以下の音声ファイルです
 
@@ -100,7 +100,7 @@ docomoAPI を使うためには API キーが必要です。
 ということで、Excel や Google Spreadsheet などで編集することを想定に、**CSV の「台本」を受け取って SSML に変換して音声化**してみます。  
 台本のフォーマットはこんな感じです。
 
-<iframe height="400" class="full-width" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK-kMNHZuTHF55cC2JWa-NyUmlOlFyqLtFPVjTEXykkyQNutvg_OQfgq1kDl0zEyz7vbu8Pk1m9sYh/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<iframe width="658" height="400" class="full-width" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK-kMNHZuTHF55cC2JWa-NyUmlOlFyqLtFPVjTEXykkyQNutvg_OQfgq1kDl0zEyz7vbu8Pk1m9sYh/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 「１列目はボイス名、２列目は調声プリセット（デフォは空）、３列目は喋る内容」という構成にしました。
 
@@ -115,7 +115,7 @@ docomoAPI を使うためには API キーが必要です。
 調声がかなり難しかったので、デフォ値にこだわらずに調声のプリセットも与えられるようにして、利用者側で細かく調声できるようにします。  
 調声用のプリセットは以下の通りです
 
-<iframe height="230" class="full-width" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK-kMNHZuTHF55cC2JWa-NyUmlOlFyqLtFPVjTEXykkyQNutvg_OQfgq1kDl0zEyz7vbu8Pk1m9sYh/pubhtml?gid=2080442496&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
+<iframe width="658" height="230" class="full-width" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQK-kMNHZuTHF55cC2JWa-NyUmlOlFyqLtFPVjTEXykkyQNutvg_OQfgq1kDl0zEyz7vbu8Pk1m9sYh/pubhtml?gid=2080442496&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
 
 キャラ名、プリセット名、喋るスピード、ピッチ、抑揚、ボリューム　の順です。  
 空の場合はデフォ値を使います。  

@@ -97,9 +97,9 @@ const replacer = ({ maxWidth, maxHeight, lazyload }) => async ({
     case `rich`: {
       const { html } = oEmbed
       const $ = cheerio.load(html)
-      if (lazyload) {
-        $('iframe').attr('lazyload', 'on')
-      }
+      // if (lazyload) {
+      //   $('iframe').attr('lazyload', 'on')
+      // }
       node.type = `html`
       node.value = $.html()
       break

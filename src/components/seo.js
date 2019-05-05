@@ -73,7 +73,12 @@ function SEO({
               )
               .concat(meta)
               .filter(Boolean)}
-          />
+          >
+            <link
+              rel="amphtml"
+              href={publicUrl.replace('/post/', '/amp/post/')}
+            />
+          </Helmet>
         )
       }}
     />
@@ -81,7 +86,7 @@ function SEO({
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ja`,
   meta: [],
   keywords: [],
 }
