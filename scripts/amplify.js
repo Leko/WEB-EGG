@@ -83,7 +83,31 @@ Promise.all([
       )
     )
 
-    $('body').append(
+    $('body').prepend(
+      $(
+        `
+        <amp-analytics type="gtag" data-credentials="include">
+        <script type="application/json">
+        {
+          "vars" : {
+            "gtag_id": "UA-34171537-1",
+            "config" : {
+              "UA-34171537-1": { "groups": "default" }
+            }
+          }
+        }
+        </script>
+        </amp-analytics>
+        `
+      )
+    )
+    $('head').append(
+      $(
+        `<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>`
+      )
+    )
+
+    $('body').prepend(
       $(
         `<amp-auto-ads type="adsense" data-ad-client="ca-pub-7627436148097691"></amp-auto-ads>`
       )
