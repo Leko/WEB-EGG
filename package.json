@@ -42,10 +42,10 @@
     "react": "~16.8.6",
     "react-dom": "~16.8.6",
     "react-helmet": "^5.2.0",
-    "react-typography": "^0.16.13",
-    "typeface-montserrat": "0.0.43",
-    "typography": "^0.16.17",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "react-typography": "~0.16.19",
+    "typeface-montserrat": "~0.0.54",
+    "typography": "~0.16.19",
+    "typography-theme-wordpress-2016": "~0.16.19"
   },
   "devDependencies": {
     "deindent": "^0.1.0",
