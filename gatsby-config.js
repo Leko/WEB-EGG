@@ -33,7 +33,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-discoverable-oembed`,
             options: {
-              experimental_lazyload: true,
+              experimental_lazyload: false,
               maxWidth: 700,
               whitelist: [
                 `https://*.hatenablog.com/entry/**/*`,
