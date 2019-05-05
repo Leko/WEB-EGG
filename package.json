@@ -48,11 +48,11 @@
   },
   "devDependencies": {
     "deindent": "^0.1.0",
-    "dotenv": "^7.0.0",
+    "dotenv": "^8.0.0",
     "enquirer": "^2.3.0",
     "eslint": "^5.12.0",
     "eslint-plugin-react": "^7.11.1",
-    "husky": "^1.3.1",
+    "husky": "^2.0.0",
     "lerna": "^3.10.7",
     "npm-run-all": "^4.1.5",
     "open-editor": "^2.0.0",
