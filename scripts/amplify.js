@@ -83,7 +83,7 @@ Promise.all([
       )
     )
 
-    $('body').append(
+    $('body').prepend(
       $(
         `<amp-auto-ads type="adsense" data-ad-client="ca-pub-7627436148097691"></amp-auto-ads>`
       )
