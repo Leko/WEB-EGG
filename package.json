@@ -85,7 +85,7 @@
     "lint:md": "textlint --cache --cache-location .cache/.textlintcache -f pretty-error 'content/blog/**/*.md'",
     "test": "exit 0",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "start": "gatsby develop",
+    "start": "DOTENV_CONFIG_PATH=.env.development node -r dotenv/config $(npm bin)/gatsby develop",
     "build": "gatsby build && node scripts/amplify.js",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }
