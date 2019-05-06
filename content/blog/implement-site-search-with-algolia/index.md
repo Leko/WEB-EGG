@@ -1,5 +1,5 @@
 ---
-title: Algoliaを利用してサイト内検索機能を実装する
+title: Algoliaを利用してMiddleman製サイトに検索機能を実装する
 date: 2017-08-17T10:30:00+0900
 featuredImage: ./featured-image.png
 tags:
@@ -11,6 +11,16 @@ tags:
 - Almin
 - DDD
 ---
+
+> 2019/05/06追記
+> 
+> **この記事は古いです**  
+> 当サイトはMiddlemanからGatsbyに移行したため、この記事の内容は古くなっております。  
+> 動作デモはありませんが、**Middleman製サイトに**検索機能を実装する場合にはこのまま続きをお読み下さい。  
+> 現サイトで運用されているGatsby製サイトに検索機能を実装する場合はこちらの記事を参照して下さい。
+>
+> &mdash; [Gatsby製サイトにAlgoliaのサイト内検索を実装する | WEB EGG](/post/on-site-search-in-gatsby-with-algolia/)  
+> &mdash; [ブログをMiddlemanからGatsbyに乗り換えた雑感 | WEB EGG](/post/impression-comparison-of-middleman-and-gatsby/)
 
 こんにちは。  
 当ブログのサイト内検索をしたことある方はお気づきかもしれませんが、サイト内検索に[Algolia](https://www.algolia.com/)を利用しています。  
