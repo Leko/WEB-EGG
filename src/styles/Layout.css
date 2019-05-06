@@ -1,0 +1,7 @@
+@media screen and (min-width: 600px) {
+  .Brand__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}

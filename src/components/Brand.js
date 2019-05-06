@@ -7,6 +7,7 @@ export function Brand({ title, dimmed = false }) {
     return (
       <h3
         style={{
+          display: 'inline-block',
           fontFamily: `Montserrat, sans-serif`,
           marginTop: 0,
           marginBottom: rhythm(-1),
