@@ -15,7 +15,7 @@ class BlogPostTemplate extends React.Component {
     const { previous, next, amp = false } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle} headerDimmed>
+      <Layout location={this.props.location} title={siteTitle} headerDimmed amp={amp}>
         <AMPSEO
           amp={amp}
           title={post.frontmatter.title}

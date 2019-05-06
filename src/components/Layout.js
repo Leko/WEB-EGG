@@ -5,7 +5,7 @@ import { rhythm } from '../utils/typography'
 import { OnSiteSearch } from './OnSiteSearch'
 
 function Layout(props) {
-  const { title, children, headerDimmed = false } = props
+  const { title, children, headerDimmed = false, amp = false } = props
 
   return (
     <div
@@ -22,7 +22,7 @@ function Layout(props) {
         <div style={{ flex: 1 }}>
           <Brand title={title} dimmed={headerDimmed} />
         </div>
-        <OnSiteSearch />
+        {amp ? null : <OnSiteSearch />}
       </div>
       {children}
       <Copyright />
