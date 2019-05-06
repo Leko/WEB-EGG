@@ -8,9 +8,11 @@ module.exports = {
   globals: {
     graphql: false,
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 9,
     sourceType: 'module',
+    allowImportExportEverywhere: true,
     ecmaFeatures: {
       jsx: true,
     },
