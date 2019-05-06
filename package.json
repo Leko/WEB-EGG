@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Leko <leko.noor@gmail.com>",
   "dependencies": {
+    "@loadable/component": "^5.9.0",
+    "algoliasearch": "^3.32.1",
     "gatsby": "~2.4.2",
     "gatsby-image": "~2.0.41",
     "gatsby-plugin-algolia": "~0.3.0",
@@ -40,6 +42,8 @@
     "react": "~16.8.6",
     "react-dom": "~16.8.6",
     "react-helmet": "^5.2.0",
+    "react-icons": "^3.6.1",
+    "react-instantsearch-dom": "^5.5.0",
     "react-typography": "~0.16.19",
     "typeface-montserrat": "~0.0.54",
     "typography": "~0.16.19",
@@ -47,6 +51,7 @@
   },
   "devDependencies": {
     "amphtml-validator": "^1.0.23",
+    "babel-eslint": "^10.0.1",
     "dotenv": "^8.0.0",
     "eslint": "~5.16.0",
     "eslint-plugin-react": "~7.13.0",
@@ -82,7 +87,7 @@
     "lint:md": "textlint --cache --cache-location .cache/.textlintcache -f pretty-error 'content/blog/**/*.md'",
     "test": "exit 0",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
-    "start": "node -r dotenv/config $(npm bin)/gatsby develop",
+    "start": "DOTENV_CONFIG_PATH=.env.development node -r dotenv/config $(npm bin)/gatsby develop",
     "build": "gatsby build && node scripts/amplify.js",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
   }

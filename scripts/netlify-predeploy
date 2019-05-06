@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# https://qiita.com/github0013@github/items/f138ce14a69ca8bfd068
+
+echo "ALGOLIA_APP_ID=${ALGOLIA_APP_ID}" >> .env.production
+echo "ALGOLIA_INDEX_NAME=${ALGOLIA_INDEX_NAME}" >> .env.production
+echo "ALGOLIA_SEARCH_ONLY_API_KEY=${ALGOLIA_SEARCH_ONLY_API_KEY}" >> .env.production
