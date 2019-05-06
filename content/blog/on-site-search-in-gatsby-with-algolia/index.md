@@ -41,7 +41,7 @@ gatsby-plugin-algoliaのリポジトリはこちらです。
 
 > &mdash; [algolia/gatsby-plugin-algolia: A plugin to push to Algolia based on graphQl queries](https://github.com/algolia/gatsby-plugin-algolia)
 
-記事執筆時点のREADMEではサイト内のすべてのページを登録するような処理になっていますが、ブログ記事だけを登録したいのでGraphQLのクエリを変えました。
+記事執筆時のREADMEではサイト内のすべてのページを登録するような処理になっていますが、ブログ記事だけを登録したいのでGraphQLのクエリを変えました。
 
 当サイトでは[こんな感じ](https://github.com/Leko/WEB-EGG/blob/ca76642dff5e8e64df55e1a92d54881ab105ef05/gatsby-config.js#L153-L199)で設定にしてあります。  
 
@@ -55,7 +55,7 @@ transformerオプションには「オブジェクトの配列を返す必要が
 記事の本文を検索対象に含めたい場合、1objectあたりのサイズ制限を突破するために複数のチャンクにちぎって送信するなどの工夫が必要ですが、そもそも本文を検索対象に含めることはAlgoliaが非推奨だと言ってるので本文を含めないように設定しました。
 
 > 2. In most cases, having bigger objects is a sign that you’re not using Algolia at its full capacity:
->     - Having very big chunks of text is usually bad for relevance, because most objects end-up having a lot of similar words, and they will match with a lot of irrelevant queries.
+>     - Having very big chunks of text is usually bad for relevance, because most objects end-up having a lot of similar words, and they will match with a lot of irrelevant queries
 >     - It’s often better to de-duplicate big objects into several smaller ones
 >
 > &mdash; [Is there a size limit for my index/records? | Basics FAQ | Docs Algolia](https://www.algolia.com/doc/faq/basics/is-there-a-size-limit-for-my-index-records/)
@@ -76,7 +76,7 @@ Algoliaに記事を登録して検索できるようになったので、フロ�
 
 [InstantSearch.js](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/js/)というAlgoliaが提供している検索用UI用のコンポーネントのReact版です。  
 InstantSearchを利用することで、Algoliaの検索ロジックや状態管理をスクラッチで実装する必要がなくなり、検索UIと検索結果の見た目を作ることだけに注力できます。
-（VueやAngularなどの各種フレームワークやPure JavaScript、webのみならずiOSやAndroid、React Nativeでも使えるように複数バージョンが提供されており、今回はReact版を採用しています。）
+（VueやAngularなどの各種フレームワークやPure JavaScript、webのみならずiOSやAndroid、React Nativeでも使えるように複数バージョンが提供されており、今回はReact版を採用しています）
 
 公式の[Live Demo (codesandbox)](https://codesandbox.io/embed/github/algolia/doc-code-samples/tree/master/React+InstantSearch/getting-started)を見てみると、複雑な検索UIにも対応できるようです。  
 
@@ -94,7 +94,7 @@ React版を使って実装してみて、UIの自由度やカスタマイズ製�
 
 https://www.algolia.com/doc/api-reference/widgets/instantsearch/react/
 
-これを読みつつお好みでwidgetを足していく感じになると思います。  
+これを読みつつお好みでウィジェットを足していく感じになると思います。  
 基本的にドキュメント見ながらやるだけなんですが、実装してて思った注意事項を以下に残します。
 
 ### フロントエンドへ環境変数を渡したい
@@ -107,7 +107,7 @@ GatsbyにはwebpackのDefinePluginが入っているので、ちょっと設定�
 
 ### 未入力のときは検索結果を表示したくない
 
-デフォルトのwidgetだけで検索UIを組むと、何も入力してない状態でも検索結果が表示されていると思います。  
+デフォルトのウィジェットだけで検索UIを組むと、何も入力してない状態でも検索結果が表示されていると思います。  
 サイト内検索では何か入力したときだけ結果を表示するためカスタマイズしました。
 
 `connectStateResults`というHoCがexportされているので、それを利用してStateに対する見た目を制御できます。詳しくはドキュメント参照。  
