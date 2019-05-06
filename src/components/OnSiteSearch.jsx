@@ -1,5 +1,6 @@
 import React from 'react'
 import algoliasearch from 'algoliasearch/lite'
+import { FaSearch } from 'react-icons/fa'
 import { InstantSearch, SearchBox, Configure } from 'react-instantsearch-dom'
 import { OnSiteSearchHitList } from './OnSiteSearchHitList'
 import '../styles/OnSiteSearch.css'
@@ -22,7 +23,12 @@ export function OnSiteSearch() {
         analytics
         analyticsTags={['on-site-search']}
       />
-      <SearchBox showLoadingIndicator submit={null} reset={null} />
+      <div className="OnSiteSearch__input">
+        <div className="OnSiteSearch__input__icon">
+          <FaSearch />
+        </div>
+        <SearchBox showLoadingIndicator={false} submit={null} reset={null} />
+      </div>
       <OnSiteSearchHitList />
     </InstantSearch>
   )
