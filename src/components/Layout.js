@@ -2,10 +2,15 @@ import React from 'react'
 import { Copyright } from './Copyright'
 import { Brand } from './Brand'
 import { rhythm } from '../utils/typography'
-import { OnSiteSearch } from './OnSiteSearch'
+
+// React.lazy and Suspense is not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend Loadable Components. It has a nice guide for bundle splitting with server-side rendering.
+// https://reactjs.org/docs/code-splitting.html#reactlazy
+// https://github.com/gatsbyjs/gatsby/issues/11960
+import loadable from '@loadable/component'
 
 function Layout(props) {
   const { title, children, headerDimmed = false, amp = false } = props
+  const OnSiteSearch = loadable(() => import('./OnSiteSearch'))
 
   return (
     <div

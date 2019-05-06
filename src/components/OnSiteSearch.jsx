@@ -27,3 +27,6 @@ export function OnSiteSearch() {
     </InstantSearch>
   )
 }
+
+// To use React Suspense
+export default OnSiteSearch
