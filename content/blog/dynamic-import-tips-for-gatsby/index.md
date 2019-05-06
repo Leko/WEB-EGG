@@ -1,6 +1,6 @@
 ---
 title: GatsbyでReactコンポーネントをDynamic importしてCode Splitするwork around
-date: '2019-05-06T15:24:19.972Z'
+date: '2019-05-07T10:30:00.000+0900'
 tags:
   - JavaScript
   - Gatsby
