@@ -4,6 +4,9 @@ import TypographyTheme from 'typography-theme-wordpress-2016'
 
 TypographyTheme.overrideThemeStyles = () => {
   return {
+    h3: {
+      fontSize: typography.rhythm(0.7),
+    },
     a: {
       boxShadow: `none`,
     },
