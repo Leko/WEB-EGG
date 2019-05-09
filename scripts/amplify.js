@@ -142,7 +142,7 @@ Promise.all([
 
     const canonicalUrl = $('link[rel="canonical"]').attr('href')
     $('.after-post').before(`
-      <div style="display: flex; justify-content: space-around; margin: 16px 0;">
+      <div style="display: flex; justify-content: space-evenly; margin: 16px 0;">
         <amp-social-share type="twitter"></amp-social-share>
         <amp-social-share type="hatena_bookmark" layout="container" data-share-endpoint="http://b.hatena.ne.jp/entry/${canonicalUrl}">B!</amp-social-share>
         <amp-social-share type="pocket" layout="container" data-share-endpoint="http://getpocket.com/edit?url=${canonicalUrl}"></amp-social-share>
