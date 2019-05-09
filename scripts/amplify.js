@@ -29,21 +29,21 @@ Promise.all([
 
     styles += `
     amp-social-share[type=hatena_bookmark] {
-      width: 60px ;
-      height: 44px ;
-      font-family: Verdana ;
-      background-color: #00A4DE ;
-      font-weight: 700 ;
-      color: #fff ;
-      line-height: 44px ;
-      text-align: center ;
-      font-size: 28px ;
+      width: 60px;
+      height: 44px;
+      font-family: Verdana;
+      background-color: #00a4de;
+      font-weight: 700;
+      color: #fff;
+      line-height: 44px;
+      text-align: center;
+      font-size: 28px;
     }
     amp-social-share[type=pocket] {
-      width: 60px ;
-      height: 44px ;
-      background-color: #EF3E55 ;
-      background-image: url( 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#fff" d="M12.53 6.84l-3.76 3.61c-.213.204-.486.306-.76.306-.273 0-.547-.102-.76-.306L3.488 6.84c-.437-.418-.45-1.113-.032-1.55.42-.438 1.114-.452 1.55-.033l3.005 2.88 3.006-2.88c.436-.42 1.13-.405 1.55.032.42.436.405 1.13-.032 1.55zm3.388-5.028c-.207-.572-.755-.956-1.363-.956H1.45c-.6 0-1.144.376-1.357.936-.063.166-.095.34-.095.515v4.828l.055.96c.232 2.184 1.365 4.092 3.12 5.423.03.024.063.047.095.07l.02.015c.94.687 1.992 1.152 3.128 1.382.524.105 1.06.16 1.592.16.492 0 .986-.046 1.472-.136.058-.014.116-.024.175-.038.016-.002.033-.01.05-.018 1.088-.237 2.098-.69 3.004-1.352l.02-.014.095-.072c1.754-1.33 2.887-3.24 3.12-5.423l.054-.96V2.307c0-.167-.02-.333-.08-.495z"/></svg>' ) ;
+      width: 60px;
+      height: 44px;
+      background-color: #EF4056;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -4 16 23" width="16" height="14" fill="white" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill-rule="nonzero" d="M12.533 6.84L8.77 10.45c-.213.204-.486.306-.76.306-.273 0-.547-.102-.76-.306L3.488 6.84c-.437-.418-.45-1.113-.032-1.55.42-.438 1.114-.452 1.55-.033l3.005 2.88 3.01-2.88c.44-.42 1.13-.405 1.55.032.42.43.41 1.13-.03 1.55zm3.388-5.028c-.2-.572-.75-.956-1.36-.956H1.45c-.6 0-1.144.376-1.357.936-.063.166-.095.34-.095.515v4.828l.055.96c.232 2.184 1.365 4.092 3.12 5.423.03.024.063.047.095.07l.02.015c.94.687 1.992 1.152 3.128 1.382.524.105 1.06.16 1.592.16.492 0 .986-.046 1.472-.136.058-.02.116-.03.175-.04.016 0 .033-.01.05-.02 1.088-.24 2.098-.69 3.004-1.35l.02-.02.09-.07c1.75-1.33 2.88-3.24 3.12-5.43l.05-.96V2.3c0-.167-.02-.333-.08-.495z "></path></svg>');
       /* MIT License | https://icon.now.sh/ */
     }
     `
@@ -142,7 +142,7 @@ Promise.all([
 
     const canonicalUrl = $('link[rel="canonical"]').attr('href')
     $('.after-post').before(`
-      <div>
+      <div style="display: flex; justify-content: space-around; margin: 16px 0;">
         <amp-social-share type="twitter"></amp-social-share>
         <amp-social-share type="hatena_bookmark" layout="container" data-share-endpoint="http://b.hatena.ne.jp/entry/${canonicalUrl}">B!</amp-social-share>
         <amp-social-share type="pocket" layout="container" data-share-endpoint="http://getpocket.com/edit?url=${canonicalUrl}"></amp-social-share>
