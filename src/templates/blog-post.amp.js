@@ -15,7 +15,12 @@ class BlogPostTemplate extends React.Component {
     const { previous, next, amp = false } = this.props.pageContext
 
     return (
-      <Layout location={this.props.location} title={siteTitle} headerDimmed amp={amp}>
+      <Layout
+        location={this.props.location}
+        title={siteTitle}
+        headerDimmed
+        amp={amp}
+      >
         <AMPSEO
           amp={amp}
           title={post.frontmatter.title}
@@ -52,6 +57,7 @@ class BlogPostTemplate extends React.Component {
           </small>
         )}
         <hr
+          className="after-post"
           style={{
             marginBottom: rhythm(1),
           }}
