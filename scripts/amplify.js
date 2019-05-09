@@ -22,10 +22,32 @@ Promise.all([
       .not('[src^="https://cdn.ampproject.org"]')
       .remove()
 
-    const styles = $('style')
+    let styles = $('style')
       .map((_i, el) => $(el).html())
       .toArray()
       .join('\n')
+
+    styles += `
+    amp-social-share[type=hatena_bookmark] {
+      width: 60px ;
+      height: 44px ;
+      font-family: Verdana ;
+      background-color: #00A4DE ;
+      font-weight: 700 ;
+      color: #fff ;
+      line-height: 44px ;
+      text-align: center ;
+      font-size: 28px ;
+    }
+    amp-social-share[type=pocket] {
+      width: 60px ;
+      height: 44px ;
+      background-color: #EF3E55 ;
+      background-image: url( 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill="#fff" d="M12.53 6.84l-3.76 3.61c-.213.204-.486.306-.76.306-.273 0-.547-.102-.76-.306L3.488 6.84c-.437-.418-.45-1.113-.032-1.55.42-.438 1.114-.452 1.55-.033l3.005 2.88 3.006-2.88c.436-.42 1.13-.405 1.55.032.42.436.405 1.13-.032 1.55zm3.388-5.028c-.207-.572-.755-.956-1.363-.956H1.45c-.6 0-1.144.376-1.357.936-.063.166-.095.34-.095.515v4.828l.055.96c.232 2.184 1.365 4.092 3.12 5.423.03.024.063.047.095.07l.02.015c.94.687 1.992 1.152 3.128 1.382.524.105 1.06.16 1.592.16.492 0 .986-.046 1.472-.136.058-.014.116-.024.175-.038.016-.002.033-.01.05-.018 1.088-.237 2.098-.69 3.004-1.352l.02-.014.095-.072c1.754-1.33 2.887-3.24 3.12-5.423l.054-.96V2.307c0-.167-.02-.333-.08-.495z"/></svg>' ) ;
+      /* MIT License | https://icon.now.sh/ */
+    }
+    `
+
     $('style').remove()
     // $('noscript').remove()
     $('head').append($(boilerplate))
@@ -117,6 +139,28 @@ Promise.all([
         `<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>`
       )
     )
+
+    const canonicalUrl = $('link[rel="canonical"]').attr('href')
+    $('.after-post').before(`
+      <div>
+        <amp-social-share type="twitter"></amp-social-share>
+        <amp-social-share type="hatena_bookmark" layout="container" data-share-endpoint="http://b.hatena.ne.jp/entry/${canonicalUrl}">B!</amp-social-share>
+        <amp-social-share type="pocket" layout="container" data-share-endpoint="http://getpocket.com/edit?url=${canonicalUrl}"></amp-social-share>
+        <amp-social-share type="facebook" data-param-app_id="1434873820060880"></amp-social-share>
+        <amp-social-share type="system"></amp-social-share>
+      </div>
+    `)
+    $('head').append(
+      $(
+        `<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>`
+      )
+    )
+
+    // const ad1 = `
+    // `
+    // const ad2 = `
+    // `
+    // $('.after-post').after(ad2)
 
     $('html').attr('amp', '')
 
