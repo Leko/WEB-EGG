@@ -22,10 +22,32 @@ Promise.all([
       .not('[src^="https://cdn.ampproject.org"]')
       .remove()
 
-    const styles = $('style')
+    let styles = $('style')
       .map((_i, el) => $(el).html())
       .toArray()
       .join('\n')
+
+    styles += `
+    amp-social-share[type=hatena_bookmark] {
+      width: 60px;
+      height: 44px;
+      font-family: Verdana;
+      background-color: #00a4de;
+      font-weight: 700;
+      color: #fff;
+      line-height: 44px;
+      text-align: center;
+      font-size: 28px;
+    }
+    amp-social-share[type=pocket] {
+      width: 60px;
+      height: 44px;
+      background-color: #EF4056;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -4 16 23" width="16" height="14" fill="white" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414"><path fill-rule="nonzero" d="M12.533 6.84L8.77 10.45c-.213.204-.486.306-.76.306-.273 0-.547-.102-.76-.306L3.488 6.84c-.437-.418-.45-1.113-.032-1.55.42-.438 1.114-.452 1.55-.033l3.005 2.88 3.01-2.88c.44-.42 1.13-.405 1.55.032.42.43.41 1.13-.03 1.55zm3.388-5.028c-.2-.572-.75-.956-1.36-.956H1.45c-.6 0-1.144.376-1.357.936-.063.166-.095.34-.095.515v4.828l.055.96c.232 2.184 1.365 4.092 3.12 5.423.03.024.063.047.095.07l.02.015c.94.687 1.992 1.152 3.128 1.382.524.105 1.06.16 1.592.16.492 0 .986-.046 1.472-.136.058-.02.116-.03.175-.04.016 0 .033-.01.05-.02 1.088-.24 2.098-.69 3.004-1.35l.02-.02.09-.07c1.75-1.33 2.88-3.24 3.12-5.43l.05-.96V2.3c0-.167-.02-.333-.08-.495z "></path></svg>');
+      /* MIT License | https://icon.now.sh/ */
+    }
+    `
+
     $('style').remove()
     // $('noscript').remove()
     $('head').append($(boilerplate))
@@ -117,6 +139,28 @@ Promise.all([
         `<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>`
       )
     )
+
+    const canonicalUrl = $('link[rel="canonical"]').attr('href')
+    $('.after-post').before(`
+      <div style="display: flex; justify-content: space-evenly; margin: 16px 0;">
+        <amp-social-share type="twitter"></amp-social-share>
+        <amp-social-share type="hatena_bookmark" layout="container" data-share-endpoint="http://b.hatena.ne.jp/entry/${canonicalUrl}">B!</amp-social-share>
+        <amp-social-share type="pocket" layout="container" data-share-endpoint="http://getpocket.com/edit?url=${canonicalUrl}"></amp-social-share>
+        <amp-social-share type="facebook" data-param-app_id="1434873820060880"></amp-social-share>
+        <amp-social-share type="system"></amp-social-share>
+      </div>
+    `)
+    $('head').append(
+      $(
+        `<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>`
+      )
+    )
+
+    // const ad1 = `
+    // `
+    // const ad2 = `
+    // `
+    // $('.after-post').after(ad2)
 
     $('html').attr('amp', '')
 
