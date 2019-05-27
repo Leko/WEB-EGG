@@ -1,0 +1,35 @@
+#!/usr/bin/env node
+const fs = require('fs')
+const path = require('path')
+const cp = require('child_process')
+const glob = require('glob').sync
+const chalk = require('chalk')
+
+const getLatest = pkgName => {
+  const latestVersion = cp.execSync(`npm show ${pkgName} version`, {
+    encoding: 'utf8',
+  })
+  return latestVersion.trim()
+}
+const updatedDependencies = deps => {
+  for (let name in deps) {
+    if (!name.startsWith('gatsby')) {
+      continue
+    }
+    const beforeVersion = deps[name]
+    deps[name] = `~${getLatest(name)}`
+    console.log(
+      name,
+      beforeVersion,
+      '->',
+      deps[name] !== beforeVersion ? chalk.yellow(deps[name]) : deps[name],
+    )
+  }
+}
+;['./package.json', ...glob('./plugins/*/package.json')].forEach(pkgPath => {
+  const pkg = require(path.join(process.cwd(), pkgPath))
+  updatedDependencies(pkg.dependencies)
+  updatedDependencies(pkg.devDependencies)
+  fs.writeFileSync(pkgPath, JSON.stringify(pkg, null, 2) + '\n')
+  console.log(`Wrote ${pkgPath}`)
+})
