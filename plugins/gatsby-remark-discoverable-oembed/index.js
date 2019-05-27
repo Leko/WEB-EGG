@@ -138,7 +138,7 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
       replacer({ maxWidth, maxHeight, lazyload: experimental_lazyload })
     )
   ).catch(e => {
-    console.error(e.stack)
+    console.warn(e.stack)
     throw e
   })
 }

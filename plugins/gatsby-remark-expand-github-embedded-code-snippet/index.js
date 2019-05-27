@@ -188,7 +188,7 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
       replacer({ extMap, token, codeFetcher: fetchCode })
     )
   ).catch(e => {
-    console.error(e.stack)
+    console.warn(e.stack)
     throw e
   })
 }
