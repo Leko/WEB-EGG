@@ -105,7 +105,7 @@ const replacer = ({ maxWidth, maxHeight, lazyload }) => async ({
       break
     }
     default:
-      throw new Error(`Unknown type: ${oEmbed.type}`)
+      console.warn(`Unknown type: ${oEmbed.type}(${url})\n${JSON.stringify(oEmbed, null, 2)}`)
   }
 }
 
@@ -137,7 +137,10 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
       nodesToFetch,
       replacer({ maxWidth, maxHeight, lazyload: experimental_lazyload })
     )
-  )
+  ).catch(e => {
+    console.warn(e.stack)
+    throw e
+  })
 }
 
 attacher.setScale = setScale
