@@ -137,7 +137,10 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
       nodesToFetch,
       replacer({ maxWidth, maxHeight, lazyload: experimental_lazyload })
     )
-  )
+  ).catch(e => {
+    console.error(e.stack)
+    throw e
+  })
 }
 
 attacher.setScale = setScale
