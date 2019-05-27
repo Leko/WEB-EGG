@@ -196,7 +196,7 @@ img.addEventListener('load', () => {
 > &mdash; [Generate image of syntax highlighted code from highlight.js - CodeSandbox](https://codesandbox.io/s/objective-keller-vm2lz0ppql)
 
 
-以上の手順で HTML 要素を PNG まで変換することができます。
+以上の手順で HTML 要素を PNG まで変換できます。
 
 ## WebWorker でも動くのか？
 
@@ -211,7 +211,7 @@ img.addEventListener('load', () => {
 画面内の`link[rel="stylesheet"]`をかき集めてインライン化し、`<style>`タグをあわせて foreignObject の中に入れて、`document.body`を XMLSerializer に入れたらどうなるか試した結果、ある程度うまく行きました。
 
 動作デモはこちらです。  
-ある程度複雑なUIを実現するために[MUI という CSS フレームワークのチュートリアル](https://www.muicss.com/docs/v1/example-layouts/responsive-side-menu)を撮影対象にしました。（数年ぶりに jQuery 書いた）
+ある程度複雑なUIを実現するために[MUI という CSS フレームワークのチュートリアル](https://www.muicss.com/docs/v1/example-layouts/responsive-side-menu)を撮影対象にしました（数年ぶりに jQuery 書いた）
 
 > &mdash; [Capture screen & Download as PNG](https://1uk01.codesandbox.io/)
 
@@ -221,6 +221,6 @@ img.addEventListener('load', () => {
 
 惜しい感じになりました。なぜかサイドバーが消えています...
 
-（WebWorkerで動かないのでやや厳しいですが、）ドラレコの要領で裏側で画面を撮影をしておきサーバに送れれば、ユーザの操作がリアルに見えて、ユーザテスト、アクセス解析、エラートラッキングetcに役立たちそうと思いました。マウスカーソルの座標を保持しておき、カーソルっぽい画像を Canvas に書き加えてから画像化すればマウスカーソル（を模したもの）を画像に写すこともできますし。
+（WebWorkerで動かないのでやや厳しいですが）ドラレコの要領で裏側で画面を撮影をしておきサーバに送れれば、ユーザの操作がリアルに見えて、ユーザテスト、アクセス解析、エラートラッキングetcに役立たちそうと思いました。マウスカーソルの座標を保持しておき、カーソルっぽい画像を Canvas に書き加えてから画像化すればマウスカーソル（を模したもの）を画像に写すこともできますし。
 
 やり方によっては悪用できそうなので、悪用はしないようお願いいたします。
