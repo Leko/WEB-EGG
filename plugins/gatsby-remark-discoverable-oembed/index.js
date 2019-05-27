@@ -105,7 +105,7 @@ const replacer = ({ maxWidth, maxHeight, lazyload }) => async ({
       break
     }
     default:
-      throw new Error(`Unknown type: ${oEmbed.type}\n${JSON.stringify(oEmbed, null, 2)}`)
+      console.warn(`Unknown type: ${oEmbed.type}(${url})\n${JSON.stringify(oEmbed, null, 2)}`)
   }
 }
 
