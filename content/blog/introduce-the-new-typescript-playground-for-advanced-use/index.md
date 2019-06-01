@@ -35,7 +35,7 @@ TypeScript で開発をするときに、型エラーをミニマムで再現で
 
 - [@types/react, @types/react-dom で React の型推論]()
 - [↑ に redux を足して connect の型推論]()
-- [Lodash でなんのアテもなくただ推論させる]()
+- [Lodash でなんのアテもなくただ推論させる](https://playground.type-puzzle.org?c=H4sIAAAAAAAAA51Sa2vbMBT9K0KjOAHHcbxmrIaWdi1lhdANFhisyQfFVmI1eiHJyzKT%2F7577aSP7FtIQtC955x7dI8aWpiS05wKZY0LpCFLIQN3MVHMkh1ZOqNIJE3JfBXN9EyHreXka62YJpekmWlCNFM8Jz44oVcxFtgKzrpWC5CZ6R2yCqN9ICJw5fOO%2FTQH%2FhPCm71CNOFrE8UdfXRBdvG77tSoQzNL%2F2sy90LNRm13%2FmauvylrGWBgr0EM2e1N9MnlVVu4ugTRVwJD%2BCNIe%2BDAInqt86RbTW8v149JhOOj%2Fky%2FEhKEYxml8T%2Fxgbngf4pQ9aJJ1Ac0jWnwMGkpVjRvIAFlheTumw0CxmPp2f%2BBTBxnRQCwNg%2FKSlGIcKO3NA%2Bu5jHFhRfhsZbytuLF2r%2Bv39e6QLUpxHXU%2BiJ0ecukvLFWHql9d8ZyF7YPWgTBpPjLUOOAebUxrcRedLeLackt1yXXhcBRTw3Fa4P9a3wrftg9HrgGXNlivS3D%2BTd3vpWn58kIvh9TimK%2BcMJ2cyna%2F9GeScmXAm3BhsjSODIxg7tOt2QBZbN0dDFIx4MsnY4%2B5ek4H2fJ52z8CxBS6HW7V20VIKsQrM%2BHw81mk0Dl2ScQwdCyYg1vYXh2nrYOz7L7F%2BuVUdxC8w15BYHWi5Z511njcot%2By%2BPzB8ixhI3EEKg1XgTjticJgcKiXvmTuEPhfQ1rh7xsvZDCV9zhRmrP3T6vQy5cMSHx7AewnUFbvlaicMabZcBhqAIgHeAHIbahnyg0h88%2FzDUyr4UEAAA%3D)
 - [lens.ts]()
 - [typeorm という OR マッパー]()
 
