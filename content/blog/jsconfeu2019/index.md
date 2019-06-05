@@ -12,15 +12,32 @@ tags:
 
 ## 何しに行ったの
 
+- JS界隈の世界的にトップレベルのエンジニアたちのトークを聞きたい
+- 懇親会とかで英語で交流してみたい
+- 海外のカンファレンス行ったことなくビビってる自分を打破するために行って成功体験を積みたい
+- 海外の大きなカンファレンスで喋れそうかどうかテーマやレベル感、空気感を知りたい
+- JSConf JPのスタッフなので本家EUのすごさを知ってJSConf JPに還元したい
+
+あたりが主な目標でした。  
+もっと英語ができていればより充実したと思いますが、目的は果たせたかなと思いました。
+
+Node.jsのコラボレータなので前日まで開催されるOpenJS Collab Summitにも行けたのですが、英語のSpeaking/Listeningで議論に参加できる自身がなくてチキった結果、自費で行くことにしました。  
+OpenJS Collab Summitとは、去年までNode.js Collab Summitと呼ばれていたコラボレータたちが今後について議論する会で、ここで決まったことが次のメジャーバージョンに大きく影響したり、もっと将来的な大きな方向性を決定・合意する重要なイベントです。
+
 > &mdash; [Node.js FoundationとJS Foundationが合併しOpenJS Foundationを設立 - The Linux Foundation](https://www.linuxfoundation.jp/press-release/2019/03/node-js-foundation-and-js-foundation-merge-to-form-openjs-foundation/)
 
-## 大枠のスケジュール
-全日程のスケジュールはこんな感じでした
+## JSConf EUとは？
+10年の歴史を持つJSのカンファレンスです。  
+Ryan DahlがNode.jsを発表したり、その9年後にDenoを発表したりと行ったトークが有名なのかなと思います。
+
+今回参加した2019の全日程のスケジュールはここから見れます。
 https://2019.jsconf.eu/schedule/
 
 メインは１−２日目なんですが、前後の日にもそれぞれちょっとだけ催しがあるという感じでした。
 
 ## ０日目まとめ
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="und" dir="ltr"><a href="https://t.co/odp6goxiHJ">pic.twitter.com/odp6goxiHJ</a></p>&mdash; れこ | 6/18 TS meetup #1 (@L_e_k_o) <a href="https://twitter.com/L_e_k_o/status/1134548819734126598?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
 
 ０日目は前夜祭的に行われたpre-register event（あらかじめ入場券を手に入れつつお酒飲んでご飯食べよう）があったので、せっかくだし行ってみました。
 ここではトークとかはなくて、単に入場券を手に入れたら、野外スペースでDJがﾄﾞｩﾝﾄﾞｩﾝ演奏してる中お酒を飲んで語らう会でした。
@@ -31,10 +48,17 @@ https://2019.jsconf.eu/schedule/
 何してる人なのか聞いたらgulpを作ってる人と、gulpプラグインを業務用にゴリゴリ作って使い倒してるgulpユーザの２人でした。  
 gulpはここ数年ほとんど使ってなかったので、まだアクティブに開発されてたんだ！？という驚きと、会で初めて話す人が著名なOSSの人ってとんでもないなと驚かされました。  
 勤め先の話とか初めての参加ですか？とか世間話をしつつ、gulpを今後どんな形でアップグレードしていくか（ファイルウォッチの効率化、高速化、テストの強化、プラグインのAPIにbreaking changeを絶対に起こさないよう開発する）とか、gulp-contribへコミット、メンテナをどう確保するかとかとか、OSS談義を**聞いてました。**  
-gulpやOSSの体制づくりなど分かる話題だったので6-7割くらいは聞き取れたんですが、喋ろうとするとまったく速度が追いつかなくて、20文に１回くらい少し喋る（それも喋るのをゆっくり待ってもらいながら）って感じでした。
+gulpやOSSの体制づくりなど分かる話題だったので6-7割くらいは聞き取れたんですが、喋ろうとするとまったく速度が追いつかなくて、20文に１回くらい少し喋る（それも喋るのをゆっくり待ってもらいながら）って感じでした。  
+
+> 補足ですが何か英語を口にすれば真摯に聞いてくれる方ばかりで、少しずつ単語を紡いでいたのですが、自分に心が折れてしまってだんだん口数が減っていったのが問題で、聞き手には一切の非はありません。喋るのを待ってくれているのに喋ろうとする心が折れた私の全面的なミスです。
 
 誰か、だれか日本人は来てないのか、、、と甘えたくなったものの誰一人として見当たらない。  
 ほんの少しだけど会話ができた満足感と、とにかく焦りと不安を感じるスタートでした。
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">偶然話させてもらった人がgulp人だった。一gulpユーザーとしてのcontribへのcontributionのハードルの高さと、そんなことないよって実例にsecurity fixの実例を出しハードルは低いしコミュニティがついてるでと解き、future of gulpについて話してたのは聞いてたけど議論に加われなかった</p>&mdash; れこ | 6/18 TS meetup #1 (@L_e_k_o) <a href="https://twitter.com/L_e_k_o/status/1134568372916686848?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">英語を聞いてくれようとする姿勢が優しくて涙流れる</p>&mdash; れこ | 6/18 TS meetup #1 (@L_e_k_o) <a href="https://twitter.com/L_e_k_o/status/1134574580671045633?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
+
 
 ## １日目まとめ
 １日目のタイムテーブルはこちらから参照できます。
