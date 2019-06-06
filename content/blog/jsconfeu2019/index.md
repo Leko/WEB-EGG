@@ -43,14 +43,14 @@ https://2019.jsconf.eu/schedule/
 
 ０日目は前夜祭的に行われたpre-register event（当日スムーズに入場できるようあらかじめ入場券を手に入れつつお酒飲んで交流しよう）があったので、せっかくだし行ってみました。  
 トークはなくて、入場券を手に入れたら野外スペースでDJがﾄﾞｩﾝﾄﾞｩﾝ演奏してる中お酒を飲んで語らう会でした。  
-道に迷いつつなんとか会場についたものの、皆すでに打ち解けて（るように見えて）おり、更に酔ってて英語がくだけてて早いので、何言ってるかわからず、まったく話の輪に混じれずとてももどかしい思いをしていました。  
+道に迷いつつなんとか会場についたものの、皆すでに打ち解けて（るように見えて）おり、更に酔ってて英語がくだけてて早いので、何言ってるかわからず、まったく話の輪に入って行けず、もどかしい思いをしていました。  
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="ja" dir="ltr">ただでさえ英語喋れないのにちょっと混ぜてもらっていいですかはハードル高すぎる…会場にいるのにチキってる情けなさ</p>&mdash; れこ | 6/18 TS meetup #1 (@L_e_k_o) <a href="https://twitter.com/L_e_k_o/status/1134549110420365313?ref_src=twsrc%5Etfw">May 31, 2019</a></blockquote>
 
 話し相手が居ないのでひとり寂しく３杯目のワインに手をかけようとしたときに、偶然目があった方と挨拶して、少しお話ができました。  
 何してる人なのか聞いたらgulpを作ってる人と、gulpプラグインを業務用にゴリゴリ作って使い倒してるgulpユーザの２人でした。  
-gulpはここ数年ほとんど使ってなかったので、まだアクティブに開発されてたんだ！？という驚きと、会で初めて話す人が著名なOSSの人ってとんでもないなと驚かされました。  
-勤め先の話とか初めての参加ですか？とか世間話をしつつ、gulpを今後どんな形でアップグレードしていくか（ファイルウォッチの効率化、高速化、テストの強化、プラグインのAPIにbreaking changeを絶対に起こさないよう開発する）とか、gulp-contribへコミット、メンテナをどう確保するかとかとか、OSS談義を**聞いてました。**  
+gulpはここ数年ほとんど使ってなかったので「まだアクティブに開発されてたんだ！」という驚きと、会で初めて話す人が著名なOSSの人ってとんでもないなと驚かされました。  
+勤め先の話とか初めての参加ですかーとか世間話をしつつ、gulpを今後どんな形でアップグレードしていくか（ファイルウォッチの効率化、高速化、テストの強化、プラグインのAPIにbreaking changeを絶対に起こさないよう開発する）とか、gulp-contribへコミット、メンテナをどう確保するかとかとか、OSS談義を**聞いてました。**  
 gulpやOSSの体制づくりなど分かる話題だったので6-7割くらいは聞き取れたんですが、喋ろうとするとまったく速度が追いつかなくて、20文に１回くらい少し喋る（それも喋るのをゆっくり待ってもらいながら）って感じでした。  
 何か英語を口にすれば真摯に聞いてくれる方ばかりで、少しずつ単語を紡いでいたのですが、自分に心が折れてしまってだんだん口数が減っていったのが問題で、聞き手には一切の非はありません。喋るのを待ってくれているのに喋ろうとする心が折れた私の全面的なミスです。
 
@@ -66,14 +66,14 @@ gulpやOSSの体制づくりなど分かる話題だったので6-7割くらい�
 
 https://2019.jsconf.eu/schedule/timetable.html#day1
 
-Back track, Side trackが主にトークをしている会場で、この２つに絞ってレポートします。（それでもめっちゃ多い）  
+Back track, Side trackが主にトークをしている会場で、この２つに絞ってレポートします。  
 現地での日本語の実況は[#jsconfeu_ja](https://twitter.com/hashtag/jsconfeu_ja?src=hash)タグを観ると分かりやすいと思います。  
 
 各トークの概要を引用しています。引用先のページにスピーカーのTwitterやGitHub、ホームページ等のリンクがあります。  
 また、[#sketchnote](https://twitter.com/search?f=images&vertical=default&q=%23sketchnotes%20jsconfeu&src=typd)というタグにて、１枚絵でトークのまとめを描いてツイートしている素晴らしい方々がおりとても分かりやすかったので、ツイートを埋め込みさせていただいています。  
 
 ### Curators Opening JSConf EU 2019
-オープニングです。動画がYoutubeに上がっていたので紹介します。
+オープニングです。動画がYouTubeに上がっていたので紹介します。
 映像では音ひかえめなんですが、現地での音圧すごくて、テーマ曲に合わせた映像もすごく可愛く、そのあとの演奏もかっこよくて。しょっぱなから「すごいお祭りが始まった」感を味わいました。
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/o1rzsna263c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -148,7 +148,7 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 >
 > &mdash; [TC39 Committee: Panel](https://2019.jsconf.eu/tc39-committee/panel.html)
 
-とあるのでYoutubeに動画がアップされるのをお待ちください
+とあるのでYouTubeに動画がアップされるのをお待ちください
 
 ### [Roshan Gautam] You should start a tech community too.
 
@@ -180,8 +180,8 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 
 ### [Aditya Mukerjee] করো: Translating Code to Other (Human) Languages, and Back Again
 
-> Javascript runs on nearly any platform. Most languages can compile to Javascript. It’s well-positioned to become the lingua franca of programmers, with one problem: Like most programming languages, Javascript is based on English. 89% of the world’s population doesn’t speak any English. Many of those people can’t even read the Latin script. If we want Javascript to be a lingua franca, we need to ensure it is accessible to all people, regardless of their native language.
-> Let’s look at the barriers that non-native speakers face when contributing to OSS Javascript projects and what it would take to remove them entirely, so that two developers could collaborate without speaking the same language. We will see what techniques Javascript can borrow from other languages by taking a look at করো (koro), a project which adds Bengali support to the Go compiler. And, we will learn enough about compilers and character encoding to answer the eternal question: “Could we do this in Javascript?”
+> JavaScript runs on nearly any platform. Most languages can compile to JavaScript. It’s well-positioned to become the lingua franca of programmers, with one problem: Like most programming languages, JavaScript is based on English. 89% of the world’s population doesn’t speak any English. Many of those people can’t even read the Latin script. If we want JavaScript to be a lingua franca, we need to ensure it is accessible to all people, regardless of their native language.
+> Let’s look at the barriers that non-native speakers face when contributing to OSS JavaScript projects and what it would take to remove them entirely, so that two developers could collaborate without speaking the same language. We will see what techniques JavaScript can borrow from other languages by taking a look at করো (koro), a project which adds Bengali support to the Go compiler. And, we will learn enough about compilers and character encoding to answer the eternal question: “Could we do this in JavaScript?”
 >
 > &mdash; [Aditya Mukerjee: করো: Translating Code to Other (Human) Languages, and Back Again](https://2019.jsconf.eu/aditya-mukerjee/translating-code-to-other-human-languages-and-back-again.html)
 
@@ -246,7 +246,7 @@ YarnのV2についてのトーク。tink(npm)からの連続でトークとい�
 
 スライド: https://speakerdeck.com/bobrov1989/javascript-javascript-dot-dot-dot-rocks-you-251dec18-0917-4b75-be77-45e7d9e89896
 
-### [jenn schiffer] javascript considered...useful
+### [jenn schiffer] JavaScript considered...useful
 
 > Most people connected to the Web are carrying JavaScript in their pocket without even knowing it, and those of us making tools for building with it are either unaware of or blissfully ignoring that population. While JavaScript’s pervasiveness grows, so is the gap in its literacy, and this is a gap we need to solve if we’re ever going to survive self-driving cars on the blockchain. Let’s talk about JavaScript, the tool, as opposed to JavaScript, the Oracle-run Twitter account.
 >
@@ -454,10 +454,10 @@ Wordpressの中の人によるWISYWIGエディタに関するトークでした�
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Wow, here&#39;s a recording of my talk at <a href="https://twitter.com/ReactEurope?ref_src=twsrc%5Etfw">@ReactEurope</a>. Not as good as I had hoped for! Slides are too dense, generally a bit dry, needs more examples, visuals, time explaining the problem, longer demo... Rewriting it all for for the next presentation! 😊<a href="https://t.co/Bsa5Rb5sjc">https://t.co/Bsa5Rb5sjc</a></p>&mdash; Ella van Durpe (@ellatrx) <a href="https://twitter.com/ellatrx/status/1133676186146615296?ref_src=twsrc%5Etfw">May 29, 2019</a></blockquote>
 
-### [Meya Stephen Kenigbolo] Javascript is for Everyone!
-> Teaching absolute beginners with no technical experience whatsoever to understand Javascript can be quite a daunting task. It’s more challenging if you have a thick British accent and your students are mostly African students. If you’ve ever designed a tech curriculum then you understand how complicated this can be. At code Afrique where we help the community by offering a free weekend intensive bootcamp, we explored and have now achieved success with ember where we had earlier failed. The aim of this talk is to show, what we tried, where we failed and how Javascript via Ember brought us success like no other.  
+### [Meya Stephen Kenigbolo] JavaScript is for Everyone!
+> Teaching absolute beginners with no technical experience whatsoever to understand JavaScript can be quite a daunting task. It’s more challenging if you have a thick British accent and your students are mostly African students. If you’ve ever designed a tech curriculum then you understand how complicated this can be. At code Afrique where we help the community by offering a free weekend intensive bootcamp, we explored and have now achieved success with ember where we had earlier failed. The aim of this talk is to show, what we tried, where we failed and how JavaScript via Ember brought us success like no other.  
 >
-> &mdash; [Meya Stephen Kenigbolo: Javascript is for Everyone!](https://2019.jsconf.eu/meya-stephen-kenigbolo/javascript-is-for-everyone.html)
+> &mdash; [Meya Stephen Kenigbolo: JavaScript is for Everyone!](https://2019.jsconf.eu/meya-stephen-kenigbolo/javascript-is-for-everyone.html)
 
 スライド: なし？
 
@@ -489,7 +489,7 @@ Wordpressの中の人によるWISYWIGエディタに関するトークでした�
 >
 > &mdash; [Leandro Ostera: Building WebApps Like It's 1972 🧙‍♂️](https://2019.jsconf.eu/leandro-ostera/building-webapps-like-its-1972-male.html)
 
-スライドはありませんでしたが、発表の原稿？が見つかりました  
+スライドはありませんでしたが、発表の原稿が見つかりました  
 https://gist.github.com/ostera/1c9ef3eeec3dab887c08d2a1eb537535
 
 ### [Havi Hoffman] In the land of the JavaScripters
@@ -599,13 +599,13 @@ https://2019.jsconf.eu/sonnets/
 
 スライド: https://docs.google.com/presentation/d/e/2PACX-1vT9cg9BuUO6PEMQbjbiXcRP4nqJX2HfSk3ki8Jv24ZNRsXaZBQFBwHkYGHhSWQc6V2-bdFeMz9wvZi2/pub?start=false&loop=false&delayms=60000&slide=id.g57c1f1de39_0_1216
 
-### [Pier Paolo Fumagalli] Tales from the Toilet: how Javascript helps the production of tissue papers
+### [Pier Paolo Fumagalli] Tales from the Toilet: how JavaScript helps the production of tissue papers
 
 > Producing tissue paper, kitchen rolls, folded napkins or toilet paper is not for the faint of heart. Gigantic machines rewind huge rolls of tissue paper weighing almost a ton processing it at a speed of 40 km/h, and a single minute of downtime cuts into the slim margins of the paper industry.  
-> The asynchronous nature of Javascript and Node.JS allows telemetry data to be harvested from ancient PLCs controlling the production, and its real-time analysis in the cloud, enabling operators and factories to raise production quality, improve performance and reduce waste.  
+> The asynchronous nature of JavaScript and Node.JS allows telemetry data to be harvested from ancient PLCs controlling the production, and its real-time analysis in the cloud, enabling operators and factories to raise production quality, improve performance and reduce waste.  
 > Join me on a journey to understand how modern programming techniques make IIoT and Industry 4.0 a reality today in the toilet paper world!  
 >
-> &mdash; [Pier Paolo Fumagalli: Tales from the Toilet: how Javascript helps the production of tissue papers](https://2019.jsconf.eu/pier-paolo-fumagalli/tales-from-the-toilet-how-javascript-helps-the-production-of-tissue-papers.html)
+> &mdash; [Pier Paolo Fumagalli: Tales from the Toilet: how JavaScript helps the production of tissue papers](https://2019.jsconf.eu/pier-paolo-fumagalli/tales-from-the-toilet-how-javascript-helps-the-production-of-tissue-papers.html)
 
 スライド: なし？
 
@@ -623,16 +623,16 @@ https://2019.jsconf.eu/sonnets/
 そのあとは会の間に仲良くさせていただいたベルリン在住の[@shuheikagawa](https://twitter.com/shuheikagawa)さんの務めるZalandoのオフィスを見学させていただいて（めっっっっっちゃキレイだった）、自転車でベルリンの街を散策し帰国しこの記事を書いてます。
 
 ためになったし、懇親会で話させてもらった方々や内容も楽しかったし、新しいご縁もできたし、経験値になったし、糧になったと思います。  
-次回が開催されるのをとても楽しみにして居ます。行ってよかった！！！！
+次回が開催されるのをとても楽しみにして居ます。行ってよかった！
 
 ## 来年行ってみたいって方へ
 
 JSConf EUは10年間開催した区切りで一旦休止するそうです。  
-初めて行ってみたことでモチベーションあがって、来年こそはCFP出すぞ！と思ってたんですが、本家でそれが叶うことは直近ではなくなりました。  
+初めて行ってみたことでモチベーションあがって、来年こそはCFP出すぞと思ってたんですが、本家でそれが叶うことは直近ではなくなりました。  
 でも終わりではなく"休止"だと言っていたので、再開されるのを心から楽しみにしています。ぜひ次回があればまたいきたいし、その時までに普通に会話ができるくらい英語の実践経験を貯めようと思いました。  
 
 なお本家（EU）からのれん分けした各国のローカル版JSConfは引き続き開催されます。  
-JSConfが気になった方は今冬開催の[JSConf JP](https://www.jsconf.jp)にぜひ参加して下さい！！
+JSConfが気になった方は今冬開催の[JSConf JP](https://www.jsconf.jp)にぜひ参加して下さい！
 CFPも募集中です！  
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://t.co/b51ielVOoe">https://t.co/b51ielVOoe</a> is the largest JavaScript conference in Japan!! CFP is opened :) <a href="https://twitter.com/hashtag/jsconfeu?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu</a> <a href="https://t.co/9SYaRnURZq">pic.twitter.com/9SYaRnURZq</a></p>&mdash; Yosuke FURUKAWA (@yosuke_furukawa) <a href="https://twitter.com/yosuke_furukawa/status/1134713046381748224?ref_src=twsrc%5Etfw">June 1, 2019</a></blockquote>
