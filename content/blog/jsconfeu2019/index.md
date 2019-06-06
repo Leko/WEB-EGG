@@ -98,6 +98,8 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 >
 > &mdash; [Jessica Jordan: Crafting Comics for Literally Everyone](https://2019.jsconf.eu/jessica-jordan/crafting-comics-for-literally-everyone.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BPmuR4mAQaw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: http://comics-for-everyone.jessicajordan.de/#/
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Wow!! My favourite talk so far by <a href="https://twitter.com/jjordan_dev?ref_src=twsrc%5Etfw">@jjordan_dev</a> on making web comics an accessible experience for everyone - at <a href="https://twitter.com/jsconfeu?ref_src=twsrc%5Etfw">@jsconfeu</a> <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://twitter.com/hashtag/jsconfeu2019?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu2019</a> <a href="https://twitter.com/hashtag/jsconfeu?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu</a> <a href="https://t.co/owhVQ0SeWr">pic.twitter.com/owhVQ0SeWr</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1134789406831915008?ref_src=twsrc%5Etfw">June 1, 2019</a></blockquote>
@@ -208,6 +210,8 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 >
 > &mdash; [Kat Marchán: tink: A Next Generation Package Manager](https://2019.jsconf.eu/kat-marchan/tink-a-next-generation-package-manager.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SHIci8-6_gs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://github.com/zkat/talks/blob/master/2019-06-jsconfeu/presentation.pdf
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Sketchnotes for <a href="https://twitter.com/maybekatz?ref_src=twsrc%5Etfw">@maybekatz</a> speaking about tink <a href="https://twitter.com/jsconfeu?ref_src=twsrc%5Etfw">@jsconfeu</a> <a href="https://twitter.com/hashtag/JSconfEU?src=hash&amp;ref_src=twsrc%5Etfw">#JSconfEU</a> <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://twitter.com/hashtag/npm?src=hash&amp;ref_src=twsrc%5Etfw">#npm</a> <a href="https://t.co/CrjwYNzsHE">pic.twitter.com/CrjwYNzsHE</a></p>&mdash; Lisi Linhart (@lisi_linhart) <a href="https://twitter.com/lisi_linhart/status/1134858643915100160?ref_src=twsrc%5Etfw">June 1, 2019</a></blockquote>
@@ -218,6 +222,8 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 > Since its creation in 2016, Yarn continuously pushed for better standards in the JavaScript ecosystem in particular. Dependency locking, built-in monorepos, zero-network modes, Plug’n’Play resolution, we’ve been on all fronts. Let’s discuss what we have in store for the future, and what it means for our ecosystem!
 >
 > &mdash; [Maël Nison: Yarn - 2019 and beyond](https://2019.jsconf.eu/mael-nison/yarn-2019-and-beyond.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XePfzVs852s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 > &mdash; [Yarn's Future - v2 and beyond · Issue #6953 · yarnpkg/yarn](https://github.com/yarnpkg/yarn/issues/6953)
 
@@ -513,6 +519,7 @@ https://2019.jsconf.eu/sonnets/
 >
 > &mdash; [Henri Helvetica: Shape Of The Web](https://2019.jsconf.eu/henri-helvetica/shape-of-the-web.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SeV_Pqw5egU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 スライド: なし？
 
