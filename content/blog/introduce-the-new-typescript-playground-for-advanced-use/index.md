@@ -34,10 +34,12 @@ TypeScript で開発をするときに、型エラーをミニマムで再現で
 例えばこんなことができます。
 
 - [@types/react, @types/react-dom で React の型推論]()
+  - https://playground.type-puzzle.org?c=H4sIAAAAAAAAA5WTTW%2FbMAyG%2FwqnXhzMXbar6xhosw7IZRu2opc6B0emGy2yJMgUuszwf59kOR8LukMPhmXqeV%2BSMtUzrmtkGROt0ZbgB1acUujBdfiTKsI0rJaVlJuK72CAxuoWSmYDV7KbUk3CHiyqGu0Fcl3rdsRKRXuD8N1q08EC%2BlIB1NhUTtJjJR1moFy7QevRYcQbpzgJrWCpnSK0t8YkJqizaDKLHlyrLmQ%2F9%2FL%2BH30dCxj5mxP2xINXCh3S6Lr2zKHR5NxhdiYSiltsUVGED2eRJDNYFLEIODomYwZ4D5%2BixZBOSdfnljW%2B3fL6dcsQsUjOKkiiLi%2Fi2686U6miH%2BEhn49fx72NI%2FKnq9VSCr5b9Mc2h2J1WObzSP1fdexkKD7j66p8Pi5CsUOoNx6B1Zrupe%2B%2F1twF1Ydn9IHR4G6%2FqhM%2FQB4pWdCJBpJ3UTH9dtpa%2FQIKX%2BDeWm09fRX2Qfmn8f3WUegTxrFM8tMYwbxIp%2FyBYSmjzhfViGeW9f4%2BtEZItN9MmL4uhH51v%2F0NGefZw0qvWuO7F3Sr9iwj6zBlHVnB6auTcrlFvuv%2BjX%2BZZvnBX4GLrTuh6vD%2FfV3ywi2MOVrar5QgUUnxpwoeB%2BZUxsNWTKbDkLIaTehYcRFSPa2Hvx%2FfxsHjAwAA
 - [↑ に redux を足して connect の型推論]()
-- [Lodash でなんのアテもなくただ推論させる]()
+- [Lodash でなんのアテもなく色々なメソッドを呼ぶ]()
+  - https://playground.type-puzzle.org?c=H4sIAAAAAAAAA51SYWvbMBT8K0KjkIDjOG4zVm8dbVoKhdINlk%2BrS1FsOX6NLAlJXuqF%2FPc9ye2ShX0KtrH13une6c4bWqiS04xCo5Vx5JlURjUkp0KVzNY5%2FZzLXBZKWkfA8caSC%2FKYS0I2hC15Rk4nEZGswa%2BczplROSXbaK8%2FOd%2Frq%2BawnSa79kwtfDuXT3szWdkK94AIP%2Fg5LmoGchCEDD1NXIFw3My6wSAwku2QXHwNX1%2BQvMdYPNh%2FEH2zYXqQU68hp31lyd1gGCTshgeYB%2Fm9%2Fh07da%2FW3FwzywdDD6cRdRZFV7Ck2QZtbTQIbr5pB3gSX3qxr2i04axwCJbqrtECCnBXsqOZMy2PqHUGCvfQCnFd82Jl%2F63ftrLwbPNO84PWDGR5zYS40locsH03SnPjujsJDpiA38xzvGN2MuY1vJFutxEtueay5LIAP%2BpxEyxC%2BZfODx%2F3vwceA4%2BsfT2Ucf2LGxvo6Vk8wfs0oZ7MFgZ0P5d6%2BT%2FCmpS8Ai8LHSKVMuRejW563pI5T5smk%2FNRMh2lyXzyMUum2TSNP6XTn4gQIFfBV6kbRNbOaZuNx%2Bv1OsbKi40xgrFmxQqzHp%2BcJUHhSXr7V3qtGq6xubd5Ca5uF2HnTS%2BNi87rLQ%2FXHzDHEh2JMFCtLDhluqOIkGHRLu1Re8dgbYu2Y166XQiwNTfekdZy85bXey68YSD82o7QnVEoXzZQGGVV5fwwz4Ig6fDBEEPoRxI94fUHActyeloEAAA%3D
 - [lens.ts]()
-- [typeorm という OR マッパー]()
+- [jQuery や@types/jestなどのグローバル変数が生えるパターン]()
 
 注意事項として、この playground は**「型検査」はできますが実行環境は持ちません**。書いたコードを動かしたいときは手元で動かしてください。  
 サジェストやフィードバックなどありましたら [Twitter](https://twitter.com/L_e_k_o) にいただけると喜びます。
