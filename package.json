@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "amphtml-validator": "^1.0.23",
-    "babel-eslint": "^10.0.1",
+    "babel-eslint": "^10.0.2",
     "dotenv": "^8.0.0",
     "eslint": "~5.16.0",
     "eslint-plugin-react": "~7.13.0",
