@@ -476,6 +476,8 @@ Wordpressの中の人によるWISYWIGエディタに関するトークでした�
 >
 > &mdash; [Maximiliano Firtman: The modern PWA Cheat Sheet](https://2019.jsconf.eu/maximiliano-firtman/the-modern-pwa-cheat-sheet.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cybhV88KLfI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://www.slideshare.net/firt/the-modern-pwa-cheat-sheet
 
 ### [Max Bittker] Simulating Sand: Building Interactivity With WebAssembly
