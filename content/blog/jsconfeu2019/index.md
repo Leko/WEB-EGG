@@ -574,7 +574,7 @@ https://2019.jsconf.eu/sonnets/
 >
 > &mdash; [Johnny Austin: Finding Your Abstraction Sweet Spot](https://2019.jsconf.eu/johnny-austin/finding-your-abstraction-sweet-spot.html)
 
-スライド: なし？
+<iframe width="560" height="315" src="https://www.youtube.com/embed/go5VCfJMJhw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### [Alexandra Sunderland] Bringing back dial-up: the internet over SMS
 
