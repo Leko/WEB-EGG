@@ -564,7 +564,7 @@ https://2019.jsconf.eu/sonnets/
 >
 > &mdash; [Bryan Hughes: The Contentious Relationship Between the LGBTQ+ community and Tech](https://2019.jsconf.eu/bryan-hughes/the-contentious-relationship-between-the-lgbtq-community-and-tech.html)
 
-スライド: なし？
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fSN3LVbXTkg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">“The Contentious Relationship Between The LGBTQ+ Community and Tech” by <a href="https://twitter.com/nebrius?ref_src=twsrc%5Etfw">@nebrius</a> <a href="https://twitter.com/hashtag/JSConfEU?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU</a> <a href="https://twitter.com/hashtag/sketchnote?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnote</a> <a href="https://t.co/QseOBccAGK">pic.twitter.com/QseOBccAGK</a></p>&mdash; Clairikine @ staying hydrated (@clairikine) <a href="https://twitter.com/clairikine/status/1135146937659928576?ref_src=twsrc%5Etfw">June 2, 2019</a></blockquote>
 
