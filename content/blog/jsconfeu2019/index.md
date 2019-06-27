@@ -320,9 +320,7 @@ Yarn の V2 についてのトーク。tink(npm)からの連続でトークと�
 >
 > &mdash; [Nat Alison: Polyhedra, I Choose You! Letting Your Passions Take Form](https://2019.jsconf.eu/nat-alison/polyhedra-i-choose-you-letting-your-passions-take-form.html)
 
-スライド: なし？
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="et" dir="ltr">Polyhedra ❤ by <a href="https://twitter.com/tesseralis?ref_src=twsrc%5Etfw">@tesseralis</a> at <a href="https://twitter.com/hashtag/JSConfEU?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU</a> <a href="https://twitter.com/hashtag/jsconfeu2019?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu2019</a> <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://t.co/KSPPO2B3MP">pic.twitter.com/KSPPO2B3MP</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1134841297372667906?ref_src=twsrc%5Etfw">June 1, 2019</a></blockquote>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jhdJHBD9Fts" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### [Stefan Judis] HTTP headers for the responsible developer
 
