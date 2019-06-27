@@ -458,7 +458,7 @@ Angular, React の contributor が内部のパフォーマンス最適化アル�
 >
 > &mdash; [Houssein Djirdeh: Performance Empathy](https://2019.jsconf.eu/houssein-djirdeh/performance-empathy.html)
 
-スライド: なし？
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uIBYN6w9cBc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Performance empathy - by <a href="https://twitter.com/hdjirdeh?ref_src=twsrc%5Etfw">@hdjirdeh</a> at <a href="https://twitter.com/hashtag/JSConfEU2019?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU2019</a> <a href="https://twitter.com/hashtag/jsconfeu?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu</a> <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://t.co/c0th4XZJLa">pic.twitter.com/c0th4XZJLa</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1135172970220068865?ref_src=twsrc%5Etfw">June 2, 2019</a></blockquote>
 
