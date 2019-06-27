@@ -129,6 +129,8 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 >
 > &mdash; [Tara Z. Manicsic: ES2019 Features: What Even Are They?](https://2019.jsconf.eu/tara-z-manicsic/es2019-features-what-even-are-they.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1_hHxra0Lf4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://github.com/tzmanics/talk-slides/blob/master/reveals/es2019features.html  
 ※生HTMLです、ホスティング版は見つからなかった
 
