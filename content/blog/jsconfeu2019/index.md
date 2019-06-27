@@ -156,7 +156,10 @@ Back track, Side track が主にトークをしている会場で、この２つ
 >
 > &mdash; [TC39 Committee: Panel](https://2019.jsconf.eu/tc39-committee/panel.html)
 
-とあるので YouTube に動画がアップされるのをお待ちください
+<iframe width="560" height="315" src="https://www.youtube.com/embed/slA06pbTRi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+~~とあるので YouTube に動画がアップされるのをお待ちください~~  
+アップロードされました
 
 ### [Roshan Gautam] You should start a tech community too.
 
@@ -262,6 +265,8 @@ Yarn の V2 についてのトーク。tink(npm)からの連続でトークと�
 > Most people connected to the Web are carrying JavaScript in their pocket without even knowing it, and those of us making tools for building with it are either unaware of or blissfully ignoring that population. While JavaScript’s pervasiveness grows, so is the gap in its literacy, and this is a gap we need to solve if we’re ever going to survive self-driving cars on the blockchain. Let’s talk about JavaScript, the tool, as opposed to JavaScript, the Oracle-run Twitter account.
 >
 > &mdash; [jenn schiffer: javascript considered...useful](https://2019.jsconf.eu/jenn-schiffer/javascript-considereduseful.html)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ylF7ZR-b7Rk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### [Martin Sonnenholzer] animations - learning from cartoons
 
