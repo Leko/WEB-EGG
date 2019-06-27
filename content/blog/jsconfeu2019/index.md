@@ -385,6 +385,8 @@ Ad blocker の作者と Ad blocker を回避する広告とのせめぎあいの
 >
 > &mdash; [Manu Martinez-Almeida: Stencil: a built-time approach to the web](https://2019.jsconf.eu/manu-martinez-almeida/stencil-a-built-time-approach-to-the-web.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M1F81V-NhP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://github.com/manucorporat/talk-stencil-build-time-approach/blob/master/stencil-build-time-approach.pdf
 
 ---
