@@ -114,14 +114,14 @@ Back track, Side trackが主にトークをしている会場で、この２つ�
 >
 > &mdash; [Jason Williams: Let’s build a JavaScript Engine](https://2019.jsconf.eu/jason-williams/lets-build-a-javascript-engine.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_uD2pijcSi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [jasonwilliams/boa](https://github.com/jasonwilliams/boa)というRustで実装されたJSの実行エンジンをリポジトリを題材に、RustでJSインタプリタを実装しWebAssemblyに変換しブラウザで動作デモする話でした。
 
 スライドはありませんが、ブログにも詳しく書かれていたのでこちらも参照です。
 
 > &mdash; [Building a JS Interpreter in Rust Part 1 – Jason Williams](https://jason-williams.co.uk/building-a-js-interpreter-in-rust-part-1/#more-140)  
 > &mdash; [Building a JS Interpreter in Rust – Part 2 – Jason Williams](https://jason-williams.co.uk/building-a-js-interpreter-in-rust-part-2/#more-165)
-
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Let&#39;s build a JS engine - talk by <a href="https://twitter.com/Jason_williams?ref_src=twsrc%5Etfw">@Jason_williams</a> at <a href="https://twitter.com/hashtag/jsconfeu?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu</a> <a href="https://twitter.com/hashtag/jsconfeu2019?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu2019</a> <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://t.co/JOtq65bZKF">pic.twitter.com/JOtq65bZKF</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1134791596229255170?ref_src=twsrc%5Etfw">June 1, 2019</a></blockquote>
 
 ### [Tara Z. Manicsic] ES2019 Features: What Even Are They?
 
