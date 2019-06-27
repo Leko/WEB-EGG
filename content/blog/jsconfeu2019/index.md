@@ -633,6 +633,8 @@ https://2019.jsconf.eu/sonnets/
 >
 > &mdash; [Stanimira Vlaeva: Embedding V8 in the real world](https://2019.jsconf.eu/stanimira-vlaeva/embedding-v8-in-the-real-world.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/wz7Znu6tqFw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://docs.google.com/presentation/d/e/2PACX-1vT9cg9BuUO6PEMQbjbiXcRP4nqJX2HfSk3ki8Jv24ZNRsXaZBQFBwHkYGHhSWQc6V2-bdFeMz9wvZi2/pub?start=false&loop=false&delayms=60000&slide=id.g57c1f1de39_0_1216
 
 ### [Pier Paolo Fumagalli] Tales from the Toilet: how JavaScript helps the production of tissue papers
