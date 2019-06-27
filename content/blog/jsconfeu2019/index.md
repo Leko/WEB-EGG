@@ -421,6 +421,8 @@ https://2019.jsconf.eu/schedule/timetable.html#day2
 >
 > &mdash; [Una Kravets: CSS Houdini & The Future of Styling](https://2019.jsconf.eu/una-kravets/css-houdini-and-the-future-of-styling.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GhRE3rML9t4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライドはありませんが、こちらのサイトにまとまってるので読めば大枠はわかると思います！
 
 > &mdash; [Houdini Spellbook](https://houdini.glitch.me/)
