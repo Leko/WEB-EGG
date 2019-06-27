@@ -584,7 +584,7 @@ https://2019.jsconf.eu/sonnets/
 >
 > &mdash; [Alexandra Sunderland: Bringing back dial-up: the internet over SMS](https://2019.jsconf.eu/alexandra-sunderland/bringing-back-dial-up-the-internet-over-sms.html)
 
-スライド: なし？
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ZsBAkSxwU5c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### [Chidinma Kalu] Why Can’t We All Just Get Along?
 
