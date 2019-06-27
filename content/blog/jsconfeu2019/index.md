@@ -431,6 +431,8 @@ https://2019.jsconf.eu/schedule/timetable.html#day2
 >
 > &mdash; [Maxim Koretskyi: A sneak peek into super optimized code in JS frameworks](https://2019.jsconf.eu/maxim-koretskyi/a-sneak-peek-into-super-optimized-code-in-js-frameworks.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_VHNTC67NR8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: なし？
 
 Angular, Reactのcontributorが内部のパフォーマンス最適化アルゴリズムについて詳しく説明するディープなトークでした
