@@ -591,7 +591,7 @@ https://2019.jsconf.eu/sonnets/
 >
 > &mdash; [Chidinma Kalu: Why Can’t We All Just Get Along?](https://2019.jsconf.eu/chidinma-kalu/why-cant-we-all-just-get-along.html)
 
-スライド: なし？
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7-C0KGA7xb4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I loved this talk by <a href="https://twitter.com/ChidinmaKO?ref_src=twsrc%5Etfw">@ChidinmaKO</a> at <a href="https://twitter.com/hashtag/JSConfEU2019?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU2019</a> Being kind entails pausing, listening, changing your point of view, apologizing, speaking up for others and sharing what you know. Let this be our daily practice, <a href="https://twitter.com/hashtag/JSConfEU?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU</a>! <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://t.co/pIH54T6J6L">pic.twitter.com/pIH54T6J6L</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1135174253861580801?ref_src=twsrc%5Etfw">June 2, 2019</a></blockquote>
 
