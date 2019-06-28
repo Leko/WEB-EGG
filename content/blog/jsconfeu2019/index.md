@@ -145,6 +145,8 @@ Back track, Side track が主にトークをしている会場で、この２つ
 >
 > &mdash; [Garann Means: What happened to my JavaScript phone?](https://2019.jsconf.eu/garann-means/what-happened-to-my-javascript-phone.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/14wIbWGyaKg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://speakerdeck.com/garann/what-happened-to-my-javascript-phone
 
 ### TC39 Committee Panel
