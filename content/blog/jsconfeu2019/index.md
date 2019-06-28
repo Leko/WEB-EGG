@@ -198,6 +198,8 @@ Back track, Side track が主にトークをしている会場で、この２つ
 >
 > &mdash; [Aditya Mukerjee: করো: Translating Code to Other (Human) Languages, and Back Again](https://2019.jsconf.eu/aditya-mukerjee/translating-code-to-other-human-languages-and-back-again.html)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-0WQCs2JsFY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 スライド: https://speakerdeck.com/chimeracoder/kro-translating-code-to-other-human-languages-and-back-again
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Coding means power but it is also inaccessible through the usage of English. <a href="https://twitter.com/chimeracoder?ref_src=twsrc%5Etfw">@chimeracoder</a> showed a way to extend a Go compiler in Bengali. Very inspiring. JS devs - feel challenged to bring this to JS!! <a href="https://twitter.com/hashtag/jsconfeu2019?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu2019</a> <a href="https://twitter.com/hashtag/jsconfeu?src=hash&amp;ref_src=twsrc%5Etfw">#jsconfeu</a> <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://t.co/elBpjhHAKO">pic.twitter.com/elBpjhHAKO</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1134867650897727489?ref_src=twsrc%5Etfw">June 1, 2019</a></blockquote>
@@ -348,7 +350,7 @@ Yarn の V2 についてのトーク。tink(npm)からの連続でトークと�
 >
 > &mdash; [Shwetank Dixit: Block, unblock, block! : How ad blockers are being circumvented, and how they are fighting back.](https://2019.jsconf.eu/shwetank-dixit/block-unblock-block-how-ad-blockers-are-being-circumvented-and-how-they-are-fighting-back.html)
 
-スライド: なし？
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vk9bPDaZELQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Ad blocker の作者と Ad blocker を回避する広告とのせめぎあいの話でした。
 
@@ -529,7 +531,8 @@ https://gist.github.com/ostera/1c9ef3eeec3dab887c08d2a1eb537535
 >
 > &mdash; [Havi Hoffman: In the land of the JavaScripters](https://2019.jsconf.eu/havi-hoffman/in-the-land-of-the-javascripters.html)
 
-スライドはありませんでしたが特設ページが見つかりました  
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1gL8u0gmWdg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 https://2019.jsconf.eu/sonnets/
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Please check out the sonnets 📜📝 (<a href="https://t.co/Kh7LDm6K8w">https://t.co/Kh7LDm6K8w</a>) by <a href="https://twitter.com/freshelectrons?ref_src=twsrc%5Etfw">@freshelectrons</a> about the <a href="https://twitter.com/hashtag/JSConfEU?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU</a> history.  <a href="https://twitter.com/hashtag/JSConfEU2019?src=hash&amp;ref_src=twsrc%5Etfw">#JSConfEU2019</a>  <a href="https://twitter.com/hashtag/sketchnotes?src=hash&amp;ref_src=twsrc%5Etfw">#sketchnotes</a> <a href="https://t.co/Wrv2B7w0ng">pic.twitter.com/Wrv2B7w0ng</a></p>&mdash; Malwine (@malweene) <a href="https://twitter.com/malweene/status/1135518152694075392?ref_src=twsrc%5Etfw">June 3, 2019</a></blockquote>
