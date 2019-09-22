@@ -4,6 +4,9 @@ date: '2019-01-19T05:51:40.196Z'
 featuredImage: ./featured-image.png
 tags:
   - JavaScript
+  - TypeScript
+  - Rust
+  - Deno
 ---
 
 [Deno](https://github.com/denoland/deno)のコードを読んでみました。  
