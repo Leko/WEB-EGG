@@ -14,7 +14,7 @@ tags:
 - 運営の方およびイベントに携わった皆さんお疲れ様でした
 - はじめて技術書展に参加し denobook 02 という本を執筆・頒布した
 - 書いた本の概要は[こちら](https://scrapbox.io/deno-ja/Denobook_02)を参照
-  - 私は第 5 章の Deep dive into Deno compiler を担当した。
+  - 私は第 5 章の Deep dive into Deno compiler を担当した
 - BOOTH で電子版も販売してます。技術書展行けなかった方はぜひこちらから購入お願いします
   - [Denobook 02 【電子版】 - deno-ja - BOOTH](https://deno-ja.booth.pm/items/1574063)
 - 食わず嫌いしていたが、やってみたら得られたものは多かった
@@ -36,7 +36,7 @@ Deno 勉強会はその名の通り Deno コミッターや Deno のライブラ
 
 deno-ja チームでは技術書展 6 で既に[denobook 01](https://scrapbox.io/deno-ja/Denobook_01)という技術書を頒布していた。技術書典 7 の申込み期日が迫っていたので、「技術書典 7 に出たい（執筆したい）人はいるか？」という話題があがった。
 
-技術書典の存在は昔から知っていたし、身近な人も頒布・参加をしているのを目撃していた。ただ私は人混みがものすごく苦手なのでコミケに参加しても人酔いで一冊も本を買えず全く楽しめなかった経験しかない。
+技術書典の存在は昔から知っていたし、身近な人も頒布・参加をしているのを目撃していた。しかし私は人混みがものすごく苦手なのでコミケに参加しても人酔いで一冊も本を買えず全く楽しめなかった経験しかない。
 ただ denobook 02 に関しては書いてみたいという好奇心が勝り**一般参加者ではなく執筆者としての参加、かつブースから出ずに人混みを避ける**ならアリかも知れないと思い手を上げる。
 
 denobook 01 の執筆者の[@\_\_syumai](https://twitter.com/__syumai)さん、[@keroxp](https://twitter.com/keroxp)さんに加え、[@kt3k](https://twitter.com/kt3k)さん、[@sasurau4](https://twitter.com/sasurau4)さん、私の計５名が手を上げた。テーマは合わせずに**各自が Deno について書きたいことを書く**でやることになった。表紙や DTP 系は denobook 01 に引き続き[@hashedrock](https://twitter.com/hashedrock)さんが担当するという分担で始動した。
@@ -74,7 +74,7 @@ $ git diff --shortstat f9b167de...595b4daa
 ## 宣伝編
 
 入稿した後に問題が起こった。**被チェック数が全然伸びない。**150 部刷っているのに被チェック数が 30 ちょっとしかなかったため、大量に在庫を抱え赤字になるフラグが立っていた。チーム全員で denobook を頒布すること自体の告知を何度か試みたがなかなかチェック数は伸びない。  
-「deno のことを忘れているか、そもそも知らないから内容が伝わらないのではないか？」と仮説を立てて deno 自体についての説明を多めに告知。その内容を分かりやすくまとめたイラストが生まれる。
+「deno のことを忘れているか、そもそも deno が何か分からないから内容が伝わらないのではないか？」と仮説を立てて deno 自体についての説明を多めに告知。その内容を分かりやすくまとめたイラストが生まれる。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">denoとは何ぞ？というところから現状まで、グラフィックレコーディング風に描いてみました！<br>不正確なところがあればツッコミください！<a href="https://twitter.com/hashtag/denoland?src=hash&amp;ref_src=twsrc%5Etfw">#denoland</a> <a href="https://t.co/9ybQmyEB9k">pic.twitter.com/9ybQmyEB9k</a></p>&mdash; はしゅろ (@hashedrock) <a href="https://twitter.com/hashedrock/status/1174364824391708672?ref_src=twsrc%5Etfw">September 18, 2019</a></blockquote>
 
@@ -91,7 +91,7 @@ $ git diff --shortstat f9b167de...595b4daa
 
 ## 販売編
 
-最初は「deno 本売ってまーす」などと呼びかけていたが、宣伝時に発生した「そもそも deno のことを知らないから内容を伝えても見向きもされないのではないか」という仮説を立て、deno 自体の説明をするよう呼びかけ文句を変えたり見本誌を読んでくれるお客さんに deno の説明をしながら本のあらすじを伝えるなどの工夫が重ねられていった。
+最初は「deno 本売ってまーす」などと呼びかけていたが、宣伝時に発生した「そもそも deno が何か分からないから内容を伝えても見向きもされないのではないか」という仮説を立て、deno 自体の説明をするよう呼びかけ文句を変えたり見本誌を読んでくれるお客さんに deno の説明をしながら本のあらすじを伝えるなどの工夫が重ねられていった。
 
 販売ながら徐々に改良が加えられ最終的にはこんなブースになり、接客トークも洗練されていった。  
 通りがかった小さいお子さんが恐竜で遊んだりしていた。
@@ -104,6 +104,8 @@ $ git diff --shortstat f9b167de...595b4daa
 
 ブースに座っていると知り合いのサークルから本をいただいたり本を買っていただいたりするので、そのお礼にサークルを巡ることにした。  
 人口密度が高すぎて非常にストレスを感じたが、用もなく回ってるわけではなくお礼を伝えること、知り合いのサークルの本を買いに行くことを目的にしていたのでなんとかなった。何冊かまったく面識のないサークルの本も買ったが、たぶん積読になると思う。貰い物も含め戦利品としては以下のようになった。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">買ったもの <a href="https://twitter.com/hashtag/%E6%8A%80%E8%A1%93%E6%9B%B8%E5%85%B87?src=hash&amp;ref_src=twsrc%5Etfw">#技術書典7</a> <a href="https://t.co/aYZaHKBHGD">pic.twitter.com/aYZaHKBHGD</a></p>&mdash; れこ / 技術書典お86C (@L_e_k_o) <a href="https://twitter.com/L_e_k_o/status/1175793653450563584?ref_src=twsrc%5Etfw">September 22, 2019</a></blockquote>
 
 ## 撤収編
 
