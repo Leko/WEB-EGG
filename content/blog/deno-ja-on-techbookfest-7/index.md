@@ -20,7 +20,7 @@ tags:
 
 ## そもそも Deno とは？
 
-Deno とは Node.js の作者 Ryan Dahl が Node.js での反省を活かして作成した新しい TypeScript ランタイムです。とてもわかり易いまとめ画像があるのでこれで経緯を掴めると思う
+Deno とは Node.js の作者 Ryan Dahl が Node.js 自体の設計の失敗を活かして作られた新しい TypeScript ランタイムです。このまとめイラストを読めば概要を掴めると思う
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">denoとは何ぞ？というところから現状まで、グラフィックレコーディング風に描いてみました！<br>不正確なところがあればツッコミください！<a href="https://twitter.com/hashtag/denoland?src=hash&amp;ref_src=twsrc%5Etfw">#denoland</a> <a href="https://t.co/9ybQmyEB9k">pic.twitter.com/9ybQmyEB9k</a></p>&mdash; はしゅろ (@hashedrock) <a href="https://twitter.com/hashedrock/status/1174364824391708672?ref_src=twsrc%5Etfw">September 18, 2019</a></blockquote>
 
