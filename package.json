@@ -48,8 +48,7 @@
     "react-typography": "~0.16.19",
     "typeface-montserrat": "~0.0.54",
     "typography": "~0.16.19",
-    "typography-theme-wordpress-2016": "~0.16.19",
-    "snyk": "^2.0.0"
+    "typography-theme-wordpress-2016": "~0.16.19"
   },
   "devDependencies": {
     "amphtml-validator": "^1.0.23",
@@ -91,9 +90,6 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "start": "DOTENV_CONFIG_PATH=.env.development node -r dotenv/config $(npm bin)/gatsby develop",
     "build": "gatsby build && node scripts/amplify.js",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
-  },
-  "snyk": true
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+  }
 }
