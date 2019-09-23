@@ -87,7 +87,7 @@ Promise.all([
     $('iframe').each((_i, el) => {
       el.tagName = 'amp-iframe'
       $(el).attr('layout', 'responsive')
-      $(el).attr('height', 'responsive')
+      // $(el).attr('height', 'responsive')
       $(el).attr('allowtransparency', 'allowtransparency')
       $(el).attr('mozallowfullscreen', null)
       $(el).attr('webkitallowfullscreen', null)
