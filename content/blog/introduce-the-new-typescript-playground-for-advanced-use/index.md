@@ -164,7 +164,7 @@ new SomeHeavyTask()
   .then(spent => console.log(`spent: ${spent}ms`))
 ```
 
-- コンストラクタが Promise<SomeHeavyTask>にかわる
+- コンストラクタが `Promise<SomeHeavyTask>` にかわる
 - WebWorker に渡せる値しか渡せない
 - WebWorker でできることしかできない（ex. DOM 操作はできない）
 
