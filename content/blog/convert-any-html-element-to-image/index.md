@@ -8,9 +8,9 @@ tags:
 ---
 
 ソースコードを画像に変換できる[Carbon](https://carbon.now.sh)という web アプリをご存知でしょうか。  
-↑のような画像が生成できるサービスです。フォントやテーマなどがとても素敵な画像が生成されるため、TLでよく見るようになってきました。
+↑ のような画像が生成できるサービスです。フォントやテーマなどがとても素敵な画像が生成されるため、TL でよく見るようになってきました。
 
-画像の生成をサーバサイドでやっているのかと持ったのですが、開発者ツールでデバッグしてみても、画像export時に通信は発生していません。フォントをfetchしてくるだけで、それ以外はブラウザ内部で生成されているようです。
+画像の生成をサーバサイドでやっているのかと持ったのですが、開発者ツールでデバッグしてみても、画像 export 時に通信は発生していません。フォントを fetch してくるだけで、それ以外はブラウザ内部で生成されているようです。
 
 このような画像を生成できる仕組みを調べて実証してみました。
 
@@ -28,9 +28,9 @@ textarea と最終成果物の PNG 画像、中間データである SVG をデ�
 
 ![](./screenshot.png)
 
-PNGの画質が荒かったりスタイルが洗練されていなかったり、生成される画像のクオリティでは Carbon に到底及びませんが、HTML の要素を画像に変換する PoC としては十分伝わると思います。
+PNG の画質が荒かったりスタイルが洗練されていなかったり、生成される画像のクオリティでは Carbon に到底及びませんが、HTML の要素を画像に変換する PoC としては十分伝わると思います。
 
-ソースコードはこちらです。  
+ソースコードはこちらです。
 
 > &mdash; [Generate image of syntax highlighted code from highlight.js - CodeSandbox](https://codesandbox.io/s/objective-keller-vm2lz0ppql)
 
@@ -70,7 +70,7 @@ const html: string = hljs.highlightAuto(code).value
 
 ### HTML を SVG に変換する
 
-> &mdash; [<foreignObject> - SVG: Scalable Vector Graphics | MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject)
+> &mdash; [`<foreignObject>` - SVG: Scalable Vector Graphics | MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/foreignObject)
 
 SVG の中で使える foreignObject という要素があります。この中には (X)HTML が書けます。  
 ミニマムだとこのような SVG を文字列で生成することになります
@@ -187,31 +187,30 @@ img.addEventListener('load', () => {
 ```
 
 `pngObjectUri`を img タグで表示すると、PNG 画像が表示されます。  
-画面に表示するのではなくファイルとして手に入れたい場合は、aタグをメモリに生成すればファイルダウンロードも可能です。
+画面に表示するのではなくファイルとして手に入れたい場合は、a タグをメモリに生成すればファイルダウンロードも可能です。
 
-> &mdash; [aタグのdownload属性でサーバを介さずにファイルダウンロードする | WEB EGG](https://blog.leko.jp/post/how-to-download-with-a-tag-without-file-server/)
+> &mdash; [a タグの download 属性でサーバを介さずにファイルダウンロードする | WEB EGG](https://blog.leko.jp/post/how-to-download-with-a-tag-without-file-server/)
 
-これらすべてを含んだ最終的なソースコードはこちら（再掲）です。  
+これらすべてを含んだ最終的なソースコードはこちら（再掲）です。
 
 > &mdash; [Generate image of syntax highlighted code from highlight.js - CodeSandbox](https://codesandbox.io/s/objective-keller-vm2lz0ppql)
-
 
 以上の手順で HTML 要素を PNG まで変換できます。
 
 ## WebWorker でも動くのか？
 
 おそらく無理だと思います。少なくともこの記事を書いた時点では実現できませんでした。  
-処理の中で`new Image()`してSVG画像をレンダリングした結果をcanvasに渡しているのですが、`Image`はWebWorkerには存在しないAPIなので、SVGを簡単にレンダリングする手段がありません。  
+処理の中で`new Image()`して SVG 画像をレンダリングした結果を canvas に渡しているのですが、`Image`は WebWorker には存在しない API なので、SVG を簡単にレンダリングする手段がありません。
 
 ## 応用範囲は広い
 
 本記事では仕組みの説明のためにシンタックスハイライトを題材に書きましたが、もっと抽象的な用途に応用できそうです。  
-要はHTML+インラインCSSを画像化できるので、例えば画面全体のスクリーンショットを撮れるはずです。
+要は HTML+インライン CSS を画像化できるので、例えば画面全体のスクリーンショットを撮れるはずです。
 
 画面内の`link[rel="stylesheet"]`をかき集めてインライン化し、`<style>`タグをあわせて foreignObject の中に入れて、`document.body`を XMLSerializer に入れたらどうなるか試した結果、ある程度うまく行きました。
 
 動作デモはこちらです。  
-ある程度複雑なUIを実現するために[MUI という CSS フレームワークのチュートリアル](https://www.muicss.com/docs/v1/example-layouts/responsive-side-menu)を撮影対象にしました（数年ぶりに jQuery 書いた）
+ある程度複雑な UI を実現するために[MUI という CSS フレームワークのチュートリアル](https://www.muicss.com/docs/v1/example-layouts/responsive-side-menu)を撮影対象にしました（数年ぶりに jQuery 書いた）
 
 > &mdash; [Capture screen & Download as PNG](https://1uk01.codesandbox.io/)
 
@@ -221,6 +220,6 @@ img.addEventListener('load', () => {
 
 惜しい感じになりました。なぜかサイドバーが消えています...
 
-（WebWorkerで動かないのでやや厳しいですが）ドラレコの要領で裏側で画面を撮影をしておきサーバに送れれば、ユーザの操作がリアルに見えて、ユーザテスト、アクセス解析、エラートラッキングetcに役立たちそうと思いました。マウスカーソルの座標を保持しておき、カーソルっぽい画像を Canvas に書き加えてから画像化すればマウスカーソル（を模したもの）を画像に写すこともできますし。
+（WebWorker で動かないのでやや厳しいですが）ドラレコの要領で裏側で画面を撮影をしておきサーバに送れれば、ユーザの操作がリアルに見えて、ユーザテスト、アクセス解析、エラートラッキング etc に役立たちそうと思いました。マウスカーソルの座標を保持しておき、カーソルっぽい画像を Canvas に書き加えてから画像化すればマウスカーソル（を模したもの）を画像に写すこともできますし。
 
 やり方によっては悪用できそうなので、悪用はしないようお願いいたします。
