@@ -90,7 +90,7 @@ $ git diff --shortstat f9b167de...595b4daa
 
 最初は「deno 本売ってまーす」などと呼びかけていたが、宣伝時に発生した「そもそも deno が何か分からないから内容を伝えても見向きもされないのではないか」という仮説を立て、deno 自体の説明をするよう呼びかけ文句を変えたり見本誌を読んでくれるお客さんに deno の説明をしながら本のあらすじを伝えるなどの工夫が重ねられていった。
 
-販売ながら徐々に改良が加えられ最終的にはこんなブースになり、接客トークも洗練されていった。  
+販売しながら徐々に改良が加えられ最終的にはこんなブースになり、接客トークも洗練されていった。  
 通りがかった小さいお子さんが恐竜で遊んだりしていた。
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">回を追うごとにブースに恐竜が増えていくｗ <a href="https://t.co/U75V48AEUs">pic.twitter.com/U75V48AEUs</a></p>&mdash; syumai@技術書典お86C (@__syumai) <a href="https://twitter.com/__syumai/status/1175720231748001792?ref_src=twsrc%5Etfw">September 22, 2019</a></blockquote>
