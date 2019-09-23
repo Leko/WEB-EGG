@@ -56,6 +56,7 @@ Promise.all([
     for (let el of $('img').toArray()) {
       el.tagName = 'amp-img'
       $(el).attr('layout', 'responsive')
+      $(el).attr('loading', null)
 
       let src = $(el).attr('src')
       if (!src) {
