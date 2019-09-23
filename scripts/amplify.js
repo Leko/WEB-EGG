@@ -66,7 +66,7 @@ Promise.all([
       $(el).attr('layout', 'responsive')
       $(el).attr('loading', null)
 
-      let src = $(el).attr('srcset') ? $(el).attr('srcset').split(',').reverse()[0].split(' ')[0] : $(el).attr('src')
+      let src = $(el).attr('srcset') ? $(el).attr('srcset').split(',').reverse()[0].split(' ')[0].trim() : $(el).attr('src')
       if (!src) {
         return
       }
