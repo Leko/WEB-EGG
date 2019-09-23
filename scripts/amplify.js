@@ -142,14 +142,37 @@ Promise.all([
       )
     )
 
-    $('body').prepend(
-      $(
-        `<amp-auto-ads type="adsense" data-ad-client="ca-pub-7627436148097691"></amp-auto-ads>`
-      )
+    $('#ad-placeholder-1').prepend(
+      $(`
+        <amp-ad
+          width="100vw" height=320
+          type="adsense"
+          data-ad-client="ca-pub-7627436148097691"
+          data-ad-slot="7829116882"
+          data-auto-format="rspv"
+          data-full-width
+        >
+          <div overflow></div>
+        </amp-ad>
+      `)
+    )
+    $('#ad-placeholder-2').prepend(
+      $(`
+        <amp-ad
+          width="100vw" height=320
+          type="adsense"
+          data-ad-client="ca-pub-7627436148097691"
+          data-ad-slot="4546695031"
+          data-auto-format="rspv"
+          data-full-width
+        >
+          <div overflow></div>
+        </amp-ad>
+      `)
     )
     $('head').append(
       $(
-        `<script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>`
+        `<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>`
       )
     )
 
