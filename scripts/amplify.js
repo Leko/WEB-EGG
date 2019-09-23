@@ -53,6 +53,14 @@ Promise.all([
     $('head').append($(boilerplate))
     $('head').append($(`<style amp-custom>${styles}</style>`))
 
+    for (let el of $('[style]').toArray()) {
+      const cssStr = $(el).attr('style')
+      // The inline style specified in tag 'xxx' is too long - it contains 1669 bytes whereas the limit is 1000 bytes.
+      if (cssStr.length > 1000) {
+        $(el).attr('style', null)
+      }
+    }
+
     for (let el of $('img').toArray()) {
       el.tagName = 'amp-img'
       $(el).attr('layout', 'responsive')
