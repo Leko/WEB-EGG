@@ -53,7 +53,7 @@ function SEO({
               featuredImageName
                 ? {
                   property: `og:image`,
-                  content: publicUrl + featuredImageName,
+                  content: data.site.siteMetadata.siteUrl + featuredImageName,
                 }
                 : null,
               {
@@ -75,7 +75,7 @@ function SEO({
               featuredImageName
                 ? {
                   property: `twitter:image`,
-                  content: publicUrl + featuredImageName,
+                  content: data.site.siteMetadata.siteUrl + featuredImageName,
                 }
                 : null,
               {
