@@ -53,7 +53,7 @@ function SEO({
               featuredImageName
                 ? {
                   property: `og:image`,
-                  content: publicUrl + featuredImageName,
+                  content: data.site.siteMetadata.siteUrl + featuredImageName,
                 }
                 : null,
               {
@@ -62,10 +62,28 @@ function SEO({
               },
               {
                 name: `twitter:card`,
-                content: `summary`,
+                content: `summary_large_image`,
               },
               {
+                property: `twitter:title`,
+                content: title,
+              },
+              {
+                property: `twitter:description`,
+                content: metaDescription,
+              },
+              featuredImageName
+                ? {
+                  property: `twitter:image`,
+                  content: data.site.siteMetadata.siteUrl + featuredImageName,
+                }
+                : null,
+              {
                 name: `twitter:site`,
+                content: `@${data.site.siteMetadata.social.twitter}`,
+              },
+              {
+                name: `twitter:creator`,
                 content: `@${data.site.siteMetadata.social.twitter}`,
               },
             ]
