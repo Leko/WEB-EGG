@@ -21,8 +21,9 @@ class BlogPostTemplate extends React.Component {
           description={post.excerpt}
           slug={this.props.pageContext.slug}
           featuredImageName={
-            post.frontmatter.featuredImage
-              ? post.frontmatter.featuredImage.base
+            post.frontmatter.featuredImage &&
+              post.frontmatter.featuredImage.childImageSharp
+              ? post.frontmatter.featuredImage.childImageSharp.fluid.src
               : null
           }
         />
@@ -105,7 +106,6 @@ export const pageQuery = graphql`
         tags
         date(formatString: "MMMM DD, YYYY")
         featuredImage {
-          base
           childImageSharp {
             fluid(maxWidth: 700) {
               ...GatsbyImageSharpFluid
