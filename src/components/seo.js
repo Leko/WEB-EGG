@@ -18,7 +18,7 @@ function SEO({
       render={data => {
         const metaDescription =
           description || data.site.siteMetadata.description
-        const publicUrl = `${data.site.siteMetadata.siteUrl}post${slug}`
+        const publicUrl = `${data.site.siteMetadata.siteUrl}/post${slug}`
 
         return (
           <Helmet
@@ -52,9 +52,9 @@ function SEO({
               },
               featuredImageName
                 ? {
-                    property: `og:image`,
-                    content: publicUrl + featuredImageName,
-                  }
+                  property: `og:image`,
+                  content: publicUrl + featuredImageName,
+                }
                 : null,
               {
                 property: `og:type`,
@@ -72,9 +72,9 @@ function SEO({
               .concat(
                 keywords.length > 0
                   ? {
-                      name: `keywords`,
-                      content: keywords.join(`, `),
-                    }
+                    name: `keywords`,
+                    content: keywords.join(`, `),
+                  }
                   : []
               )
               .concat(meta)
