@@ -4,7 +4,8 @@ date: '2019-06-05T10:32:30.552Z'
 featuredImage: ./featured-image.png
 tags:
   - JavaScript
-  - Node.js
+  - JSConf
+  - Community
 ---
 
 2019/6/1~6/2 の二日間ドイツのベルリンにて開催された[JSConf EU 2019](https://2019.jsconf.eu)に行ってきたのでレポートを書きます。  
