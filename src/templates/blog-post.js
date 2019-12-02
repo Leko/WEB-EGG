@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
           post.frontmatter.featuredImage.childImageSharp && (
             <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
           )}
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} style={{ margin: '1em 0' }} />
         {post.frontmatter.tags && (
           <small
             style={{
