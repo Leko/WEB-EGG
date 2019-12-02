@@ -27,7 +27,7 @@ http://typingx0.net/sushida/
 
 こちら。
 
-<script src="https://gist.github.com/Leko/713f278bf2ffd3cc010f21145293492c.js"></script>
+> &mdash; [寿司打(Sushi-da) AI http://typingx0.net/sushida/play.html](https://gist.github.com/Leko/713f278bf2ffd3cc010f21145293492c)
 
 必要最小限の自動化しかしてないため、以下のような手順で実行する。
 
