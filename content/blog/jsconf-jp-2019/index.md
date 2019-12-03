@@ -1,5 +1,5 @@
 ---
-title: 'JSConf JP 2019スタッフ参戦後記 #jsconfjp'
+title: 'JSConf JP 2019スタッフ参戦後記'
 date: '2019-12-03T10:11:24.151Z'
 featuredImage: ./2019-12-02-22-13-17.png
 tags:
