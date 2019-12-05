@@ -1,5 +1,5 @@
 ---
-title: Denoのパッケージマネージャ代わりにImport mapsを使用できないか
+title: Import mapsでDenoのパッケージのバージョンを管理したい
 date: '2019-12-07T10:21:46.249Z'
 featuredImage: ./featured-image.png
 tags:
