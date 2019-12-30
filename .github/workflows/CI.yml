@@ -49,7 +49,7 @@ jobs:
           URL=https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com
           while :
           do
-            curl $URL 2>&1 | grep 'HTTP/2 200' && exit 0 || sleep 1
+            curl -v $URL 2>&1 | grep 'HTTP/2 200' && break || sleep 1
           done
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v2
