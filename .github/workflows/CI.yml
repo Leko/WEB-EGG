@@ -1,0 +1,67 @@
+name: CI
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: ['12.x']
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+      - run: npx lerna bootstrap
+      - run: npm run lint
+  test:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: ['12.x']
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+      - run: npx lerna bootstrap
+      - run: npm run test
+      - run: npx lerna run test
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - run: |
+          URL=https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com
+          while :
+          do
+            curl -v $URL 2>&1 | grep 'HTTP/2 200' && break || sleep 1
+          done
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: |
+            https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com
+            https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com/post/ocr-web-gl-with-tesseract-js/
+          temporaryPublicStorage: true
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+      - name: Save results
+        uses: actions/upload-artifact@v1
+        with:
+          name: lighthouse-results
+          path: '.lighthouseci'
