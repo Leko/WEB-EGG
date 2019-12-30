@@ -46,16 +46,17 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: |
+          URL=https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com
           while :
           do
-            curl https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com/ > /dev/null 2>&1 && exit 0 || sleep 1
+            curl $URL 2>&1 | grep 'HTTP/2 200' && exit 0 || sleep 1
           done
       - name: Audit URLs using Lighthouse
         uses: treosh/lighthouse-ci-action@v2
         with:
           urls: |
-            https://deploy-preview-$PR_NUMBER--webegg.netlify.com/
-            https://deploy-preview-$PR_NUMBER--webegg.netlify.com/demo
+            https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com
+            https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com/post/ocr-web-gl-with-tesseract-js/
           temporaryPublicStorage: true
         env:
           PR_NUMBER: ${{ github.event.pull_request.number }}
