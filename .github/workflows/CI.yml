@@ -44,7 +44,7 @@ jobs:
   lighthouse:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@master
       - run: |
           URL=https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com
           while :
@@ -65,14 +65,3 @@ jobs:
         with:
           name: lighthouse-results
           path: '.lighthouseci'
-  audit:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Audit Netlify deploy preview
-        uses: jakejarvis/lighthouse-action@master
-        with:
-          netlify_site: 'webegg.netlify.com'
-      - uses: actions/upload-artifact@master
-        with:
-          name: report
-          path: './report'
