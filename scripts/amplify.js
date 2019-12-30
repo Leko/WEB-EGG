@@ -14,7 +14,7 @@ Promise.all([
   amphtmlValidator.getInstance(),
   prettier.resolveConfig('./public/xxx.html'),
 ]).then(async ([validator, prettierConfig]) => {
-  for (let htmlPath of htmlPaths) {
+  return Promise.all(htmlPaths.map(htmlPath => {
     const html = fs.readFileSync(htmlPath, 'utf8')
     const $ = load(html, {})
     $('script')
@@ -221,5 +221,5 @@ Promise.all([
 
     fs.writeFileSync(htmlPath, ampHTML, 'utf8')
     console.log(result.status, htmlPath)
-  }
+  }))
 })
