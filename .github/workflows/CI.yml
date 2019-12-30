@@ -1,0 +1,77 @@
+name: CI
+on: pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: ['13.x', '12.x', '10.x']
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+      - run: npx lerna bootstrap
+      - run: npm run lint
+  test:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        node-version: ['13.x', '12.x', '10.x']
+    steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+      - run: npm ci
+      - run: npx lerna bootstrap
+      - run: npm run test
+      - run: npx lerna run test
+      - uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          while :
+          do
+            curl https://deploy-preview-${{ github.event.pull_request.number }}--webegg.netlify.com/ > /dev/null 2>&1 && exit 0 || sleep 1
+          done
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v2
+        with:
+          urls: |
+            https://deploy-preview-$PR_NUMBER--webegg.netlify.com/
+            https://deploy-preview-$PR_NUMBER--webegg.netlify.com/demo
+          temporaryPublicStorage: true
+          env:
+            PR_NUMBER: ${{ github.event.pull_request.number }}
+      - name: Save results
+        uses: actions/upload-artifact@v1
+        with:
+          name: lighthouse-results
+          path: '.lighthouseci'
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Audit Netlify deploy preview
+        uses: jakejarvis/lighthouse-action@master
+        with:
+          netlify_site: 'webegg.netlify.com'
+      - uses: actions/upload-artifact@master
+        with:
+          name: report
+          path: './report'
