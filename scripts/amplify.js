@@ -216,7 +216,7 @@ Promise.all([
         return [serverity, code, message, specUrl].join('\n')
       })
       console.error(errors.join('\n\n'))
-      continue
+      return
     }
 
     fs.writeFileSync(htmlPath, ampHTML, 'utf8')
