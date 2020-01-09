@@ -12,7 +12,7 @@ tags: []
 ## CureAppでやってたこと
 
 治療アプリ&copy;という疾患を治療するアプリを作るソフトウェアエンジニアとして入社しました。スマフォアプリが治療効果を持つ医療機器として承認されるため、薬事や臨床開発などの今まで全く知らなかった医療の世界に貢献できることはなにか、自分がなすべき領分は何かを考えながら仕事してました。  
-初仕事は臨床試験のためにアプリを仕上げることと、技術スタックをキャッチアップして[Real World React Native in Agri/Med/Fin Tech](https://connpass.com/event/62895/)というイベントで事例紹介することでした。登壇資料はこちら。
+初仕事は臨床試験が迫っているアプリを仕上げることと、技術スタックをキャッチアップして[Real World React Native in Agri/Med/Fin Tech](https://connpass.com/event/62895/)というイベントで事例紹介することでした。登壇資料はこちら。
 
 > &mdash; [React Nativeで医療機器作ってます - Speaker Deck](https://speakerdeck.com/leko/react-nativedeyi-liao-ji-qi-zuo-tutemasu)
 
