@@ -16,7 +16,7 @@ tags: []
 
 > &mdash; [React Nativeで医療機器作ってます - Speaker Deck](https://speakerdeck.com/leko/react-nativedeyi-liao-ji-qi-zuo-tutemasu)
 
-主な使用技術は React 、患者さんが利用するネイティブアプリは React Native 、サーバサイドは Node.js（express）とすべて JavaScript の構成です。現在はそれらをすべて TypeScript で記述しています。創業当初から「すべて JavaScript」の方針は変わっていないそうなのですが、Titanium → React Native、jQuery → React、Electron → web、Coffee → Flowtype → TypeScript などの時流の変化に合わせてその時々で取るべき技術選択やコードベースのマイグレーションをしてきました。
+主な使用技術は React 、患者さんが利用するネイティブアプリは React Native 、サーバサイドは Node.js（express）とすべて JavaScript の構成です。現在はそれらをすべて TypeScript で記述しています。創業当初から「すべて JavaScript」の方針は変わっていないそうなのですが、Titanium → React Native、jQuery → React、Coffee → Flowtype → TypeScript などの時流の変化に合わせてその時々で取るべき技術選択やコードベースのマイグレーションをしてきました。
 
 > &mdash; [実践AST FlowからTypeScriptへの変換](https://talks.leko.jp/transform-flow-to-typescript-using-ast/#0)
 
