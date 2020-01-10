@@ -212,7 +212,7 @@ Bootstrap系のライブラリやBackboneなど大御所を抑えつつも、
 `check_encoding_on_keystroke`(キーボードが打たれる度に判定)をfalseにすると、
 
 **ファイルが保存された時に非ascii文字が含まれていたら、  
-encodingコメントを追加する（既に指定が入っている場合は挿入しない）**  
+encodingコメントを追加する（すでに指定が入っている場合は挿入しない）**  
 という動作にできます！ 地味に便利！
 
 Image2Base64
@@ -273,7 +273,7 @@ Sublime textで書いているコードを、[Aizu Online Judge](http://judge.u-
 }
 ```
 
-既にACを取ってあるファイルで送信テスト。 
+すでにACを取ってあるファイルで送信テスト。 
 
 
 ![Sublim](./sublime_aoj.png)

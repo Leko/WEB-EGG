@@ -137,7 +137,7 @@ error: Error when processing API description.
 あら。エラーになってしまいました。  
 PetStoreの仕様書自体に問題があるようです。
 
-これを治すのは本筋じゃない感じがしたので、一旦ここまでで止めておきます。  
+これを治すのは本筋じゃない感じがしたので、いったんここまでで止めておきます。  
 API GatewayとLambdaをベースにしたサーバレスなAPIサーバとかも、簡単に受け入れテストできるようになるので、便利だと思います。  
 DreddがApiary(API Blueprint)ではなくSwaggerに対応したことは大きな意味を持つと思います。
 

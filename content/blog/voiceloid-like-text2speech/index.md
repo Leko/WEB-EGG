@@ -73,7 +73,7 @@ API を利用するためにやや学習コストが発生します。各要素�
 
 ### 利用する API
 
-既に名前が出てきていますが、利用する API は docomo Developer API の[音声合成 API エーアイ REST SSML 版](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)です。  
+すでに名前が出てきていますが、利用する API は docomo Developer API の[音声合成 API エーアイ REST SSML 版](https://dev.smt.docomo.ne.jp/?p=docs.api.page&api_name=text_to_speech&p_name=api_1#tag01)です。  
 他の API も試してみたのですが、ボイロの声ではなかったので、この記事では上記 API だけを利用します。
 
 ### docomo developer に登録して API キーを入手
@@ -104,7 +104,7 @@ docomoAPI を使うためには API キーが必要です。
 
 「１列目はボイス名、２列目は調声プリセット（デフォは空）、３列目は喋る内容」という構成にしました。
 
-**既に嫌な予感 MAX**な記述が出てきていますが、**字幕と喋っている音声が違う**箇所と、「弦巻マキ」の発音がおかしくて**イントネーションを弄った**結果です。  
+**すでに嫌な予感 MAX**な記述が出てきていますが、**字幕と喋っている音声が違う**箇所と、「弦巻マキ」の発音がおかしくて**イントネーションを弄った**結果です。  
 デフォルトだと「小比類巻」みたいな山なりの発音になってしまうので、ツルマキの部分を「うずまき」的な発音に寄せた調声です。  
 詳しくはマキマキのところで後述します。
 
