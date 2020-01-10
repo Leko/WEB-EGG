@@ -36,7 +36,7 @@ Deno とか TypeScript で調べてほしかった。
 
 検索エンジンを除けばトップは Twitter 経由のアクセスでした。
 
-絶対数ではなく変化率で見ると最も増加が多かったのははてブ、続いて Twitter、GitHub 経由のアクセスでした。  
+絶対数ではなく変化率で見るともっとも増加が多かったのははてブ、続いて Twitter、GitHub 経由のアクセスでした。  
 今年ははてブの人気のエントリーに何度か載ってたようで、はてブ経由のアクセスが急激に跳ねてるタイミングが何度かありました。  
 Twitter の方はフォロワー数が去年に比べてかなり増えたので、ただ記事をツイートしただけでも閲覧数は増えるだろうなと思います。  
 GitHub に関しては[denolib/awesome-deno](https://github.com/denolib/awesome-deno)に[Deno のコードリーディング記事](https://blog.leko.jp/post/code-reading-of-deno-boot-process/)が掲載されたので、そこからの流入が多かったです。
