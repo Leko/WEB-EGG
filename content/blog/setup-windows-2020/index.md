@@ -51,7 +51,9 @@ IEにURLを打つ程度なら問題なかったのですが、さすがにコー
 > &mdash; [WindowsのAlt空打ちで日本語入力(IME)を切り替えるツールを作った - karakaram-blog](https://www.karakaram.com/alt-ime-on-off/)
 
 AutoHotKeyというソフトを使ってAltを単押ししたときだけ日英を切り替えるスクリプトだそうです。  
-教えてもらったのですがAHKより良い手段がいろいろあるそうで、現キーマップが動かないor物足りなくなったら試してみようと思います。
+[@euxn23](https://twitter.com/euxn23)から教えてもらったのですがAHKより良い手段がいろいろあるそうで、現キーマップが動かないor物足りなくなったら試行錯誤してみようと思います。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">ahk 不安定なので nodoka (yamy の後継)がおすすめですよ。変なことしないなら PowerToys のキーボード拡張でも事足ります</p>&mdash; ユーン🍆 (@euxn23) <a href="https://twitter.com/euxn23/status/1291365340606160896?ref_src=twsrc%5Etfw">August 6, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## Apple Magic trackpadを使えるようにする
 
