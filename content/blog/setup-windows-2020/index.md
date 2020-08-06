@@ -77,26 +77,26 @@ mac-precision-touchpadがよくできているので、結局そちらを使っ�
 
 ## WSL + VSCodeの設定
 
-「結局Ubuntuじゃねえか！」って感じですが、慣れないPowerShellやWindowsのFSの事情に引っ張られたくないので対比手段を用意します。  
-まずVSCodeをインストールし、WSLにて有効化したUbuntu上でVSCodeが動作するように設定しておきます。やることはExtension入れるだけです。
+特に用はないのですが、とりあえずLinuxのターミナルとVSCodeの環境を用意しておけばWindows固有の問題に詰まった時に回避できそうなので用意しておきます。  
+といってもやることはExtension入れるだけです。
 
 > &mdash; [Developing in the Windows Subsystem for Linux with Visual Studio Code](https://code.visualstudio.com/docs/remote/wsl#_getting-started)
 
 ## OpenSSHのセットアップ
-
-
-## SSH + VSCodeの設定
-
-私の場合はEC2においてある開発用のコンテナに接続して開発しているので、ローカルに開発環境を整える必要はありません。  
-VSCodeでSSHできればいいのですが思った以上にハマったので残しておきます。
-
-### OpenSSHの有効化
 
 公式ドキュメントがあったのでこの通り進めてOpenSSHを有効化します。
 
 > &mdash; [Installation of OpenSSH For Windows Server | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse#installing-openssh-with-powershell)
 
 するとPowerShellでssh-keygenが使えるようになります。UNIX系OSと同様のやり方でキーペアを生成し、パーミッションを確認しておきます。  
+GitHubに公開鍵を登録し、そもそもSSHが動いているか、パーミッション周りが適切か調べておくとこの先のトラブルが少ないと思います。
+
+> &mdash; [Testing your SSH connection - GitHub Docs](https://docs.github.com/en/github/authenticating-to-github/testing-your-ssh-connection)
+
+## SSH + VSCodeの設定
+
+私の場合はEC2においてある開発用のコンテナに接続して開発しているので、ローカルに開発環境を整える必要はありません。  
+VSCodeでSSHできればいいのですが思った以上にハマったので残しておきます。
 
 ### VSCodeの設定
 
