@@ -209,7 +209,7 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
       throw e
     })
     .finally(() => {
-      fs.writeFileSync(JSON.stringify(cache), cachePath)
+      fs.writeFileSync(cachePath, JSON.stringify(cache))
     })
 }
 
