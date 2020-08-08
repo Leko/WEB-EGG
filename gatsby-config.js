@@ -207,7 +207,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-netlify`,
-    `gatsby-plugin-zopfli`,
     `gatsby-plugin-brotli`,
     {
       resolve: `gatsby-plugin-webpack-bundle-analyzer`,
