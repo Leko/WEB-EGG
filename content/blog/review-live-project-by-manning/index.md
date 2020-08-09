@@ -11,31 +11,27 @@ date: '2020-08-08T18:00:46.249Z'
 ## TL;DR
 
 - マニング出版という出版社が liveProject という e ラーニングのサービスを運営している
-- チュートリアル的な要素は少なく実際にあるプロジェクトを想定した実戦的で先進的な技術をな短期間で習得できることが売りのサービスらしい
-- そのサービスに掲載する教材の提案書が提出されたので同社の執筆プロセスの一環としてレビューに参加した
-- もしあなたに連絡が来たときは怪しまずにレビューをしてみると面白いと思う
-- Node.js 関連で liveProject に提案書を持ち込みたい/提案書をレビューしたい人を探してるそうなので興味ある方は[@L_e_k_o](https://twitter.com/L_e_k_o)までご連絡を
+- そのサービスは実際にあるプロジェクトを想定した実戦的で先進的な技術をな短期間で習得できることが売りのサービスらしい
+- 新しくコースの提案が持ち込まれたので同社からレビュー依頼が来てレビューに参加した
+- レビューに参加してよかったと思う学びがあった
+- あなたにも連絡が来たときはレビューに参加したら面白いと思う
+- Node.js 関連のコースを liveProject に持ち込みたい人を探してるそう。興味ある方は[`@L_e_k_o`](https://twitter.com/L_e_k_o)までご連絡を
 
 ## 先駆者
 
-私はあまり本を読まないのでマニング出版と聞いてもピンときませんでした。知り合いからもこういった形式のレビューの話を聞いたことがなく接点がなさすぎて最初は怪しんでました。  
-ただ単に私のアンテナが狭いだけかも知れないので似た体験をした人を調べたところ、こちらの記事がヒットしました。
-
-> &mdash; [アメリカの技術系出版社 Manning の企画提案書が面白い - blog.8-p.info](https://blog.8-p.info/ja/2018/08/10/manning/)
-
-この方も突然レビューの依頼があったようです。
+私はあまり本を読まないのでマニング出版と聞いてもピンときませんでした。知り合いからもこういった形式のレビューの話を聞いたことがなく接点がありません。  
+似た体験をした人を調べたところ、こちらの記事がヒットしました。この方も突然レビューの依頼があったようです。
 
 > Manning はアメリカの技術系出版社で、日本で翻訳書が出るときには、オライリージャパンをはじめ色々な出版社からでること、その際に表紙も変えられてしまうことも相まっていまひとつ存在感がないかもしれないけれど、jQuery の John Resig 自らが著者に名を連ねる Secrets of the JavaScript Ninja や、Keras の François Chollet が書いた Deep Learning with Python、ちょっと毛色が変わったところでは、higepon さんオススメの Soft Skills まで、手広くやっている。
 >
 > &mdash; [アメリカの技術系出版社 Manning の企画提案書が面白い - blog.8-p.info](https://blog.8-p.info/ja/2018/08/10/manning/)
 
-聞いたことない出版社だと思っていたのですが Soft Skills は社会人なりたての頃に読んだ本でした。独特な絵画調の表紙が多いので表紙で思い出しました。  
-依然として接点が薄いことに変わりはありませんが少し興味を持ちました。
+聞いたことない出版社だと思っていたのですが Soft Skills を社会人になりたての頃に読んだ本でおり、知ってる出版社でした。独特な絵画っぽい表紙が多いので表紙見たら思い出しました。
 
 > ![](https://images.manning.com/360/480/resize/book/0/54e56db-260b-46a7-b15d-ad4dfa39a867/sonmez.png)  
 > &mdash; [Manning | Soft Skills](https://www.manning.com/books/soft-skills)
 
-ちなみに Twitter でアンケートを取ってみた結果はこちらです。半数以上の方が同社の存在を知りませんでした。
+ちなみに Twitter で認知度のアンケートを取ってみた結果はこちらです。N が少ないですが半数以上の方はマニング出版を知りませんでした。
 
 <blockquote class="twitter-tweet" data-partner="tweetdeck"><p lang="ja" dir="ltr">マニング出版を知ってますか</p>&mdash; Leko / れこ (@L_e_k_o) <a href="https://twitter.com/L_e_k_o/status/1291258950592077824?ref_src=twsrc%5Etfw">August 6, 2020</a></blockquote>
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -58,12 +54,14 @@ date: '2020-08-08T18:00:46.249Z'
 >
 > &mdash; [liveProject - premium training by Manning](https://liveproject.manning.com/)
 
+今年の４月にプレスが出ているので、まだサービス開始からさほど時間が経ってない新しいサービスのようです。
+
 > A Manning liveProject is a project for you to complete. Tackle a real-world scenario, and learn new skills as you go. Choose from a range of projects in data science and software development. You’ll develop your own solution and get just enough help to succeed!
 >
 > &mdash; [Introducing liveProject. Learn by doing. Build your tech skills… | by Manning Publications | Medium](https://medium.com/@ManningBooks/introducing-liveproject-aeb394d5d0e)
 
-で、このサービスに新しいコースの提案書を持ち込み自分のコースを作ることができるようです。今回提案書を持ち込んだ方もマニング出版や liveProject の中の人ではなく全く別の会社に勤めてる方です。  
-要は外部から liveProject に持ち込まれた企画が成功するかどうかをバイアスなしで技術的に判断してほしいという依頼のようです。
+そんな liveProject というサービスに提案書を持ち込み審査に通れば自分のコースを作れるようです。今回提案書を持ち込んだ方もマニング出版や liveProject の中の人ではなく全く別の会社に勤めてる方です。  
+外部から liveProject に持ち込まれた企画が妥当かどうか、技術的な観点からバイアスのない意見がほしいという依頼のようです。
 
 マニング出版の紹介はこれくらいにして本題に移ります。
 
@@ -71,10 +69,11 @@ date: '2020-08-08T18:00:46.249Z'
 
 具体的に依頼されたタスクは以下の通りです。
 
-- A4 用紙数枚の提案書を読む
+- A4 用紙数枚の提案書（PDF）を読む
 - liveProject 運営が用意した 20 項目くらいのアンケートに回答する
 
-自分で教材を作るのではなく提案書を読んでレビューするだけなので作業量に無理はないですし、提案書で取り扱っているトピックも面白く、さらに提案書もレビューも英語なので英語で社外活動する機会だと思って依頼を受けました。なお依頼は無償ではありません。金銭はもらえませんが、すでに同社から出版されている電子書籍または[現在執筆中の原稿（MEAP=Manning Early Access Program）](https://www.manning.com/meap-program)から１冊、または liveProject のコース１つのいずれかが貰えます。
+提案書を読んでレビューするだけなので作業量に無理はないですし、提案書で取り扱っているトピックも面白いと思いました。また、提案書もレビューも英語なので英語で社外活動する機会だと思って依頼を請けました。  
+ちなみに無償ではありません。金銭はもらえませんが、同社から出版されている電子書籍または[現在執筆中の原稿（MEAP=Manning Early Access Program）](https://www.manning.com/meap-program)から１冊、または liveProject のコース１つのいずれかが貰えます。
 
 ### 提案書
 
