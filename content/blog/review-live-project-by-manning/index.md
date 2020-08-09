@@ -3,8 +3,8 @@ title: マニング出版のliveProjectというサービスの持ち込み提�
 date: '2020-08-08T18:00:46.249Z'
 ---
 
-先日、[マニング出版（Manning Publications）](https://www.manning.com/)というニューヨークの出版社から唐突に「こういう提案書が送信されたんだけどどう思う？レビューをお願いできないか？」と脈絡のないメールがありました。  
-「Proposal?レビュー？？？」と全くつながりのない会社からの突然の依頼に驚きつつも、提案書が興味をそそられるトピックだったのでレビューに参加した体験記を残します。
+先日、[マニング出版（Manning Publications）](https://www.manning.com/)というニューヨークの出版社から唐突に「こういう提案書が送信されたんだけどどう思う? レビューをお願いできないか? 」と脈絡のないメールがありました。  
+「Proposal? レビュー? どういうこと?」と全くつながりのない会社からの突然の依頼に驚きつつも、提案書が興味をそそられるトピックだったのでレビューに参加した体験記を残します。
 
 連絡をいただいたマニング出版の方にこの記事を書く許可をもらいましたが、提案書やその結果生まれるコンテンツはまだ公になってないため内容には触れられないことをご了承ください。あくまで具体的な内容ではなくマニング出版からきたレビュー依頼のプロセスのお話として読んでもらえればと思います。
 
@@ -29,7 +29,7 @@ date: '2020-08-08T18:00:46.249Z'
 >
 > &mdash; [アメリカの技術系出版社 Manning の企画提案書が面白い - blog.8-p.info](https://blog.8-p.info/ja/2018/08/10/manning/)
 
-知らない出版社だと思っていたのですが Soft Skills は社会人なりたての頃に読んだ本でした。独特な絵画調の表紙が多いので表紙で思い出しました。  
+聞いたことない出版社だと思っていたのですが Soft Skills は社会人なりたての頃に読んだ本でした。独特な絵画調の表紙が多いので表紙で思い出しました。  
 依然として接点が薄いことに変わりはありませんが少し興味を持ちました。
 
 > ![](https://images.manning.com/360/480/resize/book/0/54e56db-260b-46a7-b15d-ad4dfa39a867/sonmez.png)  
@@ -48,13 +48,13 @@ date: '2020-08-08T18:00:46.249Z'
 > what is liveProject?
 >
 > 1. real projects for real learning  
->    liveProjects are based on real-world challenges. You’ll have peers for support , and you’ll get free access to books and videos from Manning.com.
+>    liveProjects are based on real-world challenges. You’ll have peers for support , and you’ll get free access to books and videos from Manning.com
 >
 > 2. hands-on experience  
->    You’ll solve practical problems, write working code, and analyze real data. As you know, the best way to master a subject is by creating something that works.
+>    You’ll solve practical problems, write working code, and analyze real data. As you know, the best way to master a subject is by creating something that works
 >
 > 3. build cutting-edge skills  
->    Learn technology so new you’ve only read about it, and bring new skills to your team. Boost your career by staying ahead of the curve.
+>    Learn technology so new you’ve only read about it, and bring new skills to your team. Boost your career by staying ahead of the curve
 >
 > &mdash; [liveProject - premium training by Manning](https://liveproject.manning.com/)
 
@@ -74,7 +74,7 @@ date: '2020-08-08T18:00:46.249Z'
 - A4 用紙数枚の提案書を読む
 - liveProject 運営が用意した 20 項目くらいのアンケートに回答する
 
-自分で教材を作るのではなく提案書を読んでレビューするだけなので作業量に無理はないですし、提案書で取り扱っているトピックも面白く、さらに提案書もレビューも英語なので英語で社外活動する機会だと思って依頼を受けました。なお依頼は無償ではありません。金銭はもらえませんが、既に同社から出版されている電子書籍または[現在執筆中の原稿（MEAP=Manning Early Access Program）](https://www.manning.com/meap-program)から１冊、または liveProject のコース１つのいずれかが貰えます。
+自分で教材を作るのではなく提案書を読んでレビューするだけなので作業量に無理はないですし、提案書で取り扱っているトピックも面白く、さらに提案書もレビューも英語なので英語で社外活動する機会だと思って依頼を受けました。なお依頼は無償ではありません。金銭はもらえませんが、すでに同社から出版されている電子書籍または[現在執筆中の原稿（MEAP=Manning Early Access Program）](https://www.manning.com/meap-program)から１冊、または liveProject のコース１つのいずれかが貰えます。
 
 ### 提案書
 
@@ -112,7 +112,7 @@ date: '2020-08-08T18:00:46.249Z'
 - このコースは学習者が購入したいと思えるものか
 - このプロジェクトのメンターになりたいか
 
-アンケートに答えてみて、とにかくコンテンツ数を増やそうという感じではなく、サービスとしてのクオリティコントロールに力を入れていると感じました。その分野に詳しくない人が適当に「よく知らないけどなんか良さそう」とは回答しにくいような圧を感じる設問が多かったです。
+アンケートに答えてみて、とにかくコンテンツ数を増やそうという感じではなく、サービスとしてのクオリティコントロールに力を入れていると感じました。その分野に詳しくない人が適当に「よく分からんけどなんか良さそう」とは回答しにくいような圧を感じる設問が多かったです。
 
 ただ、GitHub で見かけた程度のエンジニアにランダムに連絡を取ったとしても提案書のトピックとその人の技術的背景が一致するとも限らないので、どうやってテーマのマッチング率を上げているか気になるところです。
 

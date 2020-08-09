@@ -117,7 +117,7 @@ VSCodeの`Remote - SSH`というExtensionをインストールし、SSHの設定
 > &mdash; [Windwos10でssh ProxyCommandの多段SSHの設定 - suzu6](https://www.suzu6.net/posts/205-ssh-config-proxycommand-windows10/)
 
 ## 起動時に自動で起動するアプリを変更したい
-「スタートアップ アプリ」という設定があるのですが、この設定画面から項目を追加することはできません。  
+「スタートアップ アプリ」という設定があるのですが、この設定画面からは項目を追加できません。  
 
 スタートアイコン（Windowsマーク）を右クリックし「ファイル名を指定して実行」を押下し、`shell:startup`と入力すると、起動時に自動起動してほしいアプリを置いておくフォルダが開かれます。  
 このフォルダにexeのショートカットまたはexe本体を配置しておくと自動起動するようです。
