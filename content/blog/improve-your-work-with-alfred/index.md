@@ -60,11 +60,9 @@ Alfred には**Workflows**という機能があります。
 
 <a href="https://itunes.apple.com/jp/app/alfred/id405843582?mt=12&uo=4" rel="nofollow" target="_blank">
 
-![undefined](http://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png)
+![undefined](https://a3.mzstatic.com/us/r1000/069/Purple/v4/b4/7b/51/b47b5118-5ba5-a359-0bc6-e71494225963/appicon.60x60-50.png)
 
 <b>Alfred</b>
-
-![App](http://ax.phobos.apple.com.edgesuite.net/ja_jp/images/web/linkmaker/badge_macappstore-sm.gif)
 
 <br /> </a>カテゴリ: 仕事効率化  
 価格: 無料<br />
