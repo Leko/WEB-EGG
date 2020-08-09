@@ -11,10 +11,10 @@ date: '2020-08-08T18:00:46.249Z'
 ## TL;DR
 
 - マニング出版という出版社が liveProject という e ラーニングのサービスを運営している
-- そのサービスは実際にあるプロジェクトを想定した実戦的で先進的な技術をな短期間で習得できることが売りのサービスらしい
+- そのサービスは実際にあるプロジェクトを想定した実戦的で先進的な技術を短期間で習得できることが売りのサービスらしい
 - 新しくコースの提案が持ち込まれたので同社からレビュー依頼が来てレビューに参加した
 - レビューに参加してよかったと思う学びがあった
-- あなたにも連絡が来たときはレビューに参加したら面白いと思う
+- もし連絡が来たときはレビューに参加してみると面白いと思う
 - Node.js 関連のコースを liveProject に持ち込みたい人を探してるそう。興味ある方は[`@L_e_k_o`](https://twitter.com/L_e_k_o)までご連絡を
 
 ## 先駆者
@@ -54,7 +54,8 @@ date: '2020-08-08T18:00:46.249Z'
 >
 > &mdash; [liveProject - premium training by Manning](https://liveproject.manning.com/)
 
-今年の４月にプレスが出ているので、まだサービス開始からさほど時間が経ってない新しいサービスのようです。
+今年の４月末にプレスが出ているので、まだサービス開始から間もないようです。  
+先駆者の方の記事は 2 年前に書かれているのでおそらく物理 or 電子書籍のレビュー依頼の話で、私はこの web サービスから依頼がありました。
 
 > A Manning liveProject is a project for you to complete. Tackle a real-world scenario, and learn new skills as you go. Choose from a range of projects in data science and software development. You’ll develop your own solution and get just enough help to succeed!
 >
