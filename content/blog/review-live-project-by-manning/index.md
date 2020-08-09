@@ -1,7 +1,6 @@
 ---
 title: マニング出版のliveProjectというサービスの持ち込み提案書をレビューした話
 date: '2020-08-08T18:00:46.249Z'
-featuredImage: '../deno-ja-on-techbookfest-7/2019-09-22-23-43-28.png'
 ---
 
 先日、[マニング出版（Manning Publications）](https://www.manning.com/)というニューヨークの出版社から唐突に「こういう提案書が送信されたんだけどどう思う？レビューをお願いできないか？」と脈絡のないメールがありました。  
@@ -16,7 +15,7 @@ featuredImage: '../deno-ja-on-techbookfest-7/2019-09-22-23-43-28.png'
 - チュートリアル的な要素は少なく実際にあるプロジェクトを想定した実戦的で先進的な技術をな短期間で習得できることが売りのサービスらしい
 - そのサービスに掲載する教材の提案書が提出されたので同社の執筆プロセスの一環としてレビューに参加した
 - もしあなたに連絡が来たときは怪しまずにレビューをしてみると面白いと思う
-- Node.js 関連で liveProject に提案書を持ち込みたい/提案書をレビューしたい人を探してるそうなので興味ある方は[@L\_e\_k\_o](https://twitter.com/L_e_k_o)までご連絡を
+- Node.js 関連で liveProject に提案書を持ち込みたい/提案書をレビューしたい人を探してるそうなので興味ある方は[@L_e_k_o](https://twitter.com/L_e_k_o)までご連絡を
 
 ## 先駆者
 
@@ -50,13 +49,13 @@ featuredImage: '../deno-ja-on-techbookfest-7/2019-09-22-23-43-28.png'
 > what is liveProject?
 >
 > 1. real projects for real learning  
-> liveProjects are based on real-world challenges. You’ll have peers for support , and you’ll get free access to books and videos from Manning.com.
+>    liveProjects are based on real-world challenges. You’ll have peers for support , and you’ll get free access to books and videos from Manning.com.
 >
 > 2. hands-on experience  
-> You’ll solve practical problems, write working code, and analyze real data. As you know, the best way to master a subject is by creating something that works.
+>    You’ll solve practical problems, write working code, and analyze real data. As you know, the best way to master a subject is by creating something that works.
 >
 > 3. build cutting-edge skills  
-> Learn technology so new you’ve only read about it, and bring new skills to your team. Boost your career by staying ahead of the curve.
+>    Learn technology so new you’ve only read about it, and bring new skills to your team. Boost your career by staying ahead of the curve.
 >
 > &mdash; [liveProject - premium training by Manning](https://liveproject.manning.com/)
 
@@ -64,8 +63,8 @@ featuredImage: '../deno-ja-on-techbookfest-7/2019-09-22-23-43-28.png'
 >
 > &mdash; [Introducing liveProject. Learn by doing. Build your tech skills… | by Manning Publications | Medium](https://medium.com/@ManningBooks/introducing-liveproject-aeb394d5d0e)
 
-で、このサービスに新しいコースの提案書を持ち込み自分のコースを作ることができるようです。今回提案書を持ち込んだ方もマニング出版やliveProjectの中の人ではなく全く別の会社に勤めてる方です。  
-要は外部からliveProjectに持ち込まれた企画が成功するかどうかをバイアスなしで技術的に判断してほしいという依頼のようです。
+で、このサービスに新しいコースの提案書を持ち込み自分のコースを作ることができるようです。今回提案書を持ち込んだ方もマニング出版や liveProject の中の人ではなく全く別の会社に勤めてる方です。  
+要は外部から liveProject に持ち込まれた企画が成功するかどうかをバイアスなしで技術的に判断してほしいという依頼のようです。
 
 マニング出版の紹介はこれくらいにして本題に移ります。
 
@@ -74,7 +73,7 @@ featuredImage: '../deno-ja-on-techbookfest-7/2019-09-22-23-43-28.png'
 具体的に依頼されたタスクは以下の通りです。
 
 - A4 用紙数枚の提案書を読む
-- liveProject運営が用意した20 項目くらいのアンケートに回答する
+- liveProject 運営が用意した 20 項目くらいのアンケートに回答する
 
 自分で教材を作るのではなく提案書を読んでレビューするだけなので作業量に無理はないですし、提案書で取り扱っているトピックも面白く、さらに提案書もレビューも英語なので英語で社外活動する機会だと思って依頼を受けました。なお依頼は無償ではありません。金銭はもらえませんが、既に同社から出版されている電子書籍または[現在執筆中の原稿（MEAP=Manning Early Access Program）](https://www.manning.com/meap-program)から１冊、または liveProject のコース１つのいずれかが貰えます。
 
@@ -93,34 +92,35 @@ featuredImage: '../deno-ja-on-techbookfest-7/2019-09-22-23-43-28.png'
   - このマイルストーンで使用する知識・技術・ツールの一覧
 
 「具体的なシナリオ・ユースケース・問題定義」がかなり具体的に書かれており、どのような背景で（技術的に解決すべき）ビジネス上のはなにで、なぜこの技術選定で問題解決に挑むのかなどなど、現実にあるある～と想像できる現場像が想定されてました。すごいリアルで、これを学習しましたって成果物を面接で見せられたらオッて思うだろうなと思いました。  
-マイルストーンごとにどれだけ時間をかければ学習を完了できるかを見積もっており、そのスケジュールに収まらない場合の代替手段なども考えられています。これは liveProject の売りの１つで「**短期間で**先進的で実戦的なスキルを得られる」ことに根ざしていると思います。だいたい1 日 1-2 時間くらいで進めたら 10-15 日くらいで終わるかなというボリューム感でした。
+マイルストーンごとにどれだけ時間をかければ学習を完了できるかを見積もっており、そのスケジュールに収まらない場合の代替手段なども考えられています。これは liveProject の売りの１つで「**短期間で**先進的で実戦的なスキルを得られる」ことに根ざしていると思います。だいたい 1 日 1-2 時間くらいで進めたら 10-15 日くらいで終わるかなというボリューム感でした。
 
 レビュー対象の提案書を読み、自分よりはるかに実績のある人が、その裏付けとなる専門的で体系的な知識をもとに書いていると感じられました。カンファレンスの登壇やメディアへの寄稿などもしているようで、読みやすいしイメージがわく書き方がうまいと思いました。自分が似たようなものを作った時とは大枠同じだけど技術選定が少し異なっており、その差異がいい気づきになったし早速試してみたいと思いました。  
 気づきもあったし面白かったのでこの提案書のレビューに携われてよかったと感じました。
 
 ### レビュー
 
-そんな提案書を読んだ上で、マニング出版が用意した20個程度の設問に回答します。主な設問はこんな感じでした。
+そんな提案書を読んだ上で、マニング出版が用意した 20 個程度の設問に回答します。主な設問はこんな感じでした。
 
 - レビュー者（私）がこのトピックに対してどの程度の知識・経験を持っているか
-- この提案書によってliveProjectとは何かがクリアになったか
+- この提案書によって liveProject とは何かがクリアになったか
 - この提案書のトピックは重要か
 - このコースで得られたスキルは具体的にどのような仕事に活かせると思うか
 - 著者はこの提案書の分野に精通しているといえるか
 - ゴールは明確だと感じたか、問題定義と問題解決アプローチは適切か
 - どのような技術的背景をもつ学習者に適したコースになると思うか
 - 学習者が躓きそうな問題はあるか、どうすればギャップを減らすことができると思うか
-- 学習者が10h/週使ったとして4週間以内に終えることができると思うか
+- 学習者が 10h/週使ったとして 4 週間以内に終えることができると思うか
 - このコースは学習者が購入したいと思えるものか
 - このプロジェクトのメンターになりたいか
 
-アンケートに答えてみて、とにかくコンテンツ数を増やそうという感じではなく、サービスとしてのクオリティコントロールに力を入れていると感じました。その分野に詳しくない人が適当に「よく知らないけどなんか良さそう」とは回答しにくいような圧を感じる設問が多かったです。  
+アンケートに答えてみて、とにかくコンテンツ数を増やそうという感じではなく、サービスとしてのクオリティコントロールに力を入れていると感じました。その分野に詳しくない人が適当に「よく知らないけどなんか良さそう」とは回答しにくいような圧を感じる設問が多かったです。
 
-ただ、GitHubで見かけた程度のエンジニアにランダムに連絡を取ったとしても提案書のトピックとその人の技術的背景が一致するとも限らないので、どうやってテーマのマッチング率を上げているか気になるところです。
+ただ、GitHub で見かけた程度のエンジニアにランダムに連絡を取ったとしても提案書のトピックとその人の技術的背景が一致するとも限らないので、どうやってテーマのマッチング率を上げているか気になるところです。
 
-## Node.jsの企画の持ち込みを募集している
+## Node.js の企画の持ち込みを募集している
 
-依頼を完了した後に少しお話したのですが、liveProjectでNode.jsに関連するコースの提案を持ち込んでくれる人を探しているそうです。初学者向けの入門書ではなく実践的なコースを作ってみたい方がいたら[@L\_e\_k\_o](https://twitter.com/L_e_k_o)までご連絡いただければ担当の方につなげます。
+依頼を完了した後に少しお話したのですが、liveProject で Node.js に関連するコースの提案を持ち込んでくれる人を探しているそうです。初学者向けの入門書ではなく実践的なコースを作ってみたい方がいたら[@L_e_k_o](https://twitter.com/L_e_k_o)までご連絡いただければ担当の方につなげます。
 
 ## さいごに
+
 最初はなんかの迷惑メールかと思ったのですが、スルーせずに受けてよかったです。面白かった。似たようなメールが届いたときにはぜひスルーせずに依頼を受けてみてください。
