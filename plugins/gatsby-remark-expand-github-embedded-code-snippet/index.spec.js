@@ -85,9 +85,10 @@ describe('replacer', () => {
 
   it('replaces textlink as code block', async () => {
     const codeFetcher = async () => code
-    const replace = replacer({ codeFetcher, extMap: {} })
+    const replace = replacer({ codeFetcher, extMap: {}, cache: {} })
     await replace({
       url,
+
       githubUrl: parseGitHubUrl(url),
       node,
       ancestors,
@@ -98,9 +99,14 @@ describe('replacer', () => {
   })
   it('prepend html before code', async () => {
     const codeFetcher = async () => code
-    const replace = replacer({ codeFetcher, extMap: { '.yml': 'yaml' } })
+    const replace = replacer({
+      codeFetcher,
+      extMap: { '.yml': 'yaml' },
+      cache: {},
+    })
     await replace({
       url,
+
       githubUrl: parseGitHubUrl(url),
       node,
       ancestors,
