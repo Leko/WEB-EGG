@@ -15,8 +15,8 @@ jobs:
       - uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-      - run: npm ci
+          key: ${{ runner.os }}-npm-${{ hashFiles('yarn.lock') }}
+      - run: yarn
       - run: npx lerna bootstrap
       - run: npm run lint
   test:
@@ -32,8 +32,8 @@ jobs:
       - uses: actions/cache@v1
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
-      - run: npm ci
+          key: ${{ runner.os }}-npm-${{ hashFiles('yarn.lock') }}
+      - run: yarn
       - run: npx lerna bootstrap
       - run: npm run test
       - run: npx lerna run test
