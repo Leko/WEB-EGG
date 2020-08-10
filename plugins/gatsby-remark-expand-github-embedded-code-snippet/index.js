@@ -1,4 +1,5 @@
 /* eslint-env node */
+const fs = require('fs')
 const path = require('path')
 const fetch = require(`isomorphic-fetch`)
 const micromatch = require(`micromatch`)
@@ -8,6 +9,11 @@ const parseGitHubUrl = require('git-url-parse')
 
 const defaultOptions = {
   whitelist: [],
+  cachePath: path.join(
+    process.cwd(),
+    '.cache',
+    'gatsby-remark-expand-github-embedded-code-snippet.json'
+  ),
   // http://prismjs.com
   extMap: {
     // https://github.com/github/linguist/blob/master/lib/linguist/languages.yml#L1522
@@ -23,7 +29,6 @@ const defaultOptions = {
   },
 }
 
-// const cache = new Map()
 const limiter = new Bottleneck({
   // Allow 5000 requests per hour
   // https://developer.github.com/v3/rate_limit/
@@ -33,11 +38,6 @@ const limiter = new Bottleneck({
 })
 
 function fetchCode(url, githubUrl, token) {
-  // const cacheKey = url
-  // if (cache.has(cacheKey)) {
-  //   return Promise.resolve(cache.get(cacheKey))
-  // }
-
   const { owner, name, filepath, commit } = githubUrl
   return limiter.wrap(() =>
     fetch(
@@ -97,7 +97,7 @@ function parseLineRange(githubUrl) {
   }
 }
 
-const replacer = ({ extMap, token, codeFetcher }) => async ({
+const replacer = ({ extMap, cache, token, codeFetcher }) => async ({
   url,
   githubUrl,
   node,
@@ -109,12 +109,20 @@ const replacer = ({ extMap, token, codeFetcher }) => async ({
     return
   }
 
-  const code = await codeFetcher(url, githubUrl, token)
+  const cacheKey = [
+    githubUrl.name,
+    githubUrl.owner,
+    githubUrl.filepath,
+    range.from,
+    range.to,
+  ].join('/')
+  const code = cache[cacheKey] || (await codeFetcher(url, githubUrl, token))
   if (!code) {
     return
   }
 
   const snippet = trimCodeByRange(code, range)
+  cache[cacheKey] = snippet
   const parent = ancestors[ancestors.length - 1]
   const insertIndex = parent.children.indexOf(node)
 
@@ -147,10 +155,18 @@ const replacer = ({ extMap, token, codeFetcher }) => async ({
 }
 
 const attacher = ({ markdownAST }, pluginOptions = {}) => {
-  const { extMap, whitelist, token } = {
+  const { extMap, whitelist, token, cachePath } = {
     ...defaultOptions,
     ...pluginOptions,
   }
+
+  if (!fs.existsSync(path.dirname(cachePath))) {
+    fs.mkdirSync(path.dirname(cachePath), { recursive: true })
+  }
+  if (!fs.existsSync(cachePath)) {
+    fs.writeFileSync(cachePath, JSON.stringify({}))
+  }
+  const cache = require(cachePath)
   const textLinks = []
 
   visit(markdownAST, `link`, (node, ancestors) => {
@@ -185,12 +201,16 @@ const attacher = ({ markdownAST }, pluginOptions = {}) => {
   return Promise.all(
     Array.from(
       nodesToFetch,
-      replacer({ extMap, token, codeFetcher: fetchCode })
+      replacer({ extMap, token, cache, codeFetcher: fetchCode })
     )
-  ).catch(e => {
-    console.warn(e.stack)
-    throw e
-  })
+  )
+    .catch(e => {
+      console.warn(e.stack)
+      throw e
+    })
+    .finally(() => {
+      fs.writeFileSync(cachePath, JSON.stringify(cache))
+    })
 }
 
 attacher.replacer = replacer

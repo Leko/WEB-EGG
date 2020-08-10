@@ -21,7 +21,7 @@ tags:
 
 まずはこちらを御覧ください。
 
-<script type="text/javascript" src="http://jsdo.it/blogparts/e6jI/js"></script>
+<script type="text/javascript" src="https://jsdo.it/blogparts/e6jI/js"></script>
 
 ５つの丸が、ふわふわ動いてバランス良い配置になると思います。
 

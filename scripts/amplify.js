@@ -1,5 +1,7 @@
+/* eslint-env node */
 const fs = require('fs')
 const path = require('path')
+const crypto = require('crypto')
 const fetch = require('node-fetch')
 const sizeOf = require('image-size')
 const amphtmlValidator = require('amphtml-validator')
@@ -7,27 +9,52 @@ const prettier = require('prettier')
 const { load } = require('cheerio')
 const { sync: glob } = require('glob')
 
+const cachePath = path.join(
+  process.cwd(),
+  '.cache',
+  'gatsby-remark-expand-github-embedded-code-snippet.json'
+)
+if (!fs.existsSync(path.dirname(cachePath))) {
+  fs.mkdirSync(path.dirname(cachePath), { recursive: true })
+  console.log('mkdir', path.dirname(cachePath))
+}
+if (!fs.existsSync(cachePath)) {
+  fs.writeFileSync(cachePath, JSON.stringify({}))
+  console.log('touch', cachePath)
+}
+const cache = require(cachePath)
+
 const boilerplate = `<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>`
 const htmlPaths = glob('./public/amp/post/*/index.html')
 
 Promise.all([
   amphtmlValidator.getInstance(),
   prettier.resolveConfig('./public/xxx.html'),
-]).then(async ([validator, prettierConfig]) => {
-  return Promise.all(htmlPaths.map(async (htmlPath) => {
-    const html = fs.readFileSync(htmlPath, 'utf8')
-    const $ = load(html, {})
-    $('script')
-      .not('[type="application/ld+json"]')
-      .not('[src^="https://cdn.ampproject.org"]')
-      .remove()
+])
+  .then(async ([validator, prettierConfig]) => {
+    return Promise.all(
+      htmlPaths.map(async htmlPath => {
+        const html = fs.readFileSync(htmlPath, 'utf8')
+        const cacheKey = [
+          crypto
+            .createHash('md5')
+            .update(html)
+            .digest('hex'),
+        ].join('/')
 
-    let styles = $('style')
-      .map((_i, el) => $(el).html())
-      .toArray()
-      .join('\n')
+        if (cache[cacheKey]) {
+          const $ = load(html, {})
+          $('script')
+            .not('[type="application/ld+json"]')
+            .not('[src^="https://cdn.ampproject.org"]')
+            .remove()
 
-    styles += `
+          let styles = $('style')
+            .map((_i, el) => $(el).html())
+            .toArray()
+            .join('\n')
+
+          styles += `
     amp-social-share[type=hatena_bookmark] {
       width: 60px;
       height: 44px;
@@ -48,79 +75,86 @@ Promise.all([
     }
     `
 
-    $('style').remove()
-    // $('noscript').remove()
-    $('head').append($(boilerplate))
-    $('head').append($(`<style amp-custom>${styles}</style>`))
+          $('style').remove()
+          // $('noscript').remove()
+          $('head').append($(boilerplate))
+          $('head').append($(`<style amp-custom>${styles}</style>`))
 
-    for (let el of $('[style]').toArray()) {
-      const cssStr = $(el).attr('style')
-      // The inline style specified in tag 'xxx' is too long - it contains 1669 bytes whereas the limit is 1000 bytes.
-      if (cssStr.length > 1000) {
-        $(el).attr('style', null)
-      }
-    }
+          for (let el of $('[style]').toArray()) {
+            const cssStr = $(el).attr('style')
+            // The inline style specified in tag 'xxx' is too long - it contains 1669 bytes whereas the limit is 1000 bytes.
+            if (cssStr.length > 1000) {
+              $(el).attr('style', null)
+            }
+          }
 
-    for (let el of $('img').toArray()) {
-      el.tagName = 'amp-img'
-      $(el).attr('layout', 'responsive')
-      $(el).attr('loading', null)
+          for (let el of $('img').toArray()) {
+            el.tagName = 'amp-img'
+            $(el).attr('layout', 'responsive')
+            $(el).attr('loading', null)
 
-      let src = $(el).attr('srcset') ? $(el).attr('srcset').split(',').reverse()[0].split(' ')[0].trim() : $(el).attr('src')
-      if (!src) {
-        return
-      }
-      if (src.startsWith('/')) {
-        src = path.resolve(path.join(__dirname, '..', 'public', src))
-      } else if (src.startsWith('data:')) {
-        const data = src.split('base64,')[1]
-        src = Buffer.from(data, 'base64')
-      } else if (src.startsWith('http')) {
-        src = await fetch(src).then(res => res.buffer())
-      }
-      const { width, height } = sizeOf(src)
+            let src = $(el).attr('srcset')
+              ? $(el)
+                  .attr('srcset')
+                  .split(',')
+                  .reverse()[0]
+                  .split(' ')[0]
+                  .trim()
+              : $(el).attr('src')
+            if (!src) {
+              return
+            }
+            if (src.startsWith('/')) {
+              src = path.resolve(path.join(__dirname, '..', 'public', src))
+            } else if (src.startsWith('data:')) {
+              const data = src.split('base64,')[1]
+              src = Buffer.from(data, 'base64')
+            } else if (src.startsWith('http')) {
+              src = await fetch(src).then(res => res.buffer())
+            }
+            const { width, height } = sizeOf(src)
 
-      $(el).attr('width', width)
-      $(el).attr('height', height)
-    }
+            $(el).attr('width', width)
+            $(el).attr('height', height)
+          }
 
-    $('iframe').each((_i, el) => {
-      el.tagName = 'amp-iframe'
-      $(el).attr('layout', 'responsive')
-      // $(el).attr('height', 'responsive')
-      $(el).attr('allowtransparency', 'allowtransparency')
-      $(el).attr('mozallowfullscreen', null)
-      $(el).attr('webkitallowfullscreen', null)
-    })
-    $('head').append(
-      $(
-        `<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>`
-      )
-    )
+          $('iframe').each((_i, el) => {
+            el.tagName = 'amp-iframe'
+            $(el).attr('layout', 'responsive')
+            // $(el).attr('height', 'responsive')
+            $(el).attr('allowtransparency', 'allowtransparency')
+            $(el).attr('mozallowfullscreen', null)
+            $(el).attr('webkitallowfullscreen', null)
+          })
+          $('head').append(
+            $(
+              `<script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>`
+            )
+          )
 
-    $('audio').each((_i, el) => {
-      el.tagName = 'amp-audio'
-    })
-    $('head').append(
-      $(
-        `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>`
-      )
-    )
+          $('audio').each((_i, el) => {
+            el.tagName = 'amp-audio'
+          })
+          $('head').append(
+            $(
+              `<script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"></script>`
+            )
+          )
 
-    $('body').append(
-      $(
-        `<amp-install-serviceworker src="https://blog.leko.jp/sw.js" layout="nodisplay">></amp-install-serviceworker>`
-      )
-    )
-    $('head').append(
-      $(
-        `<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>`
-      )
-    )
+          $('body').append(
+            $(
+              `<amp-install-serviceworker src="https://blog.leko.jp/sw.js" layout="nodisplay">></amp-install-serviceworker>`
+            )
+          )
+          $('head').append(
+            $(
+              `<script async custom-element="amp-install-serviceworker" src="https://cdn.ampproject.org/v0/amp-install-serviceworker-0.1.js"></script>`
+            )
+          )
 
-    $('body').prepend(
-      $(
-        `
+          $('body').prepend(
+            $(
+              `
         <amp-analytics type="gtag" data-credentials="include">
         <script type="application/json">
         {
@@ -134,16 +168,16 @@ Promise.all([
         </script>
         </amp-analytics>
         `
-      )
-    )
-    $('head').append(
-      $(
-        `<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>`
-      )
-    )
+            )
+          )
+          $('head').append(
+            $(
+              `<script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>`
+            )
+          )
 
-    $('#ad-placeholder-1').prepend(
-      $(`
+          $('#ad-placeholder-1').prepend(
+            $(`
         <amp-ad
           width="100vw" height=320
           type="adsense"
@@ -155,9 +189,9 @@ Promise.all([
           <div overflow></div>
         </amp-ad>
       `)
-    )
-    $('#ad-placeholder-2').prepend(
-      $(`
+          )
+          $('#ad-placeholder-2').prepend(
+            $(`
         <amp-ad
           width="100vw" height=320
           type="adsense"
@@ -169,15 +203,15 @@ Promise.all([
           <div overflow></div>
         </amp-ad>
       `)
-    )
-    $('head').append(
-      $(
-        `<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>`
-      )
-    )
+          )
+          $('head').append(
+            $(
+              `<script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>`
+            )
+          )
 
-    const canonicalUrl = $('link[rel="canonical"]').attr('href')
-    $('.after-post').before(`
+          const canonicalUrl = $('link[rel="canonical"]').attr('href')
+          $('.after-post').before(`
       <div style="display: flex; justify-content: space-evenly; margin: 16px 0;">
         <amp-social-share type="twitter"></amp-social-share>
         <amp-social-share type="hatena_bookmark" layout="container" data-share-endpoint="http://b.hatena.ne.jp/entry/${canonicalUrl}">B!</amp-social-share>
@@ -186,40 +220,46 @@ Promise.all([
         <amp-social-share type="system"></amp-social-share>
       </div>
     `)
-    $('head').append(
-      $(
-        `<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>`
-      )
-    )
+          $('head').append(
+            $(
+              `<script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>`
+            )
+          )
 
-    // const ad1 = `
-    // `
-    // const ad2 = `
-    // `
-    // $('.after-post').after(ad2)
+          // const ad1 = `
+          // `
+          // const ad2 = `
+          // `
+          // $('.after-post').after(ad2)
 
-    $('html').attr('amp', '')
+          $('html').attr('amp', '')
 
-    const ampHTML = $.html().replace('amp=""', 'amp')
+          const ampHTML = $.html().replace('amp=""', 'amp')
 
-    const prettierAmpHTML = prettier.format(ampHTML, {
-      ...prettierConfig,
-      parser: 'html',
-    })
-    const lines = prettierAmpHTML.split('\n')
-    const result = validator.validateString(prettierAmpHTML)
-    if (result.status !== 'PASS') {
-      console.error('\n\n\n', result.status, htmlPath)
-      const errors = result.errors.map(error => {
-        const { serverity, line, message, specUrl } = error
-        const code = `${line}: ${lines[line - 1]}`
-        return [serverity, code, message, specUrl].join('\n')
+          const prettierAmpHTML = prettier.format(ampHTML, {
+            ...prettierConfig,
+            parser: 'html',
+          })
+          const lines = prettierAmpHTML.split('\n')
+          const result = validator.validateString(prettierAmpHTML)
+          if (result.status !== 'PASS') {
+            console.error('\n\n\n', result.status, htmlPath)
+            const errors = result.errors.map(error => {
+              const { serverity, line, message, specUrl } = error
+              const code = `${line}: ${lines[line - 1]}`
+              return [serverity, code, message, specUrl].join('\n')
+            })
+            console.error(errors.join('\n\n'))
+            return
+          }
+
+          cache[cacheKey] = ampHTML
+        }
+        fs.writeFileSync(htmlPath, cache[cacheKey], 'utf8')
+        console.log('PASS', htmlPath)
       })
-      console.error(errors.join('\n\n'))
-      return
-    }
-
-    fs.writeFileSync(htmlPath, ampHTML, 'utf8')
-    console.log(result.status, htmlPath)
-  }))
-})
+    )
+  })
+  .then(() => {
+    fs.writeFileSync(cachePath, JSON.stringify(cache))
+  })
