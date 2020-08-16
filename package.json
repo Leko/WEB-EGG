@@ -37,7 +37,7 @@
     "gatsby-source-filesystem": "^2.1.26",
     "gatsby-transformer-remark": "^2.6.24",
     "gatsby-transformer-sharp": "^2.2.16",
-    "git-rev-sync": "^1.12.0",
+    "git-rev-sync": "~2.0.0",
     "prismjs": "^1.17.1",
     "react": "~16.12.0",
     "react-dom": "~16.12.0",
