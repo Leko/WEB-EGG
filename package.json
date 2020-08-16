@@ -4,6 +4,9 @@
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Leko <leko.noor@gmail.com>",
+  "resolutions": {
+    "git-rev-sync/shelljs": "0.8.4"
+  },
   "dependencies": {
     "@loadable/component": "^5.9.0",
     "algoliasearch": "^4.0.0",
