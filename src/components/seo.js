@@ -32,6 +32,22 @@ function SEO({
                 rel: 'amphtml',
                 href: publicUrl.replace('/post/', '/amp/post/'),
               },
+              {
+                rel: 'preconnect',
+                href: 'https://id0g7okl62-dsn.algolia.net',
+              },
+              {
+                rel: 'preconnect',
+                href: 'https://stats.g.doubleclick.net',
+              },
+              {
+                rel: 'preconnect',
+                href: 'https://www.google.com',
+              },
+              {
+                rel: 'preconnect',
+                href: 'https://www.google-analytics.com',
+              },
             ]}
             meta={[
               {
