@@ -215,15 +215,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-sentry`,
+      resolve: `@sentry/gatsby`,
       options: {
         dsn: 'https://12665dacfb554ecea25f3ef119a904af@sentry.io/244064',
-        // https://docs.sentry.io/clients/node/config/#optional-settings
-        // https://www.netlify.com/docs/continuous-deployment/#build-environment-variables
-        // https://circleci.com/docs/2.0/env-vars/#built-in-environment-variables
-        environment: process.env.CONTEXT || process.env.NODE_ENV,
-        enabled: process.env.NODE_ENV === 'production',
-        release: require('git-rev-sync').long(),
+        tracesSampleRate: 0.5
       },
     },
     `gatsby-plugin-twitter`,
