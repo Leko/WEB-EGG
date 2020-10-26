@@ -1,5 +1,5 @@
 ---
-title: 実装して覚えるNode.jsにおけるHTTP over QUIC
+title: Node.jsでHTTP over QUIC(HTTP/3)のサーバを実装する
 date: '2020-10-25T08:19:35.194Z'
 featuredImage: ./2020-10-26-21-50-02.png
 tags:
@@ -9,67 +9,65 @@ tags:
   - QUIC
 ---
 
-少し出遅れましたが、Node.js v15がリリースされました :tada:  
-色々新機能や破壊的変更が加わっておりますが、本記事はv15による変更点のまとめを目的とした記事ではないのでv15については公式のリリースノート等をご参照ください。
+2020/10/20にNode.js v15がリリースされました :tada:  
+色々新機能や破壊的変更が加わっているので、詳しくは公式のリリースノート等をご参照ください。
 
 > &mdash; [Node.js v15.0.0 is here!. This blog was written by Bethany… | by Node.js | Oct, 2020 | Medium](https://medium.com/@nodejs/node-js-v15-0-0-is-here-deb00750f278)
 
-Node.jsのコラボレータによる日本語のわかりやすい記事もあるのであわせてご覧ください。
+また、Node.jsのコラボレータによる日本語のわかりやすい記事もあるのであわせてご覧ください。
 
 - [Node.js v15 の主な変更点 - 別にしんどくないブログ](https://shisama.hatenablog.com/entry/2020/10/21/004612)  
 - [10月20日にメジャーアップデートとしてリリースされたNode.js v15の紹介 | watilde's blog](https://blog.watilde.com/2020/10/20/node-js-v15/)  
 - [npm v7の主な変更点まとめ | watilde's blog](https://blog.watilde.com/2020/10/14/npm-v7%E3%81%AE%E4%B8%BB%E3%81%AA%E5%A4%89%E6%9B%B4%E7%82%B9%E3%81%BE%E3%81%A8%E3%82%81/)  
 
-まとめは以上にして本題です。**本記事ではv15にて新しく追加されたQUICとHTTP over QUIC（HTTP/3）について、シンプルなHTTPサーバを実装することで実践的な理解を得る**ことを目的としています。この記事が「QUICやHTTP/3、名前は聞いたことあるし気にはなってるんだけどどこから始めれば...」と日々悩んでる方の助けになれば幸いです。
-この記事を読み終えた時点で、HTTP/3サーバを最低限実装でき、その後自分でコードを書き換えて試せるベース実装を手に入れる状態を目指します。まずQUICおよびHTTP/3について軽く触れて、QUICモジュールを利用する環境構築を構築し、HTTP3の動作確認を交えつつ具体的な実装に入っていきたいと思います。
+まとめは以上にして本題です。本記事はv15の変更点まとめを目的とした記事ではなく、**v15にて新しく追加されたQUICを用いてシンプルなHTTP/3サーバを実装してHTTP over QUIC(HTTP/3)の使用感を掴む**ことを目的としています。この記事を読み終えると以下のものが手に入ります。
 
-なお仕様の解説や歴史の話をしだすと敷居が高くなるため、仕様の詳細には極力触れずに実装するために必要な知識にフォーカスしたいと思います。
+- Node.js v15にてQUICを使用できる開発環境
+- ファイルをホスティングするシンプルなHTTP/3サーバの実装
+- cURLで動作確認する方法
+
+まずQUICおよびHTTP/3について軽くおさらいし、QUICモジュールを利用する環境構築を構築、HTTP/3サーバのデモコードと簡単な説明をして、最後にcURLを用いて動作確認します。仕様の詳細にはあまり触れずに実装するために必要な情報にフォーカスしたいと思います。
 
 ## まえおき
 
-当記事ではNode.jsのv15.0.1を前提にコードを書いています。また、Node.jsのQUICは登場したばかりで現在のStability indexはまだ[Stability: 1 - Experimental
-](https://nodejs.org/dist/latest-v15.x/docs/api/documentation.html#documentation_stability_index)です。さらに、公式ドキュメントでQUIC and HTTP/3に触れているのですが現在はTBDとだけ書いてあります。つまり**UndocumentedなAPIを当記事では扱います**。後方互換のない破壊的変更が予告なく加わる可能性があります。本番環境での使用は当然推奨されていません。その前提で記事を読み進めてもらえればと思います。
-
-> HTTP/3 is an application layer protocol that uses QUIC as the transport.
-> TBD
->
-> &mdash; [QUIC and HTTP/3 | Node.js v15.0.1 Documentation](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_quic_and_http_3)
-
-もしこの記事の内容が古くなり動かなかったらTwitter（[@L\_e\_k\_o](https://twitter.com/L_e_k_o)）等で教えてもらえると助かります。私自身もまだAPIの全容や設計思想を理解し切れていないため、こういう書き方の方がいいんじゃない？などの意見ももらえると嬉しいです。
+当記事ではNode.jsのv15.0.1を前提にコードを書いています。またQUICは登場したばかりで現在のStability indexは[Stability: 1 - Experimental
+](https://nodejs.org/dist/latest-v15.x/docs/api/documentation.html#documentation_stability_index)、しかもHTTP over QUICについてはUndocumentedです。  
+おそらくQUICをラップしたHTTP/3用の高レベルのAPIが今後登場するでしょうし、後方互換のない破壊的変更が予告なく加わる可能性もあります。ここで得た知識は陳腐化する前提でエッジなAPIをシュッと試したい方は読み進めてもらえればと思います。
 
 なお、当記事ではこれらを前提に書いています。  
 
 - Node.jsを手元でビルドしたことがある（経験がない方は[ビルドガイド](https://github.com/nodejs/node/blob/master/BUILDING.md)からビルドしてみてください）
 - Node.jsでHTTP/1.1のHTTPサーバを実装したことがある
-- Node.jsのエッジなAPIを触りたい
 
 ## QUIC、HTTP over QUIC（HTTP/3）とは？
 
-真面目に解説するとそれだけで一本の記事になるボリュームなので参考になったリンクをまとめるだけにします。仕様を全部理解せずとも概論をおさえておくと理解がスムーズになると思います。  
+真面目に解説するとボリュームがありすぎるので参考になったリンクを掲載します。概論をおさえておくと以後の理解がスムーズになると思います。  
 
 - [日本語 - HTTP/3 explained](https://http3-explained.haxx.se/ja)
   - curl作者Daniel StenbergによるHTTP/3の解説を日本語に翻訳したもの。概要を掴むのにとてもいい
 - [【図解】HTTP/3 (HTTP over QUIC) の仕組み〜UDPのメリット,各バージョンの違い(v1.0/v1.1/v2/v3)〜 | SEの道標](https://milestone-of-se.nesuke.com/l7protocol/http/http3-over-quic/)
-  - 各バージョンが抱えていた問題点をQUICおよびHTTP/3がどう解決しているのかについて詳しく書いてあります。
+  - 各バージョンが抱えていた問題点をQUICおよびHTTP/3がどう解決しているのかについて詳しく書いてあります
 - [HTTP over QUICと、その名称について (HTTP3について) *2019年9月更新 - ASnoKaze blog](https://asnokaze.hatenablog.com/entry/2018/11/06/025016)
   - 言わずと知れたyukiさんによる日本語での解説。詳しく正確に書いてある
 
-一つだけ注意したいことは、**QUIC＝HTTP/3ではないということです。QUICを利用した新しいHTTPの仕様がHTTP/3でありイコールではありません。それはNode.jsで提供されたQUICにおいても同様です。**QUICはHTTP以外のプロトコルでも使用できるよう設計されています。また、Node.jsで提供されたQUIC APIはQUICそのものを扱う低レイヤのAPIです。そのためQUICを用いてHTTP/3サーバを実装するというイメージを持っておいてください。ここを混同するとドキュメントの読み方やトラブルシューティング時に混乱するので気をつけてください。
+少なくとも注意したいことは、**QUIC＝HTTP/3ではないということです。QUICを利用した新しいHTTPの仕様がHTTP/3です。**QUICはHTTP以外のプロトコルでも使用できるよう設計されています。  
+また、**Node.jsのQUICにおいても同様です。**QUICを扱う＝HTTP/3を扱うではありません。Node.jsで提供されたQUIC APIはQUICそのものを扱う低レイヤのAPIです。そのためQUICを用いてHTTP/3サーバを実装するというイメージを持っておいてください。ここを混同するとドキュメントの読み方やトラブルシューティング時に混乱します。
 
-## まずHTTP/3を試す
+## 既存のHTTP/3のサイトを試す
 
-実装を始める前に、まずは予め作られているHTTP/3のサイトを試してみます。ユーザエージェントがHTTP/3に対応しているか否かはこちらのサイトから確認できます。
+実装を始める前に、既存のHTTP/3のサイトを試して動作確認の手法を確認します。ユーザエージェントがHTTP/3に対応しているかどうかはこちらのサイトから確認できます。  
+もしユーザエージェントがHTTP/3の通信に対応していればその旨が表示されます。
 
-https://http3.is/
+https://http3.is
 
 現時点ではHTTP/3のブラウザの対応状況は今ひとつです。iOS Safariで部分的にサポートされていたり、Google Chromeにてサポートされてるとの情報を得ましたが、少なくとも私の環境ではどちらも動作しませんでした。
 
 https://caniuse.com/?search=quic
 
-私の環境ではブラウザでの動作確認ができなかったのでcURLを利用しました。cURLに関してもcURLをソースコードからビルドしなければならずややハードルが高いです。[cURL公式のDockerイメージ](https://hub.docker.com/r/curlimages/curl)にもHTTP/3に対応したタグはありませんでした。今回は手っ取り早く済ませるため有志でHTTP/3対応したcURLのDockerイメージを配布されている[curlのHTTP/3通信をDocker上で使ってみる - Qiita](https://qiita.com/inductor/items/8d1bc0e95b71e814dbcf)を利用します。試しに先ほど紹介したhttp3.isに対してリクエストを送った結果の抜粋がこちらです。
+ブラウザでの動作確認はできなかったので代わりにcURLを利用します。cURLでHTTP/3を利用するにはcURLをソースコードからビルドする必要があります。[cURL公式のDockerイメージ](https://hub.docker.com/r/curlimages/curl)にもHTTP/3に対応したタグはありませんでした。今回は手っ取り早く済ませるためHTTP/3対応したcURLのDockerイメージを配布されている[curlのHTTP/3通信をDocker上で使ってみる - Qiita](https://qiita.com/inductor/items/8d1bc0e95b71e814dbcf)を利用させてもらいます。試しに先ほど紹介した [http3.is](https://http3.is) に対してリクエストを送った結果の抜粋がこちらです。
 
 ```
-$ docker run -it --rm ymuski/curl-http3 curl -v https://http3.is/ --http3
+$ docker run -it --rm ymuski/curl-http3 curl -v https://http3.is --http3
 *   Trying 199.232.233.77:443...
 * Sent QUIC client Initial, ALPN: h3-29,h3-28,h3-27
 * Connected to http3.is (199.232.233.77) port 443 (#0)
@@ -92,33 +90,44 @@ $ docker run -it --rm ymuski/curl-http3 curl -v https://http3.is/ --http3
 <
 
 ...
-      <video playsinline autoplay muted loop width="500" height="500"><source src="/robot_http3_success_V3.mp4" type="video/mp4">
       Your browser does not support the video tag, but it does support HTTP/3!
-      </video>
 ...
 * Connection #0 to host http3.is left intact
 ```
 
-HTTP/3で通信されてるのがログからわかります。HTTP/3に対応してそうなHTMLが返ってきたのでOKです。  
-ではサーバを実装してこのcurlコマンドを用いて動作確認をしましょう。
+HTTP/3で通信されてるのがログからわかります。HTTP/3に対応してる旨のHTMLが返ってきました。
+次にサーバを実装し、このcurlコマンドで動作確認をしましょう。
 
 ## QUICを使うためにNode.jsをビルドする
 
-冒頭でも書いたようにQUICはまだExperimentalな機能のため、QUICを動作させるために必要なコードが標準のビルドから外されています。そのため、フラグをつけてNodeをビルドし直す必要があります。よくあるExperimentalな機能とは違い`--experimental-...`などのフラグをnodeコマンドに渡しても動作しません。また、執筆時点（2020/10/22）ではQUICに対応したDockerイメージもありません...
-この時点でだいぶハードルが高くなりますが、やることは単にフラグつけていつも通りNode.jsをビルドするだけです。
+QUICを用いた開発をするためには環境構築が必要です。QUICはまだExperimentalな機能のため**フラグをつけてNodeをビルドし直す**必要があります。よくあるExperimentalな機能とは違い`--experimental-...`などのフラグをnodeコマンドに渡しても動作しません。また執筆時点（2020/10/22）ではQUICに対応したDockerイメージもありません。
+手元でビルドするのは少しハードルが高いかもしれませんが、やることは単にフラグをつけていつも通りNode.jsをビルドするだけです。
 
 ```
 $ cd /path/to/nodejs/node
 $ ./configure --experimental-quic
-$ make -j8
+$ make -j4 # コア数を指定すると早くなります
 $ ./node -p -e "require('net').createQuicSocket"
-[Function: createQuicSocket] <-- 表示されたらOK
+[Function: createQuicSocket] # <-- 表示されたらOK
 $ node -p -e "require('net').createQuicSocket"
-undefined <-- グローバルなnodeだとundefinedになる
+undefined # <-- グローバルなnodeだとundefinedになる
 ```
 
-同じ出力になれば完了です。**以後、`./node`と書いてある場合はいまビルドしたNode.jsを実行するという意味を持ちます。**グローバルにインストールされているQUICに対応していないnodeコマンドを起動しないようご注意ください。
+`require('net').createQuicSocket`が存在していれば成功です。**以後、`./node`と書いてある場合はいまビルドしたNode.jsを実行するという意味を持ちます。**グローバルにインストールされているnodeコマンドを起動しないようご注意ください。
 
+## 自己証明書の作成
+QUICを使用するにはlocalhostであっても証明書が必須です。適当に自己証明書を作成しておきます。
+
+```
+$ mkdir .certs
+$ cd .certs
+$ openssl genrsa 2024 > server.key
+$ openssl req -new -key server.key -subj "/C=JP" > server.csr
+$ openssl x509 -req -days 3650 -signkey server.key < server.csr > server.crt
+$ cd -
+$ ls .certs
+server.crt      server.csr      server.key
+```
 
 ## サーバを実装する
 
@@ -132,36 +141,21 @@ undefined <-- グローバルなnodeだとundefinedになる
 PORT=8888 PUBLIC_ROOT=$PWD ./node http3-serve.js
 ```
 
-パラメータは２つです。本筋と関係のない処理や依存を増やしたくないため設定値はすべて環境変数から与えます。
+パラメータは２つです。設定値はすべて環境変数で与えます。
 
 - PORT: ポート番号
 - PUBLIC_ROOT: 静的ファイルを配信するルートファイル
   - ファイルが存在すればそれを200で返す。`content-length`と`content-type`ヘッダも返す
-  - リクエストされたパスがファイル以外（ex. ディレクトリ）だったら403を返す
   - リクエストされたパスが存在しなければ404を返す
-
-### 自己証明書の作成
-HTTP/3はHTTPSの通信が必須のためlocalhostであっても証明書が必要です。適当に証明書を作成しておきます。
-
-```
-$ mkdir .certs
-$ cd .certs
-$ openssl genrsa 2024 > server.key
-$ openssl req -new -key server.key -subj "/C=JP" > server.csr
-$ openssl x509 -req -days 3650 -signkey server.key < server.csr > server.crt
-$ cd -
-$ ls .certs
-server.crt      server.csr      server.key
-```
+  - リクエストされたパスがファイル以外（ex. ディレクトリ）だったら403を返す
 
 ### 実装
 いよいよ実装です。先にコードの全容を載せます。
-このjsはES Modules形式で記述しています。TypeScriptではありません。package.jsonに`"type": "module"`フィールドが設定されている前提で読んでください。
+このjsはES Modules形式で記述しています。package.jsonに`"type": "module"`フィールドが設定されている前提で読んでください。
 
-`// [数字] ...`と書いてあるところを順に触れていきます。
+`// [数字] ...`と書いてあるところを順に触れていきます。  
 
 ```js
-// [1] このファイル外の設定について
 import fs from 'fs'
 import fsPromises from 'fs/promises'
 import path from 'path'
@@ -170,32 +164,28 @@ import { lookup } from 'mime-types'
 
 const { PORT, DOCUMENT_ROOT } = process.env
 
-// [2] 証明書の読み込み
 const key = await fs.readFileSync('./.certs/server.key')
 const cert = await fs.readFileSync('./.certs/server.crt')
 
-// [3] QUICソケットの初期化
+// [1] QUICソケットの初期化
 const server = createQuicSocket({
   endpoint: { port: PORT },
   server: { key, cert, alpn: 'h3-29' },
 })
 
-// [4] `session`イベントを購読
 server.on('session', async (session) => {
-  // [5] streamイベントを購読
+  // [2] session, streamイベント
   session.on('stream', (stream) => {
-    // [6] initialHeadersイベントでリクエストヘッダを受け取る
+    // [3] リクエストヘッダを受け取る
     stream.on('initialHeaders', (rawHeaders) => {
-      // [7] ヘッダを扱いやすいよう整形
       const headers = new Map(rawHeaders)
-      // [8] リクエストURLを扱いやすいよう変換
       const url = new URL(headers.get(':path'), 'https://localhost')
       const requestPath = path.join(DOCUMENT_ROOT, url.pathname)
       fsPromises
         .stat(requestPath)
         .then((stats) => {
           if (!stats.isFile()) {
-            // [9] レスポンスヘッダを返す
+            // [4] レスポンスヘッダを返す
             stream.submitInitialHeaders({
               ':status': '403',
             })
@@ -208,7 +198,7 @@ server.on('session', async (session) => {
             'content-length': stats.size,
             'content-type': lookup(requestPath) || 'application/octet-stream',
           })
-          // [10] レスポンスボディを返す
+          // [5] レスポンスボディを返す
           fs.createReadStream(requestPath).pipe(stream)
         })
         .catch((e) => {
@@ -225,58 +215,38 @@ await server.listen()
 console.log(`The socket is listening on :${PORT}`)
 ```
 
-#### [1] このファイル外の設定について
-Content-Typeヘッダを返すために[mime-types](https://www.npmjs.com/package/mime-types)というnpmパッケージを読み込んでいます。それ以外はすべてビルドインモジュールです。  
-
-#### [2] 証明書の読み込み
+#### [1] QUICソケットの初期化
 
 ```js
-// [2] 証明書の読み込み
-const key = await fs.readFileSync('./.certs/server.key')
-const cert = await fs.readFileSync('./.certs/server.crt')
-```
-
-作成した自己証明書を読み込んでます。サーバを立てるにはserver.keyとserver.crtの２つが必要です。
-
-#### [3] QUICソケットの初期化
-
-```js
-// [3] QUICソケットの初期化
+// [1] QUICソケットの初期化
 const server = createQuicSocket({
   endpoint: { port: PORT },
   server: { key, cert, alpn: 'h3-29' },
 })
 ```
 
-重要な処理の１つです。各オプションについて解説します。  
-
-- endpoint.port: バインドするポート番号
-- server.key: \[2\]で読み込んだもの
-- server.cert: \[2\]で読み込んだもの
-- server.alpn: `h3-29`を指定することでHTTP/3のバージョン29を利用することを示す
-
-特に`server.alpn`が重要で、このオプションには任意の値を指定できるのですが、一部の値（ex. `h3-29`）を指定した場合にQuicSessionやQuicStreamを内部的に扱う方法が変わります。  
-createQuicSocket関数はQUICのためのAPIでありHTTP/3のためだけのAPIではないからです。
+特に`server.alpn`が重要です。単にQUICを扱うなら任意の値が指定可能ですが、HTTP/3のサーバを立てたいのであれば値を`h3-29`にする必要があります。
 
 > ALPN identifiers that are known to Node.js (such as the ALPN identifier for HTTP/3) will alter how the QuicSession and QuicStream objects operate internally, but the QUIC implementation for Node.js has been designed to allow any ALPN to be specified and used.
 >
 > &mdash; [QuicSession and ALPN | Node.js v15.0.1 Documentation](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_quicsession_and_alpn)
 
-最低限必要なオプションだけを説明しました。createQuicSocketに指定可能な全てのオプションは公式ドキュメントをご確認ください。
+createQuicSocketに指定可能な全てのオプションは公式ドキュメントをご確認ください。
 
 > &mdash; [createQuicSocket | Node.js v15.0.1 Documentation](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_net_createquicsocket_options)
 
-#### [4] `session`イベントを購読
+#### [2] `session`, `stream`イベント
 
 ```js
-// [4] `session`イベントを購読
 server.on('session', async (session) => {
+  // [2] session, streamイベント
+  session.on('stream', (stream) => {
 ```
 
-HTTP/3では１セッションで複数のリクエストをやり取りするためまずはセッションを確立します。このイベントが呼ばれた時点ではまだリクエストのハンドリングは開始していません。セッションを確立した後に具体的なリクエスト/レスポンスを繰り返してセッションを終了します。コールバックに渡される引数は[QuicSession](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_class_quicsession_extends_eventemitter)です。
+HTTP/3では１セッションで複数のリクエストをやり取りするためまずはセッションを確立します。セッションが開始されたときに`session`イベントが呼び出されます。コールバックの引数は[QuicSession](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_class_quicsession_extends_eventemitter)のインスタンスです。  
+QuicSessionが確立した後にクライアントがストリームを作成した時に`stream`イベントが呼び出されます。コールバックの引数は[QuicStream](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_class_quicstream_extends_stream_duplex)のインスタンスです。基本的に１リクエストにつき１回このイベントが呼び出されます。
 
-このQuicStreamは以下のような４つの状態のいずれかをとります。
-このうち`Initial`に相当するのが`session`イベントです。`Ready`に相当するのが次に紹介する`stream`イベントです。
+QuicSessionは以下の４つの状態のいずれかをとります。このうち`Initial`に相当するのが`session`イベントです。`Ready`に相当するのが次に紹介する`stream`イベントです。
 
 > - Initial - Entered as soon as the QuicSession is created
 > - Handshake - Entered as soon as the TLS 1.3 handshake between the client and server begins. The handshake is always initiated by the client
@@ -284,20 +254,13 @@ HTTP/3では１セッションで複数のリクエストをやり取りする�
 > - Closed - Entered as soon as the QuicSession connection has been terminated
 >
 > &mdash; [Client and server QuicSessions | Node.js v15.0.1 Documentation](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_client_and_server_quicsessions)
-> 
-#### [5] `stream`イベントを購読
+
+QuicStreamはstream.Duplexを継承しているので、リクエストボディはこの値からstreamとして読み込めます。
+
+#### [3] リクエストヘッダを受け取る
 
 ```js
-// [5] streamイベントを購読
-session.on('stream', (stream) => {
-```
-
-QuicSessionが確立した後にクライアントがストリームを作成した時に呼び出さるイベントです。基本的に１リクエストにつき１回このイベントが呼び出されます。コールバックに渡される引数は[QuicStream](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_class_quicstream_extends_stream_duplex)です。QuicStreamはstream.Duplexを継承しているので、リクエストボディはこの値からstreamとして読み込めます。
-
-#### [6] `initialHeaders`イベントでリクエストヘッダを受け取る
-
-```js
-// [6] initialHeadersイベントでリクエストヘッダを受け取る
+// [3] リクエストヘッダを受け取る
 stream.on('initialHeaders', (rawHeaders) => {
 ```
 
@@ -314,41 +277,20 @@ QuicSessionが確立した後にクライアントがストリームを作成し
 ]
 ```
 
-ヘッダの中には、`:`から始まる擬似ヘッダ（[Pseudo-Header Fields](https://tools.ietf.org/html/draft-ietf-quic-http-29#section-4.1.1.1)）と呼ばれるものが混じっています。詳しくは仕様書を確認してください。その中で特に利用するであろう擬似ヘッダが`:method`と`:path`です。名前の通りで`:method`はHTTPメソッド、`:path`はリクエストされたパス（クエリ文字列含む）が格納されています。リクエストボディが不要であればこの時点でリクエストを処理できます。
+`:`からヘッダは擬似ヘッダ（[Pseudo-Header Fields](https://tools.ietf.org/html/draft-ietf-quic-http-29#section-4.1.1.1)）と呼ぶそうです。特に利用するであろう擬似ヘッダは`:method`と`:path`です。名前から察する通りで`:method`はHTTPメソッド、`:path`はリクエストされたパス（クエリ文字列含む）が格納されています。リクエストボディが不要であればこの時点でリクエストを処理できます。
 
 他にもヘッダに関するイベントがありますが、使い分けは以下の通りです。リクエストヘッダを受け取るには`initialHeaders`イベントを購読すれば良さそうです。
 
-> - Informational Headers: Any response headers transmitted within a block of headers using a 1xx status code.
+> - Informational Headers: Any response headers transmitted within a block of headers using a 1xx status code
 > - Initial Headers: HTTP request or response headers
-> - Trailing Headers: A block of headers that follow the body of a request or response.
-> - Push Promise Headers: A block of headers included in a promised push stream.
+> - Trailing Headers: A block of headers that follow the body of a request or response
+> - Push Promise Headers: A block of headers included in a promised push stream
 > 
 > &mdash; [QuicStream headers | Node.js v15.0.1 Documentation](https://nodejs.org/dist/latest-v15.x/docs/api/quic.html#quic_quicstream_headers)
 
-#### [7] ヘッダを扱いやすいよう整形
-
+#### [4] レスポンスヘッダを返す
 ```js
-stream.on('initialHeaders', (rawHeaders) => {
-  // [7] ヘッダを扱いやすいよう整形
-  const headers = new Map(rawHeaders)
-```
-
-rawHeadersがMapに適してる形式だったので名前からヘッダの値を引きやすいようにMapを利用しました。が、このやり方では同じ名前のヘッダが複数くるケースを想定していないため注意してください。
-
-#### [8] リクエストURLを扱いやすいよう変換
-
-```js
-// [8] リクエストURLを扱いやすいよう変換
-const url = new URL(headers.get(':path'), 'https://localhost')
-const requestPath = path.join(DOCUMENT_ROOT, url.pathname)
-```
-
-リクエストヘッダの`:path`にはクエリ文字列も含まれているためそのままでは扱いにくいです。URLに変換してしまいましょう。
-URLは絶対パスのみではパースができないため適当なbase（`https://localhost`）を第二引数に与えています。クエリパラメータにアクセスしたい場合は`url.searchParams.get('xxx')`のようにアクセスできます。
-
-#### [9] レスポンスヘッダを返す
-```js
-// [9] レスポンスヘッダを返す
+// [4] レスポンスヘッダを返す
 stream.submitInitialHeaders({
   ':status': '403',
 })
@@ -358,19 +300,19 @@ stream.end()
 `stream`イベントで受け取ったQuicStreamに対して`submitInitialHeaders`メソッドをコールすることでレスポンスヘッダを返せます。  
 HTTPステータスコードは`:status`という擬似ヘッダでセットします。
 
-何もボディを返さずにレスポンスを終了する場合は続けて`end`メソッドをコールします。
+ボディを返さずにレスポンスを終了する場合は`end`でストリームを閉じます。
 
-#### [10] レスポンスボディを返す
+#### [5] レスポンスボディを返す
 
 ```js
-// [10] レスポンスボディを返す
+// [5] レスポンスボディを返す
 fs.createReadStream(requestPath).pipe(stream)
 ```
 
-QuicStreamはストリームです。リクエストボディの読み取りとレスポンスボディの書き込み両方に対応するためにstream.Duplexを実装しています。  
-そのためファイルの内容をレスポンスしたければReadableなストリームを作りパイプしてあげればOKです。もしストリームではない文字列を書き込む場合は`stream.write('...')`などを使用できます。この辺はストリームの基礎的な話なので詳しくは割愛します。  
+QuicStreamはストリームです。リクエストボディの読み取りとレスポンスボディの書き込み両方に対応するためにstream.Duplexを継承しています。  
+ファイルの内容をレスポンスしたければReadableなストリームを作りパイプするだけです。ストリームではない文字列を書き込む場合は`stream.write('...')`などを使用できます。この辺はストリームの基礎的な話なので詳しくは割愛します。  
 
-駆け足になりましたが、最低限HTTP/3のサーバを実装する上で必要なことを見ていきました。次に作ったサーバの動作確認をしたいと思います。
+駆け足ですが解説は以上です。次に作ったサーバの動作確認をします。
 
 ### 動作確認
 
@@ -383,10 +325,10 @@ The socket is listening on :8080
 (Use `node --trace-warnings ...` to show where the warning was created)
 ```
 
-curlコマンドを利用していくつかリクエストを飛ばしてみます。``はホスト側のlocalhostを参照するDockerの仕様です。（Linuxの方は読み替えてください）
+curlコマンドを利用していくつかリクエストを飛ばしてみます。`host.docker.internal`はホスト側のlocalhostを参照するDockerの特殊なホスト名です。Linuxの方は適宜読み替えてください。
 
 #### 正常系
-まずは正常系です。ファイルが存在しており200が返ってくるはずです。
+まずは正常系です。ファイルが存在しているので200が返されます。
 
 ```
 $ echo 'Hello world' > hello.txt # サーバを起動したディレクトリで適当なファイルを作る
@@ -414,10 +356,8 @@ Hello world
 * Connection #0 to host host.docker.internal left intact
 ```
 
-書き込んだテキストファイルの中身が手に入ったのでOKです。
-
 #### 異常系（404）
-適当にファイルが存在しないパスにリクエストします。
+ファイルが存在しないパスにリクエストします。404が返されます。
 
 ```
 $ docker run -it --rm ymuski/curl-http3 curl -v 'https://host.docker.internal:8080/xxx' --http3
@@ -440,10 +380,8 @@ $ docker run -it --rm ymuski/curl-http3 curl -v 'https://host.docker.internal:80
 * Connection #0 to host host.docker.internal left intact
 ```
 
-404が返ってきました。OKです。
-
 #### 異常系２（403）
-最後にリクエストしたパスがファイルではなかった場合のテストです。
+最後にリクエストしたパスがファイルではない場合のテストです。403が返されます。
 
 ```
 $ mkdir dir # サーバを起動したディレクトリでディレクトリを作成する
@@ -467,16 +405,11 @@ $ docker run -it --rm ymuski/curl-http3 curl -v 'https://host.docker.internal:80
 * Connection #0 to host host.docker.internal left intact
 ```
 
-403が返ってきました。動作確認も完了です。
-
 ## さいごに
 
-この記事ではほんのさわりの部分ではありますが、Node.jsのQUICを利用してHTTP/3のサーバを実装して、その動作確認をしました。自前でHTTP/3サーバを実装するケースはそう多くないかもしれませんが、この記事が理解の助けになれば幸いです。
+本記事の内容は本当に最低限の処理しかないので、あとはドキュメントやソースコード、QUIC、HTTP/3の仕様書を読みながらいろいろ試してみてください。Node.jsの内部実装の話や、0-RTT・Server pushなどのHTTP/3の他の機能を試す記事も書けたら書こうと思います。ただ、冒頭にも書いた通り現時点ではまだUndocumentedなAPIなので、単に利用者として深く使い込むのは時期尚早だと思います。
 
-本記事の内容は本当に最低限の処理しかないので、あとはドキュメントやソースコード、QUIC、HTTP/3の仕様書を読みながらいろいろ試してみてください。Node.jsの内部実装の話や、0-RTT・Server pushなどのHTTP/3の他の機能を試す記事も暇を見つけて書こうと思います。  
-ただ、冒頭にも書いた通り現時点ではまだUndocumentedなAPIなので、単に利用者として深く使い込むのは時期尚早だと思います。
-
-QUIC、HTTP/3を試せるようになったことで、エンバグしたりAPIの仕様に対して意見が出るかもしれません。Node.jsのコミュニティはオープンで誰でも開発・議論に参加できます。例えばドキュメントの誤字脱字やAPIに対するフィードバック、仕様と実装が乖離しているなどの何かしらの問題を見つけたらチャンスと思ってコントリビュートしてもらえればと思います。興味のある方は[nodejs/node](https://github.com/nodejs/node)リポジトリからぜひ参加してみてください。
+Node.jsのコミュニティはオープンで誰でも開発・議論に参加できます。例えばドキュメントの誤字脱字やAPIに対するフィードバック、仕様と実装が乖離しているなどの何かしらの問題を見つけたらチャンスと思ってコントリビュートしてもらえればと思います。興味のある方は[nodejs/node](https://github.com/nodejs/node)リポジトリからぜひ参加してみてください。
 
 ## 参考情報
 
