@@ -55,16 +55,15 @@ tags:
 
 ## 既存のHTTP/3のサイトを試す
 
-実装を始める前に、既存のHTTP/3のサイトを試して動作確認の手法を確認します。ユーザエージェントがHTTP/3に対応しているかどうかはこちらのサイトから確認できます。  
-もしユーザエージェントがHTTP/3の通信に対応していればその旨が表示されます。
+実装を始める前に、既存のHTTP/3のサイトで動作確認の手法を確認します。ユーザエージェントがHTTP/3に対応しているかどうかはこちらのサイトから確認できます。  
 
 https://http3.is
 
-現時点ではHTTP/3のブラウザの対応状況は今ひとつです。iOS Safariで部分的にサポートされていたり、Google Chromeにてサポートされてるとの情報を得ましたが、少なくとも私の環境ではどちらも動作しませんでした。
+現時点ではHTTP/3のブラウザの対応状況は今ひとつです。iOS Safariでフラグつきでサポートされている、Google Chromeにてサポートされているとの情報を得ましたが、私の環境ではどちらも動作しませんでした。
 
 https://caniuse.com/?search=quic
 
-ブラウザでの動作確認はできなかったので代わりにcURLを利用します。cURLでHTTP/3を利用するにはcURLをソースコードからビルドする必要があります。[cURL公式のDockerイメージ](https://hub.docker.com/r/curlimages/curl)にもHTTP/3に対応したタグはありませんでした。今回は手っ取り早く済ませるためHTTP/3対応したcURLのDockerイメージを配布されている[curlのHTTP/3通信をDocker上で使ってみる - Qiita](https://qiita.com/inductor/items/8d1bc0e95b71e814dbcf)を利用させてもらいます。試しに先ほど紹介した [http3.is](https://http3.is) に対してリクエストを送った結果の抜粋がこちらです。
+ブラウザでの動作確認はできないのでcURLを利用します。cURLでHTTP/3を利用するにはcURLをソースコードからビルドする必要があります。[cURL公式のDockerイメージ](https://hub.docker.com/r/curlimages/curl)にもHTTP/3に対応したタグはありませんでした。今回はHTTP/3対応したcURLのDockerイメージを配布されている[curlのHTTP/3通信をDocker上で使ってみる - Qiita](https://qiita.com/inductor/items/8d1bc0e95b71e814dbcf)を利用させてもらいます。試しに先ほど紹介した [http3.is](https://http3.is) に対してリクエストを送った結果の抜粋がこちらです。
 
 ```
 $ docker run -it --rm ymuski/curl-http3 curl -v https://http3.is --http3
@@ -95,10 +94,10 @@ $ docker run -it --rm ymuski/curl-http3 curl -v https://http3.is --http3
 * Connection #0 to host http3.is left intact
 ```
 
-HTTP/3で通信されてるのがログからわかります。HTTP/3に対応してる旨のHTMLが返ってきました。
-次にサーバを実装し、このcurlコマンドで動作確認をしましょう。
+HTTP/3で通信されているのがわかります。HTTP/3に対応してる旨のHTMLが返ってきました。
+次にサーバを実装し、このcurlコマンドで動作確認をします。
 
-## QUICを使うためにNode.jsをビルドする
+## Node.jsをビルドする
 
 QUICを用いた開発をするためには環境構築が必要です。QUICはまだExperimentalな機能のため**フラグをつけてNodeをビルドし直す**必要があります。よくあるExperimentalな機能とは違い`--experimental-...`などのフラグをnodeコマンドに渡しても動作しません。また執筆時点（2020/10/22）ではQUICに対応したDockerイメージもありません。
 手元でビルドするのは少しハードルが高いかもしれませんが、やることは単にフラグをつけていつも通りNode.jsをビルドするだけです。
@@ -131,7 +130,7 @@ server.crt      server.csr      server.key
 
 ## サーバを実装する
 
-環境構築が終わったので本題です。さっそくサーバを実装しましょう。
+環境構築が終わったので本題です。さっそくサーバを実装します。
 
 ### 要件定義
 
