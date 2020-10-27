@@ -268,7 +268,7 @@ QuicSessionが確立した後にクライアントがストリームを作成し
 ]
 ```
 
-`:`からヘッダは擬似ヘッダ（[Pseudo-Header Fields](https://tools.ietf.org/html/draft-ietf-quic-http-29#section-4.1.1.1)）と呼ぶそうです。よく利用するであろう擬似ヘッダは`:method`と`:path`です。名前から察する通り`:method`はHTTPメソッド、`:path`はリクエストされたパス（クエリ文字列含む）が格納されています。リクエストボディが不要ならこの時点でリクエストを処理できます。
+`:`からはじまるヘッダは擬似ヘッダ（[Pseudo-Header Fields](https://tools.ietf.org/html/draft-ietf-quic-http-29#section-4.1.1.1)）と呼ぶそうです。よく利用するであろう擬似ヘッダは`:method`と`:path`です。名前から察する通り`:method`はHTTPメソッド、`:path`はリクエストされたパス（クエリ文字列含む）が格納されています。リクエストボディが不要ならこの時点でリクエストを処理できます。
 
 他にもヘッダに関するメソッド、イベントがありますが、使い分けは以下の通りです。
 
