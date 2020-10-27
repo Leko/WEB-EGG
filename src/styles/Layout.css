@@ -5,3 +5,15 @@
     align-items: center;
   }
 }
+
+p {
+  margin-bottom: 1rem;
+}
+
+.gatsby-highlight {
+  margin: 1rem 0;
+}
+
+:not(pre)>code {
+  text-transform: none;
+}
