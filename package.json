@@ -50,7 +50,8 @@
     "react-typography": "^0.16.19",
     "typeface-montserrat": "^0.0.75",
     "typography": "^0.16.19",
-    "typography-theme-wordpress-2016": "^0.16.19"
+    "typography-theme-wordpress-2016": "^0.16.19",
+    "web-vitals": "^0.2.4"
   },
   "devDependencies": {
     "amphtml-validator": "^1.0.23",
