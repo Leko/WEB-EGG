@@ -12,6 +12,7 @@
     "@sentry/gatsby": "^5.21.4",
     "@sentry/tracing": "^5.21.4",
     "algoliasearch": "^4.0.0",
+    "fontsource-montserrat": "^3.0.9",
     "gatsby": "~2.24.37",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-algolia": "^0.3.4",
@@ -48,7 +49,6 @@
     "react-icons": "^3.7.0",
     "react-instantsearch-dom": "~6.7.0",
     "react-typography": "^0.16.19",
-    "typeface-montserrat": "^0.0.75",
     "typography": "^0.16.19",
     "typography-theme-wordpress-2016": "^0.16.19",
     "web-vitals": "^0.2.4"
