@@ -1,5 +1,5 @@
 // custom typefaces
-import 'typeface-montserrat'
+import 'fontsource-montserrat/latin.css'
 
 // syntax highlight
 import 'prismjs/themes/prism.css'
