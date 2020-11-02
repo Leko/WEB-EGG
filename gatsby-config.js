@@ -206,7 +206,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
-    `gatsby-plugin-netlify`,
     `gatsby-plugin-brotli`,
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
