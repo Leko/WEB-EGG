@@ -36,6 +36,19 @@ class BlogPostTemplate extends React.Component {
           post.frontmatter.featuredImage.childImageSharp && (
             <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
           )}
+        {post.frontmatter.tags && (
+          <small
+            style={{
+              display: `block`,
+              marginBottom: rhythm(0.5),
+            }}
+          >
+            Tags:
+            {post.frontmatter.tags.map(tagName => (
+              <Tag key={tagName} tagName={tagName} />
+            ))}
+          </small>
+        )}
         <div dangerouslySetInnerHTML={{ __html: post.html }} style={{ margin: '1em 0' }} />
         {post.frontmatter.tags && (
           <small
@@ -50,12 +63,12 @@ class BlogPostTemplate extends React.Component {
             ))}
           </small>
         )}
+        <Bio />
         <hr
           style={{
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
 
         <ul
           style={{
@@ -66,16 +79,17 @@ class BlogPostTemplate extends React.Component {
             padding: 0,
           }}
         >
-          <li>
+          <li style={{ flex: 1 }}>
             {previous && (
               <Link to={`/post${previous.fields.slug}`} rel="prev">
                 ← {previous.frontmatter.title}
               </Link>
             )}
           </li>
-          <li>
+          <li style={{ flex: 1 }}>
             {next && (
               <Link to={`/post${next.fields.slug}`} rel="next">
+
                 {next.frontmatter.title} →
               </Link>
             )}

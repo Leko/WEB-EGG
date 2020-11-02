@@ -44,6 +44,20 @@ class BlogPostTemplate extends React.Component {
             <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
           )}
 
+        {post.frontmatter.tags && (
+          <small
+            style={{
+              display: `block`,
+              marginBottom: rhythm(0.5),
+            }}
+          >
+            Tags:
+            {post.frontmatter.tags.map(tagName => (
+              <Tag key={tagName} tagName={tagName} />
+            ))}
+          </small>
+        )}
+
         <div id="ad-placeholder-1" />
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

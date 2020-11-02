@@ -17,3 +17,7 @@ p {
 :not(pre)>code {
   text-transform: none;
 }
+
+h1 {
+  letter-spacing: .05rem;
+}
