@@ -1,4 +1,5 @@
-import React from 'react'
+/* global process */
+import React, { useEffect, useRef } from 'react'
 import algoliasearch from 'algoliasearch/lite'
 import { FaSearch } from 'react-icons/fa'
 import { InstantSearch, SearchBox, Configure } from 'react-instantsearch-dom'
@@ -11,10 +12,28 @@ const searchClient = algoliasearch(
 )
 
 export function OnSiteSearch() {
+  const inputRef = useRef(null);
+  useEffect(() => {
+    window.addEventListener('keyup', handleFocus, false)
+    function handleFocus(e) {
+      if (e.key === '/') {
+        inputRef.current.focus()
+      }
+    }
+    return () => {
+      window.removeEventListener('keyup', handleFocus)
+    }
+  }, [])
+
   return (
     <InstantSearch
       indexName={process.env.ALGOLIA_INDEX_NAME}
       searchClient={searchClient}
+      // https://www.algolia.com/doc/guides/building-search-ui/going-further/integrate-google-analytics/react/
+      onSearchStateChange={searchState => {
+        const page = `?query=${searchState.query}`
+        window.ga?.('send', 'pageView', page)
+      }}
     >
       <Configure
         // https://www.algolia.com/doc/api-reference/search-api-parameters/
@@ -24,10 +43,19 @@ export function OnSiteSearch() {
         analyticsTags={['on-site-search']}
       />
       <div className="OnSiteSearch__input">
-        <div className="OnSiteSearch__input__icon">
+        <label className="OnSiteSearch__input__icon">
           <FaSearch />
-        </div>
-        <SearchBox showLoadingIndicator={false} submit={null} reset={null} />
+        </label>
+        <SearchBox
+          inputRef={inputRef}
+          translations={{
+            placeholder: 'Press / to search',
+          }}
+          focusShortcuts={[]}
+          showLoadingIndicator={false}
+          submit={null}
+          reset={null}
+        />
       </div>
       <OnSiteSearchHitList />
     </InstantSearch>

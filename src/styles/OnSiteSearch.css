@@ -16,7 +16,7 @@
 .ais-Panel {
   position: absolute;
   z-index: 1;
-  top: 0;
+  top: 20px;
   right: 0;
   width: 500px;
   background-color: #fff;
@@ -78,6 +78,11 @@ li.ais-Hits-item:last-of-type {
   flex: 1;
   box-sizing: border-box;
   padding-left: 40px;
+  outline-offset: 0;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  background-color: #eeeeee;
 }
 
 .OnSiteSearchHitList__root {
