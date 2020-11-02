@@ -44,6 +44,10 @@ class BlogPostTemplate extends React.Component {
             <Img fluid={post.frontmatter.featuredImage.childImageSharp.fluid} />
           )}
 
+        Tags: {post.frontmatter.tags.map(tagName => (
+          <Tag key={tagName} tagName={tagName} />
+        ))}
+
         <div id="ad-placeholder-1" />
 
         <div dangerouslySetInnerHTML={{ __html: post.html }} />

@@ -14,7 +14,7 @@ function Bio() {
           <div
             style={{
               display: `flex`,
-              marginBottom: rhythm(1),
+              marginTop: rhythm(1),
             }}
           >
             <Image
@@ -32,6 +32,8 @@ function Bio() {
               <br />
               <a
                 href={`https://twitter.com/${social.twitter}`}
+                rel="noopener noreferrer"
+                target="_blank"
                 className="social"
               >
                 Twitter
@@ -39,6 +41,8 @@ function Bio() {
               {' / '}
               <a
                 href={`https://github.com/${social.github}`}
+                rel="noopener noreferrer"
+                target="_blank"
                 className="social"
               >
                 GitHub
