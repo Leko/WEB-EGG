@@ -1,4 +1,4 @@
-/* global dataLayer */
+/* global dataLayer, process */
 import { getCLS, getFID, getLCP } from 'web-vitals';
 
 function sendToGTM({ name, delta, id }) {
@@ -20,6 +20,8 @@ function sendToGTM({ name, delta, id }) {
   });
 }
 
-getCLS(sendToGTM);
-getFID(sendToGTM);
-getLCP(sendToGTM);
+if (process.env.NODE_ENV === 'production') {
+  getCLS(sendToGTM);
+  getFID(sendToGTM);
+  getLCP(sendToGTM);
+}
