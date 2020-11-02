@@ -82,7 +82,6 @@ class BlogPostTemplate extends React.Component {
           <li style={{ flex: 1 }}>
             {previous && (
               <Link to={`/post${previous.fields.slug}`} rel="prev">
-                {JSON.stringify(previous.fields, null,2)}
                 ← {previous.frontmatter.title}
               </Link>
             )}
