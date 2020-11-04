@@ -24,12 +24,11 @@ TypographyTheme.overrideThemeStyles = () => {
       borderRadius: '100px',
       fontSize: typography.rhythm(0.4),
       letterSpacing: '0.05rem',
-      color: 'white',
-      backgroundColor: TypographyTheme.bodyColor,
+      color: 'var(--leko-background)',
+      backgroundColor: 'var(--leko-foreground)',
     },
     small: {
       fontSize: '16px',
-      color: 'rgba(0, 0, 0, .54)',
     },
     blockquote: {
       fontSize: TypographyTheme.baseFontSize,
@@ -69,7 +68,6 @@ const codeFontFamily = [
 TypographyTheme.headerFontFamily = textFontFamily
 TypographyTheme.bodyFontFamily = textFontFamily
 TypographyTheme.baseFontSize = '16px'
-TypographyTheme.bodyColor = 'rgba(0, 0, 0, .84)'
 TypographyTheme.headerWeight = 700
 
 delete TypographyTheme.googleFonts

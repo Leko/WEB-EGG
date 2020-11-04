@@ -8,7 +8,7 @@ export function BeforeReading({ publishedAtStr, timeToRead, style }) {
       style={{
         ...scale(-1 / 5),
         display: `block`,
-        marginBottom: rhythm(1),
+        marginBottom: rhythm(0.5),
         ...style,
       }}
     >

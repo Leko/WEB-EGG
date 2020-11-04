@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { Context } from './ColorSchemeContext'
 
 function SEO({
   description,
@@ -12,6 +13,8 @@ function SEO({
   slug,
   featuredImageName,
 }) {
+  const { theme } = useContext(Context)
+
   return (
     <StaticQuery
       query={detailsQuery}
@@ -24,6 +27,9 @@ function SEO({
           <Helmet
             htmlAttributes={{
               lang,
+            }}
+            bodyAttributes={{
+              'data-theme': theme,
             }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
@@ -68,9 +74,9 @@ function SEO({
               },
               featuredImageName
                 ? {
-                  property: `og:image`,
-                  content: data.site.siteMetadata.siteUrl + featuredImageName,
-                }
+                    property: `og:image`,
+                    content: data.site.siteMetadata.siteUrl + featuredImageName,
+                  }
                 : null,
               {
                 property: `og:type`,
@@ -90,9 +96,9 @@ function SEO({
               },
               featuredImageName
                 ? {
-                  property: `twitter:image`,
-                  content: data.site.siteMetadata.siteUrl + featuredImageName,
-                }
+                    property: `twitter:image`,
+                    content: data.site.siteMetadata.siteUrl + featuredImageName,
+                  }
                 : null,
               {
                 name: `twitter:site`,
@@ -106,9 +112,9 @@ function SEO({
               .concat(
                 keywords.length > 0
                   ? {
-                    name: `keywords`,
-                    content: keywords.join(`, `),
-                  }
+                      name: `keywords`,
+                      content: keywords.join(`, `),
+                    }
                   : []
               )
               .concat(meta)
@@ -132,7 +138,7 @@ SEO.propTypes = {
   meta: PropTypes.array,
   keywords: PropTypes.arrayOf(PropTypes.string),
   title: PropTypes.string.isRequired,
-  slug: PropTypes.string.isRequired,
+  slug: PropTypes.string,
   featuredImageName: PropTypes.string,
 }
 

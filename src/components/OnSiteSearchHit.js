@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Highlight } from 'react-instantsearch-dom'
 import { FaTags } from 'react-icons/fa'
-import typography, { scale } from '../utils/typography'
+import { scale } from '../utils/typography'
 import { BeforeReading } from './BeforeReading'
 
 export function OnSiteSearchHit({ hit }) {
@@ -11,7 +11,7 @@ export function OnSiteSearchHit({ hit }) {
 
   return (
     <div className="OnSiteSearchHit__root">
-      <Link to={`/post${slug}`} style={{ color: typography.options.bodyColor }}>
+      <Link to={`/post${slug}`} style={{ color: 'var(--leko-foreground)' }}>
         <div className="OnSiteSearchHit__headline">
           <strong
             style={{

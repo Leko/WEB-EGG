@@ -1,23 +1,29 @@
-@media screen and (min-width: 600px) {
-  .Brand__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
+.Brand__container {
+  display: grid;
+  align-items: center;
+  grid-template: 'logo search theme';
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+.Brand__logo {
+  grid-area: logo;
+}
+.Brand__search {
+  grid-area: search;
+}
+.Brand__color-scheme {
+  grid-area: theme;
 }
 
-p {
-  margin-bottom: 1rem;
+@media only screen and (max-width: 600px) {
+  .Brand__container {
+    grid-template:
+      'logo theme'
+      'search search';
+    grid-template-columns: 1fr auto auto;
+  }
 }
 
 .gatsby-highlight {
   margin: 1rem 0;
-}
-
-:not(pre)>code {
-  text-transform: none;
-}
-
-h1 {
-  letter-spacing: .05rem;
 }

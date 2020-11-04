@@ -1,0 +1,44 @@
+:root {
+  --leko-color-primary: #f9c412;
+  --leko-color-secondary: #007acc;
+  --leko-color-foreground: #181818;
+  --leko-color-foreground-lighten: #434343;
+  --leko-color-background: #ffffff;
+  --leko-color-background-darken: #dddddd;
+
+  --leko-primary: var(--leko-color-secondary);
+  --leko-foreground: var(--leko-color-foreground);
+  --leko-foreground-dimmed: var(--leko-color-foreground-lighten);
+  --leko-background: var(--leko-color-background);
+  --leko-background-accent: var(--leko-color-background-darken);
+}
+[data-theme='light'] {
+  --leko-primary: var(--leko-color-secondary);
+  --leko-foreground: var(--leko-color-foreground);
+  --leko-foreground-dimmed: var(--leko-color-foreground-lighten);
+  --leko-background: var(--leko-color-background);
+  --leko-background-accent: var(--leko-color-background-darken);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --leko-primary: var(--leko-color-primary);
+    --leko-foreground: var(--leko-color-background);
+    --leko-foreground-dimmed: var(--leko-color-background-darken);
+    --leko-background: var(--leko-color-foreground);
+    --leko-background-accent: var(--leko-color-foreground-lighten);
+  }
+}
+[data-theme='dark'] {
+  --leko-primary: var(--leko-color-primary);
+  --leko-foreground: var(--leko-color-background);
+  --leko-foreground-dimmed: var(--leko-color-background-darken);
+  --leko-background: var(--leko-color-foreground);
+  --leko-background-accent: var(--leko-color-foreground-lighten);
+}
+
+body {
+  color: var(--leko-foreground);
+  background-color: var(--leko-background);
+  transition: 200ms ease-in-out;
+}
