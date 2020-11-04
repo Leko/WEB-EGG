@@ -31,6 +31,15 @@ function Bio() {
               <strong>{author}</strong>
               <br />
               <a
+                href={`https://leko.jp`}
+                rel="noopener noreferrer"
+                target="_blank"
+                className="social"
+              >
+                About
+              </a>
+              {' / '}
+              <a
                 href={`https://twitter.com/${social.twitter}`}
                 rel="noopener noreferrer"
                 target="_blank"
