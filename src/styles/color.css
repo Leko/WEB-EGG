@@ -7,7 +7,6 @@
   --leko-color-background-darken: #eeeeee;
 }
 
-[data-theme=''],
 [data-theme='light'] {
   --leko-primary: var(--leko-color-secondary);
   --leko-foreground: var(--leko-color-foreground);
