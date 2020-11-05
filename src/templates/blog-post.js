@@ -72,11 +72,6 @@ class BlogPostTemplate extends React.Component {
             </small>
           )}
           <Bio />
-          <hr
-            style={{
-              marginBottom: rhythm(1),
-            }}
-          />
 
           <ul
             style={{

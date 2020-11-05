@@ -1,0 +1,32 @@
+.Bio {
+  margin: 4rem 0 2rem;
+  padding: 16px;
+  border-radius: 2px;
+  background-color: var(--leko-background-accent);
+}
+
+.Bio__heading {
+  margin: 0;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.Bio__content {
+  display: flex;
+}
+
+.Bio__avatar {
+  margin-right: 8px;
+  border-radius: 100%;
+}
+.Bio__avatar img {
+  margin-bottom: 0 !important; /* override gatsby-image style */
+}
+
+.Bio__info-wrap {
+  margin-bottom: 0;
+}
+
+.Bio__info-wrap__name {
+  font-size: 1.2rem;
+}

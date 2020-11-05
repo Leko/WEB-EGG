@@ -1,8 +1,7 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
-
-import { rhythm } from '../utils/typography'
+import '../styles/Bio.css'
 
 function Bio() {
   return (
@@ -11,53 +10,49 @@ function Bio() {
       render={data => {
         const { author, social } = data.site.siteMetadata
         return (
-          <div
-            style={{
-              display: `flex`,
-              marginTop: rhythm(1),
-            }}
-          >
-            <Image
-              fixed={data.avatar.childImageSharp.fixed}
-              alt={author}
-              style={{
-                marginRight: rhythm(1 / 2),
-                marginBottom: 0,
-                minWidth: 50,
-                borderRadius: `100%`,
-              }}
-            />
-            <p>
-              <strong>{author}</strong>
-              <br />
-              <a
-                href={`https://leko.jp`}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="social"
-              >
-                About
-              </a>
-              {' / '}
-              <a
-                href={`https://twitter.com/${social.twitter}`}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="social"
-              >
-                Twitter
-              </a>
-              {' / '}
-              <a
-                href={`https://github.com/${social.github}`}
-                rel="noopener noreferrer"
-                target="_blank"
-                className="social"
-              >
-                GitHub
-              </a>
-            </p>
-          </div>
+          <aside className="Bio">
+            <h3 className="Bio__heading">Author</h3>
+            <div className="Bio__content">
+              <Image
+                fixed={data.avatar.childImageSharp.fixed}
+                alt={author}
+                className="Bio__avatar"
+                style={{
+                  minWidth: 50,
+                }}
+              />
+              <p className="Bio__info-wrap">
+                <strong className="Bio__info-wrap__name">{author}</strong>
+                <br />
+                <a
+                  href={`https://leko.jp`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="social"
+                >
+                  About
+                </a>
+                {' / '}
+                <a
+                  href={`https://twitter.com/${social.twitter}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="social"
+                >
+                  Twitter
+                </a>
+                {' / '}
+                <a
+                  href={`https://github.com/${social.github}`}
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="social"
+                >
+                  GitHub
+                </a>
+              </p>
+            </div>
+          </aside>
         )
       }}
     />
