@@ -1,6 +1,6 @@
 .Bio {
   margin: 4rem 0 2rem;
-  padding: 16px;
+  padding: 16px 24px;
   border-radius: 2px;
   background-color: var(--leko-background-accent);
 }
