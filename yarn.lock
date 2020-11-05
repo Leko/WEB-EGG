@@ -9285,12 +9285,12 @@ gatsby-remark-images@^3.1.23:
     unist-util-select "^1.5.0"
     unist-util-visit-parents "^2.1.2"
 
-gatsby-remark-prismjs@^3.3.14:
-  version "3.3.30"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.3.30.tgz#990203b5d174af9a609e32019a3b62cd5dc16332"
-  integrity sha512-DFcFAcvYHmx9FM5P/CRkCbQH4nSPmZ9DRaocAUxH7ZJtF2nMGYp1suYa8BEJKmM/EwvFxLdGoRoN+5FzO56qZQ==
+gatsby-remark-prismjs@~3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.6.0.tgz#a3209340c4fd9c6b419f21781808f3478eab2f00"
+  integrity sha512-8eruDDSs1OkoTmV8lN/pWUxscBf3tU0F9jIsOiNK22GB/h4/thwlPRR8Te631KrVeODTvcOQo2kcvGI1xr+dvQ==
   dependencies:
-    "@babel/runtime" "^7.7.6"
+    "@babel/runtime" "^7.11.2"
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.4.1"
 
@@ -15282,10 +15282,15 @@ prh@^5.4.4:
     diff "^4.0.1"
     js-yaml "^3.9.1"
 
-prismjs@^1.17.1:
-  version "1.18.0"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.18.0.tgz#8f04dd47fa232cbd27d1ca969107580ff43f06e4"
-  integrity sha512-N0r3i/Cto516V8+GKKamhsPVZSFcO0TMUBtIDW6uq6BVqoC3FNtZVZ+cmH16N2XtGQlgRN+sFUTjOdCsEP51qw==
+prism-themes@~1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/prism-themes/-/prism-themes-1.5.0.tgz#92925e4aa0ab5e0afefcea1032df7d61bbcdc1a5"
+  integrity sha512-aqKD610WNYO90MVXm0xM8P1pX5jPHyTjbAefV0TtWFLZk7eNWnGqLGx+HH6Xxlf9hiC66VjBeCP7m3P72FS+ZQ==
+
+prismjs@~1.22.0:
+  version "1.22.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.22.0.tgz#73c3400afc58a823dd7eed023f8e1ce9fd8977fa"
+  integrity sha512-lLJ/Wt9yy0AiSYBf212kK3mM5L8ycwlyTlSxHBAneXLR0nzFMlZ5y7riFPF3E33zXOF2IH95xdY5jIyZbM9z/w==
   optionalDependencies:
     clipboard "^2.0.0"
 

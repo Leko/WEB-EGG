@@ -59,11 +59,6 @@ li.ais-Hits-item:last-of-type {
   margin-right: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  .ais-PoweredBy path[fill='#182359'] {
-    fill: #ffffff;
-  }
-}
 [data-theme='dark'] .ais-PoweredBy path[fill='#182359'] {
   fill: #ffffff;
 }

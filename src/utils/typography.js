@@ -16,17 +16,6 @@ TypographyTheme.overrideThemeStyles = () => {
     'a.anchor': {
       borderBottom: 'none',
     },
-    'a.tag': {
-      marginLeft: '5px',
-      display: 'inline-block',
-      padding: '4px 8px',
-      borderBottom: 'none',
-      borderRadius: '100px',
-      fontSize: typography.rhythm(0.4),
-      letterSpacing: '0.05rem',
-      color: 'var(--leko-background)',
-      backgroundColor: 'var(--leko-foreground)',
-    },
     small: {
       fontSize: '16px',
     },
