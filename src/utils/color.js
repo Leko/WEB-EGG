@@ -1,9 +1,10 @@
 const key = 'web-egg-prefers-color-scheme'
+const windowGlobal = (typeof window !== 'undefined' && window) || null
 
 export function getPrefersColorScheme() {
-  return localStorage?.getItem(key)
+  return windowGlobal?.localStorage.getItem(key)
 }
 
 export function setPrefersColorScheme(theme) {
-  localStorage.setItem(key, theme)
+  windowGlobal?.localStorage.setItem(key, theme)
 }
