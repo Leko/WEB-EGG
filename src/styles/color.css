@@ -25,7 +25,6 @@
 body {
   color: var(--leko-foreground);
   background-color: var(--leko-background);
-  transition: 200ms ease-in-out;
 }
 hr {
   background: var(--leko-background-accent);
