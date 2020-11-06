@@ -1,0 +1,13 @@
+a.tag {
+  margin-right: 0.5rem;
+  display: inline-block;
+  border-bottom: none;
+}
+a.tag:first-child {
+  margin-left: 0.5rem;
+}
+a.tag::before {
+  display: inline-block;
+  content: '#';
+  margin-right: 0.1rem;
+}

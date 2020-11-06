@@ -1,0 +1,44 @@
+* {
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0.05rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+h4 {
+  font-size: 1.2rem;
+}
+h5,
+h6 {
+  font-size: 1rem;
+}
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+small {
+  font-size: 0.9rem;
+}
+a {
+  color: var(--leko-primary);
+}
+
+blockquote {
+  color: var(--leko-foreground-dimmed);
+  border-left-color: var(--leko-background-accent);
+}
+:not(pre) > code {
+  text-transform: none;
+}
+
+/* Syntax highlight */
+pre[class*='language-'] {
+  margin: 0;
+}
