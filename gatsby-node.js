@@ -7,10 +7,10 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const blogPost = path.resolve(`./src/templates/blog-post.js`)
-    const blogPostAMP = path.resolve(`./src/templates/blog-post.amp.js`)
-    const blogPostList = path.resolve(`./src/templates/index.js`)
-    const blogTaggedPostList = path.resolve(`./src/templates/tagged-posts.js`)
+    const blogPost = path.resolve(`./src/templates/blog-post.jsx`)
+    const blogPostAMP = path.resolve(`./src/templates/blog-post.amp.jsx`)
+    const blogPostList = path.resolve(`./src/templates/index.jsx`)
+    const blogTaggedPostList = path.resolve(`./src/templates/tagged-posts.jsx`)
     resolve(
       graphql(
         `
