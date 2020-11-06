@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Root } from '../components/Root'
@@ -19,7 +18,6 @@ class BlogIndex extends React.Component {
       <Root>
         <Layout location={this.props.location} title={siteTitle}>
           <SEO title={`Tag:${tag}`} keywords={[tag]} />
-          <Bio />
           <h2>Tag: {tag}</h2>
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug

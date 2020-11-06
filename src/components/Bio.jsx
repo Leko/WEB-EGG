@@ -11,7 +11,6 @@ function Bio() {
         const { author, social } = data.site.siteMetadata
         return (
           <aside className="Bio">
-            <h3 className="Bio__heading">Author</h3>
             <div className="Bio__content">
               <Image
                 fixed={data.avatar.childImageSharp.fixed}

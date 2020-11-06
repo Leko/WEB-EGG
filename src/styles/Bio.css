@@ -1,14 +1,6 @@
 .Bio {
-  margin: 4rem 0 2rem;
-  padding: 16px 24px;
+  padding: 16px 0;
   border-radius: 2px;
-  background-color: var(--leko-background-accent);
-}
-
-.Bio__heading {
-  margin: 0;
-  margin-bottom: 8px;
-  font-size: 1rem;
 }
 
 .Bio__content {
@@ -16,7 +8,7 @@
 }
 
 .Bio__avatar {
-  margin-right: 8px;
+  margin-right: 16px;
   border-radius: 100%;
 }
 .Bio__avatar img {

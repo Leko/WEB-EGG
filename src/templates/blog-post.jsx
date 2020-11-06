@@ -1,13 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Root } from '../components/Root'
-import { Tag } from '../components/Tag'
-import { BeforeReading } from '../components/BeforeReading'
-import { rhythm } from '../utils/typography'
+import { BlogPostFull } from '../components/BlogPostFull'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -29,52 +25,19 @@ class BlogPostTemplate extends React.Component {
                 : null
             }
           />
-          <h1>{post.frontmatter.title}</h1>
-          <BeforeReading
+          <BlogPostFull
+            title={post.frontmatter.title}
             publishedAtStr={post.frontmatter.date}
             timeToRead={post.timeToRead}
+            bodyHtml={post.html}
+            featuredImage={
+              post.frontmatter.featuredImage?.childImageSharp?.fluid
+            }
+            tags={post.frontmatter.tags ?? []}
           />
-          {post.frontmatter.featuredImage &&
-            post.frontmatter.featuredImage.childImageSharp && (
-              <Img
-                fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-              />
-            )}
-          {post.frontmatter.tags && (
-            <small
-              style={{
-                display: `block`,
-                marginTop: rhythm(0.5),
-                marginBottom: rhythm(0.5),
-              }}
-            >
-              Tags:
-              {post.frontmatter.tags.map(tagName => (
-                <Tag key={tagName} tagName={tagName} />
-              ))}
-            </small>
-          )}
-          <div
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            style={{ margin: '1em 0' }}
-          />
-          {post.frontmatter.tags && (
-            <small
-              style={{
-                display: `block`,
-                marginBottom: rhythm(0.5),
-              }}
-            >
-              Tags:
-              {post.frontmatter.tags.map(tagName => (
-                <Tag key={tagName} tagName={tagName} />
-              ))}
-            </small>
-          )}
-          <Bio />
-
           <ul
             style={{
+              marginTop: 56,
               display: `flex`,
               flexWrap: `wrap`,
               justifyContent: `space-between`,

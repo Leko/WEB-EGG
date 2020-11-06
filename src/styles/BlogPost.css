@@ -1,0 +1,49 @@
+.BlogPost {
+  margin: 0;
+  margin-top: 80px;
+}
+
+.BlogPost--full {
+  margin-top: 40px;
+}
+
+.BlogPost .BlogPost__featuredImage {
+  margin: 0;
+  margin-bottom: 16px;
+}
+.BlogPost--full .BlogPost__featuredImage {
+  margin-bottom: 24px;
+}
+
+.BlogPost__title {
+  margin: 0;
+}
+.BlogPost--full .BlogPost__title {
+  margin-bottom: 16px;
+}
+
+.BlogPost__title__link {
+  margin: 0;
+}
+
+.BeforeReading__wrap {
+}
+.BlogPost--full .BeforeReading__wrap {
+}
+
+.Bio__wrap {
+  margin-top: 32px;
+}
+
+.BlogPost__body {
+  margin-top: 32px;
+}
+
+.BlogPost__excerpt {
+  margin-top: 16px;
+}
+
+.Tags {
+  display: block;
+  margin-top: 32px;
+}

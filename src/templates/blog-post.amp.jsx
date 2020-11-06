@@ -1,13 +1,9 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
-import Bio from '../components/Bio'
 import Layout from '../components/Layout'
 import AMPSEO from '../components/AMPSEO'
 import { Root } from '../components/Root'
-import { Tag } from '../components/Tag'
-import { BeforeReading } from '../components/BeforeReading'
-import { rhythm } from '../utils/typography'
+import { BlogPostFull } from '../components/BlogPostFull'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -36,56 +32,21 @@ class BlogPostTemplate extends React.Component {
                 : null
             }
           />
-          <h1>{post.frontmatter.title}</h1>
-          <BeforeReading
+          <BlogPostFull
+            title={post.frontmatter.title}
             publishedAtStr={post.frontmatter.date}
             timeToRead={post.timeToRead}
+            featuredImage={
+              post.frontmatter.featuredImage?.childImageSharp?.fluid
+            }
+            tags={post.frontmatter.tags ?? []}
+            bodyHtml={post.html}
+            renderBeforeBody={() => <div id="ad-placeholder-1" />}
+            renderPostBody={() => <div id="ad-placeholder-2" />}
           />
-          {post.frontmatter.featuredImage &&
-            post.frontmatter.featuredImage.childImageSharp && (
-              <Img
-                fluid={post.frontmatter.featuredImage.childImageSharp.fluid}
-              />
-            )}
-
-          {post.frontmatter.tags && (
-            <small
-              style={{
-                display: `block`,
-                marginTop: rhythm(0.5),
-                marginBottom: rhythm(0.5),
-              }}
-            >
-              Tags:
-              {post.frontmatter.tags.map(tagName => (
-                <Tag key={tagName} tagName={tagName} />
-              ))}
-            </small>
-          )}
-
-          <div id="ad-placeholder-1" />
-
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-
-          <div id="ad-placeholder-2" />
-
-          {post.frontmatter.tags && (
-            <small
-              style={{
-                display: `block`,
-                marginBottom: rhythm(0.5),
-              }}
-            >
-              Tags:
-              {post.frontmatter.tags.map(tagName => (
-                <Tag key={tagName} tagName={tagName} />
-              ))}
-            </small>
-          )}
-          <Bio />
-
           <ul
             style={{
+              marginTop: 56,
               display: `flex`,
               flexWrap: `wrap`,
               justifyContent: `space-between`,
