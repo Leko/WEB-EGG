@@ -1,0 +1,16 @@
+.Button {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--leko-background);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  transition: background-color 100ms ease-in;
+}
+
+.Button:hover {
+  background-color: var(--leko-background-accent);
+}

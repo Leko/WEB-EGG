@@ -21,7 +21,7 @@ function Layout(props) {
         marginLeft: `auto`,
         marginRight: `auto`,
         maxWidth: 700,
-        padding: `42px 16px`,
+        padding: `42px 0`,
       }}
     >
       <div className="Brand__container">

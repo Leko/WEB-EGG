@@ -15,12 +15,21 @@
   grid-area: theme;
 }
 
+.Layout__post {
+}
+.Layout__post__toc {
+}
+.Layout__post__post {
+}
+
 @media only screen and (max-width: 600px) {
   .Brand__container {
     grid-template:
       'logo theme'
       'search search';
     grid-template-columns: 1fr auto auto;
+  }
+  .Layout__post {
   }
 }
 

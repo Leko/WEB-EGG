@@ -4,6 +4,7 @@ import Layout from '../components/Layout'
 import AMPSEO from '../components/AMPSEO'
 import { Root } from '../components/Root'
 import { BlogPostFull } from '../components/BlogPostFull'
+import { TocSpy } from '../components/TocSpy'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -32,18 +33,25 @@ class BlogPostTemplate extends React.Component {
                 : null
             }
           />
-          <BlogPostFull
-            title={post.frontmatter.title}
-            publishedAtStr={post.frontmatter.date}
-            timeToRead={post.timeToRead}
-            featuredImage={
-              post.frontmatter.featuredImage?.childImageSharp?.fluid
-            }
-            tags={post.frontmatter.tags ?? []}
-            bodyHtml={post.html}
-            renderBeforeBody={() => <div id="ad-placeholder-1" />}
-            renderPostBody={() => <div id="ad-placeholder-2" />}
-          />
+          <div className="Layout__post">
+            <div className="Layout__post__toc">
+              <TocSpy headings={post.headings} />
+            </div>
+            <div className="Layout__post__post">
+              <BlogPostFull
+                title={post.frontmatter.title}
+                publishedAtStr={post.frontmatter.date}
+                timeToRead={post.timeToRead}
+                featuredImage={
+                  post.frontmatter.featuredImage?.childImageSharp?.fluid
+                }
+                tags={post.frontmatter.tags ?? []}
+                bodyHtml={post.html}
+                renderBeforeBody={() => <div id="ad-placeholder-1" />}
+                renderPostBody={() => <div id="ad-placeholder-2" />}
+              />
+            </div>
+          </div>
           <ul
             style={{
               marginTop: 56,
@@ -90,6 +98,10 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       timeToRead
+      headings {
+        value
+        depth
+      }
       frontmatter {
         title
         tags
