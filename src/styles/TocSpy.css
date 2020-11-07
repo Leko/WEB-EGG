@@ -1,0 +1,65 @@
+.TocSpy {
+  --indent: 16px;
+}
+.TocSpy__nav {
+  display: none;
+}
+.TocSpy__list {
+}
+.TocSpy__list--fixed {
+  position: fixed;
+  width: 300px;
+  top: 162px;
+  right: var(--indent);
+}
+.TocSpy__item {
+  position: relative;
+  padding: 2px 0;
+  border-left: 2px solid var(--leko-background-accent);
+}
+.TocSpy__item--active::before {
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 100%;
+  left: -2px;
+  top: 0;
+  background-color: var(--leko-primary);
+}
+.TocSpy__list__heading {
+  margin: 0;
+  padding: 16px 0;
+  padding-left: calc(var(--indent) * 1);
+  border-left: 2px solid var(--leko-background-accent);
+  color: var(--leko-foreground-dimmed);
+  font-size: 1rem;
+}
+.TocSpy__item--level-2 {
+  padding-left: calc(var(--indent) * 1);
+}
+.TocSpy__item--level-3 {
+  padding-left: calc(var(--indent) * 2);
+}
+.TocSpy__item--level-4 {
+  padding-left: calc(var(--indent) * 3);
+}
+.TocSpy__item--level-5 {
+  padding-left: calc(var(--indent) * 4);
+}
+.TocSpy__item--level-6 {
+  padding-left: calc(var(--indent) * 5);
+}
+
+@media screen and (max-width: 1400px) {
+  .TocSpy__list {
+    display: none;
+    position: static;
+    width: 100%;
+  }
+  .TocSpy__list--open {
+    display: block;
+  }
+  .TocSpy__nav {
+    display: flex;
+  }
+}

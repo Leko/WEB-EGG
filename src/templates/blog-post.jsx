@@ -30,6 +30,7 @@ class BlogPostTemplate extends React.Component {
             publishedAtStr={post.frontmatter.date}
             timeToRead={post.timeToRead}
             bodyHtml={post.html}
+            headings={post.headings}
             featuredImage={
               post.frontmatter.featuredImage?.childImageSharp?.fluid
             }
@@ -81,6 +82,10 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       timeToRead
+      headings {
+        value
+        depth
+      }
       frontmatter {
         title
         tags

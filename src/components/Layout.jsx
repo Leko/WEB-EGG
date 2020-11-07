@@ -16,26 +16,21 @@ function Layout(props) {
   const OnSiteSearch = loadable(() => import('./OnSiteSearch'))
 
   return (
-    <div
-      style={{
-        marginLeft: `auto`,
-        marginRight: `auto`,
-        maxWidth: 700,
-        padding: `42px 16px`,
-      }}
-    >
-      <div className="Brand__container">
-        <div className="Brand__logo">
-          <Brand title={title} dimmed={headerDimmed} />
+    <>
+      <div className="Layout">
+        <div className="Brand__container">
+          <div className="Brand__logo">
+            <Brand title={title} dimmed={headerDimmed} />
+          </div>
+          <div className="Brand__search">{amp ? null : <OnSiteSearch />}</div>
+          <div className="Brand__color-scheme">
+            <ColorScheme theme={theme} onChange={changeTheme} />
+          </div>
         </div>
-        <div className="Brand__search">{amp ? null : <OnSiteSearch />}</div>
-        <div className="Brand__color-scheme">
-          <ColorScheme theme={theme} onChange={changeTheme} />
-        </div>
+        {children}
+        <Copyright />
       </div>
-      {children}
-      <Copyright />
-    </div>
+    </>
   )
 }
 

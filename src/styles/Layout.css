@@ -1,3 +1,9 @@
+.Layout {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 42px 16px;
+}
+
 .Brand__container {
   display: grid;
   align-items: center;
@@ -15,12 +21,21 @@
   grid-area: theme;
 }
 
+.Layout__post {
+}
+.Layout__post__toc {
+}
+.Layout__post__post {
+}
+
 @media only screen and (max-width: 600px) {
   .Brand__container {
     grid-template:
       'logo theme'
       'search search';
     grid-template-columns: 1fr auto auto;
+  }
+  .Layout__post {
   }
 }
 
