@@ -1,10 +1,16 @@
 .TocSpy {
   --indent: 16px;
 }
+.TocSpy__nav {
+  display: none;
+}
+.TocSpy__list {
+}
 .TocSpy__list--fixed {
   position: fixed;
-  top: 100px;
-  right: 100px;
+  width: 300px;
+  top: 162px;
+  right: var(--indent);
 }
 .TocSpy__item {
   position: relative;
@@ -42,4 +48,18 @@
 }
 .TocSpy__item--level-6 {
   padding-left: calc(var(--indent) * 5);
+}
+
+@media screen and (max-width: 1400px) {
+  .TocSpy__list {
+    display: none;
+    position: static;
+    width: 100%;
+  }
+  .TocSpy__list--open {
+    display: block;
+  }
+  .TocSpy__nav {
+    display: flex;
+  }
 }

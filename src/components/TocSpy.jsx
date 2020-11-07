@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
+import { FaList } from 'react-icons/fa'
+import { Button } from './Button'
 import '../styles/TocSpy.css'
 
 function slugify(raw) {
@@ -14,9 +16,12 @@ function classNames(list) {
   return list.filter(Boolean).join(' ')
 }
 
+const MARGIN = 200
+
 export function TocSpy(props) {
   const { headings, maxDepth = 3 } = props
   const [activeIndex, setActiveIndex] = useState(-1)
+  const [open, setOpen] = useState(false)
   const headingsForDisplay = headings
     .filter(heading => heading.depth <= maxDepth)
     .map(h => ({
@@ -24,11 +29,28 @@ export function TocSpy(props) {
       slug: slugify(h.value),
     }))
 
+  const toggleOpen = useCallback(() => {
+    setOpen(before => !before)
+  })
+  const scrollTo = (e, { depth, slug }, index) => {
+    const targetEl = document.querySelector(`h${depth} [href="#${slug}"]`)
+      .parentElement
+    e.preventDefault()
+    history.pushState({}, document.title, `#${slug}`)
+    window.scrollTo({
+      left: 0,
+      top: Math.max(0, targetEl.offsetTop - MARGIN + 1),
+    })
+    requestAnimationFrame(() => {
+      setActiveIndex(index)
+    })
+  }
+
   useEffect(() => {
     let prevMap = new Map()
     const observers = headingsForDisplay.map((heading, index) => {
       const targetEl = document.querySelector(
-        `h${heading.depth} [href="#${slugify(heading.value)}"]`
+        `h${heading.depth} [href="#${heading.slug}"]`
       )
       const observer = new IntersectionObserver(
         ([entry]) => {
@@ -53,7 +75,7 @@ export function TocSpy(props) {
           }
         },
         {
-          rootMargin: '-200px',
+          rootMargin: `-${MARGIN}px`,
           threshold: 0,
         }
       )
@@ -68,7 +90,18 @@ export function TocSpy(props) {
 
   return (
     <div className="TocSpy">
-      <aside className="TocSpy__list TocSpy__list--fixed">
+      <header className="TocSpy__nav">
+        <Button onClick={toggleOpen} title="Table of contents">
+          <FaList color="var(--leko-foreground-dimmed)" />
+        </Button>
+      </header>
+      <aside
+        className={classNames([
+          'TocSpy__list',
+          'TocSpy__list--fixed',
+          open ? 'TocSpy__list--open' : null,
+        ])}
+      >
         <h4
           className={classNames([
             'TocSpy__item',
@@ -87,10 +120,15 @@ export function TocSpy(props) {
               index === activeIndex ? 'TocSpy__item--active' : null,
             ])}
           >
-            <a href={`#${h.slug}`}>{h.value}</a>
+            <a href={`#${h.slug}`} onClick={e => scrollTo(e, h, index)}>
+              {h.value}
+            </a>
           </div>
         ))}
       </aside>
     </div>
   )
 }
+
+// To use suspense
+export default TocSpy

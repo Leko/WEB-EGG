@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react'
-import { FaMoon } from 'react-icons/fa'
-import { FaSun } from 'react-icons/fa'
+import { FaMoon, FaSun } from 'react-icons/fa'
 import { Button } from './Button'
 
 export function ColorScheme(props) {
@@ -11,7 +10,7 @@ export function ColorScheme(props) {
   }, [theme])
 
   return (
-    <Button onClick={handleChange}>
+    <Button onClick={handleChange} title="Dark mode">
       {theme === 'dark' ? (
         <FaSun color="var(--leko-foreground-dimmed)" />
       ) : (

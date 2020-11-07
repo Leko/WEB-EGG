@@ -4,7 +4,6 @@ import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Root } from '../components/Root'
 import { BlogPostFull } from '../components/BlogPostFull'
-import { TocSpy } from '../components/TocSpy'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -26,23 +25,17 @@ class BlogPostTemplate extends React.Component {
                 : null
             }
           />
-          <div className="Layout__post">
-            <div className="Layout__post__toc">
-              <TocSpy headings={post.headings} />
-            </div>
-            <div className="Layout__post__post">
-              <BlogPostFull
-                title={post.frontmatter.title}
-                publishedAtStr={post.frontmatter.date}
-                timeToRead={post.timeToRead}
-                bodyHtml={post.html}
-                featuredImage={
-                  post.frontmatter.featuredImage?.childImageSharp?.fluid
-                }
-                tags={post.frontmatter.tags ?? []}
-              />
-            </div>
-          </div>
+          <BlogPostFull
+            title={post.frontmatter.title}
+            publishedAtStr={post.frontmatter.date}
+            timeToRead={post.timeToRead}
+            bodyHtml={post.html}
+            headings={post.headings}
+            featuredImage={
+              post.frontmatter.featuredImage?.childImageSharp?.fluid
+            }
+            tags={post.frontmatter.tags ?? []}
+          />
           <ul
             style={{
               marginTop: 56,

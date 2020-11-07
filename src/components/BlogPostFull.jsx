@@ -1,9 +1,11 @@
 import React from 'react'
-import Bio from '../components/Bio'
 import Img from 'gatsby-image'
+import Bio from './Bio'
 import { Tag } from './Tag'
 import { BeforeReading } from './BeforeReading'
 import '../styles/BlogPost.css'
+
+import loadable from '@loadable/component'
 
 export function BlogPostFull(props) {
   const {
@@ -11,11 +13,14 @@ export function BlogPostFull(props) {
     publishedAtStr,
     timeToRead,
     tags,
+    headings,
     bodyHtml,
     featuredImage = null,
     renderBeforeBody = () => null,
     renderPostBody = () => null,
   } = props
+  const TocSpy = loadable(() => import('./TocSpy'))
+
   return (
     <section className="BlogPost BlogPost--full">
       {featuredImage && (
@@ -36,6 +41,7 @@ export function BlogPostFull(props) {
       <div className="Bio__wrap">
         <Bio />
       </div>
+      <TocSpy headings={headings} />
       {renderBeforeBody()}
       <div
         className="BlogPost__body"

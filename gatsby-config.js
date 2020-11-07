@@ -64,7 +64,13 @@ module.exports = {
           //     wrapperStyle: `margin-bottom: 1.0725rem`,
           //   },
           // },
-          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: 200,
+              className: `autolink-header`,
+            },
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -101,9 +107,7 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                const permalink = `${site.siteMetadata.siteUrl}post${
-                  edge.node.fields.slug
-                }`
+                const permalink = `${site.siteMetadata.siteUrl}post${edge.node.fields.slug}`
                 return {
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
@@ -217,7 +221,7 @@ module.exports = {
       resolve: `@sentry/gatsby`,
       options: {
         dsn: 'https://12665dacfb554ecea25f3ef119a904af@sentry.io/244064',
-        tracesSampleRate: 0.5
+        tracesSampleRate: 0.5,
       },
     },
     `gatsby-plugin-twitter`,
