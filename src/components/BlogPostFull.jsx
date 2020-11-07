@@ -19,7 +19,12 @@ export function BlogPostFull(props) {
   return (
     <section className="BlogPost BlogPost--full">
       {featuredImage && (
-        <Img className="BlogPost__featuredImage" fluid={featuredImage} />
+        <Img
+          className="BlogPost__featuredImage"
+          fluid={featuredImage}
+          loading="eager"
+          durationFadeIn={100}
+        />
       )}
       <h1 className="BlogPost__title">{title}</h1>
       <div className="BeforeReading__wrap">

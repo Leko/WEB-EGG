@@ -17,7 +17,12 @@ export function BlogPostSummary(props) {
   return (
     <section className="BlogPost">
       {featuredImage && (
-        <Img className="BlogPost__featuredImage" fluid={featuredImage} />
+        <Img
+          className="BlogPost__featuredImage"
+          fluid={featuredImage}
+          loading="eager"
+          durationFadeIn={100}
+        />
       )}
       <h3 className="BlogPost__title">
         <Link className="BlogPost__title__link" to={`/post${slug}`}>
