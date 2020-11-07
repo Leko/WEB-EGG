@@ -1,15 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { FaList } from 'react-icons/fa'
+import Slugger from 'github-slugger'
 import { Button } from './Button'
 import '../styles/TocSpy.css'
 
 function slugify(raw) {
-  return encodeURIComponent(
-    raw
-      .replace(/[./]/g, '')
-      .replace(/ /g, '-')
-      .toLowerCase()
-  )
+  return encodeURIComponent(Slugger.slug(raw))
 }
 
 function classNames(list) {
@@ -52,6 +48,11 @@ export function TocSpy(props) {
       const targetEl = document.querySelector(
         `h${heading.depth} [href="#${heading.slug}"]`
       )
+      if (!targetEl) {
+        throw new Error(
+          `Unknown element for ${heading.value}, h${heading.depth} [href="#${heading.slug}"]`
+        )
+      }
       const observer = new IntersectionObserver(
         ([entry]) => {
           const init = !prevMap.has(index)
