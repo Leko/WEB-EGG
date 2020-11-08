@@ -226,5 +226,11 @@ module.exports = {
     },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-nprogress`,
+    {
+      resolve: `gatsby-plugin-polyfill-io`,
+      options: {
+        features: [`IntersectionObserver`],
+      },
+    },
   ],
 }
