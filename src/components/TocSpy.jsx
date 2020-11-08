@@ -1,38 +1,45 @@
 import React, { useEffect, useState, useCallback } from 'react'
 import { FaList } from 'react-icons/fa'
-import Slugger from 'github-slugger'
 import { Button } from './Button'
 import '../styles/TocSpy.css'
-
-function slugify(raw) {
-  return encodeURIComponent(Slugger.slug(raw))
-}
 
 function classNames(list) {
   return list.filter(Boolean).join(' ')
 }
 
+function getSelector(root, macDepth) {
+  const selectors = []
+  for (let depth = 1; depth <= macDepth; depth++) {
+    selectors.push(`${root} h${depth}[id]`)
+  }
+  return selectors.join(',')
+}
+
 const MARGIN = 200
 
 export function TocSpy(props) {
-  const { headings, maxDepth = 3 } = props
+  const { root, maxDepth = 3 } = props
   const [activeIndex, setActiveIndex] = useState(-1)
+  const [headings, setHeadings] = useState([])
   const [open, setOpen] = useState(false)
-  const headingsForDisplay = headings
-    .filter(heading => heading.depth <= maxDepth)
-    .map(h => ({
-      ...h,
-      slug: slugify(h.value),
-    }))
 
   const toggleOpen = useCallback(() => {
+    window.gtag?.('event', 'select_content', {
+      content_type: 'link',
+      item_id: 'toc',
+    })
     setOpen(before => !before)
   })
   const scrollTo = (e, { depth, slug }, index) => {
-    const targetEl = document.querySelector(`h${depth} [href="#${slug}"]`)
+    window.gtag?.('event', 'select_content', {
+      content_type: 'link',
+      item_id: 'toc_item',
+    })
+
+    const targetEl = document.querySelector(`h${depth} [href="${slug}"]`)
       .parentElement
     e.preventDefault()
-    history.pushState({}, document.title, `#${slug}`)
+    history.pushState({}, document.title, slug)
     window.scrollTo({
       left: 0,
       top: Math.max(0, targetEl.offsetTop - MARGIN + 1),
@@ -43,16 +50,17 @@ export function TocSpy(props) {
   }
 
   useEffect(() => {
+    const selector = getSelector(root, maxDepth)
+    const headingElements = [...document.querySelectorAll(selector)]
+    const headings = headingElements.map(el => ({
+      el,
+      text: el.textContent,
+      depth: parseInt(el.tagName.slice(-1)),
+      slug: el.id,
+    }))
+
     let prevMap = new Map()
-    const observers = headingsForDisplay.map((heading, index) => {
-      const targetEl = document.querySelector(
-        `h${heading.depth} [href="#${heading.slug}"]`
-      )
-      if (!targetEl) {
-        throw new Error(
-          `Unknown element for ${heading.value}, h${heading.depth} [href="#${heading.slug}"]`
-        )
-      }
+    const observers = headings.map((heading, index) => {
       const observer = new IntersectionObserver(
         ([entry]) => {
           const init = !prevMap.has(index)
@@ -80,14 +88,15 @@ export function TocSpy(props) {
           threshold: 0,
         }
       )
-      observer.observe(targetEl)
+      observer.observe(heading.el)
       return observer
     })
+    setHeadings(headings)
 
     return () => {
       observers.forEach(o => o.disconnect())
     }
-  }, [headings])
+  }, [root])
 
   return (
     <div className="TocSpy">
@@ -112,17 +121,17 @@ export function TocSpy(props) {
         >
           Table of Contents
         </h4>
-        {headingsForDisplay.map((h, index) => (
+        {headings.map((h, index) => (
           <div
-            key={h.value + (index === activeIndex)}
+            key={h.text + h.depth + (index === activeIndex)}
             className={classNames([
               'TocSpy__item',
               `TocSpy__item--level-${h.depth}`,
               index === activeIndex ? 'TocSpy__item--active' : null,
             ])}
           >
-            <a href={`#${h.slug}`} onClick={e => scrollTo(e, h, index)}>
-              {h.value}
+            <a href={`${h.slug}`} onClick={e => scrollTo(e, h, index)}>
+              {h.text}
             </a>
           </div>
         ))}

@@ -13,7 +13,6 @@ export function BlogPostFull(props) {
     publishedAtStr,
     timeToRead,
     tags,
-    headings,
     bodyHtml,
     featuredImage = null,
     renderBeforeBody = () => null,
@@ -41,7 +40,7 @@ export function BlogPostFull(props) {
       <div className="Bio__wrap">
         <Bio />
       </div>
-      <TocSpy headings={headings} />
+      <TocSpy root=".BlogPost__body" />
       {renderBeforeBody()}
       <div
         className="BlogPost__body"
