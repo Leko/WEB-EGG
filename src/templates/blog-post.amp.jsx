@@ -41,7 +41,6 @@ class BlogPostTemplate extends React.Component {
             }
             tags={post.frontmatter.tags ?? []}
             bodyHtml={post.html}
-            headings={post.headings}
             renderBeforeBody={() => <div id="ad-placeholder-1" />}
             renderPostBody={() => <div id="ad-placeholder-2" />}
           />
@@ -91,10 +90,6 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       timeToRead
-      headings {
-        value
-        depth
-      }
       frontmatter {
         title
         tags
