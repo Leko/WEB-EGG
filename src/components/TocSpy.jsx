@@ -24,9 +24,18 @@ export function TocSpy(props) {
   const [open, setOpen] = useState(false)
 
   const toggleOpen = useCallback(() => {
+    window.gtag?.('event', 'select_content', {
+      content_type: 'link',
+      item_id: 'toc',
+    })
     setOpen(before => !before)
   })
   const scrollTo = (e, { depth, slug }, index) => {
+    window.gtag?.('event', 'select_content', {
+      content_type: 'link',
+      item_id: 'toc_item',
+    })
+
     const targetEl = document.querySelector(`h${depth} [href="${slug}"]`)
       .parentElement
     e.preventDefault()
@@ -49,7 +58,6 @@ export function TocSpy(props) {
       depth: parseInt(el.tagName.slice(-1)),
       slug: el.id,
     }))
-    console.log(selector, headings, headingElements)
 
     let prevMap = new Map()
     const observers = headings.map((heading, index) => {

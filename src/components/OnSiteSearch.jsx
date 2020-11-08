@@ -12,7 +12,7 @@ const searchClient = algoliasearch(
 )
 
 export function OnSiteSearch() {
-  const inputRef = useRef(null);
+  const inputRef = useRef(null)
   useEffect(() => {
     window.addEventListener('keyup', handleFocus, false)
     function handleFocus(e) {
@@ -31,8 +31,9 @@ export function OnSiteSearch() {
       searchClient={searchClient}
       // https://www.algolia.com/doc/guides/building-search-ui/going-further/integrate-google-analytics/react/
       onSearchStateChange={searchState => {
-        const page = `?query=${searchState.query}`
-        window.ga?.('send', 'pageView', page)
+        window.gtag?.('event', 'search', {
+          search_term: searchState.query,
+        })
       }}
     >
       <Configure
