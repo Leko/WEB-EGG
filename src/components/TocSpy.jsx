@@ -30,19 +30,17 @@ export function TocSpy(props) {
     })
     setOpen(before => !before)
   })
-  const scrollTo = (e, { depth, slug }, index) => {
+  const scrollTo = (e, { el, slug }, index) => {
     window.gtag?.('event', 'select_content', {
       content_type: 'link',
       item_id: 'toc_item',
     })
 
-    const targetEl = document.querySelector(`h${depth} [href="${slug}"]`)
-      .parentElement
     e.preventDefault()
     history.pushState({}, document.title, slug)
     window.scrollTo({
       left: 0,
-      top: Math.max(0, targetEl.offsetTop - MARGIN + 1),
+      top: Math.max(0, el.offsetTop - MARGIN + 1),
     })
     requestAnimationFrame(() => {
       setActiveIndex(index)
@@ -130,7 +128,7 @@ export function TocSpy(props) {
               index === activeIndex ? 'TocSpy__item--active' : null,
             ])}
           >
-            <a href={`${h.slug}`} onClick={e => scrollTo(e, h, index)}>
+            <a href={`#${h.slug}`} onClick={e => scrollTo(e, h, index)}>
               {h.text}
             </a>
           </div>
