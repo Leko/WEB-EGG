@@ -22,11 +22,11 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 - トレンドの過去データのソースは[xiaobaiha/github-trending-history](https://github.com/xiaobaiha/github-trending-history)を参照
   - 日ごとにまとめた markdown になっており、remark で AST→ データ化しました
 
+[xiaobaiha/github-trending-history](https://github.com/xiaobaiha/github-trending-history)のデータをベースに加工した集計用の生データは[こちら](https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFXqzaCMuNqPuDBs4PE6wuxJuJfwbUIYvv8l-IV8neo-6G0BDfP68kcZ8MlV_fFJMkpIdADMzya84/pub?gid=259916409&single=true&output=csv)に CSV として公開しています。
+
 **GitHub がそのリポジトリをなんの言語と見なしたかをもとに集計対象を決定している**ことにご留意ください。また、別言語で書かれた JS 向けのツール（swc, esbuild など）、CSS フレームワークなども対象外とします。
 
-また、本記事では振り返りの指標として GitHub のトレンドおよびスター数を採用しています。話題性やバズに連想する値だとは思っていますが、トレンドに載ることやスター数の大小がそのものの良し悪しを決定する決定的な因子ではないと筆者は思っています。
-
-[xiaobaiha/github-trending-history](https://github.com/xiaobaiha/github-trending-history)のデータをベースに加工した集計用の生データは[こちら](https://docs.google.com/spreadsheets/d/e/2PACX-1vTHFXqzaCMuNqPuDBs4PE6wuxJuJfwbUIYvv8l-IV8neo-6G0BDfP68kcZ8MlV_fFJMkpIdADMzya84/pub?gid=259916409&single=true&output=csv)に CSV として公開しています。
+なお、本記事では振り返りの指標として GitHub のトレンドおよびスター数を採用しています。話題性やバズに連想する値だとは思っていますが、トレンドに載ることやスター数の大小がそのものの良し悪しを決定する決定的な因子ではないと筆者は思っています。つまりこの記事に載ったから良い、載らなかったから悪いということはありません。
 
 <details><summary>説明が必要そうなCSVカラムの一覧を開く</summary>
 
