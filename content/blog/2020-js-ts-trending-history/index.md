@@ -1,6 +1,6 @@
 ---
 title: GitHubのトレンドで振り返る2020年のJavaScript
-date: '2020-12-11T2:29:42.458Z'
+date: '2020-12-11T02:29:42.458Z'
 featuredImage: ./2020-12-09-01-19-48.png
 tags:
   - JavaScript
