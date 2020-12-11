@@ -34,6 +34,9 @@ p {
 small {
   font-size: 0.9rem;
 }
+del {
+  opacity: 0.4;
+}
 a {
   color: var(--leko-primary);
 }
