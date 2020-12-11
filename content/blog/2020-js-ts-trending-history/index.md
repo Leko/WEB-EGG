@@ -115,7 +115,7 @@ Recoil も話題になりましたね。発表されたのは 5 月ごろだっ�
 
 ### vitejs/vite
 
-死語ですが「ジョバンニが一晩でやってくれました」シリーズですね。esbuild が早いぞと話題になっているころ、Vue.js の作者 Evan You がバンドラのパフォーマンスについて悶々と考えた結果生まれた高速な dev サーバです。Vue.js 作者が作っており名前もそれっぽいので Vue.js 専用のツールなのかと思っていましたが、React や preact でも使える作りになっています。
+死語ですが「ジェバンニが一晩でやってくれました」シリーズですね。esbuild が早いぞと話題になっているころ、Vue.js の作者 Evan You がバンドラのパフォーマンスについて悶々と考えた結果生まれた高速な dev サーバです。Vue.js 作者が作っており名前もそれっぽいので Vue.js 専用のツールなのかと思っていましたが、React や preact でも使える作りになっています。
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Open sourced at <a href="https://t.co/LYv5vnOv1O">https://t.co/LYv5vnOv1O</a> <a href="https://t.co/KU2LLpEmTD">https://t.co/KU2LLpEmTD</a></p>&mdash; Evan You (@youyuxi) <a href="https://twitter.com/youyuxi/status/1252578206454087680?ref_src=twsrc%5Etfw">April 21, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -135,7 +135,7 @@ Recoil も話題になりましたね。発表されたのは 5 月ごろだっ�
 
 ## 2020 年にもっともスターを獲得したリポジトリ
 
-次にリポジトリの柵整備に関係なく 2020 年もっともスターを獲得したリポジトリを見ていきます。
+次にリポジトリの作成日に関係なく 2020 年もっともスターを獲得したリポジトリを見ていきます。
 
 - 2020 年に一度以上トレンドに載った
 - 今年獲得したスター数が大きい順にソート
