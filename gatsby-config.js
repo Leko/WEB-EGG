@@ -34,7 +34,7 @@ module.exports = {
             resolve: `gatsby-remark-discoverable-oembed`,
             options: {
               experimental_lazyload: false,
-              maxWidth: 700,
+              maxWidth: 1336, // 668 * 2
               whitelist: [
                 `https://*.hatenablog.com/entry/**/*`,
                 `https://npmcharts.com/**/*`,
@@ -55,7 +55,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 700,
+              maxWidth: 1336, // 668 * 2
             },
           },
           // {
