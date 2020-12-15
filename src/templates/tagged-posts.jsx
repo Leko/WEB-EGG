@@ -85,7 +85,7 @@ export const pageQuery = graphql`
             title
             featuredImage {
               childImageSharp {
-                fluid(maxWidth: 700) {
+                fluid(maxWidth: 1336) {
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
