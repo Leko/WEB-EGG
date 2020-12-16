@@ -4,6 +4,9 @@ import TypographyTheme from 'typography-theme-wordpress-2016'
 
 TypographyTheme.overrideThemeStyles = () => {
   return {
+    h1: {
+      fontFamily: textFontFamily.join(','),
+    },
     a: {
       boxShadow: `none`,
     },
