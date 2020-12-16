@@ -67,3 +67,5 @@ const typography = new Typography(TypographyTheme)
 if (process.env.NODE_ENV !== `production`) {
   typography.injectStyles()
 }
+
+export default typography
