@@ -106,7 +106,14 @@ li.ais-Hits-item:last-of-type {
 .OnSiteSearchHit__root a:hover {
   background-color: var(--leko-background-accent);
 }
+.OnSiteSearchHit__headline {
+  margin-bottom: 8px;
+}
+.OnSiteSearchHit__description {
+  font-size: 0.9rem;
+}
 .OnSiteSearchHit__meta {
+  font-size: 0.9rem;
   display: flex;
   flex-direction: row;
 }

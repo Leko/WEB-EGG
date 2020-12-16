@@ -16,6 +16,8 @@
 }
 .Brand__search {
   grid-area: search;
+  /* To avoid CLS */
+  height: 40px;
 }
 .Brand__color-scheme {
   grid-area: theme;

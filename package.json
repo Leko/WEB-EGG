@@ -4,15 +4,15 @@
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Leko <leko.noor@gmail.com>",
+  "browserslist": [
+    "defaults"
+  ],
   "resolutions": {
     "react-hot-loader": "~4.13.0"
   },
   "dependencies": {
     "@loadable/component": "^5.9.0",
-    "@sentry/gatsby": "~5.27.2",
-    "@sentry/tracing": "~5.27.2",
     "algoliasearch": "~4.6.0",
-    "fontsource-montserrat": "^3.0.9",
     "gatsby": "~2.25.0",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-algolia": "~0.14.1",

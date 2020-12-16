@@ -46,22 +46,6 @@ function SEO({
                 rel: 'author',
                 href: 'http://www.hatena.ne.jp/L_e_k_o/',
               },
-              {
-                rel: 'preconnect',
-                href: 'https://id0g7okl62-dsn.algolia.net',
-              },
-              {
-                rel: 'preconnect',
-                href: 'https://stats.g.doubleclick.net',
-              },
-              {
-                rel: 'preconnect',
-                href: 'https://www.google.com',
-              },
-              {
-                rel: 'preconnect',
-                href: 'https://www.google-analytics.com',
-              },
             ].filter(({ href }) => !!href)}
             meta={[
               {

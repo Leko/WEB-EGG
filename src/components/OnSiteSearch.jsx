@@ -4,7 +4,6 @@ import algoliasearch from 'algoliasearch/lite'
 import { FaSearch } from 'react-icons/fa'
 import { InstantSearch, SearchBox, Configure } from 'react-instantsearch-dom'
 import { OnSiteSearchHitList } from './OnSiteSearchHitList'
-import '../styles/OnSiteSearch.css'
 
 const searchClient = algoliasearch(
   process.env.ALGOLIA_APP_ID,

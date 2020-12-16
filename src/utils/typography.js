@@ -4,6 +4,9 @@ import TypographyTheme from 'typography-theme-wordpress-2016'
 
 TypographyTheme.overrideThemeStyles = () => {
   return {
+    h1: {
+      fontFamily: textFontFamily.join(','),
+    },
     a: {
       boxShadow: `none`,
     },
@@ -69,5 +72,3 @@ if (process.env.NODE_ENV !== `production`) {
 }
 
 export default typography
-export const rhythm = typography.rhythm
-export const scale = typography.scale
