@@ -5,6 +5,10 @@ import SEO from '../components/seo'
 import { Root } from '../components/Root'
 import { BlogPostFull } from '../components/BlogPostFull'
 
+import 'prism-themes/themes/prism-dracula.css'
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css'
+import './plugins/gatsby-remark-expand-github-embedded-code-snippet/style.css'
+
 class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
