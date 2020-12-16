@@ -39,6 +39,10 @@ function SEO({
                 href: publicUrl.replace('/post/', '/amp/post/'),
               },
               {
+                rel: 'author',
+                href: 'http://www.hatena.ne.jp/L_e_k_o/',
+              },
+              {
                 rel: 'preconnect',
                 href: 'https://id0g7okl62-dsn.algolia.net',
               },
