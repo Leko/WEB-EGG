@@ -21,7 +21,7 @@ export function BlogPostSummary(props) {
           className="BlogPost__featuredImage"
           fluid={featuredImage}
           loading="eager"
-          durationFadeIn={100}
+          fadeIn={false}
         />
       )}
       <h3 className="BlogPost__title">
