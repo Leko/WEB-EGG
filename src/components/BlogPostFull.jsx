@@ -27,7 +27,7 @@ export function BlogPostFull(props) {
           className="BlogPost__featuredImage"
           fluid={featuredImage}
           loading="eager"
-          durationFadeIn={100}
+          fadeIn={false}
         />
       )}
       <h1 className="BlogPost__title">{title}</h1>
