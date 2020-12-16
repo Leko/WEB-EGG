@@ -1,11 +1,9 @@
 import React from 'react'
-import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import SEO from '../components/seo'
 import { Root } from '../components/Root'
-import { BeforeReading } from '../components/BeforeReading'
-import { rhythm } from '../utils/typography'
+import { BlogPostSummary } from '../components/BlogPostSummary'
 
 class BlogIndex extends React.Component {
   render() {
@@ -22,36 +20,17 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <div key={node.fields.slug}>
-                <h3
-                  style={{
-                    marginBottom: rhythm(1 / 4),
-                  }}
-                >
-                  <Link
-                    style={{ boxShadow: `none` }}
-                    to={`/post${node.fields.slug}`}
-                  >
-                    {title}
-                  </Link>
-                </h3>
-                <BeforeReading
-                  publishedAtStr={node.frontmatter.date}
-                  timeToRead={node.timeToRead}
-                />
-                {node.frontmatter.featuredImage &&
-                  node.frontmatter.featuredImage.childImageSharp && (
-                    <Img
-                      fluid={
-                        node.frontmatter.featuredImage.childImageSharp.fluid
-                      }
-                    />
-                  )}
-                <p
-                  style={{ marginTop: rhythm(0.5) }}
-                  dangerouslySetInnerHTML={{ __html: node.excerpt }}
-                />
-              </div>
+              <BlogPostSummary
+                key={node.fields.slug}
+                title={title}
+                slug={node.fields.slug}
+                publishedAtStr={node.frontmatter.date}
+                timeToRead={node.timeToRead}
+                excerptHtml={node.excerpt}
+                featuredImage={
+                  node.frontmatter.featuredImage?.childImageSharp?.fluid
+                }
+              />
             )
           })}
         </Layout>

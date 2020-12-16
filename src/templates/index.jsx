@@ -26,18 +26,17 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <div key={node.fields.slug}>
-                <BlogPostSummary
-                  title={title}
-                  slug={node.fields.slug}
-                  publishedAtStr={node.frontmatter.date}
-                  timeToRead={node.timeToRead}
-                  excerptHtml={node.excerpt}
-                  featuredImage={
-                    node.frontmatter.featuredImage?.childImageSharp?.fluid
-                  }
-                />
-              </div>
+              <BlogPostSummary
+                key={node.fields.slug}
+                title={title}
+                slug={node.fields.slug}
+                publishedAtStr={node.frontmatter.date}
+                timeToRead={node.timeToRead}
+                excerptHtml={node.excerpt}
+                featuredImage={
+                  node.frontmatter.featuredImage?.childImageSharp?.fluid
+                }
+              />
             )
           })}
           <ul
