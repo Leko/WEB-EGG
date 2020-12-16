@@ -48,19 +48,12 @@ function SEO({
               },
               {
                 rel: 'preconnect',
-                href: 'https://id0g7okl62-dsn.algolia.net',
+                href: 'https://fonts.gstatic.com',
               },
               {
-                rel: 'preconnect',
-                href: 'https://stats.g.doubleclick.net',
-              },
-              {
-                rel: 'preconnect',
-                href: 'https://www.google.com',
-              },
-              {
-                rel: 'preconnect',
-                href: 'https://www.google-analytics.com',
+                rel: 'stylesheet',
+                href:
+                  'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap',
               },
             ].filter(({ href }) => !!href)}
             meta={[
