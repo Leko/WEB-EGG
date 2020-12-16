@@ -40,7 +40,7 @@ function SEO({
               },
               {
                 rel: 'canonical',
-                href: publicUrl,
+                href: slug ? publicUrl : null,
               },
               {
                 rel: 'author',
@@ -62,7 +62,7 @@ function SEO({
                 rel: 'preconnect',
                 href: 'https://www.google-analytics.com',
               },
-            ]}
+            ].filter(({ href }) => !!href)}
             meta={[
               {
                 name: `description`,
