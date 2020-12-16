@@ -46,15 +46,6 @@ function SEO({
                 rel: 'author',
                 href: 'http://www.hatena.ne.jp/L_e_k_o/',
               },
-              {
-                rel: 'preconnect',
-                href: 'https://fonts.gstatic.com',
-              },
-              {
-                rel: 'stylesheet',
-                href:
-                  'https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap',
-              },
             ].filter(({ href }) => !!href)}
             meta={[
               {

@@ -6,7 +6,6 @@ export function Brand({ title }) {
     <Link to={`/`}>
       <h1
         style={{
-          fontFamily: `'Montserrat', sans-serif`,
           margin: 0,
         }}
       >
