@@ -15,7 +15,7 @@ export function Brand({ title }) {
       <h1
         style={{
           display: 'inline-block',
-          fontFamily: `Montserrat, sans-serif`,
+          fontFamily: `'Montserrat', sans-serif`,
           marginTop: 0,
           marginBottom: rhythm(-1),
         }}

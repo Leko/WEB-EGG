@@ -4,6 +4,7 @@ import { Brand } from './Brand'
 import { ColorScheme } from './ColorScheme'
 import { Context } from '../components/ColorSchemeContext'
 import '../styles/Layout.css'
+import '../styles/OnSiteSearch.css'
 
 // React.lazy and Suspense is not yet available for server-side rendering. If you want to do code-splitting in a server rendered app, we recommend Loadable Components. It has a nice guide for bundle splitting with server-side rendering.
 // https://reactjs.org/docs/code-splitting.html#reactlazy
