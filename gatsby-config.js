@@ -217,13 +217,6 @@ module.exports = {
         disable: true,
       },
     },
-    {
-      resolve: `@sentry/gatsby`,
-      options: {
-        dsn: 'https://12665dacfb554ecea25f3ef119a904af@sentry.io/244064',
-        tracesSampleRate: 0.5,
-      },
-    },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-nprogress`,
     {

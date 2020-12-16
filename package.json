@@ -12,8 +12,6 @@
   },
   "dependencies": {
     "@loadable/component": "^5.9.0",
-    "@sentry/gatsby": "~5.27.2",
-    "@sentry/tracing": "~5.27.2",
     "algoliasearch": "~4.6.0",
     "gatsby": "~2.25.0",
     "gatsby-image": "^2.2.20",
