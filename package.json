@@ -4,6 +4,9 @@
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Leko <leko.noor@gmail.com>",
+  "browserslist": [
+    "defaults"
+  ],
   "resolutions": {
     "react-hot-loader": "~4.13.0"
   },
