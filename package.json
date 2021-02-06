@@ -13,7 +13,7 @@
   "dependencies": {
     "@loadable/component": "^5.9.0",
     "algoliasearch": "~4.6.0",
-    "gatsby": "~2.25.0",
+    "gatsby": "~2.31.0",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-algolia": "~0.14.1",
     "gatsby-plugin-brotli": "~2.0.0",
