@@ -18,11 +18,17 @@
         "大文字小文字",
         "音声同時翻訳",
         "自然言語解析",
+        "自然言語処理",
+        "形態素解析器"
       ]
     },
     "period-in-list-item": {
-      "periodMarks": [".", "。", "．"],
+      "periodMarks": [
+        ".",
+        "。",
+        "．"
+      ],
       "forceAppendPeriod": false
-    },
+    }
   }
 }
