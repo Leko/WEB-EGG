@@ -213,12 +213,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-brotli`,
-    {
-      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
-      options: {
-        disable: true,
-      },
-    },
     `gatsby-plugin-twitter`,
     `gatsby-plugin-nprogress`,
     {
