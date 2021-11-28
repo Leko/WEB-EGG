@@ -1,6 +1,6 @@
 ---
 title: WebAssemblyの形態素解析器GoyaをRustで作った
-date: '2021-10-04T08:17:20.265Z'
+date: '2021-11-27T16:28:06.902Z'
 featuredImage: 2021-10-23-13-31-45.png
 tags:
   - JavaScript
