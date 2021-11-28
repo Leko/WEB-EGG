@@ -93,7 +93,7 @@
     "test": "exit 0",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "start": "DOTENV_CONFIG_PATH=.env.development node -r dotenv/config $(npm bin)/gatsby develop",
-    "build": "gatsby build && node scripts/amplify.js",
+    "build": "gatsby build --verbose",
     "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
