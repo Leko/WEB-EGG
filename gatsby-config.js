@@ -157,53 +157,53 @@ module.exports = {
         icon: `content/assets/icon.png`,
       },
     },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME,
-        queries: [
-          {
-            query: `{
-              allMarkdownRemark {
-                edges {
-                  node {
-                    timeToRead
-                    excerpt
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      title
-                      date(formatString: "MMMM DD, YYYY")
-                      tags
-                    }
-                    # rawMarkdownBody
-                    # internal {
-                    #   contentDigest
-                    # }
-                  }
-                }
-              }
-            }`,
-            transformer: ({ data }) =>
-              data.allMarkdownRemark.edges.flatMap(({ node }) => {
-                return {
-                  id: node.fields.slug,
-                  timeToRead: node.timeToRead,
-                  excerpt: node.excerpt,
-                  // body: node.rawMarkdownBody,
-                  title: node.frontmatter.title,
-                  publishedAt: new Date(node.frontmatter.date),
-                  tags: node.frontmatter.tags,
-                }
-              }),
-          },
-        ],
-        chunkSize: 10000,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-algolia`,
+    //   options: {
+    //     appId: process.env.ALGOLIA_APP_ID,
+    //     apiKey: process.env.ALGOLIA_API_KEY,
+    //     indexName: process.env.ALGOLIA_INDEX_NAME,
+    //     queries: [
+    //       {
+    //         query: `{
+    //           allMarkdownRemark {
+    //             edges {
+    //               node {
+    //                 timeToRead
+    //                 excerpt
+    //                 fields {
+    //                   slug
+    //                 }
+    //                 frontmatter {
+    //                   title
+    //                   date(formatString: "MMMM DD, YYYY")
+    //                   tags
+    //                 }
+    //                 # rawMarkdownBody
+    //                 # internal {
+    //                 #   contentDigest
+    //                 # }
+    //               }
+    //             }
+    //           }
+    //         }`,
+    //         transformer: ({ data }) =>
+    //           data.allMarkdownRemark.edges.flatMap(({ node }) => {
+    //             return {
+    //               id: node.fields.slug,
+    //               timeToRead: node.timeToRead,
+    //               excerpt: node.excerpt,
+    //               // body: node.rawMarkdownBody,
+    //               title: node.frontmatter.title,
+    //               publishedAt: new Date(node.frontmatter.date),
+    //               tags: node.frontmatter.tags,
+    //             }
+    //           }),
+    //       },
+    //     ],
+    //     chunkSize: 10000,
+    //   },
+    // },
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
