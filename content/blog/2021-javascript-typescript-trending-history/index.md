@@ -35,16 +35,14 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
   - 集計期間のスター数の差分が+5000 以上
   - 今年獲得したスター数（集計開始時のスター数と、集計終了時のスター数の差）が大きい順にソート
 
-行頭にある矢印の見方は 2020/1/1 のスター数->2021/12/6 のスター数です。
+行頭にある矢印の見方は 2020/1/1 のスター数->2021/12/15 のスター数です。
 
-- 92 -> 76501(+76409) [ant-design/ant-design](https://github.com/ant-design/ant-design)
 - 17 -> 20440(+20423) [conwnet/github1s](https://github.com/conwnet/github1s)
 - 47 -> 16747(+16700) [slidevjs/slidev](https://github.com/slidevjs/slidev)
 - 20 -> 12018(+11998) [pavlobu/deskreen](https://github.com/pavlobu/deskreen)
 - 10 -> 9208(+9198) [benawad/dogehouse](https://github.com/benawad/dogehouse)
 - 11 -> 9144(+9133) [VickScarlet/lifeRestart](https://github.com/VickScarlet/lifeRestart)
 - 66 -> 8961(+8895) [calendso/calendso](https://github.com/calendso/calendso)
-- 46 -> 8811(+8765) [JonnyBurger/remotion](https://github.com/JonnyBurger/remotion)
 - 46 -> 8810(+8764) [remotion-dev/remotion](https://github.com/remotion-dev/remotion)
 - 61 -> 8674(+8613) [snowpackjs/astro](https://github.com/snowpackjs/astro)
 - 49 -> 7779(+7730) [alan2207/bulletproof-react](https://github.com/alan2207/bulletproof-react)
@@ -57,9 +55,13 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 - 12 -> 5290(+5278) [blueedgetechno/win11React](https://github.com/blueedgetechno/win11React)
 - 12 -> 5207(+5195) [nextapps-de/winbox](https://github.com/nextapps-de/winbox)
 
+## SaaS クローン、GUI アプリを除く
+
+今年のランクインは SaaS クローンや GUI アプリがかなり多く、個人的に面白く無かったのでそれらを除いた結果も別途集計したいと思います
+
 ## 2021 年にもっともスターを獲得したリポジトリ
 
-次にリポジトリ作成日に関係なく 2020 年もっともスターを獲得したリポジトリを見ていきます。
+次に新しいか否かに関わらず 2021 年もっともスターを獲得したリポジトリを見ていきます。
 
 - 抽出条件
   - 2020 年に一度以上トレンドに載った
@@ -100,7 +102,23 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 
 ここまでの内容と重複しているものは取り消し線を入れてます
 
-{{TODO}}
+- ~~157 -> 24070 (+23913) [google/zx](https://github.com/google/zx)~~
+- ~~65584 -> 89130 (+23546) [30-seconds/30-seconds-of-code](https://github.com/30-seconds/30-seconds-of-code)~~
+- ~~314511 -> 337473 (+22962) [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp)~~
+- 57149 -> 72747 (+15598) [goldbergyoni/nodebestpractices](https://github.com/goldbergyoni/nodebestpractices)
+- 14249 -> 26006 (+11757) [LeCoupa/awesome-cheatsheets](https://github.com/LeCoupa/awesome-cheatsheets)
+- 33816 -> 45555 (+11739) [leonardomso/33-js-concepts](https://github.com/leonardomso/33-js-concepts)
+- 7024 -> 18175 (+11151) [prisma/prisma](https://github.com/prisma/prisma)
+- 79116 -> 89871 (+10755) [axios/axios](https://github.com/axios/axios)
+- 32651 -> 42995 (+10344) [nestjs/nest](https://github.com/nestjs/nest)
+- 31862 -> 41808 (+9946) [strapi/strapi](https://github.com/strapi/strapi)
+- ~~10 -> 9208 (+9198) [benawad/dogehouse](https://github.com/benawad/dogehouse)~~
+- 74571 -> 83741 (+9170) [nodejs/node](https://github.com/nodejs/node)
+- 8367 -> 16436 (+8069) [discordjs/discord.js](https://github.com/discordjs/discord.js)
+- 27012 -> 34773 (+7761) [GitSquared/edex-ui](https://github.com/GitSquared/edex-ui)
+- 19366 -> 26956 (+7590) [laurent22/joplin](https://github.com/laurent22/joplin)
+- 879 -> 8451 (+7572) [qeeqbox/social-analyzer](https://github.com/qeeqbox/social-analyzer)
+- 295 -> 5440 (+5145) [medusajs/medusa](https://github.com/medusajs/medusa)
 
 ## トレンドに上がったリポジトリのトピック
 
