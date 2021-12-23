@@ -63,24 +63,24 @@ GitHub のリポジトリを開いて`github1s.com`にドメインを変更す�
 
 ### [slidevjs/slidev](https://github.com/slidevjs/slidev)
 
-要は Markdown で登壇資料が作れるツールの１つです。私の登壇資料（ https://talks.leko.jp/ ）は[jxnblk/mdx-deck](https://github.com/jxnblk/mdx-deck)というツールを使っているのですが、それをさらにリッチにしたものという印象です。最近全く登壇していませんが次回登壇するときに試してみようと思います。録画や拡張性やカスタマイズ性・エディタのサポートや速度などの開発体験を重要視してるようですね。Vite, Vue 3 などを利用して作られてるようです。
+要は Markdown で登壇資料が作れるツールの１つです。私の登壇資料(https://talks.leko.jp/)は[jxnblk/mdx-deck](https://github.com/jxnblk/mdx-deck)というツールを使っているのですが、それをさらにリッチにしたものという印象です。最近全く登壇していませんが次回登壇するときに試してみようと思います。録画や拡張性やカスタマイズ性・エディタのサポートや速度などの開発体験を重要視してるようですね。Vite, Vue 3 などを利用して作られてるようです。
 
 > Features
 >
 > - 📝 Markdown-based - use your favorite editors and workflow
-> - 🧑‍💻 Developer Friendly - built-in syntax highlighting, live coding, etc.
-> - 🎨 Themable - theme can be shared and used with npm packages.
-> - 🌈 Stylish - Windi CSS on-demand utilities, easy-to-use embedded stylesheets.
-> - 🤹 Interactive - embedding Vue components seamlessly.
-> - 🎙 Presenter Mode - use another window, or even your phone to control your slides.
-> - 🧮 LaTeX - built-in LaTeX math equations support.
+> - 🧑‍💻 Developer Friendly - built-in syntax highlighting, live coding, etc
+> - 🎨 Themable - theme can be shared and used with npm packages
+> - 🌈 Stylish - Windi CSS on-demand utilities, easy-to-use embedded stylesheets
+> - 🤹 Interactive - embedding Vue components seamlessly
+> - 🎙 Presenter Mode - use another window, or even your phone to control your slides
+> - 🧮 LaTeX - built-in LaTeX math equations support
 > - 📰 Diagrams - creates diagrams with textual descriptions
-> - 🌟 Icons - access to icons from any iconset directly.
+> - 🌟 Icons - access to icons from any iconset directly
 > - 💻 Editors - integrated editor, or extension for VS Code
-> - 🎥 Recording - built-in recording and camera view.
-> - 📤 Portable - export into PDF, PNGs, or even a hostable SPA.
-> - ⚡️ Fast - instant reloading powered by Vite.
-> - 🛠 Hackable - using Vite plugins, Vue components, or any npm packages.
+> - 🎥 Recording - built-in recording and camera view
+> - 📤 Portable - export into PDF, PNGs, or even a hostable SPA
+> - ⚡️ Fast - instant reloading powered by Vite
+> - 🛠 Hackable - using Vite plugins, Vue components, or any npm packages
 >
 > &mdash; [slidevjs/slidev: Presentation Slides for Developers (Beta)](https://github.com/slidevjs/slidev)
 
@@ -96,7 +96,7 @@ Web ブラウザが搭載された任意のデバイスをセカンドスクリ�
 
 ### [VickScarlet/lifeRestart](https://github.com/VickScarlet/lifeRestart)
 
-"やり直すんだ。そして、次はうまくやる。"という謎の日本語が書かれた中国語のブラウザゲーです。翻訳しながら遊んでみたところおそらくシミュレーションゲームで、初期シードのステータス設定をすると人生シミュレータが開始し、寿命が尽きるまでに何が起こったかのログが流れるというゲームでした。翻訳ミスなのかもしれませんがクトゥルフや幸運って単語が出てきたのでクトゥルフ神話とか TRPG 系の何かなのかと思いましたが、その界隈も中国語も詳しくないため結局何のゲームなのか、なぜ 9000 以上もスターを集めたのかも分かりませんでした。。。
+"やり直すんだ。そして、次はうまくやる。"という謎の日本語が書かれた中国語のブラウザゲーです。翻訳しながら遊んでみたところおそらくシミュレーションゲームで、初期シードのステータス設定をすると人生シミュレータが開始し、寿命が尽きるまでに何が起こったかのログが流れるというゲームでした。画面にクトゥルフや幸運って単語が出てきたのでクトゥルフ神話とか TRPG 系の何かなのかと思いましたが、その界隈も中国語も詳しくないため結局何のゲームなのか、なぜ 9000 以上もスターを集めたのかも分かりませんでした。。。
 
 ### [calendso/calendso](https://github.com/calendso/calendso)
 
@@ -110,7 +110,7 @@ remotion は React コンポーネントの描画結果を動画として描き�
 
 ### [withastro/astro](https://github.com/withastro/astro)
 
-Astro はランタイムを高速化することに重点を置いた静的サイトジェネレータです。React や web components やピュアな HTML+JS など、フレームワークや構成を問わず適用可能で、ビルド時に全てを解決してランタイム JS をゼロにし、必要であればハイドレーションもできて、SEO 系のメタ情報ファイルの生成にも気を配っているようです。元々は Snowpack の org で作られたもののようですが、今は独立した org でメンテナンスされているようです。[Astro 0.21 のアナウンス記事](https://astro.build/blog/astro-021-release/)によると、今は Vite を使用しており、コンパイラは Go で書かれているそうです。
+Astro はランタイムを高速化することに重点を置いた静的サイトジェネレータです。React や Web Components やピュアな HTML+JS など、フレームワークや構成を問わず適用可能で、ビルド時に全てを解決してランタイム JS をゼロにし、必要であればハイドレーションもできて、SEO 系のメタ情報ファイルの生成にも気を配っているようです。もともとは Snowpack の org で作られたもののようですが、今は独立した org でメンテナンスされているようです。[Astro 0.21 のアナウンス記事](https://astro.build/blog/astro-021-release/)によると今は Snowpack ではなく Vite を使用しており、コンパイラは Go で書かれているそうです。
 
 > &mdash; [Introducing Astro: Ship Less JavaScript](https://astro.build/blog/introducing-astro/)
 
@@ -142,7 +142,7 @@ SvelteKit は Svelte 製アプリを作る際のツールキットおよびフ�
 
 ### [SigNoz/signoz](https://github.com/SigNoz/signoz)
 
-[OpenTelemetry](https://opentelemetry.io/) をベースとした APM サービスです。運用監視に使う Datadog や New Relic などのような SaaS の OSS 版です。サーバやアプリケーションのメトリクスの規格とデータ収集・集計などに必要なエージェントをベンダーニュートラルに開発する OpenTelemetry をベースにしており、SigNoz 自体は OpenTelemetry で収集されたデータのビューワーのようなものと理解しました。OSS として自前でホストすることもできるし、MongoDB Atlas や Elastic のようにマネージドなサービスとしても利用できます。
+[OpenTelemetry](https://opentelemetry.io/) をベースとした APM サービスです。運用監視に使う Datadog や New Relic などのような SaaS の OSS 版です。サーバやアプリケーションのメトリクスの規格とデータ収集・集計などに必要なエージェントをベンダーニュートラルに開発する OpenTelemetry をベースにしており、SigNoz 自体は OpenTelemetry で収集されたデータのビューアのようなものと理解しました。OSS として自前でホストできるし、MongoDB Atlas や Elastic のようにマネージドなサービスとしても利用できます。
 
 ### [blueedgetechno/win11React](https://github.com/blueedgetechno/win11React)
 
@@ -279,8 +279,6 @@ axios 自体は言わずと知れた有名なライブラリでそれ自体に�
 > - ディープクローンが簡単になる structuredClone の追加
 >
 > &mdash; [Node.js v17 の主な変更点 - 別にしんどくないブログ](https://shisama.hatenablog.com/entry/2021/10/20/114721#WHATWG-Stream-%E3%81%A8%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7%E3%81%AE%E5%BC%B7%E5%8C%96)
-
-特に structuredClone に関してはそもそもなぜ今更になって仕様策定されたんだ？感ありますが、`JSON.parse(JSON.stringify(...))`などのイディオムを使わなくても深いオブジェクトのディープコピーが作れるようになるので、使い所によっては便利かもしれません。
 
 > &mdash; [Deep-copying in JavaScript using structuredClone](https://web.dev/structured-clone/)
 
