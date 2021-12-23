@@ -8,27 +8,27 @@ tags:
   - GitHub
 ---
 
-今年も GitHub のトレンドで 2021 年の JavaScript/TypeScript を振り返ります。去年も同じネタの記事を書いているため、去年との差異を交えつつ書きたいと思います。去年の記事はこちらです。
+今年も GitHub のトレンドで 2021 年の JavaScript/TypeScript を振り返ります。去年の記事はこちらです。
 
 > &mdash; [GitHub のトレンドで振り返る 2020 年の JavaScript | WEB EGG](https://blog.leko.jp/post/2020-js-ts-trending-history/)
 
 ## 集計方法
 
-GitHub のトレンドは過去の履歴が残っていないので非公式に集計されたデータを利用しています。
+GitHub トレンドは過去の履歴を公式に提供していないため、非公式に集計されたデータを利用しています。
 
+- トレンドの過去データのソースは[larsbijl/trending_archive](https://github.com/larsbijl/trending_archive)を参照
+  - 去年は[xiaobaiha/github-trending-history](https://github.com/xiaobaiha/github-trending-history)を利用したが今年のデータは無かったので変更
+  - 日ごとにまとめた markdown になっており、remark で AST→ データ化しました
 - 集計期間は 2021/01/01 から 2021/12/15 まで
 - 対象言語は`JavaScript`と`TypeScript`のみ
-- トレンドの過去データのソースは[larsbijl/trending_archive](https://github.com/larsbijl/trending_archive)を参照
-  - 去年は[xiaobaiha/github-trending-history](https://github.com/xiaobaiha/github-trending-history)を利用したが今年のデータは無かったのでソースを変更
-  - 日ごとにまとめた markdown になっており、remark で AST→ データ化しました
 
-生データをベースに加工した集計用の生データは[こちら](https://docs.google.com/spreadsheets/d/1S0qz8kQHdiMoVkIZr2JQ2t770J7ZKdjfsfI_CE7HU_o/edit?usp=sharing)にスプレッドシートとして公開しています。
+集計後のデータは[こちら](https://docs.google.com/spreadsheets/d/1S0qz8kQHdiMoVkIZr2JQ2t770J7ZKdjfsfI_CE7HU_o/edit?usp=sharing)のスプレッドシートで公開しています。
 
-**GitHub がそのリポジトリをなんの言語と見なしたかをもとに集計対象を決定している**ことにご留意ください。また、別言語で書かれた JS 向けのツール（swc, esbuild など）、CSS フレームワークなどは対象外としています。
+**GitHub がそのリポジトリをなんの言語と見なしたかをもとに集計対象を決定している**ことにご留意ください。そのため別言語で書かれた JS 向けのツール（swc, esbuild など）や CSS フレームワークなどは基本的に除外されます。
 
 ## 2021 年に作られた・2021 年から流行ったリポジトリ
 
-まずは今年作られた・今年から流行ったリポジトリを見ます。単純にトレンドへの掲載率や累計スター数で集計すると既知のリポジトリばかりになるので、今年誕生して流行った or 今年からトレンドに載ったリポジトリを絞って紹介します。
+まずは今年作られた・今年から流行ったリポジトリの紹介です。日時を考慮せずトレンドの掲載やスター数で集計すると既知の大御所リポジトリばかりになるので今年からトレンドになったリポジトリに絞って紹介します。
 
 - 抽出条件
   - 2021 年に初めてトレンド入りした時点でスター数が 100 未満
@@ -44,7 +44,7 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 - 11 -> 9144(+9133) [VickScarlet/lifeRestart](https://github.com/VickScarlet/lifeRestart)
 - 66 -> 8961(+8895) [calendso/calendso](https://github.com/calendso/calendso)
 - 46 -> 8810(+8764) [remotion-dev/remotion](https://github.com/remotion-dev/remotion)
-- 61 -> 8674(+8613) [snowpackjs/astro](https://github.com/snowpackjs/astro)
+- 61 -> 8674(+8613) [withastro/astro](https://github.com/withastro/astro)
 - 49 -> 7779(+7730) [alan2207/bulletproof-react](https://github.com/alan2207/bulletproof-react)
 - 15 -> 6963(+6948) [upgundecha/howtheysre](https://github.com/upgundecha/howtheysre)
 - 57 -> 6997(+6940) [mattermost/focalboard](https://github.com/mattermost/focalboard)
@@ -55,9 +55,141 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 - 12 -> 5290(+5278) [blueedgetechno/win11React](https://github.com/blueedgetechno/win11React)
 - 12 -> 5207(+5195) [nextapps-de/winbox](https://github.com/nextapps-de/winbox)
 
-## SaaS クローン、GUI アプリを除く
+### [conwnet/github1s](https://github.com/conwnet/github1s)
 
-今年のランクインは SaaS クローンや GUI アプリがかなり多く、個人的に面白く無かったのでそれらを除いた結果も別途集計したいと思います
+GitHub のリポジトリを開いて`github1s.com`にドメインを変更すると Web 上で VSCode が立ち上がりそのリポジトリのコードが読めるという Web サービスのリポジトリです。今年の 2 月ごろに Twitter で回ってきたやつという理解です。
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Serious productivity boost for reading code on GitHub.<br><br>1️⃣. <br>Go to any repo you are interested in on GitHub.<br><br>2️⃣.<br>Replace &quot;github&quot; with &quot;github1s&quot; (one + s) in the browser address bar.<br><br>3️⃣.<br>Enjoy browsing code like you would in VS Code.<br><br>This is huge 🔥 <a href="https://t.co/FVZhxDIuBC">pic.twitter.com/FVZhxDIuBC</a></p>&mdash; ChrisKalmar.eth 🦌🦌🦌🦌🛷 (@chriskalmar) <a href="https://twitter.com/chriskalmar/status/1363759778858729482?ref_src=twsrc%5Etfw">February 22, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### [slidevjs/slidev](https://github.com/slidevjs/slidev)
+
+要は Markdown で登壇資料が作れるツールの１つです。私の登壇資料（ https://talks.leko.jp/ ）は[jxnblk/mdx-deck](https://github.com/jxnblk/mdx-deck)というツールを使っているのですが、それをさらにリッチにしたものという印象です。最近全く登壇していませんが次回登壇するときに試してみようと思います。録画や拡張性やカスタマイズ性・エディタのサポートや速度などの開発体験を重要視してるようですね。Vite, Vue 3 などを利用して作られてるようです。
+
+> Features
+>
+> - 📝 Markdown-based - use your favorite editors and workflow
+> - 🧑‍💻 Developer Friendly - built-in syntax highlighting, live coding, etc.
+> - 🎨 Themable - theme can be shared and used with npm packages.
+> - 🌈 Stylish - Windi CSS on-demand utilities, easy-to-use embedded stylesheets.
+> - 🤹 Interactive - embedding Vue components seamlessly.
+> - 🎙 Presenter Mode - use another window, or even your phone to control your slides.
+> - 🧮 LaTeX - built-in LaTeX math equations support.
+> - 📰 Diagrams - creates diagrams with textual descriptions
+> - 🌟 Icons - access to icons from any iconset directly.
+> - 💻 Editors - integrated editor, or extension for VS Code
+> - 🎥 Recording - built-in recording and camera view.
+> - 📤 Portable - export into PDF, PNGs, or even a hostable SPA.
+> - ⚡️ Fast - instant reloading powered by Vite.
+> - 🛠 Hackable - using Vite plugins, Vue components, or any npm packages.
+>
+> &mdash; [slidevjs/slidev: Presentation Slides for Developers (Beta)](https://github.com/slidevjs/slidev)
+
+### [pavlobu/deskreen](https://github.com/pavlobu/deskreen)
+
+Web ブラウザが搭載された任意のデバイスをセカンドスクリーンとして使えるようになる Electron アプリです。README にアーキテクチャが書いてあり、それによるとホストアプリ側の localhost に対しセカンドスクリーン化する端末がアクセスし、その後は WebRTC 経由でホスト側の画面共有をキャストするって挙動のようです。
+
+![アーキテクチャ](https://github.com/pavlobu/deskreen/raw/master/doc/architecture/deskreen-arch-pavlobu-21012021.svg)
+
+### [benawad/dogehouse](https://github.com/benawad/dogehouse)
+
+おそらく Discord clone のようなコミュニケーションツールです。特に紹介はしません
+
+### [VickScarlet/lifeRestart](https://github.com/VickScarlet/lifeRestart)
+
+"やり直すんだ。そして、次はうまくやる。"という謎の日本語が書かれた中国語のブラウザゲーです。翻訳しながら遊んでみたところおそらくシミュレーションゲームで、初期シードのステータス設定をすると人生シミュレータが開始し、寿命が尽きるまでに何が起こったかのログが流れるというゲームでした。翻訳ミスなのかもしれませんがクトゥルフや幸運って単語が出てきたのでクトゥルフ神話とか TRPC 系の何かなのかと思いましたが、その界隈も中国語も詳しくないため結局何のゲームなのか、なぜ 9000 以上もスターを集めているのかも分かりませんでした。。。
+
+### [calendso/calendso](https://github.com/calendso/calendso)
+
+自分の空いてる日程を相手に共有して予定調整ができる SaaS[Calendly](https://calendly.com/)のクローンです
+
+### [remotion-dev/remotion](https://github.com/remotion-dev/remotion)
+
+remotion は React コンポーネントの描画結果を動画として描き出せるツールのようです。少しコードを読んでみたところ内部的には描画用の localhost を立てて、puppeteer でそこにアクセスして描画結果のスクリーンショットをフレームごとに生成し、ffmpeg でつなぎ合わせて動画にしているようです。このツールで作られたビデオは公式の[Showcase](https://www.remotion.dev/showcase)にあります。
+
+> &mdash; [話題の Remotion で遊んでみた](https://zenn.dev/uzimaru0000/scraps/011315614b47ab)
+
+### [withastro/astro](https://github.com/withastro/astro)
+
+Astro は高速に動作する静的サイトジェネレータです。React や Vue, web components もしくはピュアな HTML+JS など、フレームワークや構成を問わず適用可能で、ビルド時に全てを解決してランタイム JS をゼロにできて、必要であればハイドレーションもできて、SEO 系のメタ情報ファイルの生成にも気を配っているようです。元々は Snowpack の org で作られたもののようですが、今は独立した org でメンテナンスされているようです。[Astro 0.21 のアナウンス記事](https://astro.build/blog/astro-021-release/)によると、今は Vite を使用しており、コンパイラは Go で書かれているみたいです。
+
+> &mdash; [Introducing Astro: Ship Less JavaScript](https://astro.build/blog/introducing-astro/)
+
+### [alan2207/bulletproof-react](https://github.com/alan2207/bulletproof-react)
+
+Production-ready な React アプリを作る際の opinionated なガイド集です。単なるガイドであってテンプレートやボイラープレートの類ではないようです。
+
+### [upgundecha/howtheysre](https://github.com/upgundecha/howtheysre)
+
+各社の SRE エンジニアがどんなことしているかの事例紹介がまとまっている README です
+
+### [mattermost/focalboard](https://github.com/mattermost/focalboard)
+
+Notion の クローンっぽい Web アプリです
+
+### [docmirror/dev-sidecar](https://github.com/docmirror/dev-sidecar)
+
+おそらく中国の Great Firewall 関連のツールだと思うのですが詳しくは不明（中国語なのでわからない）
+
+### [sveltejs/kit](https://github.com/sveltejs/kit)
+
+SvelteKit は Svelte 製アプリを作る際のツールキットおよびフレームワークのようです。ルーティングやレイアウト、Data Fetching やフックの機構を備えた Create React App をモダンにしたものという印象です。
+
+> &mdash; [SvelteKit の特徴をざっくり理解する - console.lealog();](https://lealog.hateblo.jp/entry/2021/04/15/173441)
+
+### [vuejs/petite-vue](https://github.com/vuejs/petite-vue)
+
+機能が削られてる代わりに軽量（6kb）な Vue のサブセット、React でいうところの [preact](https://preactjs.com/) かなと思いました。複雑な制御のいらない静的な or インタラクティブな UI の少ないサイトではパフォーマンス向上に寄与しそうです。
+
+### [SigNoz/signoz](https://github.com/SigNoz/signoz)
+
+[OpenTelemetry](https://opentelemetry.io/) をベースとした APM サービスです。運用監視に使う Datadog や New Relic などのような SaaS の OSS 版です。サーバやアプリケーションのメトリクスの規格とデータ収集・集計などに必要なエージェントをベンダーニュートラルに開発する OpenTelemetry をベースにしており、SigNoz 自体は OpenTelemetry で収集されたデータのビューワーのようなものと理解しました。OSS として自前でホストすることもできるし、MongoDB Atlas や Elastic のようにマネージドなサービスとしても利用できます。
+
+### [blueedgetechno/win11React](https://github.com/blueedgetechno/win11React)
+
+web で Windows11 のデスクトップを再現したもののようです。定期的に特定 OS のデスクトップを再現する web サイト出てきますね。
+
+### [nextapps-de/winbox](https://github.com/nextapps-de/winbox)
+
+フレームワーク非依存で カスタマイズ性の高いウィンドウっぽい UI が作れる JS ライブラリ。動作がサクサクです。
+
+## 欄外だけど個人的な興味でピックアップ
+
+ここまでの紹介を見ての通りで、今年は SaaS クローンや GUI アプリがかなり多く、CLI ツールやライブラリは少なめで個人的に面白く無かったので、獲得スター数的にはランク外ですが、今年トレンドに載ったことのある個人的に関心のあるものをピックアップします。
+
+### [boringdesigners/boring-avatars](https://github.com/boringdesigners/boring-avatars)
+
+Gravatar のデフォルトアイコンのような、ユーザ名等のシード値によっていい感じの匿名アバター SVG 画像を描画できる React コンポーネントです。個人的には BEAM という種類のゆるキャラっぽいアバターが可愛くて好きです。こういうやつ。
+
+![](2021-12-23-23-32-03.png)
+
+### [BuilderIO/partytown](https://github.com/BuilderIO/partytown)
+
+リソースを大量消費するような 3rd パーティスクリプトを WebWorker に移して動作させるという面白い取り組み。3rd パーティスクリプトを単純に WebWorker に移してもメインスレッドとは環境が違うことで動作しない問題を色々ハックして突破するライブラリです。  
+動作原理としてはまずメインスレッドの API を Proxy でラップしたオブジェクトを WebWorker 側に露出させ、それが呼ばれると同期 XHR で WebWorker のスレッドをブロックして、その同期 XHR リクエストを監視する Service Worker が代わりにメインスレッドとやり取りして WebWorker に結果を返すことで、3rd party スクリプトから見ると同期的にメインスレッドを操作できており、Web Worker で動いてるので off the main thread が実現できる、という仕組みのようです。まだ枯れてないですが早く本番に突っ込んでみたいです。
+
+> &mdash; [How Partytown's Sync Communication Works - DEV Community 👩‍💻👨‍💻](https://dev.to/adamdbradley/how-partytown-s-sync-communication-works-4244)
+
+### [cloudflare/miniflare](https://github.com/cloudflare/miniflare)
+
+ローカルで Cloudflare Workers が動かせる純正の開発ツールです。TS 製で`wrangler dev`の Alternative と書かれています。公式の安心感もあり、いちいちデプロイしなくて良くなり開発効率が上がるので積極的に使っていきたいと思います。
+
+### [steveruizok/perfect-freehand](https://github.com/steveruizok/perfect-freehand)
+
+フリーハンドで書かれた線の座標を滑らかに・筆っぽくいい感じに補正してくれる JS のライブラリです。マウスを動かす速度によって線の太さを調整したり補正したりしてくれます。ライブラリとしては一定間隔でサンプリングされた座標の配列を渡すだけのシンプルな API で、特定フレームワークに依存してないのが扱いやすそうです。
+
+![perfect-freehand](https://github.com/steveruizok/perfect-freehand/raw/main/assets/process.gif)
+
+### [timc1/kbar](https://github.com/timc1/kbar)
+
+GitHub や Slack などで`⌘+K`のショートカットでコマンドパレット的なものが開くと思うのですが、あれを簡単に作れるライブラリです。特定のキーを持つオブジェクトの配列を渡すだけなので、自分でキーボードショートカットの管理などをしなくていいのもとても良いです。tech savvy が喜びそうな機能の１つとして試してみたいです。
+
+![デモ動作](https://user-images.githubusercontent.com/12195101/143491194-1d3ad5d6-24ac-4e6e-8867-65f643ac2d24.gif)
+
+### [yeemachine/kalidokit](https://github.com/yeemachine/kalidokit)
+
+JS から顔や手や指、表情や・ポーズなどが認識ができる Google 製の[Mediapipe](https://google.github.io/mediapipe/)を用い、ブラウザだけでモーショントレースができる Web アプリです。試してみた結果はこちらの画像です。左上がキャプチャされた私の座標データで、真ん中が描画結果になります。認識精度は高く 2D, 3D 両方ともいけました。任意の Live2D、VRM のモデルデータを追加して反映させることもできるようです。VTuber になる予定はないですが、ブラウザでやらなくて良いことを全力でやってるのがテクニカルで好きなリポジトリでした。
+
+![](2021-12-24-00-03-04.png)
 
 ## 2021 年にもっともスターを獲得したリポジトリ
 
@@ -91,6 +223,12 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 - ~~47 -> 16747 (+16700) [slidevjs/slidev](https://github.com/slidevjs/slidev)~~
 - 174775 -> 191415 (+16640) [vuejs/vue](https://github.com/vuejs/vue)
 
+ほとんどはいつもの顔ぶれという感じです。個人的にコメントしたいのは１つだけで、他はコメントを省きます。
+
+### [google/zx](https://github.com/google/zx)
+
+2020 年末に登場した Google 製のシェルを JS で書けるツール。2021 年のトレンド掲載時点では 157 star だったため条件（star 数）を満たさず前パートで紹介できなかったツール。一言で言うなら Node.js の child_process の糖衣構文。top-level await が使えたり、文字列の配列を渡すと CLI 引数として自動でエスケープしてくれたりと細かいところに気が効く。zx 自体をインストールしないと当然動かないが、シェルを直接書くよりはシンプルで JS を生で書くよりはシンプルというバランスのもの。
+
 ## Node.js 関連のトピックに絞った場合
 
 次に Node.js に関連したトピックを持ったリポジトリを比較します。
@@ -120,11 +258,46 @@ GitHub のトレンドは過去の履歴が残っていないので非公式に�
 - 879 -> 8451 (+7572) [qeeqbox/social-analyzer](https://github.com/qeeqbox/social-analyzer)
 - 295 -> 5440 (+5145) [medusajs/medusa](https://github.com/medusajs/medusa)
 
+### [axios/axios](https://github.com/axios/axios)
+
+axios 自体は言わずと知れた有名なライブラリでそれ自体に語りたいことは特にありませんが、メンテナー不足の問題が顕在化し夏頃に議論になったのが記憶に新しいです。
+
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">axiosの利用者まだまだ結構いて影響がわりとあると思っているので、ご協力いただけるとありがたいです :pray: <a href="https://t.co/kLc1d9OUrC">https://t.co/kLc1d9OUrC</a></p>&mdash; Kohta Ito (@koh110) <a href="https://twitter.com/koh110/status/1422477526673199110?ref_src=twsrc%5Etfw">August 3, 2021</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+### [nodejs/node](https://github.com/nodejs/node)
+
+Node.js のリポジトリ自体も言わずと知れていますが、この記事は Node.js のアドベントカレンダー記事なので触れます。
+今年は v16 に始まり v17 がこの前発表されました。
+
+> - M1 Mac
+> - Timers Promises API
+> - fs.rmdir の recursive オプションが Deprecated
+>
+> &mdash; [Node.js v16 の主な変更点 - 別にしんどくないブログ](https://shisama.hatenablog.com/entry/2021/04/22/090000)
+
+> - Intl.DateTimeFormat
+> - WHATWG Stream との互換性の強化
+> - ディープクローンが簡単になる structuredClone の追加
+>
+> &mdash; [Node.js v17 の主な変更点 - 別にしんどくないブログ](https://shisama.hatenablog.com/entry/2021/10/20/114721#WHATWG-Stream-%E3%81%A8%E3%81%AE%E4%BA%92%E6%8F%9B%E6%80%A7%E3%81%AE%E5%BC%B7%E5%8C%96)
+
+特に structuredClone に関してはそもそもなぜ今更になって仕様策定されたんだ？感ありますが、`JSON.parse(JSON.stringify(...))`などのイディオムを使わなくても深いオブジェクトのディープコピーが作れるようになるので、使い所によっては便利かもしれません。
+
+> &mdash; [Deep-copying in JavaScript using structuredClone](https://web.dev/structured-clone/)
+
 ## トレンドに上がったリポジトリのトピック
 
-ここまでの内容と重複しているものは取り消し線を入れてます
+今年トレンドに上がったリポジトリのトピックを集計しました。
 
-https://observablehq.com/@leko/2021-github-trending-topics
+- 抽出条件
+  - 2021 年に一度以上トレンドに載ったリポジトリを抽出
+  - 外れ値を減らすため 5 つ以上のリポジトリに付けられたトピックが対象
+
+こちらのリンクから SVG の全体画像が見れます。
+
+> &mdash; [Bubble Chart / Shingo Inoue / Observable](https://observablehq.com/@leko/2021-github-trending-topics)
+
+去年の SVG を並べてみたんですが、特に大きな代わり映えはなかったように思えます。
 
 ## トレンド常連組
 
@@ -155,3 +328,5 @@ https://observablehq.com/@leko/2021-github-trending-topics
 - 69 日 [microsoft/Web-Dev-For-Beginners](https://github.com/microsoft/Web-Dev-For-Beginners)
 - 68 日 [microsoft/vscode](https://github.com/microsoft/vscode)
 - 68 日 [mui-org/material-ui](https://github.com/mui-org/material-ui)
+
+以上です。良いお年を！
