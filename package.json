@@ -55,7 +55,6 @@
     "snyk": "^1.730.0"
   },
   "devDependencies": {
-    "amphtml-validator": "^1.0.23",
     "babel-eslint": "^10.0.1",
     "dotenv": "^8.0.0",
     "eslint": "~5.16.0",
