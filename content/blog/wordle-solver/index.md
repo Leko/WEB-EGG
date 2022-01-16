@@ -1,6 +1,6 @@
 ---
 title: Wordleという単語当てゲームのsolverを考える
-date: '2022-01-11T11:24:43.105Z'
+date: '2022-01-16T11:24:43.105Z'
 featuredImage: ./2022-01-10-21-48-28.png
 tags:
   - JavaScript
