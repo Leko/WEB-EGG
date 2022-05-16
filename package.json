@@ -4,6 +4,9 @@
   "description": "A starter for a blog powered by Gatsby and Markdown",
   "version": "0.1.0",
   "author": "Leko <leko.noor@gmail.com>",
+  "workspaces": [
+    "./plugins/*"
+  ],
   "browserslist": [
     "defaults"
   ],
@@ -51,36 +54,34 @@
     "react-typography": "^0.16.20",
     "typography": "^0.16.20",
     "typography-theme-wordpress-2016": "^0.16.19",
-    "web-vitals": "^2.1.0",
-    "snyk": "^1.730.0"
+    "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "@proofdict/textlint-rule-proofdict": "^3.1.2",
     "babel-eslint": "^10.0.1",
     "dotenv": "^8.0.0",
     "eslint": "~5.16.0",
     "eslint-plugin-react": "~7.18.1",
     "husky": "~4.1.0",
     "image-size": "^0.8.0",
-    "lerna": "~3.20.0",
     "npm-run-all": "~4.1.5",
     "prettier": "~1.19.0",
     "scaffdog": "^0.2.0",
-    "textlint": "~11.7.6",
-    "textlint-rule-date-weekday-mismatch": "~1.0.5",
-    "textlint-rule-ja-hiragana-fukushi": "~1.2.0",
-    "textlint-rule-ja-no-abusage": "~2.0.1",
-    "textlint-rule-ja-no-redundant-expression": "~3.0.2",
+    "textlint": "~12.1.1",
+    "textlint-rule-date-weekday-mismatch": "~1.0.6",
+    "textlint-rule-ja-hiragana-fukushi": "~1.3.0",
+    "textlint-rule-ja-no-abusage": "~3.0.0",
+    "textlint-rule-ja-no-redundant-expression": "~4.0.1",
     "textlint-rule-max-kanji-continuous-len": "~1.1.1",
-    "textlint-rule-no-double-negative-ja": "~1.0.6",
-    "textlint-rule-no-doubled-conjunction": "~1.0.3",
-    "textlint-rule-no-doubled-conjunctive-particle-ga": "~1.1.1",
-    "textlint-rule-no-dropping-the-ra": "~1.1.3",
-    "textlint-rule-no-mix-dearu-desumasu": "~4.0.1",
+    "textlint-rule-no-double-negative-ja": "~2.0.1",
+    "textlint-rule-no-doubled-conjunction": "~2.0.2",
+    "textlint-rule-no-doubled-conjunctive-particle-ga": "~2.0.4",
+    "textlint-rule-no-dropping-the-ra": "~3.0.0",
+    "textlint-rule-no-mix-dearu-desumasu": "~5.0.0",
     "textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet": "~1.0.1",
     "textlint-rule-no-nfd": "~1.0.2",
     "textlint-rule-no-todo": "~2.0.1",
-    "textlint-rule-period-in-list-item": "~0.3.2",
-    "textlint-rule-spellcheck-tech-word": "~5.0.0"
+    "textlint-rule-period-in-list-item": "~0.3.2"
   },
   "license": "MIT",
   "repository": "Leko/WEB-EGG",
@@ -93,9 +94,6 @@
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js' 'src/**/*.md'",
     "start": "DOTENV_CONFIG_PATH=.env.development node -r dotenv/config $(npm bin)/gatsby develop",
     "build": "gatsby build --verbose",
-    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js",
-    "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
-  },
-  "snyk": true
+    "fix-semi": "eslint --quiet --ignore-pattern node_modules --ignore-pattern public --parser babel-eslint --no-eslintrc --rule '{\"semi\": [2, \"never\"], \"no-extra-semi\": [2]}' --fix gatsby-node.js"
+  }
 }

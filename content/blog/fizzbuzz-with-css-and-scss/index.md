@@ -28,7 +28,7 @@ CSSのFizzBuzz
 
 ### サンプル
 
-実行結果は[こちら](http://closet.leko.jp/2013/fizzbuzz/css.html)から見れます。
+実行結果は[こちら](http://closet.leko.jp/2013/fizzbuzz/css.html)から確認できます。
 
 ### コード
 

@@ -74,7 +74,7 @@ it('sinon.spyのテスト', function() {
 spy = sinon.spy( object, 'proterty' );
 ```
 
-というふうに書くと、object.propertyを監視出来ます。 この感じで、Backboneのon系のコールバックも見れるんじゃないかと思ったら、詰まりました。
+というふうに書くと、object.propertyを監視出来ます。 この感じで、Backboneのon系のコールバックも見えるんじゃないかと思ったら、詰まりました。
 
 これで動くんじゃないの？ →動かない
 ----------------------------------------

@@ -12,7 +12,6 @@
     "no-mixed-zenkaku-and-hankaku-alphabet": true,
     "no-nfd": true,
     "no-todo": true,
-    "spellcheck-tech-word": true,
     "max-kanji-continuous-len": {
       "allow": [
         "大文字小文字",
