@@ -34,7 +34,3 @@ jobs:
           key: ${{ runner.os }}-npm-${{ hashFiles('yarn.lock') }}
       - run: yarn
       - run: npm run test
-      - uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          fail_ci_if_error: true
