@@ -63,7 +63,7 @@ gsutil
 
 ### Google Cloud SDKで見る
 
-コマンドの場合は、`gsutil ls -L {URL}`で見れるようです。
+コマンドの場合は、`gsutil ls -L {URL}`で確認できるようです。
 
 ```shell
 $ gsutil ls -L gs://web.timer.builderscon.io/all.css

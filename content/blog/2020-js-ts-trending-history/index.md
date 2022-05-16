@@ -236,7 +236,7 @@ Prisma1 は GraphQL が今より全く浸透してない時代から GraphQL ベ
 
 [![](2020-12-09-00-32-59.png)](https://observablehq.com/embed/@leko/bubble-chart?cell=chart)
 
-画像が大きいので中心部分を抜粋しました。こちらのリンクから SVG の全体画像が見れます。
+画像が大きいので中心部分を抜粋しました。こちらのリンクから SVG の全体画像が確認できます。
 
 > &mdash; [Bubble Chart / Shingo Inoue / Observable](https://observablehq.com/@leko/bubble-chart)
 

@@ -22,7 +22,7 @@ Githubのトレンドに[vadimdemedes/ink](https://github.com/vadimdemedes/ink)�
 --------------------------------------------------------------------------------
 ![成果物](./eyecatch-special-chars-for-cli.png)
 
-記事にも貼っていきますが、ソースはこちら（TODO）から見れます。  
+記事にも貼っていきますが、ソースはこちら（TODO）から確認できます。  
 上記画像のようなものを１つずつ作っていきます
 
 フォントに注意
@@ -37,7 +37,7 @@ Githubのトレンドに[vadimdemedes/ink](https://github.com/vadimdemedes/ink)�
 ![フォント](./special-chars-for-cli-fonts.png)
 
 では、これらの文字をコピーしてターミナルに貼り付けても表示できていますでしょうか。  
-他にも見れるフォントあると思いますが、フォント設定が`Source Code Pro`であればおそらく表示できていると思います。  
+他にもこれらの文字を表示できるフォントあると思いますが、フォント設定が`Source Code Pro`であればおそらく表示できていると思います。  
 Googleフォントとかから読み込めるWebフォント版のSource Code Proだとマルチバイトが省略されているそうで、文字化けします。
 
 [iTerm2](https://www.iterm2.com/)をお使いの場合は、以下の画像のようにフォントを設定すればおそらく表示できると思います。

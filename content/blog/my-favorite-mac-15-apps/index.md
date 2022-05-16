@@ -101,7 +101,7 @@ Todo管理
 
 
 
-効率良く情報収集が出来る、というよりは楽しく情報収集ができるAdobe Airアプリです。 何より、おしゃれ。 画面の端に常駐して、登録されたRSSフィードをスクロールで流してくれます。 作業しながら横目に見れるので、 全フィード熟読はしないけど、さらっと目を通したいという時におすすめです。 GoogleReaderと連携できるのも吉。後輩に教えていただきました。 <aside> 
+効率良く情報収集が出来る、というよりは楽しく情報収集ができるAdobe Airアプリです。 何より、おしゃれ。 画面の端に常駐して、登録されたRSSフィードをスクロールで流してくれます。 作業しながら横目に確認できので、 全フィード熟読はしないけど、さらっと目を通したいという時におすすめです。 GoogleReaderと連携できるのも吉。後輩に教えていただきました。 <aside> 
 
 * <a href="http://boku-pocket.blogspot.com/2012/06/macwindowslinuxrsssnackr.html" target="_blank">僕のポケット: Mac・Windows・Linuxで使える超クールなRSSリーダー[Snackr]がおすすめです。</a>
 * <a href="http://tokuna.blog40.fc2.com/blog-entry-1524.html" target="_blank">電光掲示板のようなRSSティッカー「Snackr」でデスクトップにニュースを流す*二十歳街道まっしぐら（FC2ブログ時代）</a></aside> 
