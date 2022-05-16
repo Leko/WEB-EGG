@@ -17,7 +17,6 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('yarn.lock') }}
       - run: yarn
-      - run: npx lerna bootstrap
       - run: npm run lint
   test:
     runs-on: ubuntu-18.04
@@ -34,9 +33,7 @@ jobs:
           path: ~/.npm
           key: ${{ runner.os }}-npm-${{ hashFiles('yarn.lock') }}
       - run: yarn
-      - run: npx lerna bootstrap
       - run: npm run test
-      - run: npx lerna run test
       - uses: codecov/codecov-action@v1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
