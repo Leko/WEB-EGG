@@ -101,7 +101,7 @@ ClassDo の言語は主に TypeScript （と一部 Go）です。主な使用技
 
 個人的に Yuimedi に魅力を感じていることは以下の通りです。
 
-- 自分を含め Node.js の core collaborator が 4 人在籍（うち 1 人は社内制度の 1 つ OSS Day で継続的なコミットを認められ Nominate された（[本人のブログ](https://kuriyosh.net/blog/2022-05-17)））
+- 自分を含め Node.js の core collaborator が 4 人在籍（うち 1 人は[社内制度の 1 つ OSS Day](https://blog.watilde.com/2022/05/17/nodejs-core-collaborator-mentoring/) で継続的なコミットを認められ Nominate された（[本人のブログ](https://kuriyosh.net/blog/2022-05-17)））
 - 技術者だけでなくドメイン領域（医療）のスペシャリストも在籍している
 - 今は Closed β で PoC を回している。ローンチまでにやりたい技術的なことがモリモリ
 - 海外展開を見据えて R&D している
