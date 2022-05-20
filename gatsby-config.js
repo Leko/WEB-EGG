@@ -109,7 +109,7 @@ module.exports = {
           {
             serialize: ({ query: { site, allMarkdownRemark } }) => {
               return allMarkdownRemark.edges.map(edge => {
-                const permalink = `${site.siteMetadata.siteUrl}post${edge.node.fields.slug}`
+                const permalink = `${site.siteMetadata.siteUrl}/post${edge.node.fields.slug}`
                 return {
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
