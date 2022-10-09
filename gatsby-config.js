@@ -3,7 +3,7 @@
 module.exports = {
   siteMetadata: {
     title: 'WEB EGG',
-    author: 'Leko',
+    author: 'Leko - CTO at Yuimedi',
     description: 'JavaScriptとNode.jsを中心に、web開発関連のことを書きます',
     siteUrl: `https://blog.leko.jp/`,
     social: {
