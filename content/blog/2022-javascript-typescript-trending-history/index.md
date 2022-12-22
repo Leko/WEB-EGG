@@ -65,13 +65,13 @@ tags:
 > 🔮 Seamlessly visualize your JSON data instantly into graphs; paste, import or fetch!  
 > [AykutSarac/jsoncrack.com](https://github.com/AykutSarac/jsoncrack.com)
 
-JSON の構造をグラフ的な構造で可視化できる GUI ツールです。AWS Cloudformation とか読めない巨大 JSON(YAML)に使えそうな予感はしますが、なぜ今更 JSON を可視化するだけのアプリが 2 万 stars まで流行ったのかは汲み取れませんでした...。
+JSON の構造をグラフィカルに可視化できる GUI ツールです。AWS Cloudformation とか読めない巨大 JSON(YAML)に使えそうな予感はしますが、 JSON を可視化するだけのアプリが 2 万 stars まで流行った文脈は汲み取れませんでした...。
 
 ![](2022-12-16-20-07-17.png)
 
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Looking to understand or explore some JSON? Just paste or upload to visualize it as a graph with <a href="https://t.co/HlKSrhKryJ">https://t.co/HlKSrhKryJ</a> 😍 <br><br>Thanks to <a href="https://twitter.com/aykutsarach?ref_src=twsrc%5Etfw">@aykutsarach</a>! <a href="https://t.co/0LyPUL8Ezz">pic.twitter.com/0LyPUL8Ezz</a></p>&mdash; GitHub (@github) <a href="https://twitter.com/github/status/1519363257794015233?ref_src=twsrc%5Etfw">April 27, 2022</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-UML 記述でおなじみの[PlantUML でも JSON の可視化](https://plantuml.com/ja/json)ができますが、それより洗練された UI に見えます。
+UML 記述でおなじみの[PlantUML でも JSON の可視化（下記画像）](https://plantuml.com/ja/json)ができますが、それより洗練された UI に見えます。
 
 ![](2022-12-16-20-10-24.png)
 
@@ -80,8 +80,8 @@ UML 記述でおなじみの[PlantUML でも JSON の可視化](https://plantuml
 > Spacedrive is an open source cross-platform file explorer, powered by a virtual distributed filesystem written in Rust.  
 > [spacedriveapp/spacedrive](https://github.com/spacedriveapp/spacedrive)
 
-Spacedrive は Rust で書かれた仮想分散ファイルシステム(VDFS)をベースにしたクロスプラットフォームなファイルマネージャーです。UI だけ刷新した単なる better Finder な訳ではなく、VDFS を利用しクラウド上にあるデータ（Google Drive, Google Photos, iCloud, etc)も同様のインターフェースで閲覧できるものだそうです。Desktop 版は Tauri, モバイルは RN、web 版も提供されているなど各種デバイスに対応しているようです。  
-Spacedrive app 自体は Not for me ですが、VDFS の概念（[UC Berkeley の論文（英語）](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-29.pdf)）は面白く、分析や集計のプログラムでクラウドベンダーの差異を投下的に扱える便利さを考えると深掘りしてみたいと思いました。
+Spacedrive は 仮想分散ファイルシステム(VDFS)という技術ベースにした Rust 製のクロスプラットフォームなファイルマネージャーです。UI だけ刷新した単なる better Finder な訳ではなく、VDFS を利用しクラウド上にあるデータ（Google Drive, Google Photos, iCloud, etc)も同様のインターフェースで閲覧できるものだそうです。Desktop 版は Tauri, モバイルは RN、web 版も提供されているなど各種デバイスに対応しているようです。  
+Spacedrive app 自体は Not for me ですが、VDFS の概念（[UC Berkeley の論文（英語）](https://www2.eecs.berkeley.edu/Pubs/TechRpts/2018/EECS-2018-29.pdf)）は面白く、分析や集計のプログラムでクラウドベンダーの差異を透過的な API で扱えるのは便利そうなので深掘りしてみたいと思います。
 
 ![](2022-12-16-20-22-11.png)
 
@@ -327,49 +327,46 @@ Chrome のタブや履歴、お気に入りから検索できるランチャー�
 > Build faster websites with Astro's next-gen island architecture 🏝✨  
 > [withastro/astro](https://github.com/withastro/astro)
 
-TODO
+最近注目度が上がっている静的サイトジェネレータ。[去年の記事でも紹介しました](https://blog.leko.jp/post/2021-javascript-typescript-trending-history/#withastroastro)。社内の Astro 大好きなメンバーが Astro でブログ作り直したそうなのでぜひみてみてください。
+
+> &mdash; [Astro でサイトを作り直し、ブログをはてなから移管しました - hiroppy's site](https://hiroppy.me/blog/migrate-blog-from-hatena)
 
 ### ToolJet/ToolJet
 
 > Extensible low-code framework for building business applications. Connect to databases, cloud storages, GraphQL, API endpoints, Airtable, etc and build apps using drag and drop application builder. Built using JavaScript/TypeScript. 🚀  
 > [ToolJet/ToolJet](https://github.com/ToolJet/ToolJet)
 
-TODO
+前述の[alibaba/lowcode-engine](#alibabalowcode-engine)や[Google Looker Studio](https://support.google.com/looker-studio/answer/6283323?hl=JA)（旧 Google Data Studio）に近いローコードソリューションのようです。内部向けツールを作ることに特化しているようで、各種 DB/DWH やクラウドストレージ、SaaS などからもデータを引っ張って画面やダッシュボードが構築できます。
 
 ### novuhq/novu
 
 > The open-source notification infrastructure for products  
 > [novuhq/novu](https://github.com/novuhq/novu)
 
-TODO
+OSS の通知インフラストラクチャ。アプリケーションのコードから通知をトリガーするメソッドを呼ぶと novu で設定した通りに通知が発行されるというように関心の分離が可能。メール・Push 通知・SMS を送ったりといった自前で実装したくない部分を隠蔽してくれて、なおかつアプリケーションコードからは柔軟な呼び出しができ自由度が高そうな予感がします。複数の溜まった通知をダイジェスト化する仕組みなどもあるようでとても便利そうです。
 
 ### nestjs/nest
 
 > A progressive Node.js framework for building efficient, scalable, and enterprise-grade server-side applications on top of TypeScript & JavaScript (ES6, ES7, ES8) 🚀  
 > [nestjs/nest](https://github.com/nestjs/nest)
 
-TODO
-
-### medusajs/medusa
-
-> The open-source Shopify alternative ⚡️  
-> [medusajs/medusa](https://github.com/medusajs/medusa)
-
-TODO
+今年から[弊社プロダクト](https://yuimedi.notion.site/Yuimedi-3981950c3d324fb183bc8e99279e9375)にて NestJS を本番投入したのですが、デコレータへの抵抗感を乗り越えればとても宣言的で柔軟で拡張しやすい BFF が DX よく作れます。おすすめです。
 
 ### payloadcms/payload
 
 > Free and Open-source Headless CMS and Application Framework built with TypeScript, Node.js, React and MongoDB  
 > [payloadcms/payload](https://github.com/payloadcms/payload)
 
-TODO
+OSS のヘッドレス CMS。データストアと REST/GraphQL API の提供のみでなく、Admin UI も提供してくれるところが特徴のようです。
 
 ### n8n-io/n8n
 
 > Free and source-available fair-code licensed workflow automation tool. Easily automate tasks across different services.  
 > [n8n-io/n8n](https://github.com/n8n-io/n8n)
 
-TODO
+GUI でワークフローを組み立てられるオートメーションツール。Zapier の OSS クローンという感じがしますが、独自のコンポーネントやロジックを追加実装できるようで、こちらの方が拡張性は高そうです。
+
+![](2022-12-21-19-40-43.png)
 
 ## トレンドに上がったリポジトリのトピック
 
