@@ -1,9 +1,11 @@
 ---
 title: GitHubのトレンドで振り返る2022年のJavaScript/TypeScript
-date: '2022-12-06T14:17:34.856Z'
+date: '2022-12-22T20:33:34.856Z'
 featuredImage: ./2022-12-18-23-01-40.png
 tags:
   - JavaScript
+  - TypeScript
+  - GitHub
 ---
 
 今年も GitHub トレンドから 2022 年の JavaScript/TypeScript を振り返ります。去年の記事はこちらです。
